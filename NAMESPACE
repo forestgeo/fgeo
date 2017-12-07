@@ -2,9 +2,9 @@
 
 S3method(print,fgeo_conflicts)
 export(fgeo_conflicts)
+export(fgeo_deps)
 export(fgeo_packages)
-export(tidyverse_deps)
-export(tidyverse_update)
+export(fgeo_update)
 importFrom(broom,tidy)
 importFrom(forcats,fct_c)
 importFrom(ggplot2,ggplot)
