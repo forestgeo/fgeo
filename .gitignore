@@ -2,5 +2,4 @@
 .Rhistory
 .RData
 inst/doc
-revdep/checks
-revdep/library
+
