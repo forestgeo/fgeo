@@ -1,19 +1,19 @@
 url: https://forestgeo.github.io/fgeo/
 
-
+authors:
+  Mauro Lepore:
+    href: https://github.com/maurolepore
+  CTFS-ForestGEO:
+    href: http://www.forestgeo.si.edu/
 
 template:
   params:
     bootswatch: united
 
-
-
 home:
   links:
   - text: Learn more
     href: http://www.forestgeo.si.edu/
-
-
 
 navbar:
   type: default
@@ -23,9 +23,11 @@ navbar:
   right:
     - text: Apps
       menu:
-      - text: Explore allometric equations
+      - text: Explore Databases
+      - text: Allometric equations
         href: https://bookdown.org/forestgeoguest/allodb_app/
-
+      - text: ----------
+      - text: Explore functions' arguments
       - text: Tweak field maps
         href: https://bookdown.org/forestgeoguest/map_tag_app/
       - text: Krig soil data
@@ -33,19 +35,24 @@ navbar:
 
     - text: Tutorials
       menu:
+      - text: Calculations with a single census
       - text: Abundance and basal area
         href: https://bookdown.org/forestgeoguest/abundance/
+      - text: ----------
+      - text: Calculations with two censuses
       - text: Demography
         href: https://bookdown.org/forestgeoguest/demography/
+      - text: ----------
+      - text: Maps
       - text: Maps of species distributions
         href: https://bookdown.org/forestgeoguest/map/
+      - text: Create maps for fieldwork
+        href: https://forestgeo.github.io/try/articles/map_tag.html
 
-    - icon: fa-person
-      href: http://www.forestgeo.si.edu/
     - icon: fa-gavel
       href: https://github.com/maurolepore
     - icon: fa-github
-      href: https://github.com/forestgeo/soilkrig
+      href: https://github.com/forestgeo/fgeo
 
 reference:
   - title: "Core packages (load automatically)"
