@@ -4,7 +4,7 @@
     return()
 
   crayon::num_colors(TRUE)
-  tidyverse_attach()
+  fgeo_attach()
 
   x <- tidyverse_conflicts()
   msg(tidyverse_conflict_message(x), startup = TRUE)
