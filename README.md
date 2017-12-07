@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-tidyverse <img src="man/figures/logo.png" align="right" />
-==========================================================
+tidyverse <img src="inst/figures/logo.png" align="right" />
+===========================================================
 
 [![Travis-CI Build Status](https://travis-ci.org/tidyverse/tidyverse.svg?branch=master)](https://travis-ci.org/tidyverse/tidyverse)
 
@@ -40,15 +40,12 @@ You also get a condensed summary of conflicts with other packages you have loade
 
 ``` r
 library(tidyverse)
-#> Loading tidyverse: ggplot2
-#> Loading tidyverse: tibble
-#> Loading tidyverse: tidyr
-#> Loading tidyverse: readr
-#> Loading tidyverse: purrr
-#> Loading tidyverse: dplyr
-#> Conflicts with tidy packages ----------------------------------------------
-#> filter(): dplyr, stats
-#> lag():    dplyr, stats
+#> -- Attaching packages --------------------------------------------- tidyverse 1.2.1 --
+#> v try     0.0.0.9003     v forestr 0.0.0.9000
+#> v ctfs    0.0.0.9000     v dplyr   0.7.4
+#> -- Conflicts ------------------------------------------------ tidyverse_conflicts() --
+#> x dplyr::filter() masks stats::filter()
+#> x dplyr::lag()    masks stats::lag()
 ```
 
 You can see conflicts created later with `tidyverse_conflicts()`:
@@ -61,10 +58,10 @@ library(MASS)
 #> 
 #>     select
 tidyverse_conflicts()
-#> Conflicts with tidy packages ----------------------------------------------
-#> filter(): dplyr, stats
-#> lag():    dplyr, stats
-#> select(): dplyr, MASS
+#> -- Conflicts ------------------------------------------------ tidyverse_conflicts() --
+#> x dplyr::filter() masks stats::filter()
+#> x dplyr::lag()    masks stats::lag()
+#> x MASS::select()  masks dplyr::select()
 ```
 
 And you can check that all tidyverse packages are up-to-date with `tidyverse_update()`:
@@ -92,6 +89,7 @@ As well as the core tidyverse, installing this package also installs a selection
     -   [stringr](https://github.com/tidyverse/stringr), for strings.
     -   [lubridate](https://github.com/hadley/lubridate), for date/times.
     -   [forcats](https://github.com/hadley/forcats), for factors.
+
 -   Importing other types of data:
 
     -   [feather](http://github.com/wesm/feather), for sharing with Python and other languages.
@@ -101,6 +99,7 @@ As well as the core tidyverse, installing this package also installs a selection
     -   [readxl](https://github.com/hadley/readxl), for `.xls` and `.xlsx` files.
     -   [rvest](https://github.com/hadley/rvest), for web scraping.
     -   [xml2](https://github.com/hadley/xml2), for XML.
+
 -   Modelling
 
     -   [modelr](https://github.com/hadley/modelr), for modelling within a pipeline
