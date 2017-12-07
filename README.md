@@ -1,11 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-fgeo <img src="inst/figures/logo.png" align="right" />
-======================================================
+fgeo DEMO <img src="inst/figures/logo.png" align="right" />
+===========================================================
 
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
 ### Overview
+
+THIS IS A DEMO.
 
 The **fgeo** package is a collection of R packages curated by [ForestGEO](http://www.forestgeo.si.edu/). **fgeo** installs and loads multiple R packages in a single step. Each individual package is a self-contained module that provides tools for a particular type of analyses. The modular structure of **fgeo** makes it easy to maintain and expand ForestGEO's software. Together, all packages in **fgeo** provide a wide renge of tools to analyse forest dynamics. Learn more about the **fgeo** package at <http://forestgeo.github.io/fgeo>.
 
