@@ -29,7 +29,7 @@ You also get a condensed summary of conflicts with other packages you have loade
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --
 #> v try   0.0.0.9004     v bciex 0.0.0.9000
 #> 
 ```
