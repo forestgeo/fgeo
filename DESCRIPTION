@@ -14,7 +14,7 @@ Description: 'forestgeo' installs and load multiple R packages of ForestGEO in
     more about ForestGEO at <http://www.forestgeo.si.edu/>.
 License: GPL-3
 URL: http://forestgeo.github.io/forestgeo, https://github.com/forestgeo/forestgeo
-BugReports: https://github.com/tidyverse/tidyverse/issues
+BugReports: https://github.com/forestgeo/forestgeo/issues
 Imports: 
     try,
     soilkrig,
