@@ -1,106 +1,56 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-tidyverse <img src="inst/figures/logo.png" align="right" />
-===========================================================
+fgeo <img src="inst/figures/logo.png" align="right" />
+======================================================
 
-[![Travis-CI Build Status](https://travis-ci.org/tidyverse/tidyverse.svg?branch=master)](https://travis-ci.org/tidyverse/tidyverse)
+[![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
 Overview
 --------
 
-The tidyverse is a set of packages that work in harmony because they share common data representations and API design. The **tidyverse** package is designed to make it easy to install and load core packages from the tidyverse in a single command.
-
-If you'd like to learn how to use the tidyverse effectively, the best place to start is [R for data science](http://r4ds.had.co.nz).
+The **fgeo** package is a collection of R packages curated by [ForestGEO](http://www.forestgeo.si.edu/). **fgeo** installs and loads multiple R packages in a single step. Each individual package is a self-contained module that provides tools for a particular type of analyses. The modular structure of **fgeo** makes it easy to maintain and expand ForestGEO's software. Together, all packages in **fgeo** provide a wide renge of tools to analyse forest dynamics. Learn more about the **fgeo** package at <http://forestgeo.github.io/fgeo>.
 
 Installation
 ------------
 
-``` r
-# Install from CRAN
-install.packages("tidyverse")
-
-# Or the development version from GitHub
-# install.packages("devtools")
-devtools::install_github("hadley/tidyverse")
-```
+    # install.packages("remotes")
+    remotes::install_github("forestgeo/fgeo")
 
 Usage
 -----
 
-`library(tidyverse)` will load the core tidyverse packages:
+`library(fgeo)` will load the core **fgeo** packages:
 
--   [ggplot2](http://ggplot2.tidyverse.org), for data visualisation.
--   [dplyr](http://dplyr.tidyverse.org), for data manipulation.
--   [tidyr](http://tidyr.tidyverse.org), for data tidying.
--   [readr](http://readr.tidyverse.org), for data import.
--   [purrr](http://purrr.tidyverse.org), for functional programming.
--   [tibble](http://tibble.tidyverse.org), for tibbles, a modern re-imagining of data frames.
+-   [**bciex**](https://forestgeo.github.io/bciex/), to access data for examples.
+-   [**try**](https://forestgeo.github.io/try/), to experiment with "beta" code.
+-   ...
 
 You also get a condensed summary of conflicts with other packages you have loaded:
 
 ``` r
-library(tidyverse)
-#> -- Attaching packages --------------------------------------------- tidyverse 1.2.1 --
-#> v try     0.0.0.9003     v forestr 0.0.0.9000
-#> v ctfs    0.0.0.9000     v dplyr   0.7.4
-#> -- Conflicts ------------------------------------------------ tidyverse_conflicts() --
-#> x dplyr::filter() masks stats::filter()
-#> x dplyr::lag()    masks stats::lag()
+library(fgeo)
+#> -- Attaching packages ---------------------------------------------------- fgeo 0.0.0.9000 --
+#> v try   0.0.0.9004     v bciex 0.0.0.9000
+#> 
 ```
 
-You can see conflicts created later with `tidyverse_conflicts()`:
+You can see conflicts created later with `fgeo_conflicts()`:
 
 ``` r
-library(MASS)
-#> 
-#> Attaching package: 'MASS'
-#> The following object is masked from 'package:dplyr':
-#> 
-#>     select
-tidyverse_conflicts()
-#> -- Conflicts ------------------------------------------------ tidyverse_conflicts() --
-#> x dplyr::filter() masks stats::filter()
-#> x dplyr::lag()    masks stats::lag()
-#> x MASS::select()  masks dplyr::select()
-```
-
-And you can check that all tidyverse packages are up-to-date with `tidyverse_update()`:
-
-``` r
-tidyverse_update()
-#> The following packages are out of date:
-#>  * broom (0.4.0 -> 0.4.1)
-#>  * DBI   (0.4.1 -> 0.5)
-#>  * Rcpp  (0.12.6 -> 0.12.7)
-#> Update now?
-#> 
-#> 1: Yes
-#> 2: No
+fgeo_conflicts()
 ```
 
 Packages
 --------
 
-As well as the core tidyverse, installing this package also installs a selection of other packages that you're likely to use frequently, but probably not in every analysis. This includes packages for:
+As well as the core packages, installing **fgeo** also installs a selection of other packages that you're likely to use frequently, but probably not in every analysis. This includes packages for:
 
--   Working with specific types of vectors:
+-   Analyse soil data:
 
-    -   [hms](https://github.com/rstats-db/hms), for times.
-    -   [stringr](https://github.com/tidyverse/stringr), for strings.
-    -   [lubridate](https://github.com/hadley/lubridate), for date/times.
-    -   [forcats](https://github.com/hadley/forcats), for factors.
+    -   [**soilkrig**](https://forestgeo.github.io/soilkrig/), to krig soil data as per John et al. (2007).
+    -   ...
 
--   Importing other types of data:
+-   Topic 2:
 
-    -   [feather](http://github.com/wesm/feather), for sharing with Python and other languages.
-    -   [haven](https://github.com/hadley/haven), for SPSS, SAS and Stata files.
-    -   [httr](https://github.com/hadley/httr), for web apis.
-    -   [jsonlite](https://github.com/jeroenooms/jsonlite) for JSON.
-    -   [readxl](https://github.com/hadley/readxl), for `.xls` and `.xlsx` files.
-    -   [rvest](https://github.com/hadley/rvest), for web scraping.
-    -   [xml2](https://github.com/hadley/xml2), for XML.
-
--   Modelling
-
-    -   [modelr](https://github.com/hadley/modelr), for modelling within a pipeline
-    -   [broom](https://github.com/dgrtwo/broom), for turning models into tidy data
+    -   ...
+    -   ...
