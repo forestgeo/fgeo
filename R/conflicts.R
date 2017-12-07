@@ -1,4 +1,3 @@
-# xxx checked all in this file
 #' Conflicts between the fgeo and other packages
 #'
 #' This function lists all the conflicts between packages in fgeo

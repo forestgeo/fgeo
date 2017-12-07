@@ -1,4 +1,3 @@
-# xxx checked all in this file
 msg <- function(..., startup = FALSE) {
   if (startup) {
     if (!isTRUE(getOption("fgeo.quiet"))) {

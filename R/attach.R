@@ -1,4 +1,3 @@
-# xxx checked all this file and its dependencies
 core <- c("try", "bciex")
 
 core_loaded <- function() {
