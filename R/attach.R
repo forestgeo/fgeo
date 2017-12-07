@@ -1,4 +1,4 @@
-core <- c("ggplot2", "tibble", "tidyr", "readr", "purrr", "dplyr", "stringr", "forcats")
+core <- c("try","forestr")
 
 core_loaded <- function() {
   search <- paste0("package:", core)
