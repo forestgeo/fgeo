@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
-## Overview
+### Overview
 
 The __fgeo__ package is a collection of R packages curated by
 [ForestGEO](http://www.forestgeo.si.edu/). __fgeo__ installs and loads
@@ -26,46 +26,33 @@ ForestGEO's software. Together, all packages in __fgeo__ provide a wide renge
 of tools to analyse forest dynamics.  Learn more about the __fgeo__ package at
 <http://forestgeo.github.io/fgeo>.
 
-## Installation
+### Installation
 
 ```
+# To install from a private repo, use auth_token with a token
+# from https://github.com/settings/tokens. You only need the
+# repo scope. Best practice is to save your PAT in env var called
+# GITHUB_PAT.
 # install.packages("remotes")
-remotes::install_github("forestgeo/fgeo")
+remotes::install_github("forestgeo/fgeo", auth_token = "abc")
 ```
 
-## Usage
+### Usage
 
-`library(fgeo)` will load the core __fgeo__ packages: 
-
-* [__bciex__](https://forestgeo.github.io/bciex/), to access data for examples.
-* [__try__](https://forestgeo.github.io/try/), to experiment with "beta" code.
-* ...
-
-
-You also get a condensed summary of conflicts with other packages you have loaded:
+`library(fgeo)` will load the core __fgeo__ packages. If __fgeo__ conflicts with other packages you have loaded, you'll get summary.
 
 ```{r example}
 library(fgeo)
 ```
 
-You can see conflicts created later with `fgeo_conflicts()`:
+You can see conflicts created later with `fgeo_conflicts()`.
 
 ```{r conflicts}
 fgeo_conflicts()
 ```
 
-## Packages
+### Packages
 
-As well as the core packages, installing __fgeo__ also installs a selection of other packages that you're likely to use frequently, but probably not in every analysis. This includes packages for:
+As well as the core packages, installing __fgeo__ also installs a selection of other packages that you're likely to use frequently, but probably not in every analysis.
 
-*   Analyse soil data:
-
-    * [__soilkrig__](https://forestgeo.github.io/soilkrig/), to krig soil data
-      as per John et al. (2007).
-    * ...
-
-*   Topic 2:
-
-    * ...
-    * ...
-
+[See all packages](https://forestgeo.github.io/fgeo/reference/index.html)
