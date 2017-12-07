@@ -1,23 +1,22 @@
-#' Update tidyverse packages
+#' Update fgeo packages
 #'
-#' This will check to see if all tidyverse packages (and optionally, their
+#' This will check to see if all fgeo packages (and optionally, their
 #' dependencies) are up-to-date, and will install after an interactive
 #' confirmation.
 #'
 #' @param recursive If \code{TRUE}, will also check all dependencies of
-#'   tidyverse packages.
+#'   fgeo packages.
 #' @export
 #' @examples
 #' \dontrun{
-#' tidyverse_update()
+#' fgeo_update()
 #' }
-tidyverse_update <- function(recursive = FALSE) {
-
-  deps <- tidyverse_deps(recursive)
+fgeo_update <- function(recursive = FALSE) {
+  deps <- fgeo_deps(recursive)
   behind <- dplyr::filter(deps, behind)
 
   if (nrow(behind) == 0) {
-    cli::cat_line("All tidyverse packages up-to-date")
+    cli::cat_line("All fgeo packages up-to-date")
     return(invisible())
   }
 
@@ -34,14 +33,14 @@ tidyverse_update <- function(recursive = FALSE) {
   invisible()
 }
 
-#' List all tidyverse dependencies
+#' List all fgeo dependencies
 #'
 #' @param recursive If \code{TRUE}, will also list all dependencies of
-#'   tidyverse packages.
+#'   fgeo packages.
 #' @export
-tidyverse_deps <- function(recursive = FALSE) {
+fgeo_deps <- function(recursive = FALSE) {
   pkgs <- utils::available.packages()
-  deps <- tools::package_dependencies("tidyverse", pkgs, recursive = recursive)
+  deps <- tools::package_dependencies("fgeo", pkgs, recursive = recursive)
 
   pkg_deps <- unique(sort(unlist(deps)))
 
