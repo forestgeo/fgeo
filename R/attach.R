@@ -1,4 +1,4 @@
-core <- c("try","forestr")
+core <- c("try", "soilkrig")
 
 core_loaded <- function() {
   search <- paste0("package:", core)
