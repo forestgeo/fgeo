@@ -1,23 +1,24 @@
-Package: forestgeo
+Package: fgeo
 Title: Easily Install and Load Packages of ForestGEO
 Version: 0.0.0.9000
 Authors@R: c(
     person("Mauro", "Lepore", , "leporem@si.edu", role = c("aut", "ctr", "cre")),
     person("CTFS-ForestGEO", , , "ForestGEO@si.edu", role = c("cph", "fnd"))
   )
-Description: 'forestgeo' installs and load multiple R packages of ForestGEO in
+Description: 'fgeo' installs and load multiple R packages of ForestGEO in
     a single step. Each individual package is a self contained module. Together,
-    all the packages in 'forestgeo' provide a wide renga of tools to analyse
-    forest dynamics. The modular structure of 'forestgeo' makes it easy to add 
+    all the packages in 'fgeo' provide a wide renga of tools to analyse
+    forest dynamics. The modular structure of 'fgeo' makes it easy to add 
     and maintain more tools as they become available. Learn more about the 
-    'forestgeo' package at <http://forestgeo.github.io/forestgeo>; and learn
+    'fgeo' package at <http://forestgeo.github.io/fgeo>; and learn
     more about ForestGEO at <http://www.forestgeo.si.edu/>.
 License: GPL-3
-URL: http://forestgeo.github.io/forestgeo, https://github.com/forestgeo/forestgeo
-BugReports: https://github.com/forestgeo/forestgeo/issues
+URL: http://forestgeo.github.io/fgeo, https://github.com/forestgeo/fgeo
+BugReports: https://github.com/forestgeo/fgeo/issues
 Imports: 
-    try,
+    bciex,
     soilkrig,
+    try,
     broom (>= 0.4.2),
     cli (>= 1.0.0),
     crayon (>= 1.3.4),
@@ -42,7 +43,8 @@ Imports:
     stringr (>= 1.2.0),
     tibble (>= 1.3.4),
     tidyr (>= 0.7.2),
-    xml2 (>= 1.1.1)
+    xml2 (>= 1.1.1),
+    bciex
 Suggests: 
     feather (>= 0.3.1),
     knitr (>= 1.17),
@@ -51,4 +53,4 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Remotes: forestgeo/try@0.0.00.9004, forestgeo/forestr
+Remotes: forestgeo/bciex, forestgeo/soilkrig, forestgeo/try@0.0.00.9004
