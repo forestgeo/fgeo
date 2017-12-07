@@ -1,3 +1,4 @@
+# xxx checked all this file and its dependencies
 core <- c("try", "bciex")
 
 core_loaded <- function() {
@@ -9,12 +10,10 @@ core_unloaded <- function() {
   core[!search %in% search()]
 }
 
-
 fgeo_attach <- function() {
   to_load <- core_unloaded()
   if (length(to_load) == 0)
     return(invisible())
-
   msg(
     cli::rule(
       left = crayon::bold("Attaching packages"),
