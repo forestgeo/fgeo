@@ -1,3 +1,4 @@
+# xxx checked all this file
 .onAttach <- function(...) {
   needed <- core[!is_attached(core)]
   if (length(needed) == 0)
@@ -6,8 +7,8 @@
   crayon::num_colors(TRUE)
   fgeo_attach()
 
-  x <- tidyverse_conflicts()
-  msg(tidyverse_conflict_message(x), startup = TRUE)
+  x <- fgeo_conflicts()
+  msg(fgeo_conflict_message(x), startup = TRUE)
 }
 
 is_attached <- function(x) {
