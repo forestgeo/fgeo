@@ -3,7 +3,7 @@
 fgeo (DEMO) <img src="inst/figures/logo.png" align="right" />
 =============================================================
 
-[![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
+[![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo) [![Coverage status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](https://codecov.io/github/forestgeo/fgeo?branch=master) [![CRAN status](http://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
 Overview
 --------
@@ -26,7 +26,7 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9000 --
 #> v forestr 0.0.0.9000
 #> 
 ```

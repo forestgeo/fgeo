@@ -21,18 +21,21 @@ Imports:
     cli (>= 1.0.0),
     crayon (>= 1.3.4),
     purrr (>= 0.2.4),
-    rstudioapi (>= 0.7)
+    rstudioapi (>= 0.7),
+    map
 Suggests: 
     ctfs,
     soilkrig,
     try,
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4),
-    BIOMASS
+    BIOMASS,
+    covr
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 Remotes: forestgeo/bciex,
-    forestgeo/forestr
+    forestgeo/forestr,
+    forestgeo/map
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

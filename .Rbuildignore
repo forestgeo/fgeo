@@ -7,3 +7,4 @@
 ^_pkgdown\.yml$
 ^LICENSE\.md$
 ^pkgdown$
+^codecov\.yml$
