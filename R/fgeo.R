@@ -11,6 +11,12 @@ NULL
 
 # Other packages that install with fgeo -----------------------------------
 
+#' Map ForestGEO's data.
+#'
+#' [Go to map](https://forestgeo.github.io/map/)
+#' @name map
+NULL
+
 #' Example data sets from Barro Colorado Island (BCI).
 #'
 #' [Go to bciex](https://forestgeo.github.io/bciex/)

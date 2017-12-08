@@ -1,26 +1,38 @@
 url: https://forestgeo.github.io/fgeo/
 
+
+
 authors:
   Mauro Lepore:
     href: https://github.com/maurolepore
   CTFS-ForestGEO:
     href: http://www.forestgeo.si.edu/
 
+
+
 template:
   params:
     bootswatch: united
+
+
 
 home:
   links:
   - text: Learn more
     href: http://www.forestgeo.si.edu/
 
+
+
 navbar:
+
   type: default
   left:
+
     - text: Packages
       href: reference/index.html
+
   right:
+
     - text: Apps
       menu:
       - text: Explore Databases
@@ -35,41 +47,47 @@ navbar:
 
     - text: Tutorials
       menu:
-      - text: Calculations with a single census
+      - text: Abundance
       - text: Abundance and basal area
         href: https://bookdown.org/forestgeoguest/abundance/
       - text: The BIOMASS package
         href: https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html
       - text: ----------
-      - text: Calculations with two censuses
       - text: Demography
+      - text: Growth, mortality and recruitment
         href: https://bookdown.org/forestgeoguest/demography/
       - text: ----------
-      - text: Maps
-      - text: Maps of species distributions
-        href: https://bookdown.org/forestgeoguest/map/
-      - text: Create maps for fieldwork
-        href: https://forestgeo.github.io/try/articles/map_tag.html
+      - text: Map
+      - text: Map species distributions
+        href: https://forestgeo.github.io/map/articles/index.html
+      - text: Map trees in a plot for fieldwork
+        href: https://forestgeo.github.io/map/articles/map_tag.html
 
     - icon: fa-gavel
       href: https://github.com/maurolepore
+
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
 
+
+
 reference:
-  - title: "Core packages that install and load with fgeo"
-    desc: "All these packages automatically load with `library(fgeo)`"
+
+  - title: Core packages that install and load with fgeo
+    desc: All these packages automatically load with `library(fgeo)`
     contents:
       - forestr
-  - title: "Other packages that install with fgeo"
-    desc: "You must load each package manually"
+
+  - title: Other packages that install but don't load with fgeo
+    desc: You must load each package manually
     contents:
       - bciex
-  - title: Suggested packages that don't install with fgeo
-    desc: "You must install and load each package manually"
+      - map
+
+  - title: Suggested packages that don't install nor load with fgeo
+    desc: You must install and load each package manually
     contents:
       - BIOMASS
       - ctfs
       - soilkrig
       - try
-
