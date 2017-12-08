@@ -11,50 +11,35 @@ knitr::opts_chunk$set(
 )
 ```
 
-# fgeo DEMO <img src="inst/figures/logo.png" align="right" />
+# fgeo (DEMO) <img src="inst/figures/logo.png" align="right" />
 
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
-### Overview
+## Overview
 
-THIS IS A DEMO.
+__fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages in __fgeo__ provide a wide renge of tools to analyse forest dynamics.
 
-The __fgeo__ package is a collection of R packages curated by
-[ForestGEO](http://www.forestgeo.si.edu/). __fgeo__ installs and loads
-multiple R packages in a single step. Each individual package is a
-self-contained module that provides tools for a particular type of analyses.
-The modular structure of __fgeo__ makes it easy to maintain and expand
-ForestGEO's software. Together, all packages in __fgeo__ provide a wide renge
-of tools to analyse forest dynamics.  Learn more about the __fgeo__ package at
-<http://forestgeo.github.io/fgeo>.
+[See all packages](https://forestgeo.github.io/fgeo/reference/index.html)
 
-### Installation
+## Installation
 
 ```
-# To install from a private repo, use auth_token with a token
-# from https://github.com/settings/tokens. You only need the
-# repo scope. Best practice is to save your PAT in env var called
-# GITHUB_PAT.
+# To install from a private repo, see auth_token at https://goo.gl/re1LFe
 # install.packages("remotes")
-remotes::install_github("forestgeo/fgeo", auth_token = "abc")
+remotes::install_github("forestgeo/fgeo")
 ```
 
-### Usage
+## Usage
 
-`library(fgeo)` will load the core __fgeo__ packages. If __fgeo__ conflicts with other packages you have loaded, you'll get summary.
+`library(fgeo)` will load the core __fgeo__ packages.
 
 ```{r example}
 library(fgeo)
 ```
 
-You can see conflicts created later with `fgeo_conflicts()`.
+You can see conflicts with other packages with `fgeo_conflicts()`.
 
 ```{r conflicts}
 fgeo_conflicts()
 ```
 
-### Packages
-
-As well as the core packages, installing __fgeo__ also installs a selection of other packages that you're likely to use frequently, but probably not in every analysis.
-
-[See all packages](https://forestgeo.github.io/fgeo/reference/index.html)
