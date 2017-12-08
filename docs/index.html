@@ -9,7 +9,8 @@
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
+<script src="extra.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
@@ -45,8 +46,7 @@
       <a href="https://bookdown.org/forestgeoguest/allodb_app/">Allometric equations</a>
     </li>
     <li class="divider">
-    </li>
-<li class="dropdown-header">Explore functions' arguments</li>
+    <li class="dropdown-header">Explore functions' arguments</li>
     <li>
       <a href="https://bookdown.org/forestgeoguest/map_tag_app/">Tweak field maps</a>
     </li>
@@ -66,15 +66,16 @@
     <li>
       <a href="https://bookdown.org/forestgeoguest/abundance/">Abundance and basal area</a>
     </li>
-    <li class="divider">
+    <li>
+      <a href="https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html">The BIOMASS package</a>
     </li>
-<li class="dropdown-header">Calculations with two censuses</li>
+    <li class="divider">
+    <li class="dropdown-header">Calculations with two censuses</li>
     <li>
       <a href="https://bookdown.org/forestgeoguest/demography/">Demography</a>
     </li>
     <li class="divider">
-    </li>
-<li class="dropdown-header">Maps</li>
+    <li class="dropdown-header">Maps</li>
     <li>
       <a href="https://bookdown.org/forestgeoguest/map/">Maps of species distributions</a>
     </li>
@@ -113,43 +114,33 @@
 <div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="fgeo-demo" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#fgeo-demo" class="anchor"></a>fgeo DEMO <img src="inst/figures/logo.png" align="right">
-</h1></div>
-
-<div id="overview" class="section level3">
-<h3 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h3>
-<p>THIS IS A DEMO.</p>
-<p>The <strong>fgeo</strong> package is a collection of R packages curated by <a href="http://www.forestgeo.si.edu/">ForestGEO</a>. <strong>fgeo</strong> installs and loads multiple R packages in a single step. Each individual package is a self-contained module that provides tools for a particular type of analyses. The modular structure of <strong>fgeo</strong> makes it easy to maintain and expand ForestGEO’s software. Together, all packages in <strong>fgeo</strong> provide a wide renge of tools to analyse forest dynamics. Learn more about the <strong>fgeo</strong> package at <a href="http://forestgeo.github.io/fgeo" class="uri">http://forestgeo.github.io/fgeo</a>.</p>
-</div>
-<div id="installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
-<pre><code><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github"># To install from a private repo, use auth_token with a token
-# from https://github.com/settings/tokens. You only need the
-# repo scope. Best practice is to save your PAT in env var called
-# GITHUB_PAT.
-# install.packages("remotes")
-remotes::install_github("forestgeo/fgeo", auth_token = "abc")</a></code></pre>
-</div>
-<div id="usage" class="section level3">
-<h3 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h3>
-<p><code>library(fgeo)</code> will load the core <strong>fgeo</strong> packages. If <strong>fgeo</strong> conflicts with other packages you have loaded, you’ll get summary.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fgeo)
-<span class="co">#&gt; -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --</span>
-<span class="co">#&gt; v bciex   0.0.0.9000     v forestr 0.0.0.9000</span>
-<span class="co">#&gt; v bciex   0.0.0.9000     v try     0.0.0.9004</span>
-<span class="co">#&gt; </span></code></pre></div>
-<p>You can see conflicts created later with <code><a href="reference/fgeo_conflicts.html">fgeo_conflicts()</a></code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()</code></pre></div>
-</div>
-<div id="packages" class="section level3">
-<h3 class="hasAnchor">
-<a href="#packages" class="anchor"></a>Packages</h3>
-<p>As well as the core packages, installing <strong>fgeo</strong> also installs a selection of other packages that you’re likely to use frequently, but probably not in every analysis.</p>
+<h1 class="hasAnchor">
+<a href="#fgeo-demo" class="anchor"></a>fgeo (DEMO) <img src="inst/figures/logo.png" align="right">
+</h1>
+<p><a href="https://travis-ci.org/forestgeo/fgeo"><img src="https://travis-ci.org/forestgeo/fgeo.svg?branch=master" alt="Travis build status"></a></p>
+<div id="overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p><strong>fgeo</strong> installs and loads multiple R packages of <a href="http://www.forestgeo.si.edu/">ForestGEO</a> in a single step. Together, all packages in <strong>fgeo</strong> provide a wide renge of tools to analyse forest dynamics.</p>
 <p><a href="https://forestgeo.github.io/fgeo/reference/index.html">See all packages</a></p>
+</div>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<pre><code><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github"># To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/fgeo")</a></code></pre>
+</div>
+<div id="usage" class="section level2">
+<h2 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h2>
+<p><code>library(fgeo)</code> will load the core <strong>fgeo</strong> packages.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fgeo)
+<span class="co">#&gt; -- Attaching packages ---------------------------------- fgeo 0.0.0.9000 --</span>
+<span class="co">#&gt; v forestr 0.0.0.9000</span>
+<span class="co">#&gt; </span></code></pre></div>
+<p>You can see conflicts with other packages with <code><a href="reference/fgeo_conflicts.html">fgeo_conflicts()</a></code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()</code></pre></div>
 </div>
 </div>
 </div>
@@ -174,10 +165,6 @@ remotes::install_github("forestgeo/fgeo", auth_token = "abc")</a></code></pre>
 <a href="https://github.com/maurolepore">Mauro Lepore</a> <br><small class="roles"> Author, contractor, maintainer </small> </li>
 <li>
 <a href="http://www.forestgeo.si.edu/">CTFS-ForestGEO</a> <br><small class="roles"> Copyright holder, funder </small> </li>
-</ul>
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://travis-ci.org/forestgeo/fgeo"><img src="https://travis-ci.org/forestgeo/fgeo.svg?branch=master" alt="Travis build status"></a></li>
 </ul>
 </div>
 

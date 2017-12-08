@@ -2,7 +2,7 @@
 % Please edit documentation in R/fgeo.R
 \name{try}
 \alias{try}
-\title{Try "beta" code -- before it's released.}
+\title{Try new code before it's released.}
 \description{
 \href{https://forestgeo.github.io/try}{Go to try}
 }
