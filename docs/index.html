@@ -46,7 +46,8 @@
       <a href="https://bookdown.org/forestgeoguest/allodb_app/">Allometric equations</a>
     </li>
     <li class="divider">
-    <li class="dropdown-header">Explore functions' arguments</li>
+    </li>
+<li class="dropdown-header">Explore functions' arguments</li>
     <li>
       <a href="https://bookdown.org/forestgeoguest/map_tag_app/">Tweak field maps</a>
     </li>
@@ -62,7 +63,7 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-<li class="dropdown-header">Calculations with a single census</li>
+<li class="dropdown-header">Abundance</li>
     <li>
       <a href="https://bookdown.org/forestgeoguest/abundance/">Abundance and basal area</a>
     </li>
@@ -70,17 +71,19 @@
       <a href="https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html">The BIOMASS package</a>
     </li>
     <li class="divider">
-    <li class="dropdown-header">Calculations with two censuses</li>
+    </li>
+<li class="dropdown-header">Demography</li>
     <li>
-      <a href="https://bookdown.org/forestgeoguest/demography/">Demography</a>
+      <a href="https://bookdown.org/forestgeoguest/demography/">Growth, mortality and recruitment</a>
     </li>
     <li class="divider">
-    <li class="dropdown-header">Maps</li>
+    </li>
+<li class="dropdown-header">Map</li>
     <li>
-      <a href="https://bookdown.org/forestgeoguest/map/">Maps of species distributions</a>
+      <a href="https://forestgeo.github.io/map/articles/index.html">Map species distributions</a>
     </li>
     <li>
-      <a href="https://forestgeo.github.io/try/articles/map_tag.html">Create maps for fieldwork</a>
+      <a href="https://forestgeo.github.io/map/articles/map_tag.html">Map trees in a plot for fieldwork</a>
     </li>
   </ul>
 </li>
@@ -114,10 +117,10 @@
 <div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="fgeo-demo" class="section level1">
-<h1 class="hasAnchor">
+<div class="page-header"><h1 class="hasAnchor">
 <a href="#fgeo-demo" class="anchor"></a>fgeo (DEMO) <img src="inst/figures/logo.png" align="right">
-</h1>
-<p><a href="https://travis-ci.org/forestgeo/fgeo"><img src="https://travis-ci.org/forestgeo/fgeo.svg?branch=master" alt="Travis build status"></a></p>
+</h1></div>
+
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
@@ -136,7 +139,7 @@ remotes::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p><code>library(fgeo)</code> will load the core <strong>fgeo</strong> packages.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fgeo)
-<span class="co">#&gt; -- Attaching packages ---------------------------------- fgeo 0.0.0.9000 --</span>
+<span class="co">#&gt; -- Attaching packages ------------------------------------------- fgeo 0.0.0.9000 --</span>
 <span class="co">#&gt; v forestr 0.0.0.9000</span>
 <span class="co">#&gt; </span></code></pre></div>
 <p>You can see conflicts with other packages with <code><a href="reference/fgeo_conflicts.html">fgeo_conflicts()</a></code>.</p>
@@ -165,6 +168,12 @@ remotes::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="https://github.com/maurolepore">Mauro Lepore</a> <br><small class="roles"> Author, contractor, maintainer </small> </li>
 <li>
 <a href="http://www.forestgeo.si.edu/">CTFS-ForestGEO</a> <br><small class="roles"> Copyright holder, funder </small> </li>
+</ul>
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://travis-ci.org/forestgeo/fgeo"><img src="https://travis-ci.org/forestgeo/fgeo.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://codecov.io/github/forestgeo/fgeo?branch=master"><img src="https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
+<li><a href="https://cran.r-project.org/package=fgeo"><img src="http://www.r-pkg.org/badges/version/fgeo" alt="CRAN status"></a></li>
 </ul>
 </div>
 
