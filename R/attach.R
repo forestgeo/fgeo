@@ -1,4 +1,4 @@
-core <- c("bciex", "forestr", "try")
+core <- c("forestr")
 
 core_loaded <- function() {
   search <- paste0("package:", core)

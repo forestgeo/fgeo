@@ -38,6 +38,8 @@ navbar:
       - text: Calculations with a single census
       - text: Abundance and basal area
         href: https://bookdown.org/forestgeoguest/abundance/
+      - text: The BIOMASS package
+        href: https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html
       - text: ----------
       - text: Calculations with two censuses
       - text: Demography
@@ -55,12 +57,19 @@ navbar:
       href: https://github.com/forestgeo/fgeo
 
 reference:
-  - title: "Core packages (load automatically)"
+  - title: "Core packages that install and load with fgeo"
+    desc: "All these packages automatically load with `library(fgeo)`"
     contents:
       - forestr
-      - try
-      - bciex
-  - title: "Other packages (load manually)"
+  - title: "Other packages that install with fgeo"
+    desc: "You must load each package manually"
     contents:
+      - bciex
+  - title: Suggested packages that don't install with fgeo
+    desc: "You must install and load each package manually"
+    contents:
+      - BIOMASS
+      - ctfs
       - soilkrig
+      - try
 
