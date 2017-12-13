@@ -1,7 +1,21 @@
 #' @keywords internal
 "_PACKAGE"
 
+
+
 # Core packages -----------------------------------------------------------
+
+#' Example data sets from Barro Colorado Island (BCI).
+#'
+#' [Go to bciex](https://forestgeo.github.io/bciex/)
+#' @name bciex
+NULL
+
+#' Recruitment, mortality and growth
+#'
+#' [Go to demography](https://forestgeo.github.io/demography/)
+#' @name demography
+NULL
 
 #' Abundance; basal area; demography; species-distributions maps.
 #'
@@ -9,19 +23,23 @@
 #' @name forestr
 NULL
 
-# Other packages that install with fgeo -----------------------------------
-
 #' Map ForestGEO's data.
 #'
 #' [Go to map](https://forestgeo.github.io/map/)
 #' @name map
 NULL
 
-#' Example data sets from Barro Colorado Island (BCI).
+
+
+# Other packages that install with fgeo -----------------------------------
+
+#' Krig soil data as per John et al. (2007).
 #'
-#' [Go to bciex](https://forestgeo.github.io/bciex/)
-#' @name bciex
+#' [Go to soilkrig](https://forestgeo.github.io/soilkrig)
+#' @name soilkrig
 NULL
+
+
 
 # Suggested packages that don't install with fgeo -------------------------
 
@@ -37,12 +55,6 @@ NULL
 #'
 #' [Go to ctfs](https://forestgeo.github.io/ctfs/)
 #' @name ctfs
-NULL
-
-#' Krig soil data as per John et al. (2007).
-#'
-#' [Go to soilkrig](https://forestgeo.github.io/soilkrig)
-#' @name soilkrig
 NULL
 
 #' Try new code before it's released.

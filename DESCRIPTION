@@ -22,7 +22,8 @@ Imports:
     crayon (>= 1.3.4),
     purrr (>= 0.2.4),
     rstudioapi (>= 0.7),
-    map
+    map,
+    demography
 Suggests: 
     ctfs,
     soilkrig,

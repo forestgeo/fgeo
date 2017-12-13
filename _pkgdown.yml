@@ -49,13 +49,13 @@ navbar:
       menu:
       - text: Abundance
       - text: Abundance and basal area
-        href: https://bookdown.org/forestgeoguest/abundance/
+        href: https://forestgeo.github.io/forestr/articles/abundance.html
       - text: The BIOMASS package
         href: https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html
       - text: ----------
       - text: Demography
       - text: Growth, mortality and recruitment
-        href: https://bookdown.org/forestgeoguest/demography/
+        href: https://forestgeo.github.io/demography/articles/demography.html
       - text: ----------
       - text: Map
       - text: Map species distributions
@@ -76,18 +76,19 @@ reference:
   - title: Core packages that install and load with fgeo
     desc: All these packages automatically load with `library(fgeo)`
     contents:
+      - bciex
+      - demography
       - forestr
+      - map
 
   - title: Other packages that install but don't load with fgeo
     desc: You must load each package manually
     contents:
-      - bciex
-      - map
+      - soilkrig
 
   - title: Suggested packages that don't install nor load with fgeo
     desc: You must install and load each package manually
     contents:
       - BIOMASS
       - ctfs
-      - soilkrig
       - try
