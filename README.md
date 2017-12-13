@@ -26,7 +26,7 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --
 #> v forestr    0.0.0.9000     v bciex      0.0.0.9000
 #> v map        0.0.0.9007     v demography 0.0.0.9000
 #> 
