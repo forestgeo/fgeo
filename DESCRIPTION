@@ -36,8 +36,10 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 Remotes: forestgeo/bciex,
+    forestgeo/ctfs,
     forestgeo/forestr,
     forestgeo/map,
+    forestgeo/soilkrig,
     forestgeo/try
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
