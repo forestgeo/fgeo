@@ -144,7 +144,29 @@ remotes::install_github("forestgeo/fgeo")</a></code></pre>
 <span class="co">#&gt; v map        0.0.0.9007     v demography 0.0.0.9000</span>
 <span class="co">#&gt; </span></code></pre></div>
 <p>You can see conflicts with other packages with <code><a href="reference/fgeo_conflicts.html">fgeo_conflicts()</a></code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ctfs)
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'ctfs'</span>
+<span class="co">#&gt; The following objects are masked from 'package:demography':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     growth, mortality, recruitment</span>
+<span class="co">#&gt; The following object is masked from 'package:forestr':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     abundance</span>
+
+<span class="kw"><a href="reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()
+<span class="co">#&gt; -- Conflicts ------------------------------------------------- fgeo_conflicts() --</span>
+<span class="co">#&gt; x ctfs::abundance()   masks forestr::abundance()</span>
+<span class="co">#&gt; x ctfs::growth()      masks demography::growth()</span>
+<span class="co">#&gt; x ctfs::mortality()   masks demography::mortality()</span>
+<span class="co">#&gt; x ctfs::recruitment() masks demography::recruitment()</span></code></pre></div>
+<p><strong>fgeo</strong> installs these packages:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/fgeo_packages.html">fgeo_packages</a></span>()
+<span class="co">#&gt; [1] "bciex"      "cli"        "crayon"     "demography" "forestr"   </span>
+<span class="co">#&gt; [6] "map"        "purrr"      "rstudioapi" "fgeo"</span></code></pre></div>
+<p><strong>fgeo</strong> loads these packages:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fgeo<span class="op">:::</span>core
+<span class="co">#&gt; [1] "forestr"    "map"        "bciex"      "demography"</span></code></pre></div>
 </div>
 </div>
 </div>

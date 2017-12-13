@@ -35,5 +35,35 @@ library(fgeo)
 You can see conflicts with other packages with `fgeo_conflicts()`.
 
 ``` r
+library(ctfs)
+#> 
+#> Attaching package: 'ctfs'
+#> The following objects are masked from 'package:demography':
+#> 
+#>     growth, mortality, recruitment
+#> The following object is masked from 'package:forestr':
+#> 
+#>     abundance
+
 fgeo_conflicts()
+#> -- Conflicts ------------------------------------------------- fgeo_conflicts() --
+#> x ctfs::abundance()   masks forestr::abundance()
+#> x ctfs::growth()      masks demography::growth()
+#> x ctfs::mortality()   masks demography::mortality()
+#> x ctfs::recruitment() masks demography::recruitment()
+```
+
+**fgeo** installs these packages:
+
+``` r
+fgeo_packages()
+#> [1] "bciex"      "cli"        "crayon"     "demography" "forestr"   
+#> [6] "map"        "purrr"      "rstudioapi" "fgeo"
+```
+
+**fgeo** loads these packages:
+
+``` r
+fgeo:::core
+#> [1] "forestr"    "map"        "bciex"      "demography"
 ```
