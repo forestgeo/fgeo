@@ -26,7 +26,6 @@ Imports:
     rstudioapi (>= 0.7)
 Suggests: 
     BIOMASS,
-    covr,
     ctfs,
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4),
@@ -37,6 +36,7 @@ Encoding: UTF-8
 LazyData: true
 Remotes: forestgeo/bciex,
     forestgeo/ctfs,
+    forestgeo/demography,
     forestgeo/forestr,
     forestgeo/map,
     forestgeo/soilkrig,
