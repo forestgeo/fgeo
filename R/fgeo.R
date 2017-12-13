@@ -13,11 +13,11 @@ NULL
 
 #' Recruitment, mortality and growth
 #'
-#' [Go to demography](https://forestgeo.github.io/demography/)
-#' @name demography
+#' [Go to fgeo.demography](https://forestgeo.github.io/fgeo.demography/)
+#' @name fgeo.demography
 NULL
 
-#' Abundance; basal area; demography; species-distributions maps.
+#' Abundance and basal area.
 #'
 #' [Go to forestr](https://forestgeo.github.io/forestr/)
 #' @name forestr

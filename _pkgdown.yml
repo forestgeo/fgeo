@@ -55,7 +55,7 @@ navbar:
       - text: ----------
       - text: Demography
       - text: Growth, mortality and recruitment
-        href: https://forestgeo.github.io/demography/articles/demography.html
+        href: https://forestgeo.github.io/fgeo.demography/articles/demography.html
       - text: ----------
       - text: Map
       - text: Map species distributions
@@ -77,7 +77,7 @@ reference:
     desc: All these packages automatically load with `library(fgeo)`
     contents:
       - bciex
-      - demography
+      - fgeo.demography
       - forestr
       - map
 

@@ -1,4 +1,4 @@
-core <- c("forestr", "map", "bciex", "demography")
+core <- c("forestr", "map", "bciex", "fgeo.demography")
 
 core_loaded <- function() {
   search <- paste0("package:", core)

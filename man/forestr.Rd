@@ -2,7 +2,7 @@
 % Please edit documentation in R/fgeo.R
 \name{forestr}
 \alias{forestr}
-\title{Abundance; basal area; demography; species-distributions maps.}
+\title{Abundance and basal area.}
 \description{
 \href{https://forestgeo.github.io/forestr/}{Go to forestr}
 }
