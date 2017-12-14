@@ -26,9 +26,9 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --
 #> v forestr         0.0.0.9000     v bciex           0.0.0.9000
-#> v map             0.0.0.9007     v fgeo.demography 0.0.0.9000
+#> v map             0.0.0.9008     v fgeo.demography 0.0.0.9000
 #> 
 ```
 
@@ -46,7 +46,7 @@ library(ctfs)
 #>     abundance
 
 fgeo_conflicts()
-#> -- Conflicts ----------------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
 #> x ctfs::abundance()   masks forestr::abundance()
 #> x ctfs::growth()      masks fgeo.demography::growth()
 #> x ctfs::mortality()   masks fgeo.demography::mortality()

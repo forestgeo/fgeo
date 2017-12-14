@@ -2,7 +2,13 @@
 % Please edit documentation in R/fgeo.R
 \name{try}
 \alias{try}
-\title{Try new code before it's released.}
-\description{
-\href{https://forestgeo.github.io/try}{Go to try}
+\title{try: Try new code before it is released.}
+\section{Installation}{
+\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/try")
 }
+
+\href{https://forestgeo.github.io/try/}{Learn more about try}
+}
+

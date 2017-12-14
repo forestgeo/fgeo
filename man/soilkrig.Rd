@@ -2,7 +2,13 @@
 % Please edit documentation in R/fgeo.R
 \name{soilkrig}
 \alias{soilkrig}
-\title{Krig soil data as per John et al. (2007).}
-\description{
-\href{https://forestgeo.github.io/soilkrig}{Go to soilkrig}
+\title{soilkrig: Krig soil data as per John et al. (2007).}
+\section{Installation}{
+\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/soilkrig")
 }
+
+\href{https://forestgeo.github.io/soilkrig/}{Learn more about soilkrig}
+}
+

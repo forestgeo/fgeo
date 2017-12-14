@@ -5,27 +5,75 @@
 
 # Core packages -----------------------------------------------------------
 
-#' Example data sets from Barro Colorado Island (BCI).
+#' bciex: Data sets for examples -- from Barro Colorado Island.
 #'
-#' [Go to bciex](https://forestgeo.github.io/bciex/)
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/bciex")
+#' ```
+#'
+#' [Learn more about bciex](https://forestgeo.github.io/bciex/)
 #' @name bciex
 NULL
 
-#' Recruitment, mortality and growth
+
+#' fgeo.demography: Analyze recruitment, mortality and growth.
 #'
-#' [Go to fgeo.demography](https://forestgeo.github.io/fgeo.demography/)
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/fgeo.demography")
+#' ```
+#'
+#' [Learn more about fgeo.demography](https://forestgeo.github.io/fgeo.demography/)
 #' @name fgeo.demography
 NULL
 
-#' Abundance and basal area.
+
+#' forestr: Analyze abundance and basal area.
 #'
-#' [Go to forestr](https://forestgeo.github.io/forestr/)
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/forestr")
+#' ```
+#'
+#' [Learn more about forestr](https://forestgeo.github.io/forestr/)
 #' @name forestr
 NULL
 
-#' Map ForestGEO's data.
+
+
+#' map: Map ForestGEO's data.
 #'
-#' [Go to map](https://forestgeo.github.io/map/)
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/map")
+#' ```
+#'
+#' [Learn more about map](https://forestgeo.github.io/map/)
 #' @name map
 NULL
 
@@ -33,9 +81,20 @@ NULL
 
 # Other packages that install with fgeo -----------------------------------
 
-#' Krig soil data as per John et al. (2007).
+#' soilkrig: Krig soil data as per John et al. (2007).
 #'
-#' [Go to soilkrig](https://forestgeo.github.io/soilkrig)
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/soilkrig")
+#' ```
+#'
+#' [Learn more about soilkrig](https://forestgeo.github.io/soilkrig/)
 #' @name soilkrig
 NULL
 
@@ -43,22 +102,56 @@ NULL
 
 # Suggested packages that don't install with fgeo -------------------------
 
-#' Estimate above-ground biomass in tropical forests.
+#' BIOMASS: Estimate above-ground biomass in tropical forests.
 #'
 #' * [Description](https://CRAN.R-project.org/package=BIOMASS)
 #' * [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
 #' * [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
+#'
+#' @section Installation:
+#'
+#' ```
+#' install.packages("BIOMASS")
+#' ```
+#'
+#' [Learn more about BIOMASS](https://CRAN.R-project.org/package=BIOMASS)
 #' @name BIOMASS
 NULL
 
-#' Legacy code from the CTFS-R Package.
+
+
+#' ctfs: Legacy code from the CTFS-R Package.
 #'
-#' [Go to ctfs](https://forestgeo.github.io/ctfs/)
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/ctfs")
+#' ```
+#'
+#' [Learn more about ctfs](https://forestgeo.github.io/ctfs/)
 #' @name ctfs
 NULL
 
-#' Try new code before it's released.
+
+
+#' try: Try new code before it is released.
 #'
-#' [Go to try](https://forestgeo.github.io/try)
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/try")
+#' ```
+#'
+#' [Learn more about try](https://forestgeo.github.io/try/)
 #' @name try
 NULL

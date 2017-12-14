@@ -2,7 +2,13 @@
 % Please edit documentation in R/fgeo.R
 \name{bciex}
 \alias{bciex}
-\title{Example data sets from Barro Colorado Island (BCI).}
-\description{
-\href{https://forestgeo.github.io/bciex/}{Go to bciex}
+\title{bciex: Data sets for examples -- from Barro Colorado Island.}
+\section{Installation}{
+\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/bciex")
 }
+
+\href{https://forestgeo.github.io/bciex/}{Learn more about bciex}
+}
+

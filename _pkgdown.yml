@@ -59,7 +59,7 @@ navbar:
       - text: ----------
       - text: Map
       - text: Map species distributions
-        href: https://forestgeo.github.io/map/articles/index.html
+        href: https://forestgeo.github.io/map/articles/map_sp.html
       - text: Map trees in a plot for fieldwork
         href: https://forestgeo.github.io/map/articles/map_tag.html
 

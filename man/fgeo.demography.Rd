@@ -2,7 +2,13 @@
 % Please edit documentation in R/fgeo.R
 \name{fgeo.demography}
 \alias{fgeo.demography}
-\title{Recruitment, mortality and growth}
-\description{
-\href{https://forestgeo.github.io/fgeo.demography/}{Go to fgeo.demography}
+\title{fgeo.demography: Analyze recruitment, mortality and growth.}
+\section{Installation}{
+\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/fgeo.demography")
 }
+
+\href{https://forestgeo.github.io/fgeo.demography/}{Learn more about fgeo.demography}
+}
+

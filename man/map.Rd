@@ -2,7 +2,13 @@
 % Please edit documentation in R/fgeo.R
 \name{map}
 \alias{map}
-\title{Map ForestGEO's data.}
-\description{
-\href{https://forestgeo.github.io/map/}{Go to map}
+\title{map: Map ForestGEO's data.}
+\section{Installation}{
+\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/map")
 }
+
+\href{https://forestgeo.github.io/map/}{Learn more about map}
+}
+

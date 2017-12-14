@@ -2,7 +2,13 @@
 % Please edit documentation in R/fgeo.R
 \name{forestr}
 \alias{forestr}
-\title{Abundance and basal area.}
-\description{
-\href{https://forestgeo.github.io/forestr/}{Go to forestr}
+\title{forestr: Analyze abundance and basal area.}
+\section{Installation}{
+\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/forestr")
 }
+
+\href{https://forestgeo.github.io/forestr/}{Learn more about forestr}
+}
+

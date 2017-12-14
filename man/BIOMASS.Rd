@@ -2,7 +2,7 @@
 % Please edit documentation in R/fgeo.R
 \name{BIOMASS}
 \alias{BIOMASS}
-\title{Estimate above-ground biomass in tropical forests.}
+\title{BIOMASS: Estimate above-ground biomass in tropical forests.}
 \description{
 \itemize{
 \item \href{https://CRAN.R-project.org/package=BIOMASS}{Description}
@@ -10,3 +10,10 @@
 \item \href{https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html}{Vignette}
 }
 }
+\section{Installation}{
+\preformatted{install.packages("BIOMASS")
+}
+
+\href{https://CRAN.R-project.org/package=BIOMASS}{Learn more about BIOMASS}
+}
+

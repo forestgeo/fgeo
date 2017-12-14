@@ -2,7 +2,13 @@
 % Please edit documentation in R/fgeo.R
 \name{ctfs}
 \alias{ctfs}
-\title{Legacy code from the CTFS-R Package.}
-\description{
-\href{https://forestgeo.github.io/ctfs/}{Go to ctfs}
+\title{ctfs: Legacy code from the CTFS-R Package.}
+\section{Installation}{
+\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/ctfs")
 }
+
+\href{https://forestgeo.github.io/ctfs/}{Learn more about ctfs}
+}
+
