@@ -26,9 +26,9 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --
-#> v forestr    0.0.0.9000     v bciex      0.0.0.9000
-#> v map        0.0.0.9007     v demography 0.0.0.9000
+#> -- Attaching packages --------------------------------------------------- fgeo 0.0.0.9000 --
+#> v forestr         0.0.0.9000     v bciex           0.0.0.9000
+#> v map             0.0.0.9007     v fgeo.demography 0.0.0.9000
 #> 
 ```
 
@@ -38,7 +38,7 @@ You can see conflicts with other packages with `fgeo_conflicts()`.
 library(ctfs)
 #> 
 #> Attaching package: 'ctfs'
-#> The following objects are masked from 'package:demography':
+#> The following objects are masked from 'package:fgeo.demography':
 #> 
 #>     growth, mortality, recruitment
 #> The following object is masked from 'package:forestr':
@@ -46,24 +46,25 @@ library(ctfs)
 #>     abundance
 
 fgeo_conflicts()
-#> -- Conflicts ------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ----------------------------------------------------------- fgeo_conflicts() --
 #> x ctfs::abundance()   masks forestr::abundance()
-#> x ctfs::growth()      masks demography::growth()
-#> x ctfs::mortality()   masks demography::mortality()
-#> x ctfs::recruitment() masks demography::recruitment()
+#> x ctfs::growth()      masks fgeo.demography::growth()
+#> x ctfs::mortality()   masks fgeo.demography::mortality()
+#> x ctfs::recruitment() masks fgeo.demography::recruitment()
 ```
 
 **fgeo** installs these packages:
 
 ``` r
 fgeo_packages()
-#> [1] "bciex"      "cli"        "crayon"     "demography" "forestr"   
-#> [6] "map"        "purrr"      "rstudioapi" "fgeo"
+#> [1] "bciex"           "cli"             "crayon"          "fgeo.demography"
+#> [5] "forestr"         "map"             "purrr"           "rstudioapi"     
+#> [9] "fgeo"
 ```
 
 **fgeo** loads these packages:
 
 ``` r
 fgeo:::core
-#> [1] "forestr"    "map"        "bciex"      "demography"
+#> [1] "forestr"         "map"             "bciex"           "fgeo.demography"
 ```
