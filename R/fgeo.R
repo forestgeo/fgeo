@@ -45,7 +45,7 @@ NULL
 
 # Other packages that install with fgeo -----------------------------------
 
-#' bciex: Data sets for examples -- from Barro Colorado Island.
+#' bciex: Data sets for examples from BCI.
 #'
 #' @description
 #' NULL
