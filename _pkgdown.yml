@@ -74,21 +74,28 @@ navbar:
 reference:
 
   - title: Core packages that install and load with fgeo
-    desc: All these packages automatically load with `library(fgeo)`
+    desc: These packages automatically install in one step, when you
+          install __fgeo__ with `install_github("forestgeo/fgeo")`; and
+          they also load in one step, when you run `library(fgeo)`.
     contents:
-      - bciex
-      - fgeo.demography
       - forestr
       - map
 
   - title: Other packages that install but don't load with fgeo
-    desc: You must load each package manually
+    desc: These packages automatically install in one step, when you
+          install __fgeo__ with `install_github("forestgeo/fgeo")`; but
+          if you want to use them, you must first manually load each of them
+          with `library(package_you_want)`.
     contents:
-      - soilkrig
+      - bciex
 
   - title: Suggested packages that don't install nor load with fgeo
-    desc: You must install and load each package manually
+    desc: These packages don't install nor load with __fgeo__. They are
+          suggested here because you may find them useful. But if you want to
+          use them, you must first manually install and load each of them.
     contents:
       - BIOMASS
       - ctfs
+      - fgeo.demography
+      - soilkrig
       - try

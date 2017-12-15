@@ -19,7 +19,6 @@ Imports:
     bciex,
     cli (>= 1.0.0),
     crayon (>= 1.3.4),
-    fgeo.demography,
     forestr,
     map,
     purrr (>= 0.2.4),
@@ -27,6 +26,7 @@ Imports:
 Suggests: 
     BIOMASS,
     ctfs,
+    fgeo.demography,
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4),
     soilkrig,
