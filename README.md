@@ -36,8 +36,6 @@ You can see conflicts with other packages with `fgeo_conflicts()`.
 ``` r
 abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
-#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
-#> x .GlobalEnv::abundance() masks fgeo.abundance::abundance()
 ```
 
 **fgeo** installs these packages:
