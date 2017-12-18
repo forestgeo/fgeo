@@ -2,7 +2,7 @@
 % Please edit documentation in R/fgeo.R
 \name{bciex}
 \alias{bciex}
-\title{bciex: Data sets for examples -- from Barro Colorado Island.}
+\title{bciex: Data sets for examples from BCI.}
 \section{Installation}{
 \preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
 # install.packages("remotes")
