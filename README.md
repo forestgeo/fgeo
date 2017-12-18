@@ -26,45 +26,29 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --
-#> v forestr         0.0.0.9000     v bciex           0.0.0.9000
-#> v map             0.0.0.9008     v fgeo.demography 0.0.0.9000
+#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --
+#> v forestr 0.0.0.9001     v map     0.0.0.9008
 #> 
 ```
 
 You can see conflicts with other packages with `fgeo_conflicts()`.
 
 ``` r
-library(ctfs)
-#> 
-#> Attaching package: 'ctfs'
-#> The following objects are masked from 'package:fgeo.demography':
-#> 
-#>     growth, mortality, recruitment
-#> The following object is masked from 'package:forestr':
-#> 
-#>     abundance
-
+abundance <- function() "I conflict with forestr::abundance()"
 fgeo_conflicts()
-#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
-#> x ctfs::abundance()   masks forestr::abundance()
-#> x ctfs::growth()      masks fgeo.demography::growth()
-#> x ctfs::mortality()   masks fgeo.demography::mortality()
-#> x ctfs::recruitment() masks fgeo.demography::recruitment()
 ```
 
 **fgeo** installs these packages:
 
 ``` r
 fgeo_packages()
-#> [1] "bciex"           "cli"             "crayon"          "fgeo.demography"
-#> [5] "forestr"         "map"             "purrr"           "rstudioapi"     
-#> [9] "fgeo"
+#> [1] "bciex"      "cli"        "crayon"     "forestr"    "map"       
+#> [6] "purrr"      "rstudioapi" "fgeo"
 ```
 
 **fgeo** loads these packages:
 
 ``` r
 fgeo:::core
-#> [1] "forestr"         "map"             "bciex"           "fgeo.demography"
+#> [1] "forestr" "map"
 ```

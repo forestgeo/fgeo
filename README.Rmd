@@ -40,8 +40,7 @@ library(fgeo)
 You can see conflicts with other packages with `fgeo_conflicts()`.
 
 ```{r conflicts}
-library(ctfs)
-
+abundance <- function() "I conflict with forestr::abundance()"
 fgeo_conflicts()
 ```
 

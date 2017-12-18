@@ -139,35 +139,21 @@ remotes::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p><code>library(fgeo)</code> will load the core <strong>fgeo</strong> packages.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fgeo)
-<span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --</span>
-<span class="co">#&gt; v forestr         0.0.0.9000     v bciex           0.0.0.9000</span>
-<span class="co">#&gt; v map             0.0.0.9008     v fgeo.demography 0.0.0.9000</span>
+<span class="co">#&gt; -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --</span>
+<span class="co">#&gt; v forestr 0.0.0.9001     v map     0.0.0.9008</span>
 <span class="co">#&gt; </span></code></pre></div>
 <p>You can see conflicts with other packages with <code><a href="reference/fgeo_conflicts.html">fgeo_conflicts()</a></code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ctfs)
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'ctfs'</span>
-<span class="co">#&gt; The following objects are masked from 'package:fgeo.demography':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     growth, mortality, recruitment</span>
-<span class="co">#&gt; The following object is masked from 'package:forestr':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     abundance</span>
-
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">abundance &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="st">"I conflict with forestr::abundance()"</span>
 <span class="kw"><a href="reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()
-<span class="co">#&gt; -- Conflicts ---------------------------------------------------- fgeo_conflicts() --</span>
-<span class="co">#&gt; x ctfs::abundance()   masks forestr::abundance()</span>
-<span class="co">#&gt; x ctfs::growth()      masks fgeo.demography::growth()</span>
-<span class="co">#&gt; x ctfs::mortality()   masks fgeo.demography::mortality()</span>
-<span class="co">#&gt; x ctfs::recruitment() masks fgeo.demography::recruitment()</span></code></pre></div>
+<span class="co">#&gt; -- Conflicts ------------------------------------------------------ fgeo_conflicts() --</span>
+<span class="co">#&gt; x .GlobalEnv::abundance() masks forestr::abundance()</span></code></pre></div>
 <p><strong>fgeo</strong> installs these packages:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/fgeo_packages.html">fgeo_packages</a></span>()
-<span class="co">#&gt; [1] "bciex"           "cli"             "crayon"          "fgeo.demography"</span>
-<span class="co">#&gt; [5] "forestr"         "map"             "purrr"           "rstudioapi"     </span>
-<span class="co">#&gt; [9] "fgeo"</span></code></pre></div>
+<span class="co">#&gt; [1] "bciex"      "cli"        "crayon"     "forestr"    "map"       </span>
+<span class="co">#&gt; [6] "purrr"      "rstudioapi" "fgeo"</span></code></pre></div>
 <p><strong>fgeo</strong> loads these packages:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fgeo<span class="op">:::</span>core
-<span class="co">#&gt; [1] "forestr"         "map"             "bciex"           "fgeo.demography"</span></code></pre></div>
+<span class="co">#&gt; [1] "forestr" "map"</span></code></pre></div>
 </div>
 </div>
 </div>
