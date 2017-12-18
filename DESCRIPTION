@@ -24,13 +24,8 @@ Imports:
     purrr (>= 0.2.4),
     rstudioapi (>= 0.7)
 Suggests: 
-    BIOMASS,
-    ctfs,
-    fgeo.demography,
     knitr (>= 1.17),
-    rmarkdown (>= 1.7.4),
-    soilkrig,
-    try
+    rmarkdown (>= 1.7.4)
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
