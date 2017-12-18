@@ -40,7 +40,7 @@ library(fgeo)
 You can see conflicts with other packages with `fgeo_conflicts()`.
 
 ```{r conflicts}
-abundance <- function() "I conflict with forestr::abundance()"
+abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
 ```
 

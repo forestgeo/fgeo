@@ -49,7 +49,7 @@ navbar:
       menu:
       - text: Abundance
       - text: Abundance and basal area
-        href: https://forestgeo.github.io/forestr/articles/abundance.html
+        href: https://forestgeo.github.io/fgeo.abundance/articles/abundance.html
       - text: The BIOMASS package
         href: https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html
       - text: ----------
@@ -78,7 +78,7 @@ reference:
           install __fgeo__ with `install_github("forestgeo/fgeo")`; and
           they also load in one step, when you run `library(fgeo)`.
     contents:
-      - forestr
+      - fgeo.abundance
       - map
 
   - title: Other packages that install but don't load with fgeo

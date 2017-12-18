@@ -27,28 +27,30 @@ Usage
 ``` r
 library(fgeo)
 #> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --
-#> v forestr 0.0.0.9001     v map     0.0.0.9008
+#> v fgeo.abundance 0.0.0.9002     v map            0.0.0.9008
 #> 
 ```
 
 You can see conflicts with other packages with `fgeo_conflicts()`.
 
 ``` r
-abundance <- function() "I conflict with forestr::abundance()"
+abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
+#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
+#> x .GlobalEnv::abundance() masks fgeo.abundance::abundance()
 ```
 
 **fgeo** installs these packages:
 
 ``` r
 fgeo_packages()
-#> [1] "bciex"      "cli"        "crayon"     "forestr"    "map"       
-#> [6] "purrr"      "rstudioapi" "fgeo"
+#> [1] "bciex"          "cli"            "crayon"         "fgeo.abundance"
+#> [5] "map"            "purrr"          "rstudioapi"     "fgeo"
 ```
 
 **fgeo** loads these packages:
 
 ``` r
 fgeo:::core
-#> [1] "forestr" "map"
+#> [1] "fgeo.abundance" "map"
 ```

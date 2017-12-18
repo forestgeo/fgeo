@@ -5,7 +5,7 @@
 
 # Core packages -----------------------------------------------------------
 
-#' forestr: Analyze abundance and basal area.
+#' fgeo.abundance: Analyze abundance and basal area.
 #'
 #' @description
 #' NULL
@@ -15,11 +15,11 @@
 #' ```
 #' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
 #' # install.packages("remotes")
-#' remotes::install_github("forestgeo/forestr")
+#' remotes::install_github("forestgeo/fgeo.abundance")
 #' ```
 #'
-#' [Learn more about forestr](https://forestgeo.github.io/forestr/)
-#' @name forestr
+#' [Learn more about fgeo.abundance](https://forestgeo.github.io/fgeo.abundance/)
+#' @name fgeo.abundance
 NULL
 
 
