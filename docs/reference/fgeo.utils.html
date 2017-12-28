@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • fgeo</title>
+<title>fgeo.utils: Utility functions of ForestGEO � fgeo.utils • fgeo</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -128,112 +128,30 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.0.0.9000</small>
-      </h1>
+    <h1>fgeo.utils: Utility functions of ForestGEO</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-core-packages-that-install-and-load-with-fgeo" class="hasAnchor"><a href="#section-core-packages-that-install-and-load-with-fgeo" class="anchor"></a>Core packages that install and load with fgeo</h2>
-            <p class="section-desc"><p>These packages automatically install in one step, when you install <strong>fgeo</strong> with <code>install_github("forestgeo/fgeo")</code>; and they also load in one step, when you run <code>library(fgeo)</code>.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="fgeo.abundance.html">fgeo.abundance</a></code> </p>
-          </td>
-          <td><p>fgeo.abundance: Analyze abundance and basal area.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="fgeo.utils.html">fgeo.utils</a></code> </p>
-          </td>
-          <td><p>fgeo.utils: Utility functions of ForestGEO</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="map.html">map</a></code> </p>
-          </td>
-          <td><p>map: Map ForestGEO's data.</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-other-packages-that-install-but-don-t-load-with-fgeo" class="hasAnchor"><a href="#section-other-packages-that-install-but-don-t-load-with-fgeo" class="anchor"></a>Other packages that install but don't load with fgeo</h2>
-            <p class="section-desc"><p>These packages automatically install in one step, when you install <strong>fgeo</strong> with <code>install_github("forestgeo/fgeo")</code>; but if you want to use them, you must first manually load each of them with <code>library(package_you_want)</code>.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="bciex.html">bciex</a></code> </p>
-          </td>
-          <td><p>bciex: Data sets for examples from BCI.</p></td>
-        </tr>
-      </tbody><tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-suggested-packages-that-don-t-install-nor-load-with-fgeo" class="hasAnchor"><a href="#section-suggested-packages-that-don-t-install-nor-load-with-fgeo" class="anchor"></a>Suggested packages that don't install nor load with fgeo</h2>
-            <p class="section-desc"><p>These packages don’t install nor load with <strong>fgeo</strong>. They are suggested here because you may find them useful. But if you want to use them, you must first manually install and load each of them.</p></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="BIOMASS.html">BIOMASS</a></code> </p>
-          </td>
-          <td><p>BIOMASS: Estimate above-ground biomass in tropical forests.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ctfs.html">ctfs</a></code> </p>
-          </td>
-          <td><p>ctfs: Legacy code from the CTFS-R Package.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="fgeo.demography.html">fgeo.demography</a></code> </p>
-          </td>
-          <td><p>fgeo.demography: Analyze recruitment, mortality and growth.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="soilkrig.html">soilkrig</a></code> </p>
-          </td>
-          <td><p>soilkrig: Krig soil data as per John et al. (2007).</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="try.html">try</a></code> </p>
-          </td>
-          <td><p>try: Try new code before it is released.</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+        
+    <h2 class="hasAnchor" id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
+
+    <pre># To install from a private repo, see auth_token at https://goo.gl/re1LFe
+# install.packages("remotes")
+remotes::install_github("forestgeo/fgeo.utils")
+</pre><p><a href='https://forestgeo.github.io/fgeo.utils/'>Learn more about fgeo.utils</a></p>
+    
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-core-packages-that-install-and-load-with-fgeo">Core packages that install and load with fgeo</a></li>
-      <li><a href="#section-other-packages-that-install-but-don-t-load-with-fgeo">Other packages that install but don't load with fgeo</a></li>
-      <li><a href="#section-suggested-packages-that-don-t-install-nor-load-with-fgeo">Suggested packages that don't install nor load with fgeo</a></li>
-    </ul>
+      
+      <li><a href="#installation">Installation</a></li>
+          </ul>
+
   </div>
 </div>
 

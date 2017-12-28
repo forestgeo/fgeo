@@ -24,6 +24,25 @@ NULL
 
 
 
+#' fgeo.utils: Utility functions of ForestGEO
+#'
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/fgeo.utils")
+#' ```
+#'
+#' [Learn more about fgeo.utils](https://forestgeo.github.io/fgeo.utils/)
+#' @name fgeo.utils
+NULL
+
+
+
 #' map: Map ForestGEO's data.
 #'
 #' @description

@@ -79,6 +79,7 @@ reference:
           they also load in one step, when you run `library(fgeo)`.
     contents:
       - fgeo.abundance
+      - fgeo.utils
       - map
 
   - title: Other packages that install but don't load with fgeo

@@ -26,7 +26,8 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9000 --
+#> v fgeo.abundance 0.0.0.9002     v fgeo.utils     0.0.0.9000
 #> v fgeo.abundance 0.0.0.9002     v map            0.0.0.9008
 #> 
 ```
@@ -34,6 +35,7 @@ library(fgeo)
 You can see conflicts with other packages with `fgeo_conflicts()`.
 
 ``` r
+# Intentionally creating a conflict to show it
 abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
 ```
@@ -43,12 +45,13 @@ fgeo_conflicts()
 ``` r
 fgeo_packages()
 #> [1] "bciex"          "cli"            "crayon"         "fgeo.abundance"
-#> [5] "map"            "purrr"          "rstudioapi"     "fgeo"
+#> [5] "fgeo.utils"     "map"            "purrr"          "rstudioapi"    
+#> [9] "fgeo"
 ```
 
 **fgeo** loads these packages:
 
 ``` r
 fgeo:::core
-#> [1] "fgeo.abundance" "map"
+#> [1] "fgeo.abundance" "fgeo.utils"     "map"
 ```

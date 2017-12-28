@@ -1,4 +1,4 @@
-core <- c("fgeo.abundance", "map")
+core <- c("fgeo.abundance", "fgeo.utils", "map")
 
 core_loaded <- function() {
   search <- paste0("package:", core)
