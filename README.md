@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-fgeo: Analyze forest dynamics <img src="inst/figures/logo.png" align="right" />
-===============================================================================
+fgeo: Analyze forest dynamics <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 />
+===================================================================================================
 
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
