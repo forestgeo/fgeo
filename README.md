@@ -26,8 +26,7 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9000 --
-#> v fgeo.abundance 0.0.0.9002     v fgeo.utils     0.0.0.9000
+#> -- Attaching packages -------------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance 0.0.0.9002     v map            0.0.0.9008
 #> 
 ```
@@ -45,13 +44,12 @@ fgeo_conflicts()
 ``` r
 fgeo_packages()
 #> [1] "bciex"          "cli"            "crayon"         "fgeo.abundance"
-#> [5] "fgeo.utils"     "map"            "purrr"          "rstudioapi"    
-#> [9] "fgeo"
+#> [5] "map"            "purrr"          "rstudioapi"     "fgeo"
 ```
 
 **fgeo** loads these packages:
 
 ``` r
 fgeo:::core
-#> [1] "fgeo.abundance" "fgeo.utils"     "map"
+#> [1] "fgeo.abundance" "map"
 ```
