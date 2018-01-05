@@ -4,8 +4,7 @@
 \alias{map}
 \title{map: Map ForestGEO's data.}
 \section{Installation}{
-\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
-# install.packages("remotes")
+\preformatted{# install.packages("remotes")
 remotes::install_github("forestgeo/map")
 }
 

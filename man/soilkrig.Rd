@@ -4,8 +4,7 @@
 \alias{soilkrig}
 \title{soilkrig: Krig soil data as per John et al. (2007).}
 \section{Installation}{
-\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
-# install.packages("remotes")
+\preformatted{# install.packages("remotes")
 remotes::install_github("forestgeo/soilkrig")
 }
 

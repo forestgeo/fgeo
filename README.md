@@ -18,7 +18,6 @@ Overview
 Installation
 ------------
 
-    # To install from a private repo, see auth_token at https://goo.gl/re1LFe
     # install.packages("remotes")
     remotes::install_github("forestgeo/fgeo")
 

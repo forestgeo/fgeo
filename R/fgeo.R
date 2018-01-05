@@ -13,7 +13,6 @@
 #' @section Installation:
 #'
 #' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
 #' # install.packages("remotes")
 #' remotes::install_github("forestgeo/fgeo.abundance")
 #' ```
@@ -32,7 +31,6 @@ NULL
 #' @section Installation:
 #'
 #' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
 #' # install.packages("remotes")
 #' remotes::install_github("forestgeo/fgeo.utils")
 #' ```
@@ -51,7 +49,6 @@ NULL
 #' @section Installation:
 #'
 #' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
 #' # install.packages("remotes")
 #' remotes::install_github("forestgeo/map")
 #' ```
@@ -72,7 +69,6 @@ NULL
 #' @section Installation:
 #'
 #' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
 #' # install.packages("remotes")
 #' remotes::install_github("forestgeo/bciex")
 #' ```
@@ -91,7 +87,6 @@ NULL
 #' @section Installation:
 #'
 #' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
 #' # install.packages("remotes")
 #' remotes::install_github("forestgeo/soilkrig")
 #' ```
@@ -110,7 +105,6 @@ NULL
 #' @section Installation:
 #'
 #' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
 #' # install.packages("remotes")
 #' remotes::install_github("forestgeo/fgeo.demography")
 #' ```

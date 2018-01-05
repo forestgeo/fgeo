@@ -72,17 +72,16 @@ navbar:
 reference:
 
   - title: Core packages that install and load with fgeo
-    desc: All these packages automatically install with
-          `install_github("forestgeo/fgeo")`, and load with `library(fgeo)`.
+    desc: Install these packages with `install_github("forestgeo/fgeo")` and
+          load them with `library(fgeo)`.
     contents:
       - fgeo.abundance
       - fgeo.utils
       - map
 
   - title: Other packages that automatically install with fgeo
-    desc: All these packages automatically install with
-          `install_github("forestgeo/fgeo")`; but you must load them
-          individually with `library(package_you_want)`.
+    desc: Install these packages with `install_github("forestgeo/fgeo")` and
+          load them with `library(package_you_want)`.
     contents:
       - bciex
       - fgeo.demography

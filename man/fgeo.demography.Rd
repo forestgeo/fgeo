@@ -4,8 +4,7 @@
 \alias{fgeo.demography}
 \title{fgeo.demography: Analyze recruitment, mortality and growth.}
 \section{Installation}{
-\preformatted{# To install from a private repo, see auth_token at https://goo.gl/re1LFe
-# install.packages("remotes")
+\preformatted{# install.packages("remotes")
 remotes::install_github("forestgeo/fgeo.demography")
 }
 
