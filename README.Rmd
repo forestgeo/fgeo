@@ -51,16 +51,3 @@ You can see conflicts with other packages with `fgeo_conflicts()`.
 abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
 ```
-
-__fgeo__ installs these packages:
-
-```{r}
-fgeo_packages()
-```
-
-__fgeo__ loads these packages:
-
-```{r}
-fgeo:::core
-```
-
