@@ -83,7 +83,24 @@ NULL
 
 
 
-# Suggested packages that don't install with fgeo -------------------------
+#' soilkrig: Krig soil data as per John et al. (2007).
+#'
+#' @description
+#' NULL
+#'
+#' @section Installation:
+#'
+#' ```
+#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
+#' # install.packages("remotes")
+#' remotes::install_github("forestgeo/soilkrig")
+#' ```
+#'
+#' [Learn more about soilkrig](https://forestgeo.github.io/soilkrig/)
+#' @name soilkrig
+NULL
+
+
 
 #' fgeo.demography: Analyze recruitment, mortality and growth.
 #'
@@ -103,6 +120,8 @@ NULL
 NULL
 
 
+
+# Suggested packages that don't install with fgeo -------------------------
 
 #' BIOMASS: Estimate above-ground biomass in tropical forests.
 #'
@@ -129,50 +148,7 @@ NULL
 #'
 #' @section Installation:
 #'
-#' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
-#' # install.packages("remotes")
-#' remotes::install_github("forestgeo/ctfs")
-#' ```
+#'  See http://ctfs.si.edu/Public/CTFSRPackage/
 #'
-#' [Learn more about ctfs](https://forestgeo.github.io/ctfs/)
-#' @name ctfs
-NULL
-
-
-
-#' soilkrig: Krig soil data as per John et al. (2007).
-#'
-#' @description
-#' NULL
-#'
-#' @section Installation:
-#'
-#' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
-#' # install.packages("remotes")
-#' remotes::install_github("forestgeo/soilkrig")
-#' ```
-#'
-#' [Learn more about soilkrig](https://forestgeo.github.io/soilkrig/)
-#' @name soilkrig
-NULL
-
-
-
-#' try: Try new code before it is released.
-#'
-#' @description
-#' NULL
-#'
-#' @section Installation:
-#'
-#' ```
-#' # To install from a private repo, see auth_token at https://goo.gl/re1LFe
-#' # install.packages("remotes")
-#' remotes::install_github("forestgeo/try")
-#' ```
-#'
-#' [Learn more about try](https://forestgeo.github.io/try/)
-#' @name try
+#' @name CTFS
 NULL

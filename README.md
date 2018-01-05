@@ -1,5 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+NOT YET OFFICIALLY RELEASED
+===========================
+
 fgeo: Analyze forest diversity and dynamics <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 />
 =================================================================================================================
 
@@ -26,7 +29,7 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages -------------------------------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance 0.0.0.9002     v fgeo.utils     0.0.0.9000
 #> v fgeo.abundance 0.0.0.9002     v map            0.0.0.9009
 #> 
@@ -38,8 +41,6 @@ You can see conflicts with other packages with `fgeo_conflicts()`.
 # Intentionally creating a conflict to show it
 abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
-#> -- Conflicts --------------------------------------------------------- fgeo_conflicts() --
-#> x .GlobalEnv::abundance() masks fgeo.abundance::abundance()
 ```
 
 **fgeo** installs these packages:

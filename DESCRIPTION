@@ -23,7 +23,9 @@ Imports:
     fgeo.utils,
     map,
     purrr (>= 0.2.4),
-    rstudioapi (>= 0.7)
+    rstudioapi (>= 0.7),
+    soilkrig,
+    fgeo.demography
 Suggests: 
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4)
@@ -33,6 +35,8 @@ LazyData: true
 Remotes: forestgeo/bciex,
     forestgeo/fgeo.abundance,
     forestgeo/fgeo.utils,
-    forestgeo/map
+    forestgeo/map,
+    forestgeo/soilkrig,
+    forestgeo/fgeo.demography
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
