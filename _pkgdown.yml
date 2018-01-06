@@ -33,18 +33,6 @@ navbar:
 
   right:
 
-    - text: Apps
-      menu:
-      - text: Explore Databases
-      - text: Allometric equations
-        href: https://bookdown.org/forestgeoguest/allodb_app/
-      - text: ----------
-      - text: Explore functions' arguments
-      - text: Tweak field maps
-        href: https://bookdown.org/forestgeoguest/map_tag_app/
-      - text: Krig soil data
-        href: https://bookdown.org/forestgeoguest/soilkrig_app/
-
     - text: Tutorials
       menu:
       - text: Abundance
@@ -60,6 +48,25 @@ navbar:
       - text: Map
       - text: Mapping Functions
         href: https://forestgeo.github.io/map/articles/map.html
+
+
+    - icon: fa-plus
+      menu:
+      - text: Apps
+      - text: allodb
+        href: https://bookdown.org/forestgeoguest/allodb_app/
+      - text: map_tag()
+        href: https://bookdown.org/forestgeoguest/map_tag_app/
+      - text: GetKrigedSoil()
+        href: https://bookdown.org/forestgeoguest/soilkrig_app/
+      - text: -----------
+      - text: Community
+      - text: Mixed R products by fgeo
+        href: http://rpubs.com/fgeopubs
+      - text: Mixed R products by partners
+        href: http://rpubs.com/fgeocommunity
+      - text: Blog (example)
+        href: https://maurolepore.netlify.com/
 
     - icon: fa-gavel
       href: https://github.com/maurolepore
