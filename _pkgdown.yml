@@ -49,23 +49,26 @@ navbar:
       - text: Mapping Functions
         href: https://forestgeo.github.io/map/articles/map.html
 
-
-    - icon: fa-plus
+    - text: Apps
       menu:
-      - text: Apps
       - text: allodb
         href: https://bookdown.org/forestgeoguest/allodb_app/
       - text: map_tag()
         href: https://bookdown.org/forestgeoguest/map_tag_app/
       - text: GetKrigedSoil()
         href: https://bookdown.org/forestgeoguest/soilkrig_app/
-      - text: -----------
-      - text: Community
+
+    - text: Community
+      menu:
       - text: Mixed R products by fgeo
         href: http://rpubs.com/fgeopubs
       - text: Mixed R products by partners
         href: http://rpubs.com/fgeocommunity
-      - text: Blog (example)
+      - text: learn (xxx create website with pkgdown)
+        href: https://github.com/forestgeo/learn
+      - text: forum (xxx create website with pkgdown)
+        href: https://github.com/forestgeo/forum
+      - text: Blog (xxx)
         href: https://maurolepore.netlify.com/
 
     - icon: fa-gavel
