@@ -82,7 +82,7 @@ navbar:
 reference:
 
   - title: Core packages that install and load with fgeo
-    desc: Install these packages with `install_github("forestgeo/fgeo")` and
+    desc: Install these packages with `remotes::install_github("forestgeo/fgeo")` and
           load them with `library(fgeo)`.
     contents:
       - fgeo.abundance
@@ -90,7 +90,7 @@ reference:
       - map
 
   - title: Other packages that automatically install with fgeo
-    desc: Install these packages with `install_github("forestgeo/fgeo")` and
+    desc: Install these packages with `remotes::install_github("forestgeo/fgeo")` and
           load them with `library(package_you_want)`.
     contents:
       - bciex
