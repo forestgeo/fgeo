@@ -28,9 +28,9 @@ Usage
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance 0.0.0.9002     v fgeo.utils     0.0.0.9000
-#> v fgeo.abundance 0.0.0.9002     v map            0.0.0.9009
+#> v fgeo.abundance 0.0.0.9002     v fgeo.map       0.0.0.9200
 #> 
 ```
 
@@ -40,4 +40,6 @@ You can see conflicts with other packages with `fgeo_conflicts()`.
 # Intentionally creating a conflict to show it
 abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
+#> -- Conflicts --------------------------------------------- fgeo_conflicts() --
+#> x .GlobalEnv::abundance() masks fgeo.abundance::abundance()
 ```

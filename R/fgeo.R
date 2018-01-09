@@ -41,7 +41,7 @@ NULL
 
 
 
-#' map: Map ForestGEO's data.
+#' fgeo.map: Map ForestGEO's data.
 #'
 #' @description
 #' NULL
@@ -50,11 +50,11 @@ NULL
 #'
 #' ```
 #' # install.packages("remotes")
-#' remotes::install_github("forestgeo/map")
+#' remotes::install_github("forestgeo/fgeo.map")
 #' ```
 #'
-#' [Learn more about map](https://forestgeo.github.io/map/)
-#' @name map
+#' [Learn more about fgeo.map](https://forestgeo.github.io/fgeo.map/)
+#' @name fgeo.map
 NULL
 
 

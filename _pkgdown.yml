@@ -47,7 +47,7 @@ navbar:
       - text: ----------
       - text: Map
       - text: Mapping Functions
-        href: https://forestgeo.github.io/map/articles/map.html
+        href: https://forestgeo.github.io/fgeo.map/articles/fgeo.map.html
 
     - text: Apps
       menu:
@@ -87,7 +87,7 @@ reference:
     contents:
       - fgeo.abundance
       - fgeo.utils
-      - map
+      - fgeo.map
 
   - title: Other packages that automatically install with fgeo
     desc: Install these packages with `remotes::install_github("forestgeo/fgeo")` and
