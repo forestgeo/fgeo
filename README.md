@@ -40,6 +40,4 @@ You can see conflicts with other packages with `fgeo_conflicts()`.
 # Intentionally creating a conflict to show it
 abundance <- function() "I conflict with fgeo.abundance::abundance()"
 fgeo_conflicts()
-#> -- Conflicts --------------------------------------------- fgeo_conflicts() --
-#> x .GlobalEnv::abundance() masks fgeo.abundance::abundance()
 ```
