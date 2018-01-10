@@ -86,7 +86,7 @@ reference:
           load them with `library(fgeo)`.
     contents:
       - fgeo.abundance
-      - fgeo.utils
+      - fgeo.tool
       - fgeo.map
 
   - title: Other packages that automatically install with fgeo
