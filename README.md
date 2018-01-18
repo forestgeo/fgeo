@@ -29,7 +29,7 @@ Usage
 ``` r
 library(fgeo)
 #> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
-#> v fgeo.abundance 0.0.0.9002     v fgeo.tool      0.0.0.9001
+#> v fgeo.abundance 0.0.0.9002     v fgeo.tool      0.0.0.9002
 #> v fgeo.abundance 0.0.0.9002     v fgeo.map       0.0.0.9201
 #> 
 ```

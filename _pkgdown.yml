@@ -60,13 +60,9 @@ navbar:
 
     - text: Community
       menu:
-      - text: Mixed R products by fgeo
-        href: http://rpubs.com/fgeopubs
-      - text: Mixed R products by partners
-        href: http://rpubs.com/fgeocommunity
-      - text: learn (find resources)
+      - text: Resources
         href: https://github.com/forestgeo/learn/issues
-      - text: forum (ask and answer questions)
+      - text: Questions and Answers
         href: https://github.com/forestgeo/forum/issues
       - text: Blog
         href: https://fgeo.netlify.com/
