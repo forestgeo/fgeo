@@ -23,7 +23,7 @@ NULL
 
 
 
-#' fgeo.utils: Utility functions of ForestGEO
+#' fgeo.tool: Utility functions of ForestGEO
 #'
 #' @description
 #' NULL
@@ -32,11 +32,11 @@ NULL
 #'
 #' ```
 #' # install.packages("remotes")
-#' remotes::install_github("forestgeo/fgeo.utils")
+#' remotes::install_github("forestgeo/fgeo.tool")
 #' ```
 #'
-#' [Learn more about fgeo.utils](https://forestgeo.github.io/fgeo.utils/)
-#' @name fgeo.utils
+#' [Learn more about fgeo.tool](https://forestgeo.github.io/fgeo.tool/)
+#' @name fgeo.tool
 NULL
 
 
