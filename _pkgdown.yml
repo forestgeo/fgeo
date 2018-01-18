@@ -69,7 +69,7 @@ navbar:
       - text: forum (xxx create website with pkgdown)
         href: https://github.com/forestgeo/forum
       - text: Blog (xxx)
-        href: https://maurolepore.netlify.com/
+        href: https://fgeo.netlify.com/
 
     - icon: fa-gavel
       href: https://github.com/maurolepore
