@@ -64,11 +64,11 @@ navbar:
         href: http://rpubs.com/fgeopubs
       - text: Mixed R products by partners
         href: http://rpubs.com/fgeocommunity
-      - text: learn (xxx create website with pkgdown)
-        href: https://github.com/forestgeo/learn
-      - text: forum (xxx create website with pkgdown)
-        href: https://github.com/forestgeo/forum
-      - text: Blog (xxx)
+      - text: learn (find resources)
+        href: https://github.com/forestgeo/learn/issues
+      - text: forum (ask and answer questions)
+        href: https://github.com/forestgeo/forum/issues
+      - text: Blog
         href: https://fgeo.netlify.com/
 
     - icon: fa-gavel
