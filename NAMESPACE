@@ -3,5 +3,6 @@
 S3method(print,fgeo_conflicts)
 export(fgeo_conflicts)
 export(fgeo_imports)
+export(fgeo_packages)
 export(fgeo_suggests)
 export(fgeo_update)

@@ -27,14 +27,15 @@ text_col <- function(x) {
 #' List packages that fgeo imports and suggests.
 #'
 #' @param include_self Include fgeo in the list?
+#' @param section Either "Imports" or "Suggests".
 #'
+#' @export
 #' @examples
 #' fgeo_packages(TRUE, "Imports")
 #' # Same
 #' fgeo_imports()
 #'
 #' fgeo_suggests()
-#' @name fgeo_packages
 fgeo_packages <- function(include_self = TRUE,
                           section = c("Imports", "Suggests")) {
   section <- section[[1]]

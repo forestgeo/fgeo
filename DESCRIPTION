@@ -24,7 +24,8 @@ Imports:
     fgeo.tool,
     purrr (>= 0.2.4),
     rstudioapi (>= 0.7),
-    soilkrig
+    soilkrig,
+    remotes
 Suggests: 
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4)

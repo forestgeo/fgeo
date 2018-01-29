@@ -14,6 +14,8 @@ fgeo_suggests()
 }
 \arguments{
 \item{include_self}{Include fgeo in the list?}
+
+\item{section}{Either "Imports" or "Suggests".}
 }
 \description{
 List packages that fgeo imports and suggests.
