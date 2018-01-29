@@ -90,12 +90,12 @@ reference:
           load them with `library(package_you_want)`.
     contents:
       - bciex
-      - fgeo.demography
       - soilkrig
 
-  - title: Suggested packages (not maintained by ForestGEO)
+  - title: Packages that you may also like
     desc: __fgeo__ may not have what you need; see also these packages.
     contents:
+      - fgeo.demography
       - BIOMASS
       - CTFS
 
