@@ -79,7 +79,7 @@ navbar:
 
 reference:
 
-  - title: Core packages that install and load with fgeo
+  - title: Packages that install and load with fgeo
     desc: Install these packages with `remotes::install_github("forestgeo/fgeo")` and
           load them with `library(fgeo)`.
     contents:
@@ -87,7 +87,7 @@ reference:
       - fgeo.tool
       - fgeo.map
 
-  - title: Other packages that automatically install with fgeo
+  - title: Packages that automatically install with fgeo
     desc: Install these packages with `remotes::install_github("forestgeo/fgeo")` and
           load them with `library(package_you_want)`.
     contents:
@@ -101,3 +101,8 @@ reference:
       - BIOMASS
       - CTFS
 
+  - title: Functions
+    desc: You can find most functions following the links above. These functions
+          are specific of __fgeo__.
+    contents:
+      - starts_with("fgeo_")

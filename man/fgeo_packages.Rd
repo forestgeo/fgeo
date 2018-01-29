@@ -2,16 +2,26 @@
 % Please edit documentation in R/utils.R
 \name{fgeo_packages}
 \alias{fgeo_packages}
-\title{List all packages in fgeo}
+\alias{fgeo_imports}
+\alias{fgeo_suggests}
+\title{List packages that fgeo imports and suggests.}
 \usage{
-fgeo_packages(include_self = TRUE)
+fgeo_packages(include_self = TRUE, section = c("Imports", "Suggests"))
+
+fgeo_imports(include_self = TRUE)
+
+fgeo_suggests()
 }
 \arguments{
 \item{include_self}{Include fgeo in the list?}
 }
 \description{
-List all packages in fgeo
+List packages that fgeo imports and suggests.
 }
 \examples{
-fgeo_packages()
+fgeo_packages(TRUE, "Imports")
+# Same
+fgeo_imports()
+
+fgeo_suggests()
 }

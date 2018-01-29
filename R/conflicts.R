@@ -1,4 +1,4 @@
-#' Conflicts between the fgeo and other packages
+#' Conflicts between the fgeo and other packages.
 #'
 #' This function lists all the conflicts between packages in fgeo
 #' and other packages that you have loaded.

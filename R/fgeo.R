@@ -23,7 +23,7 @@ NULL
 
 
 
-#' fgeo.tool: Utility functions of ForestGEO
+#' fgeo.tool: Utility functions of ForestGEO.
 #'
 #' @description
 #' NULL

@@ -24,23 +24,51 @@ text_col <- function(x) {
 
 }
 
-#' List all packages in fgeo
+#' List packages that fgeo imports and suggests.
 #'
 #' @param include_self Include fgeo in the list?
-#' @export
+#'
 #' @examples
-#' fgeo_packages()
-fgeo_packages <- function(include_self = TRUE) {
-  raw <- utils::packageDescription("fgeo")$Imports
-  imports <- strsplit(raw, ",")[[1]]
-  parsed <- gsub("^\\s+|\\s+$", "", imports)
+#' fgeo_packages(TRUE, "Imports")
+#' # Same
+#' fgeo_imports()
+#'
+#' fgeo_suggests()
+#' @name fgeo_packages
+fgeo_packages <- function(include_self = TRUE,
+                          section = c("Imports", "Suggests")) {
+  section <- section[[1]]
+  raw <- utils::packageDescription("fgeo")[[section]]
+  pulled <- strsplit(raw, ",")[[1]]
+  parsed <- gsub("^\\s+|\\s+$", "", pulled)
   names <- vapply(strsplit(parsed, " +"), "[[", 1, FUN.VALUE = character(1))
+
+  if (section == "Suggests") {
+    if (include_self) {
+      message(
+        "Ignoring argument `ignore_self` (it makes no sense for 'Suggests')."
+      )
+    }
+    return(names)
+  }
 
   if (include_self) {
     names <- c(names, "fgeo")
   }
 
   names
+}
+
+#' @rdname fgeo_packages
+#' @export
+fgeo_imports <- function(include_self = TRUE) {
+  fgeo_packages(include_self = TRUE, "Imports")
+}
+
+#' @rdname fgeo_packages
+#' @export
+fgeo_suggests <- function() {
+  fgeo_packages(include_self = FALSE, "Suggests")
 }
 
 invert <- function(x) {

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-NOT YET OFFICIALLY RELEASED
-===========================
+NOT RELEASED
+============
 
 fgeo: Analyze forest diversity and dynamics <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 />
 =================================================================================================================

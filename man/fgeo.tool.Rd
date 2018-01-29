@@ -2,7 +2,7 @@
 % Please edit documentation in R/fgeo.R
 \name{fgeo.tool}
 \alias{fgeo.tool}
-\title{fgeo.tool: Utility functions of ForestGEO}
+\title{fgeo.tool: Utility functions of ForestGEO.}
 \section{Installation}{
 \preformatted{# install.packages("remotes")
 remotes::install_github("forestgeo/fgeo.tool")
