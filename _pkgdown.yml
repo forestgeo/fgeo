@@ -80,16 +80,17 @@ navbar:
 reference:
 
   - title: Packages that install and load with fgeo
-    desc: Install these packages with `remotes::install_github("forestgeo/fgeo")` and
-          load them with `library(fgeo)`.
+    desc: Install these packages with `remotes::install_github("forestgeo/fgeo")`
+          and load them with `library(fgeo)`.
     contents:
       - fgeo.abundance
-      - fgeo.tool
+      - fgeo.demography
       - fgeo.map
+      - fgeo.tool
 
   - title: Packages that automatically install with fgeo
-    desc: Install these packages with `remotes::install_github("forestgeo/fgeo")` and
-          load them with `library(package_you_want)`.
+    desc: Install these packages with `remotes::install_github("forestgeo/fgeo")`
+          and load them with `library(package_you_want)`.
     contents:
       - bciex
       - soilkrig
@@ -97,12 +98,12 @@ reference:
   - title: Packages that you may also like
     desc: __fgeo__ may not have what you need; see also these packages.
     contents:
-      - fgeo.demography
       - BIOMASS
       - CTFS
 
   - title: Functions
     desc: You can find most functions following the links above. These functions
           are specific of __fgeo__.
+
     contents:
       - starts_with("fgeo_")

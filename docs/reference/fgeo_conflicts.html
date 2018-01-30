@@ -158,13 +158,9 @@ and other packages that you have loaded.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>fgeo_conflicts</span>()</div><div class='output co'>#&gt; -- Conflicts ----------------------------------------------- fgeo_conflicts() --
-#&gt; x .GlobalEnv::fgeo_imports()   masks fgeo::fgeo_imports()
-#&gt; x .GlobalEnv::fgeo_packages()  masks fgeo::fgeo_packages()
-#&gt; x fgeo::library.dynam.unload() masks base::library.dynam.unload()
-#&gt; x .GlobalEnv::msg()            masks fgeo::msg()
-#&gt; x fgeo::package_version()      masks base::package_version()
-#&gt; x fgeo::system.file()          masks devtools_shims::system.file(), base::system.file()
-#&gt; x .GlobalEnv::text_col()       masks fgeo::text_col()</div></pre>
+#&gt; x fgeo::library.dynam.unload()  masks base::library.dynam.unload()
+#&gt; x fgeo::package_version()       masks base::package_version()
+#&gt; x devtools_shims::system.file() masks fgeo::system.file(), base::system.file()</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
