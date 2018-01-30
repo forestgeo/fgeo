@@ -1,4 +1,12 @@
-core <- c("fgeo.abundance", "fgeo.demography", "fgeo.map", "fgeo.tool")
+core <-
+  c(
+    "bciex",
+    "fgeo.abundance",
+    "fgeo.demography",
+    "fgeo.habitat",
+    "fgeo.map",
+    "fgeo.tool"
+  )
 
 core_loaded <- function() {
   search <- paste0("package:", core)
