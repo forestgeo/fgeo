@@ -79,7 +79,7 @@ NULL
 
 
 
-#' soilkrig: Krig soil data as per John et al. (2007).
+#' fgeo.habitat: Habitat analyses.
 #'
 #' @description
 #' NULL
@@ -88,11 +88,11 @@ NULL
 #'
 #' ```
 #' # install.packages("remotes")
-#' remotes::install_github("forestgeo/soilkrig")
+#' remotes::install_github("forestgeo/fgeo.habitat")
 #' ```
 #'
-#' [Learn more about soilkrig](https://forestgeo.github.io/soilkrig/)
-#' @name soilkrig
+#' [Learn more about fgeo.habitat](https://forestgeo.github.io/fgeo.habitat/)
+#' @name fgeo.habitat
 NULL
 
 

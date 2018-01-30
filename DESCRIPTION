@@ -26,7 +26,7 @@ Imports:
     purrr (>= 0.2.4),
     remotes,
     rstudioapi (>= 0.7),
-    soilkrig
+    fgeo.habitat
 Suggests: 
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4)
@@ -38,6 +38,6 @@ Remotes: forestgeo/bciex,
     forestgeo/fgeo.demography,
     forestgeo/fgeo.map,
     forestgeo/fgeo.tool,
-    forestgeo/soilkrig
+    forestgeo/fgeo.habitat
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

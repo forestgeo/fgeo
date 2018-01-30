@@ -93,7 +93,7 @@ reference:
           and load them with `library(package_you_want)`.
     contents:
       - bciex
-      - soilkrig
+      - fgeo.habitat
 
   - title: Packages that you may also like
     desc: __fgeo__ may not have what you need; see also these packages.
