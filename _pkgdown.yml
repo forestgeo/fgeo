@@ -47,7 +47,7 @@ navbar:
       - text: ----------
       - text: Map
       - text: Mapping Functions
-        href: https://forestgeo.github.io/fgeo.map/articles/fgeo.map.html
+        href: https://forestgeo.github.io/fgeo.map/articles/map.html
 
     - text: Apps
       menu:
