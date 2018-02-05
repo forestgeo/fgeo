@@ -96,9 +96,6 @@ reference:
       - BIOMASS
       - CTFS
 
-  - title: Functions
-    desc: Find the key functions at the links above. These functions
-          are sospecific of __fgeo__.
-
+  - title: Additional functions
     contents:
       - starts_with("fgeo_")
