@@ -22,9 +22,7 @@ knitr::opts_chunk$set(
 
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
-## Overview
-
-__fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages in __fgeo__ provide a wide renge of tools to analyse forest diversity and dynamics.
+__fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages of __fgeo__ provide a wide renge of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
 
 [See all packages](https://forestgeo.github.io/fgeo/reference/index.html)
 
