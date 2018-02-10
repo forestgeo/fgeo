@@ -1,5 +1,5 @@
 .onAttach <- function(...) {
-  needed <- core[!is_attached(core)]
+  needed <- fgeo_core()[!is_attached(fgeo_core())]
   if (length(needed) == 0)
     return()
 

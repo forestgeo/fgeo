@@ -1,4 +1,11 @@
-core <-
+#' Core packages of fgeo.
+#'
+#' @return A string.
+#' @export
+#'
+#' @examples
+#' fgeo_core()
+fgeo_core <- function() {
   c(
     "bciex",
     "fgeo.abundance",
@@ -7,14 +14,15 @@ core <-
     "fgeo.map",
     "fgeo.tool"
   )
+}
 
 core_loaded <- function() {
-  search <- paste0("package:", core)
-  core[search %in% search()]
+  search <- paste0("package:", fgeo_core())
+  fgeo_core()[search %in% search()]
 }
 core_unloaded <- function() {
-  search <- paste0("package:", core)
-  core[!search %in% search()]
+  search <- paste0("package:", fgeo_core())
+  fgeo_core()[!search %in% search()]
 }
 
 fgeo_attach <- function() {
@@ -51,7 +59,8 @@ package_version <- function(x) {
   version <- as.character(unclass(utils::packageVersion(x))[[1]])
 
   if (length(version) > 3) {
-    version[4:length(version)] <- crayon::red(as.character(version[4:length(version)]))
+    version[4:length(version)] <-
+      crayon::red(as.character(version[4:length(version)]))
   }
   paste0(version, collapse = ".")
 }
