@@ -70,13 +70,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="https://bookdown.org/forestgeoguest/allodb_app/">allodb</a>
+      <a href="https://bookdown.org/fgeocomm/maply_tag_app/">Prepare maps for fieldwork</a>
     </li>
     <li>
-      <a href="https://bookdown.org/forestgeoguest/map_tag_app/">map_tag()</a>
-    </li>
-    <li>
-      <a href="https://bookdown.org/forestgeoguest/soilkrig_app/">GetKrigedSoil()</a>
+      <a href="https://bookdown.org/forestgeoguest/soilkrig_app/">Krige soil data</a>
     </li>
   </ul>
 </li>
@@ -139,35 +136,41 @@
 <a href="#fgeo-analyze-forest-diversity-and-dynamics" class="anchor"></a>fgeo: Analyze forest diversity and dynamics <img src="https://i.imgur.com/39pvr4n.png" align="right" height="44">
 </h1>
 
-<p><strong>fgeo</strong> installs and loads multiple R packages of <a href="http://www.forestgeo.si.edu/">ForestGEO</a> in a single step. Together, all packages of <strong>fgeo</strong> provide a wide renge of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO’s software see <a href="https://goo.gl/c5X6qk">this article</a>.</p>
+<p><strong>fgeo</strong> installs and loads multiple R packages of <a href="http://www.forestgeo.si.edu/">ForestGEO</a> in a single step. Together, all packages of <strong>fgeo</strong> provide a wide range of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO’s software see <a href="https://goo.gl/c5X6qk">this article</a>.</p>
 <p><a href="https://forestgeo.github.io/fgeo/reference/index.html">See all packages</a></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<pre><code><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github"># install.packages("remotes")
-remotes::install_github("forestgeo/fgeo")</a></code></pre>
+<p>To install <strong>fgeo</strong> run the following code in R:</p>
+<pre><code>missing_remotes &lt;- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+
+remotes::install_github("forestgeo/fgeo")</code></pre>
+<p>To learn the details about how to install packages from GitHub, read <a href="https://goo.gl/dQKEeg">this blog post</a>.</p>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p><code>library(fgeo)</code> will load the core <strong>fgeo</strong> packages.</p>
+<p>Load the core <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fgeo)
-<span class="co">#&gt; -- Attaching packages ----------------------------------------------------- fgeo 0.0.0.9000 --</span>
+<span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --</span>
 <span class="co">#&gt; v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001</span>
-<span class="co">#&gt; v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9202</span>
+<span class="co">#&gt; v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203</span>
 <span class="co">#&gt; v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'fgeo'</span>
-<span class="co">#&gt; The following object is masked _by_ 'package:fgeo.tool':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     fgeo_package_deps</span></code></pre></div>
-<p>You can see conflicts with other packages with <code><a href="reference/fgeo_conflicts.html">fgeo_conflicts()</a></code>.</p>
+<span class="co">#&gt; </span></code></pre></div>
+<p>Check conflicts with other packages with <code><a href="reference/fgeo_conflicts.html">fgeo_conflicts()</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Intentionally creating a conflict to show it</span>
-abundance &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="st">"I conflict with fgeo.abundance::abundance()"</span>
+abundance &lt;-<span class="st"> </span><span class="cf">function</span>() {
+  <span class="st">"An intentianal conflic to demonstrate `fgeo_conflicts()`"</span>
+}
+
 <span class="kw"><a href="reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()
-<span class="co">#&gt; -- Conflicts ------------------------------------------------------------- fgeo_conflicts() --</span>
+<span class="co">#&gt; -- Conflicts ---------------------------------------------------- fgeo_conflicts() --</span>
 <span class="co">#&gt; x .GlobalEnv::abundance() masks fgeo.abundance::abundance()</span></code></pre></div>
+<p>Run this to update <strong>fgeo</strong>. This will re-install only the packages that have changed since the last installation – so it will take a fraction of what it took the first time you installed <strong>fgeo</strong>.</p>
+<pre><code><a href="reference/fgeo_update.html">fgeo_update()</a></code></pre>
 </div>
 </div>
 </div>

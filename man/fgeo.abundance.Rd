@@ -4,9 +4,17 @@
 \alias{fgeo.abundance}
 \title{fgeo.abundance: Analyze abundance and basal area.}
 \section{Installation}{
-\preformatted{# install.packages("remotes")
+
+To install \strong{fgeo.abundance} run the following code in R:\preformatted{missing_remotes <- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+
 remotes::install_github("forestgeo/fgeo.abundance")
 }
+
+To learn the details about how to install packages from GitHub, read
+\href{https://goo.gl/dQKEeg}{this blog post}.
 
 \href{https://forestgeo.github.io/fgeo.abundance/}{Learn more about fgeo.abundance}
 }

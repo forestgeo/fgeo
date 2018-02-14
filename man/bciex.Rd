@@ -4,9 +4,17 @@
 \alias{bciex}
 \title{bciex: Data sets for examples from BCI.}
 \section{Installation}{
-\preformatted{# install.packages("remotes")
+
+To install \strong{bciex} run the following code in R:\preformatted{missing_remotes <- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+
 remotes::install_github("forestgeo/bciex")
 }
+
+To learn the details about how to install packages from GitHub, read
+\href{https://goo.gl/dQKEeg}{this blog post}.
 
 \href{https://forestgeo.github.io/bciex/}{Learn more about bciex}
 }

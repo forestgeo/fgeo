@@ -51,11 +51,9 @@ navbar:
 
     - text: Apps
       menu:
-      - text: allodb
-        href: https://bookdown.org/forestgeoguest/allodb_app/
-      - text: map_tag()
-        href: https://bookdown.org/forestgeoguest/map_tag_app/
-      - text: GetKrigedSoil()
+      - text: Prepare maps for fieldwork
+        href: https://bookdown.org/fgeocomm/maply_tag_app/
+      - text: Krige soil data
         href: https://bookdown.org/forestgeoguest/soilkrig_app/
 
     - text: Community
@@ -79,12 +77,6 @@ navbar:
 
 reference:
 
-  - title: The fgeo package itself
-    desc: Although the main job of __fgeo__ is to gather other packages (see
-      next section), it also provides these handy functions.
-    contents:
-      - starts_with("fgeo_")
-
   - title: Packages that install and load with fgeo
     desc: Install these packages with
       `remotes::install_github("forestgeo/fgeo")`; and load them with
@@ -96,6 +88,12 @@ reference:
       - fgeo.habitat
       - fgeo.map
       - fgeo.tool
+
+  - title: The fgeo package itself
+    desc: Although the main job of __fgeo__ is to gather other packages (see
+      above), it also provides these handy functions.
+    contents:
+      - starts_with("fgeo_")
 
   - title: Other packages you may also like
     desc: These packages are not maintained by ForestGEO.

@@ -22,29 +22,47 @@ knitr::opts_chunk$set(
 
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
-__fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages of __fgeo__ provide a wide renge of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
+__fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages of __fgeo__ provide a wide range of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
 
 [See all packages](https://forestgeo.github.io/fgeo/reference/index.html)
 
 ## Installation
 
+To install __fgeo__ run the following code in R:
+
 ```
-# install.packages("remotes")
+missing_remotes <- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+
 remotes::install_github("forestgeo/fgeo")
 ```
 
+To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
+
 ## Usage
 
-`library(fgeo)` will load the core __fgeo__ packages.
+Load the core __fgeo__ packages in one step.
 
 ```{r example}
 library(fgeo)
 ```
 
-You can see conflicts with other packages with `fgeo_conflicts()`.
+Check conflicts with other packages with `fgeo_conflicts()`.
 
 ```{r conflicts}
 # Intentionally creating a conflict to show it
-abundance <- function() "I conflict with fgeo.abundance::abundance()"
+abundance <- function() {
+  "An intentianal conflic to demonstrate `fgeo_conflicts()`"
+}
+
 fgeo_conflicts()
 ```
+
+Run this to update __fgeo__. This will re-install only the packages that have changed since the last installation -- so it will take a fraction of what it took the first time you installed __fgeo__.
+
+```
+fgeo_update()
+```
+

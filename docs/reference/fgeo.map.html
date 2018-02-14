@@ -91,13 +91,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://bookdown.org/forestgeoguest/allodb_app/">allodb</a>
+      <a href="https://bookdown.org/fgeocomm/maply_tag_app/">Prepare maps for fieldwork</a>
     </li>
     <li>
-      <a href="https://bookdown.org/forestgeoguest/map_tag_app/">map_tag()</a>
-    </li>
-    <li>
-      <a href="https://bookdown.org/forestgeoguest/soilkrig_app/">GetKrigedSoil()</a>
+      <a href="https://bookdown.org/forestgeoguest/soilkrig_app/">Krige soil data</a>
     </li>
   </ul>
 </li>
@@ -153,9 +150,16 @@
         
     <h2 class="hasAnchor" id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
 
-    <pre># install.packages("remotes")
-remotes::install_github("forestgeo/fgeo.map")
-</pre><p><a href='https://forestgeo.github.io/fgeo.map/'>Learn more about fgeo.map</a></p>
+    
+    <p>To install <strong>fgeo.map</strong> run the following code in R:</p><pre>missing_remotes &lt;- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+    remotes::install_github("forestgeo/fgeo.map")
+</pre>
+    <p>To learn the details about how to install packages from GitHub, read
+<a href='https://goo.gl/dQKEeg'>this blog post</a>.
+    <a href='https://forestgeo.github.io/fgeo.map/'>Learn more about fgeo.map</a></p>
     
 
   </div>

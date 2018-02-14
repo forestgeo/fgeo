@@ -4,9 +4,17 @@
 \alias{fgeo.map}
 \title{fgeo.map: Map ForestGEO's data.}
 \section{Installation}{
-\preformatted{# install.packages("remotes")
+
+To install \strong{fgeo.map} run the following code in R:\preformatted{missing_remotes <- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+
 remotes::install_github("forestgeo/fgeo.map")
 }
+
+To learn the details about how to install packages from GitHub, read
+\href{https://goo.gl/dQKEeg}{this blog post}.
 
 \href{https://forestgeo.github.io/fgeo.map/}{Learn more about fgeo.map}
 }

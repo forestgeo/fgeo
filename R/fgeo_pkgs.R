@@ -48,6 +48,8 @@ fgeo_suggests <- function() {
 
 
 
+# Don't export. To use locally, with all fgeo packages under the same directory.
+
 #' Find fgeo packages that depend on a given package.
 #'
 #' Useful to find which packages may have broken after refactoring on package
@@ -61,7 +63,6 @@ fgeo_suggests <- function() {
 #' @family functions for developers.
 #'
 #' @return A character vector.
-#' @export
 #'
 #' @examples
 #' # Won't because it depends on local directories.
@@ -70,13 +71,7 @@ fgeo_suggests <- function() {
 #' }
 fgeo_package_deps <- function(pkg,
                               root = "../",
-                              fgeo_pkgs = c(
-                                "bciex",
-                                "fgeo.abundance",
-                                "fgeo.tool",
-                                "fgeo.map",
-                                "fgeo"
-                              )) {
+                              fgeo_pkgs = fgeo_core()) {
   fgeo_deps <- list_fgeo_deps(root, fgeo_pkgs)
   deps_matching_pkg <- purrr::keep(fgeo_deps, ~any(grepl(pkg, .)))
   names(deps_matching_pkg)

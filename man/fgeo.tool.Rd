@@ -2,11 +2,19 @@
 % Please edit documentation in R/fgeo.R
 \name{fgeo.tool}
 \alias{fgeo.tool}
-\title{fgeo.tool: Utility functions of ForestGEO.}
+\title{fgeo.tool: ForestGEO's tools for general purposes.}
 \section{Installation}{
-\preformatted{# install.packages("remotes")
+
+To install \strong{fgeo.tool} run the following code in R:\preformatted{missing_remotes <- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+
 remotes::install_github("forestgeo/fgeo.tool")
 }
+
+To learn the details about how to install packages from GitHub, read
+\href{https://goo.gl/dQKEeg}{this blog post}.
 
 \href{https://forestgeo.github.io/fgeo.tool/}{Learn more about fgeo.tool}
 }

@@ -4,9 +4,17 @@
 \alias{fgeo.habitat}
 \title{fgeo.habitat: Habitat analyses.}
 \section{Installation}{
-\preformatted{# install.packages("remotes")
+
+To install \strong{fgeo.habitat} run the following code in R:\preformatted{missing_remotes <- !require(remotes)
+if (missing_remotes) {
+  install.packages("remotes")
+}
+
 remotes::install_github("forestgeo/fgeo.habitat")
 }
+
+To learn the details about how to install packages from GitHub, read
+\href{https://goo.gl/dQKEeg}{this blog post}.
 
 \href{https://forestgeo.github.io/fgeo.habitat/}{Learn more about fgeo.habitat}
 }

@@ -11,11 +11,19 @@
 #' NULL
 #'
 #' @section Installation:
+#' To install __bciex__ run the following code in R:
 #'
 #' ```
-#' # install.packages("remotes")
+#' missing_remotes <- !require(remotes)
+#' if (missing_remotes) {
+#'   install.packages("remotes")
+#' }
+#'
 #' remotes::install_github("forestgeo/bciex")
 #' ```
+#'
+#' To learn the details about how to install packages from GitHub, read
+#' [this blog post](https://goo.gl/dQKEeg).
 #'
 #' [Learn more about bciex](https://forestgeo.github.io/bciex/)
 #' @name bciex
@@ -29,11 +37,19 @@ NULL
 #' NULL
 #'
 #' @section Installation:
+#' To install __fgeo.abundance__ run the following code in R:
 #'
 #' ```
-#' # install.packages("remotes")
+#' missing_remotes <- !require(remotes)
+#' if (missing_remotes) {
+#'   install.packages("remotes")
+#' }
+#'
 #' remotes::install_github("forestgeo/fgeo.abundance")
 #' ```
+#'
+#' To learn the details about how to install packages from GitHub, read
+#' [this blog post](https://goo.gl/dQKEeg).
 #'
 #' [Learn more about fgeo.abundance](https://forestgeo.github.io/fgeo.abundance/)
 #' @name fgeo.abundance
@@ -47,12 +63,21 @@ NULL
 #' NULL
 #'
 #' @section Installation:
+#' To install __fgeo.demography__ run the following code in R:
 #'
 #' ```
-#' # install.packages("remotes")
+#' missing_remotes <- !require(remotes)
+#' if (missing_remotes) {
+#'   install.packages("remotes")
+#' }
+#'
 #' remotes::install_github("forestgeo/fgeo.demography")
 #' ```
 #'
+#' To learn the details about how to install packages from GitHub, read
+#' [this blog post](https://goo.gl/dQKEeg).
+#'
+#' #'
 #' [Learn more about fgeo.demography](https://forestgeo.github.io/fgeo.demography/)
 #' @name fgeo.demography
 NULL
@@ -65,11 +90,19 @@ NULL
 #' NULL
 #'
 #' @section Installation:
+#' To install __fgeo.habitat__ run the following code in R:
 #'
 #' ```
-#' # install.packages("remotes")
+#' missing_remotes <- !require(remotes)
+#' if (missing_remotes) {
+#'   install.packages("remotes")
+#' }
+#'
 #' remotes::install_github("forestgeo/fgeo.habitat")
 #' ```
+#'
+#' To learn the details about how to install packages from GitHub, read
+#' [this blog post](https://goo.gl/dQKEeg).
 #'
 #' [Learn more about fgeo.habitat](https://forestgeo.github.io/fgeo.habitat/)
 #' @name fgeo.habitat
@@ -83,11 +116,19 @@ NULL
 #' NULL
 #'
 #' @section Installation:
+#' To install __fgeo.map__ run the following code in R:
 #'
 #' ```
-#' # install.packages("remotes")
+#' missing_remotes <- !require(remotes)
+#' if (missing_remotes) {
+#'   install.packages("remotes")
+#' }
+#'
 #' remotes::install_github("forestgeo/fgeo.map")
 #' ```
+#'
+#' To learn the details about how to install packages from GitHub, read
+#' [this blog post](https://goo.gl/dQKEeg).
 #'
 #' [Learn more about fgeo.map](https://forestgeo.github.io/fgeo.map/)
 #' @name fgeo.map
@@ -95,17 +136,25 @@ NULL
 
 
 
-#' fgeo.tool: Utility functions of ForestGEO.
+#' fgeo.tool: ForestGEO's tools for general purposes.
 #'
 #' @description
 #' NULL
 #'
 #' @section Installation:
+#' To install __fgeo.tool__ run the following code in R:
 #'
 #' ```
-#' # install.packages("remotes")
+#' missing_remotes <- !require(remotes)
+#' if (missing_remotes) {
+#'   install.packages("remotes")
+#' }
+#'
 #' remotes::install_github("forestgeo/fgeo.tool")
 #' ```
+#'
+#' To learn the details about how to install packages from GitHub, read
+#' [this blog post](https://goo.gl/dQKEeg).
 #'
 #' [Learn more about fgeo.tool](https://forestgeo.github.io/fgeo.tool/)
 #' @name fgeo.tool
