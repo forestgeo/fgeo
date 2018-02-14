@@ -63,12 +63,14 @@ fgeo_suggests <- function() {
 #' @family functions for developers.
 #'
 #' @return A character vector.
+#' @keywords internal
 #'
 #' @examples
 #' # Won't because it depends on local directories.
 #' \dontrun{
-#' fgeo_package_deps("fgeo.tool")
+#' fgeo:::fgeo_package_deps("fgeo.tool")
 #' }
+#' @noRd
 fgeo_package_deps <- function(pkg,
                               root = "../",
                               fgeo_pkgs = fgeo_core()) {
