@@ -18,14 +18,13 @@
 #' if (missing_remotes) {
 #'   install.packages("remotes")
 #' }
-#'
 #' remotes::install_github("forestgeo/bciex")
 #' ```
 #'
-#' To learn the details about how to install packages from GitHub, read
+#' * To learn the details about how to install packages from GitHub, read
 #' [this blog post](https://goo.gl/dQKEeg).
 #'
-#' [Learn more about bciex](https://forestgeo.github.io/bciex/)
+#' * [Go to the website of bciex](https://forestgeo.github.io/bciex/)
 #' @name bciex
 NULL
 
@@ -44,14 +43,13 @@ NULL
 #' if (missing_remotes) {
 #'   install.packages("remotes")
 #' }
-#'
 #' remotes::install_github("forestgeo/fgeo.abundance")
 #' ```
 #'
-#' To learn the details about how to install packages from GitHub, read
+#' * To learn the details about how to install packages from GitHub, read
 #' [this blog post](https://goo.gl/dQKEeg).
 #'
-#' [Learn more about fgeo.abundance](https://forestgeo.github.io/fgeo.abundance/)
+#' * [Go to the website of fgeo.abundance](https://forestgeo.github.io/fgeo.abundance/)
 #' @name fgeo.abundance
 NULL
 
@@ -70,15 +68,13 @@ NULL
 #' if (missing_remotes) {
 #'   install.packages("remotes")
 #' }
-#'
 #' remotes::install_github("forestgeo/fgeo.demography")
 #' ```
 #'
-#' To learn the details about how to install packages from GitHub, read
+#' * To learn the details about how to install packages from GitHub, read
 #' [this blog post](https://goo.gl/dQKEeg).
 #'
-#' #'
-#' [Learn more about fgeo.demography](https://forestgeo.github.io/fgeo.demography/)
+#' * [Go to the website of fgeo.demography](https://forestgeo.github.io/fgeo.demography/)
 #' @name fgeo.demography
 NULL
 
@@ -97,14 +93,13 @@ NULL
 #' if (missing_remotes) {
 #'   install.packages("remotes")
 #' }
-#'
 #' remotes::install_github("forestgeo/fgeo.habitat")
 #' ```
 #'
-#' To learn the details about how to install packages from GitHub, read
+#' * To learn the details about how to install packages from GitHub, read
 #' [this blog post](https://goo.gl/dQKEeg).
 #'
-#' [Learn more about fgeo.habitat](https://forestgeo.github.io/fgeo.habitat/)
+#' * [Go to the website of fgeo.habitat](https://forestgeo.github.io/fgeo.habitat/)
 #' @name fgeo.habitat
 NULL
 
@@ -123,14 +118,13 @@ NULL
 #' if (missing_remotes) {
 #'   install.packages("remotes")
 #' }
-#'
 #' remotes::install_github("forestgeo/fgeo.map")
 #' ```
 #'
-#' To learn the details about how to install packages from GitHub, read
+#' * To learn the details about how to install packages from GitHub, read
 #' [this blog post](https://goo.gl/dQKEeg).
 #'
-#' [Learn more about fgeo.map](https://forestgeo.github.io/fgeo.map/)
+#' * [Go to the website of fgeo.map](https://forestgeo.github.io/fgeo.map/)
 #' @name fgeo.map
 NULL
 
@@ -149,14 +143,13 @@ NULL
 #' if (missing_remotes) {
 #'   install.packages("remotes")
 #' }
-#'
 #' remotes::install_github("forestgeo/fgeo.tool")
 #' ```
 #'
-#' To learn the details about how to install packages from GitHub, read
+#' * To learn the details about how to install packages from GitHub, read
 #' [this blog post](https://goo.gl/dQKEeg).
 #'
-#' [Learn more about fgeo.tool](https://forestgeo.github.io/fgeo.tool/)
+#' * [Go to the website of fgeo.tool](https://forestgeo.github.io/fgeo.tool/)
 #' @name fgeo.tool
 NULL
 
@@ -179,7 +172,7 @@ NULL
 #' install.packages("BIOMASS")
 #' ```
 #'
-#' [Learn more about BIOMASS](https://CRAN.R-project.org/package=BIOMASS)
+#' * [Go to the website of BIOMASS](https://CRAN.R-project.org/package=BIOMASS)
 #' @name BIOMASS
 NULL
 

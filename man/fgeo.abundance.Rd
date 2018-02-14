@@ -9,13 +9,12 @@ To install \strong{fgeo.abundance} run the following code in R:\preformatted{mis
 if (missing_remotes) {
   install.packages("remotes")
 }
-
 remotes::install_github("forestgeo/fgeo.abundance")
 }
-
-To learn the details about how to install packages from GitHub, read
+\itemize{
+\item To learn the details about how to install packages from GitHub, read
 \href{https://goo.gl/dQKEeg}{this blog post}.
-
-\href{https://forestgeo.github.io/fgeo.abundance/}{Learn more about fgeo.abundance}
+\item \href{https://forestgeo.github.io/fgeo.abundance/}{Go to the website of fgeo.abundance}
+}
 }
 

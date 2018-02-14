@@ -13,7 +13,8 @@
 \section{Installation}{
 \preformatted{install.packages("BIOMASS")
 }
-
-\href{https://CRAN.R-project.org/package=BIOMASS}{Learn more about BIOMASS}
+\itemize{
+\item \href{https://CRAN.R-project.org/package=BIOMASS}{Go to the website of BIOMASS}
+}
 }
 

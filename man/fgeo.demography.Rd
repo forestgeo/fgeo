@@ -9,14 +9,12 @@ To install \strong{fgeo.demography} run the following code in R:\preformatted{mi
 if (missing_remotes) {
   install.packages("remotes")
 }
-
 remotes::install_github("forestgeo/fgeo.demography")
 }
-
-To learn the details about how to install packages from GitHub, read
+\itemize{
+\item To learn the details about how to install packages from GitHub, read
 \href{https://goo.gl/dQKEeg}{this blog post}.
-
-#'
-\href{https://forestgeo.github.io/fgeo.demography/}{Learn more about fgeo.demography}
+\item \href{https://forestgeo.github.io/fgeo.demography/}{Go to the website of fgeo.demography}
+}
 }
 

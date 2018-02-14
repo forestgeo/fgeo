@@ -9,13 +9,12 @@ To install \strong{fgeo.tool} run the following code in R:\preformatted{missing_
 if (missing_remotes) {
   install.packages("remotes")
 }
-
 remotes::install_github("forestgeo/fgeo.tool")
 }
-
-To learn the details about how to install packages from GitHub, read
+\itemize{
+\item To learn the details about how to install packages from GitHub, read
 \href{https://goo.gl/dQKEeg}{this blog post}.
-
-\href{https://forestgeo.github.io/fgeo.tool/}{Learn more about fgeo.tool}
+\item \href{https://forestgeo.github.io/fgeo.tool/}{Go to the website of fgeo.tool}
+}
 }
 

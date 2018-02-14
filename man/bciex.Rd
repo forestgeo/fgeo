@@ -9,13 +9,12 @@ To install \strong{bciex} run the following code in R:\preformatted{missing_remo
 if (missing_remotes) {
   install.packages("remotes")
 }
-
 remotes::install_github("forestgeo/bciex")
 }
-
-To learn the details about how to install packages from GitHub, read
+\itemize{
+\item To learn the details about how to install packages from GitHub, read
 \href{https://goo.gl/dQKEeg}{this blog post}.
-
-\href{https://forestgeo.github.io/bciex/}{Learn more about bciex}
+\item \href{https://forestgeo.github.io/bciex/}{Go to the website of bciex}
+}
 }
 

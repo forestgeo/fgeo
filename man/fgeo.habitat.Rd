@@ -9,13 +9,12 @@ To install \strong{fgeo.habitat} run the following code in R:\preformatted{missi
 if (missing_remotes) {
   install.packages("remotes")
 }
-
 remotes::install_github("forestgeo/fgeo.habitat")
 }
-
-To learn the details about how to install packages from GitHub, read
+\itemize{
+\item To learn the details about how to install packages from GitHub, read
 \href{https://goo.gl/dQKEeg}{this blog post}.
-
-\href{https://forestgeo.github.io/fgeo.habitat/}{Learn more about fgeo.habitat}
+\item \href{https://forestgeo.github.io/fgeo.habitat/}{Go to the website of fgeo.habitat}
+}
 }
 
