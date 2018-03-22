@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>fgeo.map: Map ForestGEO's data. — fgeo.map â€¢ fgeo</title>
+<title>Overview fgeo's functions. — fgeo_functions â€¢ fgeo</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,7 +27,9 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   <script src="../extra.js"></script>
-<meta property="og:title" content="fgeo.map: Map ForestGEO's data. — fgeo.map" />
+<meta property="og:title" content="Overview fgeo's functions. — fgeo_functions" />
+
+<meta property="og:description" content="Overview fgeo's functions." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -146,35 +148,45 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>fgeo.map: Map ForestGEO's data.</h1>
+    <h1>Overview fgeo's functions.</h1>
     </div>
 
+    
+    <p>Overview fgeo's functions.</p>
+    
 
-
+    <pre class="usage"><span class='fu'>fgeo_functions</span>()</pre>
         
-    <h2 class="hasAnchor" id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A dataframe.</p>
+    
+    <h2 class="hasAnchor" id="acknowledgements"><a class="anchor" href="#acknowledgements"></a>Acknowledgements</h2>
 
     
-    <p>To install <strong>fgeo.map</strong> run the following code in R:</p><pre>missing_remotes &lt;- !require(remotes)
-if (missing_remotes) {
-  install.packages("remotes")
-}
-remotes::install_github("forestgeo/fgeo.map")
-</pre>
-<ul>
-<li><p>To learn the details about how to install packages from GitHub, read
-<a href='https://goo.gl/dQKEeg'>this blog post</a>.</p></li>
-<li><p><a href='https://forestgeo.github.io/fgeo.map/'>Go to the website of fgeo.map</a></p></li>
-</ul>
+    <p>Thanks to Jim Hester for advice on an implementation detail
+(https://goo.gl/Qzp5kR).</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>head</span>(<span class='fu'>fgeo_functions</span>())</div><div class='output co'>#&gt;   package                       fun
+#&gt; 1    fgeo                       %&gt;%
+#&gt; 2    fgeo                     .data
+#&gt; 3    fgeo check_if_pkg_can_be_found
+#&gt; 4    fgeo                  collapse
+#&gt; 5    fgeo          confirm_conflict
+#&gt; 6    fgeo               core_loaded</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       
-      <li><a href="#installation">Installation</a></li>
-          </ul>
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

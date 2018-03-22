@@ -11,20 +11,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-
-
-# NOT RELEASED
-
-
-
 # fgeo: Analyze forest diversity and dynamics <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 />
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
+(The developmental stage of this package is according to [this website](https://www.tidyverse.org/lifecycle/.)
+
+
+
 __fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages of __fgeo__ provide a wide range of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
 
-[See all packages](https://forestgeo.github.io/fgeo/reference/index.html)
+[Packages index](https://forestgeo.github.io/fgeo/reference/index.html).
 
 ## Installation
 
@@ -49,20 +48,25 @@ Load the core __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-Check conflicts with other packages with `fgeo_conflicts()`.
-
-```{r conflicts}
-# Intentionally creating a conflict to show it
-abundance <- function() {
-  "An intentianal conflic to demonstrate `fgeo_conflicts()`"
-}
-
-fgeo_conflicts()
-```
-
 Run this to update __fgeo__. This will re-install only the packages that have changed since the last installation -- so it will take a fraction of what it took the first time you installed __fgeo__.
 
 ```
 fgeo_update()
+```
+
+For a detailed description of each function in each package go to the corresponding package's website via the [Packages](https://forestgeo.github.io/fgeo/reference/index.html) tab of __fgeo__'s [Home](https://forestgeo.github.io/fgeo/index.html) page. 
+
+You can get an overview of all functions exported by each package (including some reexported from other packages) with `fgeo_functions()` -- which can also be helpful if you want to find a function based on some keywords.
+
+```{r functions}
+library(dplyr)
+
+all_functions <- fgeo_functions()
+
+matching_pattern <- grepl(pattern = "row", all_functions$fun)
+filter(all_functions, matching_pattern)
+```
+```{r}
+all_functions
 ```
 

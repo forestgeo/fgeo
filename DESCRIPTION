@@ -28,7 +28,8 @@ Imports:
     purrr (>= 0.2.4),
     remotes,
     rstudioapi (>= 0.7),
-    utils
+    utils,
+    rlang
 Suggests: 
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4),
