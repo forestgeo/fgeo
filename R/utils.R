@@ -40,3 +40,8 @@ style_grey <- function(level, ...) {
     crayon::make_style(grDevices::grey(level), grey = TRUE)
   )
 }
+
+
+has_class <- function(x, .class) {
+  any(grepl(.class, class(x)))
+}

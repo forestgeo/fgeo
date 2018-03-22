@@ -19,14 +19,16 @@ Imports:
     bciex,
     cli (>= 1.0.0),
     crayon (>= 1.3.4),
+    dplyr,
     fgeo.abundance,
     fgeo.demography,
+    fgeo.habitat,
     fgeo.map,
     fgeo.tool,
     purrr (>= 0.2.4),
     remotes,
     rstudioapi (>= 0.7),
-    fgeo.habitat
+    utils
 Suggests: 
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4),
@@ -37,8 +39,8 @@ LazyData: true
 Remotes: forestgeo/bciex,
     forestgeo/fgeo.abundance,
     forestgeo/fgeo.demography,
+    forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
-    forestgeo/fgeo.tool,
-    forestgeo/fgeo.habitat
+    forestgeo/fgeo.tool
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

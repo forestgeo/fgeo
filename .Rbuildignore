@@ -8,3 +8,5 @@
 ^LICENSE\.md$
 ^pkgdown$
 ^codecov\.yml$
+^tmp\.R$
+^tmp\.sh$

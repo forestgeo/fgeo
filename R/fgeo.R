@@ -3,6 +3,13 @@
 
 
 
+# Imports -----------------------------------------------------------------
+
+#' @importFrom dplyr %>%
+#' @importFrom utils ls.str
+NULL
+
+
 # Core packages -----------------------------------------------------------
 
 #' bciex: Data sets for examples from BCI.
