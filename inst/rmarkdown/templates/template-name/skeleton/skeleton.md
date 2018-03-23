@@ -2,7 +2,7 @@
 title: ".html + .md (united, toc)"
 subtitle: "Subtitle"
 author: "Your name"
-date: "`r Sys.Date()`"
+date: "2018-03-23"
 output:
   html_document:
     theme: united
@@ -11,22 +11,7 @@ output:
     keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-# This chunk named setup will run before any other code (https://goo.gl/BeM2Uu)
-set.seed(1014)
-knitr::opts_chunk$set(
-  echo = TRUE,
-  comment = "#>",
-  collapse = TRUE,
-  cache = FALSE,
-  # Figures (http://r4ds.had.co.nz/)
-  out.width = "70%",
-  fig.align = "center",
-  fig.width = 6,
-  fig.asp = 0.618,
-  fig.show = "hold"
-)
-```
+
 
 # Overview
 

@@ -13,3 +13,4 @@
 ^CODE_OF_CONDUCT\.md$
 ^\.github$
 ^tmp$
+^tmp\.Rmd$
