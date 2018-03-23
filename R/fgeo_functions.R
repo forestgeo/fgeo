@@ -1,8 +1,8 @@
 #' Overview fgeo's functions.
 #'
 #' @section Acknowledgements:
-#' Thanks to Jim Hester for advice on an implementation detail
-#' (https://goo.gl/Qzp5kR).
+#' Thanks to Jim Hester for [advice](https://goo.gl/Qzp5kR) on an implementation
+#' detail.
 #'
 #' @return A dataframe.
 #' @export

@@ -194,3 +194,9 @@ all_functions
 #> 99        fgeo.tool               type_taxa
 #> 100       fgeo.tool                type_vft
 ```
+
+## Code of conduct
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
+to abide by its terms.

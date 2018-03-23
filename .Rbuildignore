@@ -10,3 +10,6 @@
 ^codecov\.yml$
 ^tmp\.R$
 ^tmp\.sh$
+^CODE_OF_CONDUCT\.md$
+^\.github$
+^tmp$
