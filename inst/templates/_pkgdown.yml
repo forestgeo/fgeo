@@ -1,0 +1,72 @@
+url: https://forestgeo.github.io/EDIT-PACKAGE-NAME/
+
+authors:
+  Mauro Lepore:
+    href: https://github.com/maurolepore
+  CTFS-ForestGEO:
+    href: http://www.forestgeo.si.edu/
+
+template:
+  params:
+    bootswatch: united
+
+home:
+  links:
+  - text: Learn more
+    href: http://www.forestgeo.si.edu/
+
+
+
+navbar:
+
+  type: default
+
+  left:
+    - text: Functions Index
+      href: reference/index.html
+
+  right:
+    - text: Tutorials
+      href: articles/index.html
+
+    - text: Apps
+      menu:
+      - text: EDIT-TITLE
+        href: EDIT-LINK
+
+    - text: News
+      href: news/index.html
+
+    - icon: fa-gavel
+      href: https://github.com/maurolepore
+
+    - icon: fa-github
+      href: https://github.com/forestgeo/EDIT-PACKAGE-NAME
+
+    - text: fgeo
+      href: https://forestgeo.github.io/fgeo/
+
+
+
+reference:
+
+  - title: EDIT-TITLE-OF-FUNCTION-GROUP
+    contents:
+      - EDIT-FUNCTION-NAME
+      - EDIT-FUNCTION-NAME
+
+  - title: EDIT-TITLE-OF-FUNCTION-GROUP
+    contents:
+      - matches("EDIT-MATCH")
+      - starts_with("EDIT-START")
+      - end_with("EDIT-END")
+
+  - title: Datasets
+    contents:
+      - EDIT-DATASET-NAME
+
+articles:
+
+  - title: EDIT-TITLE
+    contents:
+      - EDIT-VIGNETTE-NAME
