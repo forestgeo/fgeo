@@ -1,0 +1,4 @@
+name: md and themed html documents
+description: >
+   Outputs (1) an .html file, themed as fgeo's webpages; and (2) an .md file to show rendered output on GitHub.
+create_dir: FALSE
