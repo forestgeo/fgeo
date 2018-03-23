@@ -33,26 +33,6 @@ To install **fgeo** run the following code in R:
 To learn the details about how to install packages from GitHub, read
 [this blog post](https://goo.gl/dQKEeg).
 
-## Relevant resources from a similar development
-
-**fgeo** closely follows the [**tidyverse**](https://www.tidyverse.org)
-development. By doing so, **fgeo** capitalizes the experience of those
-who develop the **tidiverse** and the great many that use it. This saves
-time ensures that **fgeo** adheres to the conversions of the fastest
-growing community of R users.
-
-Here are some relevant resources from the **tidyverse**, occasionally
-adapted to fit **fgeo**:
-
-  - [Contributor Code of
-    Conduct](https://github.com/forestgeo/fgeo/blob/master/.github/CODE_OF_CONDUCT.md).
-    By participating in this project you agree to abide by its
-    terms.
-  - [Contributing](https://github.com/forestgeo/fgeo/blob/master/.github/CONTRIBUTING.md)
-  - [Support](https://github.com/forestgeo/fgeo/blob/master/.github/SUPPORT.md)
-  - [Issue
-    template](https://github.com/forestgeo/fgeo/blob/master/.github/ISSUE_TEMPLATE.md)
-
 ## Usage
 
 Load the core **fgeo** packages in one step.
@@ -215,3 +195,9 @@ all_functions
 #> 100       fgeo.tool               type_taxa
 #> 101       fgeo.tool                type_vft
 ```
+
+-----
+
+Please note that this project is released with a [Contributor Code of
+Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project
+you agree to abide by its terms.
