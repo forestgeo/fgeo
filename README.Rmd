@@ -13,11 +13,11 @@ knitr::opts_chunk$set(
 
 # fgeo: Analyze forest diversity and dynamics <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 />
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 
-(The developmental stage of this package is according to [this website](https://www.tidyverse.org/lifecycle/.)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
+(The developmental stage of this package is according to [this website](https://www.tidyverse.org/lifecycle/).)
 
 
 
