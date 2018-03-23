@@ -12,7 +12,7 @@ Description: 'fgeo' installs and load multiple R packages of ForestGEO in
     and maintain more tools as they become available. Learn more about the 
     'fgeo' package at <http://forestgeo.github.io/fgeo>; and learn
     more about ForestGEO at <http://www.forestgeo.si.edu/>.
-License: CC0
+License: GPL-3
 URL: http://forestgeo.github.io/fgeo, https://github.com/forestgeo/fgeo
 BugReports: https://github.com/forestgeo/fgeo/issues
 Imports: 
