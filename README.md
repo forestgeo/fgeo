@@ -44,11 +44,14 @@ growing community of R users.
 Here are some relevant resources from the **tidyverse**, occasionally
 adapted to fit **fgeo**:
 
-  - [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By
-    participating in this project you agree to abide by its terms.
-  - [Contributing](.github/CONTRIBUTING.md)
-  - [Support](.github/SUPPORT.md)
-  - [Issue template](.github/ISSUE_TEMPLATE.md)
+  - [Contributor Code of
+    Conduct](https://github.com/forestgeo/fgeo/blob/master/.github/CODE_OF_CONDUCT.md).
+    By participating in this project you agree to abide by its
+    terms.
+  - [Contributing](https://github.com/forestgeo/fgeo/blob/master/.github/CONTRIBUTING.md)
+  - [Support](https://github.com/forestgeo/fgeo/blob/master/.github/SUPPORT.md)
+  - [Issue
+    template](https://github.com/forestgeo/fgeo/blob/master/.github/ISSUE_TEMPLATE.md)
 
 ## Usage
 
