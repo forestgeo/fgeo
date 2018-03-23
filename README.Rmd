@@ -25,6 +25,8 @@ __fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forest
 
 [Packages index](https://forestgeo.github.io/fgeo/reference/index.html).
 
+
+
 ## Installation
 
 To install __fgeo__ run the following code in R:
@@ -39,6 +41,21 @@ remotes::install_github("forestgeo/fgeo")
 ```
 
 To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
+
+
+
+## Relevant resources from a similar development
+
+__fgeo__ closely follows the [__tidyverse__](https://www.tidyverse.org) development. By doing so, __fgeo__ capitalizes the experience of those who develop the __tidiverse__ and the great many that use it. This saves time ensures that __fgeo__ adheres to the conversions of the fastest growing community of R users.
+
+Here are some relevant resources from the __tidyverse__, occasionally adapted to fit __fgeo__:
+
+* [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* [Contributing](.github/CONTRIBUTING.md)
+* [Support](.github/SUPPORT.md)
+* [Issue template](.github/ISSUE_TEMPLATE.md)
+
+
 
 ## Usage
 
@@ -70,7 +87,3 @@ filter(all_functions, matching_pattern)
 all_functions
 ```
 
-## Code of conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md).
-By participating in this project you agree to abide by its terms.

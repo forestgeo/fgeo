@@ -33,13 +33,30 @@ To install **fgeo** run the following code in R:
 To learn the details about how to install packages from GitHub, read
 [this blog post](https://goo.gl/dQKEeg).
 
+## Relevant resources from a similar development
+
+**fgeo** closely follows the [**tidyverse**](https://www.tidyverse.org)
+development. By doing so, **fgeo** capitalizes the experience of those
+who develop the **tidiverse** and the great many that use it. This saves
+time ensures that **fgeo** adheres to the conversions of the fastest
+growing community of R users.
+
+Here are some relevant resources from the **tidyverse**, occasionally
+adapted to fit **fgeo**:
+
+  - [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By
+    participating in this project you agree to abide by its terms.
+  - [Contributing](.github/CONTRIBUTING.md)
+  - [Support](.github/SUPPORT.md)
+  - [Issue template](.github/ISSUE_TEMPLATE.md)
+
 ## Usage
 
 Load the core **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------ fgeo 0.0.0.9000 --
+#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001
 #> v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203
 #> v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002
@@ -93,110 +110,105 @@ filter(all_functions, matching_pattern)
 ``` r
 all_functions
 #>             package                     fun
-#> 1              fgeo          fgeo_conflicts
-#> 2              fgeo               fgeo_core
-#> 3              fgeo          fgeo_functions
-#> 4              fgeo            fgeo_imports
-#> 5              fgeo           fgeo_packages
-#> 6              fgeo           fgeo_suggests
-#> 7              fgeo             fgeo_update
-#> 8    fgeo.abundance               abundance
-#> 9    fgeo.abundance         abundance_tally
-#> 10   fgeo.abundance              basal_area
-#> 11   fgeo.abundance          basal_area_ind
-#> 12   fgeo.abundance                  enexpr
-#> 13   fgeo.abundance                   enquo
-#> 14   fgeo.abundance                    expr
-#> 15   fgeo.abundance                   exprs
-#> 16   fgeo.abundance                     quo
-#> 17   fgeo.abundance                quo_name
-#> 18   fgeo.abundance                    quos
-#> 19   fgeo.abundance                     sym
-#> 20   fgeo.abundance                    syms
-#> 21  fgeo.demography                  growth
-#> 22  fgeo.demography               growth_df
-#> 23  fgeo.demography               mortality
-#> 24  fgeo.demography            mortality_df
-#> 25  fgeo.demography             recruitment
-#> 26  fgeo.demography          recruitment_df
-#> 27     fgeo.habitat           dist_in_torus
-#> 28     fgeo.habitat                 ExpList
-#> 29     fgeo.habitat GetAutomatedKrigeParams
-#> 30     fgeo.habitat           GetKrigedSoil
-#> 31         fgeo.map                     %>%
-#> 32         fgeo.map                  add_sp
-#> 33         fgeo.map            contour_elev
-#> 34         fgeo.map        hide_axis_labels
-#> 35         fgeo.map       hide_legend_color
-#> 36         fgeo.map              label_elev
-#> 37         fgeo.map             limit_gx_gy
-#> 38         fgeo.map                map_elev
-#> 39         fgeo.map               map_gx_gy
-#> 40         fgeo.map          map_gx_gy_elev
-#> 41         fgeo.map         map_quad_header
-#> 42         fgeo.map             map_sp_elev
-#> 43         fgeo.map          map_tag_header
-#> 44         fgeo.map              maply_quad
-#> 45         fgeo.map           maply_sp_elev
-#> 46         fgeo.map               maply_tag
-#> 47         fgeo.map         suffix_edge_tag
-#> 48         fgeo.map           theme_default
-#> 49         fgeo.map          theme_map_quad
-#> 50         fgeo.map           theme_map_tag
-#> 51         fgeo.map                    wrap
-#> 52        fgeo.tool                     %>%
-#> 53        fgeo.tool             add_col_row
-#> 54        fgeo.tool            add_col_row2
-#> 55        fgeo.tool           add_hectindex
-#> 56        fgeo.tool               add_index
-#> 57        fgeo.tool                add_lxly
-#> 58        fgeo.tool                add_quad
-#> 59        fgeo.tool                add_qxqy
-#> 60        fgeo.tool         add_status_tree
-#> 61        fgeo.tool             add_subquad
-#> 62        fgeo.tool                 add_var
-#> 63        fgeo.tool     check_crucial_names
-#> 64        fgeo.tool            check_unique
-#> 65        fgeo.tool     check_unique_vector
-#> 66        fgeo.tool        count_duplicated
-#> 67        fgeo.tool           exists_in_pkg
-#> 68        fgeo.tool       fieldforms_header
-#> 69        fgeo.tool       fieldforms_output
-#> 70        fgeo.tool      fieldforms_prepare
-#> 71        fgeo.tool                 fill_na
-#> 72        fgeo.tool           guess_plotdim
-#> 73        fgeo.tool               ls_csv_df
-#> 74        fgeo.tool              ls_join_df
-#> 75        fgeo.tool    ls_list_spreadsheets
-#> 76        fgeo.tool              ls_name_df
-#> 77        fgeo.tool              nms_detect
-#> 78        fgeo.tool         nms_extract_all
-#> 79        fgeo.tool     nms_extract_anycase
-#> 80        fgeo.tool            nms_extract1
-#> 81        fgeo.tool             nms_has_any
-#> 82        fgeo.tool           nms_lowercase
-#> 83        fgeo.tool             nms_restore
-#> 84        fgeo.tool      nms_restore_newvar
-#> 85        fgeo.tool                nms_tidy
-#> 86        fgeo.tool          recode_subquad
-#> 87        fgeo.tool            replace_null
-#> 88        fgeo.tool        restructure_elev
-#> 89        fgeo.tool   row_collapse_censusid
-#> 90        fgeo.tool  row_discard_twice_dead
-#> 91        fgeo.tool       row_filter_status
-#> 92        fgeo.tool     row_keep_alive_stem
-#> 93        fgeo.tool     row_keep_alive_tree
-#> 94        fgeo.tool                 row_top
-#> 95        fgeo.tool       str_as_tidy_names
-#> 96        fgeo.tool        str_suffix_match
-#> 97        fgeo.tool             to_recensus
-#> 98        fgeo.tool             type_ensure
-#> 99        fgeo.tool               type_taxa
-#> 100       fgeo.tool                type_vft
+#> 1              fgeo                     %>%
+#> 2              fgeo          fgeo_conflicts
+#> 3              fgeo               fgeo_core
+#> 4              fgeo          fgeo_functions
+#> 5              fgeo            fgeo_imports
+#> 6              fgeo           fgeo_packages
+#> 7              fgeo           fgeo_suggests
+#> 8              fgeo             fgeo_update
+#> 9    fgeo.abundance               abundance
+#> 10   fgeo.abundance         abundance_tally
+#> 11   fgeo.abundance              basal_area
+#> 12   fgeo.abundance          basal_area_ind
+#> 13   fgeo.abundance                  enexpr
+#> 14   fgeo.abundance                   enquo
+#> 15   fgeo.abundance                    expr
+#> 16   fgeo.abundance                   exprs
+#> 17   fgeo.abundance                     quo
+#> 18   fgeo.abundance                quo_name
+#> 19   fgeo.abundance                    quos
+#> 20   fgeo.abundance                     sym
+#> 21   fgeo.abundance                    syms
+#> 22  fgeo.demography                  growth
+#> 23  fgeo.demography               growth_df
+#> 24  fgeo.demography               mortality
+#> 25  fgeo.demography            mortality_df
+#> 26  fgeo.demography             recruitment
+#> 27  fgeo.demography          recruitment_df
+#> 28     fgeo.habitat           dist_in_torus
+#> 29     fgeo.habitat                 ExpList
+#> 30     fgeo.habitat GetAutomatedKrigeParams
+#> 31     fgeo.habitat           GetKrigedSoil
+#> 32         fgeo.map                     %>%
+#> 33         fgeo.map                  add_sp
+#> 34         fgeo.map            contour_elev
+#> 35         fgeo.map        hide_axis_labels
+#> 36         fgeo.map       hide_legend_color
+#> 37         fgeo.map              label_elev
+#> 38         fgeo.map             limit_gx_gy
+#> 39         fgeo.map                map_elev
+#> 40         fgeo.map               map_gx_gy
+#> 41         fgeo.map          map_gx_gy_elev
+#> 42         fgeo.map         map_quad_header
+#> 43         fgeo.map             map_sp_elev
+#> 44         fgeo.map          map_tag_header
+#> 45         fgeo.map              maply_quad
+#> 46         fgeo.map           maply_sp_elev
+#> 47         fgeo.map               maply_tag
+#> 48         fgeo.map         suffix_edge_tag
+#> 49         fgeo.map           theme_default
+#> 50         fgeo.map          theme_map_quad
+#> 51         fgeo.map           theme_map_tag
+#> 52         fgeo.map                    wrap
+#> 53        fgeo.tool                     %>%
+#> 54        fgeo.tool             add_col_row
+#> 55        fgeo.tool            add_col_row2
+#> 56        fgeo.tool           add_hectindex
+#> 57        fgeo.tool               add_index
+#> 58        fgeo.tool                add_lxly
+#> 59        fgeo.tool                add_quad
+#> 60        fgeo.tool                add_qxqy
+#> 61        fgeo.tool         add_status_tree
+#> 62        fgeo.tool             add_subquad
+#> 63        fgeo.tool                 add_var
+#> 64        fgeo.tool     check_crucial_names
+#> 65        fgeo.tool            check_unique
+#> 66        fgeo.tool     check_unique_vector
+#> 67        fgeo.tool        count_duplicated
+#> 68        fgeo.tool           exists_in_pkg
+#> 69        fgeo.tool       fieldforms_header
+#> 70        fgeo.tool       fieldforms_output
+#> 71        fgeo.tool      fieldforms_prepare
+#> 72        fgeo.tool                 fill_na
+#> 73        fgeo.tool           guess_plotdim
+#> 74        fgeo.tool               ls_csv_df
+#> 75        fgeo.tool              ls_join_df
+#> 76        fgeo.tool    ls_list_spreadsheets
+#> 77        fgeo.tool              ls_name_df
+#> 78        fgeo.tool              nms_detect
+#> 79        fgeo.tool         nms_extract_all
+#> 80        fgeo.tool     nms_extract_anycase
+#> 81        fgeo.tool            nms_extract1
+#> 82        fgeo.tool             nms_has_any
+#> 83        fgeo.tool           nms_lowercase
+#> 84        fgeo.tool             nms_restore
+#> 85        fgeo.tool      nms_restore_newvar
+#> 86        fgeo.tool                nms_tidy
+#> 87        fgeo.tool          recode_subquad
+#> 88        fgeo.tool            replace_null
+#> 89        fgeo.tool        restructure_elev
+#> 90        fgeo.tool   row_collapse_censusid
+#> 91        fgeo.tool  row_discard_twice_dead
+#> 92        fgeo.tool       row_filter_status
+#> 93        fgeo.tool     row_keep_alive_stem
+#> 94        fgeo.tool     row_keep_alive_tree
+#> 95        fgeo.tool                 row_top
+#> 96        fgeo.tool       str_as_tidy_names
+#> 97        fgeo.tool        str_suffix_match
+#> 98        fgeo.tool             to_recensus
+#> 99        fgeo.tool             type_ensure
+#> 100       fgeo.tool               type_taxa
+#> 101       fgeo.tool                type_vft
 ```
-
-## Code of conduct
-
-Please note that this project is released with a [Contributor Code of
-Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
-to abide by its terms.

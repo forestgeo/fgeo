@@ -157,12 +157,25 @@ if (missing_remotes) {
 remotes::install_github("forestgeo/fgeo")</code></pre>
 <p>To learn the details about how to install packages from GitHub, read <a href="https://goo.gl/dQKEeg">this blog post</a>.</p>
 </div>
+<div id="relevant-resources-from-a-similar-development" class="section level2">
+<h2 class="hasAnchor">
+<a href="#relevant-resources-from-a-similar-development" class="anchor"></a>Relevant resources from a similar development</h2>
+<p><strong>fgeo</strong> closely follows the <a href="https://www.tidyverse.org"><strong>tidyverse</strong></a> development. By doing so, <strong>fgeo</strong> capitalizes the experience of those who develop the <strong>tidiverse</strong> and the great many that use it. This saves time ensures that <strong>fgeo</strong> adheres to the conversions of the fastest growing community of R users.</p>
+<p>Here are some relevant resources from the <strong>tidyverse</strong>, occasionally adapted to fit <strong>fgeo</strong>:</p>
+<ul>
+<li>
+<a href=".github/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</li>
+<li><a href=".github/CONTRIBUTING.md">Contributing</a></li>
+<li><a href=".github/SUPPORT.md">Support</a></li>
+<li><a href=".github/ISSUE_TEMPLATE.md">Issue template</a></li>
+</ul>
+</div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>Load the core <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------ fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002</span></a>
@@ -198,106 +211,107 @@ remotes::install_github("forestgeo/fgeo")</code></pre>
 <a class="sourceLine" id="cb4-25" data-line-number="25"><span class="co">#&gt; 10       fgeo.tool                row_top</span></a></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">all_functions</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt;             package                     fun</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; 1              fgeo          fgeo_conflicts</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; 2              fgeo               fgeo_core</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 3              fgeo          fgeo_functions</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 4              fgeo            fgeo_imports</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 5              fgeo           fgeo_packages</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 6              fgeo           fgeo_suggests</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 7              fgeo             fgeo_update</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 8    fgeo.abundance               abundance</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 9    fgeo.abundance         abundance_tally</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 10   fgeo.abundance              basal_area</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 11   fgeo.abundance          basal_area_ind</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 12   fgeo.abundance                  enexpr</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 13   fgeo.abundance                   enquo</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 14   fgeo.abundance                    expr</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; 15   fgeo.abundance                   exprs</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; 16   fgeo.abundance                     quo</span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 17   fgeo.abundance                quo_name</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; 18   fgeo.abundance                    quos</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; 19   fgeo.abundance                     sym</span></a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; 20   fgeo.abundance                    syms</span></a>
-<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt; 21  fgeo.demography                  growth</span></a>
-<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt; 22  fgeo.demography               growth_df</span></a>
-<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">#&gt; 23  fgeo.demography               mortality</span></a>
-<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co">#&gt; 24  fgeo.demography            mortality_df</span></a>
-<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co">#&gt; 25  fgeo.demography             recruitment</span></a>
-<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">#&gt; 26  fgeo.demography          recruitment_df</span></a>
-<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co">#&gt; 27     fgeo.habitat           dist_in_torus</span></a>
-<a class="sourceLine" id="cb5-30" data-line-number="30"><span class="co">#&gt; 28     fgeo.habitat                 ExpList</span></a>
-<a class="sourceLine" id="cb5-31" data-line-number="31"><span class="co">#&gt; 29     fgeo.habitat GetAutomatedKrigeParams</span></a>
-<a class="sourceLine" id="cb5-32" data-line-number="32"><span class="co">#&gt; 30     fgeo.habitat           GetKrigedSoil</span></a>
-<a class="sourceLine" id="cb5-33" data-line-number="33"><span class="co">#&gt; 31         fgeo.map                     %&gt;%</span></a>
-<a class="sourceLine" id="cb5-34" data-line-number="34"><span class="co">#&gt; 32         fgeo.map                  add_sp</span></a>
-<a class="sourceLine" id="cb5-35" data-line-number="35"><span class="co">#&gt; 33         fgeo.map            contour_elev</span></a>
-<a class="sourceLine" id="cb5-36" data-line-number="36"><span class="co">#&gt; 34         fgeo.map        hide_axis_labels</span></a>
-<a class="sourceLine" id="cb5-37" data-line-number="37"><span class="co">#&gt; 35         fgeo.map       hide_legend_color</span></a>
-<a class="sourceLine" id="cb5-38" data-line-number="38"><span class="co">#&gt; 36         fgeo.map              label_elev</span></a>
-<a class="sourceLine" id="cb5-39" data-line-number="39"><span class="co">#&gt; 37         fgeo.map             limit_gx_gy</span></a>
-<a class="sourceLine" id="cb5-40" data-line-number="40"><span class="co">#&gt; 38         fgeo.map                map_elev</span></a>
-<a class="sourceLine" id="cb5-41" data-line-number="41"><span class="co">#&gt; 39         fgeo.map               map_gx_gy</span></a>
-<a class="sourceLine" id="cb5-42" data-line-number="42"><span class="co">#&gt; 40         fgeo.map          map_gx_gy_elev</span></a>
-<a class="sourceLine" id="cb5-43" data-line-number="43"><span class="co">#&gt; 41         fgeo.map         map_quad_header</span></a>
-<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#&gt; 42         fgeo.map             map_sp_elev</span></a>
-<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co">#&gt; 43         fgeo.map          map_tag_header</span></a>
-<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co">#&gt; 44         fgeo.map              maply_quad</span></a>
-<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co">#&gt; 45         fgeo.map           maply_sp_elev</span></a>
-<a class="sourceLine" id="cb5-48" data-line-number="48"><span class="co">#&gt; 46         fgeo.map               maply_tag</span></a>
-<a class="sourceLine" id="cb5-49" data-line-number="49"><span class="co">#&gt; 47         fgeo.map         suffix_edge_tag</span></a>
-<a class="sourceLine" id="cb5-50" data-line-number="50"><span class="co">#&gt; 48         fgeo.map           theme_default</span></a>
-<a class="sourceLine" id="cb5-51" data-line-number="51"><span class="co">#&gt; 49         fgeo.map          theme_map_quad</span></a>
-<a class="sourceLine" id="cb5-52" data-line-number="52"><span class="co">#&gt; 50         fgeo.map           theme_map_tag</span></a>
-<a class="sourceLine" id="cb5-53" data-line-number="53"><span class="co">#&gt; 51         fgeo.map                    wrap</span></a>
-<a class="sourceLine" id="cb5-54" data-line-number="54"><span class="co">#&gt; 52        fgeo.tool                     %&gt;%</span></a>
-<a class="sourceLine" id="cb5-55" data-line-number="55"><span class="co">#&gt; 53        fgeo.tool             add_col_row</span></a>
-<a class="sourceLine" id="cb5-56" data-line-number="56"><span class="co">#&gt; 54        fgeo.tool            add_col_row2</span></a>
-<a class="sourceLine" id="cb5-57" data-line-number="57"><span class="co">#&gt; 55        fgeo.tool           add_hectindex</span></a>
-<a class="sourceLine" id="cb5-58" data-line-number="58"><span class="co">#&gt; 56        fgeo.tool               add_index</span></a>
-<a class="sourceLine" id="cb5-59" data-line-number="59"><span class="co">#&gt; 57        fgeo.tool                add_lxly</span></a>
-<a class="sourceLine" id="cb5-60" data-line-number="60"><span class="co">#&gt; 58        fgeo.tool                add_quad</span></a>
-<a class="sourceLine" id="cb5-61" data-line-number="61"><span class="co">#&gt; 59        fgeo.tool                add_qxqy</span></a>
-<a class="sourceLine" id="cb5-62" data-line-number="62"><span class="co">#&gt; 60        fgeo.tool         add_status_tree</span></a>
-<a class="sourceLine" id="cb5-63" data-line-number="63"><span class="co">#&gt; 61        fgeo.tool             add_subquad</span></a>
-<a class="sourceLine" id="cb5-64" data-line-number="64"><span class="co">#&gt; 62        fgeo.tool                 add_var</span></a>
-<a class="sourceLine" id="cb5-65" data-line-number="65"><span class="co">#&gt; 63        fgeo.tool     check_crucial_names</span></a>
-<a class="sourceLine" id="cb5-66" data-line-number="66"><span class="co">#&gt; 64        fgeo.tool            check_unique</span></a>
-<a class="sourceLine" id="cb5-67" data-line-number="67"><span class="co">#&gt; 65        fgeo.tool     check_unique_vector</span></a>
-<a class="sourceLine" id="cb5-68" data-line-number="68"><span class="co">#&gt; 66        fgeo.tool        count_duplicated</span></a>
-<a class="sourceLine" id="cb5-69" data-line-number="69"><span class="co">#&gt; 67        fgeo.tool           exists_in_pkg</span></a>
-<a class="sourceLine" id="cb5-70" data-line-number="70"><span class="co">#&gt; 68        fgeo.tool       fieldforms_header</span></a>
-<a class="sourceLine" id="cb5-71" data-line-number="71"><span class="co">#&gt; 69        fgeo.tool       fieldforms_output</span></a>
-<a class="sourceLine" id="cb5-72" data-line-number="72"><span class="co">#&gt; 70        fgeo.tool      fieldforms_prepare</span></a>
-<a class="sourceLine" id="cb5-73" data-line-number="73"><span class="co">#&gt; 71        fgeo.tool                 fill_na</span></a>
-<a class="sourceLine" id="cb5-74" data-line-number="74"><span class="co">#&gt; 72        fgeo.tool           guess_plotdim</span></a>
-<a class="sourceLine" id="cb5-75" data-line-number="75"><span class="co">#&gt; 73        fgeo.tool               ls_csv_df</span></a>
-<a class="sourceLine" id="cb5-76" data-line-number="76"><span class="co">#&gt; 74        fgeo.tool              ls_join_df</span></a>
-<a class="sourceLine" id="cb5-77" data-line-number="77"><span class="co">#&gt; 75        fgeo.tool    ls_list_spreadsheets</span></a>
-<a class="sourceLine" id="cb5-78" data-line-number="78"><span class="co">#&gt; 76        fgeo.tool              ls_name_df</span></a>
-<a class="sourceLine" id="cb5-79" data-line-number="79"><span class="co">#&gt; 77        fgeo.tool              nms_detect</span></a>
-<a class="sourceLine" id="cb5-80" data-line-number="80"><span class="co">#&gt; 78        fgeo.tool         nms_extract_all</span></a>
-<a class="sourceLine" id="cb5-81" data-line-number="81"><span class="co">#&gt; 79        fgeo.tool     nms_extract_anycase</span></a>
-<a class="sourceLine" id="cb5-82" data-line-number="82"><span class="co">#&gt; 80        fgeo.tool            nms_extract1</span></a>
-<a class="sourceLine" id="cb5-83" data-line-number="83"><span class="co">#&gt; 81        fgeo.tool             nms_has_any</span></a>
-<a class="sourceLine" id="cb5-84" data-line-number="84"><span class="co">#&gt; 82        fgeo.tool           nms_lowercase</span></a>
-<a class="sourceLine" id="cb5-85" data-line-number="85"><span class="co">#&gt; 83        fgeo.tool             nms_restore</span></a>
-<a class="sourceLine" id="cb5-86" data-line-number="86"><span class="co">#&gt; 84        fgeo.tool      nms_restore_newvar</span></a>
-<a class="sourceLine" id="cb5-87" data-line-number="87"><span class="co">#&gt; 85        fgeo.tool                nms_tidy</span></a>
-<a class="sourceLine" id="cb5-88" data-line-number="88"><span class="co">#&gt; 86        fgeo.tool          recode_subquad</span></a>
-<a class="sourceLine" id="cb5-89" data-line-number="89"><span class="co">#&gt; 87        fgeo.tool            replace_null</span></a>
-<a class="sourceLine" id="cb5-90" data-line-number="90"><span class="co">#&gt; 88        fgeo.tool        restructure_elev</span></a>
-<a class="sourceLine" id="cb5-91" data-line-number="91"><span class="co">#&gt; 89        fgeo.tool   row_collapse_censusid</span></a>
-<a class="sourceLine" id="cb5-92" data-line-number="92"><span class="co">#&gt; 90        fgeo.tool  row_discard_twice_dead</span></a>
-<a class="sourceLine" id="cb5-93" data-line-number="93"><span class="co">#&gt; 91        fgeo.tool       row_filter_status</span></a>
-<a class="sourceLine" id="cb5-94" data-line-number="94"><span class="co">#&gt; 92        fgeo.tool     row_keep_alive_stem</span></a>
-<a class="sourceLine" id="cb5-95" data-line-number="95"><span class="co">#&gt; 93        fgeo.tool     row_keep_alive_tree</span></a>
-<a class="sourceLine" id="cb5-96" data-line-number="96"><span class="co">#&gt; 94        fgeo.tool                 row_top</span></a>
-<a class="sourceLine" id="cb5-97" data-line-number="97"><span class="co">#&gt; 95        fgeo.tool       str_as_tidy_names</span></a>
-<a class="sourceLine" id="cb5-98" data-line-number="98"><span class="co">#&gt; 96        fgeo.tool        str_suffix_match</span></a>
-<a class="sourceLine" id="cb5-99" data-line-number="99"><span class="co">#&gt; 97        fgeo.tool             to_recensus</span></a>
-<a class="sourceLine" id="cb5-100" data-line-number="100"><span class="co">#&gt; 98        fgeo.tool             type_ensure</span></a>
-<a class="sourceLine" id="cb5-101" data-line-number="101"><span class="co">#&gt; 99        fgeo.tool               type_taxa</span></a>
-<a class="sourceLine" id="cb5-102" data-line-number="102"><span class="co">#&gt; 100       fgeo.tool                type_vft</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; 1              fgeo                     %&gt;%</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; 2              fgeo          fgeo_conflicts</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 3              fgeo               fgeo_core</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 4              fgeo          fgeo_functions</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 5              fgeo            fgeo_imports</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 6              fgeo           fgeo_packages</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 7              fgeo           fgeo_suggests</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 8              fgeo             fgeo_update</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 9    fgeo.abundance               abundance</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 10   fgeo.abundance         abundance_tally</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 11   fgeo.abundance              basal_area</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 12   fgeo.abundance          basal_area_ind</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 13   fgeo.abundance                  enexpr</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 14   fgeo.abundance                   enquo</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; 15   fgeo.abundance                    expr</span></a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; 16   fgeo.abundance                   exprs</span></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 17   fgeo.abundance                     quo</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; 18   fgeo.abundance                quo_name</span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; 19   fgeo.abundance                    quos</span></a>
+<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; 20   fgeo.abundance                     sym</span></a>
+<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt; 21   fgeo.abundance                    syms</span></a>
+<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt; 22  fgeo.demography                  growth</span></a>
+<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">#&gt; 23  fgeo.demography               growth_df</span></a>
+<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co">#&gt; 24  fgeo.demography               mortality</span></a>
+<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co">#&gt; 25  fgeo.demography            mortality_df</span></a>
+<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">#&gt; 26  fgeo.demography             recruitment</span></a>
+<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co">#&gt; 27  fgeo.demography          recruitment_df</span></a>
+<a class="sourceLine" id="cb5-30" data-line-number="30"><span class="co">#&gt; 28     fgeo.habitat           dist_in_torus</span></a>
+<a class="sourceLine" id="cb5-31" data-line-number="31"><span class="co">#&gt; 29     fgeo.habitat                 ExpList</span></a>
+<a class="sourceLine" id="cb5-32" data-line-number="32"><span class="co">#&gt; 30     fgeo.habitat GetAutomatedKrigeParams</span></a>
+<a class="sourceLine" id="cb5-33" data-line-number="33"><span class="co">#&gt; 31     fgeo.habitat           GetKrigedSoil</span></a>
+<a class="sourceLine" id="cb5-34" data-line-number="34"><span class="co">#&gt; 32         fgeo.map                     %&gt;%</span></a>
+<a class="sourceLine" id="cb5-35" data-line-number="35"><span class="co">#&gt; 33         fgeo.map                  add_sp</span></a>
+<a class="sourceLine" id="cb5-36" data-line-number="36"><span class="co">#&gt; 34         fgeo.map            contour_elev</span></a>
+<a class="sourceLine" id="cb5-37" data-line-number="37"><span class="co">#&gt; 35         fgeo.map        hide_axis_labels</span></a>
+<a class="sourceLine" id="cb5-38" data-line-number="38"><span class="co">#&gt; 36         fgeo.map       hide_legend_color</span></a>
+<a class="sourceLine" id="cb5-39" data-line-number="39"><span class="co">#&gt; 37         fgeo.map              label_elev</span></a>
+<a class="sourceLine" id="cb5-40" data-line-number="40"><span class="co">#&gt; 38         fgeo.map             limit_gx_gy</span></a>
+<a class="sourceLine" id="cb5-41" data-line-number="41"><span class="co">#&gt; 39         fgeo.map                map_elev</span></a>
+<a class="sourceLine" id="cb5-42" data-line-number="42"><span class="co">#&gt; 40         fgeo.map               map_gx_gy</span></a>
+<a class="sourceLine" id="cb5-43" data-line-number="43"><span class="co">#&gt; 41         fgeo.map          map_gx_gy_elev</span></a>
+<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#&gt; 42         fgeo.map         map_quad_header</span></a>
+<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co">#&gt; 43         fgeo.map             map_sp_elev</span></a>
+<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co">#&gt; 44         fgeo.map          map_tag_header</span></a>
+<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co">#&gt; 45         fgeo.map              maply_quad</span></a>
+<a class="sourceLine" id="cb5-48" data-line-number="48"><span class="co">#&gt; 46         fgeo.map           maply_sp_elev</span></a>
+<a class="sourceLine" id="cb5-49" data-line-number="49"><span class="co">#&gt; 47         fgeo.map               maply_tag</span></a>
+<a class="sourceLine" id="cb5-50" data-line-number="50"><span class="co">#&gt; 48         fgeo.map         suffix_edge_tag</span></a>
+<a class="sourceLine" id="cb5-51" data-line-number="51"><span class="co">#&gt; 49         fgeo.map           theme_default</span></a>
+<a class="sourceLine" id="cb5-52" data-line-number="52"><span class="co">#&gt; 50         fgeo.map          theme_map_quad</span></a>
+<a class="sourceLine" id="cb5-53" data-line-number="53"><span class="co">#&gt; 51         fgeo.map           theme_map_tag</span></a>
+<a class="sourceLine" id="cb5-54" data-line-number="54"><span class="co">#&gt; 52         fgeo.map                    wrap</span></a>
+<a class="sourceLine" id="cb5-55" data-line-number="55"><span class="co">#&gt; 53        fgeo.tool                     %&gt;%</span></a>
+<a class="sourceLine" id="cb5-56" data-line-number="56"><span class="co">#&gt; 54        fgeo.tool             add_col_row</span></a>
+<a class="sourceLine" id="cb5-57" data-line-number="57"><span class="co">#&gt; 55        fgeo.tool            add_col_row2</span></a>
+<a class="sourceLine" id="cb5-58" data-line-number="58"><span class="co">#&gt; 56        fgeo.tool           add_hectindex</span></a>
+<a class="sourceLine" id="cb5-59" data-line-number="59"><span class="co">#&gt; 57        fgeo.tool               add_index</span></a>
+<a class="sourceLine" id="cb5-60" data-line-number="60"><span class="co">#&gt; 58        fgeo.tool                add_lxly</span></a>
+<a class="sourceLine" id="cb5-61" data-line-number="61"><span class="co">#&gt; 59        fgeo.tool                add_quad</span></a>
+<a class="sourceLine" id="cb5-62" data-line-number="62"><span class="co">#&gt; 60        fgeo.tool                add_qxqy</span></a>
+<a class="sourceLine" id="cb5-63" data-line-number="63"><span class="co">#&gt; 61        fgeo.tool         add_status_tree</span></a>
+<a class="sourceLine" id="cb5-64" data-line-number="64"><span class="co">#&gt; 62        fgeo.tool             add_subquad</span></a>
+<a class="sourceLine" id="cb5-65" data-line-number="65"><span class="co">#&gt; 63        fgeo.tool                 add_var</span></a>
+<a class="sourceLine" id="cb5-66" data-line-number="66"><span class="co">#&gt; 64        fgeo.tool     check_crucial_names</span></a>
+<a class="sourceLine" id="cb5-67" data-line-number="67"><span class="co">#&gt; 65        fgeo.tool            check_unique</span></a>
+<a class="sourceLine" id="cb5-68" data-line-number="68"><span class="co">#&gt; 66        fgeo.tool     check_unique_vector</span></a>
+<a class="sourceLine" id="cb5-69" data-line-number="69"><span class="co">#&gt; 67        fgeo.tool        count_duplicated</span></a>
+<a class="sourceLine" id="cb5-70" data-line-number="70"><span class="co">#&gt; 68        fgeo.tool           exists_in_pkg</span></a>
+<a class="sourceLine" id="cb5-71" data-line-number="71"><span class="co">#&gt; 69        fgeo.tool       fieldforms_header</span></a>
+<a class="sourceLine" id="cb5-72" data-line-number="72"><span class="co">#&gt; 70        fgeo.tool       fieldforms_output</span></a>
+<a class="sourceLine" id="cb5-73" data-line-number="73"><span class="co">#&gt; 71        fgeo.tool      fieldforms_prepare</span></a>
+<a class="sourceLine" id="cb5-74" data-line-number="74"><span class="co">#&gt; 72        fgeo.tool                 fill_na</span></a>
+<a class="sourceLine" id="cb5-75" data-line-number="75"><span class="co">#&gt; 73        fgeo.tool           guess_plotdim</span></a>
+<a class="sourceLine" id="cb5-76" data-line-number="76"><span class="co">#&gt; 74        fgeo.tool               ls_csv_df</span></a>
+<a class="sourceLine" id="cb5-77" data-line-number="77"><span class="co">#&gt; 75        fgeo.tool              ls_join_df</span></a>
+<a class="sourceLine" id="cb5-78" data-line-number="78"><span class="co">#&gt; 76        fgeo.tool    ls_list_spreadsheets</span></a>
+<a class="sourceLine" id="cb5-79" data-line-number="79"><span class="co">#&gt; 77        fgeo.tool              ls_name_df</span></a>
+<a class="sourceLine" id="cb5-80" data-line-number="80"><span class="co">#&gt; 78        fgeo.tool              nms_detect</span></a>
+<a class="sourceLine" id="cb5-81" data-line-number="81"><span class="co">#&gt; 79        fgeo.tool         nms_extract_all</span></a>
+<a class="sourceLine" id="cb5-82" data-line-number="82"><span class="co">#&gt; 80        fgeo.tool     nms_extract_anycase</span></a>
+<a class="sourceLine" id="cb5-83" data-line-number="83"><span class="co">#&gt; 81        fgeo.tool            nms_extract1</span></a>
+<a class="sourceLine" id="cb5-84" data-line-number="84"><span class="co">#&gt; 82        fgeo.tool             nms_has_any</span></a>
+<a class="sourceLine" id="cb5-85" data-line-number="85"><span class="co">#&gt; 83        fgeo.tool           nms_lowercase</span></a>
+<a class="sourceLine" id="cb5-86" data-line-number="86"><span class="co">#&gt; 84        fgeo.tool             nms_restore</span></a>
+<a class="sourceLine" id="cb5-87" data-line-number="87"><span class="co">#&gt; 85        fgeo.tool      nms_restore_newvar</span></a>
+<a class="sourceLine" id="cb5-88" data-line-number="88"><span class="co">#&gt; 86        fgeo.tool                nms_tidy</span></a>
+<a class="sourceLine" id="cb5-89" data-line-number="89"><span class="co">#&gt; 87        fgeo.tool          recode_subquad</span></a>
+<a class="sourceLine" id="cb5-90" data-line-number="90"><span class="co">#&gt; 88        fgeo.tool            replace_null</span></a>
+<a class="sourceLine" id="cb5-91" data-line-number="91"><span class="co">#&gt; 89        fgeo.tool        restructure_elev</span></a>
+<a class="sourceLine" id="cb5-92" data-line-number="92"><span class="co">#&gt; 90        fgeo.tool   row_collapse_censusid</span></a>
+<a class="sourceLine" id="cb5-93" data-line-number="93"><span class="co">#&gt; 91        fgeo.tool  row_discard_twice_dead</span></a>
+<a class="sourceLine" id="cb5-94" data-line-number="94"><span class="co">#&gt; 92        fgeo.tool       row_filter_status</span></a>
+<a class="sourceLine" id="cb5-95" data-line-number="95"><span class="co">#&gt; 93        fgeo.tool     row_keep_alive_stem</span></a>
+<a class="sourceLine" id="cb5-96" data-line-number="96"><span class="co">#&gt; 94        fgeo.tool     row_keep_alive_tree</span></a>
+<a class="sourceLine" id="cb5-97" data-line-number="97"><span class="co">#&gt; 95        fgeo.tool                 row_top</span></a>
+<a class="sourceLine" id="cb5-98" data-line-number="98"><span class="co">#&gt; 96        fgeo.tool       str_as_tidy_names</span></a>
+<a class="sourceLine" id="cb5-99" data-line-number="99"><span class="co">#&gt; 97        fgeo.tool        str_suffix_match</span></a>
+<a class="sourceLine" id="cb5-100" data-line-number="100"><span class="co">#&gt; 98        fgeo.tool             to_recensus</span></a>
+<a class="sourceLine" id="cb5-101" data-line-number="101"><span class="co">#&gt; 99        fgeo.tool             type_ensure</span></a>
+<a class="sourceLine" id="cb5-102" data-line-number="102"><span class="co">#&gt; 100       fgeo.tool               type_taxa</span></a>
+<a class="sourceLine" id="cb5-103" data-line-number="103"><span class="co">#&gt; 101       fgeo.tool                type_vft</span></a></code></pre></div>
 </div>
 </div>
 </div>
@@ -315,7 +329,7 @@ remotes::install_github("forestgeo/fgeo")</code></pre>
 </li>
 </ul>
 <h2>License</h2>
-<p><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></p>
+<p>CC0</p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
