@@ -70,6 +70,9 @@ all_functions <- fgeo_functions()
 matching_pattern <- grepl(pattern = "row", all_functions$fun)
 filter(all_functions, matching_pattern)
 ```
+
+## All functions by package
+
 ```{r}
 all_functions
 ```
