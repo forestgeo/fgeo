@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Find fgeo packages that depend on a given package. � fgeo_package_deps • fgeo</title>
+<title>NA • fgeo</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,18 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
-<script src="../pkgdown.js"></script>
-  <link href="../extra.css" rel="stylesheet">
-  <script src="../extra.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="jquery.sticky-kit.min.js"></script>
+<script src="pkgdown.js"></script>
+  <link href="extra.css" rel="stylesheet">
+  <script src="extra.js"></script>
+<meta property="og:title" content="NA" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -34,10 +39,12 @@
 <![endif]-->
 
 
+
+
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -47,12 +54,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fgeo</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="index.html">fgeo</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Packages</a>
+  <a href="reference/index.html">Packages</a>
 </li>
       </ul>
       
@@ -132,6 +143,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -140,59 +152,23 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-    <h1>Find fgeo packages that depend on a given package.</h1>
+      <h1>NA</h1>
     </div>
 
-    
-    <p>Useful to find which packages may have broken after refactoring on package
-(the one you would want to pass to the argument <code>pkg</code>).</p>
-    
 
-    <pre class="usage"><span class='fu'>fgeo_package_deps</span>(<span class='no'>pkg</span>, <span class='kw'>root</span> <span class='kw'>=</span> <span class='st'>"../"</span>, <span class='kw'>fgeo_pkgs</span> <span class='kw'>=</span> <span class='fu'><a href='fgeo_core.html'>fgeo_core</a></span>())</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>pkg</th>
-      <td><p>String giving the name of one package which dependencies you want
-to find.</p></td>
-    </tr>
-    <tr>
-      <th>root</th>
-      <td><p>Sting. Assumes all fgeo package have the same parent directory.</p></td>
-    </tr>
-    <tr>
-      <th>fgeo_pkgs</th>
-      <td><p>Character string giving the names of fgeo packages.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+<p>Please briefly describe your problem and what output you expect. If you have a question, please don’t use this form. Instead, ask on <a href="https://stackoverflow.com/" class="uri">https://stackoverflow.com/</a>, <a href="https://community.rstudio.com/" class="uri">https://community.rstudio.com/</a>, <a href="https://github.com/forestgeo/forum/" class="uri">https://github.com/forestgeo/forum/</a> or email Mauro Lepore at <a href="mailto:maurolepore@gmail.com">maurolepore@gmail.com</a>.</p>
+<p>Please include a minimal reproducible example (AKA a reprex). If you’ve never heard of a <a href="http://reprex.tidyverse.org/">reprex</a> before, start by reading <a href="https://www.tidyverse.org/help/#reprex" class="uri">https://www.tidyverse.org/help/#reprex</a>.</p>
+<hr>
+<p>Brief description of the problem</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># insert reprex here</span></a></code></pre></div>
 
-    <p>A character vector.</p>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'># Won't because it depends on local directories.
-</div><span class='co'># NOT RUN {</span>
-<span class='fu'>fgeo_package_deps</span>(<span class='st'>"fgeo.tool"</span>)
-<span class='co'># }</span></pre>
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
 
   </div>
+
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -200,11 +176,14 @@ to find.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
