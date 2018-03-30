@@ -11,13 +11,23 @@ knitr::opts_chunk$set(
 )
 ```
 
-# EDIT-PACKAGE-NAME <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 />
+# <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 /> EDIT-PACKAGE-NAME
 
-EDIT-ADD-BADGES-CREATED-WITH:
+EDIT: ADD BADGES CREATED WITH:
 
 ```R
 use_lifecycle_badge()
-use_tidy_ci()
+use_cran_badge()
+```
+
+EDIT: CONSIDER ADDING BADGES CREATED WITH:
+
+```
+# In .travis.yml, consider adding `warnings_are_errors: false`
+use_travis()
+
+# Add repo at https://coveralls.io/repos/new
+use_coverage("coveralls")
 ```
 
 The goal of __EDIT-PACKAGE-NAME__ is to ...
@@ -26,18 +36,12 @@ The goal of __EDIT-PACKAGE-NAME__ is to ...
 
 ## Installation
 
-To install __EDIT-PACKAGE-NAME__ run the following code in R:
-
 ```
-missing_remotes <- !require(remotes)
-if (missing_remotes) {
-  install.packages("remotes")
-}
-
+# install.packages("remotes")
 remotes::install_github("EDIT-OWNER/EDIT-PACKAGE-NAME")
 ```
 
-To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
+For details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg).
 
 
 
