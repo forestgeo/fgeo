@@ -42,8 +42,6 @@ remotes::install_github("EDIT-OWNER/EDIT-PACKAGE-NAME")
 
 For details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg).
 
-
-
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -51,6 +49,20 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 ## basic example code
 ```
+
+
+## Code of Conduct
+
+EDIT: Run this:
+
+```
+use_tidy_coc()
+
+use_directory(".github")
+# move coc manually to .github/
+```
+
+## EDIT: READ AND DELETE THIS SECTION
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
@@ -67,3 +79,4 @@ plot(pressure)
 ```
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+

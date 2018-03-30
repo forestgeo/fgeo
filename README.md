@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# <img src="https://i.imgur.com/VcNaTWW.png" align="right" height=44 /> fgeo: Analyze forest diversity and dynamics
+# <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 /> fgeo: Analyze forest diversity and dynamics
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
@@ -39,7 +39,7 @@ Load the core **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ---------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001
 #> v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203
 #> v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002
