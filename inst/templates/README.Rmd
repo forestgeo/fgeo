@@ -23,10 +23,9 @@ use_cran_badge()
 EDIT: CONSIDER ADDING BADGES CREATED WITH:
 
 ```
-# In .travis.yml, consider adding `warnings_are_errors: false`
+# In .travis.yml consider adding `warnings_are_errors: false`
 use_travis()
 
-# Add repo at https://coveralls.io/repos/new
 use_coverage("coveralls")
 ```
 
