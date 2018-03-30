@@ -1,15 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# fgeo: Analyze forest diversity and dynamics <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 />
-
-[![Travis build
-status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
+# <img src="https://i.imgur.com/VcNaTWW.png" align="right" height=44 /> fgeo: Analyze forest diversity and dynamics
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-
-(The developmental stage of this package is according to [this
-website](https://www.tidyverse.org/lifecycle/).)
+[![Travis build
+status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
+[![Coverage
+status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://coveralls.io/r/forestgeo/fgeo?branch=master)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
 **fgeo** installs and loads multiple R packages of
 [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together,
@@ -39,7 +39,7 @@ Load the core **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages --------------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001
 #> v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203
 #> v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002
