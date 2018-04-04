@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 EDIT: ADD BADGES CREATED WITH:
 
 ```R
-use_lifecycle_badge()
+use_lifecycle_badge("experimental")
 use_cran_badge()
 ```
 
