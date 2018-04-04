@@ -57,9 +57,6 @@ EDIT: Run this:
 
 ```
 use_tidy_coc()
-
-use_directory(".github")
-# move coc manually to .github/
 ```
 
 ## EDIT: READ AND DELETE THIS SECTION
