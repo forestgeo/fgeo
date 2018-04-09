@@ -77,8 +77,3 @@ navbar:
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
 
-
-
-reference:
-  - title:
-    desc: Although its main job is to gather other packages, __fgeo__ also provides these functions.
