@@ -81,8 +81,4 @@ navbar:
 
 reference:
   - title:
-    desc: Although the main job of __fgeo__ is to gather other packages (see
-      above), it also provides these handy functions.
-    contents:
-      - starts_with("fgeo_")
-
+    desc: Although its main job is to gather other packages, __fgeo__ also provides these functions.

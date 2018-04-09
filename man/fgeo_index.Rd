@@ -8,7 +8,7 @@
 \usage{
 fgeo_index(.f, nm, ...)
 
-fgeo_index_functions()
+fgeo_index_functions(keep_reexported = FALSE)
 
 fgeo_index_packages()
 }
@@ -18,6 +18,8 @@ fgeo_index_packages()
 \item{nm}{A name for the column storing the results of \code{.f}.}
 
 \item{...}{Additional arguments passed to \code{.f}.}
+
+\item{keep_reexported}{Logical; \code{TRUE} includes reexported functions.}
 }
 \value{
 A dataframe.
