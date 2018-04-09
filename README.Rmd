@@ -22,8 +22,6 @@ knitr::opts_chunk$set(
 
 __fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages of __fgeo__ provide a wide range of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
 
-[Packages index](https://forestgeo.github.io/fgeo/reference/index.html).
-
 
 
 ## Installation
@@ -35,7 +33,9 @@ remotes::install_github("forestgeo/fgeo")
 
 To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
 
-## Index of fgeo packages
+## Index
+
+### Packages
 
 ```{r, echo=FALSE, message=FALSE}
 library(dplyr)
@@ -46,28 +46,41 @@ fgeo::fgeo_index_packages() %>%
   DT::datatable(escape = FALSE)
 ```
 
-## Index of fgeo functions
+### Functions
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_functions() %>% 
+  # Make clickable links
   dplyr::mutate(fun = fgeo_link(package, fun)) %>% 
   DT::datatable(escape = FALSE)
 ```
 
-## Usage
+## Example
 
-Load the core __fgeo__ packages in one step.
+Load all __fgeo__ packages in one step.
 
 ```{r example}
 library(fgeo)
 ```
 
-## Example
-
-Update __fgeo__. This will re-install only the packages that have changed since the last installation -- so it will take a fraction of what it took the first time you installed __fgeo__.
+Update packages that changed since last installation.
 
 ```
 fgeo_update()
+```
+
+Table packages.
+
+```{r}
+fgeo_index_packages()
+```
+
+Table and explore functions.
+
+```{r}
+library(dplyr)
+funs <- fgeo_index_functions()
+sample_n(funs, 10)
 ```
 
 ## Related projects
