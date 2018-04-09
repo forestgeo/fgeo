@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>fgeo: Easily Install and Load Packages of ForestGEO — fgeo-package • fgeo</title>
+<title>Index fgeo's elements. — fgeo_index • fgeo</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,15 +27,10 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   <script src="../extra.js"></script>
-<meta property="og:title" content="fgeo: Easily Install and Load Packages of ForestGEO — fgeo-package" />
+<meta property="og:title" content="Index fgeo's elements. — fgeo_index" />
 
-<meta property="og:description" content="'fgeo' installs and load multiple R packages of ForestGEO in
-a single step. Each individual package is a self contained module. Together,
-all the packages in 'fgeo' provide a wide renge of tools to analyze forest
-diversity and dynamics. The modular structure of 'fgeo' makes it easy to add
-and maintain more tools as they become available. Learn more about the
-'fgeo' package at &lt;http://forestgeo.github.io/fgeo&gt;; and learn
-more about ForestGEO at &lt;http://www.forestgeo.si.edu/&gt;." />
+<meta property="og:description" content="fgeo_index() created a table of some component of fgeo for each core
+package of fgeo. The other functions are convenient wrappers." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -168,47 +163,75 @@ more about ForestGEO at &lt;http://www.forestgeo.si.edu/&gt;." />
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>fgeo: Easily Install and Load Packages of ForestGEO</h1>
-    <small>Source: <a href='https://github.com/forestgeo/fgeo/blob/master/R/fgeo.R'><code>R/fgeo.R</code></a></small>
+    <h1>Index fgeo's elements.</h1>
+    <small>Source: <a href='https://github.com/forestgeo/fgeo/blob/master/R/fgeo_index.R'><code>R/fgeo_index.R</code></a></small>
     </div>
 
     
-    <p>'fgeo' installs and load multiple R packages of ForestGEO in
-a single step. Each individual package is a self contained module. Together,
-all the packages in 'fgeo' provide a wide renge of tools to analyze forest
-diversity and dynamics. The modular structure of 'fgeo' makes it easy to add
-and maintain more tools as they become available. Learn more about the
-'fgeo' package at &lt;http://forestgeo.github.io/fgeo&gt;; and learn
-more about ForestGEO at &lt;http://www.forestgeo.si.edu/&gt;.</p>
+    <p><code>fgeo_index()</code> created a table of some component of fgeo for each core
+package of fgeo. The other functions are convenient wrappers.</p>
     
 
-        
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <pre class="usage"><span class='fu'>fgeo_index</span>(<span class='no'>.f</span>, <span class='no'>nm</span>, <span class='no'>...</span>)
 
-    <p>Useful links:</p><ul>
-<li><p><a href='http://forestgeo.github.io/fgeo'>http://forestgeo.github.io/fgeo</a></p></li>
-<li><p><a href='https://github.com/forestgeo/fgeo'>https://github.com/forestgeo/fgeo</a></p></li>
-<li><p>Report bugs at <a href='https://github.com/forestgeo/fgeo/issues'>https://github.com/forestgeo/fgeo/issues</a></p></li>
-</ul>
+<span class='fu'>fgeo_index_functions</span>()
+
+<span class='fu'>fgeo_index_packages</span>()</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>.f</th>
+      <td><p>A function to map to each core package of fgeo.</p></td>
+    </tr>
+    <tr>
+      <th>nm</th>
+      <td><p>A name for the column storing the results of <code>.f</code>.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments passed to <code>.f</code>.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A dataframe.</p>
+    
+    <h2 class="hasAnchor" id="acknowledgements"><a class="anchor" href="#acknowledgements"></a>Acknowledgements</h2>
+
+    
+    <p>Thanks to Jim Hester for <a href='https://goo.gl/Qzp5kR'>advice</a> on an implementation
+detail.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>head</span>(<span class='fu'>fgeo_index_functions</span>())</div><div class='output co'>#&gt;   package                       fun
+#&gt; 1    fgeo                       %&gt;%
+#&gt; 2    fgeo                     .data
+#&gt; 3    fgeo check_if_pkg_can_be_found
+#&gt; 4    fgeo                  collapse
+#&gt; 5    fgeo          confirm_conflict
+#&gt; 6    fgeo               core_loaded</div><div class='input'><span class='fu'>head</span>(<span class='fu'>fgeo_index_packages</span>())</div><div class='output co'>#&gt;           package                                           Title
+#&gt; 1           bciex Forest Dynamics Data from Barro Colorado Island
+#&gt; 2            fgeo   Easily Install and Load Packages of ForestGEO
+#&gt; 3  fgeo.abundance  R packages for the Analysis of Forest Dynamics
+#&gt; 4 fgeo.demography                                Demography Tools
+#&gt; 5    fgeo.habitat                                Habitat Analyses
+#&gt; 6        fgeo.map                            Map ForestGEO's Data</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#see-also">See also</a></li>
-          </ul>
+      <li><a href="#value">Value</a></li>
 
-    <h2>Author</h2>
-    
-<strong>Maintainer</strong>: Mauro Lepore <a href='mailto:leporem@si.edu'>leporem@si.edu</a> [contractor]
-
-Other contributors:
-<ul>
-<li><p>CTFS-ForestGEO <a href='mailto:ForestGEO@si.edu'>ForestGEO@si.edu</a> [copyright holder, funder]</p></li>
-</ul>
-
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

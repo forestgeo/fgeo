@@ -28,13 +28,17 @@ navbar:
   type: default
   left:
 
-    - text: Packages
+    - text: Functions Index
       href: reference/index.html
 
   right:
 
     - text: Tutorials
       menu:
+      - text: General
+      - text: Exploratory data analysis
+        href: http://rpubs.com/forestgeo/eda
+      - text: ----------
       - text: Abundance
       - text: Abundance and basal area
         href: https://forestgeo.github.io/fgeo.abundance/articles/abundance.html
@@ -76,28 +80,9 @@ navbar:
 
 
 reference:
-
-  - title: Packages that install and load with fgeo
-    desc: Install these packages with
-      `remotes::install_github("forestgeo/fgeo")`; and load them with
-      `library(fgeo)`.
-    contents:
-      - bciex
-      - fgeo.abundance
-      - fgeo.demography
-      - fgeo.habitat
-      - fgeo.map
-      - fgeo.tool
-
-  - title: The fgeo package itself
+  - title:
     desc: Although the main job of __fgeo__ is to gather other packages (see
       above), it also provides these handy functions.
     contents:
       - starts_with("fgeo_")
-
-  - title: Other packages you may also like
-    desc: These packages are not maintained by ForestGEO.
-    contents:
-      - BIOMASS
-      - CTFS
 

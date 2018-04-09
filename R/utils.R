@@ -41,7 +41,6 @@ style_grey <- function(level, ...) {
   )
 }
 
-
 has_class <- function(x, .class) {
   any(grepl(.class, class(x)))
 }
