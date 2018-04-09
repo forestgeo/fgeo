@@ -43,27 +43,3 @@ fgeo_index_functions <- function() {
 fgeo_index_packages <- function() {
   fgeo_index(.f = utils::packageDescription, nm = "Title", fields = "Title")
 }
-
-
-
-# Internal ----------------------------------------------------------------
-
-# Make packages and functions clickable, so they point to webpages.
-#
-# fgeo::fgeo_index_packages() %>%
-#   dplyr::mutate(package = fgeo::fgeo_link(package)) %>%
-#   DT::datatable(escape = FALSE)
-#
-#' @export
-#' @noRd
-fgeo_link <- function(pkg, fun = NULL) {
-  ending <- paste0(">", pkg)
-  if (!is.null(fun)) {
-    ending <- paste0("/reference/", ">", fun)
-  }
-  paste0("<a href=", fgeosite_pkg(pkg), ending, "</a>")
-}
-
-fgeosite_pkg <- function(pkg) {
-  paste0("https://forestgeo.github.io/", pkg)
-}
