@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 inst/docs
-
 tmp.R
 tmp.sh
 tmp.Rmd
+README.html

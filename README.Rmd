@@ -1,5 +1,7 @@
 ---
-output: github_document 
+output: 
+  html_document:
+    keep_md: yes
 ---
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -26,20 +28,30 @@ __fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forest
 
 ## Installation
 
-To install __fgeo__ run the following code in R:
-
 ```
-missing_remotes <- !require(remotes)
-if (missing_remotes) {
-  install.packages("remotes")
-}
-
+# install.packages("remotes")
 remotes::install_github("forestgeo/fgeo")
 ```
 
 To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
 
+## Index of fgeo packages
 
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+
+fgeo::fgeo_index_packages() %>% 
+  dplyr::mutate(package = fgeo::fgeo_link(package)) %>% 
+  DT::datatable(escape = FALSE)
+```
+
+## Index of fgeo functions
+
+```{r, echo=FALSE}
+fgeo::fgeo_index_functions() %>% 
+  dplyr::mutate(fun = fgeo::fgeo_link(package, fun)) %>% 
+  DT::datatable(escape = FALSE)
+```
 
 ## Usage
 
@@ -49,29 +61,12 @@ Load the core __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-Run this to update __fgeo__. This will re-install only the packages that have changed since the last installation -- so it will take a fraction of what it took the first time you installed __fgeo__.
+## Example
+
+Update __fgeo__. This will re-install only the packages that have changed since the last installation -- so it will take a fraction of what it took the first time you installed __fgeo__.
 
 ```
 fgeo_update()
-```
-
-For a detailed description of each function in each package go to the corresponding package's website via the [Packages](https://forestgeo.github.io/fgeo/reference/index.html) tab of __fgeo__'s [Home](https://forestgeo.github.io/fgeo/index.html) page. 
-
-You can get an overview of all functions exported by each package (including some reexported from other packages) with `fgeo_functions()` -- which can also be helpful if you want to find a function based on some keywords.
-
-```{r functions}
-library(dplyr)
-
-all_functions <- fgeo_functions()
-
-matching_pattern <- grepl(pattern = "row", all_functions$fun)
-filter(all_functions, matching_pattern)
-```
-
-## All functions by package
-
-```{r}
-all_functions
 ```
 
 ---

@@ -1,205 +1,74 @@
-
+---
+output: 
+  html_document:
+    keep_md: yes
+---
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
 
 # <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 /> fgeo: Analyze forest diversity and dynamics
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Travis build
-status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
-[![Coverage
-status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://coveralls.io/r/forestgeo/fgeo?branch=master)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
+[![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
+[![Coverage status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://coveralls.io/r/forestgeo/fgeo?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-**fgeo** installs and loads multiple R packages of
-[ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together,
-all packages of **fgeo** provide a wide range of tools to analyse forest
-diversity and dynamics. To learn more about the structure of
-ForestgGEO’s software see [this article](https://goo.gl/c5X6qk).
+__fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step. Together, all packages of __fgeo__ provide a wide range of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
 
 [Packages index](https://forestgeo.github.io/fgeo/reference/index.html).
 
+
+
 ## Installation
 
-To install **fgeo** run the following code in R:
+```
+# install.packages("remotes")
+remotes::install_github("forestgeo/fgeo")
+```
 
-    missing_remotes <- !require(remotes)
-    if (missing_remotes) {
-      install.packages("remotes")
-    }
-    
-    remotes::install_github("forestgeo/fgeo")
+To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
 
-To learn the details about how to install packages from GitHub, read
-[this blog post](https://goo.gl/dQKEeg).
+## Index of fgeo packages
+
+<!--html_preserve--><div id="htmlwidget-5c65cc5dbec3932db3dc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5c65cc5dbec3932db3dc">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["<a href=https://forestgeo.github.io/bciex>bciex<\/a>","<a href=https://forestgeo.github.io/fgeo>fgeo<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance<\/a>","<a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography<\/a>","<a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat<\/a>","<a href=https://forestgeo.github.io/fgeo.map>fgeo.map<\/a>","<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool<\/a>"],["Forest Dynamics Data from Barro Colorado Island","Easily Install and Load Packages of ForestGEO","R packages for the Analysis of Forest Dynamics","Demography Tools","Habitat Analyses","Map ForestGEO's Data","Utility Tools for ForestGEO Packages"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>package<\/th>\n      <th>Title<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+
+## Index of fgeo functions
+
+<!--html_preserve--><div id="htmlwidget-8c7a841480b3bedcd980" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8c7a841480b3bedcd980">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104"],["fgeo","fgeo","fgeo","fgeo","fgeo","fgeo","fgeo","fgeo","fgeo","fgeo","fgeo","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.abundance","fgeo.demography","fgeo.demography","fgeo.demography","fgeo.demography","fgeo.demography","fgeo.demography","fgeo.habitat","fgeo.habitat","fgeo.habitat","fgeo.habitat","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.map","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool","fgeo.tool"],["<a href=https://forestgeo.github.io/fgeo/reference/>%>%<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_conflicts<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_core<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_imports<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_index<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_index_functions<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_index_packages<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_link<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_packages<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_suggests<\/a>","<a href=https://forestgeo.github.io/fgeo/reference/>fgeo_update<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>abundance<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>abundance_tally<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>basal_area<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>basal_area_ind<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>enexpr<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>enquo<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>expr<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>exprs<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>quo<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>quo_name<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>quos<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>sym<\/a>","<a href=https://forestgeo.github.io/fgeo.abundance/reference/>syms<\/a>","<a href=https://forestgeo.github.io/fgeo.demography/reference/>growth<\/a>","<a href=https://forestgeo.github.io/fgeo.demography/reference/>growth_df<\/a>","<a href=https://forestgeo.github.io/fgeo.demography/reference/>mortality<\/a>","<a href=https://forestgeo.github.io/fgeo.demography/reference/>mortality_df<\/a>","<a href=https://forestgeo.github.io/fgeo.demography/reference/>recruitment<\/a>","<a href=https://forestgeo.github.io/fgeo.demography/reference/>recruitment_df<\/a>","<a href=https://forestgeo.github.io/fgeo.habitat/reference/>dist_in_torus<\/a>","<a href=https://forestgeo.github.io/fgeo.habitat/reference/>ExpList<\/a>","<a href=https://forestgeo.github.io/fgeo.habitat/reference/>GetAutomatedKrigeParams<\/a>","<a href=https://forestgeo.github.io/fgeo.habitat/reference/>GetKrigedSoil<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>%>%<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>add_sp<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>contour_elev<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>hide_axis_labels<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>hide_legend_color<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>label_elev<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>limit_gx_gy<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>map_elev<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>map_gx_gy<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>map_gx_gy_elev<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>map_quad_header<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>map_sp_elev<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>map_tag_header<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>maply_quad<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>maply_sp_elev<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>maply_tag<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>suffix_edge_tag<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>theme_default<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>theme_map_quad<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>theme_map_tag<\/a>","<a href=https://forestgeo.github.io/fgeo.map/reference/>wrap<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>%>%<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_col_row<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_col_row2<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_hectindex<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_index<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_lxly<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_quad<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_qxqy<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_status_tree<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_subquad<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>add_var<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>check_crucial_names<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>check_unique<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>check_unique_vector<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>count_duplicated<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>exists_in_pkg<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>fieldforms_header<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>fieldforms_output<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>fieldforms_prepare<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>fill_na<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>guess_plotdim<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>ls_csv_df<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>ls_join_df<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>ls_list_spreadsheets<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>ls_name_df<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_detect<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_extract_all<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_extract_anycase<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_extract1<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_has_any<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_lowercase<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_restore<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_restore_newvar<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>nms_tidy<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>recode_subquad<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>replace_null<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>restructure_elev<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>row_collapse_censusid<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>row_discard_twice_dead<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>row_filter_status<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>row_keep_alive_stem<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>row_keep_alive_tree<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>row_top<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>str_as_tidy_names<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>str_suffix_match<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>to_recensus<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>type_ensure<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>type_taxa<\/a>","<a href=https://forestgeo.github.io/fgeo.tool/reference/>type_vft<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>package<\/th>\n      <th>fun<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ## Usage
 
-Load the core **fgeo** packages in one step.
+Load the core __fgeo__ packages in one step.
 
-``` r
+
+```r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9000 --
+#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001
 #> v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203
 #> v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002
-#> 
+#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
+#> x dplyr::filter()    masks stats::filter()
+#> x dplyr::intersect() masks base::intersect()
+#> x dplyr::lag()       masks stats::lag()
+#> x dplyr::setdiff()   masks base::setdiff()
+#> x dplyr::setequal()  masks base::setequal()
+#> x dplyr::union()     masks base::union()
 ```
 
-Run this to update **fgeo**. This will re-install only the packages that
-have changed since the last installation – so it will take a fraction of
-what it took the first time you installed **fgeo**.
+## Example
 
-    fgeo_update()
+Update __fgeo__. This will re-install only the packages that have changed since the last installation -- so it will take a fraction of what it took the first time you installed __fgeo__.
 
-For a detailed description of each function in each package go to the
-corresponding package’s website via the
-[Packages](https://forestgeo.github.io/fgeo/reference/index.html) tab of
-**fgeo**’s [Home](https://forestgeo.github.io/fgeo/index.html) page.
-
-You can get an overview of all functions exported by each package
-(including some reexported from other packages) with `fgeo_functions()`
-– which can also be helpful if you want to find a function based on
-some keywords.
-
-``` r
-library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-
-all_functions <- fgeo_functions()
-
-matching_pattern <- grepl(pattern = "row", all_functions$fun)
-filter(all_functions, matching_pattern)
-#>            package                    fun
-#> 1  fgeo.demography                 growth
-#> 2  fgeo.demography              growth_df
-#> 3        fgeo.tool            add_col_row
-#> 4        fgeo.tool           add_col_row2
-#> 5        fgeo.tool  row_collapse_censusid
-#> 6        fgeo.tool row_discard_twice_dead
-#> 7        fgeo.tool      row_filter_status
-#> 8        fgeo.tool    row_keep_alive_stem
-#> 9        fgeo.tool    row_keep_alive_tree
-#> 10       fgeo.tool                row_top
+```
+fgeo_update()
 ```
 
-## All functions by package
+---
 
-``` r
-all_functions
-#>             package                     fun
-#> 1              fgeo                     %>%
-#> 2              fgeo          fgeo_conflicts
-#> 3              fgeo               fgeo_core
-#> 4              fgeo          fgeo_functions
-#> 5              fgeo            fgeo_imports
-#> 6              fgeo           fgeo_packages
-#> 7              fgeo           fgeo_suggests
-#> 8              fgeo             fgeo_update
-#> 9    fgeo.abundance               abundance
-#> 10   fgeo.abundance         abundance_tally
-#> 11   fgeo.abundance              basal_area
-#> 12   fgeo.abundance          basal_area_ind
-#> 13   fgeo.abundance                  enexpr
-#> 14   fgeo.abundance                   enquo
-#> 15   fgeo.abundance                    expr
-#> 16   fgeo.abundance                   exprs
-#> 17   fgeo.abundance                     quo
-#> 18   fgeo.abundance                quo_name
-#> 19   fgeo.abundance                    quos
-#> 20   fgeo.abundance                     sym
-#> 21   fgeo.abundance                    syms
-#> 22  fgeo.demography                  growth
-#> 23  fgeo.demography               growth_df
-#> 24  fgeo.demography               mortality
-#> 25  fgeo.demography            mortality_df
-#> 26  fgeo.demography             recruitment
-#> 27  fgeo.demography          recruitment_df
-#> 28     fgeo.habitat           dist_in_torus
-#> 29     fgeo.habitat                 ExpList
-#> 30     fgeo.habitat GetAutomatedKrigeParams
-#> 31     fgeo.habitat           GetKrigedSoil
-#> 32         fgeo.map                     %>%
-#> 33         fgeo.map                  add_sp
-#> 34         fgeo.map            contour_elev
-#> 35         fgeo.map        hide_axis_labels
-#> 36         fgeo.map       hide_legend_color
-#> 37         fgeo.map              label_elev
-#> 38         fgeo.map             limit_gx_gy
-#> 39         fgeo.map                map_elev
-#> 40         fgeo.map               map_gx_gy
-#> 41         fgeo.map          map_gx_gy_elev
-#> 42         fgeo.map         map_quad_header
-#> 43         fgeo.map             map_sp_elev
-#> 44         fgeo.map          map_tag_header
-#> 45         fgeo.map              maply_quad
-#> 46         fgeo.map           maply_sp_elev
-#> 47         fgeo.map               maply_tag
-#> 48         fgeo.map         suffix_edge_tag
-#> 49         fgeo.map           theme_default
-#> 50         fgeo.map          theme_map_quad
-#> 51         fgeo.map           theme_map_tag
-#> 52         fgeo.map                    wrap
-#> 53        fgeo.tool                     %>%
-#> 54        fgeo.tool             add_col_row
-#> 55        fgeo.tool            add_col_row2
-#> 56        fgeo.tool           add_hectindex
-#> 57        fgeo.tool               add_index
-#> 58        fgeo.tool                add_lxly
-#> 59        fgeo.tool                add_quad
-#> 60        fgeo.tool                add_qxqy
-#> 61        fgeo.tool         add_status_tree
-#> 62        fgeo.tool             add_subquad
-#> 63        fgeo.tool                 add_var
-#> 64        fgeo.tool     check_crucial_names
-#> 65        fgeo.tool            check_unique
-#> 66        fgeo.tool     check_unique_vector
-#> 67        fgeo.tool        count_duplicated
-#> 68        fgeo.tool           exists_in_pkg
-#> 69        fgeo.tool       fieldforms_header
-#> 70        fgeo.tool       fieldforms_output
-#> 71        fgeo.tool      fieldforms_prepare
-#> 72        fgeo.tool                 fill_na
-#> 73        fgeo.tool           guess_plotdim
-#> 74        fgeo.tool               ls_csv_df
-#> 75        fgeo.tool              ls_join_df
-#> 76        fgeo.tool    ls_list_spreadsheets
-#> 77        fgeo.tool              ls_name_df
-#> 78        fgeo.tool              nms_detect
-#> 79        fgeo.tool         nms_extract_all
-#> 80        fgeo.tool     nms_extract_anycase
-#> 81        fgeo.tool            nms_extract1
-#> 82        fgeo.tool             nms_has_any
-#> 83        fgeo.tool           nms_lowercase
-#> 84        fgeo.tool             nms_restore
-#> 85        fgeo.tool      nms_restore_newvar
-#> 86        fgeo.tool                nms_tidy
-#> 87        fgeo.tool          recode_subquad
-#> 88        fgeo.tool            replace_null
-#> 89        fgeo.tool        restructure_elev
-#> 90        fgeo.tool   row_collapse_censusid
-#> 91        fgeo.tool  row_discard_twice_dead
-#> 92        fgeo.tool       row_filter_status
-#> 93        fgeo.tool     row_keep_alive_stem
-#> 94        fgeo.tool     row_keep_alive_tree
-#> 95        fgeo.tool                 row_top
-#> 96        fgeo.tool       str_as_tidy_names
-#> 97        fgeo.tool        str_suffix_match
-#> 98        fgeo.tool             to_recensus
-#> 99        fgeo.tool             type_ensure
-#> 100       fgeo.tool               type_taxa
-#> 101       fgeo.tool                type_vft
-```
+Please note that this project is released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md).
+By participating in this project you agree to abide by its terms.
 
------
-
-Please note that this project is released with a [Contributor Code of
-Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project
-you agree to abide by its terms.
