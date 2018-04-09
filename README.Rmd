@@ -69,6 +69,15 @@ Update __fgeo__. This will re-install only the packages that have changed since 
 fgeo_update()
 ```
 
+## Related projects
+
+* [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/).
+
+* [BIOMASS](https://CRAN.R-project.org/package=BIOMASS): An R package to estimate above-ground biomass in tropical forests.
+    * [Description](https://CRAN.R-project.org/package=BIOMASS)
+    * [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
+    * [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
+
 ---
 
 Please note that this project is released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md).
