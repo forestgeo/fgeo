@@ -25,7 +25,7 @@ Imports:
     fgeo.habitat (>= 0.0.0.9001),
     fgeo.map (>= 0.0.0.9203),
     fgeo.tool (>= 0.0.0.9002),
-    magrittr (>= 1.5),
+    magrittr,
     purrr (>= 0.2.4),
     remotes (>= 1.1.1),
     rlang (>= 0.2.0),
