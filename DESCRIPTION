@@ -25,17 +25,17 @@ Imports:
     fgeo.habitat (>= 0.0.0.9001),
     fgeo.map (>= 0.0.0.9203),
     fgeo.tool (>= 0.0.0.9002),
+    magrittr (>= 1.5),
     purrr (>= 0.2.4),
     remotes (>= 1.1.1),
     rlang (>= 0.2.0),
     rstudioapi (>= 0.7),
-    utils (>= 3.4.4),
-    magrittr
+    utils (>= 3.4.4)
 Suggests: 
+    covr (>= 3.0.1),
     knitr (>= 1.17),
     rmarkdown (>= 1.7.4),
-    testthat (>= 2.0.0),
-    covr
+    testthat (>= 2.0.0)
 VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
