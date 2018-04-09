@@ -43,15 +43,13 @@ fgeo_index_functions <- function(keep_reexported = FALSE) {
     return(exported)
   }
 
-  dplyr::filter(exported, !fun %in% external_funs())
+  not_reexported <- !exported$fun %in% external_funs()
+  exported[not_reexported, ]
 }
 
 external_funs <- function() {
   external_pkg <- setdiff(fgeo::fgeo_imports(), c(fgeo::fgeo_core(), "fgeo"))
-  external_pkg %>%
-    purrr::map(getNamespaceExports) %>%
-    purrr::reduce(c) %>%
-    unique()
+  unlist(purrr::map(external_pkg, getNamespaceExports))
 }
 
 #' @export
