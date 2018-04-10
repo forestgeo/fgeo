@@ -38,17 +38,32 @@ library(fgeo)
 
 ```{r, message=FALSE, echo=FALSE}
 library(dplyr)
+
 fgeo::fgeo_index_packages() %>% 
   dplyr::mutate(package = fgeo_link(package)) %>% 
   DT::datatable(escape = FALSE)
 ```
 
-## Functions by package
+## Functions
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_functions() %>% 
   # Make clickable links
-  dplyr::mutate(fun = fgeo_link(package, fun)) %>% 
+  dplyr::mutate(
+    fun = fgeo_link(package, fun),
+    package = fgeo_link(package)
+  ) %>% 
   DT::datatable(escape = FALSE)
 ```
 
+## Datasets
+
+```{r, echo=FALSE}
+fgeo::fgeo_index_datasets() %>% 
+  # Make clickable links
+  dplyr::mutate(
+    dataset = fgeo_link(package, dataset),
+    package = fgeo_link(package)
+  ) %>% 
+  DT::datatable(escape = FALSE)
+```

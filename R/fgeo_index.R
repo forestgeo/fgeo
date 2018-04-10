@@ -62,7 +62,7 @@ fgeo_index_packages <- function() {
 #' @rdname fgeo_index
 #' @export
 fgeo_index_datasets <- function() {
-  fgeo_index(.f = get_datasets, nm = "datasets")
+  fgeo_index(.f = get_datasets, nm = "dataset")
 }
 
 get_datasets <- function(package) {
