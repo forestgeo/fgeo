@@ -26,10 +26,6 @@ home:
 navbar:
 
   type: default
-  left:
-
-    - text: Functions Index
-      href: reference/index.html
 
   right:
 

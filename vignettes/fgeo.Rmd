@@ -1,0 +1,54 @@
+---
+title: "Get started"
+author: "Mauro Lepore"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Overview
+
+__fgeo__ installs and loads multiple R packages and functions in a single step. It provides a wide range of tools to analyse forest diversity and dynamics.
+
+* To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
+
+* To get started run this:
+
+```{r}
+# install.packages("remotes")
+# remotes::install_github("fgeo")
+library(fgeo)
+```
+
+(See [installation](https://forestgeo.github.io/fgeo/#installation).)
+
+* To search packages and functions, type on the search field, and click the links to learn more.
+
+## Packages
+
+```{r, message=FALSE, echo=FALSE}
+library(dplyr)
+fgeo::fgeo_index_packages() %>% 
+  dplyr::mutate(package = fgeo_link(package)) %>% 
+  DT::datatable(escape = FALSE)
+```
+
+## Functions by package
+
+```{r, echo=FALSE}
+fgeo::fgeo_index_functions() %>% 
+  # Make clickable links
+  dplyr::mutate(fun = fgeo_link(package, fun)) %>% 
+  DT::datatable(escape = FALSE)
+```
+

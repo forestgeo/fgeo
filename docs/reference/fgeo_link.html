@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>bciex: Data sets for examples from BCI. — bciex • fgeo</title>
+<title>Creates a functional link when used with DT table. — fgeo_link • fgeo</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,7 +27,9 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   <script src="../extra.js"></script>
-<meta property="og:title" content="bciex: Data sets for examples from BCI. — bciex" />
+<meta property="og:title" content="Creates a functional link when used with DT table. — fgeo_link" />
+
+<meta property="og:description" content="Internal function. Exported to use in vignettes." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -64,7 +66,19 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Functions Index</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="../articles/fgeo.html">Get started</a>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -160,36 +174,40 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>bciex: Data sets for examples from BCI.</h1>
-    <small>Source: <a href='https://github.com/forestgeo/fgeo/blob/master/R/fgeo.R'><code>R/fgeo.R</code></a></small>
+    <h1>Creates a functional link when used with DT table.</h1>
+    <small>Source: <a href='https://github.com/forestgeo/fgeo/blob/master/R/utils-fgeo_link.R'><code>R/utils-fgeo_link.R</code></a></small>
     </div>
 
-
-
-        
-    <h2 class="hasAnchor" id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
-
     
-    <p>To install <strong>bciex</strong> run the following code in R:</p><pre>missing_remotes &lt;- !require(remotes)
-if (missing_remotes) {
-  install.packages("remotes")
-}
-remotes::install_github("forestgeo/bciex")
-</pre>
-<ul>
-<li><p>To learn the details about how to install packages from GitHub, read
-<a href='https://goo.gl/dQKEeg'>this blog post</a>.</p></li>
-<li><p><a href='https://forestgeo.github.io/bciex/'>Go to the website of bciex</a></p></li>
-</ul>
+    <p>Internal function. Exported to use in vignettes.</p>
     
 
+    <pre class="usage"><span class='fu'>fgeo_link</span>(<span class='no'>pkg</span>, <span class='kw'>fun</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>pkg, fun</th>
+      <td><p>String; the name of a package (<code>pkg</code>) and function (<code>fun</code>).</p></td>
+    </tr>
+    </table>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='kw pkg'>fgeo</span><span class='kw ns'>::</span><span class='fu'><a href='https://forestgeo.github.io/fgeo//reference/fgeo_index.html'>fgeo_index_packages</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>package</span> <span class='kw'>=</span> <span class='kw pkg'>fgeo</span><span class='kw ns'>::</span><span class='fu'><a href='https://forestgeo.github.io/fgeo//reference/fgeo_link.html'>fgeo_link</a></span>(<span class='no'>package</span>)) <span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>DT</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/DT/topics/datatable'>datatable</a></span>(<span class='kw'>escape</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#installation">Installation</a></li>
-          </ul>
+      <li><a href="#arguments">Arguments</a></li>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
