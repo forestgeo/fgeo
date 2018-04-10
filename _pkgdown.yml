@@ -26,10 +26,6 @@ home:
 navbar:
 
   type: default
-  left:
-
-    - text: Functions Index
-      href: reference/index.html
 
   right:
 
@@ -76,4 +72,5 @@ navbar:
 
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
+
 

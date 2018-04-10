@@ -1,0 +1,51 @@
+---
+title: "fgeo functions by package"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{fgeo functions by package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE,
+  comment = "#>"
+)
+```
+
+# Overview
+
+__fgeo__ installs and loads multiple R packages in a single step. Get started with:
+
+```{r}
+# install.packages("remotes")
+# remotes::install_github("fgeo")
+library(fgeo)
+```
+
+Search packages and functions below, and click the links to learn more.
+
+## Packages
+
+```{r, message=FALSE}
+library(dplyr)
+source(here::here("R/utils-fgeo_link.R"))
+
+fgeo::fgeo_index_packages() %>% 
+  dplyr::mutate(package = fgeo_link(package)) %>% 
+  knitr::kable(escape = FALSE)
+```
+
+## Functions by package
+
+```{r, message=FALSE}
+fgeo::fgeo_index_functions() %>% 
+  # Make clickable links
+  dplyr::mutate(fun = fgeo_link(package, fun)) %>% 
+  DT::datatable(escape = FALSE)
+```
+
