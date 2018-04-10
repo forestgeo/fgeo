@@ -1,6 +1,6 @@
 ---
 title: "Get started"
-author: "Vignette Author"
+author: "Mauro Lepore"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -18,7 +18,11 @@ knitr::opts_chunk$set(
 
 # Overview
 
-__fgeo__ installs and loads multiple R packages in a single step. Get started with:
+__fgeo__ installs and loads multiple R packages and functions in a single step. It provides a wide range of tools to analyse forest diversity and dynamics.
+
+* To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
+
+* To get started run this:
 
 ```{r}
 # install.packages("remotes")
@@ -26,7 +30,9 @@ __fgeo__ installs and loads multiple R packages in a single step. Get started wi
 library(fgeo)
 ```
 
-Search packages and functions below, and click the links to learn more.
+(See [installation](https://forestgeo.github.io/fgeo/#installation).)
+
+* To search packages and functions, type on the search field, and click the links to learn more.
 
 ## Packages
 

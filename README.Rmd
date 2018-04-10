@@ -19,9 +19,9 @@ knitr::opts_chunk$set(
 [![Coverage status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://coveralls.io/r/forestgeo/fgeo?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-__fgeo__ installs and loads multiple R packages of [ForestGEO](http://www.forestgeo.si.edu/) in a single step.
+__fgeo__ installs and loads multiple R packages and functions in a single step.
 
-Together, all packages of __fgeo__ provide a wide range of tools to analyse forest diversity and dynamics. To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
+## [Search packages and functions](https://forestgeo.github.io/fgeo.abundance/articles/fgeo.html)
 
 ## Installation
 
@@ -31,18 +31,6 @@ remotes::install_github("forestgeo/fgeo")
 ```
 
 To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
-
-## fgeo packages
-
-```{r, echo=FALSE, message=FALSE}
-library(dplyr)
-
-fgeo::fgeo_index_packages() %>% 
-  dplyr::mutate(package = fgeo::fgeo_link(package)) %>% 
-  knitr::kable(escape = FALSE)
-```
-
-For an index of all __fgeo__ functions by package see [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html).
 
 ## Example
 
