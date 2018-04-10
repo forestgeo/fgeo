@@ -4,6 +4,7 @@
 \alias{fgeo_index}
 \alias{fgeo_index_functions}
 \alias{fgeo_index_packages}
+\alias{fgeo_index_datasets}
 \title{Index fgeo's elements.}
 \usage{
 fgeo_index(.f, nm, ...)
@@ -11,6 +12,8 @@ fgeo_index(.f, nm, ...)
 fgeo_index_functions(keep_reexported = FALSE)
 
 fgeo_index_packages()
+
+fgeo_index_datasets()
 }
 \arguments{
 \item{.f}{A function to map to each core package of fgeo.}
@@ -30,8 +33,9 @@ package of fgeo. The other functions are convenient wrappers.
 }
 \section{Acknowledgements}{
 
-Thanks to Jim Hester for \href{https://goo.gl/Qzp5kR}{advice} on an implementation
-detail.
+\href{https://goo.gl/Qzp5kR}{Jim Hester adviced} on implementation details of
+\code{fgeo_index_functions()}; and \href{http://bit.ly/2H8bwaj}{Nathan Werth adviced}
+on implementation details of \code{fgeo_index_datasets()}. detail.
 }
 
 \examples{

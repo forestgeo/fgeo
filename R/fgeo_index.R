@@ -9,8 +9,9 @@
 #' @param ... Additional arguments passed to `.f`.
 #'
 #' @section Acknowledgements:
-#' Thanks to Jim Hester for [advice](https://goo.gl/Qzp5kR) on an implementation
-#' detail.
+#' [Jim Hester adviced](https://goo.gl/Qzp5kR) on implementation details of
+#' `fgeo_index_functions()`; and [Nathan Werth adviced](http://bit.ly/2H8bwaj)
+#' on implementation details of `fgeo_index_datasets()`. detail.
 #'
 #' @return A dataframe.
 #'
@@ -35,8 +36,8 @@ fgeo_index <- function(.f, nm, ...) {
   dplyr::arrange(fgeo_index, .data$package, nm_var)
 }
 
-#' @export
 #' @rdname fgeo_index
+#' @export
 fgeo_index_functions <- function(keep_reexported = FALSE) {
   exported <- fgeo_index(.f = getNamespaceExports, nm = "fun")
   if (keep_reexported) {
@@ -52,8 +53,19 @@ external_funs <- function() {
   unlist(purrr::map(external_pkg, getNamespaceExports))
 }
 
-#' @export
 #' @rdname fgeo_index
+#' @export
 fgeo_index_packages <- function() {
   fgeo_index(.f = utils::packageDescription, nm = "Title", fields = "Title")
+}
+
+#' @rdname fgeo_index
+#' @export
+fgeo_index_datasets <- function() {
+  fgeo_index(.f = get_datasets, nm = "datasets")
+}
+
+get_datasets <- function(package) {
+  dinfo <- data(package = package)
+  dinfo[["results"]][, "Item"]
 }
