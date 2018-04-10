@@ -36,10 +36,9 @@ To learn the details about how to install packages from GitHub, read [this blog 
 
 ```{r, echo=FALSE, message=FALSE}
 library(dplyr)
-source(here::here("R/utils-fgeo_link.R"))
 
 fgeo::fgeo_index_packages() %>% 
-  dplyr::mutate(package = fgeo_link(package)) %>% 
+  dplyr::mutate(package = fgeo::fgeo_link(package)) %>% 
   knitr::kable(escape = FALSE)
 ```
 

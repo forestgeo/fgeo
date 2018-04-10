@@ -85,17 +85,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>             package                 fun
-#> 25  fgeo.demography           growth_df
-#> 79        fgeo.tool          ls_name_df
-#> 96        fgeo.tool row_keep_alive_tree
-#> 31     fgeo.habitat             ExpList
-#> 40         fgeo.map         limit_gx_gy
-#> 95        fgeo.tool row_keep_alive_stem
-#> 24  fgeo.demography              growth
-#> 85        fgeo.tool       nms_lowercase
-#> 14   fgeo.abundance      basal_area_ind
-#> 103       fgeo.tool            type_vft
+#>            package                fun
+#> 51        fgeo.map    suffix_edge_tag
+#> 102      fgeo.tool        type_ensure
+#> 55        fgeo.map               wrap
+#> 14  fgeo.abundance         basal_area
+#> 101      fgeo.tool        to_recensus
+#> 86       fgeo.tool      nms_lowercase
+#> 58       fgeo.tool       add_col_row2
+#> 87       fgeo.tool        nms_restore
+#> 74       fgeo.tool fieldforms_prepare
+#> 42        fgeo.map           map_elev
 ```
 
 ## Related projects

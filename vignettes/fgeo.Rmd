@@ -1,10 +1,10 @@
 ---
-title: "fgeo functions by package"
+title: "Get started"
 author: "Vignette Author"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{fgeo functions by package}
+  %\VignetteIndexEntry{Get started}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,7 +12,6 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  echo = FALSE,
   comment = "#>"
 )
 ```
@@ -31,18 +30,16 @@ Search packages and functions below, and click the links to learn more.
 
 ## Packages
 
-```{r, message=FALSE}
+```{r, message=FALSE, echo=FALSE}
 library(dplyr)
-source(here::here("R/utils-fgeo_link.R"))
-
 fgeo::fgeo_index_packages() %>% 
   dplyr::mutate(package = fgeo_link(package)) %>% 
-  knitr::kable(escape = FALSE)
+  DT::datatable(escape = FALSE)
 ```
 
 ## Functions by package
 
-```{r, message=FALSE}
+```{r, echo=FALSE}
 fgeo::fgeo_index_functions() %>% 
   # Make clickable links
   dplyr::mutate(fun = fgeo_link(package, fun)) %>% 
