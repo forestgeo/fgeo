@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 __fgeo__ installs and loads multiple R packages and functions in a single step.
 
-## [Search packages, functions, and datasets](https://forestgeo.github.io/fgeo.abundance/articles/fgeo.html)
+## [Search packages, functions, and datasets](https://forestgeo.github.io/fgeo/articles/fgeo.html)
 
 ## Installation
 
