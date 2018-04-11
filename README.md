@@ -15,7 +15,7 @@ status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/p
 single
 step.
 
-## [Search packages, functions, and datasets](https://forestgeo.github.io/fgeo.abundance/articles/fgeo.html)
+## [Search packages, functions, and datasets](https://forestgeo.github.io/fgeo/articles/fgeo.html)
 
 ## Installation
 
@@ -70,17 +70,17 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>            package                     fun
-#> 50        fgeo.map           maply_sp_elev
-#> 56        fgeo.map                    wrap
-#> 35    fgeo.habitat           GetKrigedSoil
-#> 60       fgeo.tool           add_hectindex
-#> 31 fgeo.demography          recruitment_df
-#> 86       fgeo.tool             nms_has_any
-#> 76       fgeo.tool                 fill_na
-#> 5             fgeo              fgeo_index
-#> 58       fgeo.tool             add_col_row
-#> 34    fgeo.habitat GetAutomatedKrigeParams
+#>             package                 fun
+#> 93        fgeo.tool    restructure_elev
+#> 82        fgeo.tool          nms_detect
+#> 85        fgeo.tool        nms_extract1
+#> 12             fgeo         fgeo_update
+#> 35     fgeo.habitat       GetKrigedSoil
+#> 63        fgeo.tool            add_quad
+#> 54         fgeo.map      theme_map_quad
+#> 104       fgeo.tool           type_taxa
+#> 68        fgeo.tool check_crucial_names
+#> 27  fgeo.demography           growth_df
 ```
 
 ## Related projects
