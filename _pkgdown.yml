@@ -29,33 +29,6 @@ navbar:
 
   right:
 
-    - text: Tutorials
-      menu:
-      - text: General
-      - text: Exploratory data analysis
-        href: http://rpubs.com/forestgeo/eda
-      - text: ----------
-      - text: Abundance
-      - text: Abundance and basal area
-        href: https://forestgeo.github.io/fgeo.abundance/articles/abundance.html
-      - text: The BIOMASS package
-        href: https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html
-      - text: ----------
-      - text: Demography
-      - text: Growth, mortality and recruitment
-        href: https://forestgeo.github.io/fgeo.demography/articles/demography.html
-      - text: ----------
-      - text: Map
-      - text: Mapping Functions
-        href: https://forestgeo.github.io/fgeo.map/articles/map.html
-
-    - text: Apps
-      menu:
-      - text: Prepare maps for fieldwork
-        href: https://bookdown.org/fgeocomm/maply_tag_app/
-      - text: Krige soil data
-        href: https://bookdown.org/forestgeoguest/soilkrig_app/
-
     - text: Community
       menu:
       - text: RStudio Cloud

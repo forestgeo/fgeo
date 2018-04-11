@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Overview
+### Overview
 
 __fgeo__ installs and loads multiple R packages and functions in a single step. It provides a wide range of tools to analyse forest diversity and dynamics.
 
@@ -34,17 +34,7 @@ library(fgeo)
 
 * To search packages and functions, type on the search field, and click the links to learn more.
 
-## Packages
-
-```{r, message=FALSE, echo=FALSE}
-library(dplyr)
-
-fgeo::fgeo_index_packages() %>% 
-  dplyr::mutate(package = fgeo_link(package)) %>% 
-  DT::datatable(escape = FALSE)
-```
-
-## Functions
+### Functions
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_functions() %>% 
@@ -56,7 +46,7 @@ fgeo::fgeo_index_functions() %>%
   DT::datatable(escape = FALSE)
 ```
 
-## Datasets
+### Datasets
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_datasets() %>% 

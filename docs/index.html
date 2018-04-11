@@ -61,55 +61,6 @@
 <ul class="nav navbar-nav navbar-right">
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Tutorials
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li class="dropdown-header">General</li>
-    <li>
-      <a href="http://rpubs.com/forestgeo/eda">Exploratory data analysis</a>
-    </li>
-    <li class="divider">
-    </li>
-<li class="dropdown-header">Abundance</li>
-    <li>
-      <a href="https://forestgeo.github.io/fgeo.abundance/articles/abundance.html">Abundance and basal area</a>
-    </li>
-    <li>
-      <a href="https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html">The BIOMASS package</a>
-    </li>
-    <li class="divider">
-    </li>
-<li class="dropdown-header">Demography</li>
-    <li>
-      <a href="https://forestgeo.github.io/fgeo.demography/articles/demography.html">Growth, mortality and recruitment</a>
-    </li>
-    <li class="divider">
-    </li>
-<li class="dropdown-header">Map</li>
-    <li>
-      <a href="https://forestgeo.github.io/fgeo.map/articles/map.html">Mapping Functions</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Apps
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="https://bookdown.org/fgeocomm/maply_tag_app/">Prepare maps for fieldwork</a>
-    </li>
-    <li>
-      <a href="https://bookdown.org/forestgeoguest/soilkrig_app/">Krige soil data</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Community
      
     <span class="caret"></span>
@@ -162,10 +113,50 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#fgeo-analyze-forest-diversity-and-dynamics" class="anchor"></a><img src="https://i.imgur.com/39pvr4n.png" align="right" height="44"> fgeo: Analyze forest diversity and dynamics</h1></div>
 
-<p><strong>fgeo</strong> installs and loads multiple R packages and functions in a single step.</p>
-<div id="search-packages-functions-and-datasets" class="section level2">
+<p><strong>fgeo</strong> installs and loads multiple packages, functions and datasets in a single step.</p>
+<div id="packages" class="section level2">
 <h2 class="hasAnchor">
-<a href="#search-packages-functions-and-datasets" class="anchor"></a><a href="https://forestgeo.github.io/fgeo/articles/fgeo.html">Search packages, functions, and datasets</a>
+<a href="#packages" class="anchor"></a>Packages</h2>
+<table class="table">
+<thead><tr class="header">
+<th align="left">package</th>
+<th align="left">title</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://forestgeo.github.io/bciex">bciex</a></td>
+<td align="left">Forest Dynamics Data from Barro Colorado Island</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://forestgeo.github.io/fgeo">fgeo</a></td>
+<td align="left">Easily Install and Load Packages of ForestGEO</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://forestgeo.github.io/fgeo.abundance">fgeo.abundance</a></td>
+<td align="left">R packages for the Analysis of Forest Dynamics</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://forestgeo.github.io/fgeo.demography">fgeo.demography</a></td>
+<td align="left">Demography Tools</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://forestgeo.github.io/fgeo.habitat">fgeo.habitat</a></td>
+<td align="left">Habitat Analyses</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://forestgeo.github.io/fgeo.map">fgeo.map</a></td>
+<td align="left">Map ForestGEO’s Data</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://forestgeo.github.io/fgeo.tool">fgeo.tool</a></td>
+<td align="left">Utility Tools for ForestGEO Packages</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="search-functions-and-datasets" class="section level2">
+<h2 class="hasAnchor">
+<a href="#search-functions-and-datasets" class="anchor"></a>Search <a href="https://forestgeo.github.io/fgeo/articles/fgeo.html">functions and datasets</a>
 </h2>
 </div>
 <div id="installation" class="section level2">
@@ -179,12 +170,7 @@ remotes::install_github("forestgeo/fgeo")</a></code></pre>
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; </span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a></code></pre></div>
 <p>Update packages that changed since last installation.</p>
 <pre><code><a href="reference/fgeo_update.html">fgeo_update()</a></code></pre>
 <p>Table packages.</p>
@@ -199,27 +185,19 @@ remotes::install_github("forestgeo/fgeo")</a></code></pre>
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; 7       fgeo.tool            Utility Tools for ForestGEO Packages</span></a></code></pre></div>
 <p>Table and explore functions.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; Attaching package: 'dplyr'</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; The following objects are masked from 'package:stats':</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;     filter, lag</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; The following objects are masked from 'package:base':</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;     intersect, setdiff, setequal, union</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">funs &lt;-<span class="st"> </span><span class="kw"><a href="reference/fgeo_index.html">fgeo_index_functions</a></span>()</a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="kw">sample_n</span>(funs, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;      package                fun</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 60 fgeo.tool      add_hectindex</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 62 fgeo.tool           add_lxly</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 38  fgeo.map       contour_elev</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 79 fgeo.tool         ls_join_df</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; 89 fgeo.tool nms_restore_newvar</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; 53  fgeo.map      theme_default</span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 46  fgeo.map    map_quad_header</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; 9       fgeo          fgeo_link</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; 47  fgeo.map        map_sp_elev</span></a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; 73 fgeo.tool  fieldforms_header</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-2" data-line-number="2">funs &lt;-<span class="st"> </span><span class="kw"><a href="reference/fgeo_index.html">fgeo_index_functions</a></span>()</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">sample_n</span>(funs, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;          package                 fun</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 32  fgeo.habitat       dist_in_torus</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 66     fgeo.tool         add_subquad</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 39      fgeo.map    hide_axis_labels</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 41      fgeo.map          label_elev</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 99     fgeo.tool             row_top</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 6           fgeo fgeo_index_datasets</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 103    fgeo.tool         type_ensure</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 2           fgeo      fgeo_conflicts</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 100    fgeo.tool   str_as_tidy_names</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 56      fgeo.map                wrap</span></a></code></pre></div>
 </div>
 <div id="related-projects" class="section level2">
 <h2 class="hasAnchor">
@@ -235,7 +213,10 @@ remotes::install_github("forestgeo/fgeo")</a></code></pre>
 </ul>
 </li>
 </ul>
-<hr>
+</div>
+<div id="code-of-conduct" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code-of-conduct" class="anchor"></a>Code of conduct</h2>
 <p>Please note that this project is released with a <a href=".github/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
 </div>

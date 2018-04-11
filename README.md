@@ -11,11 +11,23 @@ status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://cov
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-**fgeo** installs and loads multiple R packages and functions in a
-single
+**fgeo** installs and loads multiple packages, functions and datasets in
+a single
 step.
 
-## [Search packages, functions, and datasets](https://forestgeo.github.io/fgeo/articles/fgeo.html)
+## Packages
+
+| package                                                                 | title                                           |
+| :---------------------------------------------------------------------- | :---------------------------------------------- |
+| <a href=https://forestgeo.github.io/bciex>bciex</a>                     | Forest Dynamics Data from Barro Colorado Island |
+| <a href=https://forestgeo.github.io/fgeo>fgeo</a>                       | Easily Install and Load Packages of ForestGEO   |
+| <a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>   | R packages for the Analysis of Forest Dynamics  |
+| <a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a> | Demography Tools                                |
+| <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>       | Habitat Analyses                                |
+| <a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>               | Map ForestGEO’s Data                            |
+| <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>             | Utility Tools for ForestGEO Packages            |
+
+## Search [functions and datasets](https://forestgeo.github.io/fgeo/articles/fgeo.html)
 
 ## Installation
 
@@ -31,11 +43,6 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --
-#> v bciex           0.0.0.9000     v fgeo.habitat    0.0.0.9001
-#> v fgeo.abundance  0.0.0.9002     v fgeo.map        0.0.0.9203
-#> v fgeo.demography 0.0.0.9000     v fgeo.tool       0.0.0.9002
-#> 
 ```
 
 Update packages that changed since last installation.
@@ -60,27 +67,19 @@ Table and explore functions.
 
 ``` r
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
 #>             package                 fun
-#> 93        fgeo.tool    restructure_elev
-#> 82        fgeo.tool          nms_detect
-#> 85        fgeo.tool        nms_extract1
-#> 12             fgeo         fgeo_update
-#> 35     fgeo.habitat       GetKrigedSoil
-#> 63        fgeo.tool            add_quad
-#> 54         fgeo.map      theme_map_quad
-#> 104       fgeo.tool           type_taxa
-#> 68        fgeo.tool check_crucial_names
-#> 27  fgeo.demography           growth_df
+#> 39         fgeo.map    hide_axis_labels
+#> 70        fgeo.tool check_unique_vector
+#> 15   fgeo.abundance          basal_area
+#> 6              fgeo fgeo_index_datasets
+#> 42         fgeo.map         limit_gx_gy
+#> 48         fgeo.map      map_tag_header
+#> 62        fgeo.tool            add_lxly
+#> 31  fgeo.demography      recruitment_df
+#> 59        fgeo.tool        add_col_row2
+#> 100       fgeo.tool   str_as_tidy_names
 ```
 
 ## Related projects
@@ -95,7 +94,7 @@ sample_n(funs, 10)
       - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
       - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
------
+## Code of conduct
 
 Please note that this project is released with a [Contributor Code of
 Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project
