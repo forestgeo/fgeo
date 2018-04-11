@@ -69,17 +69,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>             package                 fun
-#> 39         fgeo.map    hide_axis_labels
-#> 70        fgeo.tool check_unique_vector
-#> 15   fgeo.abundance          basal_area
-#> 6              fgeo fgeo_index_datasets
-#> 42         fgeo.map         limit_gx_gy
-#> 48         fgeo.map      map_tag_header
-#> 62        fgeo.tool            add_lxly
-#> 31  fgeo.demography      recruitment_df
-#> 59        fgeo.tool        add_col_row2
-#> 100       fgeo.tool   str_as_tidy_names
+#>      package                  fun
+#> 11      fgeo        fgeo_suggests
+#> 6       fgeo  fgeo_index_datasets
+#> 98 fgeo.tool  row_keep_alive_tree
+#> 82 fgeo.tool           nms_detect
+#> 91 fgeo.tool       recode_subquad
+#> 77 fgeo.tool        guess_plotdim
+#> 84 fgeo.tool  nms_extract_anycase
+#> 93 fgeo.tool     restructure_elev
+#> 8       fgeo  fgeo_index_packages
+#> 80 fgeo.tool ls_list_spreadsheets
 ```
 
 ## Related projects
@@ -97,5 +97,5 @@ sample_n(funs, 10)
 ## Code of conduct
 
 Please note that this project is released with a [Contributor Code of
-Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project
-you agree to abide by its terms.
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
+to abide by its terms.
