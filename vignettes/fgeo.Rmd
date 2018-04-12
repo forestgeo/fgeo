@@ -36,35 +36,14 @@ library(fgeo)
 
 ### Functions
 
-* fgeo_index_functions  
-* fgeo_index_functions()  
-* `fgeo_index_functions`  
-* `fgeo_index_functions()`  
-* `?fgeo_index_functions()`  
-
-
 ```{r, echo=FALSE}
 fgeo::fgeo_index_functions() %>% 
   # Make clickable links
   dplyr::mutate(
-    # fun = fgeo_link(package, fun),
-    fun = paste0(fun, "()"),
-    # package = fgeo_link(package)
-    package = paste0("`", package, "()`")
+    fun = fgeo_link(package, fun),
+    package = fgeo_link(package)
   ) %>% 
   DT::datatable(escape = FALSE)
-```
-
-```{r, echo=FALSE}
-fgeo::fgeo_index_functions() %>% 
-  # Make clickable links
-  dplyr::mutate(
-    # fun = fgeo_link(package, fun),
-    fun = paste0("`", fun, "()`"),
-    # package = fgeo_link(package)
-    package = paste0("`", package, "()`")
-  ) %>% 
-  knitr::kable(escape = FALSE)
 ```
 
 ### Datasets
