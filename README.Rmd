@@ -73,9 +73,15 @@ sample_n(funs, 10)
 
 ## Related projects
 
-* [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/).
+Maintained by ForestGEO
 
-* [BIOMASS](https://CRAN.R-project.org/package=BIOMASS): An R package to estimate above-ground biomass in tropical forests.
+* [__fgeo.template__](https://forestgeo.github.io/fgeo.template/): An R package containing templates used to develop __fgeo__ packages.
+
+Not maintained by ForestGEO
+
+* [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): A collection of R functions aimed at analysis of data from CTFS forest census plots.
+
+* [__BIOMASS__](https://CRAN.R-project.org/package=BIOMASS): An R package to estimate above-ground biomass in tropical forests.
     * [Description](https://CRAN.R-project.org/package=BIOMASS)
     * [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
     * [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)

@@ -69,25 +69,34 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>      package                  fun
-#> 11      fgeo        fgeo_suggests
-#> 6       fgeo  fgeo_index_datasets
-#> 98 fgeo.tool  row_keep_alive_tree
-#> 82 fgeo.tool           nms_detect
-#> 91 fgeo.tool       recode_subquad
-#> 77 fgeo.tool        guess_plotdim
-#> 84 fgeo.tool  nms_extract_anycase
-#> 93 fgeo.tool     restructure_elev
-#> 8       fgeo  fgeo_index_packages
-#> 80 fgeo.tool ls_list_spreadsheets
+#>            package                fun
+#> 27 fgeo.demography          growth_df
+#> 69       fgeo.tool       check_unique
+#> 88       fgeo.tool        nms_restore
+#> 51        fgeo.map          maply_tag
+#> 75       fgeo.tool fieldforms_prepare
+#> 38        fgeo.map       contour_elev
+#> 96       fgeo.tool  row_filter_status
+#> 72       fgeo.tool      exists_in_pkg
+#> 30 fgeo.demography        recruitment
+#> 74       fgeo.tool  fieldforms_output
 ```
 
 ## Related projects
 
-  - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/).
+Maintained by ForestGEO
 
-  - [BIOMASS](https://CRAN.R-project.org/package=BIOMASS): An R package
-    to estimate above-ground biomass in tropical
+  - [**fgeo.template**](https://forestgeo.github.io/fgeo.template/): An
+    R package containing templates used to develop **fgeo** packages.
+
+Not maintained by ForestGEO
+
+  - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): A
+    collection of R functions aimed at analysis of data from CTFS forest
+    census plots.
+
+  - [**BIOMASS**](https://CRAN.R-project.org/package=BIOMASS): An R
+    package to estimate above-ground biomass in tropical
         forests.
     
       - [Description](https://CRAN.R-project.org/package=BIOMASS)
