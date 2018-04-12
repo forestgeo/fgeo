@@ -40,8 +40,10 @@ library(fgeo)
 fgeo::fgeo_index_functions() %>% 
   # Make clickable links
   dplyr::mutate(
-    fun = fgeo_link(package, fun),
-    package = fgeo_link(package)
+    # fun = fgeo_link(package, fun),
+    fun = paste0("`", fun, "`"),
+    # package = fgeo_link(package)
+    package = paste0("`", package, "`")
   ) %>% 
   DT::datatable(escape = FALSE)
 ```
