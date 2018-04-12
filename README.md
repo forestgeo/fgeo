@@ -69,17 +69,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>       package                 fun
-#> 78  fgeo.tool           ls_csv_df
-#> 100 fgeo.tool   str_as_tidy_names
-#> 97  fgeo.tool row_keep_alive_stem
-#> 77  fgeo.tool       guess_plotdim
-#> 99  fgeo.tool             row_top
-#> 3        fgeo           fgeo_core
-#> 37   fgeo.map              add_sp
-#> 91  fgeo.tool      recode_subquad
-#> 93  fgeo.tool    restructure_elev
-#> 105 fgeo.tool            type_vft
+#>      package                  fun
+#> 11      fgeo        fgeo_suggests
+#> 6       fgeo  fgeo_index_datasets
+#> 98 fgeo.tool  row_keep_alive_tree
+#> 82 fgeo.tool           nms_detect
+#> 91 fgeo.tool       recode_subquad
+#> 77 fgeo.tool        guess_plotdim
+#> 84 fgeo.tool  nms_extract_anycase
+#> 93 fgeo.tool     restructure_elev
+#> 8       fgeo  fgeo_index_packages
+#> 80 fgeo.tool ls_list_spreadsheets
 ```
 
 ## Related projects
@@ -94,12 +94,8 @@ sample_n(funs, 10)
       - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
       - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
-## Information
+## Code of conduct
 
-  - [Getting help](SUPPORT.md).
-  - [Contributing](CONTRIBUTING.md).
-  - [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Acknowledgements
-
-Thanks to all partners of ForestGEO, for sharing their ideas and code.
+Please note that this project is released with a [Contributor Code of
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
+to abide by its terms.
