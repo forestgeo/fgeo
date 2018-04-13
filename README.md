@@ -20,12 +20,12 @@ step.
 | package                                                                 | title                                           |
 | :---------------------------------------------------------------------- | :---------------------------------------------- |
 | <a href=https://forestgeo.github.io/bciex>bciex</a>                     | Forest Dynamics Data from Barro Colorado Island |
-| <a href=https://forestgeo.github.io/fgeo>fgeo</a>                       | Easily Install and Load Packages of ForestGEO   |
-| <a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>   | R packages for the Analysis of Forest Dynamics  |
-| <a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a> | Demography Tools                                |
-| <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>       | Habitat Analyses                                |
-| <a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>               | Map ForestGEO’s Data                            |
-| <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>             | Utility Tools for ForestGEO Packages            |
+| <a href=https://forestgeo.github.io/fgeo>fgeo</a>                       | Easily Install and Load Multiple Packages       |
+| <a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>   | Calculate Abundance and Basal Area              |
+| <a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a> | Calculate Mortality, Recruitment and Growth     |
+| <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>       | Analize Soil Data                               |
+| <a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>               | Map Species, Trees and Topography               |
+| <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>             | Functions for General Purposes                  |
 
 ## Search [functions and datasets](https://forestgeo.github.io/fgeo/articles/fgeo.html)
 
@@ -55,12 +55,12 @@ Table packages.
 fgeo_index_packages()
 #>           package                                           Title
 #> 1           bciex Forest Dynamics Data from Barro Colorado Island
-#> 2            fgeo   Easily Install and Load Packages of ForestGEO
-#> 3  fgeo.abundance  R packages for the Analysis of Forest Dynamics
-#> 4 fgeo.demography                                Demography Tools
-#> 5    fgeo.habitat                                Habitat Analyses
-#> 6        fgeo.map                            Map ForestGEO's Data
-#> 7       fgeo.tool            Utility Tools for ForestGEO Packages
+#> 2            fgeo       Easily Install and Load Multiple Packages
+#> 3  fgeo.abundance              Calculate Abundance and Basal Area
+#> 4 fgeo.demography     Calculate Mortality, Recruitment and Growth
+#> 5    fgeo.habitat                               Analize Soil Data
+#> 6        fgeo.map               Map Species, Trees and Topography
+#> 7       fgeo.tool                  Functions for General Purposes
 ```
 
 Table and explore functions.
@@ -69,17 +69,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>            package             fun
-#> 92       fgeo.tool    replace_null
-#> 104      fgeo.tool       type_taxa
-#> 9             fgeo       fgeo_link
-#> 56        fgeo.map            wrap
-#> 38        fgeo.map    contour_elev
-#> 77       fgeo.tool   guess_plotdim
-#> 14  fgeo.abundance abundance_tally
-#> 99       fgeo.tool         row_top
-#> 12            fgeo     fgeo_update
-#> 55        fgeo.map   theme_map_tag
+#>            package                   fun
+#> 74       fgeo.tool     fieldforms_output
+#> 9             fgeo             fgeo_link
+#> 94       fgeo.tool row_collapse_censusid
+#> 103      fgeo.tool           type_ensure
+#> 89       fgeo.tool    nms_restore_newvar
+#> 93       fgeo.tool      restructure_elev
+#> 76       fgeo.tool               fill_na
+#> 91       fgeo.tool        recode_subquad
+#> 8             fgeo   fgeo_index_packages
+#> 14  fgeo.abundance       abundance_tally
 ```
 
 ## Related projects

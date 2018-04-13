@@ -1,5 +1,5 @@
 Package: fgeo
-Title: Easily Install and Load Packages of ForestGEO
+Title: Easily Install and Load Multiple Packages
 Version: 0.0.0.9000
 Authors@R: c(
     person("Mauro", "Lepore", , "leporem@si.edu", role = c("aut", "ctr", "cre")),
