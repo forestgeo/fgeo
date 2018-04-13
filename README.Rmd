@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 /> fgeo: Analyze forest diversity and dynamics
+# <img src="https://i.imgur.com/m8FNhQR.png" align="right" height=88 /> fgeo: Analyze forest diversity and dynamics
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
@@ -79,7 +79,7 @@ Maintained by ForestGEO
 
 Not maintained by ForestGEO
 
-* [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): A collection of R functions aimed at analysis of data from CTFS forest census plots.
+* [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The original package of CTFS functions. No longer supported by ForestGEO.
 
 * [__BIOMASS__](https://CRAN.R-project.org/package=BIOMASS): An R package to estimate above-ground biomass in tropical forests.
     * [Description](https://CRAN.R-project.org/package=BIOMASS)

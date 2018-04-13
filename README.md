@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# <img src="https://i.imgur.com/39pvr4n.png" align="right" height=44 /> fgeo: Analyze forest diversity and dynamics
+# <img src="https://i.imgur.com/m8FNhQR.png" align="right" height=88 /> fgeo: Analyze forest diversity and dynamics
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
@@ -69,17 +69,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>            package                fun
-#> 65       fgeo.tool    add_status_tree
-#> 27 fgeo.demography          growth_df
-#> 66       fgeo.tool        add_subquad
-#> 53        fgeo.map      theme_default
-#> 3             fgeo          fgeo_core
-#> 48        fgeo.map     map_tag_header
-#> 5             fgeo         fgeo_index
-#> 33    fgeo.habitat            ExpList
-#> 89       fgeo.tool nms_restore_newvar
-#> 75       fgeo.tool fieldforms_prepare
+#>            package             fun
+#> 92       fgeo.tool    replace_null
+#> 104      fgeo.tool       type_taxa
+#> 9             fgeo       fgeo_link
+#> 56        fgeo.map            wrap
+#> 38        fgeo.map    contour_elev
+#> 77       fgeo.tool   guess_plotdim
+#> 14  fgeo.abundance abundance_tally
+#> 99       fgeo.tool         row_top
+#> 12            fgeo     fgeo_update
+#> 55        fgeo.map   theme_map_tag
 ```
 
 ## Related projects
@@ -91,9 +91,9 @@ Maintained by ForestGEO
 
 Not maintained by ForestGEO
 
-  - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): A
-    collection of R functions aimed at analysis of data from CTFS forest
-    census plots.
+  - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The
+    original package of CTFS functions. No longer supported by
+    ForestGEO.
 
   - [**BIOMASS**](https://CRAN.R-project.org/package=BIOMASS): An R
     package to estimate above-ground biomass in tropical
