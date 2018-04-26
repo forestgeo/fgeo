@@ -14,15 +14,41 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(dplyr)
 ```
 
-### Overview
+## Overview
 
-__fgeo__ installs and loads multiple R packages and functions in a single step. It provides a wide range of tools to analyse forest diversity and dynamics.
+__fgeo__ provides a wide range of tools to analyse forest diversity and dynamics. It installs and loads multiple R packages, functions, and datasets in a single step. (To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).)
 
-* To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).
+## Functions
 
-* To get started run this:
+```{r, echo=FALSE}
+fgeo::fgeo_index_functions() %>% 
+  # Make clickable links
+  dplyr::mutate(
+    fun = fgeo::fgeo_link(package, fun),
+    package = fgeo::fgeo_link(package)
+  ) %>% 
+  DT::datatable(escape = FALSE)
+```
+
+## Datasets
+
+```{r, echo=FALSE}
+fgeo::fgeo_index_datasets() %>% 
+  # Make clickable links
+  dplyr::mutate(
+    dataset = fgeo::fgeo_link(package, dataset),
+    package = fgeo::fgeo_link(package)
+  ) %>% 
+  DT::datatable(escape = FALSE)
+```
+
+## Get Started
+
+To get started run this:
 
 ```{r}
 # install.packages("remotes")
@@ -31,29 +57,3 @@ library(fgeo)
 ```
 
 (See [installation](https://forestgeo.github.io/fgeo/#installation).)
-
-* To search packages and functions, type on the search field, and click the links to learn more.
-
-### Functions
-
-```{r, echo=FALSE}
-fgeo::fgeo_index_functions() %>% 
-  # Make clickable links
-  dplyr::mutate(
-    fun = fgeo_link(package, fun),
-    package = fgeo_link(package)
-  ) %>% 
-  DT::datatable(escape = FALSE)
-```
-
-### Datasets
-
-```{r, echo=FALSE}
-fgeo::fgeo_index_datasets() %>% 
-  # Make clickable links
-  dplyr::mutate(
-    dataset = fgeo_link(package, dataset),
-    package = fgeo_link(package)
-  ) %>% 
-  DT::datatable(escape = FALSE)
-```
