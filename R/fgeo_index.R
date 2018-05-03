@@ -62,10 +62,5 @@ fgeo_index_packages <- function() {
 #' @rdname fgeo_index
 #' @export
 fgeo_index_datasets <- function() {
-  fgeo_index(.f = get_datasets, nm = "dataset")
-}
-
-get_datasets <- function(package) {
-  dinfo <- data(package = package)
-  dinfo[["results"]][, "Item"]
+  fgeo_index(.f = fgeo.base::find_datasets, nm = "dataset")
 }

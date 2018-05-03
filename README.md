@@ -21,9 +21,10 @@ step.
 | :---------------------------------------------------------------------- | :---------------------------------------------- |
 | <a href=https://forestgeo.github.io/bciex>bciex</a>                     | Forest Dynamics Data from Barro Colorado Island |
 | <a href=https://forestgeo.github.io/fgeo>fgeo</a>                       | Easily Install and Load Multiple Packages       |
-| <a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>   | Calculate Abundance and Basal Area              |
+| <a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>   | Calculate Abundance, Basal Area and Diversity   |
+| <a href=https://forestgeo.github.io/fgeo.base>fgeo.base</a>             | ForestGEO Functions With No External Dependency |
 | <a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a> | Calculate Mortality, Recruitment and Growth     |
-| <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>       | Analize Soil Data                               |
+| <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>       | Analize Soils and Tree-Habitat Data             |
 | <a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>               | Map Species, Trees and Topography               |
 | <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>             | Functions for General Purposes                  |
 
@@ -56,11 +57,12 @@ fgeo_index_packages()
 #>           package                                           Title
 #> 1           bciex Forest Dynamics Data from Barro Colorado Island
 #> 2            fgeo       Easily Install and Load Multiple Packages
-#> 3  fgeo.abundance              Calculate Abundance and Basal Area
-#> 4 fgeo.demography     Calculate Mortality, Recruitment and Growth
-#> 5    fgeo.habitat                               Analize Soil Data
-#> 6        fgeo.map               Map Species, Trees and Topography
-#> 7       fgeo.tool                  Functions for General Purposes
+#> 3  fgeo.abundance   Calculate Abundance, Basal Area and Diversity
+#> 4       fgeo.base ForestGEO Functions With No External Dependency
+#> 5 fgeo.demography     Calculate Mortality, Recruitment and Growth
+#> 6    fgeo.habitat             Analize Soils and Tree-Habitat Data
+#> 7        fgeo.map               Map Species, Trees and Topography
+#> 8       fgeo.tool                  Functions for General Purposes
 ```
 
 Table and explore functions.
@@ -69,17 +71,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>            package                   fun
-#> 74       fgeo.tool     fieldforms_output
-#> 9             fgeo             fgeo_link
-#> 94       fgeo.tool row_collapse_censusid
-#> 103      fgeo.tool           type_ensure
-#> 89       fgeo.tool    nms_restore_newvar
-#> 93       fgeo.tool      restructure_elev
-#> 76       fgeo.tool               fill_na
-#> 91       fgeo.tool        recode_subquad
-#> 8             fgeo   fgeo_index_packages
-#> 14  fgeo.abundance       abundance_tally
+#>             package              fun
+#> 72        fgeo.tool         add_lxly
+#> 17   fgeo.abundance   basal_area_ind
+#> 27  fgeo.demography           growth
+#> 79        fgeo.tool     check_unique
+#> 93        fgeo.tool       nms_detect
+#> 81        fgeo.tool count_duplicated
+#> 114       fgeo.tool      to_recensus
+#> 49         fgeo.map hide_axis_labels
+#> 83        fgeo.tool    exists_in_pkg
+#> 45     fgeo.habitat      tt_test_one
 ```
 
 ## Related projects
