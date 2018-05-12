@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# <img src="https://i.imgur.com/m8FNhQR.png" align="right" height=88 /> fgeo: Analyze forest diversity and dynamics
+# <img src="https://i.imgur.com/m8FNhQR.png" align="right" height=88 /> Analyze forest diversity and dynamics
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
@@ -71,17 +71,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>             package              fun
-#> 72        fgeo.tool         add_lxly
-#> 17   fgeo.abundance   basal_area_ind
-#> 27  fgeo.demography           growth
-#> 79        fgeo.tool     check_unique
-#> 93        fgeo.tool       nms_detect
-#> 81        fgeo.tool count_duplicated
-#> 114       fgeo.tool      to_recensus
-#> 49         fgeo.map hide_axis_labels
-#> 83        fgeo.tool    exists_in_pkg
-#> 45     fgeo.habitat      tt_test_one
+#>            package               fun
+#> 96       fgeo.tool           fill_na
+#> 59        fgeo.map       limit_gx_gy
+#> 10            fgeo     fgeo_packages
+#> 69        fgeo.map   suffix_edge_tag
+#> 109      fgeo.tool       nms_restore
+#> 62        fgeo.map    map_gx_gy_elev
+#> 120      fgeo.tool           row_top
+#> 94       fgeo.tool fieldforms_output
+#> 91       fgeo.tool      example_path
+#> 17  fgeo.abundance    basal_area_ind
 ```
 
 ## Related projects
