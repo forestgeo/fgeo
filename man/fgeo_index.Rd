@@ -5,7 +5,7 @@
 \alias{fgeo_index_functions}
 \alias{fgeo_index_packages}
 \alias{fgeo_index_datasets}
-\title{Index fgeo's elements.}
+\title{Index fgeo's packages, datasets and functions.}
 \usage{
 fgeo_index(.f, nm, ...)
 
@@ -16,7 +16,7 @@ fgeo_index_packages()
 fgeo_index_datasets()
 }
 \arguments{
-\item{.f}{A function to map to each core package of fgeo.}
+\item{.f}{A function to map to each core-package of fgeo.}
 
 \item{nm}{A name for the column storing the results of \code{.f}.}
 
@@ -28,14 +28,21 @@ fgeo_index_datasets()
 A dataframe.
 }
 \description{
-\code{fgeo_index()} created a table of some component of fgeo for each core
-package of fgeo. The other functions are convenient wrappers.
+\code{fgeo_index_packages()} creates a table of all packages of the \strong{fgeo}
+meta-package. It is searchable by package name and by whatever keyword
+appears in their titles, and links to th e website of each package.
+\code{fgeo_index_datasets()} and \code{fgeo_index_functions()} create tables of all
+datasets and functions of the \strong{fgeo} meta-package. It is searchable by
+dataset and function name and includes links to the reference page of the
+respective package-website (a link to the specific documentation of each
+dataset and function would be better but this feature is not yet
+available).
 }
 \section{Acknowledgements}{
 
 \href{https://goo.gl/Qzp5kR}{Jim Hester adviced} on implementation details of
 \code{fgeo_index_functions()}; and \href{http://bit.ly/2H8bwaj}{Nathan Werth adviced}
-on implementation details of \code{fgeo_index_datasets()}. detail.
+on implementation details of \code{fgeo_index_datasets()}.
 }
 
 \examples{

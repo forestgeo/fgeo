@@ -1,9 +1,16 @@
-#' Index fgeo's elements.
+#' Index fgeo's packages, datasets and functions.
 #'
-#' `fgeo_index()` created a table of some component of fgeo for each core
-#' package of fgeo. The other functions are convenient wrappers.
+#' `fgeo_index_packages()` creates a table of all packages of the __fgeo__
+#' meta-package. It is searchable by package name and by whatever keyword
+#' appears in their titles, and links to th e website of each package.
+#' `fgeo_index_datasets()` and `fgeo_index_functions()` create tables of all
+#' datasets and functions of the __fgeo__ meta-package. It is searchable by
+#' dataset and function name and includes links to the reference page of the
+#' respective package-website (a link to the specific documentation of each
+#' dataset and function would be better but this feature is not yet
+#' available).
 #'
-#' @param .f A function to map to each core package of fgeo.
+#' @param .f A function to map to each core-package of fgeo.
 #' @param nm A name for the column storing the results of `.f`.
 #' @param keep_reexported Logical; `TRUE` includes reexported functions.
 #' @param ... Additional arguments passed to `.f`.
@@ -11,7 +18,7 @@
 #' @section Acknowledgements:
 #' [Jim Hester adviced](https://goo.gl/Qzp5kR) on implementation details of
 #' `fgeo_index_functions()`; and [Nathan Werth adviced](http://bit.ly/2H8bwaj)
-#' on implementation details of `fgeo_index_datasets()`. detail.
+#' on implementation details of `fgeo_index_datasets()`.
 #'
 #' @return A dataframe.
 #'
