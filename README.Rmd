@@ -86,6 +86,10 @@ Not maintained by ForestGEO
     * [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
     * [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
+Code of publications by ForestGEO partners
+
+* [Soil drivers of local-scale tree growth in a lowland tropical forest (Zemunik et al., 2018).](https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth)
+
 ## Information
 
 * [Getting help](SUPPORT.md).

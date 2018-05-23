@@ -71,17 +71,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>            package               fun
-#> 96       fgeo.tool           fill_na
-#> 59        fgeo.map       limit_gx_gy
-#> 10            fgeo     fgeo_packages
-#> 69        fgeo.map   suffix_edge_tag
-#> 109      fgeo.tool       nms_restore
-#> 62        fgeo.map    map_gx_gy_elev
-#> 120      fgeo.tool           row_top
-#> 94       fgeo.tool fieldforms_output
-#> 91       fgeo.tool      example_path
-#> 17  fgeo.abundance    basal_area_ind
+#>             package             fun
+#> 68         fgeo.map    contour_elev
+#> 76         fgeo.map map_quad_header
+#> 52  fgeo.demography     recruitment
+#> 86         fgeo.map            wrap
+#> 116       fgeo.tool     name_df_lst
+#> 75         fgeo.map  map_gx_gy_elev
+#> 53  fgeo.demography  recruitment_df
+#> 80         fgeo.map   maply_sp_elev
+#> 29        fgeo.base     drop_status
+#> 31        fgeo.base   gather_matrix
 ```
 
 ## Related projects
@@ -104,6 +104,12 @@ Not maintained by ForestGEO
       - [Description](https://CRAN.R-project.org/package=BIOMASS)
       - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
       - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
+
+Code of publications by ForestGEO partners
+
+  - [Soil drivers of local-scale tree growth in a lowland tropical
+    forest (Zemunik et
+    al., 2018).](https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth)
 
 ## Information
 
