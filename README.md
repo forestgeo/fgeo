@@ -71,17 +71,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>          package                    fun
-#> 131    fgeo.tool      row_filter_status
-#> 73      fgeo.map               map_elev
-#> 134    fgeo.tool                row_top
-#> 75      fgeo.map         map_gx_gy_elev
-#> 92     fgeo.tool               add_lxly
-#> 56  fgeo.habitat       extract_gridsize
-#> 6           fgeo    fgeo_index_datasets
-#> 80      fgeo.map          maply_sp_elev
-#> 79      fgeo.map             maply_quad
-#> 130    fgeo.tool row_discard_twice_dead
+#>            package            fun
+#> 16  fgeo.abundance     basal_area
+#> 36       fgeo.base  gather_matrix
+#> 76        fgeo.map     label_elev
+#> 88        fgeo.map  theme_default
+#> 12            fgeo    fgeo_update
+#> 44       fgeo.base  keep_dbh_over
+#> 151      fgeo.tool   xl_to_df_lst
+#> 45       fgeo.base keep_dbh_under
+#> 117      fgeo.tool      ls_csv_df
+#> 99       fgeo.tool       add_qxqy
 ```
 
 ## Related projects
