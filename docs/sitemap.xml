@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//index.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo-package.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_conflicts.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_core.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_index.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_link.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_packages.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_update.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//articles/fgeo.html</loc>
+  </url>
+</urlset>
