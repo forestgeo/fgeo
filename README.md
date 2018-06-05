@@ -71,17 +71,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>             package               fun
-#> 152       fgeo.tool      xl_to_df_lst
-#> 64     fgeo.habitat     GetKrigedSoil
-#> 36        fgeo.base     find_datasets
-#> 128       fgeo.tool     nms_lowercase
-#> 62     fgeo.habitat  extract_gridsize
-#> 55  fgeo.demography         growth_df
-#> 111       fgeo.tool     exists_in_pkg
-#> 66     fgeo.habitat              krig
-#> 49        fgeo.base nms_extract_match
-#> 40        fgeo.base     guess_plotdim
+#>          package              fun
+#> 35     fgeo.base     check_unique
+#> 44     fgeo.base        guess_max
+#> 96      fgeo.map    theme_default
+#> 45     fgeo.base    guess_plotdim
+#> 104    fgeo.tool        add_index
+#> 84      fgeo.map       label_elev
+#> 113    fgeo.tool    csv_to_df_lst
+#> 81      fgeo.map     contour_elev
+#> 101    fgeo.tool      add_col_row
+#> 74  fgeo.habitat krig_auto_params
 ```
 
 ## Related projects

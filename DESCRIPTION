@@ -25,7 +25,7 @@ Imports:
     fgeo.demography (>= 0.0.0.9000),
     fgeo.habitat (>= 0.0.0.9001),
     fgeo.map (>= 0.0.0.9203),
-    fgeo.tool (>= 0.0.0.9002),
+    fgeo.tool,
     magrittr,
     purrr (>= 0.2.4),
     remotes (>= 1.1.1),
