@@ -33,9 +33,13 @@ fgeo_index <- function(.f, nm, ...) {
     purrr::set_names() %>%
     purrr::map(.f = .f, ...) %>%
     purrr::map(data.frame, stringsAsFactors = FALSE) %>%
+    # At least one column
     purrr::keep(~length(.x) > 0) %>%
+    # At least one row
+    purrr::keep(~nrow(.x) > 0) %>%
     purrr::map(purrr::set_names, nm) %>%
-    fgeo.tool::ls_name_df() %>%
+    fgeo.base::name_df_lst() %>%
+    purrr::map(~purrr::modify_if(.x, is.factor, as.character)) %>%
     purrr::reduce(dplyr::bind_rows)
   names(fgeo_index)[2] <- "package"
   fgeo_index <- fgeo_index[rev(names(fgeo_index))]
