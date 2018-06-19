@@ -23,6 +23,7 @@ step.
 | <a href=https://forestgeo.github.io/fgeo>fgeo</a>                       | Easily Install and Load Multiple Packages       |
 | <a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>   | Calculate Abundance, Basal Area and Diversity   |
 | <a href=https://forestgeo.github.io/fgeo.base>fgeo.base</a>             | ForestGEO Functions With No External Dependency |
+| <a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>             | Open Datasets of ForestGEO                      |
 | <a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a> | Calculate Mortality, Recruitment and Growth     |
 | <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>       | Analize Soils and Tree-Habitat Data             |
 | <a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>               | Map Species, Trees and Topography               |
@@ -59,10 +60,11 @@ fgeo_index_packages()
 #> 2            fgeo       Easily Install and Load Multiple Packages
 #> 3  fgeo.abundance   Calculate Abundance, Basal Area and Diversity
 #> 4       fgeo.base ForestGEO Functions With No External Dependency
-#> 5 fgeo.demography     Calculate Mortality, Recruitment and Growth
-#> 6    fgeo.habitat             Analize Soils and Tree-Habitat Data
-#> 7        fgeo.map               Map Species, Trees and Topography
-#> 8       fgeo.tool                  Functions for General Purposes
+#> 5       fgeo.data                      Open Datasets of ForestGEO
+#> 6 fgeo.demography     Calculate Mortality, Recruitment and Growth
+#> 7    fgeo.habitat             Analize Soils and Tree-Habitat Data
+#> 8        fgeo.map               Map Species, Trees and Topography
+#> 9       fgeo.tool                  Functions for General Purposes
 ```
 
 Table and explore functions.
@@ -71,17 +73,17 @@ Table and explore functions.
 library(dplyr)
 funs <- fgeo_index_functions()
 sample_n(funs, 10)
-#>          package              fun
-#> 35     fgeo.base     check_unique
-#> 44     fgeo.base        guess_max
-#> 96      fgeo.map    theme_default
-#> 45     fgeo.base    guess_plotdim
-#> 104    fgeo.tool        add_index
-#> 84      fgeo.map       label_elev
-#> 113    fgeo.tool    csv_to_df_lst
-#> 81      fgeo.map     contour_elev
-#> 101    fgeo.tool      add_col_row
-#> 74  fgeo.habitat krig_auto_params
+#>             package              fun
+#> 75     fgeo.habitat extract_gridsize
+#> 58        fgeo.base    pick_dbh_over
+#> 97         fgeo.map   map_tag_header
+#> 70  fgeo.demography     mortality_df
+#> 72  fgeo.demography   recruitment_df
+#> 56        fgeo.base     pick_dbh_max
+#> 46        fgeo.base    find_datasets
+#> 62        fgeo.base       regex_line
+#> 124       fgeo.tool  drop_twice_dead
+#> 83     fgeo.habitat   torusonesp.all
 ```
 
 ## Related projects

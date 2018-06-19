@@ -10,6 +10,7 @@ fgeo_core <- function() {
     "bciex",
     "fgeo.abundance",
     "fgeo.base",
+    "fgeo.data",
     "fgeo.demography",
     "fgeo.habitat",
     "fgeo.map",
