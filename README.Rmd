@@ -63,12 +63,22 @@ Table packages.
 fgeo_index_packages()
 ```
 
-Table and explore functions.
+Table functions and datasets.
 
 ```{r}
-library(dplyr)
-funs <- fgeo_index_functions()
-sample_n(funs, 10)
+tail(fgeo_index_functions())
+
+tail(fgeo_index_datasets())
+```
+
+More tools for searching documentation.
+
+```
+# See the functions' index of a specific package
+help(package = "fgeo.abundance")
+
+# Use a keyword to serach all help files of a specific package
+help.search("basal area", package = "fgeo.abundance")
 ```
 
 ## Related projects
@@ -96,6 +106,6 @@ Code of publications by ForestGEO partners
 * [Contributing](CONTRIBUTING.md).
 * [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Acknowledgements
+## Acknowledgments
 
 Thanks to all partners of ForestGEO, for sharing their ideas and code.

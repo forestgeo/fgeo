@@ -15,9 +15,9 @@
 #' @param keep_reexported Logical; `TRUE` includes reexported functions.
 #' @param ... Additional arguments passed to `.f`.
 #'
-#' @section Acknowledgements:
-#' [Jim Hester adviced](https://goo.gl/Qzp5kR) on implementation details of
-#' `fgeo_index_functions()`; and [Nathan Werth adviced](http://bit.ly/2H8bwaj)
+#' @section Acknowledgments:
+#' [Jim Hester advised](https://goo.gl/Qzp5kR) on implementation details of
+#' `fgeo_index_functions()`; and [Nathan Werth advised](http://bit.ly/2H8bwaj)
 #' on implementation details of `fgeo_index_datasets()`.
 #'
 #' @return A dataframe.

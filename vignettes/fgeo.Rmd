@@ -21,7 +21,7 @@ library(dplyr)
 
 ## Overview
 
-__fgeo__ provides a wide range of tools to analyse forest diversity and dynamics. It installs and loads multiple R packages, functions, and datasets in a single step. (To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).)
+__fgeo__ provides a wide range of tools to analyze forest diversity and dynamics. It installs and loads multiple R packages, functions, and datasets in a single step. (To learn more about the structure of ForestgGEO's software see [this article](https://goo.gl/c5X6qk).)
 
 ## Functions
 

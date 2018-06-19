@@ -38,10 +38,10 @@ respective package-website (a link to the specific documentation of each
 dataset and function would be better but this feature is not yet
 available).
 }
-\section{Acknowledgements}{
+\section{Acknowledgments}{
 
-\href{https://goo.gl/Qzp5kR}{Jim Hester adviced} on implementation details of
-\code{fgeo_index_functions()}; and \href{http://bit.ly/2H8bwaj}{Nathan Werth adviced}
+\href{https://goo.gl/Qzp5kR}{Jim Hester advised} on implementation details of
+\code{fgeo_index_functions()}; and \href{http://bit.ly/2H8bwaj}{Nathan Werth advised}
 on implementation details of \code{fgeo_index_datasets()}.
 }
 

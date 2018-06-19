@@ -67,24 +67,35 @@ fgeo_index_packages()
 #> 9       fgeo.tool                  Functions for General Purposes
 ```
 
-Table and explore functions.
+Table functions and datasets.
 
 ``` r
-library(dplyr)
-funs <- fgeo_index_functions()
-sample_n(funs, 10)
-#>             package              fun
-#> 75     fgeo.habitat extract_gridsize
-#> 58        fgeo.base    pick_dbh_over
-#> 97         fgeo.map   map_tag_header
-#> 70  fgeo.demography     mortality_df
-#> 72  fgeo.demography   recruitment_df
-#> 56        fgeo.base     pick_dbh_max
-#> 46        fgeo.base    find_datasets
-#> 62        fgeo.base       regex_line
-#> 124       fgeo.tool  drop_twice_dead
-#> 83     fgeo.habitat   torusonesp.all
+tail(fgeo_index_functions())
+#>       package          fun
+#> 156 fgeo.tool     type_vft
+#> 157 fgeo.tool     xl_to_df
+#> 158 fgeo.tool xl_to_df_lst
+#> 159 fgeo.tool  xlff_to_csv
+#> 160 fgeo.tool  xlff_to_dfs
+#> 161 fgeo.tool   xlff_to_xl
+
+tail(fgeo_index_datasets())
+#>         package     dataset
+#> 43 fgeo.habitat   soil_fake
+#> 44 fgeo.habitat soil_random
+#> 45     fgeo.map    top1quad
+#> 46     fgeo.map    top4quad
+#> 47    fgeo.tool    top1quad
+#> 48    fgeo.tool    top4quad
 ```
+
+More tools for searching documentation.
+
+    # See the functions' index of a specific package
+    help(package = "fgeo.abundance")
+    
+    # Use a keyword to serach all help files of a specific package
+    help.search("basal area", package = "fgeo.abundance")
 
 ## Related projects
 
@@ -119,6 +130,6 @@ Code of publications by ForestGEO partners
   - [Contributing](CONTRIBUTING.md).
   - [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Acknowledgements
+## Acknowledgments
 
 Thanks to all partners of ForestGEO, for sharing their ideas and code.
