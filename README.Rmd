@@ -98,7 +98,7 @@ help.search("basal area", package = "fgeo.abundance")
 
 ### Code/data of publications by ForestGEO partners
 
-Data may be made available as required by the journals to enable reproduction of the results. If you wish to publish based on these data you are required to get permission from the Principal Investigators of the corresponding ForestGEO site.
+Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators. If you wish to publish papers based on these data you are also required to get permission from the PIs of the corresponding ForestGEO plots.
 
 * [Soil drivers of local-scale tree growth in a lowland tropical forest (Zemunik et al., 2018).](https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth)
 
