@@ -71,22 +71,22 @@ Table functions and datasets.
 
 ``` r
 tail(fgeo_index_functions())
-#>       package          fun
-#> 156 fgeo.tool     type_vft
-#> 157 fgeo.tool     xl_to_df
-#> 158 fgeo.tool xl_to_df_lst
-#> 159 fgeo.tool  xlff_to_csv
-#> 160 fgeo.tool  xlff_to_dfs
-#> 161 fgeo.tool   xlff_to_xl
+#>       package             fun
+#> 157 fgeo.tool        xl_to_df
+#> 158 fgeo.tool       xl_to_dfs
+#> 159 fgeo.tool     xlff_to_csv
+#> 160 fgeo.tool     xlff_to_dfs
+#> 161 fgeo.tool      xlff_to_xl
+#> 162 fgeo.tool xlsheets_to_dfs
 
 tail(fgeo_index_datasets())
-#>         package     dataset
-#> 43 fgeo.habitat   soil_fake
-#> 44 fgeo.habitat soil_random
-#> 45     fgeo.map    top1quad
-#> 46     fgeo.map    top4quad
-#> 47    fgeo.tool    top1quad
-#> 48    fgeo.tool    top4quad
+#>         package               dataset
+#> 41 fgeo.habitat      luquillo_top3_sp
+#> 42 fgeo.habitat luquillo_tree6_random
+#> 43 fgeo.habitat             soil_fake
+#> 44 fgeo.habitat           soil_random
+#> 45     fgeo.map             vft_1quad
+#> 46     fgeo.map             vft_4quad
 ```
 
 More tools for searching documentation.
@@ -99,12 +99,12 @@ More tools for searching documentation.
 
 ## Related projects
 
-Maintained by ForestGEO
+### Maintained by ForestGEO
 
   - [**fgeo.template**](https://forestgeo.github.io/fgeo.template/): An
     R package containing templates used to develop **fgeo** packages.
 
-Not maintained by ForestGEO
+### Not maintained by ForestGEO
 
   - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The
     original package of CTFS functions. No longer supported by
@@ -118,11 +118,20 @@ Not maintained by ForestGEO
       - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
       - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
-Code of publications by ForestGEO partners
+### Code/data of publications by ForestGEO partners
+
+Data may be made available as required by the journals to enable
+reproduction of the results. If you wish to publish based on these data
+you are required to get permission from the Principal Investigators of
+the corresponding ForestGEO site.
 
   - [Soil drivers of local-scale tree growth in a lowland tropical
     forest (Zemunik et
     al., 2018).](https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth)
+
+  - [Plant diversity increases with the strength of negative density
+    dependence at the global scale (LaManna et
+    al., 2018)](https://github.com/forestgeo/LaManna_et_al_Science)
 
 ## Information
 
