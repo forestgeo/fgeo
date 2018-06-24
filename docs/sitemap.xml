@@ -13,6 +13,9 @@
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo_core.html</loc>
   </url>
   <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_help.html</loc>
+  </url>
+  <url>
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo_index.html</loc>
   </url>
   <url>
@@ -28,9 +31,9 @@
     <loc>https://forestgeo.github.io/fgeo//reference/pipe.html</loc>
   </url>
   <url>
-    <loc>https://forestgeo.github.io/fgeo//articles/eda.html</loc>
+    <loc>https://forestgeo.github.io/fgeo//articles/fgeo.html</loc>
   </url>
   <url>
-    <loc>https://forestgeo.github.io/fgeo//articles/fgeo.html</loc>
+    <loc>https://forestgeo.github.io/fgeo//articles/siteonly/eda.html</loc>
   </url>
 </urlset>
