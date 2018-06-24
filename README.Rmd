@@ -20,19 +20,7 @@ knitr::opts_chunk$set(
 
 __fgeo__ installs and loads multiple packages, functions and datasets in a single step.
 
-## Packages
-
-```{r, message=FALSE, echo=FALSE}
-library(dplyr)
-library(fgeo)
-
-fgeo::fgeo_index_packages() %>% 
-  purrr::set_names(tolower) %>% 
-  dplyr::mutate(package = fgeo_link(package)) %>% 
-  knitr::kable(escape = FALSE)
-```
-
-## Search [functions and datasets](https://forestgeo.github.io/fgeo/articles/fgeo.html)
+## [Quick search](https://forestgeo.github.io/fgeo/articles/fgeo.html#quick-search)
 
 ## Installation
 
@@ -41,9 +29,11 @@ fgeo::fgeo_index_packages() %>%
 remotes::install_github("forestgeo/fgeo")
 ```
 
-To learn the details about how to install packages from GitHub, read [this blog post](https://goo.gl/dQKEeg).
+[How to install packages from GitHub?](https://goo.gl/dQKEeg)
 
 ## Example
+
+[Skip and get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 Load all __fgeo__ packages in one step.
 
@@ -51,43 +41,49 @@ Load all __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-Update packages that changed since last installation.
+### Search
 
-```
-fgeo_update()
+```R
+fgeo_help("map")
 ```
 
-Table packages.
+<img src="https://i.imgur.com/51flIFs.png" align="center" height=500 />
+
+---
 
 ```{r}
 fgeo_index_packages()
 ```
 
-Table functions and datasets.
+```{r}
+head(fgeo_index_functions())
+```
 
 ```{r}
-tail(fgeo_index_functions())
-
-tail(fgeo_index_datasets())
+subset(fgeo_index_datasets(), package == "fgeo.data")
 ```
 
-More tools for searching documentation.
+Try also:
+
+```R
+View(fgeo_index_datasets())
+```
+
+<img src="https://i.imgur.com/Jt9xH9d.png" align="center" height=500 /> 
+
+---
+
+### Update
 
 ```
-# See the functions' index of a specific package
-help(package = "fgeo.abundance")
-
-# Use a keyword to serach all help files of a specific package
-help.search("basal area", package = "fgeo.abundance")
+fgeo_update()
 ```
+
+[Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 ## Related projects
 
-### Maintained by ForestGEO
-
-* [__fgeo.template__](https://forestgeo.github.io/fgeo.template/): An R package containing templates used to develop __fgeo__ packages.
-
-### Not maintained by ForestGEO
+(Not maintained by ForestGEO)
 
 * [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The original package of CTFS functions. No longer supported by ForestGEO.
 
@@ -96,7 +92,7 @@ help.search("basal area", package = "fgeo.abundance")
     * [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
     * [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
-### Code/data of publications by ForestGEO partners
+## Code/data of publications by ForestGEO partners
 
 Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators. If you wish to publish papers based on these data you are also required to get permission from the PIs of the corresponding ForestGEO plots.
 

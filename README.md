@@ -15,43 +15,41 @@ status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/p
 a single
 step.
 
-## Packages
-
-| package                                                                 | title                                           |
-| :---------------------------------------------------------------------- | :---------------------------------------------- |
-| <a href=https://forestgeo.github.io/bciex>bciex</a>                     | Forest Dynamics Data from Barro Colorado Island |
-| <a href=https://forestgeo.github.io/fgeo>fgeo</a>                       | Easily Install and Load Multiple Packages       |
-| <a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>   | Calculate Abundance, Basal Area and Diversity   |
-| <a href=https://forestgeo.github.io/fgeo.base>fgeo.base</a>             | ForestGEO Functions With No External Dependency |
-| <a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>             | Open Datasets of ForestGEO                      |
-| <a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a> | Calculate Mortality, Recruitment and Growth     |
-| <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>       | Analize Soils and Tree-Habitat Data             |
-| <a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>               | Map Species, Trees and Topography               |
-| <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>             | Functions for General Purposes                  |
-
-## Search [functions and datasets](https://forestgeo.github.io/fgeo/articles/fgeo.html)
+## [Quick search](https://forestgeo.github.io/fgeo/articles/fgeo.html#quick-search)
 
 ## Installation
 
     # install.packages("remotes")
     remotes::install_github("forestgeo/fgeo")
 
-To learn the details about how to install packages from GitHub, read
-[this blog post](https://goo.gl/dQKEeg).
+[How to install packages from GitHub?](https://goo.gl/dQKEeg)
 
 ## Example
+
+[Skip and get
+started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
+#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
+#> v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000
+#> v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006
+#> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204
+#> v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003
+#> 
 ```
 
-Update packages that changed since last installation.
+### Search
 
-    fgeo_update()
+``` r
+fgeo_help("map")
+```
 
-Table packages.
+<img src="https://i.imgur.com/51flIFs.png" align="center" height=500 />
+
+-----
 
 ``` r
 fgeo_index_packages()
@@ -67,44 +65,55 @@ fgeo_index_packages()
 #> 9       fgeo.tool                  Functions for General Purposes
 ```
 
-Table functions and datasets.
-
 ``` r
-tail(fgeo_index_functions())
-#>       package             fun
-#> 157 fgeo.tool        xl_to_df
-#> 158 fgeo.tool       xl_to_dfs
-#> 159 fgeo.tool     xlff_to_csv
-#> 160 fgeo.tool     xlff_to_dfs
-#> 161 fgeo.tool      xlff_to_xl
-#> 162 fgeo.tool xlsheets_to_dfs
-
-tail(fgeo_index_datasets())
-#>         package               dataset
-#> 41 fgeo.habitat      luquillo_top3_sp
-#> 42 fgeo.habitat luquillo_tree6_random
-#> 43 fgeo.habitat             soil_fake
-#> 44 fgeo.habitat           soil_random
-#> 45     fgeo.map             vft_1quad
-#> 46     fgeo.map             vft_4quad
+head(fgeo_index_functions())
+#>   package                 fun
+#> 2    fgeo      fgeo_conflicts
+#> 3    fgeo           fgeo_core
+#> 4    fgeo           fgeo_help
+#> 5    fgeo        fgeo_imports
+#> 6    fgeo          fgeo_index
+#> 7    fgeo fgeo_index_datasets
 ```
 
-More tools for searching documentation.
+``` r
+subset(fgeo_index_datasets(), package == "fgeo.data")
+#>      package                   dataset
+#> 25 fgeo.data           data_dictionary
+#> 26 fgeo.data        luquillo_elevation
+#> 27 fgeo.data          luquillo_habitat
+#> 28 fgeo.data          luquillo_species
+#> 29 fgeo.data         luquillo_stem_1ha
+#> 30 fgeo.data      luquillo_stem_random
+#> 31 fgeo.data luquillo_stem_random_tiny
+#> 32 fgeo.data        luquillo_stem6_1ha
+#> 33 fgeo.data     luquillo_stem6_random
+#> 34 fgeo.data             luquillo_taxa
+#> 35 fgeo.data        luquillo_tree6_1ha
+#> 36 fgeo.data     luquillo_tree6_random
+#> 37 fgeo.data        luquillo_vft_4quad
+```
 
-    # See the functions' index of a specific package
-    help(package = "fgeo.abundance")
-    
-    # Use a keyword to serach all help files of a specific package
-    help.search("basal area", package = "fgeo.abundance")
+Try also:
+
+``` r
+View(fgeo_index_datasets())
+```
+
+<img src="https://i.imgur.com/Jt9xH9d.png" align="center" height=500 />
+
+-----
+
+### Update
+
+    fgeo_update()
+
+[Get
+started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 ## Related projects
 
-### Maintained by ForestGEO
-
-  - [**fgeo.template**](https://forestgeo.github.io/fgeo.template/): An
-    R package containing templates used to develop **fgeo** packages.
-
-### Not maintained by ForestGEO
+(Not maintained by ForestGEO)
 
   - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The
     original package of CTFS functions. No longer supported by
@@ -118,7 +127,7 @@ More tools for searching documentation.
       - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
       - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
-### Code/data of publications by ForestGEO partners
+## Code/data of publications by ForestGEO partners
 
 Data have been made available as required by the journal to enable
 reproduction of the results presented in the paper. Please do not share
