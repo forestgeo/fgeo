@@ -16,58 +16,53 @@ knitr::opts_chunk$set(
   eval = TRUE,
   comment = "#>",
   fig.show = "hold",
-  out.width = "98%", 
+  fig.align = "center",
+  out.width = "70%", 
   fig.width = 9.5, 
   fig.asp = 0.7
 )
 ```
 
+__Disclosure:__ This article literally reproduces the section Exploratory Data Analysis of the book R for Data Science (http://r4ds.had.co.nz/), by Hadley Wickham and Garrett Grolemund -- except for the examples and some text, which I changed to more strongly engage ecologists from ForestGEO (if anything here is poorly written it's surely mine).
+
 # Introduction
 
-This vignette literaly reproduces the section Exploratory Data Analysis in R for Data Science, by Hadley Wickham and Garrett Grolemund, except that the examples and some text were changed to more strongly engage ecologysts from ForestGEO.
+This article will show you how to explore your data with general purpose tools, mostly from the __tidyverse__ (https://www.tidyverse.org/). This is a good place to start, before you learn the specific tools from the __fgeo__ package (https://forestgeo.github.io/fgeo/).
 
-You will learn how to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward the learning spiral.
+You to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.
 
-## Prerequisites
-
-Most functions we will use are available in the __tidyverse__ package (https://www.tidyverse.org/). If you are new to the tidyverse, you may feel a little frustrated at the beginning, but quickly your effort will pay-off. The tools in the tidyverse are powerful, relatively easy to use and consistent; so once you learn some, you will learn most other tools intuitively. To more completely learn how to do data science with the tidyverse read R for Data Sciencev (http://r4ds.had.co.nz/).
+If you are new to the tidyverse, you may feel a little frustrated at the beginning, but quickly your effort will pay-off. The tools in the __tidyverse__ are powerful, relatively easy to use and consistent; so once you learn some, you will learn most other tools intuitively.
 
 ```{r, eval=TRUE}
-library(tidyverse)  # visualize and transform data (and more)
+library(tidyverse)
 ```
 
-The data we will use is a public dataset of trees censused in a forest plot in Luquillo, in Puerto Rico. Those data are available in the data set luquillo_tree6_random in the data-package __fgeo.data__.
+The data we will use is a public dataset of trees censused in a forest plot in Luquillo, in Puerto Rico. Those data are available in the data set `luquillo_stem_random` from the data-package __fgeo.data__ (https://forestgeo.github.io/fgeo.data/).
 
 ```{r, eval=TRUE}
-library(fgeo.data)
 # Convenient nickname
-# TODO Replace with stem everywhere
-stem <- luquillo_stem_random
-tree <- luquillo_tree6_random
-tree
+stem <- fgeo.data::luquillo_stem_random
 ```
 
 ## Style
 
 ### The tidyverse style guide
 
-I use The tidyverse style guide (http://style.tidyverse.org/).
+The code style I use here follows the tidyverse guide (http://style.tidyverse.org/).
 
 > Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.
 
--- [The tidyverse style guide](http://style.tidyverse.org/)
-
 ### Combining multiple operations with the pipe %>%
 
-Often I combine multiple operations with the pipe %>% because it makes the code considerably more readable.
+Often I combine multiple operations with the pipe `%>%` because it makes the code considerably more readable.
 
 > [The pipe] focuses on the transformations, not what's being transformed, which makes the code easier to read. You can read it as a series of imperative statements: group, then summarise, then filter. As suggested by this reading, a good way to pronounce %>% when reading code is "then".
 
-> Behind the scenes, x %>% f(y) turns into f(x, y), and x %>% f(y) %>% g(z) turns into g(f(x, y), z) and so on. You can use the pipe to rewrite multiple operations in a way that you can read left-to-right, top-to-bottom.
+> Behind the scenes, `x %>% f(y)` turns into `f(x, y)`, and `x %>% f(y) %>% g(z)` turns into `g(f(x, y), z)` and so on. You can use the pipe to rewrite multiple operations in a way that you can read left-to-right, top-to-bottom.
 
 > Working with the pipe is one of the key criteria for belonging to the tidyverse. The only exception is ggplot2: it was written before the pipe was discovered.
 
-–- [R for Data Science](http://r4ds.had.co.nz/transform.html)
+–- R for Data Science (http://r4ds.had.co.nz/transform.html)
 
 # Questions and Definitions
 
@@ -84,7 +79,7 @@ A __variable__ is a quantity, quality, or property that you can measure.
 
 A __value__ is the state of a variable when you measure it. The value of a variable may change from measurement to measurement.
 
-An __observation__ is a set of measurements made under similar conditions (you usually make all of the measurements in an observation at the same time and on the same object). An observation will contain several values, each associated with a different variable. I’ll sometimes refer to an observation as a data point.
+An __observation__ is a set of measurements made under similar conditions (you usually make all of the measurements in an observation at the same time and on the same object). An observation will contain several values, each associated with a different variable. I'll sometimes refer to an observation as a data point.
 
 __Tabular data__ is a set of values, each associated with a variable and an observation. Tabular data is tidy if each value is placed in its own “cell”, each variable in its own column, and each observation in its own row.
 
@@ -92,18 +87,16 @@ __Variation__ is the tendency of the values of a variable to change from measure
 
 # Variation
 
-Every variable varies with a particular pattern, and that pattern may be insightful. To understand the variation pattern of a variable we can visualize the distribution of the variables' values. The best way to visualize a variable’s distribution depends on whether the variable is categorical or continuous.
+Every variable varies with a particular pattern, and that pattern may be insightful. To understand the variation pattern of a variable we can visualize the distribution of the variables' values. The best way to visualize a variable's distribution depends on whether the variable is categorical or continuous.
 
-The `tree` dataset has both, categorical and continuous variables. In R, categorical variables are usually stored as character strings (<chr>) or factors (<fctr>), and continuous variables are stored as integers (<int>) or doubles (<dbl>).
+The `stem` dataset has both, categorical and continuous variables. In R, categorical variables are usually stored as character strings (`<chr>`) or factors (`<fctr>`), and continuous variables are stored as integers (`<int>`) or doubles (`<dbl>`).
+
+`stem` is a tibble. A tibble is a subclass of dataframe. But compared to regular dataframes tibbles are optimized to handle large data; and they print more information and nicer.
 
 ```{r, eval=TRUE}
-tree
-```
+class(stem)
 
-Notice that `tree` is a tibble -- a subclass of dataframe optimized to handle large data sets, which prints more information and nicer.
-
-```{r}
-class(tree)
+stem
 ```
 
 By default, tibbles print a few rows only; to print more rows use:
@@ -112,73 +105,54 @@ By default, tibbles print a few rows only; to print more rows use:
 print(<YOUR_TIBBLE>, n = <N_ROWS>, width = <N_COLUMNS>)
 ```
 
-You can also write a helper funciton to `print_all()` rows and columns (as `data.frame()`).
+You can always convert a tibble into a regular dataframe.
 
-```{r, eval=TRUE}
-# or print all rows in a tibble with
-print_all <- function(x) {
-  print(x, n = nrow(x), width = Inf)
-}
-
-# Example
-tbl <- tibble(x = runif(21))
-tbl
-print_all(tbl)
+```R
+# This is ackward because it prints way more than you can fit on a screen
+as.data.frame(stem)  
 ```
 
 For alternative views try:
 
-```R
-# Output is too long and doesn't print nicely
-as.data.frame(tree)  
-```
-
 ```{r}
 # informative and prints nice
-str(tree)  
+str(stem)  
 # like str() but shows as much data as possible
-glimpse(tree)  
+glimpse(stem)  
 ```
 
 If you are in RStudio, your best option might be `View()`, which lets you search values and filter columns.
 
 ```R
-View(tree)           
+View(stem)           
 ```
 
 <img src="https://user-images.githubusercontent.com/5856545/41784224-12a3adca-760d-11e8-8b80-50d8775f01db.png" align="right" height=160 /> 
-
 
 ## Visualizing Distributions
 
 ### Categorical variables
 
-> A variable is categorical if it can only take one of a small set of values. To examine the distribution of a categorical variable, use a bar chart.
+A variable is categorical if it can only take one of a small set of values. To examine the distribution of a categorical variable, use a bar chart.
 
 ```{r}
-ggplot(data = tree) +
+ggplot(data = stem) +
   geom_bar(mapping = aes(x = status))
 ```
 
 The categories A, D and M, of the variable `status` mean "alive", "dead" and "missing" (http://ctfs.si.edu/Public/DataDict/data_dict.php).
 
-```{r}
-data_dictionary %>% 
-  filter(column == "Status") %>% 
-  pull(description)
-```
-
 ### Continuous Variables
 
-> A variable is continuous if it can take any of an infinite set of ordered values. To examine the distribution of a continuous variable use a histogram. You should always explore a variety of binwidths when working with histograms, as different binwidths can reveal different patterns.
+A variable is continuous if it can take any of an infinite set of ordered values. To examine the distribution of a continuous variable use a histogram. You should always explore a variety of binwidths when working with histograms, as different binwidths can reveal different patterns.
 
-Let’s explore `dbh`, which represents the stem diameter breast height. Now we will focus on small trees; we'll explore big trees later. And we will try bars of different widths and choose one for further analyses.
+Let's explore `dbh`, which represents the stem diameter at breast height. Now we will focus on small stems; we'll explore big stems later. And we will try bars of different widths (with `binwidth`) and choose one for further analyses.
 
 ```{r}
-small_dbh <- filter(tree, dbh < 300)
+small_dbh <- filter(stem, dbh < 300)
 
 # Save data and mappings in "p" to reuse them later.
-p <- ggplot(small_dbh, aes(x = dbh))
+p <- ggplot(small_dbh, aes(dbh))
 ```
 
 ```{r}
@@ -193,48 +167,25 @@ p + geom_histogram(aes(dbh), binwidth = 30)
 p + geom_histogram(aes(dbh), binwidth = 60)
 ```
 
-A binwidth of 30 dbh seems useful.
+A binwidth of 30 seems useful.
 
 ```{r}
 # Save to reuse
 useful_binwidth <- 30
 ```
 
-The code above uses the temporary variable p; this reduces the boilerplate code and helps you focus on important changes. Yet this technique must be used carefully. It is good practice to avoid uninformative temporary names like p unless the meaning is obvious from the context and the “life” of the temporary variable is clearly limited to a discrete code chunk. Generally, prefer long informative names over short uninformative ones (http://a.co/4f8df29).
-
-You can reduce the boilerplate code even further and without temporary variables:
-
-* Wite a custom function with an argument to vary binwidth.
-* Use `purrr::map()` (or `lapply()`) to iteratively pass different binwidths to our custom function.
-
-```{r, fig.align="default", out.width="30%", fig.widh=(6 * 0.3 / 0.95)}
-# DRY principle: Don't Repeat Yourself
-compare_bindiwdth <- function(binwidth) {
-  ggplot(small_dbh, aes(x = dbh)) +
-    geom_histogram(binwidth = binwidth)
-}
-
-bw <- c(10, 30, 60)
-map(bw, compare_bindiwdth)
-```
-
 To overlay multiple histograms in the same plot, `geom_freqpoly()` may produce clearer plots than `geom_histogram()` because it is easier to understand overlying lines than bars.
 
-```{r, fig.align="default", out.width="45%", fig.widh=(6 * 0.5 / 0.95)}
+```{r}
 # Make n groups with ~ numbers of observations with `ggplot2::cut_number()`
 small_cut_number <- mutate(small_dbh, equal_n = cut_number(dbh, n = 5))
 
-p <- ggplot(data = small_cut_number, aes(x = dbh, color = equal_n)) +
-  # use available space on plot area (defult plots legend outside)
-  theme(
-    legend.position = c(.95, .95),
-    legend.justification = c("right", "top")
-  )
+p <- ggplot(data = small_cut_number, aes(x = dbh, color = equal_n))
 
-# Left
 p + geom_histogram()
+```
 
-# Right
+```{r}
 p + geom_freqpoly()
 ```
 
@@ -246,7 +197,7 @@ In both bar charts and histograms, tall and short bars let us explore common and
 * Which values are rare? Why? Does that match your expectations?
 * Can you see any unusual patterns? What might explain them?
 
-The later two plots give a good estimate of what tree diameters are most common. You can compute the same count manually, by cutting the variable dbh with `ggplot2::cut_width()` and then counting the unique pieces with `dplyr::count()`.
+The later two plots give a good estimate of what stem diameters are most common. You can compute the same count manually, by cutting the variable `dbh` with `ggplot2::cut_width()` and then counting the unique pieces with `dplyr::count()`.
 
 ```{r}
 small_dbh %>% 
@@ -254,14 +205,14 @@ small_dbh %>%
   count(dbh_mm, sort = TRUE)
 ```
 
-The most common trees are those which diameter (`dbh`) is between 15 mm and 45 mm.
+The most common stems are those which diameter (`dbh`) is between 15 mm and 45 mm.
 
 ### Clustered values
 
-In this section we will focus on the largest trees; later we will explore all trees, including medium-size ones.
+In this section we will focus on the largest stems; later we will explore all stems.
 
 ```{r}
-large_dbh <- tree %>% filter(dbh > 300)
+large_dbh <- stem %>% filter(dbh > 300)
 ```
 
 Clusters of similar values suggest that subgroups exist in your data. To understand the subgroups, ask:
@@ -273,7 +224,7 @@ Clusters of similar values suggest that subgroups exist in your data. To underst
 
 The clustering, however, may be an artifact of the chosen binwidth:
 
-```{r}
+```{r, fig.align="default", out.width="45%", fig.widh=(6 * 0.5 / 0.7)}
 p <- ggplot(large_dbh, aes(dbh))
 
 # Left: Are these clusters meaningful?
@@ -285,19 +236,19 @@ p + geom_histogram(binwidth = 100)
 
 ### Unusual values
 
-In this section we will work with the entire `tree` data set.
+In this section we will work with the entire `stem` data set.
 
-Outliers are observations that are unusual; data points that don’t seem to fit the pattern. Sometimes outliers are data entry errors; other times outliers suggest important new science. When you have a lot of data, outliers are sometimes difficult to see in a histogram.
+Outliers are observations that are unusual; data points that don't seem to fit the pattern. Sometimes outliers are data entry errors; other times outliers suggest important new science. When you have a lot of data, outliers are sometimes difficult to see in a histogram.
 
-For example, take the distribution of the `dbh` variable of the `tree` data set. Notice how wide are the limits of the x-axis.
+For example, take the distribution of the `dbh` variable of the `stem` data set. Notice how wide are the limits of the x-axis.
 
 ```{r}
-p <- ggplot(tree, aes(dbh)) +
+p <- ggplot(stem, aes(dbh)) +
   geom_histogram(binwidth = useful_binwidth)
 p
 ```
 
-There are so many observations in the common bins that the rare bins are so short that you can barely see them . To make the unusual values more noticable, we can zoom into smaller values of the y-axis with `coord_cartesian()`.
+There are so many observations in the common bins that the rare bins are so short that you can barely see them . To make the unusual values more noticeable, we can zoom into smaller values of the y-axis with `coord_cartesian()`.
 
 ```{r}
 p + coord_cartesian(ylim = c(0, 15))
@@ -309,70 +260,69 @@ This allows us to see that `dbh` values over ~625 are unusual and may be outlier
 
 ```{r}
 treshold <- 625
-
-unusual <- tree %>% 
+unusual <- stem %>% 
   filter(dbh > treshold ) %>% 
-  select(treeID, ExactDate, status, gx, gy, dbh) %>%
+  select(stemID, ExactDate, status, gx, gy, dbh) %>%
   arrange(dbh)
 unusual
 ```
 
-You could plot the unusual trees to see where they are located.
+You could plot the unusual stems to see where they are located.
 
 ```{r}
-ggplot(tree, aes(gx, gy)) + 
+ggplot(stem, aes(gx, gy)) + 
     # `alpha` controls opacity
     geom_point(alpha = 1/10) +
-    # highlight unusual trees
-    geom_point(data = unusual, colour = "red")
+    # highlight unusual stems
+    geom_point(data = unusual, colour = "red", size = 3)
 ```
 
-It’s good practice to repeat your analysis with and without the outliers. If they have minimal effect on the results, and you can’t figure out why they’re there, it’s reasonable to replace them with missing values, and move on. However, if they have a substantial effect on your results, you shouldn’t drop them without justification. You’ll need to figure out what caused them (e.g. a data entry error) and disclose that you removed them in your write-up.
+It's good practice to repeat your analysis with and without the outliers. If they have minimal effect on the results, and you can't figure out why they're there, it's reasonable to replace them with missing values, and move on. However, if they have a substantial effect on your results, you shouldn't drop them without justification. You'll need to figure out what caused them (e.g. a data entry error) and disclose that you removed them in your write-up.
 
 # Missing Values
 
-If you’ve encountered unusual values in your data set, and simply want to move on to the rest of your analysis, you have two options.
+If you've encountered unusual values in your data set, and simply want to move on to the rest of your analysis, you have two options.
 
 1. Drop the entire row with the strange values:
 
 ```{r}
-are_usual <- !tree$treeID %in% unusual$treeID
-usual <- filter(tree, are_usual)
+are_usual <- !stem$stemID %in% unusual$stemID
+usual <- filter(stem, are_usual)
 
-# Confirm data set of usual trees has less rows than full data set.
-nrow(tree)
+# Confirm data set of usual stems has less rows than full data set.
+nrow(stem)
 nrow(usual)
 ```
 
-I don’t recommend this option because just because one measurement is invalid, doesn’t mean all the measurements are. Additionally, if you have low quality data, by time that you’ve applied this approach to every variable you might find that you don’t have any data left!
+I don't recommend this option because just because one measurement is invalid, doesn't mean all the measurements are. Additionally, if you have low quality data, by time that you've applied this approach to every variable you might find that you don't have any data left!
 
 2. Instead, I recommend replacing the unusual values with missing values. The easiest way to do this is to use `dplyr::mutate()` to replace the variable with a modified copy. You can use the `ifelse()` function to replace unusual values with `NA`:
 
 ```{r}
 are_unusual <- !are_usual
-with_unusual_made_NA <- tree %>% 
+with_unusual_made_NA <- stem %>% 
   mutate(dbh = ifelse(are_unusual, NA_real_, dbh))
 ```
 
-`ifelse()` has three arguments. The first argument test should be a logical vector. The result will contain the value of the second argument, yes, when test is `TRUE`, and the value of the third argument, no, when it is false.
+`ifelse()` has three arguments. The first argument `test` should be a logical vector. The result will contain the value of the second argument, `yes`, when `test` is `TRUE`, and the value of the third argument, `no`, when it is `FALSE`.
 
 ```{r}
 # Confirm no rows have been removed,
-nrow(tree)
+nrow(stem)
 nrow(with_unusual_made_NA)
 
-# but dbh of unusual trees is NA
+# but dbh of unusual stems is NA
 unusual_only <- with_unusual_made_NA %>% 
   filter(are_unusual) %>% 
-  select(dbh, treeID)
+  select(dbh, stemID)
 unusual_only
 ```
 
-Alternatively to ifelse, use `dplyr::case_when()`. `case_when()` is particularly useful inside `mutate()` when you want to create a new variable that relies on a complex combination of existing variables.
+Alternatively to `ifelse()`, use `dplyr::case_when()`. `case_when()` is particularly useful inside `mutate()` when you want to create a new variable that relies on a complex combination of existing variables.
 
-Like R, __ggplot2__ subscribes to the philosophy that missing values should never silently go missing. It’s not obvious where you should plot missing values, so ggplot2 doesn’t include them in the plot, but it does warn that they’ve been removed (left plot below). To suppress that warning, set `na.rm = TRUE` (right plot below).
+It's not obvious where you should plot missing values in a plot, so __ggplot2__ doesn't include them, but it does warn that they've been removed (left plot below). To suppress that warning, set `na.rm = TRUE` (right plot below).
 
-```{r, fig.align="default", out.width="50%", fig.widh=(6 * 0.5 / 0.95)}
+```{r, fig.align="default", out.width="45%", fig.widh=(6 * 0.5 / 0.95)}
 # Left: don't remove NAs and get a warning on the console
 ggplot(unusual_only, aes(dbh)) + 
   geom_histogram(binwidth = useful_binwidth) +
@@ -386,29 +336,254 @@ ggplot(unusual_only, aes(dbh)) +
 
 Other times you want to understand what makes observations with missing values different to observations with recorded values.
 
-For example, in `tree`, some missing values in the `dbh` variable correspond to alive trees. So you might want to compare the `DFstatus` for trees with missing and non-missing values of `dbh`. You can do this by making a new variable with `is.na()`.
+For example, you might want to compare the `status` for stems with missing and non-missing values of `dbh`. You can do this by making a new variable with `is.na()`.
 
 ```{r}
-missing_dbh <- tree %>% 
+missing_dbh <- stem %>% 
   mutate(missing = is.na(dbh))
 
 ggplot(missing_dbh) + 
-  geom_bar(aes(DFstatus, fill = missing))
+  geom_bar(aes(status, fill = missing))
 ```
 
 ## Exercises
 
 1. What happens to missing values in a histogram? What happens to missing values in a bar chart? Why is there a difference?
 
-2. What does na.rm = TRUE do in mean() and sum()?
+2. What does `na.rm = TRUE` do in `mean()` and `sum()`?
 
 # Covariation
 
-If variation describes the behavior within a variable, co-variation describes the behavior between variables. Covariation is the tendency for the values of two or more variables to vary together in a related way. The best way to spot co-variation is to visualize the relationship between two or more variables. How you do that should again depend on the type of variables involved.
+If variation describes the behavior within a variable, covariation describes the behavior between variables. Covariation is the tendency for the values of two or more variables to vary together in a related way. The best way to spot covariation is to visualize the relationship between two or more variables. How you do that should again depend on the type of variables involved.
 
 ## A categorical and continuous variable
 
-It’s common to want to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of geom_freqpoly() is not that useful for that sort of comparison because the height is given by the count. That means if one of the groups is much smaller than the others, it’s hard to see the differences in shape. For example, let’s explore how stem diameter (dbh) varies with species (sp):
+It's common to want to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of `geom_freqpoly()` is not that useful for that sort of comparison because the height is given by the count. That means if one of the groups is much smaller than the others, it's hard to see the differences in shape. For example, let's explore how stem diameter (`dbh`) varies with species (`sp`):
 
-TODO xxx cont. here http://rpubs.com/forestgeo/eda at Covariaiton
-TODO Replace tree with stem 
+```{r}
+# The data set has too many species; choosing just a few for clarity
+few_sp <- unique(stem$sp)[1:5]
+data_few_sp <- filter(stem, sp %in% few_sp)
+
+ggplot(data_few_sp, aes(dbh)) +
+  geom_freqpoly(aes(color = sp))
+```
+
+It's hard to see the difference in distribution because the overall counts differ so much:
+
+```{r}
+ggplot(data_few_sp) + 
+  # ordering `sp` from high to low frequency with forcats::fct_infreq()
+  geom_bar(mapping = aes(x = fct_infreq(sp)))
+```
+
+To make the comparison easier we need to swap what is displayed on the y-axis. Instead of displaying count, we'll display density, which is the count standardized so that the area under each frequency polygon is one.
+
+```{r}
+ggplot(data_few_sp, aes(x= dbh, y = ..density..)) +
+  geom_freqpoly(aes(color = sp))
+```
+
+Another alternative to display the distribution of a continuous variable broken down by a categorical variable is the boxplot. A boxplot is a type of visual shorthand for a distribution of values that is popular among statisticians. Each boxplot consists of:
+
+* A box that stretches from the 25th percentile of the distribution to the 75th percentile, a distance known as the interquartile range (IQR). In the middle of the box is a line that displays the median, i.e. 50th percentile, of the distribution. These three lines give you a sense of the spread of the distribution and whether or not the distribution is symmetric about the median or skewed to one side.
+
+* Visual points that display observations that fall more than 1.5 times the IQR from either edge of the box. These outlying points are unusual so are plotted individually.
+
+* A line (or whisker) that extends from each end of the box and goes to the
+farthest non-outlier point in the distribution.
+
+<img src="https://i.imgur.com/GKcB3F0.png" align="center" height=300 /> 
+
+
+Let's take a look at the distribution of stem diameter (`dbh`) by species (`sp`) using `geom_boxplot()`:
+
+```{r}
+ggplot(data_few_sp, aes(sp, dbh)) +
+  geom_boxplot()
+```
+
+We see much less information about the distribution, but the boxplots are much more compact so we can more easily compare them (and fit more on one plot).
+
+Above we ordered the variable `sp` by its frequency. But now, to make the trend easier to see, we can reorder `sp` based on the median value of `dbh`. One way to do that is with `reorder()`.
+
+```{r}
+data_few_sp <- data_few_sp %>% 
+  mutate(sp = reorder(sp, dbh, FUN = median, na.rm = TRUE))
+
+ggplot(data_few_sp, aes(sp, dbh)) + 
+  geom_boxplot()
+```
+
+If you have long variable names, `geom_boxplot()` will work better if you flip it 90°. You can do that with `coord_flip()` (left plot below), or with `ggstance::geom_boxploth()` and swapping `x` and `y` mappings (right plot below):
+
+```{r, fig.align="default", out.width="45%", fig.widh=(6 * 0.5 / 0.95)}
+# Remember to install with install.packages("ggstance")
+library(ggstance)
+
+# Left
+ggplot2::last_plot() +
+  coord_flip()
+
+# Right
+ggplot(data_few_sp) +
+  ggstance::geom_boxploth(aes(x = dbh, y = sp))  # swap x, y; compare to above
+```
+
+### Alternatives
+
+One problem with boxplots is that they were developed in an era of much smaller data sets and tend to display a prohibitively large number of “outlying values”. One approach to remedy this problem is the letter-value plot.
+
+```{r}
+# Remember to install with install.packages("lvplot")
+library(lvplot)
+
+ggplot(data_few_sp, aes(sp, dbh)) + 
+  lvplot::geom_lv()
+```
+
+Compare and contrast `geom_violin()` with a faceted `geom_histogram()`, or a colored `geom_freqpoly()` (). What are the pros and cons of each method?
+
+```{r}
+ggplot(data_few_sp, aes(sp, dbh)) + 
+  geom_violin()
+```
+
+```{r}
+ggplot(data_few_sp, aes(dbh)) + 
+  geom_histogram() +
+  facet_wrap(~sp)
+```
+
+If you have a small data set, it's sometimes useful to use `geom_jitter()` to see the relationship between a continuous and categorical variable. The __ggbeeswarm__ package provides a number of methods similar to `geom_jitter()`.
+
+```{r}
+# Remember to install with install.packages("ggbeeswarm")
+library(ggbeeswarm)
+
+small_dataset <- data_few_sp %>% 
+  group_by(sp) %>% 
+  sample_n(50)
+
+p <- ggplot(small_dataset, aes(sp, dbh))
+
+p + geom_point()
+```
+
+```{r}
+p + geom_jitter()
+```
+
+```{r}
+p + ggbeeswarm::geom_quasirandom()
+```
+
+## Two categorical variables
+
+To visualize the covariation between categorical variables, you'll need to count the number of observations for each combination. One way to do that is to rely on the built-in `geom_count()`. The size of each circle in the plot displays how many observations occurred at each combination of values (left plot below). Covariation will appear as a strong correlation between specific x values and specific y values.
+
+```{r}
+# Simple count
+ggplot(data_few_sp) +
+  geom_count(aes(x = sp, y = status))
+```
+
+To more clearly show the distribution of `status` within `sp` (or `sp` within `status`) you can map bubble size to a proportion calculated over `sp` (or over `status`):
+
+```{r}
+# Proportion; columns sum to 1.
+ggplot(data_few_sp, aes(x = sp, y = status)) +
+  geom_count(aes(size = ..prop.., group = sp)) +
+  scale_size_area(max_size = 10)
+```
+
+```{r}
+few_spp_n <- data_few_sp %>% 
+  count(sp, status)
+
+few_spp_n
+```
+
+Then visualize with `geom_tile()` and the fill aesthetic:
+
+```{r}
+ggplot(few_spp_n, aes(sp, status)) +
+  geom_tile(aes(fill = n))
+```
+
+## Two continuous variables
+
+You've already seen one great way to visualize the covariation between two continuous variables: draw a scatterplot with `geom_point()`. You can see covariation as a pattern in the points. For example, we can estimate the basal area of each stem as a function of `dbh` with the equation `ba = 1 / 4 * pi * (dbh)^2`. I'll add some error to make the pattern a little more interesting.
+
+```{r}
+error <- rnorm(length(stem$dbh))
+stem <- stem %>% 
+  mutate(ba = (1 / 4 * (dbh)^2) + error)
+
+p <- ggplot(stem, aes(dbh, ba))
+p + geom_point()
+```
+
+Scatterplots become less useful as the size of your data set grows, because points begin to overplot, and pile up into areas of uniform black (as above). You've already seen one way to fix the problem: using the `alpha` aesthetic to add transparency.
+
+```{r}
+p + geom_point(alpha = 1 / 25)
+```
+
+But using transparency can be challenging for very large data sets. Another solution is to use `bin`. Previously you used `geom_histogram()` and `geom_freqpoly()` to bin in one dimension. Now you'll learn how to use `geom_bin2d()` and `geom_hex()` to bin in two dimensions.
+
+`geom_bin2d()` and `geom_hex()` divide the coordinate plane into 2d bins and then use a fill color to display how many points fall into each bin. `geom_bin2d()` creates rectangular bins. `geom_hex()` creates hexagonal bins. You will need to install the __hexbin__ package to use `geom_hex()`.
+
+```{r}
+# Remember to install with install.packages("hexbin")
+# Left
+p + geom_bin2d()
+
+# Right
+p + geom_hex()
+```
+
+Another option is to bin one continuous variable so it acts like a categorical variable. Then you can use one of the techniques for visualizing the combination of a categorical and a continuous variable that you learned about. For example, you could bin `dbh` and then for each group, display a boxplot:
+
+```{r}
+p <- ggplot(stem, aes(dbh, ba))
+p + geom_boxplot(aes(group = cut_width(dbh, useful_binwidth)))
+```
+
+`cut_width(x, width)`, as used above, divides x into bins of width `width`. By default, boxplots look roughly the same (apart from number of outliers) regardless of how many observations there are, so it's difficult to tell that each boxplot summarizes a different number of points. One way to show that is to make the width of the boxplot proportional to the number of points with `varwidth = TRUE`.
+
+Another approach is to display approximately the same number of points in each bin. That's the job of `cut_number()`:
+
+```{r}
+p + geom_boxplot(aes(group = cut_number(dbh, 20)))
+```
+
+## Patterns and models
+
+Patterns in your data provide clues about relationships. If a systematic relationship exists between two variables it will appear as a pattern in the data. If you spot a pattern, ask yourself:
+
+* Could this pattern be due to coincidence (i.e. random chance)?
+* How can you describe the relationship implied by the pattern?
+* How strong is the relationship implied by the pattern?
+* What other variables might affect the relationship?
+* Does the relationship change if you look at individual subgroups of the data?
+
+Above we learned that a scatterplot of stem diameter (`dbh`) versus basal area (`ba`) shows a pattern: larger stem diameters are associated with larger basal area.
+
+Patterns provide one of the most useful tools for data scientists because they reveal covariation. If you think of variation as a phenomenon that creates uncertainty, covariation is a phenomenon that reduces it. If two variables co-vary, you can use the values of one variable to make better predictions about the values of the second. If the covariation is due to a causal relationship (a special case), then you can use the value of one variable to control the value of the second.
+
+Models are a tool for extracting patterns out of data. For example, consider the `stem` data; `dbh` and `ba` are tightly related. It's possible to use a model to remove the very strong relationship between `dbh` and `ba` so we can explore the subtleties that remain. The following code fits a model that predicts `ba` from `dbh` and then computes the residuals (the difference between the predicted value and the actual value). The residuals give us a view of the basal area of a stem, once the effect of `dbh` has been removed.
+
+```{r}
+library(modelr)
+
+mod <- lm(log(ba) ~ log(dbh), data = stem)
+resid_added <- stem %>% 
+  add_residuals(mod) %>% 
+  mutate(resid = exp(resid))
+
+ggplot(data = resid_added, aes(x = dbh, y = resid)) + 
+  geom_point()
+```
+
+There is no pattern left. This is unsurprising because we created `ba` as a precise function of `dbh` plus a random error -- once we removed the pattern due to `dbh` all that remains is noise.
