@@ -25,5 +25,5 @@
 #' if (interactive()) results
 #' str(results)
 fgeo_help <- function(pattern = "", package = fgeo::fgeo_core()) {
-  help.search(pattern = pattern, package = package)
+  utils::help.search(pattern = pattern, package = package)
 }
