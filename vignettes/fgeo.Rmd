@@ -19,17 +19,165 @@ library(dplyr)
 library(fgeo)
 ```
 
+## Example
+
+### Packages
+
+In every new R session you need to "open" __fgeo__. It's best to do this first.
+
+```{r}
+library(fgeo)
+```
+
+### Data
+
+You may load your own data. Here I'll use data from the __fgeo.data__ package -- which comes with __fgeo__.
+
+```{r}
+str(fgeo_index_datasets())
+```
+
+I'll use data of stems censused in Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
+
+```{r}
+# ?fgeo.data::luquillo_stem6_random
+stem <- luquillo_stem6_random
+str(stem)
+```
+
+For a description of the columns see `?data_dictionary`.
+
+```{r}
+str(data_dictionary)
+
+cols <- names(stem)
+subset(data_dictionary, column %in% cols)
+```
+
+### Exploratory data analysis
+
+For a general approach to exploratory data analysis see http://r4ds.had.co.nz/exploratory-data-analysis.html. You may want to see a version of that article adapted for ForestGEO at https://forestgeo.github.io/fgeo/articles/siteonly/eda.html.
+
+#### Exploring the distribution of categorical and continuous variables
+
+Two columns that are commonly useful in ForestGEO datasets are `status` and `dbh` (diameter at breast hight). Let's beging by understanding what type of variables they are. For this, base R provides useful funcitons.
+
+`status` is a categorical variable. 
+
+```{r}
+str(stem$status)
+```
+
+We can count the number of observations in each category with `table()`, then visualize the result with `barplot()`.
+
+```{r}
+by_category <- table(stem$status)
+barplot(by_category)
+```
+
+`dbh` is a continuous numeric variable.
+
+```{r}
+str(stem$dbh)
+```
+
+`str()` shows that there are some missing values of `dbh`. We can count missing values with  there are `r sum(is.na(stem$dbh))`.
+
+```{r}
+sum(is.na(stem$dbh))
+```
+
+And we can visualize its distribution with `hist()`. 
+
+```{r}
+hist(stem$dbh)
+```
+
+Unfortunately `hist()` dropped mising values silently. For a more informative output you may use `ggplot2::geom_histogram()`, which also drops missing values but throws a warning.
+
+```{r}
+library(ggplot2)
+ggplot(stem, aes(dbh)) + 
+  geom_histogram()
+```
+
+We can better understand how missing values of `dbh` relate to `status` by extracting only the columns `dbh` and `status`, and picking only the rows where `dbh` is missing.
+
+```{r}
+dbh_status <- stem[c("dbh", "status")]
+missing <- subset(dbh_status, is.na(dbh))
+unique(missing)
+```
+
+Another approach is to count missing values.
+
+```{r}
+missing <- transform(stem, na = ifelse(is.na(dbh), TRUE, FALSE))
+table(missing$na, missing$status)
+```
+
+We learn that `dbh` is missing where a tre is dead (`status = A`) or gone (`status = G`). This makes sense and, dependin on the type of analysis we want to do, we may want to keep or remove missing values.
+
+#### Cleaning data: Determining tree status based on stem status
+
+Now that we understand out data are read to clean it, for example, by picking alive trees only. At ForestGEO, working with `status` is so common that __fgeo__ provides a specialized function.
+
+```{r}
+if (interactive()) fgeo_help("status")
+
+all_funs <- fgeo_index_functions()
+subset(all_funs, grepl("status", fun))
+```
+
+In `stem`, the variable `status` records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job ov `add_status_tree()`.
+
+```{r}
+tree_status <- add_status_tree(stem)
+relevant_columns <- c("stemID", "status", "treeID", "status_tree")
+head(tree_status[relevant_columns])
+```
+
+Although the stems which `stemID` are 222-224 are gone (`status = G`), for example, the tree (`treeID = 180`) is alive (`status_tree = "A"`) because at least one stem (e.g. `stemID = 225`) is alive (`status = A`).
+
+For an overall overview consider the unique values of `status` and `status_tree` for these three datasets: all trees; dead trees. and alive trees:
+
+```{r}
+status_cols <- c("status", "status_tree")
+lapply(tree_status[status_cols], unique)
+```
+
+```{r}
+dead_trees <- subset(tree_status, status_tree == "D")
+lapply(dead_trees[status_cols], unique)
+```
+
+```{r}
+alive_trees <- subset(tree_status, status_tree == "A")
+lapply(alive_trees[status_cols], unique)
+```
+
+Now it's clear that a tree is said to be dead only if all its stems are dead.
+
+#### Cleaning data: Dropping missing values
+
+We picked `alive_trees` but some stems of the remaining dataset are gone or missing. This means that their `dbh` wasn't recorded -- it is missing.
+
+```{r}
+subset(alive_trees, is.na(dbh), c(relevant_columns, "dbh"))
+```
+
+
 # Q&A
 
-## What is __fgeo__?
+### What is __fgeo__?
 
 __fgeo__ is a kind of umbrella: It is a meta-package that gathers multiple modules of ForestGEO’s software – each module corresponding to an individual package. This modularity facilitates managing and expanding ForestGEO's software.
 
-## How can I learn about __fgeo__ before installing it?
+### How can I learn about __fgeo__ before installing it?
 
 See [Search Packages] and follow the links to online documentation.
 
-## How can I start using __fgeo__?
+### How can I start using __fgeo__?
 
 From R, begin by [installing __fgeo__](https://forestgeo.github.io/fgeo/#installation). Then load it with:
 
@@ -37,31 +185,33 @@ From R, begin by [installing __fgeo__](https://forestgeo.github.io/fgeo/#install
 library(fgeo)
 ```
 
-## How can I update __fgeo__?
+### How can I update __fgeo__?
 
 ```R
 fgeo_update()
 ```
 
-## Does __fgeo__ conflict with my other packages?
+### Does __fgeo__ conflict with my other packages?
 
 ```{r}
 fgeo_conflicts()
 ```
 
-## What are the core packages of __fgeo__?
+See also the [__conflicted__](https://github.com/r-lib/conflicted) package.
+
+### What are the core packages of __fgeo__?
 
 ```{r}
 fgeo_core()
 ```
 
-## What are the core packages for?
+### What are the core packages for?
 
 ```{r}
 fgeo_index_packages()
 ```
 
-## How can I learn more?
+### How can I learn more?
 
 ```R
 fgeo_help()
@@ -71,9 +221,62 @@ fgeo_help()
 
 ---
 
+### How can I contribute to __fgeo__?
+
+See [Information > Contributing](https://forestgeo.github.io/fgeo/index.html#information)
+
+### How can I get help about some code?
+
+See [Information > Getting help](https://forestgeo.github.io/fgeo/index.html#information)
+
+### How can I report a bug?
+
+Open a [New issue](https://github.com/forestgeo/fgeo/issues/new)
+
+### How can I browse source code?
+
+Browse all source code at https://github.com/forestgeo/fgeo
+
+### How can I find the source code of a specific function?
+
+1. Browse to the relevant package's website (e.g. [fgeo](https://forestgeo.github.io/fgeo/index.html)).
+
+2. Fin the function under _Reference_ (e.g. __fgeo__'s [Reference](https://forestgeo.github.io/fgeo/reference/index.html)).
+
+3. Click the link to _Source_ under the topic's title. For example:
+
+![](https://i.imgur.com/VUq5cb9.png)
+
+### Where can I discuss a general question with fgeo's community?
+
+Open a [New issue](https://github.com/forestgeo/forum/issues) at [forestgeo/forum](https://github.com/forestgeo/forum).
+
+### Where can I find or share general resources with fgeo's community?
+
+Visit [forestgeo/learn](https://github.com/forestgeo/learn).
+
+### How can I try fgeo before I install it?
+
+Try __fgeo__ on rstudio.cloud for free at http://bit.ly/fgeo-demo. Ensure you have the latest version with:
+
+```R
+library(fgeo)
+fgeo_update()
+```
+
+### How to contact a human?
+
+Contact [__fgeo__'s maintainer](https://github.com/maurolepore).
+
+### How can I get up to date with __fgeo__'s developments?
+
+Checkout [__fgeo__'s blog](https://fgeo.netlify.com/).
+
+Follow [@mauro_lepore](https://twitter.com/mauro_lepore) or [#fgeo #rstats on twitter](https://twitter.com/search?q=%23fgeo%20%23rstats&src=typd&lang=en)
+
 # Quick search
 
-## Search Functions
+### Search Functions
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_functions() %>% 
@@ -86,7 +289,7 @@ fgeo::fgeo_index_functions() %>%
   # knitr::kable()
 ```
 
-## Search Datasets
+### Search Datasets
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_datasets() %>% 
@@ -99,7 +302,7 @@ fgeo::fgeo_index_datasets() %>%
   # knitr::kable()
 ```
 
-## Search Packages
+### Search Packages
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_packages() %>% 

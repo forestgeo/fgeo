@@ -19,8 +19,12 @@ step.
 
 ## Installation
 
-    # install.packages("remotes")
-    remotes::install_github("forestgeo/fgeo")
+    if (!requireNamespace("fgeo")) {
+      if (!requireNamespace("remotes")) {
+        install.packages("remotes")
+      }
+      remotes::install_github("forestgeo/fgeo")
+    }
 
 [How to install packages from GitHub?](https://goo.gl/dQKEeg)
 
@@ -29,11 +33,13 @@ step.
 [Skip and get
 started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
+[Try **fgeo** on rstudio.cloud](http://bit.ly/fgeo-demo)
+
 Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000
 #> v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006
 #> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204
@@ -43,73 +49,63 @@ library(fgeo)
 
 ### Search
 
+Find help about anything.
+
+``` r
+fgeo_help()
+```
+
+![](https://i.imgur.com/up282WS.png)
+
+Find help about some topic.
+
 ``` r
 fgeo_help("map")
 ```
 
-<img src="https://i.imgur.com/51flIFs.png" align="center" height=500 />
+![](https://i.imgur.com/ud4qsmC.png)
 
------
+Each help page has a similar structure.
 
-``` r
-fgeo_index_packages()
-#>           package                                           Title
-#> 1           bciex Forest Dynamics Data from Barro Colorado Island
-#> 2            fgeo       Easily Install and Load Multiple Packages
-#> 3  fgeo.abundance   Calculate Abundance, Basal Area and Diversity
-#> 4       fgeo.base ForestGEO Functions With No External Dependency
-#> 5       fgeo.data                      Open Datasets of ForestGEO
-#> 6 fgeo.demography     Calculate Mortality, Recruitment and Growth
-#> 7    fgeo.habitat             Analize Soils and Tree-Habitat Data
-#> 8        fgeo.map               Map Species, Trees and Topography
-#> 9       fgeo.tool                  Functions for General Purposes
-```
+![](https://i.imgur.com/tKcuKTR.png)
+![](https://i.imgur.com/M3TZiLZ.png)
+![](https://i.imgur.com/QthgV4B.png)
+![](https://i.imgur.com/LHZAlzf.png)
+
+![](https://i.imgur.com/L8XKrqp.png)
+
+Try the examples.
 
 ``` r
-head(fgeo_index_functions())
-#>   package                 fun
-#> 2    fgeo      fgeo_conflicts
-#> 3    fgeo           fgeo_core
-#> 4    fgeo           fgeo_help
-#> 5    fgeo        fgeo_imports
-#> 6    fgeo          fgeo_index
-#> 7    fgeo fgeo_index_datasets
+census <- fgeo.tool::pick_top(bciex::bci12s7mini, sp, 2)
+elevation <- bciex::bci_elevation
+
+map_sp_elev(census)
+map_sp_elev(census, elevation)
 ```
+
+Same (because **fgeo** already loaded **fgeo.tool** and **bciex** for
+you):
 
 ``` r
-subset(fgeo_index_datasets(), package == "fgeo.data")
-#>      package                   dataset
-#> 25 fgeo.data           data_dictionary
-#> 26 fgeo.data        luquillo_elevation
-#> 27 fgeo.data          luquillo_habitat
-#> 28 fgeo.data          luquillo_species
-#> 29 fgeo.data         luquillo_stem_1ha
-#> 30 fgeo.data      luquillo_stem_random
-#> 31 fgeo.data luquillo_stem_random_tiny
-#> 32 fgeo.data        luquillo_stem6_1ha
-#> 33 fgeo.data     luquillo_stem6_random
-#> 34 fgeo.data             luquillo_taxa
-#> 35 fgeo.data        luquillo_tree6_1ha
-#> 36 fgeo.data     luquillo_tree6_random
-#> 37 fgeo.data        luquillo_vft_4quad
+census <- pick_top(bci12s7mini, sp, 2)
+elevation <- bci_elevation
+
+map_sp_elev(census)
+map_sp_elev(census, elevation)
 ```
 
-Try also:
+![](https://i.imgur.com/7ojjZxA.png)
+![](https://i.imgur.com/zgeFo5s.png)
 
-``` r
-View(fgeo_index_datasets())
-```
+From any help pages you may want to **See also** other related
+topics.
 
-<img src="https://i.imgur.com/Jt9xH9d.png" align="center" height=500 />
+![](https://i.imgur.com/eHdgdy5.png)
 
------
+## [Try **fgeo** on rstudio.cloud](http://bit.ly/fgeo-demo)
 
-### Update
-
-    fgeo_update()
-
-[Get
-started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
+## [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 ## Related projects
 

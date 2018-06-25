@@ -6,6 +6,7 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  fig.show = "hold",
   comment = "#>",
   fig.path = "README-"
 )
@@ -25,8 +26,12 @@ __fgeo__ installs and loads multiple packages, functions and datasets in a singl
 ## Installation
 
 ```
-# install.packages("remotes")
-remotes::install_github("forestgeo/fgeo")
+if (!requireNamespace("fgeo")) {
+  if (!requireNamespace("remotes")) {
+    install.packages("remotes")
+  }
+  remotes::install_github("forestgeo/fgeo")
+}
 ```
 
 [How to install packages from GitHub?](https://goo.gl/dQKEeg)
@@ -34,6 +39,8 @@ remotes::install_github("forestgeo/fgeo")
 ## Example
 
 [Skip and get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
+
+[Try __fgeo__ on rstudio.cloud](http://bit.ly/fgeo-demo)
 
 Load all __fgeo__ packages in one step.
 
@@ -43,43 +50,61 @@ library(fgeo)
 
 ### Search
 
+Find help about anything.
+
+```R
+fgeo_help()
+```
+
+![](https://i.imgur.com/up282WS.png)
+
+Find help about some topic.
+
 ```R
 fgeo_help("map")
 ```
 
-<img src="https://i.imgur.com/51flIFs.png" align="center" height=500 />
+![](https://i.imgur.com/ud4qsmC.png)
 
----
+Each help page has a similar structure.
 
-```{r}
-fgeo_index_packages()
+![](https://i.imgur.com/tKcuKTR.png)
+![](https://i.imgur.com/M3TZiLZ.png)
+![](https://i.imgur.com/QthgV4B.png)
+![](https://i.imgur.com/LHZAlzf.png)
+
+![](https://i.imgur.com/L8XKrqp.png)
+
+Try the examples.
+
+```{r, eval=FALSE}
+census <- fgeo.tool::pick_top(bciex::bci12s7mini, sp, 2)
+elevation <- bciex::bci_elevation
+
+map_sp_elev(census)
+map_sp_elev(census, elevation)
 ```
 
-```{r}
-head(fgeo_index_functions())
+Same (because __fgeo__ already loaded __fgeo.tool__ and __bciex__ for you):
+
+```{r maps, eval=FALSE}
+census <- pick_top(bci12s7mini, sp, 2)
+elevation <- bci_elevation
+
+map_sp_elev(census)
+map_sp_elev(census, elevation)
 ```
 
-```{r}
-subset(fgeo_index_datasets(), package == "fgeo.data")
-```
+![](https://i.imgur.com/7ojjZxA.png)
+![](https://i.imgur.com/zgeFo5s.png)
 
-Try also:
+From any help pages you may want to __See also__ other related topics.
 
-```R
-View(fgeo_index_datasets())
-```
+![](https://i.imgur.com/eHdgdy5.png)
 
-<img src="https://i.imgur.com/Jt9xH9d.png" align="center" height=500 /> 
+## [Try __fgeo__ on rstudio.cloud](http://bit.ly/fgeo-demo)
 
----
-
-### Update
-
-```
-fgeo_update()
-```
-
-[Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
+## [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 ## Related projects
 

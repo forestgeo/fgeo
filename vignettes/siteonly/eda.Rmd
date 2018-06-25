@@ -123,7 +123,7 @@ If you are in RStudio, your best option might be `View()`, which lets you search
 View(stem)           
 ```
 
-<img src="https://user-images.githubusercontent.com/5856545/41784224-12a3adca-760d-11e8-8b80-50d8775f01db.png" align="right" height=160 /> 
+<img src="https://user-images.githubusercontent.com/5856545/41784224-12a3adca-760d-11e8-8b80-50d8775f01db.png" align="right" height=300 /> 
 
 ## Visualizing Distributions
 
