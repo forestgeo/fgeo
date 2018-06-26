@@ -290,6 +290,6 @@ View(tt)
 Alternatively, transform the list to a dataframe.
 
 ```{r}
-to_df(tt)
+head(to_df(tt))
 ```
 
