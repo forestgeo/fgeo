@@ -14,22 +14,19 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-
-library(dplyr)
-library(fgeo)
 ```
 
-## Setup
+This article shows some of the key features of __fgeo__ applied to an expoloratory data analysis. For a deeper and general approach to exploratory data analysis see [this book section](http://r4ds.had.co.nz/exploratory-data-analysis.html). A version adapted for ForestGEO is available [here](https://forestgeo.github.io/fgeo/articles/siteonly/eda.html).
 
-### Packages
+## Packages 
 
-In every new R session you need to "open" __fgeo__. It's best to do this first.
+In every new R session you need to "open" __fgeo__ with `library`().
 
 ```{r}
 library(fgeo)
 ```
 
-### Data
+## Data
 
 You may load your own data. Here I'll use data from the __fgeo.data__ package -- which comes with __fgeo__.
 
@@ -37,11 +34,10 @@ You may load your own data. Here I'll use data from the __fgeo.data__ package --
 str(fgeo_index_datasets())
 ```
 
-I'll use data of stems censused in Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
+I'll use a dataset of stems censused in one hectare in the forest plot Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
 
 ```{r}
-# ?fgeo.data::luquillo_stem6_random
-stem <- luquillo_stem6_random
+stem <- luquillo_stem_1ha
 str(stem)
 ```
 
@@ -54,57 +50,52 @@ cols <- names(stem)
 subset(data_dictionary, column %in% cols)
 ```
 
-## Exploratory data analysis
+This dataset comes with multiple censuses. I'll pick only the latest one.
 
-For a deeper and general approach to exploratory data analysis see [this book section](http://r4ds.had.co.nz/exploratory-data-analysis.html). A version adapted for ForestGEO is available [here](https://forestgeo.github.io/fgeo/articles/siteonly/eda.html).
+```{r}
+unique(stem$CensusID)
 
-### Exploring the distribution of status and tree diameter
+# `pick_top()` with n < 0 from the bottom rank of `var`. See ?pick_top().
+stem6 <- pick_top(stem, var = CensusID, n = -1)
+unique(stem6$CensusID)
+```
+
+
+## Exploring the distribution of status and tree diameter
 
 Two columns that are commonly useful in ForestGEO datasets are `status` and `dbh` (diameter at breast height). Let's begin by understanding what type of variables they are. For this, base R provides useful functions.
 
 `status` is a categorical variable. 
 
 ```{r}
-str(stem$status)
+summary(stem6$status)
 ```
 
 We can count the number of observations in each category with `table()`, then visualize the result with `barplot()`.
 
 ```{r}
-by_category <- table(stem$status)
+by_category <- table(stem6$status)
 barplot(by_category)
 ```
 
 `dbh` is a continuous numeric variable.
 
 ```{r}
-str(stem$dbh)
+summary(stem6$dbh)
 ```
 
-`str()` shows that there are some missing values of `dbh`. We can count missing values with  there are `r sum(is.na(stem$dbh))`.
-
-```{r}
-sum(is.na(stem$dbh))
-```
+(Note the missing values (`NA`'s).)
 
 And we can visualize its distribution with `hist()`. 
 
 ```{r}
-hist(stem$dbh)
+hist(stem6$dbh)
 ```
 
-Unfortunately `hist()` dropped missing values silently. For a more informative output you may use `ggplot2::geom_histogram()`, which also drops missing values but throws a warning.
+Unfortunately `hist()` dropped missing values silently. But we can better understand how missing values of `dbh` relate to `status` by extracting only the columns `dbh` and `status`, and picking only the rows where `dbh` is missing.
 
 ```{r}
-library(ggplot2)
-ggplot(stem, aes(dbh)) + 
-  geom_histogram()
-```
-
-We can better understand how missing values of `dbh` relate to `status` by extracting only the columns `dbh` and `status`, and picking only the rows where `dbh` is missing.
-
-```{r}
-dbh_status <- stem[c("dbh", "status")]
+dbh_status <- stem6[c("dbh", "status")]
 missing <- subset(dbh_status, is.na(dbh))
 unique(missing)
 ```
@@ -112,13 +103,13 @@ unique(missing)
 Another approach is to count missing values.
 
 ```{r}
-missing <- transform(stem, na = ifelse(is.na(dbh), TRUE, FALSE))
+missing <- transform(stem6, na = ifelse(is.na(dbh), TRUE, FALSE))
 table(missing$na, missing$status)
 ```
 
 We learn that `dbh` is missing where a tree is dead (`status = A`) or gone (`status = G`). This makes sense and, depending on the type of analysis we want to do, we may want to keep or remove missing values.
 
-### Determining tree status based on stem status
+## Determining tree status based on stem status
 
 Now that we understand out data are read to clean it, for example, by picking alive trees only. At ForestGEO, working with `status` is so common that __fgeo__ provides a specialized function.
 
@@ -131,59 +122,21 @@ fgeo_funs <- fgeo_index_functions()
 subset(fgeo_funs, grepl("status", fun))
 ```
 
-In `stem`, the variable `status` records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of `add_status_tree()`.
+In `stem6`, the variable `status` records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of `add_status_tree()`.
 
 ```{r}
-tree_status <- add_status_tree(stem)
-relevant_columns <- c("stemID", "status", "treeID", "status_tree")
-head(tree_status[relevant_columns])
+stem6 <- add_status_tree(stem6, status_a = "A", status_d = "D")
+alive_trees <- subset(stem6, status_tree == "A")
+
+# Note that alive trees may have some missing, gone or dead stems
+some_cols <- c( "treeID", "status_tree", "stemID", "status")
+example_tree <- 46
+subset(alive_trees, treeID == example_tree, some_cols)
 ```
 
-Although the stems which `stemID` are 222-224 are gone (`status = G`), for example, the tree (`treeID = 180`) is alive (`status_tree = "A"`) because at least one stem (e.g. `stemID = 225`) is alive (`status = A`).
+## Picking a `dbh` range
 
-For an overall overview consider the unique values of `status` and `status_tree` for these three datasets: all trees; dead trees. and alive trees:
-
-```{r}
-status_cols <- c("status", "status_tree")
-lapply(tree_status[status_cols], unique)
-```
-
-```{r}
-dead_trees <- subset(tree_status, status_tree == "D")
-lapply(dead_trees[status_cols], unique)
-```
-
-```{r}
-alive_trees <- subset(tree_status, status_tree == "A")
-lapply(alive_trees[status_cols], unique)
-```
-
-Now it's clear that a tree is said to be dead only if all its stems are dead.
-
-### Dropping missing values
-
-We picked `alive_trees` but some stems of the remaining dataset are gone or missing. This means that their `dbh` wasn't recorded -- it is missing.
-
-```{r}
-subset(alive_trees, is.na(dbh), c(relevant_columns, "dbh"))
-```
-
-If you wanted, you can extract non missing values of `dbh` with `!is.na()`.
-
-```{r}
-non_missing <- subset(alive_trees, !is.na(dbh))
-```
-
-__fgeo__ provides a more informative alternative. The result is the same but you get a warning.
-
-```{r}
-non_missing2 <- drop_if_na(alive_trees, "dbh")
-identical(non_missing, non_missing2)
-```
-
-### Picking tree diameter
-
-Another very common task when working with ForestGEO data is to pick stems of a particular `dbh` range. __fgeo__ can help you with that.
+Another very common task when working with ForestGEO data is to pick stems of a particular `dbh` range.
 
 ```R
 fgeo_help("dbh")
@@ -193,94 +146,63 @@ fgeo_help("dbh")
 subset(fgeo_funs, grepl("dbh", fun))
 ```
 
-What's the range of `dbh`?
+Pick stems of 10 mm or more.
 
 ```{r}
-range(non_missing$dbh)
+ten_plus <- pick_dbh_min(alive_trees, 10)
+range(ten_plus$dbh, na.rm = TRUE)
 ```
 
-Lets pick out lower limit to be 50 mm.
+## Dropping missing values 
+
+Drop missing values of `dbh` with an informative warning.
 
 ```{r}
-fifty_plus <- pick_dbh_min(non_missing, 50)
+non_missing <- drop_if_na(ten_plus, "dbh")
 ```
 
-Lets now pick `dbh` values under 500 mm.
+## Calculating abundance
+
+Calculate the total abundance of stems and trees.
 
 ```{r}
-chosen_range <- pick_dbh_under(fifty_plus, 500)
+abundance_stem(non_missing)
+
+abundance_tree(non_missing)
 ```
 
-And let's confirm with a plot `range()` and `hist()`.
+Calculate the abundance of trees by species.
 
 ```{r}
-range(chosen_range$dbh)
+by_sp <- group_by(non_missing, sp)
+n_by_sp <- abundance_tree(by_sp)
+n_by_sp
 ```
 
-### Calculating tree abundance
-
-Counting is a simple yet powerful way to summarize data. By counting unique `treeID`, for example, you can calculate abundance. __fgeo__ provides some functions to generally `count_distinct()` occurrences of the values in a variable -- for the particular case of `treeID` this gives you the abundance of each tree. 
-
-```R
-fgeo_help("abundance")
-```
-
-Here are some questions you can answer by counting things:
-
-(Note that the dataset we are using here is a small sample of the real dataset.)
-
-* How many stems and trees are there in total?
-
-```{r}
-count_distinct(chosen_range, treeID)
-# Same as
-abundance_tree(chosen_range)
-
-count_distinct(chosen_range, stemID)
-# Same as
-abundance_stem(chosen_range)
-```
-
-* How many trees by quadrat?
-
-```{r}
-by_quad <- group_by(chosen_range, quadrat)
-abundance_tree(by_quad)
-```
-
-How many trees by quadrat by species?
-
-```{r}
-by_quad_sp <- group_by(chosen_range, quadrat, sp)
-abundance_tree(by_quad_sp)
-```
-
-Above you saw that `abundance_tree(DATA)` and `abundance_stem(DATA)` generalize to `count_distinct(DATA, stemID)` and `count_unique(DATA, stemID)`. An even greater generalization is `count()`. __fgeo__ borrows the function `count()` (and some friends) from the [__dplyr__](https://dplyr.tidyverse.org/) package. Today, `dplyr::count()` appears to be the simplest, the most general and powerful tool to count things.  __fgeo__ imports and reexports `dplyr::count()` (and friends) so it's available when you run `library(fgeo)`.
+Above you saw that `abundance_tree(DATA)` and `abundance_stem(DATA)` generalize to `count_distinct(DATA, stemID)` and `count_distinct(DATA, stemID)`. An even greater generalization is `count()`. __fgeo__ borrows the function `count()` (and some friends) from the [__dplyr__](https://dplyr.tidyverse.org/) package. Today, `dplyr::count()` appears to be the simplest, the most general and powerful tool to count things.  __fgeo__ imports and reexports `dplyr::count()` (and friends) so it's available when you run `library(fgeo)`.
 
 ```R
 fgeo_help("reexports", package = "fgeo.abundance")
 ```
 
-For example, here is how to calculate tree abundance by quadrat with `count()` (see `?dplyr::count()]).
+## Picking the most abundant species
+
+Which are the three most abundant tree species?
 
 ```{r}
-trees_quadrat <- unique(chosen_range[c("treeID", "quadrat")])
-by_quad <- group_by(trees_quadrat, quadrat)
-trees_by_quadrat <- count(by_quad)
+top3 <- pick_top(n_by_sp, n, -3)
+top3
 ```
 
-### Mapping the distributions of tree species
-
-A commonly useful way to understand species distributions is with a map. But mapping all threes at once is overwhelming. Let's pick data from, for example, the three quadrats with the greatest number of trees. 
-
-Above we already calculated the number of `trees_by_quadrat`. Now we can sort the data in descending order of `n` and pick the rows where `n` is one of the three greatest values. __fgeo__ provides a function that lets you do this in one step.
+Now we can subset the `alive_trees` of only the `top3` species.
 
 ```{r}
-greatest_n <- pick_top(abundance_tree(by_quad), n, -3)
-greatest_n
+picked_stems <- subset(alive_trees, sp %in% top3$sp)
 ```
 
-Now we can pick these quadrats from the dataset `chosen_range`.
+## Mapping the distrubution of tree species
+
+__fgeo__ includes some functions specialized in mapping ForestGEO's data.
 
 ```R
 fgeo_help("map")
@@ -290,20 +212,84 @@ fgeo_help("map")
 subset(fgeo_funs, grepl("map", fun))
 ```
 
+Map the most abundant species.
+
 ```{r}
-to_pick <- chosen_range$quadrat %in% greatest_n$quadrat
-pick <- subset(chosen_range, to_pick)
+# luquillo_elevation comes with fgeo
+p <- map_sp_elev(picked_stems, elevation = luquillo_elevation, point_size = 1)
+p
 ```
 
-We are now ready to map. __fgeo__ has some specialized functions.
+Tweak to focus on the hectare available in the data.
 
 ```{r}
-map_sp_elev(pick)
+p1 <- limit_gx_gy(p, xlim = c(100, 200), ylim = c(400, 500))
+p1
 ```
 
-We can make this map more informative with elevation data from Luquillo. __fgeo__ includes the dataset `luquillo_elevation` (from __fgeo.data__ and loaded above when we run `library(fgeo)`).
+## Determine species-habitat assiciations
+
+Let's determine the species-habitat associations using a torus transalion test.
+
+```R
+fgeo_help("torus")
+```
+
+I'll follow closely the help file of `tt_test()`. Reading the description of the argument `census` I see that the original example used a 'tree' table -- not a stem table. I'll use `luquillo_tree6_random`, which contains a small sample of randomly chosen trees accross the entire plot (see `?`luquillo_tree6_random`). 
 
 ```{r}
-map_sp_elev(pick, luquillo_elevation)
+tree <- luquillo_tree6_random
+```
+
+As usual, I'll pick alive trees of 10 mm or more (for details see previous sections). The variable `status` of 'tree' tables directly represent the status of each tree (see `?census_description`). I'll focus on trees with status "A" (alive).
+
+```{r}
+dbh10plus <- pick_dbh_min(tree, 10)
+chosen_trees <- pick_status(dbh10plus, "A")
+unique(chosen_trees$status)
+```
+
+Note that `tt_test()` is recommended for sufficiently abundant species:
+
+> You should only try to determine the habitat association for sufficiently abundant species - in a 50-ha plot, a minimum abundance of 50 trees/species has been used.
+
+-- `?tt_test()`
+
+```{r}
+# Find sufficiently abundant species
+by_sp <- group_by(tree, sp)
+n_by_sp <- abundance_tree(by_sp)
+n_by_sp
+
+n_sp50plus <- subset(n_by_sp, n > 50)
+n_sp50plus
+```
+
+We'll need habitat data. Or at least elevation data -- with which to create habitat data with `fgeo_habitat()`.
+
+```{r}
+# See ?luquillo_habitat
+habitat <- luquillo_habitat
+# Same
+habitat <- fgeo_habitat(luquillo_elevation, gridsize = 20, n = 4)
+str(habitat)
+```
+
+And now we are ready to run the test.
+
+```{r}
+tt <- tt_test(chosen_trees, sp = n_sp50plus$sp, habitat = habitat)
+```
+
+The output of `tt_test()` is a list. Large lists are ackward to view -- unless you use `View()` in RStudio.
+
+```R
+View(tt)
+```
+
+Alternatively, transform the list to a dataframe.
+
+```{r}
+to_df(tt)
 ```
 

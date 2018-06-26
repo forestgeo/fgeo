@@ -91,7 +91,9 @@ subset(fgeo_data, grepl("luquillo", dataset))
 #> 41 fgeo.habitat          luquillo_top3_sp
 #> 42 fgeo.habitat     luquillo_tree6_random
 
-luquillo_stem_1ha
+# Short name
+stem <- luquillo_stem_1ha
+stem
 #> # A tibble: 72,618 x 19
 #>    treeID stemID tag    StemTag sp     quadrat    gx    gy MeasureID
 #>     <int>  <int> <chr>  <chr>   <chr>  <chr>   <dbl> <dbl>     <int>
@@ -108,6 +110,121 @@ luquillo_stem_1ha
 #> # ... with 72,608 more rows, and 10 more variables: CensusID <int>,
 #> #   dbh <dbl>, pom <chr>, hom <dbl>, ExactDate <dbl>, DFstatus <chr>,
 #> #   codes <chr>, countPOM <dbl>, status <chr>, date <dbl>
+```
+
+Do something useful.
+
+Pick the data you want.
+
+``` r
+# This dataset comes with multiple censuses.
+unique(stem$CensusID)
+#> [1] 1 2 3 4 5 6
+
+# Pick one census from the bottom (n < 0) rank of CensusID. See ?pick_top().
+stem6 <- pick_top(stem, var = CensusID, n = -1)
+unique(stem6$CensusID)
+#> [1] 6
+```
+
+Determine the status of each tree based on the status of each stem.
+
+``` r
+stem6 <- add_status_tree(stem6, status_a = "A", status_d = "D")
+alive_trees <- subset(stem6, status_tree == "A")
+
+# Note that alive trees may have some missing, gone or dead stems
+some_cols <- c( "treeID", "status_tree", "stemID", "status")
+example_tree <- 46
+subset(alive_trees, treeID == example_tree, some_cols)
+#> # A tibble: 2 x 4
+#>   treeID status_tree stemID status
+#>    <int> <chr>        <int> <chr> 
+#> 1     46 A               46 D     
+#> 2     46 A           114033 G
+```
+
+Pick stems of 10 mm or more.
+
+``` r
+ten_plus <- pick_dbh_min(alive_trees, 10)
+range(ten_plus$dbh, na.rm = TRUE)
+#> [1]   10 1405
+```
+
+Drop missing values of `dbh` with an informative warning.
+
+``` r
+non_missing <- drop_if_na(ten_plus, "dbh")
+#> Warning: Dropping 5261 rows with missing `dbh` values.
+```
+
+Calculate abundance of stems and trees.
+
+``` r
+abundance_stem(non_missing)
+#> # A tibble: 1 x 1
+#>       n
+#>   <int>
+#> 1  2564
+
+abundance_tree(non_missing)
+#> # A tibble: 1 x 1
+#>       n
+#>   <int>
+#> 1  2319
+```
+
+Abundance by species.
+
+``` r
+by_sp <- group_by(non_missing, sp)
+
+abundance_stem(by_sp)
+#> # A tibble: 70 x 2
+#>    sp         n
+#>    <chr>  <int>
+#>  1 ALCFLO    11
+#>  2 ALCLAT    18
+#>  3 ANDINE     1
+#>  4 ANTOBT     1
+#>  5 ARDGLA     1
+#>  6 BUCTET    15
+#>  7 BYRSPI    25
+#>  8 CALCAL     2
+#>  9 CASARB   587
+#> 10 CASSYL    67
+#> # ... with 60 more rows
+
+n_trees <- abundance_tree(by_sp)
+n_trees
+#> # A tibble: 70 x 2
+#>    sp         n
+#>    <chr>  <int>
+#>  1 ALCFLO    11
+#>  2 ALCLAT    15
+#>  3 ANDINE     1
+#>  4 ANTOBT     1
+#>  5 ARDGLA     1
+#>  6 BUCTET    11
+#>  7 BYRSPI    25
+#>  8 CALCAL     2
+#>  9 CASARB   489
+#> 10 CASSYL    58
+#> # ... with 60 more rows
+```
+
+Which are the three most abundant tree species?
+
+``` r
+top3 <- pick_top(n_trees, n, -3)
+top3
+#> # A tibble: 3 x 2
+#>   sp         n
+#>   <chr>  <int>
+#> 1 CASARB   489
+#> 2 PREMON   507
+#> 3 SCHMOR   151
 ```
 
 [Get
