@@ -72,7 +72,73 @@ Datasets.
 fgeo_data <- fgeo_index_datasets()
 subset(fgeo_data, grepl("luquillo", dataset))
 
-luquillo_stem_1ha
+# Short name
+stem <- luquillo_stem_1ha
+stem
+```
+
+Do something useful.
+
+Pick the data you want.
+
+```{r}
+# This dataset comes with multiple censuses.
+unique(stem$CensusID)
+
+# Pick one census from the bottom (n < 0) rank of CensusID. See ?pick_top().
+stem6 <- pick_top(stem, var = CensusID, n = -1)
+unique(stem6$CensusID)
+```
+
+Determine the status of each tree based on the status of each stem.
+
+```{r}
+stem6 <- add_status_tree(stem6, status_a = "A", status_d = "D")
+alive_trees <- subset(stem6, status_tree == "A")
+
+# Note that alive trees may have some missing, gone or dead stems
+some_cols <- c( "treeID", "status_tree", "stemID", "status")
+example_tree <- 46
+subset(alive_trees, treeID == example_tree, some_cols)
+```
+
+Pick stems of 10 mm or more.
+
+```{r}
+ten_plus <- pick_dbh_min(alive_trees, 10)
+range(ten_plus$dbh, na.rm = TRUE)
+```
+
+Drop missing values of `dbh` with an informative warning.
+
+```{r}
+non_missing <- drop_if_na(ten_plus, "dbh")
+```
+
+Calculate abundance of stems and trees.
+
+```{r}
+abundance_stem(non_missing)
+
+abundance_tree(non_missing)
+```
+
+Abundance by species.
+
+```{r}
+by_sp <- group_by(non_missing, sp)
+
+abundance_stem(by_sp)
+
+n_trees <- abundance_tree(by_sp)
+n_trees
+```
+
+Which are the three most abundant tree species?
+
+```{r}
+top3 <- pick_top(n_trees, n, -3)
+top3
 ```
 
 [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
