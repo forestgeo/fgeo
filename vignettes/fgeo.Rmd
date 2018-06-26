@@ -306,3 +306,4 @@ We can make this map more informative with elevation data from Luquillo. __fgeo_
 ```{r}
 map_sp_elev(pick, luquillo_elevation)
 ```
+
