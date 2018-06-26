@@ -2,7 +2,7 @@
 % Please edit documentation in R/conflicts.R
 \name{fgeo_conflicts}
 \alias{fgeo_conflicts}
-\title{Conflicts between the fgeo and other packages.}
+\title{Conflicts between the \strong{fgeo} and other packages.}
 \usage{
 fgeo_conflicts()
 }

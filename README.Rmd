@@ -21,7 +21,9 @@ knitr::opts_chunk$set(
 
 __fgeo__ installs and loads multiple packages, functions and datasets in a single step.
 
-## [Quick search](https://forestgeo.github.io/fgeo/articles/fgeo.html#quick-search)
+[Quick search](https://forestgeo.github.io/fgeo/articles/quick-search.html)
+
+[Questions and Answers](https://forestgeo.github.io/fgeo/articles/questions-and-answers.html)
 
 ## Installation
 
@@ -40,10 +42,6 @@ if (!requireNamespace("fgeo")) {
 
 ## Example
 
-[Skip and get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
-
-[Try __fgeo__ on rstudio.cloud](http://bit.ly/fgeo-demo)
-
 Load all __fgeo__ packages in one step.
 
 ```{r example}
@@ -52,7 +50,7 @@ library(fgeo)
 
 ### Search
 
-Find help about anything.
+Find everything.
 
 ```R
 fgeo_help()
@@ -60,7 +58,7 @@ fgeo_help()
 
 ![](https://i.imgur.com/up282WS.png)
 
-Find help about some topic.
+Find something.
 
 ```R
 fgeo_help("map")
@@ -68,45 +66,18 @@ fgeo_help("map")
 
 ![](https://i.imgur.com/ud4qsmC.png)
 
-Each help page has a similar structure.
+Datasets.
 
-![](https://i.imgur.com/tKcuKTR.png)
-![](https://i.imgur.com/M3TZiLZ.png)
-![](https://i.imgur.com/QthgV4B.png)
-![](https://i.imgur.com/LHZAlzf.png)
+```{r}
+fgeo_data <- fgeo_index_datasets()
+subset(fgeo_data, grepl("luquillo", dataset))
 
-![](https://i.imgur.com/L8XKrqp.png)
-
-Try the examples.
-
-```{r, eval=FALSE}
-census <- fgeo.tool::pick_top(bciex::bci12s7mini, sp, 2)
-elevation <- bciex::bci_elevation
-
-map_sp_elev(census)
-map_sp_elev(census, elevation)
+luquillo_stem_1ha
 ```
 
-Same (because __fgeo__ already loaded __fgeo.tool__ and __bciex__ for you):
+[Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
-```{r maps, eval=FALSE}
-census <- pick_top(bci12s7mini, sp, 2)
-elevation <- bci_elevation
-
-map_sp_elev(census)
-map_sp_elev(census, elevation)
-```
-
-![](https://i.imgur.com/7ojjZxA.png)
-![](https://i.imgur.com/zgeFo5s.png)
-
-From any help pages you may want to __See also__ other related topics.
-
-![](https://i.imgur.com/eHdgdy5.png)
-
-## [Try __fgeo__ on rstudio.cloud](http://bit.ly/fgeo-demo)
-
-## [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
+[Try __fgeo__ on rstudio.cloud](http://bit.ly/fgeo-demo)
 
 ## Related projects
 

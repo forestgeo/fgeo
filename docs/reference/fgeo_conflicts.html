@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Conflicts between the fgeo and other packages. — fgeo_conflicts • fgeo</title>
+<title>Conflicts between the <strong>fgeo</strong> and other packages. — fgeo_conflicts • fgeo</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -29,10 +29,16 @@
 <script src="../pkgdown.js"></script>
 
 
+<!-- docsearch -->
+<script src="../docsearch.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
 
   <link href="../extra.css" rel="stylesheet">
   <script src="../extra.js"></script>
-<meta property="og:title" content="Conflicts between the fgeo and other packages. — fgeo_conflicts" />
+<meta property="og:title" content="Conflicts between the <strong>fgeo</strong> and other packages. — fgeo_conflicts" />
 
 <meta property="og:description" content="This function lists all the conflicts between packages in fgeo
 and other packages that you have loaded." />
@@ -90,6 +96,12 @@ and other packages that you have loaded." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/questions-and-answers.html">Questions and Answers</a>
+    </li>
+    <li>
+      <a href="../articles/quick-search.html">Quick Search</a>
+    </li>
+    <li>
       <a href="../articles/siteonly/eda.html">Exploratory Data Analysis</a>
     </li>
   </ul>
@@ -132,6 +144,12 @@ and other packages that you have loaded." />
 </li>
       </ul>
       
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -142,7 +160,7 @@ and other packages that you have loaded." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Conflicts between the fgeo and other packages.</h1>
+    <h1>Conflicts between the <strong>fgeo</strong> and other packages.</h1>
     <small class="dont-index">Source: <a href='https://github.com/forestgeo/fgeo/blob/master/R/conflicts.R'><code>R/conflicts.R</code></a></small>
     <div class="hidden name"><code>fgeo_conflicts.Rd</code></div>
     </div>
@@ -186,6 +204,23 @@ and other packages that you have loaded.</p>
    </div>
 
   
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    
+    
+    apiKey: 'ec79b1c00aff9cd841703edc746e1a71',
+    indexName: 'fgeo',
+    inputSelector: 'input#search-input.form-control',
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
+  });
+</script>
+
 
   </body>
 </html>

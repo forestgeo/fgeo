@@ -3,6 +3,8 @@ pkgdown: 1.1.0
 pkgdown_sha: ~
 articles:
   fgeo: fgeo.html
+  questions-and-answers: questions-and-answers.html
+  quick-search: quick-search.html
   eda: siteonly/eda.html
 urls:
   reference: https://forestgeo.github.io/fgeo//reference

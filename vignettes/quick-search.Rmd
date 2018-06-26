@@ -1,0 +1,56 @@
+---
+title: "Quick Search"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Quick Search}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(fgeo)
+```
+
+# Quick search
+
+### Search Functions
+
+```{r, echo=FALSE}
+fgeo::fgeo_index_functions() %>% 
+  # Make clickable links
+  dplyr::mutate(
+    fun = fgeo::fgeo_link(package, fun),
+    package = fgeo::fgeo_link(package)
+  ) %>% 
+  DT::datatable(escape = FALSE)
+  # knitr::kable()
+```
+
+### Search Datasets
+
+```{r, echo=FALSE}
+fgeo::fgeo_index_datasets() %>% 
+  # Make clickable links
+  dplyr::mutate(
+    dataset = fgeo::fgeo_link(package, dataset),
+    package = fgeo::fgeo_link(package)
+  ) %>% 
+  DT::datatable(escape = FALSE)
+  # knitr::kable()
+```
+
+### Search Packages
+
+```{r, echo=FALSE}
+fgeo::fgeo_index_packages() %>% 
+  purrr::set_names(tolower) %>% 
+  dplyr::mutate(package = fgeo_link(package)) %>% 
+  DT::datatable(escape = FALSE)
+```
+

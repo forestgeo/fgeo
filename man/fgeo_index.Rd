@@ -5,7 +5,7 @@
 \alias{fgeo_index_functions}
 \alias{fgeo_index_packages}
 \alias{fgeo_index_datasets}
-\title{Index fgeo's packages, datasets and functions.}
+\title{Index \strong{fgeo}'s packages, datasets and functions.}
 \usage{
 fgeo_index(.f, nm, ...)
 

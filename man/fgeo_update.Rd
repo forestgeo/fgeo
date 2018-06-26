@@ -2,7 +2,7 @@
 % Please edit documentation in R/fgeo_update.R
 \name{fgeo_update}
 \alias{fgeo_update}
-\title{Update fgeo.}
+\title{Update \strong{fgeo}.}
 \usage{
 fgeo_update()
 }

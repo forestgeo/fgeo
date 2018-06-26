@@ -1,4 +1,4 @@
-#' Core packages of fgeo.
+#' Core packages of __fgeo__.
 #'
 #' @return A string.
 #' @export

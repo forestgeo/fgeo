@@ -13,6 +13,9 @@ authors:
 template:
   params:
     bootswatch: united
+    docsearch:
+      api_key: ec79b1c00aff9cd841703edc746e1a71
+      index_name: fgeo
 
 
 
@@ -46,3 +49,24 @@ navbar:
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
 
+
+
+reference:
+
+  - title: Find everything in fgeo
+    contents:
+      - fgeo_help
+      - starts_with("fgeo_index")
+
+  - title: Manage fgeo
+    contents:
+      - fgeo_update
+      - fgeo_conflicts
+
+  - title: Dependencies
+    desc: Mostly for developers
+    contents:
+      - fgeo_core
+      - fgeo_packages
+      - fgeo_imports
+      - fgeo_suggests

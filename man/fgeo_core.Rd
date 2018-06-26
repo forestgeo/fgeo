@@ -2,7 +2,7 @@
 % Please edit documentation in R/attach.R
 \name{fgeo_core}
 \alias{fgeo_core}
-\title{Core packages of fgeo.}
+\title{Core packages of \strong{fgeo}.}
 \usage{
 fgeo_core()
 }
@@ -10,7 +10,7 @@ fgeo_core()
 A string.
 }
 \description{
-Core packages of fgeo.
+Core packages of \strong{fgeo}.
 }
 \examples{
 fgeo_core()

@@ -1,4 +1,4 @@
-#' Update fgeo.
+#' Update __fgeo__.
 #'
 #' Shortcut for `remotes::install_github("forestgeo/fgeo")`.
 #'

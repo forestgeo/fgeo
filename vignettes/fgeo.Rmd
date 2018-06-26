@@ -56,7 +56,7 @@ subset(data_dictionary, column %in% cols)
 
 ## Exploratory data analysis
 
-For a general approach to exploratory data analysis see http://r4ds.had.co.nz/exploratory-data-analysis.html. You may want to see a version of that article adapted for ForestGEO at https://forestgeo.github.io/fgeo/articles/siteonly/eda.html.
+For a deeper and general approach to exploratory data analysis see [this book section](http://r4ds.had.co.nz/exploratory-data-analysis.html). A version adapted for ForestGEO is available [here](https://forestgeo.github.io/fgeo/articles/siteonly/eda.html).
 
 ### Exploring the distribution of status and tree diameter
 
@@ -122,11 +122,13 @@ We learn that `dbh` is missing where a tree is dead (`status = A`) or gone (`sta
 
 Now that we understand out data are read to clean it, for example, by picking alive trees only. At ForestGEO, working with `status` is so common that __fgeo__ provides a specialized function.
 
-```{r}
-if (interactive()) fgeo_help("status")
+```R
+fgeo_help("status")
+```
 
-all_funs <- fgeo_index_functions()
-subset(all_funs, grepl("status", fun))
+```{r}
+fgeo_funs <- fgeo_index_functions()
+subset(fgeo_funs, grepl("status", fun))
 ```
 
 In `stem`, the variable `status` records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of `add_status_tree()`.
@@ -183,11 +185,12 @@ identical(non_missing, non_missing2)
 
 Another very common task when working with ForestGEO data is to pick stems of a particular `dbh` range. __fgeo__ can help you with that.
 
-```{r}
-if (interactive()) fgeo_help("dbh")
+```R
+fgeo_help("dbh")
+```
 
-all_funs <- fgeo_index_functions()
-subset(all_funs, grepl("dbh", fun))
+```{r}
+subset(fgeo_funs, grepl("dbh", fun))
 ```
 
 What's the range of `dbh`?
@@ -217,8 +220,9 @@ range(chosen_range$dbh)
 ### Calculating tree abundance
 
 Counting is a simple yet powerful way to summarize data. By counting unique `treeID`, for example, you can calculate abundance. __fgeo__ provides some functions to generally `count_distinct()` occurrences of the values in a variable -- for the particular case of `treeID` this gives you the abundance of each tree. 
-```{r}
-if (interactive()) fgeo_help("abundance")
+
+```R
+fgeo_help("abundance")
 ```
 
 Here are some questions you can answer by counting things:
@@ -253,8 +257,8 @@ abundance_tree(by_quad_sp)
 
 Above you saw that `abundance_tree(DATA)` and `abundance_stem(DATA)` generalize to `count_distinct(DATA, stemID)` and `count_unique(DATA, stemID)`. An even greater generalization is `count()`. __fgeo__ borrows the function `count()` (and some friends) from the [__dplyr__](https://dplyr.tidyverse.org/) package. Today, `dplyr::count()` appears to be the simplest, the most general and powerful tool to count things.  __fgeo__ imports and reexports `dplyr::count()` (and friends) so it's available when you run `library(fgeo)`.
 
-```{r}
-if (interactive()) fgeo_help("reexports", package = "fgeo.abundance")
+```R
+fgeo_help("reexports", package = "fgeo.abundance")
 ```
 
 For example, here is how to calculate tree abundance by quadrat with `count()` (see `?dplyr::count()]).
@@ -278,11 +282,12 @@ greatest_n
 
 Now we can pick these quadrats from the dataset `chosen_range`.
 
-```{r}
-if (interactive()) fgeo_help("map")
+```R
+fgeo_help("map")
+```
 
-all_funs <- fgeo_index_functions()
-subset(all_funs, grepl("map", fun))
+```{r}
+subset(fgeo_funs, grepl("map", fun))
 ```
 
 ```{r}
@@ -301,148 +306,3 @@ We can make this map more informative with elevation data from Luquillo. __fgeo_
 ```{r}
 map_sp_elev(pick, luquillo_elevation)
 ```
-
-# Q&A
-
-### What is __fgeo__?
-
-__fgeo__ is a kind of umbrella: It is a meta-package that gathers multiple modules of ForestGEO’s software – each module corresponding to an individual package. This modularity facilitates managing and expanding ForestGEO's software.
-
-### How can I learn about __fgeo__ before installing it?
-
-See [Search Packages] and follow the links to online documentation.
-
-### How can I start using __fgeo__?
-
-From R, begin by [installing __fgeo__](https://forestgeo.github.io/fgeo/#installation). Then load it with:
-
-```{r}
-library(fgeo)
-```
-
-### How can I update __fgeo__?
-
-```R
-fgeo_update()
-```
-
-### Does __fgeo__ conflict with my other packages?
-
-```{r}
-fgeo_conflicts()
-```
-
-See also the [__conflicted__](https://github.com/r-lib/conflicted) package.
-
-### What are the core packages of __fgeo__?
-
-```{r}
-fgeo_core()
-```
-
-### What are the core packages for?
-
-```{r}
-fgeo_index_packages()
-```
-
-### How can I learn more?
-
-```R
-fgeo_help()
-```
-
-<img src="https://i.imgur.com/qprk3wQ.png" align="center" height=500 />
-
----
-
-### How can I contribute to __fgeo__?
-
-See [Information > Contributing](https://forestgeo.github.io/fgeo/index.html#information)
-
-### How can I get help about some code?
-
-See [Information > Getting help](https://forestgeo.github.io/fgeo/index.html#information)
-
-### How can I report a bug?
-
-Open a [New issue](https://github.com/forestgeo/fgeo/issues/new)
-
-### How can I browse source code?
-
-Browse all source code at https://github.com/forestgeo/fgeo
-
-### How can I find the source code of a specific function?
-
-1. Browse to the relevant package's website (e.g. [fgeo](https://forestgeo.github.io/fgeo/index.html)).
-
-2. Fin the function under _Reference_ (e.g. __fgeo__'s [Reference](https://forestgeo.github.io/fgeo/reference/index.html)).
-
-3. Click the link to _Source_ under the topic's title. For example:
-
-![](https://i.imgur.com/VUq5cb9.png)
-
-### Where can I discuss a general question with fgeo's community?
-
-Open a [New issue](https://github.com/forestgeo/forum/issues) at [forestgeo/forum](https://github.com/forestgeo/forum).
-
-### Where can I find or share general resources with fgeo's community?
-
-Visit [forestgeo/learn](https://github.com/forestgeo/learn).
-
-### How can I try fgeo before I install it?
-
-Try __fgeo__ on rstudio.cloud for free at http://bit.ly/fgeo-demo. Ensure you have the latest version with:
-
-```R
-library(fgeo)
-fgeo_update()
-```
-
-### How to contact a human?
-
-Contact [__fgeo__'s maintainer](https://github.com/maurolepore).
-
-### How can I get up to date with __fgeo__'s developments?
-
-Checkout [__fgeo__'s blog](https://fgeo.netlify.com/).
-
-Follow [@mauro_lepore](https://twitter.com/mauro_lepore) or [#fgeo #rstats on twitter](https://twitter.com/search?q=%23fgeo%20%23rstats&src=typd&lang=en)
-
-# Quick search
-
-### Search Functions
-
-```{r, echo=FALSE}
-fgeo::fgeo_index_functions() %>% 
-  # Make clickable links
-  dplyr::mutate(
-    fun = fgeo::fgeo_link(package, fun),
-    package = fgeo::fgeo_link(package)
-  ) %>% 
-  DT::datatable(escape = FALSE)
-  # knitr::kable()
-```
-
-### Search Datasets
-
-```{r, echo=FALSE}
-fgeo::fgeo_index_datasets() %>% 
-  # Make clickable links
-  dplyr::mutate(
-    dataset = fgeo::fgeo_link(package, dataset),
-    package = fgeo::fgeo_link(package)
-  ) %>% 
-  DT::datatable(escape = FALSE)
-  # knitr::kable()
-```
-
-### Search Packages
-
-```{r, echo=FALSE}
-fgeo::fgeo_index_packages() %>% 
-  purrr::set_names(tolower) %>% 
-  dplyr::mutate(package = fgeo_link(package)) %>% 
-  DT::datatable(escape = FALSE)
-```
-

@@ -1,4 +1,4 @@
-#' Index fgeo's packages, datasets and functions.
+#' Index __fgeo__'s packages, datasets and functions.
 #'
 #' `fgeo_index_packages()` creates a table of all packages of the __fgeo__
 #' meta-package. It is searchable by package name and by whatever keyword

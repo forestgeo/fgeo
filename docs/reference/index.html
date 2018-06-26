@@ -29,6 +29,12 @@
 <script src="../pkgdown.js"></script>
 
 
+<!-- docsearch -->
+<script src="../docsearch.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
 
   <link href="../extra.css" rel="stylesheet">
   <script src="../extra.js"></script>
@@ -86,6 +92,12 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/questions-and-answers.html">Questions and Answers</a>
+    </li>
+    <li>
+      <a href="../articles/quick-search.html">Quick Search</a>
+    </li>
+    <li>
       <a href="../articles/siteonly/eda.html">Exploratory Data Analysis</a>
     </li>
   </ul>
@@ -128,6 +140,12 @@
 </li>
       </ul>
       
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -152,23 +170,11 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <h2 id="section-find-everything-in-fgeo" class="hasAnchor"><a href="#section-find-everything-in-fgeo" class="anchor"></a>Find everything in fgeo</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
       <tr>
-        
-        <td>
-          <p><code><a href="fgeo_conflicts.html">fgeo_conflicts()</a></code> </p>
-        </td>
-        <td><p>Conflicts between the fgeo and other packages.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fgeo_core.html">fgeo_core()</a></code> </p>
-        </td>
-        <td><p>Core packages of fgeo.</p></td>
-      </tr><tr>
         
         <td>
           <p><code><a href="fgeo_help.html">fgeo_help()</a></code> </p>
@@ -179,19 +185,47 @@
         <td>
           <p><code><a href="fgeo_index.html">fgeo_index()</a></code> <code><a href="fgeo_index.html">fgeo_index_functions()</a></code> <code><a href="fgeo_index.html">fgeo_index_packages()</a></code> <code><a href="fgeo_index.html">fgeo_index_datasets()</a></code> </p>
         </td>
-        <td><p>Index fgeo's packages, datasets and functions.</p></td>
+        <td><p>Index <strong>fgeo</strong>'s packages, datasets and functions.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-manage-fgeo" class="hasAnchor"><a href="#section-manage-fgeo" class="anchor"></a>Manage fgeo</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="fgeo_update.html">fgeo_update()</a></code> </p>
+        </td>
+        <td><p>Update <strong>fgeo</strong>.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fgeo_conflicts.html">fgeo_conflicts()</a></code> </p>
+        </td>
+        <td><p>Conflicts between the <strong>fgeo</strong> and other packages.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-dependencies" class="hasAnchor"><a href="#section-dependencies" class="anchor"></a>Dependencies</h2>
+          <p class="section-desc"><p>Mostly for developers</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="fgeo_core.html">fgeo_core()</a></code> </p>
+        </td>
+        <td><p>Core packages of <strong>fgeo</strong>.</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="fgeo_packages.html">fgeo_packages()</a></code> <code><a href="fgeo_packages.html">fgeo_imports()</a></code> <code><a href="fgeo_packages.html">fgeo_suggests()</a></code> </p>
         </td>
         <td><p>List packages that fgeo imports and suggests.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fgeo_update.html">fgeo_update()</a></code> </p>
-        </td>
-        <td><p>Update fgeo.</p></td>
       </tr>
     </tbody>
     </table>
@@ -200,7 +234,9 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-find-everything-in-fgeo">Find everything in fgeo</a></li>
+      <li><a href="#section-manage-fgeo">Manage fgeo</a></li>
+      <li><a href="#section-dependencies">Dependencies</a></li>
     </ul>
   </div>
 </div>
@@ -218,6 +254,23 @@
    </div>
 
   
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    
+    
+    apiKey: 'ec79b1c00aff9cd841703edc746e1a71',
+    indexName: 'fgeo',
+    inputSelector: 'input#search-input.form-control',
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
+  });
+</script>
+
 
   </body>
 </html>

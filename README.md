@@ -12,10 +12,13 @@ status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://cov
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
 **fgeo** installs and loads multiple packages, functions and datasets in
-a single
-step.
+a single step.
 
-## [Quick search](https://forestgeo.github.io/fgeo/articles/fgeo.html#quick-search)
+[Quick
+search](https://forestgeo.github.io/fgeo/articles/quick-search.html)
+
+[Questions and
+Answers](https://forestgeo.github.io/fgeo/articles/questions-and-answers.html)
 
 ## Installation
 
@@ -32,11 +35,6 @@ To install **fgeo** run this code in R:
 
 ## Example
 
-[Skip and get
-started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
-
-[Try **fgeo** on rstudio.cloud](http://bit.ly/fgeo-demo)
-
 Load all **fgeo** packages in one step.
 
 ``` r
@@ -51,7 +49,7 @@ library(fgeo)
 
 ### Search
 
-Find help about anything.
+Find everything.
 
 ``` r
 fgeo_help()
@@ -59,7 +57,7 @@ fgeo_help()
 
 ![](https://i.imgur.com/up282WS.png)
 
-Find help about some topic.
+Find something.
 
 ``` r
 fgeo_help("map")
@@ -67,47 +65,55 @@ fgeo_help("map")
 
 ![](https://i.imgur.com/ud4qsmC.png)
 
-Each help page has a similar structure.
-
-![](https://i.imgur.com/tKcuKTR.png)
-![](https://i.imgur.com/M3TZiLZ.png)
-![](https://i.imgur.com/QthgV4B.png)
-![](https://i.imgur.com/LHZAlzf.png)
-
-![](https://i.imgur.com/L8XKrqp.png)
-
-Try the examples.
+Datasets.
 
 ``` r
-census <- fgeo.tool::pick_top(bciex::bci12s7mini, sp, 2)
-elevation <- bciex::bci_elevation
+fgeo_data <- fgeo_index_datasets()
+subset(fgeo_data, grepl("luquillo", dataset))
+#>         package                   dataset
+#> 23    fgeo.base luquillo_stem_random_tiny
+#> 24    fgeo.base        luquillo_vft_4quad
+#> 26    fgeo.data        luquillo_elevation
+#> 27    fgeo.data          luquillo_habitat
+#> 28    fgeo.data          luquillo_species
+#> 29    fgeo.data         luquillo_stem_1ha
+#> 30    fgeo.data      luquillo_stem_random
+#> 31    fgeo.data luquillo_stem_random_tiny
+#> 32    fgeo.data        luquillo_stem6_1ha
+#> 33    fgeo.data     luquillo_stem6_random
+#> 34    fgeo.data             luquillo_taxa
+#> 35    fgeo.data        luquillo_tree6_1ha
+#> 36    fgeo.data     luquillo_tree6_random
+#> 37    fgeo.data        luquillo_vft_4quad
+#> 38 fgeo.habitat        luquillo_elevation
+#> 39 fgeo.habitat          luquillo_habitat
+#> 40 fgeo.habitat     luquillo_stem6_random
+#> 41 fgeo.habitat          luquillo_top3_sp
+#> 42 fgeo.habitat     luquillo_tree6_random
 
-map_sp_elev(census)
-map_sp_elev(census, elevation)
+luquillo_stem_1ha
+#> # A tibble: 72,618 x 19
+#>    treeID stemID tag    StemTag sp     quadrat    gx    gy MeasureID
+#>     <int>  <int> <chr>  <chr>   <chr>  <chr>   <dbl> <dbl>     <int>
+#>  1     46     46 100001 100001  PSYBRA 921      164.  416.        46
+#>  2     47     47 100008 100002  PSYBRA 921      165.  416         47
+#>  3     47     48 100008 100003  PSYBRA 921      165.  416         48
+#>  4     47     49 100008 100004  PSYBRA 921      165.  416         49
+#>  5     47     50 100008 100005  PSYBRA 921      165.  416         50
+#>  6     47     51 100008 100006  PSYBRA 921      165.  416         51
+#>  7     47     52 100008 100007  PSYBRA 921      165.  416         52
+#>  8     47     53 100008 100008  PSYBRA 921      165.  416         53
+#>  9     47     54 100008 100009  PSYBRA 921      165.  416         54
+#> 10     47     55 100008 100010  PSYBRA 921      165.  416         55
+#> # ... with 72,608 more rows, and 10 more variables: CensusID <int>,
+#> #   dbh <dbl>, pom <chr>, hom <dbl>, ExactDate <dbl>, DFstatus <chr>,
+#> #   codes <chr>, countPOM <dbl>, status <chr>, date <dbl>
 ```
 
-Same (because **fgeo** already loaded **fgeo.tool** and **bciex** for
-you):
+[Get
+started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
-``` r
-census <- pick_top(bci12s7mini, sp, 2)
-elevation <- bci_elevation
-
-map_sp_elev(census)
-map_sp_elev(census, elevation)
-```
-
-![](https://i.imgur.com/7ojjZxA.png)
-![](https://i.imgur.com/zgeFo5s.png)
-
-From any help pages you may want to **See also** other related
-topics.
-
-![](https://i.imgur.com/eHdgdy5.png)
-
-## [Try **fgeo** on rstudio.cloud](http://bit.ly/fgeo-demo)
-
-## [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
+[Try **fgeo** on rstudio.cloud](http://bit.ly/fgeo-demo)
 
 ## Related projects
 

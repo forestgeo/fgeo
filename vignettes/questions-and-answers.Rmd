@@ -1,0 +1,120 @@
+---
+title: "Questions and Answers"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Questions and Answers}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## What is __fgeo__?
+
+__fgeo__ is a kind of umbrella: It is a meta-package that gathers multiple modules of ForestGEO’s software – each module corresponding to an individual package. This modularity facilitates managing and expanding ForestGEO's software.
+
+## How can I learn about __fgeo__ before installing it?
+
+See [Search Packages] and follow the links to online documentation.
+
+## How can I start using __fgeo__?
+
+From R, begin by [installing __fgeo__](https://forestgeo.github.io/fgeo/#installation). Then load it with:
+
+```{r}
+library(fgeo)
+```
+
+## How can I update __fgeo__?
+
+```R
+fgeo_update()
+```
+
+## Does __fgeo__ conflict with my other packages?
+
+```{r}
+fgeo_conflicts()
+```
+
+See also the [__conflicted__](https://github.com/r-lib/conflicted) package.
+
+## What are the core packages of __fgeo__?
+
+```{r}
+fgeo_core()
+```
+
+## What are the core packages for?
+
+```{r}
+fgeo_index_packages()
+```
+
+## How can I learn more?
+
+```R
+fgeo_help()
+```
+
+<img src="https://i.imgur.com/qprk3wQ.png" align="center" height=500 />
+
+---
+
+## How can I contribute to __fgeo__?
+
+See [Information > Contributing](https://forestgeo.github.io/fgeo/index.html#information)
+
+## How can I get help about some code?
+
+See [Information > Getting help](https://forestgeo.github.io/fgeo/index.html#information)
+
+## How can I report a bug?
+
+Open a [New issue](https://github.com/forestgeo/fgeo/issues/new)
+
+## How can I browse source code?
+
+Browse all source code at https://github.com/forestgeo/fgeo
+
+## How can I find the source code of a specific function?
+
+1. Browse to the relevant package's website (e.g. [fgeo](https://forestgeo.github.io/fgeo/index.html)).
+
+2. Fin the function under _Reference_ (e.g. __fgeo__'s [Reference](https://forestgeo.github.io/fgeo/reference/index.html)).
+
+3. Click the link to _Source_ under the topic's title. For example:
+
+![](https://i.imgur.com/VUq5cb9.png)
+
+## Where can I discuss a general question with fgeo's community?
+
+Open a [New issue](https://github.com/forestgeo/forum/issues) at [forestgeo/forum](https://github.com/forestgeo/forum).
+
+## Where can I find or share general resources with fgeo's community?
+
+Visit [forestgeo/learn](https://github.com/forestgeo/learn).
+
+## How can I try fgeo before I install it?
+
+Try __fgeo__ on rstudio.cloud for free at http://bit.ly/fgeo-demo. Ensure you have the latest version with:
+
+```R
+library(fgeo)
+fgeo_update()
+```
+
+## How to contact a human?
+
+Contact [__fgeo__'s maintainer](https://github.com/maurolepore).
+
+## How can I get up to date with __fgeo__'s developments?
+
+Checkout [__fgeo__'s blog](https://fgeo.netlify.com/).
+
+Follow [@mauro_lepore](https://twitter.com/mauro_lepore) or [#fgeo #rstats on twitter](https://twitter.com/search?q=%23fgeo%20%23rstats&src=typd&lang=en)
