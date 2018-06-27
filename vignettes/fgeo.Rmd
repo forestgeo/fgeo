@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-This article shows some of the key features of __fgeo__ applied to an expoloratory data analysis. For a deeper and general approach to exploratory data analysis see [this book section](http://r4ds.had.co.nz/exploratory-data-analysis.html). A version adapted for ForestGEO is available [here](https://forestgeo.github.io/fgeo/articles/siteonly/eda.html).
+This article shows some of the key features of __fgeo__ applied to an exploratory data analysis. For a deeper and general approach to exploratory data analysis see [this book section](http://r4ds.had.co.nz/exploratory-data-analysis.html). A version adapted for ForestGEO is available [here](https://forestgeo.github.io/fgeo/articles/siteonly/eda.html).
 
 ## Packages 
 
@@ -229,19 +229,24 @@ p1
 
 ## Determine species-habitat assiciations
 
-Let's determine the species-habitat associations using a torus transalion test.
+Let's determine the species-habitat associations using a torus translation test.
 
 ```R
 fgeo_help("torus")
 ```
 
-I'll follow closely the help file of `tt_test()`. Reading the description of the argument `census` I see that the original example used a 'tree' table -- not a stem table. I'll use `luquillo_tree6_random`, which contains a small sample of randomly chosen trees accross the entire plot (see `?`luquillo_tree6_random`). 
+
+This test should use individual trees not the (potentially multiple) stems of
+individual trees. This test only makes sense at the population level. We are
+interested in knowing whether or not individuals of a species are aggregated
+on a habitat. Multiple stems of an individual do not represent population
+level processes but individual level processes. Let's then use a ForestGEO _tree_ table. I'll use `luquillo_tree6_random`, which contains a small sample of randomly chosen trees across the entire plot (see `?`luquillo_tree6_random`). 
 
 ```{r}
 tree <- luquillo_tree6_random
 ```
 
-As usual, I'll pick alive trees of 10 mm or more (for details see previous sections). The variable `status` of 'tree' tables directly represent the status of each tree (see `?census_description`). I'll focus on trees with status "A" (alive).
+I'll pick alive trees of 10 mm or more (for details see previous sections). The variable `status` of 'tree' tables directly represent the status of each tree (see `?census_description`). I'll focus on trees with status "A" (alive).
 
 ```{r}
 dbh10plus <- pick_dbh_min(tree, 10)
@@ -281,7 +286,7 @@ And now we are ready to run the test.
 tt <- tt_test(chosen_trees, sp = n_sp50plus$sp, habitat = habitat)
 ```
 
-The output of `tt_test()` is a list. Large lists are ackward to view -- unless you use `View()` in RStudio.
+The output of `tt_test()` is a list. Large lists are awkward to view -- unless you use `View()` in RStudio.
 
 ```R
 View(tt)
@@ -290,6 +295,44 @@ View(tt)
 Alternatively, transform the list to a dataframe.
 
 ```{r}
-head(to_df(tt))
+tt_df <- to_df(tt)
+# Nice view (try also `View()`)
+as_tibble(tt_df)
+```
+
+### Krige soil data 
+
+Let's Krige soil data.
+
+```R
+fgeo_help("krig")
+```
+
+__fgeo__ provides a fake soil dataset for examples.
+
+```{r}
+str(soil_fake)
+```
+
+The data contains multiple soil variables; let's use only two of them.
+
+```{r}
+soil_vars <- c("c", "p")
+krig_list <- krig(soil_fake, soil_vars, quiet = TRUE)
+```
+
+The output is a nested list, which is awkward to view on the console but you can view it in RStudio with `View()` and summarize it with `summary()`
+
+```{r}
+summary(krig_list)
+```
+
+Also you can pull a dataframe containing the results of all the soil variables.
+
+```{r}
+krig_df <- to_df(krig_list, item = "df")
+as_tibble(subset(krig_df,var == "c"))
+
+as_tibble(subset(krig_df, var == "p"))
 ```
 

@@ -48,8 +48,6 @@ Load all __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-### Search
-
 Find everything.
 
 ```R
