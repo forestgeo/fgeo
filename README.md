@@ -24,6 +24,7 @@ Answers](https://forestgeo.github.io/fgeo/articles/questions-and-answers.html)
 
 To install **fgeo** run this code in R:
 
+    # May take a several minutes
     if (!requireNamespace("fgeo")) {
       if (!requireNamespace("remotes")) {
         install.packages("remotes")
@@ -39,7 +40,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000
 #> v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006
 #> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204
