@@ -15,9 +15,7 @@ knitr::opts_chunk$set(
 library(fgeo)
 ```
 
-# Quick search
-
-### Search Functions
+## Search Functions
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_functions() %>% 
@@ -30,7 +28,7 @@ fgeo::fgeo_index_functions() %>%
   # knitr::kable()
 ```
 
-### Search Datasets
+## Search Datasets
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_datasets() %>% 
@@ -43,7 +41,7 @@ fgeo::fgeo_index_datasets() %>%
   # knitr::kable()
 ```
 
-### Search Packages
+## Search Packages
 
 ```{r, echo=FALSE}
 fgeo::fgeo_index_packages() %>% 
