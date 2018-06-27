@@ -155,7 +155,7 @@ top3
     * [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
     * [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
-## Code/data of publications by ForestGEO partners
+## R code from recent publications by ForestGEO partners
 
 Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators. If you wish to publish papers based on these data you are also required to get permission from the PIs of the corresponding ForestGEO plots.
 
