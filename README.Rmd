@@ -54,7 +54,7 @@ Find everything.
 fgeo_help()
 ```
 
-![](https://i.imgur.com/up282WS.png)
+![](https://i.imgur.com/L9n9QAo.png)
 
 Find something.
 
@@ -62,7 +62,7 @@ Find something.
 fgeo_help("map")
 ```
 
-![](https://i.imgur.com/ud4qsmC.png)
+![](https://i.imgur.com/4aIOOeu.png)
 
 Datasets.
 
