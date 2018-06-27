@@ -247,7 +247,7 @@ started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
       - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
       - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
 
-## Code/data of publications by ForestGEO partners
+## R code from recent publications by ForestGEO partners
 
 Data have been made available as required by the journal to enable
 reproduction of the results presented in the paper. Please do not share
