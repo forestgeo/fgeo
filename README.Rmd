@@ -30,6 +30,7 @@ __fgeo__ installs and loads multiple packages, functions and datasets in a singl
 To install __fgeo__ run this code in R:
 
 ```
+# May take a several minutes
 if (!requireNamespace("fgeo")) {
   if (!requireNamespace("remotes")) {
     install.packages("remotes")
