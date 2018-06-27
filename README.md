@@ -39,7 +39,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ------------------------------------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000
 #> v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006
 #> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204
@@ -53,7 +53,7 @@ Find everything.
 fgeo_help()
 ```
 
-![](https://i.imgur.com/up282WS.png)
+![](https://i.imgur.com/L9n9QAo.png)
 
 Find something.
 
@@ -61,7 +61,7 @@ Find something.
 fgeo_help("map")
 ```
 
-![](https://i.imgur.com/ud4qsmC.png)
+![](https://i.imgur.com/4aIOOeu.png)
 
 Datasets.
 
