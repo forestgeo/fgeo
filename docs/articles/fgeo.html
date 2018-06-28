@@ -145,7 +145,8 @@
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; </span></a></code></pre></div>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 </div>
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
@@ -266,10 +267,10 @@
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">fgeo_funs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fgeo_index.html">fgeo_index_functions</a></span>()</a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"status"</span>, fun))</a>
 <a class="sourceLine" id="cb13-3" data-line-number="3"><span class="co">#&gt;       package             fun</span></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co">#&gt; 49  fgeo.base     drop_status</span></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt; 69  fgeo.base     pick_status</span></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; 122 fgeo.tool add_status_tree</span></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; 136 fgeo.tool   filter_status</span></a></code></pre></div>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co">#&gt; 40  fgeo.base     drop_status</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt; 60  fgeo.base     pick_status</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; 114 fgeo.tool add_status_tree</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; 134 fgeo.tool   filter_status</span></a></code></pre></div>
 <p>In <code>stem6</code>, the variable <code>status</code> records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of <code>add_status_tree()</code>.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">add_status_tree</span>(stem6, <span class="dt">status_a =</span> <span class="st">"A"</span>, <span class="dt">status_d =</span> <span class="st">"D"</span>)</a>
 <a class="sourceLine" id="cb14-2" data-line-number="2">alive_trees &lt;-<span class="st"> </span><span class="kw">subset</span>(stem6, status_tree <span class="op">==</span><span class="st"> "A"</span>)</a>
@@ -291,10 +292,10 @@
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"dbh"</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"dbh"</span>, fun))</a>
 <a class="sourceLine" id="cb16-2" data-line-number="2"><span class="co">#&gt;      package            fun</span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co">#&gt; 64 fgeo.base   pick_dbh_max</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co">#&gt; 65 fgeo.base   pick_dbh_min</span></a>
-<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">#&gt; 66 fgeo.base  pick_dbh_over</span></a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; 67 fgeo.base pick_dbh_under</span></a></code></pre></div>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co">#&gt; 55 fgeo.base   pick_dbh_max</span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co">#&gt; 56 fgeo.base   pick_dbh_min</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">#&gt; 57 fgeo.base  pick_dbh_over</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; 58 fgeo.base pick_dbh_under</span></a></code></pre></div>
 <p>Pick stems of 10 mm or more.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">ten_plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(alive_trees, <span class="dv">10</span>)</a>
 <a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">range</span>(ten_plus<span class="op">$</span>dbh, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a>
@@ -365,17 +366,17 @@
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"map"</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"map"</span>, fun))</a>
 <a class="sourceLine" id="cb25-2" data-line-number="2"><span class="co">#&gt;      package             fun</span></a>
-<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co">#&gt; 100 fgeo.map        map_elev</span></a>
-<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co">#&gt; 101 fgeo.map       map_gx_gy</span></a>
-<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">#&gt; 102 fgeo.map  map_gx_gy_elev</span></a>
-<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="co">#&gt; 103 fgeo.map map_quad_header</span></a>
-<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="co">#&gt; 104 fgeo.map     map_sp_elev</span></a>
-<a class="sourceLine" id="cb25-8" data-line-number="8"><span class="co">#&gt; 105 fgeo.map  map_tag_header</span></a>
-<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="co">#&gt; 106 fgeo.map      maply_quad</span></a>
-<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="co">#&gt; 107 fgeo.map   maply_sp_elev</span></a>
-<a class="sourceLine" id="cb25-11" data-line-number="11"><span class="co">#&gt; 108 fgeo.map       maply_tag</span></a>
-<a class="sourceLine" id="cb25-12" data-line-number="12"><span class="co">#&gt; 111 fgeo.map  theme_map_quad</span></a>
-<a class="sourceLine" id="cb25-13" data-line-number="13"><span class="co">#&gt; 112 fgeo.map   theme_map_tag</span></a></code></pre></div>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co">#&gt; 91  fgeo.map        map_elev</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co">#&gt; 92  fgeo.map       map_gx_gy</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">#&gt; 93  fgeo.map  map_gx_gy_elev</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="co">#&gt; 94  fgeo.map map_quad_header</span></a>
+<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="co">#&gt; 95  fgeo.map     map_sp_elev</span></a>
+<a class="sourceLine" id="cb25-8" data-line-number="8"><span class="co">#&gt; 96  fgeo.map  map_tag_header</span></a>
+<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="co">#&gt; 97  fgeo.map      maply_quad</span></a>
+<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="co">#&gt; 98  fgeo.map   maply_sp_elev</span></a>
+<a class="sourceLine" id="cb25-11" data-line-number="11"><span class="co">#&gt; 99  fgeo.map       maply_tag</span></a>
+<a class="sourceLine" id="cb25-12" data-line-number="12"><span class="co">#&gt; 102 fgeo.map  theme_map_quad</span></a>
+<a class="sourceLine" id="cb25-13" data-line-number="13"><span class="co">#&gt; 103 fgeo.map   theme_map_tag</span></a></code></pre></div>
 <p>Map the most abundant species.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># luquillo_elevation comes with fgeo</span></a>
 <a class="sourceLine" id="cb26-2" data-line-number="2">p &lt;-<span class="st"> </span><span class="kw">map_sp_elev</span>(picked_stems, <span class="dt">elevation =</span> luquillo_elevation, <span class="dt">point_size =</span> <span class="dv">1</span>)</a>
