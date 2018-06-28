@@ -224,19 +224,6 @@ n_trees
 #> # ... with 60 more rows
 ```
 
-Which are the three most abundant tree species?
-
-``` r
-top3 <- pick_top(n_trees, n, -3)
-top3
-#> # A tibble: 3 x 2
-#>   sp         n
-#>   <chr>  <int>
-#> 1 CASARB   489
-#> 2 PREMON   507
-#> 3 SCHMOR   151
-```
-
 [Get
 started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
@@ -274,6 +261,16 @@ ForestGEO plots.
   - [Plant diversity increases with the strength of negative density
     dependence at the global scale (LaManna et
     al., 2018)](https://github.com/forestgeo/LaManna_et_al_Science)
+    
+      - Response \#1: LaManna et al. 2018. Response to Comment on “Plant
+        diversity increases with the strength of negative density
+        dependence at the global scale” Science Vol. 360, Issue 6391,
+        eaar3824. DOI: 10.1126/science.aar3824
+    
+      - Response \#2: LaManna et al. 2018. Response to Comment on “Plant
+        diversity increases with the strength of negative density
+        dependence at the global scale”. Science Vol. 360, Issue 6391,
+        eaar5245. DOI: 10.1126/science.aar5245
 
 ## Information
 
