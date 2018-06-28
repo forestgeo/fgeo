@@ -140,12 +140,12 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------------------- fgeo_conflicts() --</span></a>
 <a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 </div>
 <div id="data" class="section level2">
@@ -359,9 +359,9 @@
 <p>Now we can subset the <code>alive_trees</code> of only the <code>top3</code> species.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">picked_stems &lt;-<span class="st"> </span><span class="kw">subset</span>(alive_trees, sp <span class="op">%in%</span><span class="st"> </span>top3<span class="op">$</span>sp)</a></code></pre></div>
 </div>
-<div id="mapping-the-distrubution-of-tree-species" class="section level2">
+<div id="mapping-the-distribution-of-tree-species" class="section level2">
 <h2 class="hasAnchor">
-<a href="#mapping-the-distrubution-of-tree-species" class="anchor"></a>Mapping the distrubution of tree species</h2>
+<a href="#mapping-the-distribution-of-tree-species" class="anchor"></a>Mapping the distribution of tree species</h2>
 <p><strong>fgeo</strong> includes some functions specialized in mapping ForestGEO’s data.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"map"</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"map"</span>, fun))</a>
@@ -391,9 +391,9 @@
 <a class="sourceLine" id="cb27-6" data-line-number="6">p1</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 </div>
-<div id="determine-species-habitat-assiciations" class="section level2">
+<div id="determine-species-habitat-associations" class="section level2">
 <h2 class="hasAnchor">
-<a href="#determine-species-habitat-assiciations" class="anchor"></a>Determine species-habitat assiciations</h2>
+<a href="#determine-species-habitat-associations" class="anchor"></a>Determine species-habitat associations</h2>
 <p>Let’s determine the species-habitat associations using a torus translation test.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"torus"</span>)</a></code></pre></div>
 <p>This test should use individual trees not the (potentially multiple) stems of individual trees. This test only makes sense at the population level. We are interested in knowing whether or not individuals of a species are aggregated on a habitat. Multiple stems of an individual do not represent population level processes but individual level processes. Let’s then use a ForestGEO <em>tree</em> table. I’ll use <code>luquillo_tree6_random</code>, which contains a small sample of randomly chosen trees across the entire plot (see <code>?</code>luquillo_tree6_random`).</p>
@@ -651,7 +651,7 @@
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co"># ?see bciex::bci12t6mini</span></a>
 <a class="sourceLine" id="cb42-2" data-line-number="2">census1 &lt;-<span class="st"> </span>bci12t6mini</a>
 <a class="sourceLine" id="cb42-3" data-line-number="3">census2 &lt;-<span class="st"> </span>bci12t7mini</a></code></pre></div>
-<p><code>recruitment()</code>, <code>mortality()</code> and <code>growth()</code> work similarly. The first and second input are the earlier and later censuses you want to analyse demography on.</p>
+<p><code>recruitment()</code>, <code>mortality()</code> and <code>growth()</code> work similarly. The first and second input are the earlier and later censuses you want to analyze demography on.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">mortality</span>(census1, census2)</a>
 <a class="sourceLine" id="cb43-2" data-line-number="2"><span class="co">#&gt; $N</span></a>
 <a class="sourceLine" id="cb43-3" data-line-number="3"><span class="co">#&gt; [1] 596</span></a>
@@ -733,8 +733,8 @@
       <li><a href="#dropping-missing-values">Dropping missing values</a></li>
       <li><a href="#calculating-abundance">Calculating abundance</a></li>
       <li><a href="#picking-the-most-abundant-species">Picking the most abundant species</a></li>
-      <li><a href="#mapping-the-distrubution-of-tree-species">Mapping the distrubution of tree species</a></li>
-      <li><a href="#determine-species-habitat-assiciations">Determine species-habitat assiciations</a></li>
+      <li><a href="#mapping-the-distribution-of-tree-species">Mapping the distribution of tree species</a></li>
+      <li><a href="#determine-species-habitat-associations">Determine species-habitat associations</a></li>
       <li><a href="#krige-soil-data">Krige soil data</a></li>
       <li><a href="#demography">Demography</a></li>
       </ul>

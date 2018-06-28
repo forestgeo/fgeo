@@ -200,7 +200,7 @@ Now we can subset the `alive_trees` of only the `top3` species.
 picked_stems <- subset(alive_trees, sp %in% top3$sp)
 ```
 
-## Mapping the distrubution of tree species
+## Mapping the distribution of tree species
 
 __fgeo__ includes some functions specialized in mapping ForestGEO's data.
 
@@ -227,7 +227,7 @@ p1 <- limit_gx_gy(p, xlim = c(100, 200), ylim = c(400, 500))
 p1
 ```
 
-## Determine species-habitat assiciations
+## Determine species-habitat associations
 
 Let's determine the species-habitat associations using a torus translation test.
 
@@ -350,7 +350,7 @@ census1 <- bci12t6mini
 census2 <- bci12t7mini
 ```
 
-`recruitment()`, `mortality()` and `growth()` work similarly. The first and second input are the earlier and later censuses you want to analyse demography on.
+`recruitment()`, `mortality()` and `growth()` work similarly. The first and second input are the earlier and later censuses you want to analyze demography on.
 
 ```{r}
 mortality(census1, census2)
