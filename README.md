@@ -13,8 +13,17 @@ status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/p
 
 **fgeo** installs and loads multiple R packages, functions and datasets
 to visualize trees and analyze their abundance, demography, and
-habitats. It includes general-purpose functions to simplify the
+habitats. It also includes general-purpose functions to simplify the
 manipulation and visualization of ForestGEO datasets.
+
+<a href=https://forestgeo.github.io/bciex>bciex</a>,
+<a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>,
+<a href=https://forestgeo.github.io/fgeo.base>fgeo.base</a>,
+<a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>,
+<a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a>,
+<a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>,
+<a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>,
+<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>
 
 [Quick
 search](https://forestgeo.github.io/fgeo/articles/quick-search.html)
