@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![Coverage status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://coveralls.io/r/forestgeo/fgeo?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-__fgeo__ installs and loads multiple packages, functions and datasets in a single step.
+__fgeo__ installs and loads multiple R packages, functions and datasets to visualize trees and analyze their abundance, demography, and habitats. It includes general-purpose functions to simplify the manipulation and visualization of ForestGEO datasets.
 
 [Quick search](https://forestgeo.github.io/fgeo/articles/quick-search.html)
 
