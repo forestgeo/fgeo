@@ -19,9 +19,19 @@ knitr::opts_chunk$set(
 [![Coverage status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://coveralls.io/r/forestgeo/fgeo?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-__fgeo__ installs and loads multiple R packages, functions and datasets to visualize trees and analyze their abundance, demography, and habitats. It also includes general-purpose functions to simplify the manipulation and visualization of ForestGEO datasets.
+```{r, echo=FALSE}
+link_core <- function(pattern) {
+  core <- fgeo::fgeo_core()
+  fgeo::fgeo_link(core[grepl(pattern, core)])
+}
 
-`r fgeo::fgeo_link(fgeo::fgeo_core())`
+analyze <- "abundance|demography|habitat"
+visualize <- "map"
+manipulate <- "base|tool"
+datasets <- "bciex|data"
+```
+
+__fgeo__ installs and loads multiple R packages, functions and datasets to analyze trees' abundance, demography, and habitats (`r link_core(analyze)`). It also includes general-purpose functions to simplify the visualization (`r link_core(visualize)`) and manipulation (`r link_core(manipulate)`) of ForestGEO datasets (e.g. `r link_core(datasets)`).
 
 [Quick search](https://forestgeo.github.io/fgeo/articles/quick-search.html)
 
