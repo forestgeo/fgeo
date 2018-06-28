@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# <img src="https://i.imgur.com/m8FNhQR.png" align="right" height=88 /> Analyze forest diversity and dynamics
+# <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analyze forest diversity and dynamics
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
@@ -56,7 +56,8 @@ library(fgeo)
 #> v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006
 #> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204
 #> v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003
-#> 
+#> -- Conflicts ------------------------------------------------- fgeo_conflicts() --
+#> x fgeo.tool::filter() masks stats::filter()
 ```
 
 Find everything.
