@@ -85,6 +85,8 @@ subset(fgeo_data, grepl("luquillo", dataset))
 
 # Short name
 stem <- luquillo_stem_1ha
+# This dataset comes with multiple censuses.
+unique(stem$CensusID)
 stem
 ```
 
@@ -93,9 +95,6 @@ Do something useful.
 Pick the data you want.
 
 ```{r}
-# This dataset comes with multiple censuses.
-unique(stem$CensusID)
-
 # Pick one census from the bottom (n < 0) rank of CensusID. See ?pick_top().
 stem6 <- pick_top(stem, var = CensusID, n = -1)
 unique(stem6$CensusID)
@@ -134,15 +133,11 @@ abundance_stem(non_missing)
 abundance_tree(non_missing)
 ```
 
-Abundance by species.
+Trees' abundance by species.
 
 ```{r}
 by_sp <- group_by(non_missing, sp)
-
-abundance_stem(by_sp)
-
-n_trees <- abundance_tree(by_sp)
-n_trees
+abundance_tree(by_sp)
 ```
 
 [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
