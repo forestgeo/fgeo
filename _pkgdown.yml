@@ -34,8 +34,8 @@ navbar:
 
     - text: Community
       menu:
-      - text: RStudio Cloud
-        href: https://rstudio.cloud/spaces/1060/join?access_code=OwTXDi6mP1jepbSZ60e55lkGLcldKUVkUfRoNuKp
+      - text: Try fgeo in rstudio.cloud
+        href: https://rstudio.cloud/project/43852
       - text: Resources
         href: https://github.com/forestgeo/learn/issues
       - text: Questions and Answers
