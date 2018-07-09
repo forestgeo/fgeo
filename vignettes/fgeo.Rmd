@@ -356,19 +356,18 @@ recruitment(censuses, quiet = TRUE)
 Optionally, you can provide any number of variables to group by. 
 
 ```{r}
-# Picking only some species and some quadrats
-smaller <- lapply(censuses, pick_top, sp, 2)
+# Picking only some data from both censuses at the same time
+smaller <- lapply(censuses, pick_top, sp)
 smaller <- lapply(smaller, pick_top, quadrat, 2)
 
-by_sp_quad <- mortality(smaller, sp, quadrat, quiet = TRUE)
-subset(by_sp_quad, sp == "ALCFLO")
-subset(by_sp_quad, quadrat == "914")
+mort_sp_quad <- mortality(smaller, sp, quadrat, quiet = TRUE)
+mort_sp_quad
 ```
 
-Consider using `View()` or `subset()` to focus on specific data.
+Consider using `View()` in RStudio to search for specific data.
 
 ```{r}
-subset(subset(by_sp_quad, sp == "ALCLAT"), quadrat == "914")
+subset(mort_sp_quad, quadrat == 820)
 ```
 
-You may rearrange the output with `tidyr::spread()`. For example, to show one column per quadrat you would use `tidyr::spread(by_sp_quad, quadrat, value)`.
+You may transform rows into columns with `tidyr::spread()`.
