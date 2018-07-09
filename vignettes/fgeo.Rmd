@@ -316,7 +316,7 @@ str(soil_fake)
 
 The data contains multiple soil variables; let's use only two of them.
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 soil_vars <- c("c", "p")
 krig_list <- krig(soil_fake, soil_vars, quiet = TRUE)
 ```
@@ -358,7 +358,7 @@ Optionally, you can provide any number of variables to group by.
 ```{r}
 # Picking only some species and some quadrats
 smaller <- lapply(censuses, pick_top, sp, 2)
-smaller <- lapply(smaller, pick_top, sp, 2)
+smaller <- lapply(smaller, pick_top, quadrat, 2)
 
 by_sp_quad <- mortality(smaller, sp, quadrat, quiet = TRUE)
 subset(by_sp_quad, sp == "ALCFLO")
