@@ -371,8 +371,4 @@ Consider using `View()` or `subset()` to focus on specific data.
 subset(subset(by_sp_quad, sp == "ALCLAT"), quadrat == "914")
 ```
 
-You may rearrange the output with `tidyr::spread()`, for example, to show one column per quadrat.
-
-```{r}
-tidyr::spread(by_sp_quad, quadrat, value)
-```
+You may rearrange the output with `tidyr::spread()`. For example, to show one column per quadrat you would use `tidyr::spread(by_sp_quad, quadrat, value)`.

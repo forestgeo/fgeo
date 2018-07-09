@@ -51,12 +51,12 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
 #> v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000
 #> v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006
 #> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204
 #> v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003
-#> -- Conflicts ------------------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -90,17 +90,19 @@ subset(fgeo_data, grepl("luquillo", dataset))
 #> 29    fgeo.data         luquillo_stem_1ha
 #> 30    fgeo.data      luquillo_stem_random
 #> 31    fgeo.data luquillo_stem_random_tiny
-#> 32    fgeo.data        luquillo_stem6_1ha
-#> 33    fgeo.data     luquillo_stem6_random
-#> 34    fgeo.data             luquillo_taxa
-#> 35    fgeo.data        luquillo_tree6_1ha
-#> 36    fgeo.data     luquillo_tree6_random
-#> 37    fgeo.data        luquillo_vft_4quad
-#> 38 fgeo.habitat        luquillo_elevation
-#> 39 fgeo.habitat          luquillo_habitat
-#> 40 fgeo.habitat     luquillo_stem6_random
-#> 41 fgeo.habitat          luquillo_top3_sp
-#> 42 fgeo.habitat     luquillo_tree6_random
+#> 32    fgeo.data     luquillo_stem5_random
+#> 33    fgeo.data        luquillo_stem6_1ha
+#> 34    fgeo.data     luquillo_stem6_random
+#> 35    fgeo.data             luquillo_taxa
+#> 36    fgeo.data     luquillo_tree5_random
+#> 37    fgeo.data        luquillo_tree6_1ha
+#> 38    fgeo.data     luquillo_tree6_random
+#> 39    fgeo.data        luquillo_vft_4quad
+#> 40 fgeo.habitat        luquillo_elevation
+#> 41 fgeo.habitat          luquillo_habitat
+#> 42 fgeo.habitat     luquillo_stem6_random
+#> 43 fgeo.habitat          luquillo_top3_sp
+#> 44 fgeo.habitat     luquillo_tree6_random
 
 # Short name
 stem <- luquillo_stem_1ha
