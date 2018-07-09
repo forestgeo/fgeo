@@ -342,42 +342,37 @@ as_tibble(subset(krig_df, var == "p"))
 fgeo_help("mortality")
 ```
 
-Demography functions (`recruitment()`, `mortality()` and `growth()`) input two censuses. We'll use small _tree_ tables from census 6 and 7 of Barro Colorado Island.
+The primary input of demography functions (`recruitment()`, `mortality()` and `growth()`) is a list of two ForestGEO tree-tables.
 
 ```{r}
-# ?see bciex::bci12t6mini
-census1 <- bci12t6mini
-census2 <- bci12t7mini
+censuses <- list(
+ fgeo.data::luquillo_tree5_random,
+ fgeo.data::luquillo_tree6_random
+)
+
+recruitment(censuses, quiet = TRUE)
 ```
 
-`recruitment()`, `mortality()` and `growth()` work similarly. The first and second input are the earlier and later censuses you want to analyze demography on.
+Optionally, you can provide any number of variables to group by. 
 
 ```{r}
-mortality(census1, census2)
+# Picking only some species and some quadrats
+smaller <- lapply(censuses, pick_top, sp, 2)
+smaller <- lapply(smaller, pick_top, sp, 2)
+
+by_sp_quad <- mortality(smaller, sp, quadrat, quiet = TRUE)
+subset(by_sp_quad, sp == "ALCFLO")
+subset(by_sp_quad, quadrat == "914")
 ```
 
-All three demography functions provide arguments to split the data by. This is a different approach to do the same job of `group_by()` shown above (here `group_by()` doesn't work).
+Consider using `View()` or `subset()` to focus on specific data.
 
 ```{r}
-recruitment <- recruitment(census1, census2, split1 = census1$sp)
+subset(subset(by_sp_quad, sp == "ALCLAT"), quadrat == "914")
 ```
 
-If you "split" the data, the output is a somewhat long list. The best way to view it is with `View()` in RStudio.
-
-```R
-View(recruitment)
-```
-Alternatively use the `*_df()` variants of demography. They output a dataframe that is easier to handle -- it prints particularly well with `as_tibble()`.
+You may rearrange the output with `tidyr::spread()`, for example, to show one column per quadrat.
 
 ```{r}
-growth <- growth_df(census1, census2, split1 = census1$sp)
-as_tibble(growth)
+tidyr::spread(by_sp_quad, quadrat, value)
 ```
-
-Here too you can use `View()` and search for the species you want. Or you can `subset()` the output and print it to the console.
-
-```{r}
-subset(growth, split == "acaldi")
-```
-
-If you are interested in only a few species (say less than 5), you may want to spread the species from rows to columns with `spread()` from the __tidyr__ package (see `?tidyr::spread()`).
