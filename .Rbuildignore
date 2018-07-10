@@ -9,11 +9,5 @@
 ^pkgdown$
 ^codecov\.yml$
 ^tmp\.R$
-^tmp\.sh$
-^CODE_OF_CONDUCT\.md$
 ^\.github$
-^tmp$
-^tmp\.Rmd$
-^README\.html$
-^README\.knit\.md$
 ^vignettes/siteonly/eda\.Rmd$

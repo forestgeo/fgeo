@@ -1,10 +1,7 @@
+inst/doc
 inst/fgeo-logo
 .Rproj.user
 .Rhistory
 .RData
-inst/docs
 tmp.R
-tmp.sh
-tmp.Rmd
-README.html
-inst/doc
+
