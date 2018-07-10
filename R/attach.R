@@ -7,7 +7,6 @@
 #' fgeo_core()
 fgeo_core <- function() {
   c(
-    "bciex",
     "fgeo.abundance",
     "fgeo.base",
     "fgeo.data",

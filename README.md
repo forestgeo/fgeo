@@ -22,7 +22,6 @@ manipulation
 (<a href=https://forestgeo.github.io/fgeo.base>fgeo.base</a>,
 <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>) of
 ForestGEO datasets (e.g.
-<a href=https://forestgeo.github.io/bciex>bciex</a>,
 <a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>).
 
 [Quick
@@ -51,12 +50,14 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
-#> v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000
-#> v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006
-#> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204
-#> v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003
-#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
+#> -- Attaching packages ----------------------------------- fgeo 0.0.0.9000 --
+#> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
+#> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
+#> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
+#> v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003
+#> Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not
+#> possible
+#> -- Conflicts ------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -66,7 +67,7 @@ Find everything.
 fgeo_help()
 ```
 
-![](https://i.imgur.com/L9n9QAo.png)
+![](https://i.imgur.com/AnGdGqN.png)
 
 Find something.
 
@@ -74,7 +75,7 @@ Find something.
 fgeo_help("map")
 ```
 
-![](https://i.imgur.com/4aIOOeu.png)
+![](https://i.imgur.com/mfqhd3U.png)
 
 Datasets.
 
@@ -82,27 +83,27 @@ Datasets.
 fgeo_data <- fgeo_index_datasets()
 subset(fgeo_data, grepl("luquillo", dataset))
 #>         package                   dataset
-#> 23    fgeo.base luquillo_stem_random_tiny
-#> 24    fgeo.base        luquillo_vft_4quad
-#> 26    fgeo.data        luquillo_elevation
-#> 27    fgeo.data          luquillo_habitat
-#> 28    fgeo.data          luquillo_species
-#> 29    fgeo.data         luquillo_stem_1ha
-#> 30    fgeo.data      luquillo_stem_random
-#> 31    fgeo.data luquillo_stem_random_tiny
-#> 32    fgeo.data     luquillo_stem5_random
-#> 33    fgeo.data        luquillo_stem6_1ha
-#> 34    fgeo.data     luquillo_stem6_random
-#> 35    fgeo.data             luquillo_taxa
-#> 36    fgeo.data     luquillo_tree5_random
-#> 37    fgeo.data        luquillo_tree6_1ha
-#> 38    fgeo.data     luquillo_tree6_random
-#> 39    fgeo.data        luquillo_vft_4quad
-#> 40 fgeo.habitat        luquillo_elevation
-#> 41 fgeo.habitat          luquillo_habitat
-#> 42 fgeo.habitat     luquillo_stem6_random
-#> 43 fgeo.habitat          luquillo_top3_sp
-#> 44 fgeo.habitat     luquillo_tree6_random
+#> 1     fgeo.base luquillo_stem_random_tiny
+#> 2     fgeo.base        luquillo_vft_4quad
+#> 4     fgeo.data        luquillo_elevation
+#> 5     fgeo.data          luquillo_habitat
+#> 6     fgeo.data          luquillo_species
+#> 7     fgeo.data         luquillo_stem_1ha
+#> 8     fgeo.data      luquillo_stem_random
+#> 9     fgeo.data luquillo_stem_random_tiny
+#> 10    fgeo.data     luquillo_stem5_random
+#> 11    fgeo.data        luquillo_stem6_1ha
+#> 12    fgeo.data     luquillo_stem6_random
+#> 13    fgeo.data             luquillo_taxa
+#> 14    fgeo.data     luquillo_tree5_random
+#> 15    fgeo.data        luquillo_tree6_1ha
+#> 16    fgeo.data     luquillo_tree6_random
+#> 17    fgeo.data        luquillo_vft_4quad
+#> 18 fgeo.habitat        luquillo_elevation
+#> 19 fgeo.habitat          luquillo_habitat
+#> 20 fgeo.habitat     luquillo_stem6_random
+#> 21 fgeo.habitat          luquillo_top3_sp
+#> 22 fgeo.habitat     luquillo_tree6_random
 
 # Short name
 stem <- luquillo_stem_1ha

@@ -8,7 +8,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   fig.show = "hold",
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "man/figures/README-"
 )
 ```
 
@@ -28,7 +28,7 @@ link_core <- function(pattern) {
 analyze <- "abundance|demography|habitat"
 visualize <- "map"
 manipulate <- "base|tool"
-datasets <- "bciex|data"
+datasets <- "data"
 ```
 
 __fgeo__ installs and loads multiple R packages, functions and datasets to analyze trees' abundance, demography, and habitats (`r link_core(analyze)`). It also includes general-purpose functions to simplify the visualization (`r link_core(visualize)`) and manipulation (`r link_core(manipulate)`) of ForestGEO datasets (e.g. `r link_core(datasets)`).
@@ -67,7 +67,7 @@ Find everything.
 fgeo_help()
 ```
 
-![](https://i.imgur.com/L9n9QAo.png)
+![](https://i.imgur.com/AnGdGqN.png)
 
 Find something.
 
@@ -75,7 +75,7 @@ Find something.
 fgeo_help("map")
 ```
 
-![](https://i.imgur.com/4aIOOeu.png)
+![](https://i.imgur.com/mfqhd3U.png)
 
 Datasets.
 

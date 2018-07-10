@@ -140,22 +140,24 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------- fgeo 0.0.0.9000 --</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------ fgeo_conflicts() --</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; possible</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; -- Conflicts ------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 </div>
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h2>
 <p>You may load your own data. Here I’ll use data from the <strong>fgeo.data</strong> package – which comes with <strong>fgeo</strong>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">str</span>(<span class="kw"><a href="../reference/fgeo_index.html">fgeo_index_datasets</a></span>())</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; 'data.frame':    48 obs. of  2 variables:</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt;  $ package: chr  "bciex" "bciex" "bciex" "bciex" ...</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;  $ dataset: chr  "bci_elevation" "bci_habitat" "bci_mat" "bci_plotdim" ...</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; 'data.frame':    26 obs. of  2 variables:</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt;  $ package: chr  "fgeo.base" "fgeo.base" "fgeo.data" "fgeo.data" ...</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;  $ dataset: chr  "luquillo_stem_random_tiny" "luquillo_vft_4quad" "data_dictionary" "luquillo_elevation" ...</span></a></code></pre></div>
 <p>I’ll use a dataset of stems censused in one hectare in the forest plot Luquillo, Puerto Rico (<a href="https://forestgeo.si.edu/sites/north-america/luquillo" class="uri">https://forestgeo.si.edu/sites/north-america/luquillo</a>).</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">stem &lt;-<span class="st"> </span>luquillo_stem_1ha</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">str</span>(stem)</a>
@@ -265,12 +267,14 @@
 <p>Now that we understand out data are read to clean it, for example, by picking alive trees only. At ForestGEO, working with <code>status</code> is so common that <strong>fgeo</strong> provides a specialized function.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"status"</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">fgeo_funs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fgeo_index.html">fgeo_index_functions</a></span>()</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"status"</span>, fun))</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="co">#&gt;       package             fun</span></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co">#&gt; 39  fgeo.base     drop_status</span></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt; 61  fgeo.base     pick_status</span></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; 113 fgeo.tool add_status_tree</span></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; 138 fgeo.tool   filter_status</span></a></code></pre></div>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="co">#&gt; possible</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"status"</span>, fun))</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt;       package             fun</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; 40  fgeo.base     drop_status</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; 62  fgeo.base     pick_status</span></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="co">#&gt; 114 fgeo.tool add_status_tree</span></a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#&gt; 139 fgeo.tool   filter_status</span></a></code></pre></div>
 <p>In <code>stem6</code>, the variable <code>status</code> records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of <code>add_status_tree()</code>.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">add_status_tree</span>(stem6, <span class="dt">status_a =</span> <span class="st">"A"</span>, <span class="dt">status_d =</span> <span class="st">"D"</span>)</a>
 <a class="sourceLine" id="cb14-2" data-line-number="2">alive_trees &lt;-<span class="st"> </span><span class="kw">subset</span>(stem6, status_tree <span class="op">==</span><span class="st"> "A"</span>)</a>
@@ -292,10 +296,10 @@
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"dbh"</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"dbh"</span>, fun))</a>
 <a class="sourceLine" id="cb16-2" data-line-number="2"><span class="co">#&gt;      package            fun</span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co">#&gt; 56 fgeo.base   pick_dbh_max</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co">#&gt; 57 fgeo.base   pick_dbh_min</span></a>
-<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">#&gt; 58 fgeo.base  pick_dbh_over</span></a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; 59 fgeo.base pick_dbh_under</span></a></code></pre></div>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co">#&gt; 57 fgeo.base   pick_dbh_max</span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co">#&gt; 58 fgeo.base   pick_dbh_min</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">#&gt; 59 fgeo.base  pick_dbh_over</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; 60 fgeo.base pick_dbh_under</span></a></code></pre></div>
 <p>Pick stems of 10 mm or more.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">ten_plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(alive_trees, <span class="dv">10</span>)</a>
 <a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">range</span>(ten_plus<span class="op">$</span>dbh, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a>
@@ -366,17 +370,17 @@
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"map"</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">subset</span>(fgeo_funs, <span class="kw">grepl</span>(<span class="st">"map"</span>, fun))</a>
 <a class="sourceLine" id="cb25-2" data-line-number="2"><span class="co">#&gt;      package             fun</span></a>
-<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co">#&gt; 90  fgeo.map        map_elev</span></a>
-<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co">#&gt; 91  fgeo.map       map_gx_gy</span></a>
-<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">#&gt; 92  fgeo.map  map_gx_gy_elev</span></a>
-<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="co">#&gt; 93  fgeo.map map_quad_header</span></a>
-<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="co">#&gt; 94  fgeo.map     map_sp_elev</span></a>
-<a class="sourceLine" id="cb25-8" data-line-number="8"><span class="co">#&gt; 95  fgeo.map  map_tag_header</span></a>
-<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="co">#&gt; 96  fgeo.map      maply_quad</span></a>
-<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="co">#&gt; 97  fgeo.map   maply_sp_elev</span></a>
-<a class="sourceLine" id="cb25-11" data-line-number="11"><span class="co">#&gt; 98  fgeo.map       maply_tag</span></a>
-<a class="sourceLine" id="cb25-12" data-line-number="12"><span class="co">#&gt; 101 fgeo.map  theme_map_quad</span></a>
-<a class="sourceLine" id="cb25-13" data-line-number="13"><span class="co">#&gt; 102 fgeo.map   theme_map_tag</span></a></code></pre></div>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co">#&gt; 91  fgeo.map        map_elev</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co">#&gt; 92  fgeo.map       map_gx_gy</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">#&gt; 93  fgeo.map  map_gx_gy_elev</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="co">#&gt; 94  fgeo.map map_quad_header</span></a>
+<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="co">#&gt; 95  fgeo.map     map_sp_elev</span></a>
+<a class="sourceLine" id="cb25-8" data-line-number="8"><span class="co">#&gt; 96  fgeo.map  map_tag_header</span></a>
+<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="co">#&gt; 97  fgeo.map      maply_quad</span></a>
+<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="co">#&gt; 98  fgeo.map   maply_sp_elev</span></a>
+<a class="sourceLine" id="cb25-11" data-line-number="11"><span class="co">#&gt; 99  fgeo.map       maply_tag</span></a>
+<a class="sourceLine" id="cb25-12" data-line-number="12"><span class="co">#&gt; 102 fgeo.map  theme_map_quad</span></a>
+<a class="sourceLine" id="cb25-13" data-line-number="13"><span class="co">#&gt; 103 fgeo.map   theme_map_tag</span></a></code></pre></div>
 <p>Map the most abundant species.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># luquillo_elevation comes with fgeo</span></a>
 <a class="sourceLine" id="cb26-2" data-line-number="2">p &lt;-<span class="st"> </span><span class="kw">map_sp_elev</span>(picked_stems, <span class="dt">elevation =</span> luquillo_elevation, <span class="dt">point_size =</span> <span class="dv">1</span>)</a>
@@ -384,11 +388,12 @@
 <p><img src="fgeo_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
 <p>Tweak to focus on the hectare available in the data.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">p1 &lt;-<span class="st"> </span><span class="kw">limit_gx_gy</span>(p, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">400</span>, <span class="dv">500</span>))</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="co">#&gt; Scale for 'x' is already present. Adding another scale for 'x', which</span></a>
-<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co">#&gt; will replace the existing scale.</span></a>
-<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which</span></a>
-<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">#&gt; will replace the existing scale.</span></a>
-<a class="sourceLine" id="cb27-6" data-line-number="6">p1</a></code></pre></div>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="co">#&gt; Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span></a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co">#&gt; Scale for 'x' is already present. Adding another scale for 'x', which</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="co">#&gt; will replace the existing scale.</span></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which</span></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">#&gt; will replace the existing scale.</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7">p1</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 </div>
 <div id="determine-species-habitat-associations" class="section level2">
@@ -646,7 +651,7 @@
 <div id="demography" class="section level1">
 <h1 class="hasAnchor">
 <a href="#demography" class="anchor"></a>Demography</h1>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"mortality"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"demography"</span>)</a></code></pre></div>
 <p>The primary input of demography functions (<code>recruitment()</code>, <code>mortality()</code> and <code>growth()</code>) is a list of two ForestGEO tree-tables.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">censuses &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
 <a class="sourceLine" id="cb42-2" data-line-number="2"> fgeo.data<span class="op">::</span>luquillo_tree5_random,</a>

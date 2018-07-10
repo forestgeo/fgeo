@@ -138,7 +138,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#analyze-forest-diversity-and-dynamics" class="anchor"></a><img src="https://i.imgur.com/vTLlhbp.png" align="right" height="88"> Analyze forest diversity and dynamics</h1></div>
 
-<p><strong>fgeo</strong> installs and loads multiple R packages, functions and datasets to analyze trees’ abundance, demography, and habitats (<a href="https://forestgeo.github.io/fgeo.abundance">fgeo.abundance</a>, <a href="https://forestgeo.github.io/fgeo.demography">fgeo.demography</a>, <a href="https://forestgeo.github.io/fgeo.habitat">fgeo.habitat</a>). It also includes general-purpose functions to simplify the visualization (<a href="https://forestgeo.github.io/fgeo.map">fgeo.map</a>) and manipulation (<a href="https://forestgeo.github.io/fgeo.base">fgeo.base</a>, <a href="https://forestgeo.github.io/fgeo.tool">fgeo.tool</a>) of ForestGEO datasets (e.g. <a href="https://forestgeo.github.io/bciex">bciex</a>, <a href="https://forestgeo.github.io/fgeo.data">fgeo.data</a>).</p>
+<p><strong>fgeo</strong> installs and loads multiple R packages, functions and datasets to analyze trees’ abundance, demography, and habitats (<a href="https://forestgeo.github.io/fgeo.abundance">fgeo.abundance</a>, <a href="https://forestgeo.github.io/fgeo.demography">fgeo.demography</a>, <a href="https://forestgeo.github.io/fgeo.habitat">fgeo.habitat</a>). It also includes general-purpose functions to simplify the visualization (<a href="https://forestgeo.github.io/fgeo.map">fgeo.map</a>) and manipulation (<a href="https://forestgeo.github.io/fgeo.base">fgeo.base</a>, <a href="https://forestgeo.github.io/fgeo.tool">fgeo.tool</a>) of ForestGEO datasets (e.g. <a href="https://forestgeo.github.io/fgeo.data">fgeo.data</a>).</p>
 <p><a href="https://forestgeo.github.io/fgeo/articles/quick-search.html">Quick search</a></p>
 <p><a href="https://forestgeo.github.io/fgeo/articles/questions-and-answers.html">Questions and Answers</a></p>
 <div id="installation" class="section level2">
@@ -159,44 +159,46 @@ if (!requireNamespace("fgeo", quietly = TRUE)) {
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------- fgeo 0.0.0.9000 --</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v bciex           0.0.0.9000     v fgeo.demography 0.0.0.9000</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.habitat    0.0.0.9006</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9204</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------ fgeo_conflicts() --</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; possible</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; -- Conflicts ------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <p>Find everything.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
-<p><img src="https://i.imgur.com/L9n9QAo.png"></p>
+<p><img src="https://i.imgur.com/AnGdGqN.png"></p>
 <p>Find something.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"map"</span>)</a></code></pre></div>
-<p><img src="https://i.imgur.com/4aIOOeu.png"></p>
+<p><img src="https://i.imgur.com/mfqhd3U.png"></p>
 <p>Datasets.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">fgeo_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/fgeo_index.html">fgeo_index_datasets</a></span>()</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">subset</span>(fgeo_data, <span class="kw">grepl</span>(<span class="st">"luquillo"</span>, dataset))</a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt;         package                   dataset</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; 23    fgeo.base luquillo_stem_random_tiny</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 24    fgeo.base        luquillo_vft_4quad</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 26    fgeo.data        luquillo_elevation</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 27    fgeo.data          luquillo_habitat</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 28    fgeo.data          luquillo_species</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 29    fgeo.data         luquillo_stem_1ha</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 30    fgeo.data      luquillo_stem_random</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 31    fgeo.data luquillo_stem_random_tiny</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 32    fgeo.data     luquillo_stem5_random</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 33    fgeo.data        luquillo_stem6_1ha</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 34    fgeo.data     luquillo_stem6_random</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 35    fgeo.data             luquillo_taxa</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 36    fgeo.data     luquillo_tree5_random</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; 37    fgeo.data        luquillo_tree6_1ha</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; 38    fgeo.data     luquillo_tree6_random</span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 39    fgeo.data        luquillo_vft_4quad</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; 40 fgeo.habitat        luquillo_elevation</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; 41 fgeo.habitat          luquillo_habitat</span></a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; 42 fgeo.habitat     luquillo_stem6_random</span></a>
-<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt; 43 fgeo.habitat          luquillo_top3_sp</span></a>
-<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt; 44 fgeo.habitat     luquillo_tree6_random</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; 1     fgeo.base luquillo_stem_random_tiny</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 2     fgeo.base        luquillo_vft_4quad</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 4     fgeo.data        luquillo_elevation</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 5     fgeo.data          luquillo_habitat</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 6     fgeo.data          luquillo_species</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 7     fgeo.data         luquillo_stem_1ha</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 8     fgeo.data      luquillo_stem_random</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 9     fgeo.data luquillo_stem_random_tiny</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 10    fgeo.data     luquillo_stem5_random</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 11    fgeo.data        luquillo_stem6_1ha</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 12    fgeo.data     luquillo_stem6_random</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 13    fgeo.data             luquillo_taxa</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 14    fgeo.data     luquillo_tree5_random</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; 15    fgeo.data        luquillo_tree6_1ha</span></a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; 16    fgeo.data     luquillo_tree6_random</span></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 17    fgeo.data        luquillo_vft_4quad</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; 18 fgeo.habitat        luquillo_elevation</span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; 19 fgeo.habitat          luquillo_habitat</span></a>
+<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; 20 fgeo.habitat     luquillo_stem6_random</span></a>
+<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt; 21 fgeo.habitat          luquillo_top3_sp</span></a>
+<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt; 22 fgeo.habitat     luquillo_tree6_random</span></a>
 <a class="sourceLine" id="cb5-25" data-line-number="25"></a>
 <a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co"># Short name</span></a>
 <a class="sourceLine" id="cb5-27" data-line-number="27">stem &lt;-<span class="st"> </span>luquillo_stem_1ha</a>

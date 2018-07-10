@@ -339,7 +339,7 @@ as_tibble(subset(krig_df, var == "p"))
 # Demography
 
 ```R
-fgeo_help("mortality")
+fgeo_help("demography")
 ```
 
 The primary input of demography functions (`recruitment()`, `mortality()` and `growth()`) is a list of two ForestGEO tree-tables.

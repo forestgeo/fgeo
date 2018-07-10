@@ -16,6 +16,6 @@ test_that("errs with wrong input", {
   root_from_testthat <- "../../../"
   # root_from_testthat <- "../"  # run this line if running manually.
   expect_error(
-    fgeo_package_deps("bciex", root = root_from_testthat, "missing_pkg")
+    fgeo_package_deps("fgeo.data", root = root_from_testthat, "missing_pkg")
   )
 })
