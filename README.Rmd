@@ -39,16 +39,11 @@ __fgeo__ installs and loads multiple R packages, functions and datasets to analy
 
 ## Installation
 
-To install __fgeo__ run this code in R:
+Install __fgeo__ from GitHub with:
 
 ```
-# May take a several minutes
-if (!requireNamespace("fgeo", quietly = TRUE)) {
-  if (!requireNamespace("remotes", quietly = TRUE)) {
-    install.packages("remotes")
-  }
-  remotes::install_github("forestgeo/fgeo")
-}
+# install.packages("devtools")
+devtools::install_github("forestgeo/fgeo")
 ```
 
 [How to install packages from GitHub?](https://goo.gl/dQKEeg)
