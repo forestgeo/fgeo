@@ -1,9 +1,12 @@
+.selected <- c("alias", "concept", "title")
+docs <- dplyr::select(fgeo::fgeo_docs(), .selected, dplyr::everything())
+
 ui <- shiny::fluidPage(
   shiny::checkboxGroupInput(
     "show_vars",
     "Select:",
-    names(fgeo::fgeo_docs()),
-    selected = c("name", "title", "concept"),
+    names(docs),
+    selected = .selected,
     inline = TRUE
   ),
   shiny::mainPanel(
@@ -13,7 +16,7 @@ ui <- shiny::fluidPage(
 
 server <- function(input, output) {
   output$mytable1 <- DT::renderDataTable({
-    DT::datatable(fgeo::fgeo_docs()[, input$show_vars, drop = FALSE])
+    DT::datatable(docs[ , input$show_vars, drop = FALSE])
   })
 }
 

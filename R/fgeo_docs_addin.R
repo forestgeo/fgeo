@@ -7,6 +7,7 @@
 #'
 #' @export
 fgeo_docs_addin <- function() {
+
   dep_ok <- vapply(
     c("rstudioapi", "shiny"),
     requireNamespace, logical(1), quietly = TRUE
@@ -18,11 +19,13 @@ fgeo_docs_addin <- function() {
     )
   }
 
+  .selected <- c("alias", "concept", "title")
+  docs <- dplyr::select(fgeo::fgeo_docs(), .selected, dplyr::everything())
   ui <- shiny::fluidPage(
     shiny::checkboxGroupInput(
       "show_vars",
       "Select:",
-      names(fgeo_docs()),
+      names(docs),
       selected = c("name", "title", "concept"),
       inline = TRUE
     ),
@@ -33,7 +36,7 @@ fgeo_docs_addin <- function() {
 
   server <- function(input, output) {
     output$mytable1 <- DT::renderDataTable({
-      DT::datatable(fgeo_docs()[, input$show_vars, drop = FALSE])
+      DT::datatable(docs[, input$show_vars, drop = FALSE])
     })
   }
 
