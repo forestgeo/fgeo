@@ -1,0 +1,12 @@
+name: fgeo_docs
+title: fgeo_docs
+username:
+account: fgeocomm
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 381620
+bundleId: 1481651
+url: https://fgeocomm.shinyapps.io/fgeo_docs/
+when: 1531695786.77673
+asMultiple: FALSE
+asStatic: FALSE

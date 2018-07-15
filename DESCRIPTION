@@ -30,14 +30,16 @@ Imports:
     purrr (>= 0.2.4),
     remotes (>= 1.1.1),
     rlang (>= 0.2.0),
-    rstudioapi (>= 0.7),
     utils (>= 3.4.4)
 Suggests: 
     covr (>= 3.0.1),
     DT,
     knitr,
     rmarkdown,
-    testthat (>= 2.0.0)
+    rstudioapi (>= 0.7),
+    shiny,
+    testthat (>= 2.0.0),
+    tibble
 VignetteBuilder: knitr
 Remotes: 
     forestgeo/fgeo.abundance,

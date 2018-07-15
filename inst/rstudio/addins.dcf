@@ -1,0 +1,4 @@
+Name: fgeo_docs
+Description: Search the documentation of fgeo
+Binding: fgeo_docs_addin
+Interactive: true

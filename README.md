@@ -32,15 +32,10 @@ Answers](https://forestgeo.github.io/fgeo/articles/questions-and-answers.html)
 
 ## Installation
 
-To install **fgeo** run this code in R:
+Install **fgeo** from GitHub with:
 
-    # May take a several minutes
-    if (!requireNamespace("fgeo", quietly = TRUE)) {
-      if (!requireNamespace("remotes", quietly = TRUE)) {
-        install.packages("remotes")
-      }
-      remotes::install_github("forestgeo/fgeo")
-    }
+    # install.packages("devtools")
+    devtools::install_github("forestgeo/fgeo")
 
 [How to install packages from GitHub?](https://goo.gl/dQKEeg)
 
@@ -50,12 +45,12 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
 #> v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003
-#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
+#> -- Conflicts -------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -174,13 +169,13 @@ non_missing <- drop_if_na(ten_plus, "dbh")
 Calculate abundance of stems and trees.
 
 ``` r
-abundance_stem(non_missing)
+count_distinct_stemid(non_missing)
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
 #> 1  2564
 
-abundance_tree(non_missing)
+count_distinct_treeid(non_missing)
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
@@ -191,7 +186,7 @@ Trees’ abundance by species.
 
 ``` r
 by_sp <- group_by(non_missing, sp)
-abundance_tree(by_sp)
+count_distinct_treeid(by_sp)
 #> # A tibble: 70 x 2
 #>    sp         n
 #>    <chr>  <int>
