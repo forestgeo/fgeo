@@ -57,9 +57,20 @@ fgeo::fgeo_index_packages() %>%
   DT::datatable(escape = FALSE)
 ```
 
-## Search [Documentation](https://fgeocomm.shinyapps.io/fgeo_docs/)
+## Search Help
+
+See `?fgeo_help()`, and the RStudio addin "fgeo_help".
+
+<img src="https://i.imgur.com/Y4ZjT7C.png" align="center" height=150 />
+
+[Customizing Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/206382178?version=1.1.453&mode=desktop)
+
+<img src="https://i.imgur.com/Q1vvHvC.png" align="center" height=200 />
+
+<img src="https://i.imgur.com/3i5NKoU.png" align="center" height=150 />
+
+## Search [Docs](https://fgeocomm.shinyapps.io/fgeo_docs/)
 
 See also `?fgeo_docs()`, and the RStudio addin "fgeo_docs".
 
 <img src="https://i.imgur.com/lNuI7UO.png" align="left" height=100 />
-

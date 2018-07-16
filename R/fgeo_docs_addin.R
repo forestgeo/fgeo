@@ -47,5 +47,5 @@ fgeo_docs_addin <- function() {
 #'
 #' @export
 fgeo_help_addin <- function() {
-  rstudioapi::insertText("fgeo_help(pattern = '')")
+  rstudioapi::sendToConsole("fgeo::fgeo_help(pattern = '')")
 }

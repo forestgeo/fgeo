@@ -56,6 +56,7 @@ reference:
   - title: Find everything in fgeo
     contents:
       - fgeo_help
+      - fgeo_help_addin
       - fgeo_docs
       - fgeo_docs_addin
       - starts_with("fgeo_index")
