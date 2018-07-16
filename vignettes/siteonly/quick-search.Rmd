@@ -9,44 +9,57 @@ vignette: >
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
+  echo = FALSE,
+  message=FALSE, 
+  warning=FALSE,
   collapse = TRUE,
   comment = "#>"
 )
+
 library(fgeo)
 ```
 
 ## Search Functions
 
-```{r, echo=FALSE}
+```{r}
+docs <- fgeo::fgeo_docs(NULL, package, alias, title)
+docs_functions <- docs %>% dplyr::rename(functions = alias)
 fgeo::fgeo_index_functions() %>% 
-  # Make clickable links
+  dplyr::rename(functions = fun) %>% 
+  dplyr::left_join(docs_functions) %>% 
   dplyr::mutate(
-    fun = fgeo::fgeo_link(package, fun),
+    functions = fgeo::fgeo_link(package, functions),
     package = fgeo::fgeo_link(package)
   ) %>% 
+  dplyr::arrange(package) %>% 
   DT::datatable(escape = FALSE)
-  # knitr::kable()
 ```
 
 ## Search Datasets
 
-```{r, echo=FALSE}
+```{r}
+docs_datasets <- docs %>% dplyr::rename(dataset = alias)
 fgeo::fgeo_index_datasets() %>% 
-  # Make clickable links
+  dplyr::left_join(docs_datasets) %>% 
   dplyr::mutate(
     dataset = fgeo::fgeo_link(package, dataset),
     package = fgeo::fgeo_link(package)
   ) %>% 
   DT::datatable(escape = FALSE)
-  # knitr::kable()
 ```
 
 ## Search Packages
 
-```{r, echo=FALSE}
+```{r}
 fgeo::fgeo_index_packages() %>% 
   purrr::set_names(tolower) %>% 
   dplyr::mutate(package = fgeo_link(package)) %>% 
   DT::datatable(escape = FALSE)
 ```
+
+## Search [Documentation](https://fgeocomm.shinyapps.io/fgeo_docs/)
+
+See also `?fgeo_docs()`, and the RStudio addin "fgeo_docs".
+
+<img src="https://i.imgur.com/lNuI7UO.png" align="left" height=100 />
 

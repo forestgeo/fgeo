@@ -1,0 +1,12 @@
+name: fgeo_docs_app
+title: fgeo_docs_app
+username: fgeocomm
+account: fgeocomm
+server: bookdown.org
+hostUrl: https://bookdown.org/__api__
+appId: 1521
+bundleId: 6412
+url: https://bookdown.org/fgeocomm/fgeo_docs_app/
+when: 1531695187.8278
+asMultiple: FALSE
+asStatic: FALSE

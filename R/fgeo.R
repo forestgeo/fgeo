@@ -6,3 +6,5 @@
 #' @importFrom utils ls.str
 #' @importFrom rlang .data
 NULL
+
+globalVariables(c("."))

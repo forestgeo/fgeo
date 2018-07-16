@@ -64,16 +64,13 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/questions-and-answers.html">Questions and Answers</a>
-    </li>
-    <li>
-      <a href="articles/quick-search.html">Quick Search</a>
-    </li>
-    <li>
       <a href="articles/siteonly/eda.html">Exploratory Data Analysis</a>
     </li>
     <li>
-      <a href="articles/siteonly/full-reference.html">Full Reference</a>
+      <a href="articles/siteonly/questions-and-answers.html">Questions and Answers</a>
+    </li>
+    <li>
+      <a href="articles/siteonly/quick-search.html">Quick Search</a>
     </li>
   </ul>
 </li>
@@ -154,12 +151,12 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------------------------------ fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ---------------------------------------------------------- fgeo_conflicts() --</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <p>Find everything.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
@@ -242,20 +239,20 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">non_missing &lt;-<span class="st"> </span><span class="kw">drop_if_na</span>(ten_plus, <span class="st">"dbh"</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; Warning: Dropping 5261 rows with missing `dbh` values.</span></a></code></pre></div>
 <p>Calculate abundance of stems and trees.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">abundance_stem</span>(non_missing)</a>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">count_distinct_stemid</span>(non_missing)</a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt;       n</span></a>
 <a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt;   &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; 1  2564</span></a>
 <a class="sourceLine" id="cb10-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="kw">abundance_tree</span>(non_missing)</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="kw">count_distinct_treeid</span>(non_missing)</a>
 <a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
 <a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt;       n</span></a>
 <a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt;   &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
 <p>Trees’ abundance by species.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(non_missing, sp)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">abundance_tree</span>(by_sp)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">count_distinct_treeid</span>(by_sp)</a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; # A tibble: 70 x 2</span></a>
 <a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt;    sp         n</span></a>
 <a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>

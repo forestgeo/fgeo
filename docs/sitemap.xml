@@ -13,6 +13,12 @@
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo_core.html</loc>
   </url>
   <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_docs.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_docs_addin.html</loc>
+  </url>
+  <url>
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo_help.html</loc>
   </url>
   <url>
@@ -34,15 +40,12 @@
     <loc>https://forestgeo.github.io/fgeo//articles/fgeo.html</loc>
   </url>
   <url>
-    <loc>https://forestgeo.github.io/fgeo//articles/questions-and-answers.html</loc>
-  </url>
-  <url>
-    <loc>https://forestgeo.github.io/fgeo//articles/quick-search.html</loc>
-  </url>
-  <url>
     <loc>https://forestgeo.github.io/fgeo//articles/siteonly/eda.html</loc>
   </url>
   <url>
-    <loc>https://forestgeo.github.io/fgeo//articles/siteonly/full-reference.html</loc>
+    <loc>https://forestgeo.github.io/fgeo//articles/siteonly/questions-and-answers.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//articles/siteonly/quick-search.html</loc>
   </url>
 </urlset>

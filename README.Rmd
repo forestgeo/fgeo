@@ -123,16 +123,16 @@ non_missing <- drop_if_na(ten_plus, "dbh")
 Calculate abundance of stems and trees.
 
 ```{r}
-abundance_stem(non_missing)
+count_distinct_stemid(non_missing)
 
-abundance_tree(non_missing)
+count_distinct_treeid(non_missing)
 ```
 
 Trees' abundance by species.
 
 ```{r}
 by_sp <- group_by(non_missing, sp)
-abundance_tree(by_sp)
+count_distinct_treeid(by_sp)
 ```
 
 [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
