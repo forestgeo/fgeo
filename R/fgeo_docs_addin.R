@@ -26,7 +26,7 @@ fgeo_docs_addin <- function() {
       "show_vars",
       "Select:",
       names(docs),
-      selected = c("name", "title", "concept"),
+      selected = c("alias", "title", "concept"),
       inline = TRUE
     ),
     shiny::mainPanel(

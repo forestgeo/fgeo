@@ -30,7 +30,7 @@ fgeo_docs <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
   docs <- docs %>%
     tibble::as.tibble() %>%
     purrr::set_names(tolower) %>%
-    dplyr::select(-.data$libpath, -.data$id, -.data$encoding) %>%
+    dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
     dplyr::distinct()
 
   missing_vars <- !any(purrr::map_lgl(vars, rlang::is_quosure))
