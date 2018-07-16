@@ -42,3 +42,10 @@ fgeo_docs_addin <- function() {
 
   shiny::shinyApp(ui, server)
 }
+
+#' Search a pattern in __fgeo__ help files.
+#'
+#' @export
+fgeo_help_addin <- function() {
+  rstudioapi::insertText("fgeo_help(pattern = '')")
+}
