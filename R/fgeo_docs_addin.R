@@ -26,7 +26,7 @@ fgeo_docs_addin <- function() {
       "show_vars",
       "Select:",
       names(docs),
-      selected = c("name", "title", "concept"),
+      selected = c("alias", "title", "concept"),
       inline = TRUE
     ),
     shiny::mainPanel(
@@ -41,4 +41,11 @@ fgeo_docs_addin <- function() {
   }
 
   shiny::shinyApp(ui, server)
+}
+
+#' Search a pattern in __fgeo__ help files.
+#'
+#' @export
+fgeo_help_addin <- function() {
+  rstudioapi::sendToConsole("fgeo::fgeo_help(pattern = '')")
 }
