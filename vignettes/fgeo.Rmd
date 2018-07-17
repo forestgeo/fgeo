@@ -168,21 +168,18 @@ Calculate the total abundance of stems and trees.
 ```{r}
 count_distinct_stemid(non_missing)
 
-count_distinct_treeid(non_missing)
+# Collapse treeID by picking the stem with largest dbh
+largest_stem <- by_treeid_pick_dbh_max(non_missing)
+
+count_distinct_stemid(largest_stem)
 ```
 
 Calculate the abundance of trees by species.
 
 ```{r}
-by_sp <- group_by(non_missing, sp)
+by_sp <- group_by(largest_stem, sp)
 n_by_sp <- count_distinct_treeid(by_sp)
 n_by_sp
-```
-
-Above you saw that `count_distinct_treeid(DATA)` and `count_distinct_stemid(DATA)` generalize to `count_distinct(DATA, stemID)` and `count_distinct(DATA, stemID)`. An even greater generalization is `count()`. __fgeo__ borrows the function `count()` (and some friends) from the [__dplyr__](https://dplyr.tidyverse.org/) package. Today, `dplyr::count()` appears to be the simplest, the most general and powerful tool to count things.  __fgeo__ imports and reexports `dplyr::count()` (and friends) so it's available when you run `library(fgeo)`.
-
-```R
-fgeo_help("reexports", package = "fgeo.abundance")
 ```
 
 ## Picking the most abundant species
