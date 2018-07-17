@@ -45,14 +45,14 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
 #> v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003
 #> Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not
 #> possible
-#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -107,21 +107,21 @@ unique(stem$CensusID)
 #> [1] 1 2 3 4 5 6
 stem
 #> # A tibble: 72,618 x 19
-#>    treeID stemID tag    StemTag sp     quadrat    gx    gy MeasureID
-#>     <int>  <int> <chr>  <chr>   <chr>  <chr>   <dbl> <dbl>     <int>
-#>  1     46     46 100001 100001  PSYBRA 921      164.  416.        46
-#>  2     47     47 100008 100002  PSYBRA 921      165.  416         47
-#>  3     47     48 100008 100003  PSYBRA 921      165.  416         48
-#>  4     47     49 100008 100004  PSYBRA 921      165.  416         49
-#>  5     47     50 100008 100005  PSYBRA 921      165.  416         50
-#>  6     47     51 100008 100006  PSYBRA 921      165.  416         51
-#>  7     47     52 100008 100007  PSYBRA 921      165.  416         52
-#>  8     47     53 100008 100008  PSYBRA 921      165.  416         53
-#>  9     47     54 100008 100009  PSYBRA 921      165.  416         54
-#> 10     47     55 100008 100010  PSYBRA 921      165.  416         55
-#> # ... with 72,608 more rows, and 10 more variables: CensusID <int>,
-#> #   dbh <dbl>, pom <chr>, hom <dbl>, ExactDate <dbl>, DFstatus <chr>,
-#> #   codes <chr>, countPOM <dbl>, status <chr>, date <dbl>
+#>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#>  1     46     46 1000~ 100001  PSYB~ 921      164.  416.        46        1
+#>  2     47     47 1000~ 100002  PSYB~ 921      165.  416         47        1
+#>  3     47     48 1000~ 100003  PSYB~ 921      165.  416         48        1
+#>  4     47     49 1000~ 100004  PSYB~ 921      165.  416         49        1
+#>  5     47     50 1000~ 100005  PSYB~ 921      165.  416         50        1
+#>  6     47     51 1000~ 100006  PSYB~ 921      165.  416         51        1
+#>  7     47     52 1000~ 100007  PSYB~ 921      165.  416         52        1
+#>  8     47     53 1000~ 100008  PSYB~ 921      165.  416         53        1
+#>  9     47     54 1000~ 100009  PSYB~ 921      165.  416         54        1
+#> 10     47     55 1000~ 100010  PSYB~ 921      165.  416         55        1
+#> # ... with 72,608 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
+#> #   hom <dbl>, ExactDate <dbl>, DFstatus <chr>, codes <chr>,
+#> #   countPOM <dbl>, status <chr>, date <dbl>
 ```
 
 Do something useful.
@@ -168,7 +168,7 @@ non_missing <- drop_if_na(ten_plus, "dbh")
 #> Warning: Dropping 5261 rows with missing `dbh` values.
 ```
 
-Calculate abundance of stems and trees.
+Count distinct values of `stemID` and `treeID`.
 
 ``` r
 count_distinct_stemid(non_missing)
@@ -177,17 +177,20 @@ count_distinct_stemid(non_missing)
 #>   <int>
 #> 1  2564
 
-count_distinct_treeid(non_missing)
+# Collapse treeID by picking the stem with largest dbh
+largest_stem <- by_treeid_pick_dbh_max(non_missing)
+
+count_distinct_stemid(largest_stem)
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
 #> 1  2319
 ```
 
-Trees’ abundance by species.
+Count largest stems (unique `treeID`s) by species.
 
 ``` r
-by_sp <- group_by(non_missing, sp)
+by_sp <- group_by(largest_stem, sp)
 count_distinct_treeid(by_sp)
 #> # A tibble: 70 x 2
 #>    sp         n

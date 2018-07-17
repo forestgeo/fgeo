@@ -120,18 +120,21 @@ Drop missing values of `dbh` with an informative warning.
 non_missing <- drop_if_na(ten_plus, "dbh")
 ```
 
-Calculate abundance of stems and trees.
+Count distinct values of `stemID` and `treeID`.
 
 ```{r}
 count_distinct_stemid(non_missing)
 
-count_distinct_treeid(non_missing)
+# Collapse treeID by picking the stem with largest dbh
+largest_stem <- by_treeid_pick_dbh_max(non_missing)
+
+count_distinct_stemid(largest_stem)
 ```
 
-Trees' abundance by species.
+Count largest stems (unique `treeID`s) by species.
 
 ```{r}
-by_sp <- group_by(non_missing, sp)
+by_sp <- group_by(largest_stem, sp)
 count_distinct_treeid(by_sp)
 ```
 
