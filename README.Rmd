@@ -170,4 +170,4 @@ Data have been made available as required by the journal to enable reproduction 
 
 ## Acknowledgments
 
-Thanks to all partners of ForestGEO, for sharing their ideas and code.
+Thanks to all partners of ForestGEO, for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, Haley Overstreet. Many other people deserve special acknowledgements; I thank them in the documentation and home page of each individual package that make up the __fgeo__ development.

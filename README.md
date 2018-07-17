@@ -45,12 +45,14 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
 #> v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003
-#> -- Conflicts ---------------------------------------------------------- fgeo_conflicts() --
+#> Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not
+#> possible
+#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -260,3 +262,8 @@ ForestGEO plots.
 ## Acknowledgments
 
 Thanks to all partners of ForestGEO, for sharing their ideas and code.
+For feedback on **fgeo**, special thanks to Gabriel Arellano, Stuart
+Davies, Lauren Krizel, Sean McMahon, Haley Overstreet. Many other people
+deserve special acknowledgements; I thank them in the documentation and
+home page of each individual package that make up the **fgeo**
+development.

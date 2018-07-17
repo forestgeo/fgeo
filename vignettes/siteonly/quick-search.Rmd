@@ -69,8 +69,8 @@ See `?fgeo_help()`, and the RStudio addin "fgeo_help".
 
 <img src="https://i.imgur.com/3i5NKoU.png" align="center" height=150 />
 
-## Search [Docs](https://fgeocomm.shinyapps.io/fgeo_docs/)
+## Search Documentation
 
-See also `?fgeo_docs()`, and the RStudio addin "fgeo_docs".
+[Search documentation online](https://fgeocomm.shinyapps.io/fgeo_docs/); or locally with `?fgeo_docs()`, and the RStudio addin "fgeo_docs".
 
 <img src="https://i.imgur.com/lNuI7UO.png" align="left" height=100 />
