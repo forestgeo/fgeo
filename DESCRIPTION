@@ -33,7 +33,7 @@ Imports:
     utils (>= 3.4.4),
     rstudioapi
 Suggests: 
-    covr (>= 3.0.1),
+    covr,
     DT,
     knitr,
     rmarkdown,
