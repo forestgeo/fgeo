@@ -202,32 +202,30 @@ packages of <strong>fgeo</strong>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Filter rows with a matching pattern.</span>
-<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>)</div><div class='output co'>#&gt; # A tibble: 4 x 7
-#&gt;   package   title                  topic     type  alias    keyword concept    
-#&gt;   &lt;chr&gt;     &lt;chr&gt;                  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;      
-#&gt; 1 fgeo.base Detect and extract ma~ extract_~ help  extract~ &lt;NA&gt;    predicates.
-#&gt; 2 fgeo.base Detect and extract ma~ extract_~ help  detect_~ &lt;NA&gt;    predicates.
-#&gt; 3 fgeo.base Factory of predicate ~ multiple~ help  multipl~ &lt;NA&gt;    functions ~
-#&gt; 4 fgeo.base Factory of predicate ~ multiple~ help  multipl~ &lt;NA&gt;    predicates.</div><div class='input'>
+<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 7
+#&gt;   package  title                   topic     type  alias    keyword concept    
+#&gt;   &lt;chr&gt;    &lt;chr&gt;                   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;      
+#&gt; 1 fgeo.ba~ Detect and extract mat~ extract_~ help  extract~ &lt;NA&gt;    predicates.
+#&gt; 2 fgeo.ba~ Detect and extract mat~ extract_~ help  detect_~ &lt;NA&gt;    predicates.
+#&gt; 3 fgeo.ba~ Factory of predicate f~ multiple~ help  multipl~ &lt;NA&gt;    functions ~
+#&gt; 4 fgeo.ba~ Factory of predicate f~ multiple~ help  multipl~ &lt;NA&gt;    predicates.
+#&gt; 5 fgeo.to~ Factory of functions t~ detect_d~ help  detect_~ &lt;NA&gt;    predicates.</div><div class='input'>
 <span class='co'># Select specific columns</span>
-<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>, <span class='no'>concept</span>, <span class='no'>topic</span>, <span class='no'>title</span>)</div><div class='output co'>#&gt; # A tibble: 3 x 3
-#&gt;   concept                   topic               title                          
-#&gt;   &lt;chr&gt;                     &lt;chr&gt;               &lt;chr&gt;                          
-#&gt; 1 predicates.               extract_insensitive Detect and extract matching st~
-#&gt; 2 functions for developers. multiple_var        Factory of predicate functions~
-#&gt; 3 predicates.               multiple_var        Factory of predicate functions~</div><div class='input'>
+<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>, <span class='no'>concept</span>, <span class='no'>topic</span>, <span class='no'>title</span>)</div><div class='output co'>#&gt; # A tibble: 4 x 3
+#&gt;   concept            topic          title                                      
+#&gt;   &lt;chr&gt;              &lt;chr&gt;          &lt;chr&gt;                                      
+#&gt; 1 predicates.        extract_insen~ Detect and extract matching strings - igno~
+#&gt; 2 functions for dev~ multiple_var   Factory of predicate functions to check fo~
+#&gt; 3 predicates.        multiple_var   Factory of predicate functions to check fo~
+#&gt; 4 predicates.        detect_duplic~ Factory of functions to detect duplicated ~</div><div class='input'>
 <span class='co'># Exclude specific columns</span>
-<span class='fu'>fgeo_docs</span>(<span class='st'>"abundance"</span>, -<span class='no'>package</span>)</div><div class='output co'>#&gt; # A tibble: 8 x 6
-#&gt;   title                             topic     type  alias       keyword concept
-#&gt;   &lt;chr&gt;                             &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;  
-#&gt; 1 Create tables of abundance and b~ byyr      help  byyr        &lt;NA&gt;    &lt;NA&gt;   
-#&gt; 2 Create tables of abundance and b~ byyr      help  abundance_~ &lt;NA&gt;    &lt;NA&gt;   
-#&gt; 3 Create tables of abundance and b~ byyr      help  basal_area~ &lt;NA&gt;    &lt;NA&gt;   
-#&gt; 4 Abundance of trees, stems, and c~ count_di~ help  abundance_~ &lt;NA&gt;    &lt;NA&gt;   
-#&gt; 5 Abundance of trees, stems, and c~ count_di~ help  abundance_~ &lt;NA&gt;    &lt;NA&gt;   
-#&gt; 6 fgeo.abundance: Calculate Abunda~ fgeo.abu~ help  fgeo.abund~ intern~ &lt;NA&gt;   
-#&gt; 7 fgeo.abundance: Calculate Abunda~ fgeo.abu~ help  fgeo.abund~ intern~ &lt;NA&gt;   
-#&gt; 8 Count and basal area of neighbor~ neighbor  help  abundance_~ &lt;NA&gt;    &lt;NA&gt;   </div></pre>
+<span class='fu'>fgeo_docs</span>(<span class='st'>"abundance"</span>, -<span class='no'>package</span>)</div><div class='output co'>#&gt; # A tibble: 4 x 6
+#&gt;   title                        topic     type  alias       keyword concept     
+#&gt;   &lt;chr&gt;                        &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;       
+#&gt; 1 Count distinct values of an~ count_di~ help  count_dist~ &lt;NA&gt;    abundance f~
+#&gt; 2 fgeo.abundance: Calculate A~ fgeo.abu~ help  fgeo.abund~ intern~ &lt;NA&gt;        
+#&gt; 3 fgeo.abundance: Calculate A~ fgeo.abu~ help  fgeo.abund~ intern~ &lt;NA&gt;        
+#&gt; 4 Count and basal area of nei~ neighbor  help  abundance_~ &lt;NA&gt;    &lt;NA&gt;        </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
