@@ -30,14 +30,13 @@ Imports:
     purrr (>= 0.2.4),
     remotes (>= 1.1.1),
     rlang (>= 0.2.0),
-    utils (>= 3.4.4),
-    rstudioapi
+    rstudioapi,
+    utils (>= 3.4.4)
 Suggests: 
     covr,
     DT,
     knitr,
     rmarkdown,
-    shiny,
     testthat (>= 2.0.0),
     tibble
 VignetteBuilder: knitr
