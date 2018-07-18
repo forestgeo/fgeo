@@ -2,9 +2,12 @@
 % Please edit documentation in R/fgeo_help.R
 \name{fgeo_help}
 \alias{fgeo_help}
+\alias{fgeo_help_addin}
 \title{Search \strong{fgeo} for documentation matching a given character string.}
 \usage{
 fgeo_help(pattern = "", package = fgeo::fgeo_core())
+
+fgeo_help_addin()
 }
 \arguments{
 \item{pattern}{A character string to be matched in the name, alias or title
@@ -19,9 +22,14 @@ The results are returned in a list object of class "hsearch", which
 has a print method for nicely formatting the results of the query.
 }
 \description{
-Use this function with a string to match the \emph{name} of a topic (generally the
-name of a function or dataset), or text from the \emph{title} or \emph{alias} sections
-of the topic's documentation.
+\itemize{
+\item \code{fgeo_help()} finds all \strong{fgeo} help files. You can refine
+your search directly on the viewer panel of RStudio, or by passing a string
+to \code{fgeo_help()} (e.g. \code{fgeo("datasets")}).
+\item \code{fgeo_help_adin()} runs \code{fgeo_help()} from the RStudio Addins menu or by
+associating a keyboard shortcut to it (see Tools > Modify Keyboard
+Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.
+}
 }
 \examples{
 if (interactive()) fgeo_help()

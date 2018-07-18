@@ -70,6 +70,9 @@
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="../../articles/siteonly/quick-search.html">Quick Search</a>
+</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Community
@@ -78,13 +81,16 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../../articles/siteonly/questions-and-answers.html">Q&amp;A</a>
+    </li>
+    <li>
       <a href="https://rstudio.cloud/project/43852">Try fgeo in rstudio.cloud</a>
     </li>
     <li>
       <a href="https://github.com/forestgeo/learn/issues">Resources</a>
     </li>
     <li>
-      <a href="https://github.com/forestgeo/forum/issues">Questions and Answers</a>
+      <a href="https://github.com/forestgeo/forum/issues">Discuss</a>
     </li>
     <li>
       <a href="https://fgeo.netlify.com/">Blog</a>
@@ -151,10 +157,7 @@
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; -- Conflicts --------------------------------------------------- fgeo_conflicts() --</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; </span></a></code></pre></div>
 </div>
 <div id="how-can-i-update-fgeo" class="section level2">
 <h2 class="hasAnchor">
@@ -164,11 +167,7 @@
 <div id="does-fgeo-conflict-with-my-other-packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#does-fgeo-conflict-with-my-other-packages" class="anchor"></a>Does <strong>fgeo</strong> conflict with my other packages?</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="../../reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; -- Conflicts --------------------------------------------------- fgeo_conflicts() --</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="../../reference/fgeo_conflicts.html">fgeo_conflicts</a></span>()</a></code></pre></div>
 <p>See also the <a href="https://github.com/r-lib/conflicted"><strong>conflicted</strong></a> package.</p>
 </div>
 <div id="what-are-the-core-packages-of-fgeo" class="section level2">
@@ -181,24 +180,15 @@
 <div id="what-are-the-core-packages-for" class="section level2">
 <h2 class="hasAnchor">
 <a href="#what-are-the-core-packages-for" class="anchor"></a>What are the core packages for?</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="../../reference/fgeo_index.html">fgeo_index_packages</a></span>()</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;           package                                           Title</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 1            fgeo       Easily Install and Load Multiple Packages</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 2  fgeo.abundance   Calculate Abundance, Basal Area and Diversity</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 3       fgeo.base ForestGEO Functions With No External Dependency</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 4       fgeo.data                      Open Datasets of ForestGEO</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 5 fgeo.demography     Calculate Mortality, Recruitment and Growth</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 6    fgeo.habitat             Analyze Soils and Tree-Habitat Data</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; 7        fgeo.map               Map Species, Trees and Topography</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; 8       fgeo.tool                  Functions for General Purposes</span></a></code></pre></div>
+<pre><code>#&gt;           package                                           Title
+#&gt; 1            fgeo       Easily Install and Load Multiple Packages
+#&gt; 2  fgeo.abundance   Calculate Abundance, Basal Area and Diversity
+#&gt; 3       fgeo.base ForestGEO Functions With No External Dependency
+#&gt; 4       fgeo.data                      Open Datasets of ForestGEO
+#&gt; 5 fgeo.demography     Calculate Mortality, Recruitment and Growth
+#&gt; 6    fgeo.habitat             Analyze Soils and Tree-Habitat Data
+#&gt; 7        fgeo.map               Map Species, Trees and Topography
+#&gt; 8       fgeo.tool                  Functions for General Purposes</code></pre>
 </div>
 <div id="how-can-i-learn-more" class="section level2">
 <h2 class="hasAnchor">
@@ -263,7 +253,7 @@
 <h2 class="hasAnchor">
 <a href="#how-can-i-get-up-to-date-with-fgeos-developments" class="anchor"></a>How can I get up to date with <strong>fgeo</strong>’s developments?</h2>
 <p>Checkout <a href="https://fgeo.netlify.com/"><strong>fgeo</strong>’s blog</a>.</p>
-<p>Follow <span class="citation">[@mauro_lepore]</span>(<a href="https://twitter.com/mauro_lepore" class="uri">https://twitter.com/mauro_lepore</a>) or <a href="https://twitter.com/search?q=%23fgeo%20%23rstats&amp;src=typd&amp;lang=en">#fgeo #rstats on twitter</a></p>
+<p>Follow <a href="https://twitter.com/mauro_lepore">@mauro_lepore</a> or <a href="https://twitter.com/search?q=%23fgeo%20%23rstats&amp;src=typd&amp;lang=en">#fgeo #rstats on twitter</a></p>
 </div>
   </div>
 

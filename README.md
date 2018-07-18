@@ -45,61 +45,34 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
 #> v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003
 #> Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not
 #> possible
-#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
-Find everything.
+Help about everything.
 
 ``` r
 fgeo_help()
 ```
 
-![](https://i.imgur.com/AnGdGqN.png)
+![](https://i.imgur.com/MmbmeZd.png)
 
-Find something.
+Help about something.
 
 ``` r
-fgeo_help("map")
+fgeo_help("datasets")
 ```
 
-![](https://i.imgur.com/mfqhd3U.png)
-
-Datasets.
+![](https://i.imgur.com/4AdTD3G.png)
 
 ``` r
-fgeo_data <- fgeo_index_datasets()
-subset(fgeo_data, grepl("luquillo", dataset))
-#>         package                   dataset
-#> 1     fgeo.base luquillo_stem_random_tiny
-#> 2     fgeo.base        luquillo_vft_4quad
-#> 4     fgeo.data        luquillo_elevation
-#> 5     fgeo.data          luquillo_habitat
-#> 6     fgeo.data          luquillo_species
-#> 7     fgeo.data         luquillo_stem_1ha
-#> 8     fgeo.data      luquillo_stem_random
-#> 9     fgeo.data luquillo_stem_random_tiny
-#> 10    fgeo.data     luquillo_stem5_random
-#> 11    fgeo.data        luquillo_stem6_1ha
-#> 12    fgeo.data     luquillo_stem6_random
-#> 13    fgeo.data             luquillo_taxa
-#> 14    fgeo.data     luquillo_tree5_random
-#> 15    fgeo.data        luquillo_tree6_1ha
-#> 16    fgeo.data     luquillo_tree6_random
-#> 17    fgeo.data        luquillo_vft_4quad
-#> 18 fgeo.habitat        luquillo_elevation
-#> 19 fgeo.habitat          luquillo_habitat
-#> 20 fgeo.habitat     luquillo_stem6_random
-#> 21 fgeo.habitat          luquillo_top3_sp
-#> 22 fgeo.habitat     luquillo_tree6_random
-
 # Short name
 stem <- luquillo_stem_1ha
 # This dataset comes with multiple censuses.

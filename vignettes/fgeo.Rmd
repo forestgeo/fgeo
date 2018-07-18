@@ -30,8 +30,8 @@ library(fgeo)
 
 You may load your own data. Here I'll use data from the __fgeo.data__ package -- which comes with __fgeo__.
 
-```{r}
-str(fgeo_index_datasets())
+```R
+fgeo_help("datasets")
 ```
 
 I'll use a dataset of stems censused in one hectare in the forest plot Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
@@ -117,11 +117,6 @@ Now that we understand out data are read to clean it, for example, by picking al
 fgeo_help("status")
 ```
 
-```{r}
-fgeo_funs <- fgeo_index_functions()
-subset(fgeo_funs, grepl("status", fun))
-```
-
 In `stem6`, the variable `status` records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of `add_status_tree()`.
 
 ```{r}
@@ -140,10 +135,6 @@ Another very common task when working with ForestGEO data is to pick stems of a 
 
 ```R
 fgeo_help("dbh")
-```
-
-```{r}
-subset(fgeo_funs, grepl("dbh", fun))
 ```
 
 Pick stems of 10 mm or more.
@@ -203,10 +194,6 @@ __fgeo__ includes some functions specialized in mapping ForestGEO's data.
 
 ```R
 fgeo_help("map")
-```
-
-```{r}
-subset(fgeo_funs, grepl("map", fun))
 ```
 
 Map the most abundant species.

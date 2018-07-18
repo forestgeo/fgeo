@@ -40,9 +40,14 @@
   <script src="../extra.js"></script>
 <meta property="og:title" content="Search <strong>fgeo</strong> for documentation matching a given character string. — fgeo_help" />
 
-<meta property="og:description" content="Use this function with a string to match the name of a topic (generally the
-name of a function or dataset), or text from the title or alias sections
-of the topic's documentation." />
+<meta property="og:description" content="
+fgeo_help() finds all fgeo help files. You can refine
+your search directly on the viewer panel of RStudio, or by passing a string
+to fgeo_help() (e.g. fgeo(&quot;datasets&quot;)).
+fgeo_help_adin() runs fgeo_help() from the RStudio Addins menu or by
+associating a keyboard shortcut to it (see Tools &amp;gt; Modify Keyboard
+Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.
+" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -110,7 +115,10 @@ of the topic's documentation." />
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li>
+  <a href="../articles/siteonly/quick-search.html">Quick Search</a>
+</li>
+<li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Community
      
@@ -118,13 +126,16 @@ of the topic's documentation." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/siteonly/questions-and-answers.html">Q&amp;A</a>
+    </li>
+    <li>
       <a href="https://rstudio.cloud/project/43852">Try fgeo in rstudio.cloud</a>
     </li>
     <li>
       <a href="https://github.com/forestgeo/learn/issues">Resources</a>
     </li>
     <li>
-      <a href="https://github.com/forestgeo/forum/issues">Questions and Answers</a>
+      <a href="https://github.com/forestgeo/forum/issues">Discuss</a>
     </li>
     <li>
       <a href="https://fgeo.netlify.com/">Blog</a>
@@ -168,13 +179,20 @@ of the topic's documentation." />
 
     <div class="ref-description">
     
-    <p>Use this function with a string to match the <em>name</em> of a topic (generally the
-name of a function or dataset), or text from the <em>title</em> or <em>alias</em> sections
-of the topic's documentation.</p>
+    <ul>
+<li><p><code>fgeo_help()</code> finds all <strong>fgeo</strong> help files. You can refine
+your search directly on the viewer panel of RStudio, or by passing a string
+to <code>fgeo_help()</code> (e.g. <code><a href='fgeo-package.html'>fgeo("datasets")</a></code>).</p></li>
+<li><p><code>fgeo_help_adin()</code> runs <code>fgeo_help()</code> from the RStudio Addins menu or by
+associating a keyboard shortcut to it (see Tools &gt; Modify Keyboard
+Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.</p></li>
+</ul>
     
     </div>
 
-    <pre class="usage"><span class='fu'>fgeo_help</span>(<span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='kw pkg'>fgeo</span><span class='kw ns'>::</span><span class='fu'><a href='https://forestgeo.github.io/fgeo//reference/fgeo_core.html'>fgeo_core</a></span>())</pre>
+    <pre class="usage"><span class='fu'>fgeo_help</span>(<span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='kw pkg'>fgeo</span><span class='kw ns'>::</span><span class='fu'><a href='https://forestgeo.github.io/fgeo//reference/fgeo_core.html'>fgeo_core</a></span>())
+
+<span class='fu'>fgeo_help_addin</span>()</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

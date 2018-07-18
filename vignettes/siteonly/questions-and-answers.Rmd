@@ -10,6 +10,7 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning = FALSE,
   comment = "#>"
 )
 ```
@@ -26,7 +27,7 @@ See [Search Packages] and follow the links to online documentation.
 
 From R, begin by [installing __fgeo__](https://forestgeo.github.io/fgeo/#installation). Then load it with:
 
-```{r}
+```{r, warning=FALSE}
 library(fgeo)
 ```
 
@@ -52,8 +53,8 @@ fgeo_core()
 
 ## What are the core packages for?
 
-```{r}
-fgeo_index_packages()
+```{r, echo=FALSE}
+fgeo:::fgeo_packages()
 ```
 
 ## How can I learn more?
@@ -117,4 +118,4 @@ Contact [__fgeo__'s maintainer](https://github.com/maurolepore).
 
 Checkout [__fgeo__'s blog](https://fgeo.netlify.com/).
 
-Follow [@mauro_lepore](https://twitter.com/mauro_lepore) or [#fgeo #rstats on twitter](https://twitter.com/search?q=%23fgeo%20%23rstats&src=typd&lang=en)
+Follow [\@mauro_lepore](https://twitter.com/mauro_lepore) or [#fgeo #rstats on twitter](https://twitter.com/search?q=%23fgeo%20%23rstats&src=typd&lang=en)

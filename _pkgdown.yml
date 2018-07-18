@@ -1,14 +1,10 @@
 url: https://forestgeo.github.io/fgeo/
 
-
-
 authors:
   Mauro Lepore:
     href: https://github.com/maurolepore
   CTFS-ForestGEO:
     href: http://www.forestgeo.si.edu/
-
-
 
 template:
   params:
@@ -17,14 +13,10 @@ template:
       api_key: ec79b1c00aff9cd841703edc746e1a71
       index_name: fgeo
 
-
-
 home:
   links:
   - text: Learn more about ForestGEO
     href: http://www.forestgeo.si.edu/
-
-
 
 navbar:
 
@@ -32,13 +24,19 @@ navbar:
 
   right:
 
+    - text: Quick Search
+      href: articles/siteonly/quick-search.html
+
+
     - text: Community
       menu:
+      - text: Q&A
+        href: articles/siteonly/questions-and-answers.html
       - text: Try fgeo in rstudio.cloud
         href: https://rstudio.cloud/project/43852
       - text: Resources
         href: https://github.com/forestgeo/learn/issues
-      - text: Questions and Answers
+      - text: Discuss
         href: https://github.com/forestgeo/forum/issues
       - text: Blog
         href: https://fgeo.netlify.com/
@@ -49,27 +47,23 @@ navbar:
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
 
-
-
 reference:
+- title: Find many more functions with fgeo_help()
+  desc: ~
+  contents:
+  - '`fgeo_help`'
+  - '`fgeo_help_addin`'
+  - '`fgeo_docs`'
+  - '`fgeo_core`'
+  - '`fgeo_dependencies`'
+  - '`fgeo_conflicts`'
+  - '`fgeo_update`'
 
-  - title: Find everything in fgeo
-    contents:
-      - fgeo_help
-      - fgeo_help_addin
-      - fgeo_docs
-      - fgeo_docs_addin
-      - starts_with("fgeo_index")
-
-  - title: Manage fgeo
-    contents:
-      - fgeo_update
-      - fgeo_conflicts
-
-  - title: Dependencies
-    desc: Mostly for developers
-    contents:
-      - fgeo_core
-      - fgeo_packages
-      - fgeo_imports
-      - fgeo_suggests
+articles:
+- title: All vignettes
+  desc: ~
+  contents:
+  - '`fgeo`'
+  - '`siteonly/eda`'
+  - -matches('`siteonly/questions-and-answers`')
+  - -matches('`siteonly/quick-search`')

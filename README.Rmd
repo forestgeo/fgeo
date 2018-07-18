@@ -56,28 +56,23 @@ Load all __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-Find everything.
+Help about everything.
 
 ```R
 fgeo_help()
 ```
 
-![](https://i.imgur.com/AnGdGqN.png)
+![](https://i.imgur.com/MmbmeZd.png)
 
-Find something.
+Help about something.
 
 ```R
-fgeo_help("map")
+fgeo_help("datasets")
 ```
 
-![](https://i.imgur.com/mfqhd3U.png)
-
-Datasets.
+![](https://i.imgur.com/4AdTD3G.png)
 
 ```{r}
-fgeo_data <- fgeo_index_datasets()
-subset(fgeo_data, grepl("luquillo", dataset))
-
 # Short name
 stem <- luquillo_stem_1ha
 # This dataset comes with multiple censuses.
