@@ -12,11 +12,4 @@ fgeo_link(pkg, fun = NULL)
 \description{
 Internal function. Exported to use in vignettes.
 }
-\examples{
-\dontrun{
-fgeo::fgeo_index_packages() \%>\%
-  dplyr::mutate(package = fgeo::fgeo_link(package)) \%>\%
-  DT::datatable(escape = FALSE)
-}
-}
 \keyword{internal}

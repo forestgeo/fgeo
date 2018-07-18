@@ -46,7 +46,7 @@ fgeo_link <- function(x) {
 ## Search Packages
 
 ```{r}
-fgeo_index_packages() %>% 
+fgeo:::fgeo_packages() %>% 
   rename(title = Title) %>% 
   mutate(package = glue::glue(
       "<a href=https://forestgeo.github.io/{package}>{package}</a>"

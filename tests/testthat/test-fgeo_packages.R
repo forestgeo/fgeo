@@ -1,4 +1,4 @@
-context("fgeo_index.R")
+context("fgeo_packages.R")
 
 test_that("indexing functions output a dataframe", {
   expect_type(fgeo_packages(), "list")

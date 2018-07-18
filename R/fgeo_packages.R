@@ -1,11 +1,12 @@
 #' Create a table of __fgeo__'s package-names and titles.
 #'
 #' @section Acknowledgments:
-#' [Jim Hester advised](https://goo.gl/Qzp5kR) on implementation details of
-#' `fgeo_index_functions()`; and [Nathan Werth advised](http://bit.ly/2H8bwaj)
-#' on implementation details of `fgeo_index_datasets()`.
+#' [Jim Hester advised](https://goo.gl/Qzp5kR) and [Nathan Werth
+#' advised](http://bit.ly/2H8bwaj) helped develop the implementation details of
+#' this function.
 #'
 #' @keywords internal
+#' @noRd
 fgeo_packages <- function() {
   fgeo_index(.f = utils::packageDescription, nm = "Title", fields = "Title")
 }
@@ -18,6 +19,7 @@ fgeo_packages <- function() {
 #' @param ... Additional arguments passed to `.f`.
 #'
 #' @keywords internal
+#' @noRd
 fgeo_index <- function(.f, nm, ...) {
   fgeo_pkg <- c("fgeo", fgeo_core())
   fgeo_index <- fgeo_pkg %>%
