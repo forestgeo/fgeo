@@ -83,5 +83,5 @@ See `?fgeo_help()`, and the RStudio addin "fgeo_help".
 
 <img src="https://i.imgur.com/Q1vvHvC.png" align="center" height=200 />
 
-<img src="https://i.imgur.com/3i5NKoU.png" align="center" height=150 />
+<img src="https://i.imgur.com/2poDy9U.png" align="center" height=150 />
 
