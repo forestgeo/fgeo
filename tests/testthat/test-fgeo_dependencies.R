@@ -1,4 +1,4 @@
-context("fgeo_package_deps.R")
+context("find_deps_locally")
 
 test_that("returns the expected string", {
   skip_on_travis()
@@ -6,7 +6,7 @@ test_that("returns the expected string", {
   # root_from_testthat <- "../"  # run this line if running manually.
   matching <- grepl(
     "fgeo.map",
-    fgeo:::fgeo_package_deps("fgeo.tool", root = root_from_testthat)
+    fgeo:::find_deps_locally("fgeo.tool", root = root_from_testthat)
   )
   expect_true(any(matching))
 })
@@ -16,6 +16,6 @@ test_that("errs with wrong input", {
   root_from_testthat <- "../../../"
   # root_from_testthat <- "../"  # run this line if running manually.
   expect_error(
-    fgeo_package_deps("fgeo.data", root = root_from_testthat, "missing_pkg")
+    find_deps_locally("fgeo.data", root = root_from_testthat, "missing_pkg")
   )
 })

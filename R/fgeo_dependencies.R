@@ -1,17 +1,14 @@
-#' List packages that fgeo imports and suggests.
+#' List package dependencies (imports and suggests) of __fgeo__.
 #'
 #' @param include_self Include fgeo in the list?
 #' @param section Either "Imports" or "Suggests".
 #'
 #' @export
-#' @examples
-#' fgeo_packages(TRUE, "Imports")
-#' # Same
-#' fgeo_imports()
 #'
-#' fgeo_suggests()
-fgeo_packages <- function(include_self = TRUE,
-                          section = c("Imports", "Suggests")) {
+#' @examples
+#' fgeo_dependencies(TRUE, "Imports")
+fgeo_dependencies <- function(include_self = TRUE,
+                              section = c("Imports", "Suggests")) {
   section <- section[[1]]
   raw <- utils::packageDescription("fgeo")[[section]]
   pulled <- strsplit(raw, ",")[[1]]
@@ -34,16 +31,12 @@ fgeo_packages <- function(include_self = TRUE,
   names
 }
 
-#' @rdname fgeo_packages
-#' @export
 fgeo_imports <- function(include_self = TRUE) {
-  fgeo_packages(include_self = TRUE, "Imports")
+  fgeo_dependencies(include_self = TRUE, "Imports")
 }
 
-#' @rdname fgeo_packages
-#' @export
 fgeo_suggests <- function() {
-  fgeo_packages(include_self = FALSE, "Suggests")
+  fgeo_dependencies(include_self = FALSE, "Suggests")
 }
 
 
@@ -68,10 +61,10 @@ fgeo_suggests <- function() {
 #' @examples
 #' # Won't because it depends on local directories.
 #' \dontrun{
-#' fgeo:::fgeo_package_deps("fgeo.tool")
+#' fgeo:::find_deps_locally("fgeo.tool")
 #' }
 #' @noRd
-fgeo_package_deps <- function(pkg,
+find_deps_locally <- function(pkg,
                               root = "../",
                               fgeo_pkgs = fgeo_core()) {
   fgeo_deps <- list_fgeo_deps(root, fgeo_pkgs)

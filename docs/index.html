@@ -76,6 +76,9 @@
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html">Quick Search</a>
+</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Community
@@ -90,7 +93,7 @@
       <a href="https://github.com/forestgeo/learn/issues">Resources</a>
     </li>
     <li>
-      <a href="https://github.com/forestgeo/forum/issues">Questions and Answers</a>
+      <a href="https://github.com/forestgeo/forum/issues">Discuss</a>
     </li>
     <li>
       <a href="https://fgeo.netlify.com/">Blog</a>
@@ -151,69 +154,43 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; -- Conflicts --------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; -- Conflicts ------------------------------------------------------ fgeo_conflicts() --</span></a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
-<p>Find everything.</p>
+<p>Help about everything.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
-<p><img src="https://i.imgur.com/AnGdGqN.png"></p>
-<p>Find something.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"map"</span>)</a></code></pre></div>
-<p><img src="https://i.imgur.com/mfqhd3U.png"></p>
-<p>Datasets.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">fgeo_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/fgeo_index.html">fgeo_index_datasets</a></span>()</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">subset</span>(fgeo_data, <span class="kw">grepl</span>(<span class="st">"luquillo"</span>, dataset))</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt;         package                   dataset</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; 1     fgeo.base luquillo_stem_random_tiny</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 2     fgeo.base        luquillo_vft_4quad</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 4     fgeo.data        luquillo_elevation</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 5     fgeo.data          luquillo_habitat</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 6     fgeo.data          luquillo_species</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 7     fgeo.data         luquillo_stem_1ha</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 8     fgeo.data      luquillo_stem_random</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 9     fgeo.data luquillo_stem_random_tiny</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 10    fgeo.data     luquillo_stem5_random</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 11    fgeo.data        luquillo_stem6_1ha</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 12    fgeo.data     luquillo_stem6_random</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; 13    fgeo.data             luquillo_taxa</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; 14    fgeo.data     luquillo_tree5_random</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; 15    fgeo.data        luquillo_tree6_1ha</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; 16    fgeo.data     luquillo_tree6_random</span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 17    fgeo.data        luquillo_vft_4quad</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; 18 fgeo.habitat        luquillo_elevation</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; 19 fgeo.habitat          luquillo_habitat</span></a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; 20 fgeo.habitat     luquillo_stem6_random</span></a>
-<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt; 21 fgeo.habitat          luquillo_top3_sp</span></a>
-<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt; 22 fgeo.habitat     luquillo_tree6_random</span></a>
-<a class="sourceLine" id="cb5-25" data-line-number="25"></a>
-<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co"># Short name</span></a>
-<a class="sourceLine" id="cb5-27" data-line-number="27">stem &lt;-<span class="st"> </span>luquillo_stem_1ha</a>
-<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co"># This dataset comes with multiple censuses.</span></a>
-<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="kw">unique</span>(stem<span class="op">$</span>CensusID)</a>
-<a class="sourceLine" id="cb5-30" data-line-number="30"><span class="co">#&gt; [1] 1 2 3 4 5 6</span></a>
-<a class="sourceLine" id="cb5-31" data-line-number="31">stem</a>
-<a class="sourceLine" id="cb5-32" data-line-number="32"><span class="co">#&gt; # A tibble: 72,618 x 19</span></a>
-<a class="sourceLine" id="cb5-33" data-line-number="33"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
-<a class="sourceLine" id="cb5-34" data-line-number="34"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb5-35" data-line-number="35"><span class="co">#&gt;  1     46     46 1000~ 100001  PSYB~ 921      164.  416.        46        1</span></a>
-<a class="sourceLine" id="cb5-36" data-line-number="36"><span class="co">#&gt;  2     47     47 1000~ 100002  PSYB~ 921      165.  416         47        1</span></a>
-<a class="sourceLine" id="cb5-37" data-line-number="37"><span class="co">#&gt;  3     47     48 1000~ 100003  PSYB~ 921      165.  416         48        1</span></a>
-<a class="sourceLine" id="cb5-38" data-line-number="38"><span class="co">#&gt;  4     47     49 1000~ 100004  PSYB~ 921      165.  416         49        1</span></a>
-<a class="sourceLine" id="cb5-39" data-line-number="39"><span class="co">#&gt;  5     47     50 1000~ 100005  PSYB~ 921      165.  416         50        1</span></a>
-<a class="sourceLine" id="cb5-40" data-line-number="40"><span class="co">#&gt;  6     47     51 1000~ 100006  PSYB~ 921      165.  416         51        1</span></a>
-<a class="sourceLine" id="cb5-41" data-line-number="41"><span class="co">#&gt;  7     47     52 1000~ 100007  PSYB~ 921      165.  416         52        1</span></a>
-<a class="sourceLine" id="cb5-42" data-line-number="42"><span class="co">#&gt;  8     47     53 1000~ 100008  PSYB~ 921      165.  416         53        1</span></a>
-<a class="sourceLine" id="cb5-43" data-line-number="43"><span class="co">#&gt;  9     47     54 1000~ 100009  PSYB~ 921      165.  416         54        1</span></a>
-<a class="sourceLine" id="cb5-44" data-line-number="44"><span class="co">#&gt; 10     47     55 1000~ 100010  PSYB~ 921      165.  416         55        1</span></a>
-<a class="sourceLine" id="cb5-45" data-line-number="45"><span class="co">#&gt; # ... with 72,608 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-46" data-line-number="46"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;dbl&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-47" data-line-number="47"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
+<p><img src="https://i.imgur.com/MmbmeZd.png"></p>
+<p>Help about something.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"datasets"</span>)</a></code></pre></div>
+<p><img src="https://i.imgur.com/4AdTD3G.png"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Short name</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">stem &lt;-<span class="st"> </span>luquillo_stem_1ha</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># This dataset comes with multiple censuses.</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">unique</span>(stem<span class="op">$</span>CensusID)</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; [1] 1 2 3 4 5 6</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">stem</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; # A tibble: 72,618 x 19</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;  1     46     46 1000~ 100001  PSYB~ 921      164.  416.        46        1</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;  2     47     47 1000~ 100002  PSYB~ 921      165.  416         47        1</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;  3     47     48 1000~ 100003  PSYB~ 921      165.  416         48        1</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  4     47     49 1000~ 100004  PSYB~ 921      165.  416         49        1</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;  5     47     50 1000~ 100005  PSYB~ 921      165.  416         50        1</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt;  6     47     51 1000~ 100006  PSYB~ 921      165.  416         51        1</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt;  7     47     52 1000~ 100007  PSYB~ 921      165.  416         52        1</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt;  8     47     53 1000~ 100008  PSYB~ 921      165.  416         53        1</span></a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt;  9     47     54 1000~ 100009  PSYB~ 921      165.  416         54        1</span></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 10     47     55 1000~ 100010  PSYB~ 921      165.  416         55        1</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; # ... with 72,608 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;dbl&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Do something useful.</p>
 <p>Pick the data you want.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Pick one census from the bottom (n &lt; 0) rank of CensusID. See ?pick_top().</span></a>

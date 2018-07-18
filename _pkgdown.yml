@@ -32,13 +32,16 @@ navbar:
 
   right:
 
+    - text: Quick Search
+      href: https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html
+
     - text: Community
       menu:
       - text: Try fgeo in rstudio.cloud
         href: https://rstudio.cloud/project/43852
       - text: Resources
         href: https://github.com/forestgeo/learn/issues
-      - text: Questions and Answers
+      - text: Discuss
         href: https://github.com/forestgeo/forum/issues
       - text: Blog
         href: https://fgeo.netlify.com/
@@ -49,27 +52,15 @@ navbar:
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
 
-
-
 reference:
 
-  - title: Find everything in fgeo
+  - title: Find many more functions with fgeo_help()
     contents:
       - fgeo_help
-      - fgeo_help_addin
+      - -fgeo_help_addin
       - fgeo_docs
-      - fgeo_docs_addin
-      - starts_with("fgeo_index")
-
-  - title: Manage fgeo
-    contents:
+      - -fgeo_docs_addin
       - fgeo_update
       - fgeo_conflicts
-
-  - title: Dependencies
-    desc: Mostly for developers
-    contents:
       - fgeo_core
-      - fgeo_packages
-      - fgeo_imports
-      - fgeo_suggests
+
