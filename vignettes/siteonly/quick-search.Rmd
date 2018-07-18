@@ -17,43 +17,59 @@ knitr::opts_chunk$set(
 )
 
 library(fgeo)
+library(tidyverse)
 ```
 
-## Search Functions
+```{r}
+link_pkg <- function(x) {
+  glue::glue("<a href=https://forestgeo.github.io/{package}>{package}</a>")
+}
+
+fgeo_link <- function(x) {
+  x %>% 
+    dplyr::mutate(
+      topic = glue::glue_data(
+        ., 
+        "<a href=https://forestgeo.github.io/\\
+        {package}/reference/{topic}>{topic}</a>"
+      ),
+      package = glue::glue_data(
+        ., 
+        "<a href=https://forestgeo.github.io/\\
+        {package}>{package}</a>"
+      )
+    ) %>% 
+    dplyr::arrange(package)
+}
+```
+
+## Search Packages
 
 ```{r}
-docs <- fgeo::fgeo_docs(NULL, package, alias, title)
-docs_functions <- docs %>% dplyr::rename(functions = alias)
-fgeo::fgeo_index_functions() %>% 
-  dplyr::rename(functions = fun) %>% 
-  dplyr::left_join(docs_functions) %>% 
-  dplyr::mutate(
-    functions = fgeo::fgeo_link(package, functions),
-    package = fgeo::fgeo_link(package)
+fgeo_index_packages() %>% 
+  rename(title = Title) %>% 
+  mutate(package = glue::glue(
+      "<a href=https://forestgeo.github.io/{package}>{package}</a>"
+    )
   ) %>% 
-  dplyr::arrange(package) %>% 
+  knitr::kable(escape = FALSE)
+```
+
+## Search Anything
+
+```{r}
+fgeo_docs( , package, topic, alias, title) %>%
+  fgeo_link() %>% 
   DT::datatable(escape = FALSE)
 ```
 
 ## Search Datasets
 
 ```{r}
-docs_datasets <- docs %>% dplyr::rename(dataset = alias)
-fgeo::fgeo_index_datasets() %>% 
-  dplyr::left_join(docs_datasets) %>% 
-  dplyr::mutate(
-    dataset = fgeo::fgeo_link(package, dataset),
-    package = fgeo::fgeo_link(package)
-  ) %>% 
-  DT::datatable(escape = FALSE)
-```
-
-## Search Packages
-
-```{r}
-fgeo::fgeo_index_packages() %>% 
-  purrr::set_names(tolower) %>% 
-  dplyr::mutate(package = fgeo_link(package)) %>% 
+fgeo_docs() %>% 
+  filter(keyword == "datasets") %>% 
+  select(package, topic, alias, title) %>% 
+  fgeo_link() %>% 
   DT::datatable(escape = FALSE)
 ```
 
@@ -69,8 +85,3 @@ See `?fgeo_help()`, and the RStudio addin "fgeo_help".
 
 <img src="https://i.imgur.com/3i5NKoU.png" align="center" height=150 />
 
-## Search Documentation
-
-[Search documentation online](https://fgeocomm.shinyapps.io/fgeo_docs/); or locally with `?fgeo_docs()`, and the RStudio addin "fgeo_docs".
-
-<img src="https://i.imgur.com/lNuI7UO.png" align="left" height=100 />

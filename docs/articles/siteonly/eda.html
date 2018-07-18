@@ -126,7 +126,7 @@
 </h3>
                         <h4 class="author">Mauro Lepore</h4>
             
-            <h4 class="date">2018-07-16</h4>
+            <h4 class="date">2018-07-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/forestgeo/fgeo/blob/master/vignettes/siteonly/eda.Rmd"><code>vignettes/siteonly/eda.Rmd</code></a></small>
       <div class="hidden name"><code>eda.Rmd</code></div>
@@ -143,12 +143,12 @@
 <p>You’ll learn to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.</p>
 <p>If you are new to the tidyverse, you may feel a little frustrated at the beginning, but quickly your effort will pay-off. The tools in the <strong>tidyverse</strong> are powerful, relatively easy to use and consistent; so once you learn some, you will learn most other tools intuitively.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- tidyverse 1.2.1 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------- tidyverse 1.2.1 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v ggplot2 3.0.0     v purrr   0.2.5</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v tibble  1.4.2     v dplyr   0.7.6</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v tidyr   0.8.1     v stringr 1.3.1</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v readr   1.1.1     v forcats 0.3.0</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ----------------------------------------------- tidyverse_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ---------------------------------------------- tidyverse_conflicts() --</span></a>
 <a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></a></code></pre></div>
 <p>The data we will use is a public dataset of trees censused in a forest plot in Luquillo, in Puerto Rico. Those data are available in the data set <code>luquillo_stem_random</code> from the data-package <strong>fgeo.data</strong> (<a href="https://forestgeo.github.io/fgeo.data/" class="uri">https://forestgeo.github.io/fgeo.data/</a>).</p>
@@ -215,21 +215,21 @@
 <a class="sourceLine" id="cb3-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4">stem</a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; # A tibble: 7,944 x 19</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;    treeID stemID tag    StemTag sp     quadrat    gx    gy MeasureID</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  1    104    143 10009  10009   DACEXC 113      10.3  245.       143</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  2    119    158 100104 100104  MYRSPL 1021    183.   410.       158</span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  3    180    222 100171 100095  CASARB 921     165.   410.       222</span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  4    180    223 100171 100096  CASARB 921     165.   410.       223</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  5    180    224 100171 100171  CASARB 921     165.   410.       224</span></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  6    180    225 100171 100174  CASARB 921     165.   410.       225</span></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  7    602    736 100649 100649  GUAGUI 821     149.   414.       736</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;  8    631    775 10069  10069   PREMON 213      38.3  245.       775</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;  9    647    793 100708 100708  SCHMOR 821     143.   411.       793</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; 10   1086   1339 10122  10122   DRYGLA 413      68.9  253.      1339</span></a>
-<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; # ... with 7,934 more rows, and 10 more variables: CensusID &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; #   dbh &lt;dbl&gt;, pom &lt;chr&gt;, hom &lt;dbl&gt;, ExactDate &lt;dbl&gt;, DFstatus &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt; #   codes &lt;chr&gt;, countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  1    104    143 10009 10009   DACE~ 113      10.3  245.       143        1</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.       158        1</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  3    180    222 1001~ 100095  CASA~ 921     165.   410.       222        1</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  4    180    223 1001~ 100096  CASA~ 921     165.   410.       223        1</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  5    180    224 1001~ 100171  CASA~ 921     165.   410.       224        1</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  6    180    225 1001~ 100174  CASA~ 921     165.   410.       225        1</span></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  7    602    736 1006~ 100649  GUAG~ 821     149.   414.       736        1</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;  8    631    775 10069 10069   PREM~ 213      38.3  245.       775        1</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;  9    647    793 1007~ 100708  SCHM~ 821     143.   411.       793        1</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.      1339        1</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; # ... with 7,934 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;dbl&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>By default, tibbles print a few rows only; to print more rows use:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">print</span>(<span class="op">&lt;</span>YOUR_TIBBLE<span class="op">&gt;</span>, <span class="dt">n =</span> <span class="op">&lt;</span>N_ROWS<span class="op">&gt;</span>, <span class="dt">width =</span> <span class="op">&lt;</span>N_COLUMNS<span class="op">&gt;</span>)</a></code></pre></div>
 <p>You can always convert a tibble into a regular dataframe.</p>
@@ -612,13 +612,13 @@
 <a class="sourceLine" id="cb37-8" data-line-number="8">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(small_dataset, <span class="kw">aes</span>(sp, dbh))</a>
 <a class="sourceLine" id="cb37-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb37-10" data-line-number="10">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 88 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 87 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>()</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 88 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 87 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span>ggbeeswarm<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggbeeswarm/topics/geom_quasirandom">geom_quasirandom</a></span>()</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 88 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 87 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
