@@ -121,7 +121,7 @@ Count distinct values of `stemID` and `treeID`.
 count_distinct_stemid(non_missing)
 
 # Collapse treeID by picking the stem with largest dbh
-largest_stem <- by_treeid_pick_dbh_max(non_missing)
+largest_stem <- pick_dbh_largest(non_missing)
 
 count_distinct_stemid(largest_stem)
 ```
