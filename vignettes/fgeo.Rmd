@@ -160,7 +160,7 @@ Calculate the total abundance of stems and trees.
 count_distinct_stemid(non_missing)
 
 # Collapse treeID by picking the stem with largest dbh
-largest_stem <- pick_dbh_largest(non_missing)
+largest_stem <- pick_largest_hom_dbh(non_missing)
 
 count_distinct_stemid(largest_stem)
 ```
