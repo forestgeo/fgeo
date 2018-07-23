@@ -125,7 +125,7 @@
 <a href="#analyze-forest-diversity-and-dynamics" class="anchor"></a><img src="https://i.imgur.com/vTLlhbp.png" align="right" height="88"> Analyze forest diversity and dynamics</h1></div>
 
 <p><strong>fgeo</strong> installs and loads multiple R packages, functions and datasets to analyze trees’ abundance, demography, and habitats (<a href="https://forestgeo.github.io/fgeo.abundance">fgeo.abundance</a>, <a href="https://forestgeo.github.io/fgeo.demography">fgeo.demography</a>, <a href="https://forestgeo.github.io/fgeo.habitat">fgeo.habitat</a>). It also includes general-purpose functions to simplify the visualization (<a href="https://forestgeo.github.io/fgeo.map">fgeo.map</a>) and manipulation (<a href="https://forestgeo.github.io/fgeo.base">fgeo.base</a>, <a href="https://forestgeo.github.io/fgeo.tool">fgeo.tool</a>) of ForestGEO datasets (e.g. <a href="https://forestgeo.github.io/fgeo.data">fgeo.data</a>).</p>
-<p><a href="https://forestgeo.github.io/fgeo/articles/quick-search.html">Quick search</a></p>
+<p><a href="https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html">Quick search</a></p>
 <p><a href="https://forestgeo.github.io/fgeo/articles/questions-and-answers.html">Questions and Answers</a></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -140,7 +140,7 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
@@ -208,7 +208,7 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; 1  2564</span></a>
 <a class="sourceLine" id="cb10-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co"># Collapse treeID by picking the stem with largest dbh</span></a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_dbh_largest</span>(non_missing)</a>
+<a class="sourceLine" id="cb10-8" data-line-number="8">largest_stem &lt;-<span class="st"> </span>fgeo.tool<span class="op">::</span><span class="kw">pick_largest_hom_dbh</span>(non_missing)</a>
 <a class="sourceLine" id="cb10-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb10-10" data-line-number="10"><span class="kw">count_distinct_stemid</span>(largest_stem)</a>
 <a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
