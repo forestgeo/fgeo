@@ -126,7 +126,7 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
@@ -288,7 +288,7 @@
 <a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; 1  2564</span></a>
 <a class="sourceLine" id="cb17-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co"># Collapse treeID by picking the stem with largest dbh</span></a>
-<a class="sourceLine" id="cb17-8" data-line-number="8">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_dbh_largest</span>(non_missing)</a>
+<a class="sourceLine" id="cb17-8" data-line-number="8">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_largest_hom_dbh</span>(non_missing)</a>
 <a class="sourceLine" id="cb17-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb17-10" data-line-number="10"><span class="kw">count_distinct_stemid</span>(largest_stem)</a>
 <a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt; # A tibble: 1 x 1</span></a>

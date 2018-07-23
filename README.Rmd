@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 ```{r, echo=FALSE}
 link_core <- function(pattern) {
   core <- fgeo::fgeo_core()
-  fgeo::fgeo_link(core[grepl(pattern, core)])
+  fgeo:::fgeo_link(core[grepl(pattern, core)])
 }
 
 analyze <- "abundance|demography|habitat"
@@ -33,7 +33,7 @@ datasets <- "data"
 
 __fgeo__ installs and loads multiple R packages, functions and datasets to analyze trees' abundance, demography, and habitats (`r link_core(analyze)`). It also includes general-purpose functions to simplify the visualization (`r link_core(visualize)`) and manipulation (`r link_core(manipulate)`) of ForestGEO datasets (e.g. `r link_core(datasets)`).
 
-[Quick search](https://forestgeo.github.io/fgeo/articles/quick-search.html)
+[Quick search](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
 
 [Questions and Answers](https://forestgeo.github.io/fgeo/articles/questions-and-answers.html)
 
@@ -121,7 +121,7 @@ Count distinct values of `stemID` and `treeID`.
 count_distinct_stemid(non_missing)
 
 # Collapse treeID by picking the stem with largest dbh
-largest_stem <- pick_dbh_largest(non_missing)
+largest_stem <- fgeo.tool::pick_largest_hom_dbh(non_missing)
 
 count_distinct_stemid(largest_stem)
 ```
