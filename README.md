@@ -25,10 +25,10 @@ ForestGEO datasets (e.g.
 <a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>).
 
 [Quick
-search](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
+search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
 [Questions and
-Answers](https://forestgeo.github.io/fgeo/articles/questions-and-answers.html)
+Answers](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
 
 ## Installation
 
