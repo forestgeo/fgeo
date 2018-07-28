@@ -400,12 +400,23 @@
 <a class="sourceLine" id="cb28-3" data-line-number="3"><span class="co"># Same</span></a>
 <a class="sourceLine" id="cb28-4" data-line-number="4">habitat &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb28-5" data-line-number="5"><span class="kw">str</span>(habitat)</a>
-<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="co">#&gt; Classes 'fgeo_habitat', 'tbl_df', 'tbl' and 'data.frame':    6400 obs. of  3 variables:</span></a>
+<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="co">#&gt; Classes 'fgeo_habitat', 'tbl_df', 'tbl' and 'data.frame':    503 obs. of  3 variables:</span></a>
 <a class="sourceLine" id="cb28-7" data-line-number="7"><span class="co">#&gt;  $ gx      : int  0 0 0 0 0 0 0 0 0 0 ...</span></a>
-<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="co">#&gt;  $ gy      : int  0 5 10 15 20 25 30 35 40 45 ...</span></a>
-<a class="sourceLine" id="cb28-9" data-line-number="9"><span class="co">#&gt;  $ habitats: int  1 1 1 1 1 1 1 1 1 1 ...</span></a></code></pre></div>
+<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="co">#&gt;  $ gy      : int  0 20 40 40 60 80 80 100 120 140 ...</span></a>
+<a class="sourceLine" id="cb28-9" data-line-number="9"><span class="co">#&gt;  $ habitats: int  1 1 1 2 2 2 1 1 1 1 ...</span></a></code></pre></div>
 <p>And now we are ready to run the test.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">tt &lt;-<span class="st"> </span><span class="kw">tt_test</span>(chosen_trees, <span class="dt">sp =</span> n_sp50plus<span class="op">$</span>sp, <span class="dt">habitat =</span> habitat)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">tt &lt;-<span class="st"> </span><span class="kw">tt_test</span>(chosen_trees, <span class="dt">sp =</span> n_sp50plus<span class="op">$</span>sp, <span class="dt">habitat =</span> habitat)</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co">#&gt; Warning in matrix(hab.index20$habitats, nrow = plotdimqy, ncol =</span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="co">#&gt; plotdimqx, : data length [503] is not a sub-multiple or multiple of the</span></a>
+<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="co">#&gt; number of rows [25]</span></a>
+<a class="sourceLine" id="cb29-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"><span class="co">#&gt; Warning in matrix(hab.index20$habitats, nrow = plotdimqy, ncol =</span></a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"><span class="co">#&gt; plotdimqx, : data length [503] is not a sub-multiple or multiple of the</span></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8"><span class="co">#&gt; number of rows [25]</span></a>
+<a class="sourceLine" id="cb29-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="co">#&gt; Warning in matrix(hab.index20$habitats, nrow = plotdimqy, ncol =</span></a>
+<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="co">#&gt; plotdimqx, : data length [503] is not a sub-multiple or multiple of the</span></a>
+<a class="sourceLine" id="cb29-12" data-line-number="12"><span class="co">#&gt; number of rows [25]</span></a></code></pre></div>
 <p>The output of <code>tt_test()</code> is a list. Large lists are awkward to view – unless you use <code>View()</code> in RStudio.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">View</span>(tt)</a></code></pre></div>
 <p>Alternatively, transform the list to a dataframe.</p>
@@ -415,16 +426,16 @@
 <a class="sourceLine" id="cb31-4" data-line-number="4"><span class="co">#&gt; # A tibble: 72 x 3</span></a>
 <a class="sourceLine" id="cb31-5" data-line-number="5"><span class="co">#&gt;    metric         sp         value</span></a>
 <a class="sourceLine" id="cb31-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;      &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb31-7" data-line-number="7"><span class="co">#&gt;  1 N.Hab.1        CASARB    28    </span></a>
-<a class="sourceLine" id="cb31-8" data-line-number="8"><span class="co">#&gt;  2 Gr.Hab.1       CASARB 25511    </span></a>
-<a class="sourceLine" id="cb31-9" data-line-number="9"><span class="co">#&gt;  3 Ls.Hab.1       CASARB    86    </span></a>
-<a class="sourceLine" id="cb31-10" data-line-number="10"><span class="co">#&gt;  4 Eq.Hab.1       CASARB     3    </span></a>
-<a class="sourceLine" id="cb31-11" data-line-number="11"><span class="co">#&gt;  5 Rep.Agg.Neut.1 CASARB     1    </span></a>
-<a class="sourceLine" id="cb31-12" data-line-number="12"><span class="co">#&gt;  6 Obs.Quantile.1 CASARB     0.997</span></a>
-<a class="sourceLine" id="cb31-13" data-line-number="13"><span class="co">#&gt;  7 N.Hab.2        CASARB    12    </span></a>
-<a class="sourceLine" id="cb31-14" data-line-number="14"><span class="co">#&gt;  8 Gr.Hab.2       CASARB  3691    </span></a>
-<a class="sourceLine" id="cb31-15" data-line-number="15"><span class="co">#&gt;  9 Ls.Hab.2       CASARB 21892    </span></a>
-<a class="sourceLine" id="cb31-16" data-line-number="16"><span class="co">#&gt; 10 Eq.Hab.2       CASARB    17    </span></a>
+<a class="sourceLine" id="cb31-7" data-line-number="7"><span class="co">#&gt;  1 N.Hab.1        CASARB   13     </span></a>
+<a class="sourceLine" id="cb31-8" data-line-number="8"><span class="co">#&gt;  2 Gr.Hab.1       CASARB   76     </span></a>
+<a class="sourceLine" id="cb31-9" data-line-number="9"><span class="co">#&gt;  3 Ls.Hab.1       CASARB 1522     </span></a>
+<a class="sourceLine" id="cb31-10" data-line-number="10"><span class="co">#&gt;  4 Eq.Hab.1       CASARB    2     </span></a>
+<a class="sourceLine" id="cb31-11" data-line-number="11"><span class="co">#&gt;  5 Rep.Agg.Neut.1 CASARB    0     </span></a>
+<a class="sourceLine" id="cb31-12" data-line-number="12"><span class="co">#&gt;  6 Obs.Quantile.1 CASARB    0.0475</span></a>
+<a class="sourceLine" id="cb31-13" data-line-number="13"><span class="co">#&gt;  7 N.Hab.2        CASARB   26     </span></a>
+<a class="sourceLine" id="cb31-14" data-line-number="14"><span class="co">#&gt;  8 Gr.Hab.2       CASARB 1471     </span></a>
+<a class="sourceLine" id="cb31-15" data-line-number="15"><span class="co">#&gt;  9 Ls.Hab.2       CASARB  127     </span></a>
+<a class="sourceLine" id="cb31-16" data-line-number="16"><span class="co">#&gt; 10 Eq.Hab.2       CASARB    2     </span></a>
 <a class="sourceLine" id="cb31-17" data-line-number="17"><span class="co">#&gt; # ... with 62 more rows</span></a></code></pre></div>
 </div>
 <div id="krige-soil-data" class="section level2">
