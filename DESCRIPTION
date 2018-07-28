@@ -15,6 +15,8 @@ Description: 'fgeo' installs and load multiple R packages of ForestGEO in
 License: GPL-3
 URL: http://forestgeo.github.io/fgeo, https://github.com/forestgeo/fgeo
 BugReports: https://github.com/forestgeo/fgeo/issues
+Depends: 
+    R (>= 3.3)
 Imports: 
     cli,
     crayon,
