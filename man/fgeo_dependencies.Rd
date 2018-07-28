@@ -4,7 +4,8 @@
 \alias{fgeo_dependencies}
 \title{List package dependencies (imports and suggests) of \strong{fgeo}.}
 \usage{
-fgeo_dependencies(include_self = TRUE, section = c("Imports", "Suggests"))
+fgeo_dependencies(include_self = TRUE, section = c("Imports",
+  "Suggests"))
 }
 \arguments{
 \item{include_self}{Include fgeo in the list?}
