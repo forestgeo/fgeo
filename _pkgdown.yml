@@ -25,10 +25,13 @@ navbar:
       href: articles/fgeo.html
     - text: "Tutorials"
       menu:
-      - text: Exploratory data analysis
-        href: articles/siteonly/eda.html
       - text: Visualization basics
         href: https://fgeocomm.shinyapps.io/basics-vis/
+      - text: Programming basics
+        href: https://fgeocomm.shinyapps.io/basics-programming/
+      - text: Exploratory data analysis
+        href: articles/siteonly/eda.html
+
     - text: "Reference"
       href: reference/index.html
     - text: "Quick Search"
