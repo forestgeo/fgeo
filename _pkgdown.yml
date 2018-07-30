@@ -29,6 +29,9 @@ navbar:
         href: https://fgeocomm.shinyapps.io/basics-vis/
       - text: Programming basics
         href: https://fgeocomm.shinyapps.io/basics-programming/
+      - text: Tibbles
+        href: https://fgeocomm.shinyapps.io/transform-tibbles/
+
       - text: Exploratory data analysis
         href: articles/siteonly/eda.html
 
