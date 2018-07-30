@@ -27,6 +27,8 @@ navbar:
       menu:
       - text: Exploratory data analysis
         href: articles/siteonly/eda.html
+      - text: Visualization basics
+        href: https://fgeocomm.shinyapps.io/basics-vis/
     - text: "Reference"
       href: reference/index.html
     - text: "Quick Search"
@@ -63,5 +65,3 @@ reference:
   - '`fgeo_dependencies`'
   - '`fgeo_conflicts`'
   - '`fgeo_update`'
-
-
