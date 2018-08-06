@@ -320,38 +320,3 @@ as_tibble(subset(krig_df,var == "c"))
 as_tibble(subset(krig_df, var == "p"))
 ```
 
-# Demography
-
-```R
-fgeo_help("demography")
-```
-
-The primary input of demography functions (`recruitment()`, `mortality()` and `growth()`) is a list of two ForestGEO tree-tables.
-
-```{r}
-censuses <- list(
- fgeo.data::luquillo_tree5_random,
- fgeo.data::luquillo_tree6_random
-)
-
-recruitment(censuses, quiet = TRUE)
-```
-
-Optionally, you can provide any number of variables to group by. 
-
-```{r}
-# Picking only some data from both censuses at the same time
-smaller <- lapply(censuses, pick_top, sp)
-smaller <- lapply(smaller, pick_top, quadrat, 2)
-
-mort_sp_quad <- mortality(smaller, sp, quadrat, quiet = TRUE)
-mort_sp_quad
-```
-
-Consider using `View()` in RStudio to search for specific data.
-
-```{r}
-subset(mort_sp_quad, quadrat == 820)
-```
-
-You may transform rows into columns with `tidyr::spread()`.
