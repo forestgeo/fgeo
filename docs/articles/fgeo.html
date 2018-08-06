@@ -138,7 +138,7 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
@@ -625,74 +625,6 @@
 <a class="sourceLine" id="cb36-31" data-line-number="31"><span class="co">#&gt; 10 p       190    10  6.21</span></a>
 <a class="sourceLine" id="cb36-32" data-line-number="32"><span class="co">#&gt; # ... with 1,140 more rows</span></a></code></pre></div>
 </div>
-<div id="demography" class="section level1">
-<h1 class="hasAnchor">
-<a href="#demography" class="anchor"></a>Demography</h1>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"demography"</span>)</a></code></pre></div>
-<p>The primary input of demography functions (<code>recruitment()</code>, <code>mortality()</code> and <code>growth()</code>) is a list of two ForestGEO tree-tables.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">censuses &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"> fgeo.data<span class="op">::</span>luquillo_tree5_random,</a>
-<a class="sourceLine" id="cb38-3" data-line-number="3"> fgeo.data<span class="op">::</span>luquillo_tree6_random</a>
-<a class="sourceLine" id="cb38-4" data-line-number="4">)</a>
-<a class="sourceLine" id="cb38-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb38-6" data-line-number="6"><span class="kw">recruitment</span>(censuses, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb38-7" data-line-number="7"><span class="co">#&gt; # A tibble: 8 x 2</span></a>
-<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="co">#&gt;   metric       value</span></a>
-<a class="sourceLine" id="cb38-9" data-line-number="9"><span class="co">#&gt;   &lt;chr&gt;        &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb38-10" data-line-number="10"><span class="co">#&gt; 1 N2       809      </span></a>
-<a class="sourceLine" id="cb38-11" data-line-number="11"><span class="co">#&gt; 2 R         43      </span></a>
-<a class="sourceLine" id="cb38-12" data-line-number="12"><span class="co">#&gt; 3 rate       0.0121 </span></a>
-<a class="sourceLine" id="cb38-13" data-line-number="13"><span class="co">#&gt; 4 lower      0.00895</span></a>
-<a class="sourceLine" id="cb38-14" data-line-number="14"><span class="co">#&gt; 5 upper      0.0162 </span></a>
-<a class="sourceLine" id="cb38-15" data-line-number="15"><span class="co">#&gt; 6 time       4.53   </span></a>
-<a class="sourceLine" id="cb38-16" data-line-number="16"><span class="co">#&gt; 7 date1  15286.     </span></a>
-<a class="sourceLine" id="cb38-17" data-line-number="17"><span class="co">#&gt; 8 date2  16941.</span></a></code></pre></div>
-<p>Optionally, you can provide any number of variables to group by.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="co"># Picking only some data from both censuses at the same time</span></a>
-<a class="sourceLine" id="cb39-2" data-line-number="2">smaller &lt;-<span class="st"> </span><span class="kw">lapply</span>(censuses, pick_top, sp)</a>
-<a class="sourceLine" id="cb39-3" data-line-number="3">smaller &lt;-<span class="st"> </span><span class="kw">lapply</span>(smaller, pick_top, quadrat, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb39-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb39-5" data-line-number="5">mort_sp_quad &lt;-<span class="st"> </span><span class="kw">mortality</span>(smaller, sp, quadrat, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb39-6" data-line-number="6">mort_sp_quad</a>
-<a class="sourceLine" id="cb39-7" data-line-number="7"><span class="co">#&gt; # A tibble: 18 x 4</span></a>
-<a class="sourceLine" id="cb39-8" data-line-number="8"><span class="co">#&gt; # Groups:   sp [1]</span></a>
-<a class="sourceLine" id="cb39-9" data-line-number="9"><span class="co">#&gt;    sp     quadrat metric      value</span></a>
-<a class="sourceLine" id="cb39-10" data-line-number="10"><span class="co">#&gt;    &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;       &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb39-11" data-line-number="11"><span class="co">#&gt;  1 ALCFLO 518     N           2    </span></a>
-<a class="sourceLine" id="cb39-12" data-line-number="12"><span class="co">#&gt;  2 ALCFLO 518     D           0    </span></a>
-<a class="sourceLine" id="cb39-13" data-line-number="13"><span class="co">#&gt;  3 ALCFLO 518     rate        0    </span></a>
-<a class="sourceLine" id="cb39-14" data-line-number="14"><span class="co">#&gt;  4 ALCFLO 518     lower       0    </span></a>
-<a class="sourceLine" id="cb39-15" data-line-number="15"><span class="co">#&gt;  5 ALCFLO 518     upper       0.272</span></a>
-<a class="sourceLine" id="cb39-16" data-line-number="16"><span class="co">#&gt;  6 ALCFLO 518     time        4.52 </span></a>
-<a class="sourceLine" id="cb39-17" data-line-number="17"><span class="co">#&gt;  7 ALCFLO 518     date1   15345    </span></a>
-<a class="sourceLine" id="cb39-18" data-line-number="18"><span class="co">#&gt;  8 ALCFLO 518     date2   16997    </span></a>
-<a class="sourceLine" id="cb39-19" data-line-number="19"><span class="co">#&gt;  9 ALCFLO 518     dbhmean   140    </span></a>
-<a class="sourceLine" id="cb39-20" data-line-number="20"><span class="co">#&gt; 10 ALCFLO 820     N           2    </span></a>
-<a class="sourceLine" id="cb39-21" data-line-number="21"><span class="co">#&gt; 11 ALCFLO 820     D           0    </span></a>
-<a class="sourceLine" id="cb39-22" data-line-number="22"><span class="co">#&gt; 12 ALCFLO 820     rate        0    </span></a>
-<a class="sourceLine" id="cb39-23" data-line-number="23"><span class="co">#&gt; 13 ALCFLO 820     lower       0    </span></a>
-<a class="sourceLine" id="cb39-24" data-line-number="24"><span class="co">#&gt; 14 ALCFLO 820     upper       0.272</span></a>
-<a class="sourceLine" id="cb39-25" data-line-number="25"><span class="co">#&gt; 15 ALCFLO 820     time        4.52 </span></a>
-<a class="sourceLine" id="cb39-26" data-line-number="26"><span class="co">#&gt; 16 ALCFLO 820     date1   15345    </span></a>
-<a class="sourceLine" id="cb39-27" data-line-number="27"><span class="co">#&gt; 17 ALCFLO 820     date2   16997    </span></a>
-<a class="sourceLine" id="cb39-28" data-line-number="28"><span class="co">#&gt; 18 ALCFLO 820     dbhmean   140</span></a></code></pre></div>
-<p>Consider using <code>View()</code> in RStudio to search for specific data.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">subset</span>(mort_sp_quad, quadrat <span class="op">==</span><span class="st"> </span><span class="dv">820</span>)</a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="co">#&gt; # A tibble: 9 x 4</span></a>
-<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="co">#&gt; # Groups:   sp [1]</span></a>
-<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="co">#&gt;   sp     quadrat metric      value</span></a>
-<a class="sourceLine" id="cb40-5" data-line-number="5"><span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;       &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb40-6" data-line-number="6"><span class="co">#&gt; 1 ALCFLO 820     N           2    </span></a>
-<a class="sourceLine" id="cb40-7" data-line-number="7"><span class="co">#&gt; 2 ALCFLO 820     D           0    </span></a>
-<a class="sourceLine" id="cb40-8" data-line-number="8"><span class="co">#&gt; 3 ALCFLO 820     rate        0    </span></a>
-<a class="sourceLine" id="cb40-9" data-line-number="9"><span class="co">#&gt; 4 ALCFLO 820     lower       0    </span></a>
-<a class="sourceLine" id="cb40-10" data-line-number="10"><span class="co">#&gt; 5 ALCFLO 820     upper       0.272</span></a>
-<a class="sourceLine" id="cb40-11" data-line-number="11"><span class="co">#&gt; 6 ALCFLO 820     time        4.52 </span></a>
-<a class="sourceLine" id="cb40-12" data-line-number="12"><span class="co">#&gt; 7 ALCFLO 820     date1   15345    </span></a>
-<a class="sourceLine" id="cb40-13" data-line-number="13"><span class="co">#&gt; 8 ALCFLO 820     date2   16997    </span></a>
-<a class="sourceLine" id="cb40-14" data-line-number="14"><span class="co">#&gt; 9 ALCFLO 820     dbhmean   140</span></a></code></pre></div>
-<p>You may transform rows into columns with <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/spread">tidyr::spread()</a></code>.</p>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -711,7 +643,6 @@
       <li><a href="#mapping-the-distribution-of-tree-species">Mapping the distribution of tree species</a></li>
       <li><a href="#determine-species-habitat-associations">Determine species-habitat associations</a></li>
       <li><a href="#krige-soil-data">Krige soil data</a></li>
-      <li><a href="#demography">Demography</a></li>
       </ul>
 </div>
       </div>
