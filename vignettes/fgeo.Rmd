@@ -47,7 +47,7 @@ For a description of the columns see `?data_dictionary`.
 str(data_dictionary)
 
 cols <- names(stem)
-subset(data_dictionary, column %in% cols)
+filter(data_dictionary, column %in% cols)
 ```
 
 This dataset comes with multiple censuses. I'll pick only the latest one.
@@ -59,7 +59,6 @@ unique(stem$CensusID)
 stem6 <- pick_top(stem, var = CensusID, n = -1)
 unique(stem6$CensusID)
 ```
-
 
 ## Exploring the distribution of status and tree diameter
 
@@ -96,7 +95,7 @@ Unfortunately `hist()` dropped missing values silently. But we can better unders
 
 ```{r}
 dbh_status <- stem6[c("dbh", "status")]
-missing <- subset(dbh_status, is.na(dbh))
+missing <- filter(dbh_status, is.na(dbh))
 unique(missing)
 ```
 
@@ -121,12 +120,13 @@ In `stem6`, the variable `status` records the status of each individual stem. Ho
 
 ```{r}
 stem6 <- add_status_tree(stem6, status_a = "A", status_d = "D")
-alive_trees <- subset(stem6, status_tree == "A")
+alive_trees <- filter(stem6, status_tree == "A")
 
 # Note that alive trees may have some missing, gone or dead stems
 some_cols <- c( "treeID", "status_tree", "stemID", "status")
 example_tree <- 46
-subset(alive_trees, treeID == example_tree, some_cols)
+example_rows <- filter(alive_trees, treeID == example_tree)
+select(example_rows, some_cols)
 ```
 
 ## Picking a `dbh` range
@@ -182,10 +182,10 @@ top3 <- pick_top(n_by_sp, n, -3)
 top3
 ```
 
-Now we can subset the `alive_trees` of only the `top3` species.
+Now we can pick the `alive_trees` of only the `top3` species.
 
 ```{r}
-picked_stems <- subset(alive_trees, sp %in% top3$sp)
+picked_stems <- filter(alive_trees, sp %in% top3$sp)
 ```
 
 ## Mapping the distribution of tree species
@@ -250,7 +250,7 @@ by_sp <- group_by(tree, sp)
 n_by_sp <- count_distinct_treeid(by_sp)
 n_by_sp
 
-n_sp50plus <- subset(n_by_sp, n > 50)
+n_sp50plus <- filter(n_by_sp, n > 50)
 n_sp50plus
 ```
 
@@ -259,8 +259,6 @@ We'll need habitat data. Or at least elevation data -- with which to create habi
 ```{r}
 # See ?luquillo_habitat
 habitat <- luquillo_habitat
-# Same
-habitat <- fgeo_habitat(luquillo_elevation, gridsize = 20, n = 4)
 str(habitat)
 ```
 
@@ -280,8 +278,13 @@ Alternatively, transform the list to a dataframe.
 
 ```{r}
 tt_df <- to_df(tt)
-# Nice view (try also `View()`)
-as_tibble(tt_df)
+tt_df
+```
+
+You can visualize the results with `plot()`
+
+```{r}
+plot(tt_df)
 ```
 
 ## Krige soil data 
@@ -315,8 +318,8 @@ Also you can pull a dataframe containing the results of all the soil variables.
 
 ```{r}
 krig_df <- to_df(krig_list, item = "df")
-as_tibble(subset(krig_df,var == "c"))
+as_tibble(filter(krig_df,var == "c"))
 
-as_tibble(subset(krig_df, var == "p"))
+as_tibble(filter(krig_df, var == "p"))
 ```
 
