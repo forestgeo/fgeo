@@ -254,12 +254,23 @@ n_sp50plus <- filter(n_by_sp, n > 50)
 n_sp50plus
 ```
 
-We'll need habitat data. Or at least elevation data -- with which to create habitat data with `fgeo_habitat()`.
+We need habitat data. Bad habitat data is a common cause of errors. The safest way to create it is with `fgeo_habitat()` (see `?fgeo_habitat()`).
 
 ```{r}
-# See ?luquillo_habitat
-habitat <- luquillo_habitat
+habitat <- fgeo_habitat(luquillo_elevation, gridsize = 20, n = 4)
 str(habitat)
+```
+
+You can visualize the habitats with `plot()`.
+
+```{r}
+plot(habitat)
+```
+
+The `habitats` column results from a cluster analysis of three variables computed from the elevation dataset: mean elevation, convexity and slope.
+
+```{r}
+cluster_elevation(luquillo_elevation, gridsize = 20, n = 4)
 ```
 
 And now we are ready to run the test.
@@ -281,7 +292,7 @@ tt_df <- to_df(tt)
 tt_df
 ```
 
-You can visualize the results with `plot()`
+You can visualize the results with `plot()`.
 
 ```{r}
 plot(tt_df)
