@@ -45,7 +45,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ------------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
@@ -148,7 +148,7 @@ count_distinct_stemid(non_missing)
 #> 1  2564
 
 # Collapse treeID by picking the stem with largest dbh
-largest_stem <- fgeo.tool::pick_largest_hom_dbh(non_missing)
+largest_stem <- fgeo.tool::pick_main_stem(non_missing)
 
 count_distinct_stemid(largest_stem)
 #> # A tibble: 1 x 1

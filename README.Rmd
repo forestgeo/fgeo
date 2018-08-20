@@ -121,7 +121,7 @@ Count distinct values of `stemID` and `treeID`.
 count_distinct_stemid(non_missing)
 
 # Collapse treeID by picking the stem with largest dbh
-largest_stem <- fgeo.tool::pick_largest_hom_dbh(non_missing)
+largest_stem <- fgeo.tool::pick_main_stem(non_missing)
 
 count_distinct_stemid(largest_stem)
 ```
