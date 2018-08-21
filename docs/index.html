@@ -136,9 +136,9 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#analyze-forest-diversity-and-dynamics" class="anchor"></a><img src="https://i.imgur.com/vTLlhbp.png" align="right" height="88"> Analyze forest diversity and dynamics</h1></div>
 
-<p><strong>fgeo</strong> installs and loads multiple R packages, functions and datasets to analyze trees’ abundance, demography, and habitats (<a href="https://forestgeo.github.io/fgeo.abundance">fgeo.abundance</a>, <a href="https://forestgeo.github.io/fgeo.demography">fgeo.demography</a>, <a href="https://forestgeo.github.io/fgeo.habitat">fgeo.habitat</a>). It also includes general-purpose functions to simplify the visualization (<a href="https://forestgeo.github.io/fgeo.map">fgeo.map</a>) and manipulation (<a href="https://forestgeo.github.io/fgeo.base">fgeo.base</a>, <a href="https://forestgeo.github.io/fgeo.tool">fgeo.tool</a>) of ForestGEO datasets (e.g. <a href="https://forestgeo.github.io/fgeo.data">fgeo.data</a>).</p>
-<p><a href="https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html">Quick search</a></p>
-<p><a href="https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html">Questions and Answers</a></p>
+<p><strong>fgeo</strong> installs and loads multiple R packages, functions, and datasets to analyze trees abundance, demography, and habitats (<a href="https://forestgeo.github.io/fgeo.abundance">fgeo.abundance</a>, <a href="https://forestgeo.github.io/fgeo.demography">fgeo.demography</a>, <a href="https://forestgeo.github.io/fgeo.habitat">fgeo.habitat</a>). It also includes general-purpose functions to simplify the visualization (<a href="https://forestgeo.github.io/fgeo.map">fgeo.map</a>) and manipulation (<a href="https://forestgeo.github.io/fgeo.base">fgeo.base</a>, <a href="https://forestgeo.github.io/fgeo.tool">fgeo.tool</a>) of ForestGEO datasets (e.g. <a href="https://forestgeo.github.io/fgeo.data">fgeo.data</a>).</p>
+<p><a href="https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html">Quick search – click here to search by package, function, dataset, or help file.</a></p>
+<p><a href="https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html">Questions and Answers – click here to find answers to frequently asked questions about fgeo.</a></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -152,16 +152,16 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; </span></a></code></pre></div>
-<p>Help about everything.</p>
+<p>Need help? Use <code><a href="reference/fgeo_help.html">fgeo_help()</a></code> to search every help file in the fgeo package.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
 <p><img src="https://i.imgur.com/MmbmeZd.png"></p>
-<p>Help about something.</p>
+<p>You can narrow down your search by using a keyword.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"datasets"</span>)</a></code></pre></div>
 <p><img src="https://i.imgur.com/4AdTD3G.png"></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Short name</span></a>
@@ -186,12 +186,10 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; # ... with 72,608 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;dbl&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
-<p>Do something useful.</p>
-<p>Pick the data you want.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Pick one census from the bottom (n &lt; 0) rank of CensusID. See ?pick_top().</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">stem6 &lt;-<span class="st"> </span><span class="kw">pick_top</span>(stem, <span class="dt">var =</span> CensusID, <span class="dt">n =</span> <span class="dv">-1</span>)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">unique</span>(stem6<span class="op">$</span>CensusID)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; [1] 6</span></a></code></pre></div>
+<p>Pick one census from the bottom (n &lt; 0) rank of <code>CensusID</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">pick_top</span>(stem, <span class="dt">var =</span> CensusID, <span class="dt">n =</span> <span class="dv">-1</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">unique</span>(stem6<span class="op">$</span>CensusID)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt; [1] 6</span></a></code></pre></div>
 <p>Determine the status of each tree based on the status of each stem.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">add_status_tree</span>(stem6, <span class="dt">status_a =</span> <span class="st">"A"</span>, <span class="dt">status_d =</span> <span class="st">"D"</span>)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">alive_trees &lt;-<span class="st"> </span><span class="kw">subset</span>(stem6, status_tree <span class="op">==</span><span class="st"> "A"</span>)</a>
@@ -266,7 +264,7 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <div id="r-code-from-recent-publications-by-forestgeo-partners" class="section level2">
 <h2 class="hasAnchor">
 <a href="#r-code-from-recent-publications-by-forestgeo-partners" class="anchor"></a>R code from recent publications by ForestGEO partners</h2>
-<p>Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators. If you wish to publish papers based on these data you are also required to get permission from the PIs of the corresponding ForestGEO plots.</p>
+<p>Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators (PIs). If you wish to publish papers based on these data, you are also required to get permission from the PIs of the corresponding ForestGEO plots.</p>
 <ul>
 <li><p><a href="https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth">Soil drivers of local-scale tree growth in a lowland tropical forest (Zemunik et al., 2018).</a></p></li>
 <li>
@@ -293,7 +291,7 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <div id="acknowledgments" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgments" class="anchor"></a>Acknowledgments</h2>
-<p>Thanks to all partners of ForestGEO, for sharing their ideas and code. For feedback on <strong>fgeo</strong>, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, Haley Overstreet. Many other people deserve special acknowledgements; I thank them in the documentation and home page of each individual package that make up the <strong>fgeo</strong> development.</p>
+<p>Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on <strong>fgeo</strong>, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are many other people that deserve special acknowledgements; I thank them in the documentation and home page of each individual package that make up the <strong>fgeo</strong> development.</p>
 </div>
 </div>
   </div>

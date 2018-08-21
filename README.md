@@ -11,8 +11,8 @@ status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://cov
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-**fgeo** installs and loads multiple R packages, functions and datasets
-to analyze trees’ abundance, demography, and habitats
+**fgeo** installs and loads multiple R packages, functions, and datasets
+to analyze trees abundance, demography, and habitats
 (<a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>,
 <a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a>,
 <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>). It
@@ -24,11 +24,13 @@ manipulation
 ForestGEO datasets (e.g.
 <a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>).
 
-[Quick
-search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
+[Quick search – click here to search by package, function, dataset, or
+help
+file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
-[Questions and
-Answers](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
+[Questions and Answers – click here to find answers to frequently asked
+questions about
+fgeo.](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
 
 ## Installation
 
@@ -45,7 +47,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ---------------------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
@@ -53,7 +55,8 @@ library(fgeo)
 #> 
 ```
 
-Help about everything.
+Need help? Use `fgeo_help()` to search every help file in the fgeo
+package.
 
 ``` r
 fgeo_help()
@@ -61,7 +64,7 @@ fgeo_help()
 
 ![](https://i.imgur.com/MmbmeZd.png)
 
-Help about something.
+You can narrow down your search by using a keyword.
 
 ``` r
 fgeo_help("datasets")
@@ -94,13 +97,9 @@ stem
 #> #   countPOM <dbl>, status <chr>, date <dbl>
 ```
 
-Do something useful.
-
-Pick the data you
-want.
+Pick one census from the bottom (n \< 0) rank of `CensusID`.
 
 ``` r
-# Pick one census from the bottom (n < 0) rank of CensusID. See ?pick_top().
 stem6 <- pick_top(stem, var = CensusID, n = -1)
 unique(stem6$CensusID)
 #> [1] 6
@@ -204,9 +203,9 @@ started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 Data have been made available as required by the journal to enable
 reproduction of the results presented in the paper. Please do not share
 these data without permission of the ForestGEO plot Principal
-Investigators. If you wish to publish papers based on these data you are
-also required to get permission from the PIs of the corresponding
-ForestGEO plots.
+Investigators (PIs). If you wish to publish papers based on these data,
+you are also required to get permission from the PIs of the
+corresponding ForestGEO plots.
 
   - [Soil drivers of local-scale tree growth in a lowland tropical
     forest (Zemunik et
@@ -234,9 +233,9 @@ ForestGEO plots.
 
 ## Acknowledgments
 
-Thanks to all partners of ForestGEO, for sharing their ideas and code.
+Thanks to all partners of ForestGEO for sharing their ideas and code.
 For feedback on **fgeo**, special thanks to Gabriel Arellano, Stuart
-Davies, Lauren Krizel, Sean McMahon, Haley Overstreet. Many other people
-deserve special acknowledgements; I thank them in the documentation and
-home page of each individual package that make up the **fgeo**
-development.
+Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are
+many other people that deserve special acknowledgements; I thank them in
+the documentation and home page of each individual package that make up
+the **fgeo** development.

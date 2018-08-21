@@ -31,11 +31,11 @@ manipulate <- "base|tool"
 datasets <- "data"
 ```
 
-__fgeo__ installs and loads multiple R packages, functions and datasets to analyze trees' abundance, demography, and habitats (`r link_core(analyze)`). It also includes general-purpose functions to simplify the visualization (`r link_core(visualize)`) and manipulation (`r link_core(manipulate)`) of ForestGEO datasets (e.g. `r link_core(datasets)`).
+__fgeo__ installs and loads multiple R packages, functions, and datasets to analyze trees abundance, demography, and habitats (`r link_core(analyze)`). It also includes general-purpose functions to simplify the visualization (`r link_core(visualize)`) and manipulation (`r link_core(manipulate)`) of ForestGEO datasets (e.g. `r link_core(datasets)`).
 
-[Quick search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
+[Quick search -- click here to search by package, function, dataset, or help file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
-[Questions and Answers](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
+[Questions and Answers -- click here to find answers to frequently asked questions about fgeo.](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
 
 ## Installation
 
@@ -56,7 +56,7 @@ Load all __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-Help about everything.
+Need help? Use `fgeo_help()` to search every help file in the fgeo package.
 
 ```R
 fgeo_help()
@@ -64,7 +64,7 @@ fgeo_help()
 
 ![](https://i.imgur.com/MmbmeZd.png)
 
-Help about something.
+You can narrow down your search by using a keyword.
 
 ```R
 fgeo_help("datasets")
@@ -80,12 +80,9 @@ unique(stem$CensusID)
 stem
 ```
 
-Do something useful.
-
-Pick the data you want.
+Pick one census from the bottom (n < 0) rank of `CensusID`. 
 
 ```{r}
-# Pick one census from the bottom (n < 0) rank of CensusID. See ?pick_top().
 stem6 <- pick_top(stem, var = CensusID, n = -1)
 unique(stem6$CensusID)
 ```
@@ -150,7 +147,7 @@ count_distinct_treeid(by_sp)
 
 ## R code from recent publications by ForestGEO partners
 
-Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators. If you wish to publish papers based on these data you are also required to get permission from the PIs of the corresponding ForestGEO plots.
+Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators (PIs). If you wish to publish papers based on these data, you are also required to get permission from the PIs of the corresponding ForestGEO plots.
 
 * [Soil drivers of local-scale tree growth in a lowland tropical forest (Zemunik et al., 2018).](https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth)
 
@@ -168,4 +165,4 @@ Data have been made available as required by the journal to enable reproduction 
 
 ## Acknowledgments
 
-Thanks to all partners of ForestGEO, for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, Haley Overstreet. Many other people deserve special acknowledgements; I thank them in the documentation and home page of each individual package that make up the __fgeo__ development.
+Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are many other people that deserve special acknowledgements; I thank them in the documentation and home page of each individual package that make up the __fgeo__ development.
