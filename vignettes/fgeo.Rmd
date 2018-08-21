@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-This article shows some of the key features of __fgeo__ applied to an exploratory data analysis. For a deeper and general approach to exploratory data analysis see [this book section](http://r4ds.had.co.nz/exploratory-data-analysis.html). A version adapted for ForestGEO is available [here](https://forestgeo.github.io/fgeo/articles/siteonly/eda.html).
+This article shows some of the key features of __fgeo__ applied to an exploratory data analysis. For a deeper and general approach to exploratory data analysis, see [this book section](http://r4ds.had.co.nz/exploratory-data-analysis.html). A version adapted for ForestGEO is available [here](https://forestgeo.github.io/fgeo/articles/siteonly/eda.html).
 
 ## Packages 
 
@@ -28,20 +28,20 @@ library(fgeo)
 
 ## Data
 
-You may load your own data. Here I'll use data from the __fgeo.data__ package -- which comes with __fgeo__.
+You may load your own data. Here we will use data from the __fgeo.data__ package -- which comes with __fgeo__.
 
 ```R
 fgeo_help("datasets")
 ```
 
-I'll use a dataset of stems censused in one hectare in the forest plot Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
+We will use a dataset of stems censused in one hectare from the forest plot in Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
 
 ```{r}
 stem <- luquillo_stem_1ha
 str(stem)
 ```
 
-For a description of the columns see `?data_dictionary`.
+For a description of the columns, see `?data_dictionary`.
 
 ```{r}
 str(data_dictionary)
@@ -50,7 +50,7 @@ cols <- names(stem)
 filter(data_dictionary, column %in% cols)
 ```
 
-This dataset comes with multiple censuses. I'll pick only the latest one.
+This dataset comes with multiple censuses. We will pick only the latest one.
 
 ```{r}
 unique(stem$CensusID)
@@ -62,7 +62,7 @@ unique(stem6$CensusID)
 
 ## Exploring the distribution of status and tree diameter
 
-Two columns that are commonly useful in ForestGEO datasets are `status` and `dbh` (diameter at breast height). Let's begin by understanding what type of variables they are. For this, base R provides useful functions.
+Two columns that are commonly useful in ForestGEO datasets are `status` and `dbh` (diameter at breast height). We will begin by better understanding what type of variables they are. For this, base R provides useful functions.
 
 `status` is a categorical variable. 
 
@@ -83,7 +83,7 @@ barplot(by_category)
 summary(stem6$dbh)
 ```
 
-(Note the missing values (`NA`'s).)
+(Note the missing values (`NA`s).)
 
 And we can visualize its distribution with `hist()`. 
 
@@ -106,11 +106,11 @@ missing <- transform(stem6, na = ifelse(is.na(dbh), TRUE, FALSE))
 table(missing$na, missing$status)
 ```
 
-We learn that `dbh` is missing where a tree is dead (`status = A`) or gone (`status = G`). This makes sense and, depending on the type of analysis we want to do, we may want to keep or remove missing values.
+We learn that `dbh` is missing where a tree is dead (`status = D`) or gone (`status = G`). This makes sense and, depending on the type of analysis we want to do, we may want to keep or remove missing values.
 
 ## Determining tree status based on stem status
 
-Now that we understand out data are read to clean it, for example, by picking alive trees only. At ForestGEO, working with `status` is so common that __fgeo__ provides a specialized function.
+Now we are ready to clean the data. For example, we can pick trees which status is "A" (alive). At ForestGEO, working with `status` is so common that __fgeo__ provides a specialized function.
 
 ```R
 fgeo_help("status")
@@ -175,7 +175,7 @@ n_by_sp
 
 ## Picking the most abundant species
 
-Which are the three most abundant tree species?
+What are the three most abundant tree species?
 
 ```{r}
 top3 <- pick_top(n_by_sp, n, -3)
@@ -213,24 +213,19 @@ p1
 
 ## Determine species-habitat associations
 
-Let's determine the species-habitat associations using a torus translation test.
+We will determine the species-habitat associations using a torus translation test.
 
 ```R
 fgeo_help("torus")
 ```
 
-
-This test should use individual trees not the (potentially multiple) stems of
-individual trees. This test only makes sense at the population level. We are
-interested in knowing whether or not individuals of a species are aggregated
-on a habitat. Multiple stems of an individual do not represent population
-level processes but individual level processes. Let's then use a ForestGEO _tree_ table. I'll use `luquillo_tree6_random`, which contains a small sample of randomly chosen trees across the entire plot (see `?`luquillo_tree6_random`). 
+This test should use individual trees, not multiple stems of individual trees. This test only makes sense at the population level. We are interested in knowing whether individuals of a species are aggregated on a habitat. Multiple stems of an individual do not represent population level processes but individual level processes. We will then use a ForestGEO _tree_ table, `luquillo_tree6_random`, which contains a small sample of randomly chosen trees across the entire plot (see `?luquillo_tree6_random`). 
 
 ```{r}
 tree <- luquillo_tree6_random
 ```
 
-I'll pick alive trees of 10 mm or more (for details see previous sections). The variable `status` of 'tree' tables directly represent the status of each tree (see `?census_description`). I'll focus on trees with status "A" (alive).
+We will pick alive trees of 10 mm or more (for details see previous sections). The variable `status` of _tree_ tables directly represent the status of each tree (see `?census_description`). We will focus on trees with status "A" (alive).
 
 ```{r}
 dbh10plus <- pick_dbh_min(tree, 10)
@@ -300,7 +295,7 @@ plot(tt_df)
 
 ## Krige soil data 
 
-Let's Krige soil data.
+In this section we will krige soil data.
 
 ```R
 fgeo_help("krig")
@@ -312,7 +307,7 @@ __fgeo__ provides a fake soil dataset for examples.
 str(soil_fake)
 ```
 
-The data contains multiple soil variables; let's use only two of them.
+The data contains multiple soil variables; here we use only two of them.
 
 ```{r, warning=FALSE, message=FALSE}
 soil_vars <- c("c", "p")
@@ -325,7 +320,7 @@ The output is a nested list, which is awkward to view on the console but you can
 summary(krig_list)
 ```
 
-Also you can pull a dataframe containing the results of all the soil variables.
+You can also pull a dataframe containing the results of all the soil variables.
 
 ```{r}
 krig_df <- to_df(krig_list, item = "df")

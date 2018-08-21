@@ -132,13 +132,13 @@
 
     
     
-<p>This article shows some of the key features of <strong>fgeo</strong> applied to an exploratory data analysis. For a deeper and general approach to exploratory data analysis see <a href="http://r4ds.had.co.nz/exploratory-data-analysis.html">this book section</a>. A version adapted for ForestGEO is available <a href="https://forestgeo.github.io/fgeo/articles/siteonly/eda.html">here</a>.</p>
+<p>This article shows some of the key features of <strong>fgeo</strong> applied to an exploratory data analysis. For a deeper and general approach to exploratory data analysis, see <a href="http://r4ds.had.co.nz/exploratory-data-analysis.html">this book section</a>. A version adapted for ForestGEO is available <a href="https://forestgeo.github.io/fgeo/articles/siteonly/eda.html">here</a>.</p>
 <div id="packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
@@ -148,9 +148,9 @@
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h2>
-<p>You may load your own data. Here I’ll use data from the <strong>fgeo.data</strong> package – which comes with <strong>fgeo</strong>.</p>
+<p>You may load your own data. Here we will use data from the <strong>fgeo.data</strong> package – which comes with <strong>fgeo</strong>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"datasets"</span>)</a></code></pre></div>
-<p>I’ll use a dataset of stems censused in one hectare in the forest plot Luquillo, Puerto Rico (<a href="https://forestgeo.si.edu/sites/north-america/luquillo" class="uri">https://forestgeo.si.edu/sites/north-america/luquillo</a>).</p>
+<p>We will use a dataset of stems censused in one hectare from the forest plot in Luquillo, Puerto Rico (<a href="https://forestgeo.si.edu/sites/north-america/luquillo" class="uri">https://forestgeo.si.edu/sites/north-america/luquillo</a>).</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">stem &lt;-<span class="st"> </span>luquillo_stem_1ha</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">str</span>(stem)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    72618 obs. of  19 variables:</span></a>
@@ -173,7 +173,7 @@
 <a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt;  $ countPOM : num  1 1 1 1 1 1 1 1 1 1 ...</span></a>
 <a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt;  $ status   : chr  "A" "A" "A" "A" ...</span></a>
 <a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;  $ date     : num  NA NA NA NA NA NA NA NA NA NA ...</span></a></code></pre></div>
-<p>For a description of the columns see <code>?data_dictionary</code>.</p>
+<p>For a description of the columns, see <code>?data_dictionary</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">str</span>(data_dictionary)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    242 obs. of  3 variables:</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;  $ table      : chr  "Census" "Census" "Census" "Census" ...</span></a>
@@ -205,7 +205,7 @@
 <a class="sourceLine" id="cb4-29" data-line-number="29"><span class="co">#&gt; 18 ViewFullTable   StemTag  The stem tag used in the field to identify th~</span></a>
 <a class="sourceLine" id="cb4-30" data-line-number="30"><span class="co">#&gt; 19 ViewFullTable   CensusID Foreign Key to  Census table.                 </span></a>
 <a class="sourceLine" id="cb4-31" data-line-number="31"><span class="co">#&gt; 20 ViewFullTable   ExactDa~ Date on which the measurement was taken (form~</span></a></code></pre></div>
-<p>This dataset comes with multiple censuses. I’ll pick only the latest one.</p>
+<p>This dataset comes with multiple censuses. We will pick only the latest one.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">unique</span>(stem<span class="op">$</span>CensusID)</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; [1] 1 2 3 4 5 6</span></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"></a>
@@ -217,7 +217,7 @@
 <div id="exploring-the-distribution-of-status-and-tree-diameter" class="section level2">
 <h2 class="hasAnchor">
 <a href="#exploring-the-distribution-of-status-and-tree-diameter" class="anchor"></a>Exploring the distribution of status and tree diameter</h2>
-<p>Two columns that are commonly useful in ForestGEO datasets are <code>status</code> and <code>dbh</code> (diameter at breast height). Let’s begin by understanding what type of variables they are. For this, base R provides useful functions.</p>
+<p>Two columns that are commonly useful in ForestGEO datasets are <code>status</code> and <code>dbh</code> (diameter at breast height). We will begin by better understanding what type of variables they are. For this, base R provides useful functions.</p>
 <p><code>status</code> is a categorical variable.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">summary</span>(stem6<span class="op">$</span>status)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt;    Length     Class      Mode </span></a>
@@ -230,7 +230,7 @@
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">summary</span>(stem6<span class="op">$</span>dbh)</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's </span></a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt;   10.00   21.77   56.00   93.71  142.00 1405.00    9539</span></a></code></pre></div>
-<p>(Note the missing values (<code>NA</code>’s).)</p>
+<p>(Note the missing values (<code>NA</code>s).)</p>
 <p>And we can visualize its distribution with <code>hist()</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">hist</span>(stem6<span class="op">$</span>dbh)</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
@@ -251,12 +251,12 @@
 <a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt;            A    D    G</span></a>
 <a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;   FALSE 2564    0    0</span></a>
 <a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;   TRUE     4 5416 4119</span></a></code></pre></div>
-<p>We learn that <code>dbh</code> is missing where a tree is dead (<code>status = A</code>) or gone (<code>status = G</code>). This makes sense and, depending on the type of analysis we want to do, we may want to keep or remove missing values.</p>
+<p>We learn that <code>dbh</code> is missing where a tree is dead (<code>status = D</code>) or gone (<code>status = G</code>). This makes sense and, depending on the type of analysis we want to do, we may want to keep or remove missing values.</p>
 </div>
 <div id="determining-tree-status-based-on-stem-status" class="section level2">
 <h2 class="hasAnchor">
 <a href="#determining-tree-status-based-on-stem-status" class="anchor"></a>Determining tree status based on stem status</h2>
-<p>Now that we understand out data are read to clean it, for example, by picking alive trees only. At ForestGEO, working with <code>status</code> is so common that <strong>fgeo</strong> provides a specialized function.</p>
+<p>Now we are ready to clean the data. For example, we can pick trees which status is “A” (alive). At ForestGEO, working with <code>status</code> is so common that <strong>fgeo</strong> provides a specialized function.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"status"</span>)</a></code></pre></div>
 <p>In <code>stem6</code>, the variable <code>status</code> records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of <code>add_status_tree()</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">add_status_tree</span>(stem6, <span class="dt">status_a =</span> <span class="st">"A"</span>, <span class="dt">status_d =</span> <span class="st">"D"</span>)</a>
@@ -330,7 +330,7 @@
 <div id="picking-the-most-abundant-species" class="section level2">
 <h2 class="hasAnchor">
 <a href="#picking-the-most-abundant-species" class="anchor"></a>Picking the most abundant species</h2>
-<p>Which are the three most abundant tree species?</p>
+<p>What are the three most abundant tree species?</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">top3 &lt;-<span class="st"> </span><span class="kw">pick_top</span>(n_by_sp, n, <span class="dv">-3</span>)</a>
 <a class="sourceLine" id="cb19-2" data-line-number="2">top3</a>
 <a class="sourceLine" id="cb19-3" data-line-number="3"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
@@ -365,11 +365,11 @@
 <div id="determine-species-habitat-associations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#determine-species-habitat-associations" class="anchor"></a>Determine species-habitat associations</h2>
-<p>Let’s determine the species-habitat associations using a torus translation test.</p>
+<p>We will determine the species-habitat associations using a torus translation test.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"torus"</span>)</a></code></pre></div>
-<p>This test should use individual trees not the (potentially multiple) stems of individual trees. This test only makes sense at the population level. We are interested in knowing whether or not individuals of a species are aggregated on a habitat. Multiple stems of an individual do not represent population level processes but individual level processes. Let’s then use a ForestGEO <em>tree</em> table. I’ll use <code>luquillo_tree6_random</code>, which contains a small sample of randomly chosen trees across the entire plot (see <code>?</code>luquillo_tree6_random`).</p>
+<p>This test should use individual trees, not multiple stems of individual trees. This test only makes sense at the population level. We are interested in knowing whether individuals of a species are aggregated on a habitat. Multiple stems of an individual do not represent population level processes but individual level processes. We will then use a ForestGEO <em>tree</em> table, <code>luquillo_tree6_random</code>, which contains a small sample of randomly chosen trees across the entire plot (see <code>?luquillo_tree6_random</code>).</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">tree &lt;-<span class="st"> </span>luquillo_tree6_random</a></code></pre></div>
-<p>I’ll pick alive trees of 10 mm or more (for details see previous sections). The variable <code>status</code> of ‘tree’ tables directly represent the status of each tree (see <code>?census_description</code>). I’ll focus on trees with status “A” (alive).</p>
+<p>We will pick alive trees of 10 mm or more (for details see previous sections). The variable <code>status</code> of <em>tree</em> tables directly represent the status of each tree (see <code>?census_description</code>). We will focus on trees with status “A” (alive).</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">dbh10plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(tree, <span class="dv">10</span>)</a>
 <a class="sourceLine" id="cb26-2" data-line-number="2">chosen_trees &lt;-<span class="st"> </span><span class="kw">pick_status</span>(dbh10plus, <span class="st">"A"</span>)</a>
 <a class="sourceLine" id="cb26-3" data-line-number="3"><span class="kw">unique</span>(chosen_trees<span class="op">$</span>status)</a>
@@ -465,7 +465,7 @@
 <div id="krige-soil-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#krige-soil-data" class="anchor"></a>Krige soil data</h2>
-<p>Let’s Krige soil data.</p>
+<p>In this section we will krige soil data.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"krig"</span>)</a></code></pre></div>
 <p><strong>fgeo</strong> provides a fake soil dataset for examples.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">str</span>(soil_fake)</a>
@@ -475,7 +475,7 @@
 <a class="sourceLine" id="cb36-5" data-line-number="5"><span class="co">#&gt;  $ mg: num  0.67 0.5 0.65 0.5 0.56 0.74 0.47 0.52 0.45 0.7 ...</span></a>
 <a class="sourceLine" id="cb36-6" data-line-number="6"><span class="co">#&gt;  $ c : num  1.75 2.25 2.05 2.35 1.45 1.55 0.85 2.25 0.45 2.45 ...</span></a>
 <a class="sourceLine" id="cb36-7" data-line-number="7"><span class="co">#&gt;  $ p : num  6.5 5.9 6.4 6.4 6.2 7 5.9 6.2 6.7 7.1 ...</span></a></code></pre></div>
-<p>The data contains multiple soil variables; let’s use only two of them.</p>
+<p>The data contains multiple soil variables; here we use only two of them.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">soil_vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"c"</span>, <span class="st">"p"</span>)</a>
 <a class="sourceLine" id="cb37-2" data-line-number="2">krig_list &lt;-<span class="st"> </span><span class="kw">krig</span>(soil_fake, soil_vars, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p>The output is a nested list, which is awkward to view on the console but you can view it in RStudio with <code>View()</code> and summarize it with <code>summary()</code></p>
@@ -603,7 +603,7 @@
 <a class="sourceLine" id="cb38-122" data-line-number="122"><span class="co">#&gt;  $ lambda               : num 1</span></a>
 <a class="sourceLine" id="cb38-123" data-line-number="123"><span class="co">#&gt;  $ message              : chr "optim convergence code: 0"</span></a>
 <a class="sourceLine" id="cb38-124" data-line-number="124"><span class="co">#&gt;  $ call                 : language variofit(vario = vg, ini.cov.pars = c(initialVal, startRange), cov.model = varModels[i],      nugget = initialVal)</span></a></code></pre></div>
-<p>Also you can pull a dataframe containing the results of all the soil variables.</p>
+<p>You can also pull a dataframe containing the results of all the soil variables.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">krig_df &lt;-<span class="st"> </span><span class="kw">to_df</span>(krig_list, <span class="dt">item =</span> <span class="st">"df"</span>)</a>
 <a class="sourceLine" id="cb39-2" data-line-number="2"><span class="kw">as_tibble</span>(<span class="kw">filter</span>(krig_df,var <span class="op">==</span><span class="st"> "c"</span>))</a>
 <a class="sourceLine" id="cb39-3" data-line-number="3"><span class="co">#&gt; # A tibble: 1,150 x 4</span></a>
