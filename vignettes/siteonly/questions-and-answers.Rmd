@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 ## What is __fgeo__?
 
-__fgeo__ is a kind of umbrella: It is a meta-package that gathers multiple modules of ForestGEO's software -- each module corresponding to an individual package. This modularity facilitates managing and expanding ForestGEO's software.
+__fgeo__ is an umbrella: It is a meta-package that gathers multiple modules of ForestGEO's software -- each module corresponding to an individual package. This modularity facilitates managing and expanding ForestGEO's software.
 
 ## How can I learn about __fgeo__ before installing it?
 
@@ -69,19 +69,19 @@ fgeo_help()
 
 ## How can I contribute to __fgeo__?
 
-See [Information > Contributing](https://forestgeo.github.io/fgeo/index.html#information)
+See [Contributing to __fgeo__](https://forestgeo.github.io/fgeo/CONTRIBUTING.html).
 
 ## How can I get help about some code?
 
-See [Information > Getting help](https://forestgeo.github.io/fgeo/index.html#information)
+See [Getting help with __fgeo__](https://forestgeo.github.io/fgeo/SUPPORT.html) or email Mauro Lepore (leporem\@si.edu).
 
 ## How can I report a bug?
 
-Open a [New issue](https://github.com/forestgeo/fgeo/issues/new)
+Open a [New issue](https://github.com/forestgeo/fgeo/issues/new) or email Mauro Lepore (leporem\@si.edu).
 
 ## How can I browse source code?
 
-Browse all source code at https://github.com/forestgeo/fgeo
+Browse all source code at https://github.com/forestgeo/fgeo. 
 
 ## How can I find the source code of a specific function?
 
