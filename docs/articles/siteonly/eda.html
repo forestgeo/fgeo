@@ -136,13 +136,13 @@
 
     
     
-<p>Here I literally reproduce the section Exploratory Data Analysis of the book R for Data Science (<a href="http://r4ds.had.co.nz/" class="uri">http://r4ds.had.co.nz/</a>), by Hadley Wickham and Garrett Grolemund – except for the examples and some text, which I changed to more strongly engage ecologists from ForestGEO (if anything here is poorly written it’s surely mine).</p>
+<p>Here I reproduce the section <em>Exploratory Data Analysis</em> of the book <em>R for Data Science</em> (<a href="http://r4ds.had.co.nz/" class="uri">http://r4ds.had.co.nz/</a>), by Hadley Wickham and Garrett Grolemund – except for the examples and some text, which I changed to engage ecologists from ForestGEO.</p>
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>This article will show you how to explore your data with general purpose tools, mostly from the <strong>tidyverse</strong> (<a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>). This is a good place to start, before you learn the specific tools from the <strong>fgeo</strong> package (<a href="https://forestgeo.github.io/fgeo/" class="uri">https://forestgeo.github.io/fgeo/</a>). For an exploratory data analysis with <strong>fgeo</strong> see <a href="https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started">Get Started</a>.</p>
-<p>You’ll learn to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.</p>
-<p>If you are new to the tidyverse, you may feel a little frustrated at the beginning, but quickly your effort will pay-off. The tools in the <strong>tidyverse</strong> are powerful, relatively easy to use and consistent; so once you learn some, you will learn most other tools intuitively.</p>
+<p>This article will show you how to explore your data with general purpose tools, mostly from the <strong>tidyverse</strong> (<a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>). This is a good place to start before you learn the specific tools from the <strong>fgeo</strong> package (<a href="https://forestgeo.github.io/fgeo/" class="uri">https://forestgeo.github.io/fgeo/</a>). For an exploratory data analysis with <strong>fgeo</strong> see <a href="https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started">Get Started</a>.</p>
+<p>You will learn to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.</p>
+<p>If you are new to the <strong>tidyverse</strong>, you may feel a little frustrated at the beginning, but your effort will quickly pay-off. The tools in the <strong>tidyverse</strong> are powerful, relatively easy to use, and consistent; so once you learn some of the tools, you will learn most other tools intuitively.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------------------- tidyverse 1.2.1 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v ggplot2 3.0.0     v purrr   0.2.5</span></a>
@@ -152,7 +152,7 @@
 <a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------------------------- tidyverse_conflicts() --</span></a>
 <a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></a></code></pre></div>
-<p>The data we will use is a public dataset of trees censused in a forest plot in Luquillo, in Puerto Rico. Those data are available in the data set <code>luquillo_stem_random</code> from the data-package <strong>fgeo.data</strong> (<a href="https://forestgeo.github.io/fgeo.data/" class="uri">https://forestgeo.github.io/fgeo.data/</a>).</p>
+<p>The data we will use is a public dataset of trees censused in a forest plot in Luquillo, Puerto Rico. Those data are available in the data set <code>luquillo_stem_random</code> from the data-package <strong>fgeo.data</strong> (<a href="https://forestgeo.github.io/fgeo.data/" class="uri">https://forestgeo.github.io/fgeo.data/</a>).</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Convenient nickname</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">stem &lt;-<span class="st"> </span>fgeo.data<span class="op">::</span>luquillo_stem_random</a></code></pre></div>
 <div id="style" class="section level2">
@@ -185,7 +185,7 @@
 </div>
 <div id="questions-and-definitions" class="section level1">
 <h1 class="hasAnchor">
-<a href="#questions-and-definitions" class="anchor"></a>Questions and Definitions</h1>
+<a href="#questions-and-definitions" class="anchor"></a>Questions and definitions</h1>
 <div id="questions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#questions" class="anchor"></a>Questions</h2>
@@ -200,7 +200,7 @@
 <a href="#definitions" class="anchor"></a>Definitions</h2>
 <p>A <strong>variable</strong> is a quantity, quality, or property that you can measure.</p>
 <p>A <strong>value</strong> is the state of a variable when you measure it. The value of a variable may change from measurement to measurement.</p>
-<p>An <strong>observation</strong> is a set of measurements made under similar conditions (you usually make all of the measurements in an observation at the same time and on the same object). An observation will contain several values, each associated with a different variable. I’ll sometimes refer to an observation as a data point.</p>
+<p>An <strong>observation</strong> is a set of measurements made under similar conditions (you usually make all of the measurements in an observation at the same time and on the same object). An observation will contain several values, each associated with a different variable. I will sometimes refer to an observation as a data point.</p>
 <p><strong>Tabular data</strong> is a set of values, each associated with a variable and an observation. Tabular data is tidy if each value is placed in its own “cell”, each variable in its own column, and each observation in its own row.</p>
 <p><strong>Variation</strong> is the tendency of the values of a variable to change from measurement to measurement.</p>
 </div>
@@ -210,7 +210,7 @@
 <a href="#variation" class="anchor"></a>Variation</h1>
 <p>Every variable varies with a particular pattern, and that pattern may be insightful. To understand the variation pattern of a variable we can visualize the distribution of the variables’ values. The best way to visualize a variable’s distribution depends on whether the variable is categorical or continuous.</p>
 <p>The <code>stem</code> dataset has both, categorical and continuous variables. In R, categorical variables are usually stored as character strings (<code>&lt;chr&gt;</code>) or factors (<code>&lt;fctr&gt;</code>), and continuous variables are stored as integers (<code>&lt;int&gt;</code>) or doubles (<code>&lt;dbl&gt;</code>).</p>
-<p><code>stem</code> is a tibble. A tibble is a subclass of dataframe. But compared to regular dataframes tibbles are optimized to handle large data; and they print more information and nicer.</p>
+<p><code>stem</code> is a tibble. A tibble is a subclass of dataframe. But compared to regular dataframes, tibbles are optimized to handle large data; they also print more information and show it in a nicer way.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">class</span>(stem)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; [1] "tbl_df"     "tbl"        "data.frame"</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"></a>
@@ -287,7 +287,7 @@
 <p><img src="https://user-images.githubusercontent.com/5856545/41784224-12a3adca-760d-11e8-8b80-50d8775f01db.png" align="right" height="300"></p>
 <div id="visualizing-distributions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#visualizing-distributions" class="anchor"></a>Visualizing Distributions</h2>
+<a href="#visualizing-distributions" class="anchor"></a>Visualizing distributions</h2>
 <div id="categorical-variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#categorical-variables" class="anchor"></a>Categorical variables</h3>
@@ -299,9 +299,9 @@
 </div>
 <div id="continuous-variables" class="section level3">
 <h3 class="hasAnchor">
-<a href="#continuous-variables" class="anchor"></a>Continuous Variables</h3>
+<a href="#continuous-variables" class="anchor"></a>Continuous variables</h3>
 <p>A variable is continuous if it can take any of an infinite set of ordered values. To examine the distribution of a continuous variable use a histogram. You should always explore a variety of binwidths when working with histograms, as different binwidths can reveal different patterns.</p>
-<p>Let’s explore <code>dbh</code>, which represents the stem diameter at breast height. Now we will focus on small stems; we’ll explore big stems later. And we will try bars of different widths (with <code>binwidth</code>) and choose one for further analyses.</p>
+<p>Let’s explore <code>dbh</code>, which represents the stem diameter at breast height. Now we will focus on small stems; we will explore big stems later. And we will try bars of different widths (with <code>binwidth</code>) and choose one for further analyses.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">small_dbh &lt;-<span class="st"> </span><span class="kw">filter</span>(stem, dbh <span class="op">&lt;</span><span class="st"> </span><span class="dv">300</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co"># Save data and mappings in "p" to reuse them later.</span></a>
@@ -330,14 +330,14 @@
 </div>
 <div id="typical-and-rare-values" class="section level3">
 <h3 class="hasAnchor">
-<a href="#typical-and-rare-values" class="anchor"></a>Typical and rare Values</h3>
+<a href="#typical-and-rare-values" class="anchor"></a>Typical and rare values</h3>
 <p>In both bar charts and histograms, tall and short bars let us explore common and less-common values. For example, we could ask:</p>
 <ul>
 <li>Which values are the most common? Why?</li>
 <li>Which values are rare? Why? Does that match your expectations?</li>
 <li>Can you see any unusual patterns? What might explain them?</li>
 </ul>
-<p>The later two plots give a good estimate of what stem diameters are most common. You can compute the same count manually, by cutting the variable <code>dbh</code> with <code><a href="http://www.rdocumentation.org/packages/ggplot2/topics/cut_interval">ggplot2::cut_width()</a></code> and then counting the unique pieces with <code><a href="http://dplyr.tidyverse.org/reference/tally.html">dplyr::count()</a></code>.</p>
+<p>The latter two plots give a good estimate of the most common stem-diameters. You can compute the same count manually by cutting the variable <code>dbh</code> with <code><a href="http://www.rdocumentation.org/packages/ggplot2/topics/cut_interval">ggplot2::cut_width()</a></code>, and then counting the unique pieces with <code><a href="http://dplyr.tidyverse.org/reference/tally.html">dplyr::count()</a></code>.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">small_dbh <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dbh_mm =</span> <span class="kw">cut_width</span>(dbh, <span class="dt">width =</span> useful_binwidth)) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(dbh_mm, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</a>
@@ -355,7 +355,7 @@
 <a class="sourceLine" id="cb16-15" data-line-number="15"><span class="co">#&gt;  9 (225,255]    70</span></a>
 <a class="sourceLine" id="cb16-16" data-line-number="16"><span class="co">#&gt; 10 (255,285]    43</span></a>
 <a class="sourceLine" id="cb16-17" data-line-number="17"><span class="co">#&gt; 11 (285,315]    23</span></a></code></pre></div>
-<p>The most common stems are those which diameter (<code>dbh</code>) is between 15 mm and 45 mm.</p>
+<p>The most common stems have a diameter at breast height (<code>dbh</code>) between 15 mm and 45 mm.</p>
 </div>
 <div id="clustered-values" class="section level3">
 <h3 class="hasAnchor">
@@ -383,14 +383,14 @@
 <h3 class="hasAnchor">
 <a href="#unusual-values" class="anchor"></a>Unusual values</h3>
 <p>In this section we will work with the entire <code>stem</code> data set.</p>
-<p>Outliers are observations that are unusual; data points that don’t seem to fit the pattern. Sometimes outliers are data entry errors; other times outliers suggest important new science. When you have a lot of data, outliers are sometimes difficult to see in a histogram.</p>
-<p>For example, take the distribution of the <code>dbh</code> variable of the <code>stem</code> data set. Notice how wide are the limits of the x-axis.</p>
+<p>Outliers are observations that are unusual; data points that do not seem to fit the pattern. Sometimes outliers are data entry errors; other times outliers suggest important new science. When you have a lot of data, outliers can be difficult to see in a histogram.</p>
+<p>For example, consider the distribution of the <code>dbh</code> variable of the <code>stem</code> data set. Notice how wide are the limits of the x-axis.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(stem, <span class="kw">aes</span>(dbh)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> useful_binwidth)</a>
 <a class="sourceLine" id="cb19-3" data-line-number="3">p</a>
 <a class="sourceLine" id="cb19-4" data-line-number="4"><span class="co">#&gt; Warning: Removed 2700 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-16-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>There are so many observations in the common bins that the rare bins are so short that you can barely see them . To make the unusual values more noticeable, we can zoom into smaller values of the y-axis with <code>coord_cartesian()</code>.</p>
+<p>There are so many observations in the common bins that the rare bins are so short that you can barely see them. To make the unusual values more noticeable, we can zoom into smaller values of the y-axis with <code>coord_cartesian()</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">15</span>))</a>
 <a class="sourceLine" id="cb20-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2700 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-17-1.png" width="70%" style="display: block; margin: auto;"></p>
@@ -431,14 +431,14 @@
 <a class="sourceLine" id="cb22-4" data-line-number="4"><span class="st">    </span><span class="co"># highlight unusual stems</span></a>
 <a class="sourceLine" id="cb22-5" data-line-number="5"><span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">data =</span> unusual, <span class="dt">colour =</span> <span class="st">"red"</span>, <span class="dt">size =</span> <span class="dv">3</span>)</a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-19-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>It’s good practice to repeat your analysis with and without the outliers. If they have minimal effect on the results, and you can’t figure out why they’re there, it’s reasonable to replace them with missing values, and move on. However, if they have a substantial effect on your results, you shouldn’t drop them without justification. You’ll need to figure out what caused them (e.g. a data entry error) and disclose that you removed them in your write-up.</p>
+<p>It is good practice to repeat your analysis with and without the outliers. If they have minimal effect on the results, and you can not figure out why they are there, it is reasonable to replace them with missing values, and move on. However, if they have a substantial effect on your results, you should not drop them without justification. You will need to figure out what caused them (e.g. a data entry error) and disclose that you removed them in your write-up.</p>
 </div>
 </div>
 </div>
 <div id="missing-values" class="section level1">
 <h1 class="hasAnchor">
-<a href="#missing-values" class="anchor"></a>Missing Values</h1>
-<p>If you’ve encountered unusual values in your data set, and simply want to move on to the rest of your analysis, you have two options.</p>
+<a href="#missing-values" class="anchor"></a>Missing values</h1>
+<p>If you have encountered unusual values in your data set, and simply want to move on to the rest of your analysis, you have two options.</p>
 <ol style="list-style-type: decimal">
 <li>Drop the entire row with the strange values:</li>
 </ol>
@@ -450,7 +450,7 @@
 <a class="sourceLine" id="cb23-6" data-line-number="6"><span class="co">#&gt; [1] 7944</span></a>
 <a class="sourceLine" id="cb23-7" data-line-number="7"><span class="kw">nrow</span>(usual)</a>
 <a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">#&gt; [1] 7920</span></a></code></pre></div>
-<p>I don’t recommend this option because just because one measurement is invalid, doesn’t mean all the measurements are. Additionally, if you have low quality data, by time that you’ve applied this approach to every variable you might find that you don’t have any data left!</p>
+<p>I do not recommend this option: That one measurement is invalid does not mean all the measurements are invalid. Additionally, if you have low quality data, by time you have applied this approach to every variable you might find that you are left with no data!</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Instead, I recommend replacing the unusual values with missing values. The easiest way to do this is to use <code><a href="http://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></code> to replace the variable with a modified copy. You can use the <code>ifelse()</code> function to replace unusual values with <code>NA</code>:</li>
 </ol>
@@ -484,7 +484,7 @@
 <a class="sourceLine" id="cb25-24" data-line-number="24"><span class="co">#&gt; 10    NA  32585</span></a>
 <a class="sourceLine" id="cb25-25" data-line-number="25"><span class="co">#&gt; # ... with 14 more rows</span></a></code></pre></div>
 <p>Alternatively to <code>ifelse()</code>, use <code><a href="http://dplyr.tidyverse.org/reference/case_when.html">dplyr::case_when()</a></code>. <code>case_when()</code> is particularly useful inside <code>mutate()</code> when you want to create a new variable that relies on a complex combination of existing variables.</p>
-<p>It’s not obvious where you should plot missing values in a plot, so <strong>ggplot2</strong> doesn’t include them, but it does warn that they’ve been removed (left plot below). To suppress that warning, set <code>na.rm = TRUE</code> (right plot below).</p>
+<p>It is not obvious where you should plot missing values in a plot, so <strong>ggplot2</strong> does not include them, but it does warn that they have been removed (left plot below). To suppress that warning, set <code>na.rm = TRUE</code> (right plot below).</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># Left: don't remove NAs and get a warning on the console</span></a>
 <a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">ggplot</span>(unusual_only, <span class="kw">aes</span>(dbh)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb26-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> useful_binwidth) <span class="op">+</span></a>
@@ -520,7 +520,7 @@
 <div id="a-categorical-and-continuous-variable" class="section level2">
 <h2 class="hasAnchor">
 <a href="#a-categorical-and-continuous-variable" class="anchor"></a>A categorical and continuous variable</h2>
-<p>It’s common to want to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of <code>geom_freqpoly()</code> is not that useful for that sort of comparison because the height is given by the count. That means if one of the groups is much smaller than the others, it’s hard to see the differences in shape. For example, let’s explore how stem diameter (<code>dbh</code>) varies with species (<code>sp</code>):</p>
+<p>It is common to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of <code>geom_freqpoly()</code> is not that useful for that sort of comparison because the height is given by the count. That means if one of the groups is much smaller than the others, it is hard to see the differences in shape. For example, let’s explore how stem diameter (<code>dbh</code>) varies with species (<code>sp</code>):</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="co"># The data set has too many species; choosing just a few for clarity</span></a>
 <a class="sourceLine" id="cb28-2" data-line-number="2">few_sp &lt;-<span class="st"> </span><span class="kw">unique</span>(stem<span class="op">$</span>sp)[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
 <a class="sourceLine" id="cb28-3" data-line-number="3">data_few_sp &lt;-<span class="st"> </span><span class="kw">filter</span>(stem, sp <span class="op">%in%</span><span class="st"> </span>few_sp)</a>
@@ -530,12 +530,12 @@
 <a class="sourceLine" id="cb28-7" data-line-number="7"><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></a>
 <a class="sourceLine" id="cb28-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-25-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>It’s hard to see the difference in distribution because the overall counts differ so much:</p>
+<p>It is hard to see the difference in distribution because the overall counts differ so much:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">ggplot</span>(data_few_sp) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb29-2" data-line-number="2"><span class="st">  </span><span class="co"># ordering `sp` from high to low frequency with forcats::fct_infreq()</span></a>
 <a class="sourceLine" id="cb29-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">fct_infreq</span>(sp)))</a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-26-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>To make the comparison easier we need to swap what is displayed on the y-axis. Instead of displaying count, we’ll display density, which is the count standardized so that the area under each frequency polygon is one.</p>
+<p>To make the comparison easier we need to swap what is displayed on the y-axis. Instead of displaying count, we will display density, which is the count standardized so that the area under each frequency polygon is one.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(<span class="dt">x=</span> dbh, <span class="dt">y =</span> ..density..)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb30-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_freqpoly</span>(<span class="kw">aes</span>(<span class="dt">color =</span> sp))</a>
 <a class="sourceLine" id="cb30-3" data-line-number="3"><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></a>
@@ -554,7 +554,7 @@
 <a class="sourceLine" id="cb31-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_boxplot).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-28-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>We see much less information about the distribution, but the boxplots are much more compact so we can more easily compare them (and fit more on one plot).</p>
-<p>Above we ordered the variable <code>sp</code> by its frequency. But now, to make the trend easier to see, we can reorder <code>sp</code> based on the median value of <code>dbh</code>. One way to do that is with <code>reorder()</code>.</p>
+<p>Above we ordered the variable <code>sp</code> by its frequency. Now, to make the trend easier to see, we can reorder <code>sp</code> based on the median value of <code>dbh</code>. One way to do that is with <code>reorder()</code>.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">data_few_sp &lt;-<span class="st"> </span>data_few_sp <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb32-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sp =</span> <span class="kw">reorder</span>(sp, dbh, <span class="dt">FUN =</span> median, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb32-3" data-line-number="3"></a>
@@ -602,7 +602,7 @@
 <a class="sourceLine" id="cb36-4" data-line-number="4"><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></a>
 <a class="sourceLine" id="cb36-5" data-line-number="5"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-33-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>If you have a small data set, it’s sometimes useful to use <code>geom_jitter()</code> to see the relationship between a continuous and categorical variable. The <strong>ggbeeswarm</strong> package provides a number of methods similar to <code>geom_jitter()</code>.</p>
+<p>If you have a small data set, it is sometimes useful to use <code>geom_jitter()</code> to see the relationship between a continuous and categorical variable. The <strong>ggbeeswarm</strong> package provides a number of methods similar to <code>geom_jitter()</code>.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="co"># Remember to install with install.packages("ggbeeswarm")</span></a>
 <a class="sourceLine" id="cb37-2" data-line-number="2"><span class="kw">library</span>(ggbeeswarm)</a>
 <a class="sourceLine" id="cb37-3" data-line-number="3"></a>
@@ -613,20 +613,20 @@
 <a class="sourceLine" id="cb37-8" data-line-number="8">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(small_dataset, <span class="kw">aes</span>(sp, dbh))</a>
 <a class="sourceLine" id="cb37-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb37-10" data-line-number="10">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 80 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>()</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 80 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span>ggbeeswarm<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggbeeswarm/topics/geom_quasirandom">geom_quasirandom</a></span>()</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 80 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div id="two-categorical-variables" class="section level2">
 <h2 class="hasAnchor">
 <a href="#two-categorical-variables" class="anchor"></a>Two categorical variables</h2>
-<p>To visualize the covariation between categorical variables, you’ll need to count the number of observations for each combination. One way to do that is to rely on the built-in <code>geom_count()</code>. The size of each circle in the plot displays how many observations occurred at each combination of values (left plot below). Covariation will appear as a strong correlation between specific x values and specific y values.</p>
+<p>To visualize the covariation between categorical variables, you will need to count the number of observations for each combination. One way to do that is to rely on the built-in <code>geom_count()</code>. The size of each circle in the plot displays how many observations occurred at each combination of values (left plot below). Covariation will appear as a strong correlation between specific x values and specific y values.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="co"># Simple count</span></a>
 <a class="sourceLine" id="cb40-2" data-line-number="2"><span class="kw">ggplot</span>(data_few_sp) <span class="op">+</span></a>
 <a class="sourceLine" id="cb40-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_count</span>(<span class="kw">aes</span>(<span class="dt">x =</span> sp, <span class="dt">y =</span> status))</a></code></pre></div>
@@ -671,7 +671,7 @@
 <div id="two-continuous-variables" class="section level2">
 <h2 class="hasAnchor">
 <a href="#two-continuous-variables" class="anchor"></a>Two continuous variables</h2>
-<p>You’ve already seen one great way to visualize the covariation between two continuous variables: draw a scatterplot with <code>geom_point()</code>. You can see covariation as a pattern in the points. For example, we can estimate the basal area of each stem as a function of <code>dbh</code> with the equation <code>ba = 1 / 4 * pi * (dbh)^2</code>. I’ll add some error to make the pattern a little more interesting.</p>
+<p>You have already seen one great way to visualize the covariation between two continuous variables: draw a scatterplot with <code>geom_point()</code>. You can see covariation as a pattern in the points. For example, we can estimate the basal area of each stem as a function of <code>dbh</code> with the equation <code>ba = 1 / 4 * pi * (dbh)^2</code>. I will add some error to make the pattern a little more interesting.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1">error &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="kw">length</span>(stem<span class="op">$</span>dbh))</a>
 <a class="sourceLine" id="cb44-2" data-line-number="2">stem &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb44-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ba =</span> (<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">4</span> <span class="op">*</span><span class="st"> </span>(dbh)<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>error)</a>
@@ -680,11 +680,11 @@
 <a class="sourceLine" id="cb44-6" data-line-number="6">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
 <a class="sourceLine" id="cb44-7" data-line-number="7"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-41-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>Scatterplots become less useful as the size of your data set grows, because points begin to overplot, and pile up into areas of uniform black (as above). You’ve already seen one way to fix the problem: using the <code>alpha</code> aesthetic to add transparency.</p>
+<p>Scatterplots become less useful as the size of your data set grows, because points begin to overplot and pile up into areas of uniform black (as above). You have already seen one way to fix the problem: using the <code>alpha</code> aesthetic to add transparency.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">25</span>)</a>
 <a class="sourceLine" id="cb45-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-42-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>But using transparency can be challenging for very large data sets. Another solution is to use <code>bin</code>. Previously you used <code>geom_histogram()</code> and <code>geom_freqpoly()</code> to bin in one dimension. Now you’ll learn how to use <code>geom_bin2d()</code> and <code>geom_hex()</code> to bin in two dimensions.</p>
+<p>But using transparency can be challenging for very large data sets. Another solution is to use <code>bin</code>. Previously you used <code>geom_histogram()</code> and <code>geom_freqpoly()</code> to bin in one dimension. Now you will learn how to use <code>geom_bin2d()</code> and <code>geom_hex()</code> to bin in two dimensions.</p>
 <p><code>geom_bin2d()</code> and <code>geom_hex()</code> divide the coordinate plane into 2d bins and then use a fill color to display how many points fall into each bin. <code>geom_bin2d()</code> creates rectangular bins. <code>geom_hex()</code> creates hexagonal bins. You will need to install the <strong>hexbin</strong> package to use <code>geom_hex()</code>.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co"># Remember to install with install.packages("hexbin")</span></a>
 <a class="sourceLine" id="cb46-2" data-line-number="2"><span class="co"># Left</span></a>
@@ -695,13 +695,13 @@
 <a class="sourceLine" id="cb46-7" data-line-number="7">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_hex</span>()</a>
 <a class="sourceLine" id="cb46-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 2700 rows containing non-finite values (stat_binhex).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-43-1.png" width="70%" style="display: block; margin: auto;"><img src="eda_files/figure-html/unnamed-chunk-43-2.png" width="70%" style="display: block; margin: auto;"></p>
-<p>Another option is to bin one continuous variable so it acts like a categorical variable. Then you can use one of the techniques for visualizing the combination of a categorical and a continuous variable that you learned about. For example, you could bin <code>dbh</code> and then for each group, display a boxplot:</p>
+<p>Another option is to bin one continuous variable so it acts like a categorical variable. Then you can use one of the techniques for visualizing the combination of a categorical and a continuous variable that you learned about. For example, you can bin <code>dbh</code> and then display a boxplot for each group:</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(stem, <span class="kw">aes</span>(dbh, ba))</a>
 <a class="sourceLine" id="cb47-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="kw">cut_width</span>(dbh, useful_binwidth)))</a>
 <a class="sourceLine" id="cb47-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (stat_boxplot).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-44-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p><code>cut_width(x, width)</code>, as used above, divides x into bins of width <code>width</code>. By default, boxplots look roughly the same (apart from number of outliers) regardless of how many observations there are, so it’s difficult to tell that each boxplot summarizes a different number of points. One way to show that is to make the width of the boxplot proportional to the number of points with <code>varwidth = TRUE</code>.</p>
-<p>Another approach is to display approximately the same number of points in each bin. That’s the job of <code>cut_number()</code>:</p>
+<p><code>cut_width(x, width)</code>, as used above, divides x into bins of width <code>width</code>. By default, boxplots look roughly the same (apart from number of outliers) regardless of how many observations there are, so it is difficult to tell that each boxplot summarizes a different number of points. One way to show that is to make the width of the boxplot proportional to the number of points with <code>varwidth = TRUE</code>.</p>
+<p>Another approach is to display approximately the same number of points in each bin. That is the job of <code>cut_number()</code>:</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="kw">cut_number</span>(dbh, <span class="dv">20</span>)))</a>
 <a class="sourceLine" id="cb48-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (stat_boxplot).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-45-1.png" width="70%" style="display: block; margin: auto;"></p>
@@ -709,7 +709,7 @@
 <div id="patterns-and-models" class="section level2">
 <h2 class="hasAnchor">
 <a href="#patterns-and-models" class="anchor"></a>Patterns and models</h2>
-<p>Patterns in your data provide clues about relationships. If a systematic relationship exists between two variables it will appear as a pattern in the data. If you spot a pattern, ask yourself:</p>
+<p>Patterns in your data provide clues about relationships. If a systematic relationship exists between two variables, it will appear as a pattern in the data. If you spot a pattern, ask yourself:</p>
 <ul>
 <li>Could this pattern be due to coincidence (i.e. random chance)?</li>
 <li>How can you describe the relationship implied by the pattern?</li>
@@ -719,7 +719,7 @@
 </ul>
 <p>Above we learned that a scatterplot of stem diameter (<code>dbh</code>) versus basal area (<code>ba</code>) shows a pattern: larger stem diameters are associated with larger basal area.</p>
 <p>Patterns provide one of the most useful tools for data scientists because they reveal covariation. If you think of variation as a phenomenon that creates uncertainty, covariation is a phenomenon that reduces it. If two variables co-vary, you can use the values of one variable to make better predictions about the values of the second. If the covariation is due to a causal relationship (a special case), then you can use the value of one variable to control the value of the second.</p>
-<p>Models are a tool for extracting patterns out of data. For example, consider the <code>stem</code> data; <code>dbh</code> and <code>ba</code> are tightly related. It’s possible to use a model to remove the very strong relationship between <code>dbh</code> and <code>ba</code> so we can explore the subtleties that remain. The following code fits a model that predicts <code>ba</code> from <code>dbh</code> and then computes the residuals (the difference between the predicted value and the actual value). The residuals give us a view of the basal area of a stem, once the effect of <code>dbh</code> has been removed.</p>
+<p>Models are a tool for extracting patterns out of data. For example, consider the <code>stem</code> data; <code>dbh</code> and <code>ba</code> are tightly related. It is possible to use a model to remove the very strong relationship between <code>dbh</code> and <code>ba</code> so we can explore the subtleties that remain. The following code fits a model that predicts <code>ba</code> from <code>dbh</code> and then computes the residuals (the difference between the predicted value and the actual value). The residuals give us a view of the basal area of a stem, once the effect of <code>dbh</code> has been removed.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">library</span>(modelr)</a>
 <a class="sourceLine" id="cb49-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb49-3" data-line-number="3">mod &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">log</span>(ba) <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(dbh), <span class="dt">data =</span> stem)</a>
@@ -731,7 +731,7 @@
 <a class="sourceLine" id="cb49-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_point</span>()</a>
 <a class="sourceLine" id="cb49-10" data-line-number="10"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-46-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>There is no pattern left. This is unsurprising because we created <code>ba</code> as a precise function of <code>dbh</code> plus a random error – once we removed the pattern due to <code>dbh</code> all that remains is noise.</p>
+<p>There is no pattern left. This is unsurprising because we created <code>ba</code> as a precise function of <code>dbh</code> plus a random error – once we removed the pattern due to <code>dbh</code>, all that remains is noise.</p>
 </div>
 </div>
   </div>
@@ -747,18 +747,18 @@
       </ul>
 </li>
       <li>
-<a href="#questions-and-definitions">Questions and Definitions</a><ul class="nav nav-pills nav-stacked">
+<a href="#questions-and-definitions">Questions and definitions</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#questions">Questions</a></li>
       <li><a href="#definitions">Definitions</a></li>
       </ul>
 </li>
       <li>
 <a href="#variation">Variation</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#visualizing-distributions">Visualizing Distributions</a></li>
+<li><a href="#visualizing-distributions">Visualizing distributions</a></li>
       </ul>
 </li>
       <li>
-<a href="#missing-values">Missing Values</a><ul class="nav nav-pills nav-stacked">
+<a href="#missing-values">Missing values</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#exercises">Exercises</a></li>
       </ul>
 </li>
