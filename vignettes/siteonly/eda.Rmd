@@ -319,12 +319,12 @@ Alternatively to `ifelse()`, use `dplyr::case_when()`. `case_when()` is particul
 It is not obvious where you should plot missing values in a plot, so __ggplot2__ does not include them, but it does warn that they have been removed (left plot below). To suppress that warning, set `na.rm = TRUE` (right plot below).
 
 ```{r, fig.align="default", out.width="45%", fig.widh=(6 * 0.5 / 0.95)}
-# Left: don't remove NAs and get a warning on the console
+# Left: Keep NAs and get a warning on the console
 ggplot(unusual_only, aes(dbh)) + 
   geom_histogram(binwidth = useful_binwidth) +
   labs(title = "Expect empty plot but get a warning")
 
-# Right: NAs explicitely removed in geom_histogram(), so no warning
+# Right: Remove NAs explicitely in geom_histogram(), so no warning
 ggplot(unusual_only, aes(dbh)) + 
   geom_histogram(binwidth = useful_binwidth, na.rm = TRUE) +
   labs(title = "Expect empty plot but no warning")
