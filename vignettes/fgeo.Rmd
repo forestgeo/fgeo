@@ -235,7 +235,7 @@ unique(chosen_trees$status)
 
 Note that `tt_test()` is recommended for sufficiently abundant species:
 
-> You should only try to determine the habitat association for sufficiently abundant species - in a 50-ha plot, a minimum abundance of 50 trees/species has been used.
+> You should only try to determine the habitat association for sufficiently abundant species. In a 50-ha plot, a minimum abundance of 50 trees/species has been used.
 
 -- `?tt_test()`
 
@@ -280,17 +280,17 @@ The output of `tt_test()` is a list. Large lists are awkward to view -- unless y
 View(tt)
 ```
 
+You can reduce the `tt` from a list of matrices to a single matix with `Reduce()`.
+
+```{r}
+Reduce(rbind, tt)
+```
+
 Alternatively, transform the list to a dataframe.
 
 ```{r}
 tt_df <- to_df(tt)
 tt_df
-```
-
-You can visualize the results with `plot()`.
-
-```{r}
-plot(tt_df)
 ```
 
 ## Krige soil data 
