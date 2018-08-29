@@ -235,7 +235,7 @@ unique(chosen_trees$status)
 
 Note that `tt_test()` is recommended for sufficiently abundant species:
 
-> You should only try to determine the habitat association for sufficiently abundant species - in a 50-ha plot, a minimum abundance of 50 trees/species has been used.
+> You should only try to determine the habitat association for sufficiently abundant species. In a 50-ha plot, a minimum abundance of 50 trees/species has been used.
 
 -- `?tt_test()`
 
@@ -262,10 +262,10 @@ You can visualize the habitats with `plot()`.
 plot(habitat)
 ```
 
-The `habitats` column results from a cluster analysis of three variables computed from the elevation dataset: mean elevation, convexity and slope.
+FYI, `habitats` result from hierarchical clustering on three variables computed from the elevation dataset: mean elevation, convexity and slope.
 
 ```{r}
-cluster_elevation(luquillo_elevation, gridsize = 20, n = 4)
+fgeo_topography(luquillo_elevation, gridsize = 20, n = 4)
 ```
 
 And now we are ready to run the test.
@@ -280,17 +280,17 @@ The output of `tt_test()` is a list. Large lists are awkward to view -- unless y
 View(tt)
 ```
 
+You can reduce the `tt` from a list of matrices to a single matrix with `Reduce()`.
+
+```{r}
+Reduce(rbind, tt)
+```
+
 Alternatively, transform the list to a dataframe.
 
 ```{r}
 tt_df <- to_df(tt)
 tt_df
-```
-
-You can visualize the results with `plot()`.
-
-```{r}
-plot(tt_df)
 ```
 
 ## Krige soil data 
