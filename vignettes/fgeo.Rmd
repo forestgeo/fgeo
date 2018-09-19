@@ -157,19 +157,19 @@ non_missing <- drop_if_na(ten_plus, "dbh")
 Calculate the total abundance of stems and trees.
 
 ```{r}
-count_distinct_stemid(non_missing)
+# Stem abundance
+abundance(non_missing)
 
-# Collapse treeID by picking the stem with largest dbh
+# Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
 largest_stem <- pick_main_stem(non_missing)
-
-count_distinct_stemid(largest_stem)
+abundance(largest_stem)
 ```
 
 Calculate the abundance of trees by species.
 
 ```{r}
 by_sp <- group_by(largest_stem, sp)
-n_by_sp <- count_distinct_treeid(by_sp)
+n_by_sp <- abundance(by_sp)
 n_by_sp
 ```
 
@@ -242,7 +242,7 @@ Note that `tt_test()` is recommended for sufficiently abundant species:
 ```{r}
 # Find sufficiently abundant species
 by_sp <- group_by(tree, sp)
-n_by_sp <- count_distinct_treeid(by_sp)
+n_by_sp <- abundance(by_sp)
 n_by_sp
 
 n_sp50plus <- filter(n_by_sp, n > 50)

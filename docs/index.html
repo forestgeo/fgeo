@@ -152,7 +152,7 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
@@ -213,37 +213,40 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">non_missing &lt;-<span class="st"> </span><span class="kw">drop_if_na</span>(ten_plus, <span class="st">"dbh"</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; Warning: Dropping 5261 rows with missing `dbh` values.</span></a></code></pre></div>
 <p>Count distinct values of <code>stemID</code> and <code>treeID</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">count_distinct_stemid</span>(non_missing)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; 1  2564</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co"># Collapse treeID by picking the stem with largest dbh</span></a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">largest_stem &lt;-<span class="st"> </span>fgeo.tool<span class="op">::</span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Stem abundance</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">abundance</span>(non_missing)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt; main stems?</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; 1  2564</span></a>
 <a class="sourceLine" id="cb10-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="kw">count_distinct_stemid</span>(largest_stem)</a>
-<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11">largest_stem &lt;-<span class="st"> </span>fgeo.tool<span class="op">::</span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="kw">abundance</span>(largest_stem)</a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb10-16" data-line-number="16"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
 <p>Count largest stems (unique <code>treeID</code>s) by species.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(largest_stem, sp)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">count_distinct_treeid</span>(by_sp)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">abundance</span>(by_sp)</a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; # A tibble: 70 x 2</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt;    sp         n</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;  1 ALCFLO    11</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt;  2 ALCLAT    15</span></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt;  3 ANDINE     1</span></a>
-<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt;  4 ANTOBT     1</span></a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;  5 ARDGLA     1</span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt;  6 BUCTET    11</span></a>
-<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt;  7 BYRSPI    25</span></a>
-<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt;  8 CALCAL     2</span></a>
-<a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt;  9 CASARB   489</span></a>
-<a class="sourceLine" id="cb11-15" data-line-number="15"><span class="co">#&gt; 10 CASSYL    58</span></a>
-<a class="sourceLine" id="cb11-16" data-line-number="16"><span class="co">#&gt; # ... with 60 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; # Groups:   sp [70]</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;    sp         n</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt;  1 ALCFLO    11</span></a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt;  2 ALCLAT    15</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt;  3 ANDINE     1</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;  4 ANTOBT     1</span></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt;  5 ARDGLA     1</span></a>
+<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt;  6 BUCTET    11</span></a>
+<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt;  7 BYRSPI    25</span></a>
+<a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt;  8 CALCAL     2</span></a>
+<a class="sourceLine" id="cb11-15" data-line-number="15"><span class="co">#&gt;  9 CASARB   489</span></a>
+<a class="sourceLine" id="cb11-16" data-line-number="16"><span class="co">#&gt; 10 CASSYL    58</span></a>
+<a class="sourceLine" id="cb11-17" data-line-number="17"><span class="co">#&gt; # ... with 60 more rows</span></a></code></pre></div>
 <p><a href="https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started">Get started</a></p>
 <p><a href="http://bit.ly/fgeo-demo">Try <strong>fgeo</strong> on rstudio.cloud</a></p>
 </div>

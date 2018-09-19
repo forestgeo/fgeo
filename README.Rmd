@@ -115,19 +115,19 @@ non_missing <- drop_if_na(ten_plus, "dbh")
 Count distinct values of `stemID` and `treeID`.
 
 ```{r}
-count_distinct_stemid(non_missing)
+# Stem abundance
+abundance(non_missing)
 
-# Collapse treeID by picking the stem with largest dbh
+# Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
 largest_stem <- fgeo.tool::pick_main_stem(non_missing)
-
-count_distinct_stemid(largest_stem)
+abundance(largest_stem)
 ```
 
 Count largest stems (unique `treeID`s) by species.
 
 ```{r}
 by_sp <- group_by(largest_stem, sp)
-count_distinct_treeid(by_sp)
+abundance(by_sp)
 ```
 
 [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
