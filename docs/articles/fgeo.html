@@ -138,7 +138,7 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
@@ -296,38 +296,41 @@
 <h2 class="hasAnchor">
 <a href="#calculating-abundance" class="anchor"></a>Calculating abundance</h2>
 <p>Calculate the total abundance of stems and trees.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">count_distinct_stemid</span>(non_missing)</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; 1  2564</span></a>
-<a class="sourceLine" id="cb17-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co"># Collapse treeID by picking the stem with largest dbh</span></a>
-<a class="sourceLine" id="cb17-8" data-line-number="8">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># Stem abundance</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">abundance</span>(non_missing)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co">#&gt; main stems?</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt; 1  2564</span></a>
 <a class="sourceLine" id="cb17-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="kw">count_distinct_stemid</span>(largest_stem)</a>
-<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
+<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="kw">abundance</span>(largest_stem)</a>
+<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb17-15" data-line-number="15"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb17-16" data-line-number="16"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
 <p>Calculate the abundance of trees by species.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(largest_stem, sp)</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">count_distinct_treeid</span>(by_sp)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
 <a class="sourceLine" id="cb18-3" data-line-number="3">n_by_sp</a>
 <a class="sourceLine" id="cb18-4" data-line-number="4"><span class="co">#&gt; # A tibble: 70 x 2</span></a>
-<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co">#&gt;    sp         n</span></a>
-<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="co">#&gt;  1 ALCFLO    11</span></a>
-<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="co">#&gt;  2 ALCLAT    15</span></a>
-<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="co">#&gt;  3 ANDINE     1</span></a>
-<a class="sourceLine" id="cb18-10" data-line-number="10"><span class="co">#&gt;  4 ANTOBT     1</span></a>
-<a class="sourceLine" id="cb18-11" data-line-number="11"><span class="co">#&gt;  5 ARDGLA     1</span></a>
-<a class="sourceLine" id="cb18-12" data-line-number="12"><span class="co">#&gt;  6 BUCTET    11</span></a>
-<a class="sourceLine" id="cb18-13" data-line-number="13"><span class="co">#&gt;  7 BYRSPI    25</span></a>
-<a class="sourceLine" id="cb18-14" data-line-number="14"><span class="co">#&gt;  8 CALCAL     2</span></a>
-<a class="sourceLine" id="cb18-15" data-line-number="15"><span class="co">#&gt;  9 CASARB   489</span></a>
-<a class="sourceLine" id="cb18-16" data-line-number="16"><span class="co">#&gt; 10 CASSYL    58</span></a>
-<a class="sourceLine" id="cb18-17" data-line-number="17"><span class="co">#&gt; # ... with 60 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co">#&gt; # Groups:   sp [70]</span></a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="co">#&gt;    sp         n</span></a>
+<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="co">#&gt;  1 ALCFLO    11</span></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="co">#&gt;  2 ALCLAT    15</span></a>
+<a class="sourceLine" id="cb18-10" data-line-number="10"><span class="co">#&gt;  3 ANDINE     1</span></a>
+<a class="sourceLine" id="cb18-11" data-line-number="11"><span class="co">#&gt;  4 ANTOBT     1</span></a>
+<a class="sourceLine" id="cb18-12" data-line-number="12"><span class="co">#&gt;  5 ARDGLA     1</span></a>
+<a class="sourceLine" id="cb18-13" data-line-number="13"><span class="co">#&gt;  6 BUCTET    11</span></a>
+<a class="sourceLine" id="cb18-14" data-line-number="14"><span class="co">#&gt;  7 BYRSPI    25</span></a>
+<a class="sourceLine" id="cb18-15" data-line-number="15"><span class="co">#&gt;  8 CALCAL     2</span></a>
+<a class="sourceLine" id="cb18-16" data-line-number="16"><span class="co">#&gt;  9 CASARB   489</span></a>
+<a class="sourceLine" id="cb18-17" data-line-number="17"><span class="co">#&gt; 10 CASSYL    58</span></a>
+<a class="sourceLine" id="cb18-18" data-line-number="18"><span class="co">#&gt; # ... with 60 more rows</span></a></code></pre></div>
 </div>
 <div id="picking-the-most-abundant-species" class="section level2">
 <h2 class="hasAnchor">
@@ -336,11 +339,12 @@
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">top3 &lt;-<span class="st"> </span><span class="kw">pick_top</span>(n_by_sp, n, <span class="dv">-3</span>)</a>
 <a class="sourceLine" id="cb19-2" data-line-number="2">top3</a>
 <a class="sourceLine" id="cb19-3" data-line-number="3"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
-<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="co">#&gt;   sp         n</span></a>
-<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="co">#&gt; 1 CASARB   489</span></a>
-<a class="sourceLine" id="cb19-7" data-line-number="7"><span class="co">#&gt; 2 PREMON   507</span></a>
-<a class="sourceLine" id="cb19-8" data-line-number="8"><span class="co">#&gt; 3 SCHMOR   151</span></a></code></pre></div>
+<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="co">#&gt; # Groups:   sp [3]</span></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="co">#&gt;   sp         n</span></a>
+<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb19-7" data-line-number="7"><span class="co">#&gt; 1 CASARB   489</span></a>
+<a class="sourceLine" id="cb19-8" data-line-number="8"><span class="co">#&gt; 2 PREMON   507</span></a>
+<a class="sourceLine" id="cb19-9" data-line-number="9"><span class="co">#&gt; 3 SCHMOR   151</span></a></code></pre></div>
 <p>Now we can pick the <code>alive_trees</code> of only the <code>top3</code> species.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">picked_stems &lt;-<span class="st"> </span><span class="kw">filter</span>(alive_trees, sp <span class="op">%in%</span><span class="st"> </span>top3<span class="op">$</span>sp)</a></code></pre></div>
 </div>
@@ -383,31 +387,33 @@
 <p>– <code>?tt_test()</code></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># Find sufficiently abundant species</span></a>
 <a class="sourceLine" id="cb27-2" data-line-number="2">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(tree, sp)</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">n_by_sp &lt;-<span class="st"> </span><span class="kw">count_distinct_treeid</span>(by_sp)</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
 <a class="sourceLine" id="cb27-4" data-line-number="4">n_by_sp</a>
 <a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">#&gt; # A tibble: 73 x 2</span></a>
-<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">#&gt;    sp         n</span></a>
-<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb27-8" data-line-number="8"><span class="co">#&gt;  1 ALCFLO     3</span></a>
-<a class="sourceLine" id="cb27-9" data-line-number="9"><span class="co">#&gt;  2 ALCLAT     1</span></a>
-<a class="sourceLine" id="cb27-10" data-line-number="10"><span class="co">#&gt;  3 ANDINE     2</span></a>
-<a class="sourceLine" id="cb27-11" data-line-number="11"><span class="co">#&gt;  4 ARDGLA     2</span></a>
-<a class="sourceLine" id="cb27-12" data-line-number="12"><span class="co">#&gt;  5 ARTALT     1</span></a>
-<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="co">#&gt;  6 BRUPOR     1</span></a>
-<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="co">#&gt;  7 BUCTET     8</span></a>
-<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="co">#&gt;  8 BYRSPI    11</span></a>
-<a class="sourceLine" id="cb27-16" data-line-number="16"><span class="co">#&gt;  9 CALCAL     1</span></a>
-<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="co">#&gt; 10 CASARB    94</span></a>
-<a class="sourceLine" id="cb27-18" data-line-number="18"><span class="co">#&gt; # ... with 63 more rows</span></a>
-<a class="sourceLine" id="cb27-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb27-20" data-line-number="20">n_sp50plus &lt;-<span class="st"> </span><span class="kw">filter</span>(n_by_sp, n <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>)</a>
-<a class="sourceLine" id="cb27-21" data-line-number="21">n_sp50plus</a>
-<a class="sourceLine" id="cb27-22" data-line-number="22"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
-<a class="sourceLine" id="cb27-23" data-line-number="23"><span class="co">#&gt;   sp         n</span></a>
-<a class="sourceLine" id="cb27-24" data-line-number="24"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb27-25" data-line-number="25"><span class="co">#&gt; 1 CASARB    94</span></a>
-<a class="sourceLine" id="cb27-26" data-line-number="26"><span class="co">#&gt; 2 PREMON   256</span></a>
-<a class="sourceLine" id="cb27-27" data-line-number="27"><span class="co">#&gt; 3 SLOBER    84</span></a></code></pre></div>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">#&gt; # Groups:   sp [73]</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="co">#&gt;    sp         n</span></a>
+<a class="sourceLine" id="cb27-8" data-line-number="8"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb27-9" data-line-number="9"><span class="co">#&gt;  1 ALCFLO     3</span></a>
+<a class="sourceLine" id="cb27-10" data-line-number="10"><span class="co">#&gt;  2 ALCLAT     1</span></a>
+<a class="sourceLine" id="cb27-11" data-line-number="11"><span class="co">#&gt;  3 ANDINE     2</span></a>
+<a class="sourceLine" id="cb27-12" data-line-number="12"><span class="co">#&gt;  4 ARDGLA     2</span></a>
+<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="co">#&gt;  5 ARTALT     1</span></a>
+<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="co">#&gt;  6 BRUPOR     1</span></a>
+<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="co">#&gt;  7 BUCTET     8</span></a>
+<a class="sourceLine" id="cb27-16" data-line-number="16"><span class="co">#&gt;  8 BYRSPI    11</span></a>
+<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="co">#&gt;  9 CALCAL     1</span></a>
+<a class="sourceLine" id="cb27-18" data-line-number="18"><span class="co">#&gt; 10 CASARB    94</span></a>
+<a class="sourceLine" id="cb27-19" data-line-number="19"><span class="co">#&gt; # ... with 63 more rows</span></a>
+<a class="sourceLine" id="cb27-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb27-21" data-line-number="21">n_sp50plus &lt;-<span class="st"> </span><span class="kw">filter</span>(n_by_sp, n <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb27-22" data-line-number="22">n_sp50plus</a>
+<a class="sourceLine" id="cb27-23" data-line-number="23"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
+<a class="sourceLine" id="cb27-24" data-line-number="24"><span class="co">#&gt; # Groups:   sp [3]</span></a>
+<a class="sourceLine" id="cb27-25" data-line-number="25"><span class="co">#&gt;   sp         n</span></a>
+<a class="sourceLine" id="cb27-26" data-line-number="26"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb27-27" data-line-number="27"><span class="co">#&gt; 1 CASARB    94</span></a>
+<a class="sourceLine" id="cb27-28" data-line-number="28"><span class="co">#&gt; 2 PREMON   256</span></a>
+<a class="sourceLine" id="cb27-29" data-line-number="29"><span class="co">#&gt; 3 SLOBER    84</span></a></code></pre></div>
 <p>We need habitat data. Bad habitat data is a common cause of errors. The safest way to create it is with <code>fgeo_habitat()</code> (see <code>?fgeo_habitat()</code>).</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">habitat &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb28-2" data-line-number="2"><span class="kw">str</span>(habitat)</a>

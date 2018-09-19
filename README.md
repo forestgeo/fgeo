@@ -47,11 +47,13 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
 #> v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003
+#> Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not
+#> possible
 #> 
 ```
 
@@ -140,16 +142,18 @@ non_missing <- drop_if_na(ten_plus, "dbh")
 Count distinct values of `stemID` and `treeID`.
 
 ``` r
-count_distinct_stemid(non_missing)
+# Stem abundance
+abundance(non_missing)
+#> Warning: `treeid`: Duplicated values were detected. Do you need to pick
+#> main stems?
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
 #> 1  2564
 
-# Collapse treeID by picking the stem with largest dbh
+# Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
 largest_stem <- fgeo.tool::pick_main_stem(non_missing)
-
-count_distinct_stemid(largest_stem)
+abundance(largest_stem)
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
@@ -160,8 +164,9 @@ Count largest stems (unique `treeID`s) by species.
 
 ``` r
 by_sp <- group_by(largest_stem, sp)
-count_distinct_treeid(by_sp)
+abundance(by_sp)
 #> # A tibble: 70 x 2
+#> # Groups:   sp [70]
 #>    sp         n
 #>    <chr>  <int>
 #>  1 ALCFLO    11
