@@ -306,14 +306,14 @@
 <a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt; 1  2564</span></a>
 <a class="sourceLine" id="cb17-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
-<a class="sourceLine" id="cb17-11" data-line-number="11">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
-<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="kw">abundance</span>(largest_stem)</a>
+<a class="sourceLine" id="cb17-11" data-line-number="11">main_stems &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="kw">abundance</span>(main_stems)</a>
 <a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
 <a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt;       n</span></a>
 <a class="sourceLine" id="cb17-15" data-line-number="15"><span class="co">#&gt;   &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb17-16" data-line-number="16"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
 <p>Calculate the abundance of trees by species.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(largest_stem, sp)</a>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(main_stems, sp)</a>
 <a class="sourceLine" id="cb18-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
 <a class="sourceLine" id="cb18-3" data-line-number="3">n_by_sp</a>
 <a class="sourceLine" id="cb18-4" data-line-number="4"><span class="co">#&gt; # A tibble: 70 x 2</span></a>

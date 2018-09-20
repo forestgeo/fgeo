@@ -161,14 +161,14 @@ Calculate the total abundance of stems and trees.
 abundance(non_missing)
 
 # Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
-largest_stem <- pick_main_stem(non_missing)
-abundance(largest_stem)
+main_stems <- pick_main_stem(non_missing)
+abundance(main_stems)
 ```
 
 Calculate the abundance of trees by species.
 
 ```{r}
-by_sp <- group_by(largest_stem, sp)
+by_sp <- group_by(main_stems, sp)
 n_by_sp <- abundance(by_sp)
 n_by_sp
 ```
