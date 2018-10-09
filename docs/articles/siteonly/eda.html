@@ -127,7 +127,7 @@
 </h3>
                         <h4 class="author">Mauro Lepore</h4>
             
-            <h4 class="date">2018-09-20</h4>
+            <h4 class="date">2018-10-09</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/forestgeo/fgeo/blob/master/vignettes/siteonly/eda.Rmd"><code>vignettes/siteonly/eda.Rmd</code></a></small>
       <div class="hidden name"><code>eda.Rmd</code></div>
@@ -144,12 +144,12 @@
 <p>You will learn to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.</p>
 <p>If you are new to the <strong>tidyverse</strong>, you may feel a little frustrated at the beginning, but your effort will quickly pay-off. The tools in the <strong>tidyverse</strong> are powerful, relatively easy to use, and consistent; so once you learn some of the tools, you will learn most other tools intuitively.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- tidyverse 1.2.1 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------------- tidyverse 1.2.1 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v ggplot2 3.0.0     v purrr   0.2.5</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v tibble  1.4.2     v dplyr   0.7.6</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v tidyr   0.8.1     v stringr 1.3.1</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v readr   1.1.1     v forcats 0.3.0</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ----------------------------------------------- tidyverse_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts -------------------------------------------------------- tidyverse_conflicts() --</span></a>
 <a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></a></code></pre></div>
 <p>The data we will use is a public dataset of trees censused in a forest plot in Luquillo, Puerto Rico. Those data are available in the data set <code>luquillo_stem_random</code> from the data-package <strong>fgeo.data</strong> (<a href="https://forestgeo.github.io/fgeo.data/" class="uri">https://forestgeo.github.io/fgeo.data/</a>).</p>
@@ -215,7 +215,7 @@
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; [1] "tbl_df"     "tbl"        "data.frame"</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4">stem</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; # A tibble: 7,944 x 19</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; # A tibble: 7,920 x 19</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  1    104    143 10009 10009   DACE~ 113      10.3  245.       143        1</span></a>
@@ -228,8 +228,8 @@
 <a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;  8    631    775 10069 10069   PREM~ 213      38.3  245.       775        1</span></a>
 <a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;  9    647    793 1007~ 100708  SCHM~ 821     143.   411.       793        1</span></a>
 <a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.      1339        1</span></a>
-<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; # ... with 7,934 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;dbl&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; # ... with 7,910 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>By default, tibbles print a few rows only; to print more rows use:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">print</span>(<span class="op">&lt;</span>YOUR_TIBBLE<span class="op">&gt;</span>, <span class="dt">n =</span> <span class="op">&lt;</span>N_ROWS<span class="op">&gt;</span>, <span class="dt">width =</span> <span class="op">&lt;</span>N_COLUMNS<span class="op">&gt;</span>)</a></code></pre></div>
@@ -239,7 +239,7 @@
 <p>For alternative views try:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># informative and prints nice</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">str</span>(stem)  </a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    7944 obs. of  19 variables:</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    7920 obs. of  19 variables:</span></a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;  $ treeID   : int  104 119 180 180 180 180 602 631 647 1086 ...</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt;  $ stemID   : int  143 158 222 223 224 225 736 775 793 1339 ...</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;  $ tag      : chr  "10009" "100104" "100171" "100171" ...</span></a>
@@ -253,15 +253,15 @@
 <a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt;  $ dbh      : num  115 16 17.2 11.7 80 19.4 24.1 100 146 165 ...</span></a>
 <a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt;  $ pom      : chr  "1.2" "1.3" "1.3" "1.3" ...</span></a>
 <a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt;  $ hom      : num  1.2 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 ...</span></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt;  $ ExactDate: num  7831 8609 8610 8610 8610 ...</span></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt;  $ ExactDate: Date, format: "1991-06-11" "1993-07-28" ...</span></a>
 <a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt;  $ DFstatus : chr  "alive" "alive" "alive" "alive" ...</span></a>
 <a class="sourceLine" id="cb6-19" data-line-number="19"><span class="co">#&gt;  $ codes    : chr  "MAIN;A" "MAIN;A" "SPROUT;A" "SPROUT;A" ...</span></a>
 <a class="sourceLine" id="cb6-20" data-line-number="20"><span class="co">#&gt;  $ countPOM : num  1 1 1 1 1 1 1 1 1 1 ...</span></a>
 <a class="sourceLine" id="cb6-21" data-line-number="21"><span class="co">#&gt;  $ status   : chr  "A" "A" "A" "A" ...</span></a>
-<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="co">#&gt;  $ date     : num  NA NA NA NA NA NA NA NA NA NA ...</span></a>
+<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="co">#&gt;  $ date     : num  11484 12262 12263 12263 12263 ...</span></a>
 <a class="sourceLine" id="cb6-23" data-line-number="23"><span class="co"># like str() but shows as much data as possible</span></a>
 <a class="sourceLine" id="cb6-24" data-line-number="24"><span class="kw">glimpse</span>(stem)  </a>
-<a class="sourceLine" id="cb6-25" data-line-number="25"><span class="co">#&gt; Observations: 7,944</span></a>
+<a class="sourceLine" id="cb6-25" data-line-number="25"><span class="co">#&gt; Observations: 7,920</span></a>
 <a class="sourceLine" id="cb6-26" data-line-number="26"><span class="co">#&gt; Variables: 19</span></a>
 <a class="sourceLine" id="cb6-27" data-line-number="27"><span class="co">#&gt; $ treeID    &lt;int&gt; 104, 119, 180, 180, 180, 180, 602, 631, 647, 1086, 1...</span></a>
 <a class="sourceLine" id="cb6-28" data-line-number="28"><span class="co">#&gt; $ stemID    &lt;int&gt; 143, 158, 222, 223, 224, 225, 736, 775, 793, 1339, 1...</span></a>
@@ -276,12 +276,12 @@
 <a class="sourceLine" id="cb6-37" data-line-number="37"><span class="co">#&gt; $ dbh       &lt;dbl&gt; 115.0, 16.0, 17.2, 11.7, 80.0, 19.4, 24.1, 100.0, 14...</span></a>
 <a class="sourceLine" id="cb6-38" data-line-number="38"><span class="co">#&gt; $ pom       &lt;chr&gt; "1.2", "1.3", "1.3", "1.3", "1.3", "1.3", "1.3", "1....</span></a>
 <a class="sourceLine" id="cb6-39" data-line-number="39"><span class="co">#&gt; $ hom       &lt;dbl&gt; 1.20, 1.30, 1.30, 1.30, 1.30, 1.30, 1.30, 1.30, 1.30...</span></a>
-<a class="sourceLine" id="cb6-40" data-line-number="40"><span class="co">#&gt; $ ExactDate &lt;dbl&gt; 7831, 8609, 8610, 8610, 8610, 8610, 8611, 7829, 8611...</span></a>
+<a class="sourceLine" id="cb6-40" data-line-number="40"><span class="co">#&gt; $ ExactDate &lt;date&gt; 1991-06-11, 1993-07-28, 1993-07-29, 1993-07-29, 199...</span></a>
 <a class="sourceLine" id="cb6-41" data-line-number="41"><span class="co">#&gt; $ DFstatus  &lt;chr&gt; "alive", "alive", "alive", "alive", "alive", "alive"...</span></a>
 <a class="sourceLine" id="cb6-42" data-line-number="42"><span class="co">#&gt; $ codes     &lt;chr&gt; "MAIN;A", "MAIN;A", "SPROUT;A", "SPROUT;A", "MAIN;A"...</span></a>
 <a class="sourceLine" id="cb6-43" data-line-number="43"><span class="co">#&gt; $ countPOM  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...</span></a>
 <a class="sourceLine" id="cb6-44" data-line-number="44"><span class="co">#&gt; $ status    &lt;chr&gt; "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A...</span></a>
-<a class="sourceLine" id="cb6-45" data-line-number="45"><span class="co">#&gt; $ date      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ...</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-45" data-line-number="45"><span class="co">#&gt; $ date      &lt;dbl&gt; 11484, 12262, 12263, 12263, 12263, 12263, 12264, 114...</span></a></code></pre></div>
 <p>If you are in RStudio, your best option might be <code>View()</code>, which lets you search values and filter columns.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">View</span>(stem)           </a></code></pre></div>
 <p><img src="https://user-images.githubusercontent.com/5856545/41784224-12a3adca-760d-11e8-8b80-50d8775f01db.png" align="right" height="300"></p>
@@ -388,11 +388,11 @@
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(stem, <span class="kw">aes</span>(dbh)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> useful_binwidth)</a>
 <a class="sourceLine" id="cb19-3" data-line-number="3">p</a>
-<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="co">#&gt; Warning: Removed 2700 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
+<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="co">#&gt; Warning: Removed 2676 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-16-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>There are so many observations in the common bins that the rare bins are so short that you can barely see them. To make the unusual values more noticeable, we can zoom into smaller values of the y-axis with <code>coord_cartesian()</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">15</span>))</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2700 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2676 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-17-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p><code>coord_cartesian()</code> also has an <code>xlim</code> argument for when you need to zoom into the x-axis. <strong>ggplot2</strong> also has <code>xlim()</code> and <code>ylim()</code> functions that work slightly differently: they throw away the data outside the limits.</p>
 <p>This allows us to see that <code>dbh</code> values over ~625 are unusual and may be outliers. We can pluck them out with <code><a href="http://dplyr.tidyverse.org/reference/filter.html">dplyr::filter()</a></code> and select a subset of informative variables:</p>
@@ -403,27 +403,27 @@
 <a class="sourceLine" id="cb21-5" data-line-number="5"><span class="st">  </span><span class="kw">arrange</span>(dbh)</a>
 <a class="sourceLine" id="cb21-6" data-line-number="6">unusual</a>
 <a class="sourceLine" id="cb21-7" data-line-number="7"><span class="co">#&gt; # A tibble: 19 x 6</span></a>
-<a class="sourceLine" id="cb21-8" data-line-number="8"><span class="co">#&gt;    stemID ExactDate status    gx    gy   dbh</span></a>
-<a class="sourceLine" id="cb21-9" data-line-number="9"><span class="co">#&gt;     &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb21-10" data-line-number="10"><span class="co">#&gt;  1  80141      7762 A       138.  163.   642</span></a>
-<a class="sourceLine" id="cb21-11" data-line-number="11"><span class="co">#&gt;  2  34692     11754 A       221.  445.   661</span></a>
-<a class="sourceLine" id="cb21-12" data-line-number="12"><span class="co">#&gt;  3  34692     15405 A       221.  445.   661</span></a>
-<a class="sourceLine" id="cb21-13" data-line-number="13"><span class="co">#&gt;  4  34692     13537 A       221.  445.   666</span></a>
-<a class="sourceLine" id="cb21-14" data-line-number="14"><span class="co">#&gt;  5  34692     17050 A       221.  445.   676</span></a>
-<a class="sourceLine" id="cb21-15" data-line-number="15"><span class="co">#&gt;  6  34692      9709 A       221.  445.   738</span></a>
-<a class="sourceLine" id="cb21-16" data-line-number="16"><span class="co">#&gt;  7  30562      9570 A       118.  343.   740</span></a>
-<a class="sourceLine" id="cb21-17" data-line-number="17"><span class="co">#&gt;  8  30562     13431 A       118.  343.   740</span></a>
-<a class="sourceLine" id="cb21-18" data-line-number="18"><span class="co">#&gt;  9  30562     11592 A       118.  343.   751</span></a>
-<a class="sourceLine" id="cb21-19" data-line-number="19"><span class="co">#&gt; 10  30562     15315 A       118.  343.   777</span></a>
-<a class="sourceLine" id="cb21-20" data-line-number="20"><span class="co">#&gt; 11  30562      7925 A       118.  343.   787</span></a>
-<a class="sourceLine" id="cb21-21" data-line-number="21"><span class="co">#&gt; 12  32585      8021 A       225.  397.   800</span></a>
-<a class="sourceLine" id="cb21-22" data-line-number="22"><span class="co">#&gt; 13  32585      9653 A       225.  397.   809</span></a>
-<a class="sourceLine" id="cb21-23" data-line-number="23"><span class="co">#&gt; 14  30562     16981 A       118.  343.   812</span></a>
-<a class="sourceLine" id="cb21-24" data-line-number="24"><span class="co">#&gt; 15  34692      8045 A       221.  445.   823</span></a>
-<a class="sourceLine" id="cb21-25" data-line-number="25"><span class="co">#&gt; 16  32585     11659 A       225.  397.   845</span></a>
-<a class="sourceLine" id="cb21-26" data-line-number="26"><span class="co">#&gt; 17  32585     13458 A       225.  397.   903</span></a>
-<a class="sourceLine" id="cb21-27" data-line-number="27"><span class="co">#&gt; 18  32585     15379 A       225.  397.   955</span></a>
-<a class="sourceLine" id="cb21-28" data-line-number="28"><span class="co">#&gt; 19  32585     17017 A       225.  397.   992</span></a></code></pre></div>
+<a class="sourceLine" id="cb21-8" data-line-number="8"><span class="co">#&gt;    stemID ExactDate  status    gx    gy   dbh</span></a>
+<a class="sourceLine" id="cb21-9" data-line-number="9"><span class="co">#&gt;     &lt;int&gt; &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb21-10" data-line-number="10"><span class="co">#&gt;  1  80141 1991-04-03 A       138.  163.   642</span></a>
+<a class="sourceLine" id="cb21-11" data-line-number="11"><span class="co">#&gt;  2  34692 2002-03-08 A       221.  445.   661</span></a>
+<a class="sourceLine" id="cb21-12" data-line-number="12"><span class="co">#&gt;  3  34692 2012-03-06 A       221.  445.   661</span></a>
+<a class="sourceLine" id="cb21-13" data-line-number="13"><span class="co">#&gt;  4  34692 2007-01-24 A       221.  445.   666</span></a>
+<a class="sourceLine" id="cb21-14" data-line-number="14"><span class="co">#&gt;  5  34692 2016-09-06 A       221.  445.   676</span></a>
+<a class="sourceLine" id="cb21-15" data-line-number="15"><span class="co">#&gt;  6  34692 1996-08-01 A       221.  445.   738</span></a>
+<a class="sourceLine" id="cb21-16" data-line-number="16"><span class="co">#&gt;  7  30562 1996-03-15 A       118.  343.   740</span></a>
+<a class="sourceLine" id="cb21-17" data-line-number="17"><span class="co">#&gt;  8  30562 2006-10-10 A       118.  343.   740</span></a>
+<a class="sourceLine" id="cb21-18" data-line-number="18"><span class="co">#&gt;  9  30562 2001-09-27 A       118.  343.   751</span></a>
+<a class="sourceLine" id="cb21-19" data-line-number="19"><span class="co">#&gt; 10  30562 2011-12-07 A       118.  343.   777</span></a>
+<a class="sourceLine" id="cb21-20" data-line-number="20"><span class="co">#&gt; 11  30562 1991-09-13 A       118.  343.   787</span></a>
+<a class="sourceLine" id="cb21-21" data-line-number="21"><span class="co">#&gt; 12  32585 1991-12-18 A       225.  397.   800</span></a>
+<a class="sourceLine" id="cb21-22" data-line-number="22"><span class="co">#&gt; 13  32585 1996-06-06 A       225.  397.   809</span></a>
+<a class="sourceLine" id="cb21-23" data-line-number="23"><span class="co">#&gt; 14  30562 2016-06-29 A       118.  343.   812</span></a>
+<a class="sourceLine" id="cb21-24" data-line-number="24"><span class="co">#&gt; 15  34692 1992-01-11 A       221.  445.   823</span></a>
+<a class="sourceLine" id="cb21-25" data-line-number="25"><span class="co">#&gt; 16  32585 2001-12-03 A       225.  397.   845</span></a>
+<a class="sourceLine" id="cb21-26" data-line-number="26"><span class="co">#&gt; 17  32585 2006-11-06 A       225.  397.   903</span></a>
+<a class="sourceLine" id="cb21-27" data-line-number="27"><span class="co">#&gt; 18  32585 2012-02-09 A       225.  397.   955</span></a>
+<a class="sourceLine" id="cb21-28" data-line-number="28"><span class="co">#&gt; 19  32585 2016-08-04 A       225.  397.   992</span></a></code></pre></div>
 <p>You could plot the unusual stems to see where they are located.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">ggplot</span>(stem, <span class="kw">aes</span>(gx, gy)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb22-2" data-line-number="2"><span class="st">    </span><span class="co"># `alpha` controls opacity</span></a>
@@ -447,9 +447,9 @@
 <a class="sourceLine" id="cb23-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb23-4" data-line-number="4"><span class="co"># Confirm data set of usual stems has less rows than full data set.</span></a>
 <a class="sourceLine" id="cb23-5" data-line-number="5"><span class="kw">nrow</span>(stem)</a>
-<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="co">#&gt; [1] 7944</span></a>
+<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="co">#&gt; [1] 7920</span></a>
 <a class="sourceLine" id="cb23-7" data-line-number="7"><span class="kw">nrow</span>(usual)</a>
-<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">#&gt; [1] 7920</span></a></code></pre></div>
+<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">#&gt; [1] 7896</span></a></code></pre></div>
 <p>I do not recommend this option: That one measurement is invalid does not mean all the measurements are invalid. Additionally, if you have low quality data, by time you have applied this approach to every variable you might find that you are left with no data!</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Instead, I recommend replacing the unusual values with missing values. The easiest way to do this is to use <code><a href="http://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></code> to replace the variable with a modified copy. You can use the <code>ifelse()</code> function to replace unusual values with <code>NA</code>:</li>
@@ -460,9 +460,9 @@
 <p><code>ifelse()</code> has three arguments. The first argument <code>test</code> should be a logical vector. The result will contain the value of the second argument, <code>yes</code>, when <code>test</code> is <code>TRUE</code>, and the value of the third argument, <code>no</code>, when it is <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co"># Confirm no rows have been removed,</span></a>
 <a class="sourceLine" id="cb25-2" data-line-number="2"><span class="kw">nrow</span>(stem)</a>
-<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co">#&gt; [1] 7944</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co">#&gt; [1] 7920</span></a>
 <a class="sourceLine" id="cb25-4" data-line-number="4"><span class="kw">nrow</span>(with_unusual_made_NA)</a>
-<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">#&gt; [1] 7944</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">#&gt; [1] 7920</span></a>
 <a class="sourceLine" id="cb25-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb25-7" data-line-number="7"><span class="co"># but dbh of unusual stems is NA</span></a>
 <a class="sourceLine" id="cb25-8" data-line-number="8">unusual_only &lt;-<span class="st"> </span>with_unusual_made_NA <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -528,7 +528,7 @@
 <a class="sourceLine" id="cb28-5" data-line-number="5"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(dbh)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb28-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_freqpoly</span>(<span class="kw">aes</span>(<span class="dt">color =</span> sp))</a>
 <a class="sourceLine" id="cb28-7" data-line-number="7"><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></a>
-<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
+<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-25-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>It is hard to see the difference in distribution because the overall counts differ so much:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">ggplot</span>(data_few_sp) <span class="op">+</span><span class="st"> </span></a>
@@ -539,7 +539,7 @@
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(<span class="dt">x=</span> dbh, <span class="dt">y =</span> ..density..)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb30-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_freqpoly</span>(<span class="kw">aes</span>(<span class="dt">color =</span> sp))</a>
 <a class="sourceLine" id="cb30-3" data-line-number="3"><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></a>
-<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-27-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>Another alternative to display the distribution of a continuous variable broken down by a categorical variable is the boxplot. A boxplot is a type of visual shorthand for a distribution of values that is popular among statisticians. Each boxplot consists of:</p>
 <ul>
@@ -551,7 +551,7 @@
 <p>Let’s take a look at the distribution of stem diameter (<code>dbh</code>) by species (<code>sp</code>) using <code>geom_boxplot()</code>:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(sp, dbh)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb31-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_boxplot</span>()</a>
-<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_boxplot).</span></a></code></pre></div>
+<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_boxplot).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-28-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>We see much less information about the distribution, but the boxplots are much more compact so we can more easily compare them (and fit more on one plot).</p>
 <p>Above we ordered the variable <code>sp</code> by its frequency. Now, to make the trend easier to see, we can reorder <code>sp</code> based on the median value of <code>dbh</code>. One way to do that is with <code>reorder()</code>.</p>
@@ -560,7 +560,7 @@
 <a class="sourceLine" id="cb32-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb32-4" data-line-number="4"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(sp, dbh)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb32-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_boxplot</span>()</a>
-<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_boxplot).</span></a></code></pre></div>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_boxplot).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-29-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>If you have long variable names, <code>geom_boxplot()</code> will work better if you flip it 90°. You can do that with <code>coord_flip()</code> (left plot below), or with <code><a href="http://www.rdocumentation.org/packages/ggstance/topics/geom_boxploth">ggstance::geom_boxploth()</a></code> and swapping <code>x</code> and <code>y</code> mappings (right plot below):</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="co"># Remember to install with install.packages("ggstance")</span></a>
@@ -574,12 +574,12 @@
 <a class="sourceLine" id="cb33-9" data-line-number="9"><span class="co"># Left</span></a>
 <a class="sourceLine" id="cb33-10" data-line-number="10">ggplot2<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/last_plot">last_plot</a></span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb33-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a>
-<a class="sourceLine" id="cb33-12" data-line-number="12"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_boxplot).</span></a>
+<a class="sourceLine" id="cb33-12" data-line-number="12"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_boxplot).</span></a>
 <a class="sourceLine" id="cb33-13" data-line-number="13"></a>
 <a class="sourceLine" id="cb33-14" data-line-number="14"><span class="co"># Right</span></a>
 <a class="sourceLine" id="cb33-15" data-line-number="15"><span class="kw">ggplot</span>(data_few_sp) <span class="op">+</span></a>
 <a class="sourceLine" id="cb33-16" data-line-number="16"><span class="st">  </span>ggstance<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggstance/topics/geom_boxploth">geom_boxploth</a></span>(<span class="kw">aes</span>(<span class="dt">x =</span> dbh, <span class="dt">y =</span> sp))  <span class="co"># swap x, y; compare to above</span></a>
-<a class="sourceLine" id="cb33-17" data-line-number="17"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_boxploth).</span></a></code></pre></div>
+<a class="sourceLine" id="cb33-17" data-line-number="17"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_boxploth).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-30-1.png" width="45%"><img src="eda_files/figure-html/unnamed-chunk-30-2.png" width="45%"></p>
 <div id="alternatives" class="section level3">
 <h3 class="hasAnchor">
@@ -594,13 +594,13 @@
 <p>Compare and contrast <code>geom_violin()</code> with a faceted <code>geom_histogram()</code>, or a colored <code>geom_freqpoly()</code> (). What are the pros and cons of each method?</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(sp, dbh)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb35-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_violin</span>()</a>
-<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_ydensity).</span></a></code></pre></div>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_ydensity).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-32-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(dbh)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb36-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb36-3" data-line-number="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sp)</a>
 <a class="sourceLine" id="cb36-4" data-line-number="4"><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></a>
-<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="co">#&gt; Warning: Removed 1032 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
+<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="co">#&gt; Warning: Removed 1008 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-33-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>If you have a small data set, it is sometimes useful to use <code>geom_jitter()</code> to see the relationship between a continuous and categorical variable. The <strong>ggbeeswarm</strong> package provides a number of methods similar to <code>geom_jitter()</code>.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="co"># Remember to install with install.packages("ggbeeswarm")</span></a>
@@ -613,13 +613,13 @@
 <a class="sourceLine" id="cb37-8" data-line-number="8">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(small_dataset, <span class="kw">aes</span>(sp, dbh))</a>
 <a class="sourceLine" id="cb37-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb37-10" data-line-number="10">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 88 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>()</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 88 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span>ggbeeswarm<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggbeeswarm/topics/geom_quasirandom">geom_quasirandom</a></span>()</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 88 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -641,7 +641,7 @@
 <a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(sp, status)</a>
 <a class="sourceLine" id="cb42-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb42-4" data-line-number="4">few_spp_n</a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="co">#&gt; # A tibble: 19 x 3</span></a>
+<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="co">#&gt; # A tibble: 18 x 3</span></a>
 <a class="sourceLine" id="cb42-6" data-line-number="6"><span class="co">#&gt;    sp     status     n</span></a>
 <a class="sourceLine" id="cb42-7" data-line-number="7"><span class="co">#&gt;    &lt;fct&gt;  &lt;chr&gt;  &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb42-8" data-line-number="8"><span class="co">#&gt;  1 MYRSPL A         47</span></a>
@@ -656,13 +656,12 @@
 <a class="sourceLine" id="cb42-17" data-line-number="17"><span class="co">#&gt; 10 GUAGUI D          2</span></a>
 <a class="sourceLine" id="cb42-18" data-line-number="18"><span class="co">#&gt; 11 GUAGUI G         46</span></a>
 <a class="sourceLine" id="cb42-19" data-line-number="19"><span class="co">#&gt; 12 GUAGUI P         10</span></a>
-<a class="sourceLine" id="cb42-20" data-line-number="20"><span class="co">#&gt; 13 PREMON A       1160</span></a>
+<a class="sourceLine" id="cb42-20" data-line-number="20"><span class="co">#&gt; 13 PREMON A       1156</span></a>
 <a class="sourceLine" id="cb42-21" data-line-number="21"><span class="co">#&gt; 14 PREMON D         18</span></a>
-<a class="sourceLine" id="cb42-22" data-line-number="22"><span class="co">#&gt; 15 PREMON G          8</span></a>
-<a class="sourceLine" id="cb42-23" data-line-number="23"><span class="co">#&gt; 16 PREMON P        350</span></a>
-<a class="sourceLine" id="cb42-24" data-line-number="24"><span class="co">#&gt; 17 DACEXC A        213</span></a>
-<a class="sourceLine" id="cb42-25" data-line-number="25"><span class="co">#&gt; 18 DACEXC G          8</span></a>
-<a class="sourceLine" id="cb42-26" data-line-number="26"><span class="co">#&gt; 19 DACEXC P         13</span></a></code></pre></div>
+<a class="sourceLine" id="cb42-22" data-line-number="22"><span class="co">#&gt; 15 PREMON P        338</span></a>
+<a class="sourceLine" id="cb42-23" data-line-number="23"><span class="co">#&gt; 16 DACEXC A        213</span></a>
+<a class="sourceLine" id="cb42-24" data-line-number="24"><span class="co">#&gt; 17 DACEXC G          8</span></a>
+<a class="sourceLine" id="cb42-25" data-line-number="25"><span class="co">#&gt; 18 DACEXC P         13</span></a></code></pre></div>
 <p>Then visualize with <code>geom_tile()</code> and the fill aesthetic:</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">ggplot</span>(few_spp_n, <span class="kw">aes</span>(sp, status)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb43-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_tile</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> n))</a></code></pre></div>
@@ -678,32 +677,32 @@
 <a class="sourceLine" id="cb44-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb44-5" data-line-number="5">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(stem, <span class="kw">aes</span>(dbh, ba))</a>
 <a class="sourceLine" id="cb44-6" data-line-number="6">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb44-7" data-line-number="7"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb44-7" data-line-number="7"><span class="co">#&gt; Warning: Removed 2676 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-41-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>Scatterplots become less useful as the size of your data set grows, because points begin to overplot and pile up into areas of uniform black (as above). You have already seen one way to fix the problem: using the <code>alpha</code> aesthetic to add transparency.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">25</span>)</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2676 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-42-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>But using transparency can be challenging for very large data sets. Another solution is to use <code>bin</code>. Previously you used <code>geom_histogram()</code> and <code>geom_freqpoly()</code> to bin in one dimension. Now you will learn how to use <code>geom_bin2d()</code> and <code>geom_hex()</code> to bin in two dimensions.</p>
 <p><code>geom_bin2d()</code> and <code>geom_hex()</code> divide the coordinate plane into 2d bins and then use a fill color to display how many points fall into each bin. <code>geom_bin2d()</code> creates rectangular bins. <code>geom_hex()</code> creates hexagonal bins. You will need to install the <strong>hexbin</strong> package to use <code>geom_hex()</code>.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co"># Remember to install with install.packages("hexbin")</span></a>
 <a class="sourceLine" id="cb46-2" data-line-number="2"><span class="co"># Left</span></a>
 <a class="sourceLine" id="cb46-3" data-line-number="3">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_bin2d</span>()</a>
-<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="co">#&gt; Warning: Removed 2700 rows containing non-finite values (stat_bin2d).</span></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="co">#&gt; Warning: Removed 2676 rows containing non-finite values (stat_bin2d).</span></a>
 <a class="sourceLine" id="cb46-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb46-6" data-line-number="6"><span class="co"># Right</span></a>
 <a class="sourceLine" id="cb46-7" data-line-number="7">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_hex</span>()</a>
-<a class="sourceLine" id="cb46-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 2700 rows containing non-finite values (stat_binhex).</span></a></code></pre></div>
+<a class="sourceLine" id="cb46-8" data-line-number="8"><span class="co">#&gt; Warning: Removed 2676 rows containing non-finite values (stat_binhex).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-43-1.png" width="70%" style="display: block; margin: auto;"><img src="eda_files/figure-html/unnamed-chunk-43-2.png" width="70%" style="display: block; margin: auto;"></p>
 <p>Another option is to bin one continuous variable so it acts like a categorical variable. Then you can use one of the techniques for visualizing the combination of a categorical and a continuous variable that you learned about. For example, you can bin <code>dbh</code> and then display a boxplot for each group:</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(stem, <span class="kw">aes</span>(dbh, ba))</a>
 <a class="sourceLine" id="cb47-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="kw">cut_width</span>(dbh, useful_binwidth)))</a>
-<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (stat_boxplot).</span></a></code></pre></div>
+<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="co">#&gt; Warning: Removed 2676 rows containing missing values (stat_boxplot).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-44-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p><code>cut_width(x, width)</code>, as used above, divides x into bins of width <code>width</code>. By default, boxplots look roughly the same (apart from number of outliers) regardless of how many observations there are, so it is difficult to tell that each boxplot summarizes a different number of points. One way to show that is to make the width of the boxplot proportional to the number of points with <code>varwidth = TRUE</code>.</p>
 <p>Another approach is to display approximately the same number of points in each bin. That is the job of <code>cut_number()</code>:</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="kw">cut_number</span>(dbh, <span class="dv">20</span>)))</a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (stat_boxplot).</span></a></code></pre></div>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2676 rows containing missing values (stat_boxplot).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-45-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="patterns-and-models" class="section level2">
@@ -729,7 +728,7 @@
 <a class="sourceLine" id="cb49-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb49-8" data-line-number="8"><span class="kw">ggplot</span>(<span class="dt">data =</span> resid_added, <span class="kw">aes</span>(<span class="dt">x =</span> dbh, <span class="dt">y =</span> resid)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb49-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb49-10" data-line-number="10"><span class="co">#&gt; Warning: Removed 2700 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb49-10" data-line-number="10"><span class="co">#&gt; Warning: Removed 2676 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-46-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>There is no pattern left. This is unsurprising because we created <code>ba</code> as a precise function of <code>dbh</code> plus a random error – once we removed the pattern due to <code>dbh</code>, all that remains is noise.</p>
 </div>

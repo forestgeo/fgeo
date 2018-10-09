@@ -138,14 +138,12 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; </span></a></code></pre></div>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; </span></a></code></pre></div>
 </div>
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
@@ -155,7 +153,7 @@
 <p>We will use a dataset of stems censused in one hectare from the forest plot in Luquillo, Puerto Rico (<a href="https://forestgeo.si.edu/sites/north-america/luquillo" class="uri">https://forestgeo.si.edu/sites/north-america/luquillo</a>).</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">stem &lt;-<span class="st"> </span>luquillo_stem_1ha</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">str</span>(stem)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    72618 obs. of  19 variables:</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    72582 obs. of  19 variables:</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;  $ treeID   : int  46 47 47 47 47 47 47 47 47 47 ...</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;  $ stemID   : int  46 47 48 49 50 51 52 53 54 55 ...</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  $ tag      : chr  "100001" "100008" "100008" "100008" ...</span></a>
@@ -169,12 +167,12 @@
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  $ dbh      : num  22.6 15 12.8 10.9 13.4 10.8 15.4 16.6 13.3 11.1 ...</span></a>
 <a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;  $ pom      : chr  "1.3" "1.3" "1.3" "1.3" ...</span></a>
 <a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;  $ hom      : num  1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 ...</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt;  $ ExactDate: num  8610 8610 8610 8610 8610 8610 8610 8610 8610 8610 ...</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt;  $ ExactDate: Date, format: "1993-07-29" "1993-07-29" ...</span></a>
 <a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt;  $ DFstatus : chr  "alive" "alive" "alive" "alive" ...</span></a>
 <a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt;  $ codes    : chr  "MAIN;A" "SPROUT;A" "SPROUT;A" "SPROUT;A" ...</span></a>
 <a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt;  $ countPOM : num  1 1 1 1 1 1 1 1 1 1 ...</span></a>
 <a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt;  $ status   : chr  "A" "A" "A" "A" ...</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;  $ date     : num  NA NA NA NA NA NA NA NA NA NA ...</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;  $ date     : num  12263 12263 12263 12263 12263 ...</span></a></code></pre></div>
 <p>For a description of the columns, see <code>?data_dictionary</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">str</span>(data_dictionary)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    242 obs. of  3 variables:</span></a>
@@ -223,7 +221,7 @@
 <p><code>status</code> is a categorical variable.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">summary</span>(stem6<span class="op">$</span>status)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt;    Length     Class      Mode </span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;     12103 character character</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;     12097 character character</span></a></code></pre></div>
 <p>We can count the number of observations in each category with <code>table()</code>, then visualize the result with <code>barplot()</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">by_category &lt;-<span class="st"> </span><span class="kw">table</span>(stem6<span class="op">$</span>status)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">barplot</span>(by_category)</a></code></pre></div>
@@ -231,7 +229,7 @@
 <p><code>dbh</code> is a continuous numeric variable.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">summary</span>(stem6<span class="op">$</span>dbh)</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's </span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt;   10.00   21.77   56.00   93.71  142.00 1405.00    9539</span></a></code></pre></div>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt;   10.00   21.77   56.00   93.71  142.00 1405.00    9533</span></a></code></pre></div>
 <p>(Note the missing values (<code>NA</code>s).)</p>
 <p>And we can visualize its distribution with <code>hist()</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">hist</span>(stem6<span class="op">$</span>dbh)</a></code></pre></div>
@@ -252,7 +250,7 @@
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt;        </span></a>
 <a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt;            A    D    G</span></a>
 <a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;   FALSE 2564    0    0</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;   TRUE     4 5416 4119</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;   TRUE     4 5416 4113</span></a></code></pre></div>
 <p>We learn that <code>dbh</code> is missing where a tree is dead (<code>status = D</code>) or gone (<code>status = G</code>). This makes sense and, depending on the type of analysis we want to do, we may want to keep or remove missing values.</p>
 </div>
 <div id="determining-tree-status-based-on-stem-status" class="section level2">
@@ -290,7 +288,7 @@
 <a href="#dropping-missing-values" class="anchor"></a>Dropping missing values</h2>
 <p>Drop missing values of <code>dbh</code> with an informative warning.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">non_missing &lt;-<span class="st"> </span><span class="kw">drop_if_na</span>(ten_plus, <span class="st">"dbh"</span>)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="co">#&gt; Warning: Dropping 5261 rows with missing `dbh` values.</span></a></code></pre></div>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="co">#&gt; Warning: Dropping 5255 rows with missing `dbh` values.</span></a></code></pre></div>
 </div>
 <div id="calculating-abundance" class="section level2">
 <h2 class="hasAnchor">
@@ -412,7 +410,7 @@
 <a class="sourceLine" id="cb27-25" data-line-number="25"><span class="co">#&gt;   sp         n</span></a>
 <a class="sourceLine" id="cb27-26" data-line-number="26"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb27-27" data-line-number="27"><span class="co">#&gt; 1 CASARB    94</span></a>
-<a class="sourceLine" id="cb27-28" data-line-number="28"><span class="co">#&gt; 2 PREMON   256</span></a>
+<a class="sourceLine" id="cb27-28" data-line-number="28"><span class="co">#&gt; 2 PREMON   252</span></a>
 <a class="sourceLine" id="cb27-29" data-line-number="29"><span class="co">#&gt; 3 SLOBER    84</span></a></code></pre></div>
 <p>We need habitat data. Bad habitat data is a common cause of errors. The safest way to create it is with <code>fgeo_habitat()</code> (see <code>?fgeo_habitat()</code>).</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">habitat &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>

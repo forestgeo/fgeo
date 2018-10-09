@@ -47,13 +47,11 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204
 #> v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003
-#> Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not
-#> possible
 #> 
 ```
 
@@ -81,7 +79,7 @@ stem <- luquillo_stem_1ha
 unique(stem$CensusID)
 #> [1] 1 2 3 4 5 6
 stem
-#> # A tibble: 72,618 x 19
+#> # A tibble: 72,582 x 19
 #>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
 #>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
 #>  1     46     46 1000~ 100001  PSYB~ 921      164.  416.        46        1
@@ -94,8 +92,8 @@ stem
 #>  8     47     53 1000~ 100008  PSYB~ 921      165.  416         53        1
 #>  9     47     54 1000~ 100009  PSYB~ 921      165.  416         54        1
 #> 10     47     55 1000~ 100010  PSYB~ 921      165.  416         55        1
-#> # ... with 72,608 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
-#> #   hom <dbl>, ExactDate <dbl>, DFstatus <chr>, codes <chr>,
+#> # ... with 72,572 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
+#> #   hom <dbl>, ExactDate <date>, DFstatus <chr>, codes <chr>,
 #> #   countPOM <dbl>, status <chr>, date <dbl>
 ```
 
@@ -136,7 +134,7 @@ Drop missing values of `dbh` with an informative warning.
 
 ``` r
 non_missing <- drop_if_na(ten_plus, "dbh")
-#> Warning: Dropping 5261 rows with missing `dbh` values.
+#> Warning: Dropping 5255 rows with missing `dbh` values.
 ```
 
 Count distinct values of `stemID` and `treeID`.

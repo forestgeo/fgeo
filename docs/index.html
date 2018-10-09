@@ -152,14 +152,12 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9000 --</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------------- fgeo 0.0.0.9000 --</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.demography 0.0.0.9000</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9002     v fgeo.map        0.0.0.9204</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; v fgeo.abundance  0.0.0.9004     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; possible</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; </span></a></code></pre></div>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; </span></a></code></pre></div>
 <p>Need help? Use <code><a href="reference/fgeo_help.html">fgeo_help()</a></code> to search every help file in the fgeo package.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
 <p><img src="https://i.imgur.com/MmbmeZd.png"></p>
@@ -172,7 +170,7 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">unique</span>(stem<span class="op">$</span>CensusID)</a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; [1] 1 2 3 4 5 6</span></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6">stem</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; # A tibble: 72,618 x 19</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; # A tibble: 72,582 x 19</span></a>
 <a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
 <a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;  1     46     46 1000~ 100001  PSYB~ 921      164.  416.        46        1</span></a>
@@ -185,8 +183,8 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt;  8     47     53 1000~ 100008  PSYB~ 921      165.  416         53        1</span></a>
 <a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt;  9     47     54 1000~ 100009  PSYB~ 921      165.  416         54        1</span></a>
 <a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; 10     47     55 1000~ 100010  PSYB~ 921      165.  416         55        1</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; # ... with 72,608 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;dbl&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; # ... with 72,572 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Pick one census from the bottom (n &lt; 0) rank of <code>CensusID</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">pick_top</span>(stem, <span class="dt">var =</span> CensusID, <span class="dt">n =</span> <span class="dv">-1</span>)</a>
@@ -211,7 +209,7 @@ devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; [1]   10 1405</span></a></code></pre></div>
 <p>Drop missing values of <code>dbh</code> with an informative warning.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">non_missing &lt;-<span class="st"> </span><span class="kw">drop_if_na</span>(ten_plus, <span class="st">"dbh"</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; Warning: Dropping 5261 rows with missing `dbh` values.</span></a></code></pre></div>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; Warning: Dropping 5255 rows with missing `dbh` values.</span></a></code></pre></div>
 <p>Count distinct values of <code>stemID</code> and <code>treeID</code>.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Stem abundance</span></a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">abundance</span>(non_missing)</a>
