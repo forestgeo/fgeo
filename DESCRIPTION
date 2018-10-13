@@ -47,7 +47,7 @@ Remotes:
     forestgeo/fgeo.demography,
     forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
-    forestgeo/fgeo.tool@dev
+    forestgeo/fgeo.tool
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
