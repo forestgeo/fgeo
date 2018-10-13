@@ -23,7 +23,7 @@ Imports:
     dplyr,
     fgeo.abundance,
     fgeo.base,
-    fgeo.data (== 0.0.0.9001),
+    fgeo.data,
     fgeo.demography,
     fgeo.habitat,
     fgeo.map,
@@ -45,7 +45,7 @@ VignetteBuilder: knitr
 Remotes: 
     forestgeo/fgeo.abundance,
     forestgeo/fgeo.base,
-    forestgeo/fgeo.data (== 0.0.0.9001),
+    forestgeo/fgeo.data@*release,
     forestgeo/fgeo.demography,
     forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
