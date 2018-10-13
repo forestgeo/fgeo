@@ -127,7 +127,7 @@
 </h3>
                         <h4 class="author">Mauro Lepore</h4>
             
-            <h4 class="date">2018-10-09</h4>
+            <h4 class="date">2018-10-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/forestgeo/fgeo/blob/master/vignettes/siteonly/eda.Rmd"><code>vignettes/siteonly/eda.Rmd</code></a></small>
       <div class="hidden name"><code>eda.Rmd</code></div>
@@ -144,12 +144,12 @@
 <p>You will learn to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.</p>
 <p>If you are new to the <strong>tidyverse</strong>, you may feel a little frustrated at the beginning, but your effort will quickly pay-off. The tools in the <strong>tidyverse</strong> are powerful, relatively easy to use, and consistent; so once you learn some of the tools, you will learn most other tools intuitively.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------------- tidyverse 1.2.1 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------------------ tidyverse 1.2.1 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v ggplot2 3.0.0     v purrr   0.2.5</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v tibble  1.4.2     v dplyr   0.7.6</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v tidyr   0.8.1     v stringr 1.3.1</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v readr   1.1.1     v forcats 0.3.0</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts -------------------------------------------------------- tidyverse_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts --------------------------------------------------------- tidyverse_conflicts() --</span></a>
 <a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></a></code></pre></div>
 <p>The data we will use is a public dataset of trees censused in a forest plot in Luquillo, Puerto Rico. Those data are available in the data set <code>luquillo_stem_random</code> from the data-package <strong>fgeo.data</strong> (<a href="https://forestgeo.github.io/fgeo.data/" class="uri">https://forestgeo.github.io/fgeo.data/</a>).</p>
@@ -613,13 +613,13 @@
 <a class="sourceLine" id="cb37-8" data-line-number="8">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(small_dataset, <span class="kw">aes</span>(sp, dbh))</a>
 <a class="sourceLine" id="cb37-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb37-10" data-line-number="10">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 85 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>()</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 85 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span>ggbeeswarm<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggbeeswarm/topics/geom_quasirandom">geom_quasirandom</a></span>()</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 84 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 85 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
