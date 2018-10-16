@@ -44,7 +44,7 @@ Remotes:
     forestgeo/fgeo.abundance@*release,
     forestgeo/fgeo.base,
     forestgeo/fgeo.data@*release,
-    forestgeo/fgeo.demography,
+    forestgeo/fgeo.demography@*release,
     forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
     forestgeo/fgeo.tool
