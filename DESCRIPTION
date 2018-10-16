@@ -41,7 +41,7 @@ Suggests:
     tibble
 VignetteBuilder: knitr
 Remotes: 
-    forestgeo/fgeo.abundance,
+    forestgeo/fgeo.abundance@*release,
     forestgeo/fgeo.base,
     forestgeo/fgeo.data@*release,
     forestgeo/fgeo.demography,
