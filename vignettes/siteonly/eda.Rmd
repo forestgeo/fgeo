@@ -19,13 +19,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-Here I reproduce the section _Exploratory Data Analysis_ of the book _R for Data Science_ (http://r4ds.had.co.nz/), by Hadley Wickham and Garrett Grolemund -- except for the examples and some text, which I changed to engage ecologists from ForestGEO.
+Here, I reproduce the section _Exploratory Data Analysis_ of the book _R for Data Science_ (http://r4ds.had.co.nz/), by Hadley Wickham and Garrett Grolemund -- except for the examples and some text, which I changed to engage ecologists from ForestGEO.
 
 # Introduction
 
-This article will show you how to explore your data with general purpose tools, mostly from the __tidyverse__ (https://www.tidyverse.org/). This is a good place to start before you learn the specific tools from the __fgeo__ package (https://forestgeo.github.io/fgeo/). For an exploratory data analysis with __fgeo__ see [Get Started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started).
+This article will show you how to explore your data with general purpose tools, mostly from the __tidyverse__ (https://www.tidyverse.org/). This is a good place to start before you learn the specific tools from the __fgeo__ package (https://forestgeo.github.io/fgeo/). For an exploratory data analysis with __fgeo__, see [Get Started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started).
 
-You will learn to explore your data systematically, using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.
+You will learn to explore your data systematically by using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.
 
 If you are new to the __tidyverse__, you may feel a little frustrated at the beginning, but your effort will quickly pay-off. The tools in the __tidyverse__ are powerful, relatively easy to use, and consistent; so once you learn some of the tools, you will learn most other tools intuitively.
 
@@ -33,7 +33,7 @@ If you are new to the __tidyverse__, you may feel a little frustrated at the beg
 library(tidyverse)
 ```
 
-The data we will use is a public dataset of trees censused in a forest plot in Luquillo, Puerto Rico. Those data are available in the data set `luquillo_stem_random` from the data-package __fgeo.data__ (https://forestgeo.github.io/fgeo.data/).
+The data we will use is a public dataset of trees censused in a forest plot in Luquillo, Puerto Rico. That data is available in the dataset `luquillo_stem_random` from the data-package __fgeo.data__ (https://forestgeo.github.io/fgeo.data/).
 
 ```{r, eval=TRUE}
 # Convenient nickname
@@ -50,7 +50,7 @@ The code style I use here follows the tidyverse guide (http://style.tidyverse.or
 
 ### Combining multiple operations with the pipe %>%
 
-Often I combine multiple operations with the pipe `%>%` because it makes the code considerably more readable.
+Often I combine multiple operations with the pipe `%>%`, because it makes the code considerably more readable.
 
 > [The pipe] focuses on the transformations, not what's being transformed, which makes the code easier to read. You can read it as a series of imperative statements: group, then summarise, then filter. As suggested by this reading, a good way to pronounce %>% when reading code is "then".
 
@@ -83,9 +83,9 @@ __Variation__ is the tendency of the values of a variable to change from measure
 
 # Variation
 
-Every variable varies with a particular pattern, and that pattern may be insightful. To understand the variation pattern of a variable we can visualize the distribution of the variables' values. The best way to visualize a variable's distribution depends on whether the variable is categorical or continuous.
+Every variable varies with a particular pattern, and that pattern may be insightful. To understand the variation pattern of a variable, we can visualize the distribution of the variables' values. The best way to visualize a variable's distribution depends on whether the variable is categorical or continuous.
 
-The `stem` dataset has both, categorical and continuous variables. In R, categorical variables are usually stored as character strings (`<chr>`) or factors (`<fctr>`), and continuous variables are stored as integers (`<int>`) or doubles (`<dbl>`).
+The `stem` dataset has both categorical and continuous variables. In R, categorical variables are usually stored as character strings (`<chr>`) or factors (`<fctr>`), and continuous variables are stored as integers (`<int>`) or doubles (`<dbl>`).
 
 `stem` is a tibble. A tibble is a subclass of dataframe. But compared to regular dataframes, tibbles are optimized to handle large data; they also print more information and show it in a nicer way.
 
@@ -140,7 +140,7 @@ The categories A, D and M, of the variable `status` mean "alive", "dead" and "mi
 
 ### Continuous variables
 
-A variable is continuous if it can take any of an infinite set of ordered values. To examine the distribution of a continuous variable use a histogram. You should always explore a variety of binwidths when working with histograms, as different binwidths can reveal different patterns.
+A variable is continuous if it can take any of an infinite set of ordered values. To examine the distribution of a continuous variable, use a histogram. You should always explore a variety of binwidths when working with histograms, as different binwidths can reveal different patterns.
 
 Let's explore `dbh`, which represents the stem diameter at breast height. Now we will focus on small stems; we will explore big stems later. And we will try bars of different widths (with `binwidth`) and choose one for further analyses.
 
@@ -170,7 +170,7 @@ A binwidth of 30 seems useful.
 useful_binwidth <- 30
 ```
 
-To overlay multiple histograms in the same plot, `geom_freqpoly()` may produce clearer plots than `geom_histogram()` because it is easier to understand overlying lines than bars.
+To overlay multiple histograms in the same plot, `geom_freqpoly()` may produce clearer plots than `geom_histogram()`, because it is easier to understand overlying lines than bars.
 
 ```{r}
 # Make n groups with ~ numbers of observations with `ggplot2::cut_number()`
@@ -234,7 +234,7 @@ p + geom_histogram(binwidth = 100)
 
 In this section we will work with the entire `stem` data set.
 
-Outliers are observations that are unusual; data points that do not seem to fit the pattern. Sometimes outliers are data entry errors; other times outliers suggest important new science. When you have a lot of data, outliers can be difficult to see in a histogram.
+Outliers are observations that are unusual: data points that do not seem to fit the pattern. Sometimes outliers are data entry errors, while other times outliers suggest important new science. When you have a lot of data, outliers can be difficult to see in a histogram.
 
 For example, consider the distribution of the `dbh` variable of the `stem` data set. Notice how wide are the limits of the x-axis.
 
@@ -277,7 +277,7 @@ It is good practice to repeat your analysis with and without the outliers. If th
 
 # Missing values
 
-If you have encountered unusual values in your data set, and simply want to move on to the rest of your analysis, you have two options.
+If you have encountered unusual values in your data set and simply want to move on to the rest of your analysis, you have two options.
 
 1. Drop the entire row with the strange values:
 
@@ -290,7 +290,7 @@ nrow(stem)
 nrow(usual)
 ```
 
-I do not recommend this option: That one measurement is invalid does not mean all the measurements are invalid. Additionally, if you have low quality data, by time you have applied this approach to every variable you might find that you are left with no data!
+I do not recommend this option because since one measurement is invalid, this does not mean that all of the measurements are invalid. Additionally, if you have low quality data, by the time you have applied this approach to every variable you might find that you are left with no data!
 
 2. Instead, I recommend replacing the unusual values with missing values. The easiest way to do this is to use `dplyr::mutate()` to replace the variable with a modified copy. You can use the `ifelse()` function to replace unusual values with `NA`:
 
@@ -330,7 +330,7 @@ ggplot(unusual_only, aes(dbh)) +
   labs(title = "Expect empty plot but no warning")
 ```
 
-Other times you want to understand what makes observations with missing values different to observations with recorded values.
+Other times, you may want to understand what makes observations with missing values different to observations with recorded values.
 
 For example, you might want to compare the `status` for stems with missing and non-missing values of `dbh`. You can do this by making a new variable with `is.na()`.
 
@@ -354,7 +354,7 @@ If variation describes the behavior within a variable, covariation describes the
 
 ## A categorical and continuous variable
 
-It is common to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of `geom_freqpoly()` is not that useful for that sort of comparison because the height is given by the count. That means if one of the groups is much smaller than the others, it is hard to see the differences in shape. For example, let's explore how stem diameter (`dbh`) varies with species (`sp`):
+It is common to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of `geom_freqpoly()` is not that useful for that sort of comparison since the height is given by the count. That means if one of the groups is much smaller than the others, it is hard to see the differences in shape. For example, let's explore how stem diameter (`dbh`) varies with species (`sp`):
 
 ```{r}
 # The data set has too many species; choosing just a few for clarity
@@ -365,7 +365,7 @@ ggplot(data_few_sp, aes(dbh)) +
   geom_freqpoly(aes(color = sp))
 ```
 
-It is hard to see the difference in distribution because the overall counts differ so much:
+It is hard to see the difference in distribution, because the overall counts differ so much:
 
 ```{r}
 ggplot(data_few_sp) + 
@@ -373,7 +373,7 @@ ggplot(data_few_sp) +
   geom_bar(mapping = aes(x = fct_infreq(sp)))
 ```
 
-To make the comparison easier we need to swap what is displayed on the y-axis. Instead of displaying count, we will display density, which is the count standardized so that the area under each frequency polygon is one.
+To make the comparison easier, we need to swap what is displayed on the y-axis. Instead of displaying count, we will display density, which is the count standardized so that the area under each frequency polygon is one.
 
 ```{r}
 ggplot(data_few_sp, aes(x= dbh, y = ..density..)) +
@@ -427,7 +427,7 @@ ggplot(data_few_sp) +
 
 ### Alternatives
 
-One problem with boxplots is that they were developed in an era of much smaller data sets and tend to display a prohibitively large number of “outlying values”. One approach to remedy this problem is the letter-value plot.
+One problem with boxplots is that they were developed in an era of much smaller datasets and tend to display a prohibitively large number of “outlying values”. One approach to remedy this problem is the letter-value plot.
 
 ```{r}
 # Remember to install with install.packages("lvplot")
@@ -483,7 +483,7 @@ ggplot(data_few_sp) +
   geom_count(aes(x = sp, y = status))
 ```
 
-To more clearly show the distribution of `status` within `sp` (or `sp` within `status`) you can map bubble size to a proportion calculated over `sp` (or over `status`):
+To show the distribution of `status` within `sp` (or `sp` within `status`) more clearly, you can map bubble size to a proportion calculated over `sp` (or over `status`):
 
 ```{r}
 # Proportion; columns sum to 1.
@@ -499,7 +499,7 @@ few_spp_n <- data_few_sp %>%
 few_spp_n
 ```
 
-Then visualize with `geom_tile()` and the fill aesthetic:
+Then, visualize with `geom_tile()` and the fill aesthetic:
 
 ```{r}
 ggplot(few_spp_n, aes(sp, status)) +
@@ -519,13 +519,13 @@ p <- ggplot(stem, aes(dbh, ba))
 p + geom_point()
 ```
 
-Scatterplots become less useful as the size of your data set grows, because points begin to overplot and pile up into areas of uniform black (as above). You have already seen one way to fix the problem: using the `alpha` aesthetic to add transparency.
+Scatterplots become less useful as the size of your dataset grows, because points begin to overplot and pile up into areas of uniform black (as above). You have already seen one way to fix the problem: using the `alpha` aesthetic to add transparency.
 
 ```{r}
 p + geom_point(alpha = 1 / 25)
 ```
 
-But using transparency can be challenging for very large data sets. Another solution is to use `bin`. Previously you used `geom_histogram()` and `geom_freqpoly()` to bin in one dimension. Now you will learn how to use `geom_bin2d()` and `geom_hex()` to bin in two dimensions.
+But using transparency can be challenging for very large data sets. Another solution is to use `bin`. Previously, you used `geom_histogram()` and `geom_freqpoly()` to bin in one dimension. Now, you will learn how to use `geom_bin2d()` and `geom_hex()` to bin in two dimensions.
 
 `geom_bin2d()` and `geom_hex()` divide the coordinate plane into 2d bins and then use a fill color to display how many points fall into each bin. `geom_bin2d()` creates rectangular bins. `geom_hex()` creates hexagonal bins. You will need to install the __hexbin__ package to use `geom_hex()`.
 
@@ -538,14 +538,14 @@ p + geom_bin2d()
 p + geom_hex()
 ```
 
-Another option is to bin one continuous variable so it acts like a categorical variable. Then you can use one of the techniques for visualizing the combination of a categorical and a continuous variable that you learned about. For example, you can bin `dbh` and then display a boxplot for each group:
+Another option is to bin one continuous variable so it acts like a categorical variable. Then, you can use one of the techniques for visualizing the combination of a categorical and a continuous variable that you learned about. For example, you can bin `dbh` and then display a boxplot for each group:
 
 ```{r}
 p <- ggplot(stem, aes(dbh, ba))
 p + geom_boxplot(aes(group = cut_width(dbh, useful_binwidth)))
 ```
 
-`cut_width(x, width)`, as used above, divides x into bins of width `width`. By default, boxplots look roughly the same (apart from number of outliers) regardless of how many observations there are, so it is difficult to tell that each boxplot summarizes a different number of points. One way to show that is to make the width of the boxplot proportional to the number of points with `varwidth = TRUE`.
+`cut_width(x, width)`, as used above, divides x into bins of width `width`. By default, boxplots look roughly the same (apart from number of outliers) regardless of how many observations there are; therefore, it is difficult to tell that each boxplot summarizes a different number of points. One way to show that is to make the width of the boxplot proportional to the number of points with `varwidth = TRUE`.
 
 Another approach is to display approximately the same number of points in each bin. That is the job of `cut_number()`:
 
@@ -563,9 +563,9 @@ Patterns in your data provide clues about relationships. If a systematic relatio
 * What other variables might affect the relationship?
 * Does the relationship change if you look at individual subgroups of the data?
 
-Above we learned that a scatterplot of stem diameter (`dbh`) versus basal area (`ba`) shows a pattern: larger stem diameters are associated with larger basal area.
+Above, we learned that a scatterplot of stem diameter (`dbh`) versus basal area (`ba`) shows a pattern: larger stem diameters are associated with larger basal area.
 
-Patterns provide one of the most useful tools for data scientists because they reveal covariation. If you think of variation as a phenomenon that creates uncertainty, covariation is a phenomenon that reduces it. If two variables co-vary, you can use the values of one variable to make better predictions about the values of the second. If the covariation is due to a causal relationship (a special case), then you can use the value of one variable to control the value of the second.
+Patterns provide one of the most useful tools for data scientists, because they reveal covariation. If you think of variation as a phenomenon that creates uncertainty, covariation is a phenomenon that reduces it. If two variables co-vary, you can use the values of one variable to make better predictions about the values of the second. If the covariation is due to a causal relationship (a special case), then you can use the value of one variable to control the value of the second.
 
 Models are a tool for extracting patterns out of data. For example, consider the `stem` data; `dbh` and `ba` are tightly related. It is possible to use a model to remove the very strong relationship between `dbh` and `ba` so we can explore the subtleties that remain. The following code fits a model that predicts `ba` from `dbh` and then computes the residuals (the difference between the predicted value and the actual value). The residuals give us a view of the basal area of a stem, once the effect of `dbh` has been removed.
 
@@ -581,4 +581,4 @@ ggplot(data = resid_added, aes(x = dbh, y = resid)) +
   geom_point()
 ```
 
-There is no pattern left. This is unsurprising because we created `ba` as a precise function of `dbh` plus a random error -- once we removed the pattern due to `dbh`, all that remains is noise.
+There is no pattern left. This is not surprising since we created `ba` as a precise function of `dbh` plus a random error -- once we removed the pattern due to `dbh`, all that remains is noise.
