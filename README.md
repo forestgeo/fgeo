@@ -7,7 +7,7 @@
 [![Travis build
 status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 [![Coverage
-status](https://coveralls.io/repos/github/forestgeo/fgeo/badge.svg)](https://coveralls.io/r/forestgeo/fgeo?branch=master)
+status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](https://codecov.io/github/forestgeo/fgeo?branch=master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
@@ -47,7 +47,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9005     v fgeo.demography 0.0.0.9102
 #> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
 #> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9204
