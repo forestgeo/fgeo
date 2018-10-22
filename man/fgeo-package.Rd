@@ -28,6 +28,13 @@ Useful links:
 
 Other contributors:
 \itemize{
+  \item Gabriel Arellano \email{gabriel.arellano.torres@gmail.com} [reviewer]
+  \item Stuart Davies \email{daviess@si.edu} [reviewer]
+  \item Lauren Krizel \email{KrizelL@si.edu} [reviewer]
+  \item Suzanne Lao \email{laoz@si.edu} [reviewer]
+  \item Sean McMahon \email{mcmahons@si.edu} [reviewer]
+  \item Haley Overstreet \email{OverstreetH@si.edu} [reviewer]
+  \item Kristina Teixeira \email{TeixeiraK@si.edu} [reviewer]
   \item CTFS-ForestGEO \email{ForestGEO@si.edu} [copyright holder, funder]
 }
 

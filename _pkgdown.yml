@@ -2,9 +2,25 @@ url: https://forestgeo.github.io/fgeo/
 
 authors:
   Mauro Lepore:
-    href: https://github.com/maurolepore
+    href: https://forestgeo.si.edu/mauro-lepore
+  Gabriel Arellano:
+    href: https://forestgeo.si.edu/arellano-gabriel
+  Stuart Davies:
+    href: https://forestgeo.si.edu/stuart-j-davies
+  Lauren Krizel:
+    href: https://forestgeo.si.edu/lauren-krizel
+  Suzanne Lao:
+    href: https://forestgeo.si.edu/suzanne-lao
+  Sean McMahon:
+    href: https://forestgeo.si.edu/sean-mcmahon
+  Haley Overstreet:
+    href: https://forestgeo.si.edu/haley-overstreet
+  Kristina Teixeira:
+    href: https://forestgeo.si.edu/kristina-j-anderson-teixeira
   CTFS-ForestGEO:
     href: http://www.forestgeo.si.edu/
+
+
 
 template:
   params:

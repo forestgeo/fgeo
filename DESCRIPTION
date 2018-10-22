@@ -3,6 +3,13 @@ Title: Easily Install and Load Multiple Packages
 Version: 0.0.0.9000
 Authors@R: c(
     person("Mauro", "Lepore", , "leporem@si.edu", role = c("aut", "ctr", "cre")),
+    person("Gabriel", "Arellano", , "gabriel.arellano.torres@gmail.com", role = c("rev")),
+    person("Stuart", "Davies", , "daviess@si.edu", role = c("rev")),
+    person("Lauren", "Krizel", , "KrizelL@si.edu", role = c("rev")),
+    person("Suzanne", "Lao", , "laoz@si.edu", role = c("rev")),
+    person("Sean", "McMahon", , "mcmahons@si.edu", role = c("rev")),
+    person("Haley", "Overstreet", , "OverstreetH@si.edu", role = c("rev")),
+    person("Kristina", "Teixeira", , "TeixeiraK@si.edu", role = c("rev")),
     person("CTFS-ForestGEO", , , "ForestGEO@si.edu", role = c("cph", "fnd"))
   )
 Description: 'fgeo' installs and load multiple R packages of ForestGEO in
