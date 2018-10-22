@@ -6,8 +6,8 @@
 \alias{fgeo-package}
 \title{fgeo: Easily Install and Load Multiple Packages}
 \description{
-'fgeo' installs and load multiple R packages of ForestGEO in
-    a single step. Each individual package is a self contained module. Together,
+'fgeo' installs and loads multiple R packages of ForestGEO in
+    a single step. Each individual package is a self-contained module. Together,
     all the packages in 'fgeo' provide a wide range of tools to analyze forest
     diversity and dynamics. The modular structure of 'fgeo' makes it easy to add 
     and maintain more tools as they become available. Learn more about the 

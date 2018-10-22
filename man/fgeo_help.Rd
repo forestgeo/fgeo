@@ -24,7 +24,7 @@ has a print method for nicely formatting the results of the query.
 \description{
 \itemize{
 \item \code{fgeo_help()} finds all \strong{fgeo} help files. You can refine
-your search directly on the viewer panel of RStudio, or by passing a string
+your search directly on the viewer panel of RStudio or by passing a string
 to \code{fgeo_help()} (e.g. \code{fgeo("datasets")}).
 \item \code{fgeo_help_adin()} runs \code{fgeo_help()} from the RStudio Addins menu or by
 associating a keyboard shortcut to it (see Tools > Modify Keyboard
