@@ -87,7 +87,7 @@ Browse all source code at https://github.com/forestgeo/fgeo.
 
 1. Browse to the relevant package's website (e.g. [fgeo](https://forestgeo.github.io/fgeo/index.html)).
 
-2. Fin the function under _Reference_ (e.g. __fgeo__'s [Reference](https://forestgeo.github.io/fgeo/reference/index.html)).
+2. Find the function under _Reference_ (e.g. __fgeo__'s [Reference](https://forestgeo.github.io/fgeo/reference/index.html)).
 
 3. Click the link to _Source_ under the topic's title. For example:
 
@@ -114,7 +114,7 @@ fgeo_update()
 
 Contact [__fgeo__'s maintainer](https://github.com/maurolepore).
 
-## How can I get up to date with __fgeo__'s developments?
+## How can I get up-to-date with __fgeo__'s developments?
 
 Checkout [__fgeo__'s blog](https://fgeo.netlify.com/).
 

@@ -1,7 +1,7 @@
 #' Search __fgeo__ for documentation matching a given character string.
 #'
 #' * `fgeo_help()` finds all __fgeo__ help files. You can refine
-#' your search directly on the viewer panel of RStudio, or by passing a string
+#' your search directly on the viewer panel of RStudio or by passing a string
 #' to `fgeo_help()` (e.g. `fgeo("datasets")`).
 #' * `fgeo_help_adin()` runs `fgeo_help()` from the RStudio Addins menu or by
 #' associating a keyboard shortcut to it (see Tools > Modify Keyboard
