@@ -33,7 +33,7 @@ If you are new to the __tidyverse__, you may feel a little frustrated at the beg
 library(tidyverse)
 ```
 
-The data we will use is a public dataset of trees censused in a forest plot in Luquillo, Puerto Rico. That data is available in the dataset `luquillo_stem_random` from the data-package __fgeo.data__ (https://forestgeo.github.io/fgeo.data/).
+We will use the dataset `luquillo_stem_random` from the __fgeo.data__ package (https://forestgeo.github.io/fgeo.data/), which records trees censused in a forest plot in Luquillo, Puerto Rico.
 
 ```{r, eval=TRUE}
 # Convenient nickname
@@ -232,11 +232,11 @@ p + geom_histogram(binwidth = 100)
 
 ### Unusual values
 
-In this section we will work with the entire `stem` data set.
+In this section we will work with the entire `stem` dataset.
 
 Outliers are observations that are unusual: data points that do not seem to fit the pattern. Sometimes outliers are data entry errors, while other times outliers suggest important new science. When you have a lot of data, outliers can be difficult to see in a histogram.
 
-For example, consider the distribution of the `dbh` variable of the `stem` data set. Notice how wide are the limits of the x-axis.
+For example, consider the distribution of the `dbh` variable of the `stem` dataset. Notice how wide are the limits of the x-axis.
 
 ```{r}
 p <- ggplot(stem, aes(dbh)) +
@@ -277,7 +277,7 @@ It is good practice to repeat your analysis with and without the outliers. If th
 
 # Missing values
 
-If you have encountered unusual values in your data set and simply want to move on to the rest of your analysis, you have two options.
+If you have encountered unusual values in your dataset and simply want to move on to the rest of your analysis, you have two options.
 
 1. Drop the entire row with the strange values:
 
@@ -285,12 +285,12 @@ If you have encountered unusual values in your data set and simply want to move 
 are_usual <- !stem$stemID %in% unusual$stemID
 usual <- filter(stem, are_usual)
 
-# Confirm data set of usual stems has less rows than full data set.
+# Confirm dataset of usual stems has less rows than full dataset.
 nrow(stem)
 nrow(usual)
 ```
 
-I do not recommend this option because since one measurement is invalid, this does not mean that all of the measurements are invalid. Additionally, if you have low quality data, by the time you have applied this approach to every variable you might find that you are left with no data!
+I do not recommend this option: That one measurement is invalid does not mean all the measurements are invalid. Additionally, if you have low quality data, by the time you have applied this approach to every variable you might find that you are left with no data!
 
 2. Instead, I recommend replacing the unusual values with missing values. The easiest way to do this is to use `dplyr::mutate()` to replace the variable with a modified copy. You can use the `ifelse()` function to replace unusual values with `NA`:
 
@@ -357,7 +357,7 @@ If variation describes the behavior within a variable, covariation describes the
 It is common to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of `geom_freqpoly()` is not that useful for that sort of comparison since the height is given by the count. That means if one of the groups is much smaller than the others, it is hard to see the differences in shape. For example, let's explore how stem diameter (`dbh`) varies with species (`sp`):
 
 ```{r}
-# The data set has too many species; choosing just a few for clarity
+# The dataset has too many species; choosing just a few for clarity
 few_sp <- unique(stem$sp)[1:5]
 data_few_sp <- filter(stem, sp %in% few_sp)
 
@@ -450,7 +450,7 @@ ggplot(data_few_sp, aes(dbh)) +
   facet_wrap(~sp)
 ```
 
-If you have a small data set, it is sometimes useful to use `geom_jitter()` to see the relationship between a continuous and categorical variable. The __ggbeeswarm__ package provides a number of methods similar to `geom_jitter()`.
+If you have a small dataset, it is sometimes useful to use `geom_jitter()` to see the relationship between a continuous and categorical variable. The __ggbeeswarm__ package provides a number of methods similar to `geom_jitter()`.
 
 ```{r}
 # Remember to install with install.packages("ggbeeswarm")
@@ -525,7 +525,7 @@ Scatterplots become less useful as the size of your dataset grows, because point
 p + geom_point(alpha = 1 / 25)
 ```
 
-But using transparency can be challenging for very large data sets. Another solution is to use `bin`. Previously, you used `geom_histogram()` and `geom_freqpoly()` to bin in one dimension. Now, you will learn how to use `geom_bin2d()` and `geom_hex()` to bin in two dimensions.
+But using transparency can be challenging for very large datasets. Another solution is to use `bin`. Previously, you used `geom_histogram()` and `geom_freqpoly()` to bin in one dimension. Now, you will learn how to use `geom_bin2d()` and `geom_hex()` to bin in two dimensions.
 
 `geom_bin2d()` and `geom_hex()` divide the coordinate plane into 2d bins and then use a fill color to display how many points fall into each bin. `geom_bin2d()` creates rectangular bins. `geom_hex()` creates hexagonal bins. You will need to install the __hexbin__ package to use `geom_hex()`.
 
