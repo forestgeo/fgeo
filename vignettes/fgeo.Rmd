@@ -200,14 +200,16 @@ Map the most abundant species.
 
 ```{r}
 # luquillo_elevation comes with fgeo
-p <- map_sp_elev(picked_stems, elevation = luquillo_elevation, point_size = 1)
+p <- plot_species_or_elevation(
+  picked_stems, elevation = luquillo_elevation, point_size = 1
+)
 p
 ```
 
 Tweak to focus on the hectare available in the data.
 
 ```{r}
-p1 <- limit_gx_gy(p, xlim = c(100, 200), ylim = c(400, 500))
+p1 <- axis_limits(p, xlim = c(100, 200), ylim = c(400, 500))
 p1
 ```
 
