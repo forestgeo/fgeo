@@ -199,30 +199,34 @@ packages of <strong>fgeo</strong>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Filter rows with a matching pattern.</span>
-<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>)</div><div class='output co'>#&gt; # A tibble: 11 x 7
+<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>)</div><div class='output co'>#&gt; # A tibble: 13 x 7
 #&gt;    package  title                   topic    type  alias    keyword concept    
 #&gt;    &lt;chr&gt;    &lt;chr&gt;                   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;      
-#&gt;  1 fgeo.ba~ Apply a predicate func~ detect_~ help  detect_~ &lt;NA&gt;    &lt;NA&gt;       
-#&gt;  2 fgeo.ba~ Detect and extract mat~ extract~ help  extract~ &lt;NA&gt;    predicates.
-#&gt;  3 fgeo.ba~ Detect and extract mat~ extract~ help  detect_~ &lt;NA&gt;    predicates.
-#&gt;  4 fgeo.ba~ Predicates to detect a~ is_mult~ help  is_mult~ &lt;NA&gt;    predicates.
-#&gt;  5 fgeo.ba~ Predicates to detect a~ is_mult~ help  is_dupl~ &lt;NA&gt;    predicates.
-#&gt;  6 fgeo.to~ Detect and flag based ~ flag_if~ help  flag_if~ &lt;NA&gt;    functions ~
-#&gt;  7 fgeo.to~ Detect and flag based ~ flag_if~ help  flag_if~ &lt;NA&gt;    functions ~
-#&gt;  8 fgeo.to~ Detect and flag based ~ flag_if~ help  flag_if~ &lt;NA&gt;    predicates.
-#&gt;  9 fgeo.to~ Detect and flag based ~ flag_if~ help  detect_~ &lt;NA&gt;    functions ~
-#&gt; 10 fgeo.to~ Detect and flag based ~ flag_if~ help  detect_~ &lt;NA&gt;    functions ~
-#&gt; 11 fgeo.to~ Detect and flag based ~ flag_if~ help  detect_~ &lt;NA&gt;    predicates.</div><div class='input'>
+#&gt;  1 fgeo.ba~ Check if an object con~ check_c~ help  check_c~ &lt;NA&gt;    predicates 
+#&gt;  2 fgeo.ba~ Apply a predicate func~ detect_~ help  detect_~ &lt;NA&gt;    predicates 
+#&gt;  3 fgeo.ba~ Detect and extract mat~ extract~ help  extract~ &lt;NA&gt;    predicates.
+#&gt;  4 fgeo.ba~ Detect and extract mat~ extract~ help  detect_~ &lt;NA&gt;    predicates.
+#&gt;  5 fgeo.ba~ Factory of predicates ~ has_tab~ help  has_tab~ &lt;NA&gt;    predicates 
+#&gt;  6 fgeo.ba~ Predicates to detect a~ is_mult~ help  is_mult~ &lt;NA&gt;    predicates 
+#&gt;  7 fgeo.ba~ Predicates to detect a~ is_mult~ help  is_dupl~ &lt;NA&gt;    predicates 
+#&gt;  8 fgeo.to~ Detect and flag based ~ flag_if~ help  flag_if~ &lt;NA&gt;    functions ~
+#&gt;  9 fgeo.to~ Detect and flag based ~ flag_if~ help  flag_if~ &lt;NA&gt;    functions ~
+#&gt; 10 fgeo.to~ Detect and flag based ~ flag_if~ help  flag_if~ &lt;NA&gt;    predicates.
+#&gt; 11 fgeo.to~ Detect and flag based ~ flag_if~ help  detect_~ &lt;NA&gt;    functions ~
+#&gt; 12 fgeo.to~ Detect and flag based ~ flag_if~ help  detect_~ &lt;NA&gt;    functions ~
+#&gt; 13 fgeo.to~ Detect and flag based ~ flag_if~ help  detect_~ &lt;NA&gt;    predicates.</div><div class='input'>
 <span class='co'># Select specific columns</span>
-<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>, <span class='no'>concept</span>, <span class='no'>topic</span>, <span class='no'>title</span>)</div><div class='output co'>#&gt; # A tibble: 6 x 3
+<span class='fu'>fgeo_docs</span>(<span class='st'>"predicate"</span>, <span class='no'>concept</span>, <span class='no'>topic</span>, <span class='no'>title</span>)</div><div class='output co'>#&gt; # A tibble: 8 x 3
 #&gt;   concept            topic         title                                       
 #&gt;   &lt;chr&gt;              &lt;chr&gt;         &lt;chr&gt;                                       
-#&gt; 1 &lt;NA&gt;               detect_if     Apply a predicate function to a column of a~
-#&gt; 2 predicates.        extract_inse~ Detect and extract matching strings - ignor~
-#&gt; 3 predicates.        is_multiple   Predicates to detect and flag duplicated an~
-#&gt; 4 functions for dev~ flag_if_group Detect and flag based on a predicate applie~
-#&gt; 5 functions to chec~ flag_if_group Detect and flag based on a predicate applie~
-#&gt; 6 predicates.        flag_if_group Detect and flag based on a predicate applie~</div><div class='input'>
+#&gt; 1 predicates         check_crucia~ Check if an object contains specific names. 
+#&gt; 2 predicates         detect_if     Apply a predicate function to a column of a~
+#&gt; 3 predicates.        extract_inse~ Detect and extract matching strings - ignor~
+#&gt; 4 predicates         has_table_na~ Factory of predicates to check if a table h~
+#&gt; 5 predicates         is_multiple   Predicates to detect and flag duplicated an~
+#&gt; 6 functions for dev~ flag_if_group Detect and flag based on a predicate applie~
+#&gt; 7 functions to chec~ flag_if_group Detect and flag based on a predicate applie~
+#&gt; 8 predicates.        flag_if_group Detect and flag based on a predicate applie~</div><div class='input'>
 <span class='co'># Exclude specific columns</span>
 <span class='fu'>fgeo_docs</span>(<span class='st'>"abundance"</span>, -<span class='no'>package</span>)</div><div class='output co'>#&gt; # A tibble: 6 x 6
 #&gt;   title                         topic      type  alias          keyword concept
