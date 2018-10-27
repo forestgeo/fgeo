@@ -33,13 +33,21 @@ library(fgeo)
 
 ## How can I update __fgeo__?
 
+> You are advised to run update.packages before install.packages to ensure that any already installed dependencies have their latest versions
+
+-- Help file of `install.packages()`
+
 ```R
-fgeo_update()
+# install.packages("devtools")
+update.packages()
+devtools::install_github("forestgeo/fgeo")
 ```
+
+[More information](https://forestgeo.github.io/fgeo/index.html#installation)
 
 ## Does __fgeo__ conflict with my other packages?
 
-```{r}
+```R
 fgeo_conflicts()
 ```
 
@@ -103,12 +111,7 @@ Visit [forestgeo/learn](https://github.com/forestgeo/learn).
 
 ## How can I try fgeo before I install it?
 
-Try __fgeo__ on rstudio.cloud for free at http://bit.ly/fgeo-demo. Ensure you have the latest version with:
-
-```R
-library(fgeo)
-fgeo_update()
-```
+Try __fgeo__ from your webrowser at <http://bit.ly/fgeo-demo>.
 
 ## How to contact a human?
 
