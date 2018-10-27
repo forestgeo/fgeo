@@ -47,11 +47,11 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9000 --
-#> v fgeo.abundance  0.0.0.9005     v fgeo.demography 0.0.0.9102
-#> v fgeo.base       0.0.0.9001     v fgeo.habitat    0.0.0.9006
-#> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9204
-#> v fgeo.abundance  0.0.0.9005     v fgeo.tool       0.0.0.9003
+#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --
+#> v fgeo.abundance  0.0.0.9005     v fgeo.habitat    0.0.0.9006
+#> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9402
+#> v fgeo.data       0.0.0.9005     v fgeo.tool       0.0.0.9003
+#> v fgeo.demography 0.0.0.9102
 #> 
 ```
 
