@@ -5,3 +5,4 @@ inst/fgeo-logo
 .RData
 tmp.R
 CopyOf_pkgdown.yml
+ship.sh
