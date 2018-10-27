@@ -3,9 +3,12 @@
 #' @param include_self Include fgeo in the list?
 #' @param section Either "Imports" or "Suggests".
 #'
-#' @export
+#' @family functions for developers
+#'
+#' @return A string.
+#'
 #' @keywords internal
-#' @noRd
+#' @export
 fgeo_dependencies <- function(include_self = TRUE,
                               section = c("Imports", "Suggests")) {
   section <- section[[1]]

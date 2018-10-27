@@ -1,9 +1,11 @@
 #' Core packages of __fgeo__.
 #'
+#' @family functions for developers
+#'
 #' @return A string.
-#' @export
+#'
 #' @keywords internal
-#' @noRd
+#' @export
 fgeo_core <- function() {
   c(
     "fgeo.abundance",

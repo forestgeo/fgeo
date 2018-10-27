@@ -34,12 +34,21 @@ fgeo.](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.
 
 ## Installation
 
-Install **fgeo** from GitHub with:
+Install the pre-release version of **fgeo**:
+
+    # install.packages("devtools")
+    devtools::install_github("forestgeo/fgeo@pre-release")
+
+Or install the development version of **fgeo**:
 
     # install.packages("devtools")
     devtools::install_github("forestgeo/fgeo")
 
-[How to install packages from GitHub?](https://goo.gl/dQKEeg)
+Or [install all **fgeo** packages in one
+step](https://forestgeo.github.io/fgeo/index.html#installation).
+
+For details on how to install packages from GitHub, see [this
+article](https://goo.gl/dQKEeg).
 
 ## Example
 

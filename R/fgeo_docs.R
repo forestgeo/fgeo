@@ -10,11 +10,13 @@
 #'   specified by lib.loc are searched. Defaults to search only the core
 #'   packages of __fgeo__.
 #'
-#' @return A dataframe.
-#' @export
-#' @keywords internal
-#' @noRd
+#' @family functions for developers
 #'
+#' @return A dataframe.
+#'
+#' @keywords internal
+#'
+#' @export
 #' @examples
 #' # Filter rows with a matching pattern.
 #' fgeo_docs("predicate")
