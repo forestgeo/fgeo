@@ -44,9 +44,6 @@ Or install the development version of **fgeo**:
     # install.packages("devtools")
     devtools::install_github("forestgeo/fgeo")
 
-Or [install all **fgeo** packages in one
-step](https://forestgeo.github.io/fgeo/index.html#installation).
-
 For details on how to install packages from GitHub, see [this
 article](https://goo.gl/dQKEeg).
 
@@ -56,7 +53,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9000 --
+#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9000 --
 #> v fgeo.abundance  0.0.0.9005     v fgeo.habitat    0.0.0.9006
 #> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9402
 #> v fgeo.data       0.0.0.9005     v fgeo.tool       0.0.0.9003
@@ -71,7 +68,7 @@ package.
 fgeo_help()
 ```
 
-![](https://i.imgur.com/MmbmeZd.png)
+![](https://i.imgur.com/k4wz4Ah.png)
 
 You can narrow down your search by using a keyword.
 
@@ -79,7 +76,7 @@ You can narrow down your search by using a keyword.
 fgeo_help("datasets")
 ```
 
-![](https://i.imgur.com/4AdTD3G.png)
+![](https://i.imgur.com/YlgRljc.png)
 
 ``` r
 # Short name

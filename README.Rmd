@@ -53,8 +53,6 @@ Or install the development version of **fgeo**:
 devtools::install_github("forestgeo/fgeo")
 ```
 
-Or [install all **fgeo** packages in one step](https://forestgeo.github.io/fgeo/index.html#installation).
-
 For details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg).
 
 ## Example
@@ -71,7 +69,7 @@ Need help? Use `fgeo_help()` to search every help file in the fgeo package.
 fgeo_help()
 ```
 
-![](https://i.imgur.com/MmbmeZd.png)
+![](https://i.imgur.com/k4wz4Ah.png)
 
 You can narrow down your search by using a keyword.
 
@@ -79,7 +77,7 @@ You can narrow down your search by using a keyword.
 fgeo_help("datasets")
 ```
 
-![](https://i.imgur.com/4AdTD3G.png)
+![](https://i.imgur.com/YlgRljc.png)
 
 ```{r}
 # Short name
