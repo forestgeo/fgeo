@@ -20,6 +20,7 @@ core_loaded <- function() {
   search <- paste0("package:", fgeo_core())
   fgeo_core()[search %in% search()]
 }
+
 core_unloaded <- function() {
   search <- paste0("package:", fgeo_core())
   fgeo_core()[!search %in% search()]
@@ -29,6 +30,7 @@ fgeo_attach <- function() {
   to_load <- core_unloaded()
   if (length(to_load) == 0)
     return(invisible())
+
   msg(
     cli::rule(
       left = crayon::bold("Attaching packages"),
@@ -42,6 +44,10 @@ fgeo_attach <- function() {
     crayon::green(cli::symbol$tick), " ", crayon::blue(format(to_load)), " ",
     crayon::col_align(versions, max(crayon::col_nchar(versions)))
   )
+
+  if (length(packages) %% 2 == 1) {
+    packages <- append(packages, "")
+  }
 
   col1 <- 1:floor(length(packages)/2)
   info <- paste0(packages[col1], "     ", packages[-col1])
