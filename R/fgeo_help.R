@@ -1,4 +1,4 @@
-#' Search __fgeo__ for documentation matching a given character string.
+#' Get help with __fgeo__.
 #'
 #' * `fgeo_help()` finds all __fgeo__ help files. You can refine
 #' your search directly on the viewer panel of RStudio or by passing a string
@@ -13,7 +13,7 @@
 #' @param package A character string giving the name or one or more
 #'   core-packages of __fgeo__.
 #'
-#' @seealso [utils::help.search()], [fgeo::fgeo_core()].
+#' @seealso [utils::help.search()].
 #'
 #' @return The results are returned in a list object of class "hsearch", which
 #'   has a print method for nicely formatting the results of the query.

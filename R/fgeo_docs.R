@@ -12,6 +12,8 @@
 #'
 #' @return A dataframe.
 #' @export
+#' @keywords internal
+#' @noRd
 #'
 #' @examples
 #' # Filter rows with a matching pattern.

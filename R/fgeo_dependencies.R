@@ -4,9 +4,8 @@
 #' @param section Either "Imports" or "Suggests".
 #'
 #' @export
-#'
-#' @examples
-#' fgeo_dependencies(TRUE, "Imports")
+#' @keywords internal
+#' @noRd
 fgeo_dependencies <- function(include_self = TRUE,
                               section = c("Imports", "Suggests")) {
   section <- section[[1]]

@@ -3,7 +3,7 @@
 \name{fgeo_help}
 \alias{fgeo_help}
 \alias{fgeo_help_addin}
-\title{Search \strong{fgeo} for documentation matching a given character string.}
+\title{Get help with \strong{fgeo}.}
 \usage{
 fgeo_help(pattern = "", package = fgeo::fgeo_core())
 
@@ -40,5 +40,5 @@ if (interactive()) results
 str(results)
 }
 \seealso{
-\code{\link[utils:help.search]{utils::help.search()}}, \code{\link[fgeo:fgeo_core]{fgeo::fgeo_core()}}.
+\code{\link[utils:help.search]{utils::help.search()}}.
 }

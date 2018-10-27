@@ -2,9 +2,8 @@
 #'
 #' @return A string.
 #' @export
-#'
-#' @examples
-#' fgeo_core()
+#' @keywords internal
+#' @noRd
 fgeo_core <- function() {
   c(
     "fgeo.abundance",

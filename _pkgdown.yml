@@ -80,10 +80,6 @@ navbar:
       href: https://github.com/forestgeo/fgeo
 
 reference:
-- title: Find many more functions with fgeo_help()
-  desc: ~
+- title: Find anything
   contents:
-  - '`fgeo_help`'
-  - '`fgeo_docs`'
-  - '`fgeo_core`'
-  - '`fgeo_dependencies`'
+  - fgeo_help
