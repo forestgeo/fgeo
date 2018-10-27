@@ -2,7 +2,6 @@
 
 S3method(print,fgeo_conflicts)
 export("%>%")
-export(fgeo_conflicts)
 export(fgeo_core)
 export(fgeo_dependencies)
 export(fgeo_docs)

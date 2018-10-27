@@ -45,14 +45,6 @@ devtools::install_github("forestgeo/fgeo")
 
 [More information](https://forestgeo.github.io/fgeo/index.html#installation)
 
-## Does __fgeo__ conflict with my other packages?
-
-```R
-fgeo_conflicts()
-```
-
-See also the [__conflicted__](https://github.com/r-lib/conflicted) package.
-
 ## What are the core packages of __fgeo__?
 
 ```{r}

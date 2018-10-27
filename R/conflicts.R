@@ -3,9 +3,7 @@
 #' This function lists all the conflicts between packages in fgeo
 #' and other packages that you have loaded.
 #'
-#' @export
-#' @examples
-#' fgeo_conflicts()
+#' @noRd
 fgeo_conflicts <- function() {
   envs <- purrr::set_names(search())
   objs <- invert(lapply(envs, ls_env))
