@@ -53,7 +53,7 @@ Remotes:
     forestgeo/fgeo.data@*release,
     forestgeo/fgeo.demography@*release,
     forestgeo/fgeo.habitat@*release,
-    forestgeo/fgeo.map,
+    forestgeo/fgeo.map@*release,
     forestgeo/fgeo.tool
 Encoding: UTF-8
 LazyData: true
