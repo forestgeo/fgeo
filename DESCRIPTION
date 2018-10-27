@@ -36,7 +36,7 @@ Imports:
     magrittr,
     purrr,
     remotes,
-    rlang (<= 0.2.2),
+    rlang,
     rstudioapi,
     utils
 Suggests: 
