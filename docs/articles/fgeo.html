@@ -138,12 +138,11 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9005     v fgeo.habitat    0.0.0.9006</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9402</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.data       0.0.0.9005     v fgeo.tool       0.0.0.9003</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v fgeo.demography 0.0.0.9102</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; </span></a></code></pre></div>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.demography 0.0.0.9102     v fgeo.tool       0.0.0.9003</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; </span></a></code></pre></div>
 </div>
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
@@ -283,372 +282,368 @@
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">range</span>(ten_plus<span class="op">$</span>dbh, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; [1]   10 1405</span></a></code></pre></div>
 </div>
-<div id="dropping-missing-values" class="section level2">
-<h2 class="hasAnchor">
-<a href="#dropping-missing-values" class="anchor"></a>Dropping missing values</h2>
-<p>Drop missing values of <code>dbh</code> with an informative warning.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">non_missing &lt;-<span class="st"> </span><span class="kw">drop_if_na</span>(ten_plus, <span class="st">"dbh"</span>)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="co">#&gt; Warning: Dropping 5255 rows with missing `dbh` values.</span></a></code></pre></div>
-</div>
 <div id="calculating-abundance" class="section level2">
 <h2 class="hasAnchor">
 <a href="#calculating-abundance" class="anchor"></a>Calculating abundance</h2>
 <p>Calculate the total abundance of stems and trees.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># Stem abundance</span></a>
-<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">abundance</span>(non_missing)</a>
-<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
-<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co">#&gt; main stems?</span></a>
-<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt; 1  2564</span></a>
-<a class="sourceLine" id="cb17-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
-<a class="sourceLine" id="cb17-11" data-line-number="11">main_stems &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
-<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="kw">abundance</span>(main_stems)</a>
-<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb17-15" data-line-number="15"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb17-16" data-line-number="16"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># Drop missing values of `dbh`</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw">filter</span>(ten_plus, <span class="op">!</span><span class="kw">is.na</span>(dbh))</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">abundance</span>(non_missing)</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co">#&gt; main stems?</span></a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="co">#&gt; 1  2564</span></a>
+<a class="sourceLine" id="cb16-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb16-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
+<a class="sourceLine" id="cb16-14" data-line-number="14">main_stems &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb16-15" data-line-number="15"><span class="kw">abundance</span>(main_stems)</a>
+<a class="sourceLine" id="cb16-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb16-17" data-line-number="17"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb16-18" data-line-number="18"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb16-19" data-line-number="19"><span class="co">#&gt; 1  2319</span></a></code></pre></div>
 <p>Calculate the abundance of trees by species.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(main_stems, sp)</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
-<a class="sourceLine" id="cb18-3" data-line-number="3">n_by_sp</a>
-<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="co">#&gt; # A tibble: 70 x 2</span></a>
-<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co">#&gt; # Groups:   sp [70]</span></a>
-<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="co">#&gt;    sp         n</span></a>
-<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="co">#&gt;  1 ALCFLO    11</span></a>
-<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="co">#&gt;  2 ALCLAT    15</span></a>
-<a class="sourceLine" id="cb18-10" data-line-number="10"><span class="co">#&gt;  3 ANDINE     1</span></a>
-<a class="sourceLine" id="cb18-11" data-line-number="11"><span class="co">#&gt;  4 ANTOBT     1</span></a>
-<a class="sourceLine" id="cb18-12" data-line-number="12"><span class="co">#&gt;  5 ARDGLA     1</span></a>
-<a class="sourceLine" id="cb18-13" data-line-number="13"><span class="co">#&gt;  6 BUCTET    11</span></a>
-<a class="sourceLine" id="cb18-14" data-line-number="14"><span class="co">#&gt;  7 BYRSPI    25</span></a>
-<a class="sourceLine" id="cb18-15" data-line-number="15"><span class="co">#&gt;  8 CALCAL     2</span></a>
-<a class="sourceLine" id="cb18-16" data-line-number="16"><span class="co">#&gt;  9 CASARB   489</span></a>
-<a class="sourceLine" id="cb18-17" data-line-number="17"><span class="co">#&gt; 10 CASSYL    58</span></a>
-<a class="sourceLine" id="cb18-18" data-line-number="18"><span class="co">#&gt; # ... with 60 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(main_stems, sp)</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3">n_by_sp</a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co">#&gt; # A tibble: 70 x 2</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; # Groups:   sp [70]</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">#&gt;    sp         n</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt;  1 ALCFLO    11</span></a>
+<a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt;  2 ALCLAT    15</span></a>
+<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co">#&gt;  3 ANDINE     1</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt;  4 ANTOBT     1</span></a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="co">#&gt;  5 ARDGLA     1</span></a>
+<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt;  6 BUCTET    11</span></a>
+<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt;  7 BYRSPI    25</span></a>
+<a class="sourceLine" id="cb17-15" data-line-number="15"><span class="co">#&gt;  8 CALCAL     2</span></a>
+<a class="sourceLine" id="cb17-16" data-line-number="16"><span class="co">#&gt;  9 CASARB   489</span></a>
+<a class="sourceLine" id="cb17-17" data-line-number="17"><span class="co">#&gt; 10 CASSYL    58</span></a>
+<a class="sourceLine" id="cb17-18" data-line-number="18"><span class="co">#&gt; # ... with 60 more rows</span></a></code></pre></div>
 </div>
 <div id="picking-the-most-abundant-species" class="section level2">
 <h2 class="hasAnchor">
 <a href="#picking-the-most-abundant-species" class="anchor"></a>Picking the most abundant species</h2>
 <p>What are the three most abundant tree species?</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">top3 &lt;-<span class="st"> </span><span class="kw">pick_top</span>(n_by_sp, n, <span class="dv">-3</span>)</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2">top3</a>
-<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
-<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="co">#&gt; # Groups:   sp [3]</span></a>
-<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="co">#&gt;   sp         n</span></a>
-<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb19-7" data-line-number="7"><span class="co">#&gt; 1 CASARB   489</span></a>
-<a class="sourceLine" id="cb19-8" data-line-number="8"><span class="co">#&gt; 2 PREMON   507</span></a>
-<a class="sourceLine" id="cb19-9" data-line-number="9"><span class="co">#&gt; 3 SCHMOR   151</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">top3 &lt;-<span class="st"> </span><span class="kw">pick_top</span>(n_by_sp, n, <span class="dv">-3</span>)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">top3</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="co">#&gt; # Groups:   sp [3]</span></a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co">#&gt;   sp         n</span></a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="co">#&gt; 1 CASARB   489</span></a>
+<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="co">#&gt; 2 PREMON   507</span></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="co">#&gt; 3 SCHMOR   151</span></a></code></pre></div>
 <p>Now we can pick the <code>alive_trees</code> of only the <code>top3</code> species.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">picked_stems &lt;-<span class="st"> </span><span class="kw">filter</span>(alive_trees, sp <span class="op">%in%</span><span class="st"> </span>top3<span class="op">$</span>sp)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">picked_stems &lt;-<span class="st"> </span><span class="kw">filter</span>(alive_trees, sp <span class="op">%in%</span><span class="st"> </span>top3<span class="op">$</span>sp)</a></code></pre></div>
 </div>
 <div id="mapping-the-distribution-of-tree-species" class="section level2">
 <h2 class="hasAnchor">
 <a href="#mapping-the-distribution-of-tree-species" class="anchor"></a>Mapping the distribution of tree species</h2>
 <p><strong>fgeo</strong> includes some functions specialized in mapping ForestGEO’s data.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"map"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"map"</span>)</a></code></pre></div>
 <p>Map the most abundant species.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co"># luquillo_elevation comes with fgeo</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2">species_elevation &lt;-<span class="st"> </span><span class="kw">sp_elev</span>(picked_stems, luquillo_elevation)</a>
-<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="kw">autoplot</span>(species_elevation)</a></code></pre></div>
-<p><img src="fgeo_files/figure-html/unnamed-chunk-18-1.png" width="700"></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co"># luquillo_elevation comes with fgeo</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">species_elevation &lt;-<span class="st"> </span><span class="kw">sp_elev</span>(picked_stems, luquillo_elevation)</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="kw">autoplot</span>(species_elevation)</a></code></pre></div>
+<p><img src="fgeo_files/figure-html/unnamed-chunk-17-1.png" width="700"></p>
 <p>Tweak to focus on the hectare available in the data.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">autoplot</span>(species_elevation, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">400</span>, <span class="dv">500</span>))</a></code></pre></div>
-<p><img src="fgeo_files/figure-html/unnamed-chunk-19-1.png" width="700"></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">autoplot</span>(species_elevation, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">400</span>, <span class="dv">500</span>))</a></code></pre></div>
+<p><img src="fgeo_files/figure-html/unnamed-chunk-18-1.png" width="700"></p>
 </div>
 <div id="determine-species-habitat-associations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#determine-species-habitat-associations" class="anchor"></a>Determine species-habitat associations</h2>
 <p>We will determine the species-habitat associations using a torus translation test.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"torus"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"torus"</span>)</a></code></pre></div>
 <p>This test should use individual trees, not multiple stems of individual trees. This test only makes sense at the population level. We are interested in knowing whether individuals of a species are aggregated on a habitat. Multiple stems of an individual do not represent population level processes but individual level processes. We will then use a ForestGEO <em>tree</em> table, <code>luquillo_tree6_random</code>, which contains a small sample of randomly chosen trees across the entire plot (see <code>?luquillo_tree6_random</code>).</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">tree &lt;-<span class="st"> </span>luquillo_tree6_random</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">tree &lt;-<span class="st"> </span>luquillo_tree6_random</a></code></pre></div>
 <p>We will pick alive trees of 10 mm or more (for details see previous sections). The variable <code>status</code> of <em>tree</em> tables directly represent the status of each tree (see <code>?census_description</code>). We will focus on trees with status “A” (alive).</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">dbh10plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(tree, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2">chosen_trees &lt;-<span class="st"> </span><span class="kw">pick_status</span>(dbh10plus, <span class="st">"A"</span>)</a>
-<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="kw">unique</span>(chosen_trees<span class="op">$</span>status)</a>
-<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="co">#&gt; [1] "A"</span></a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">dbh10plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(tree, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">chosen_trees &lt;-<span class="st"> </span><span class="kw">pick_status</span>(dbh10plus, <span class="st">"A"</span>)</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="kw">unique</span>(chosen_trees<span class="op">$</span>status)</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co">#&gt; [1] "A"</span></a></code></pre></div>
 <p>Note that <code>tt_test()</code> is recommended for sufficiently abundant species:</p>
 <blockquote>
 <p>You should only try to determine the habitat association for sufficiently abundant species. In a 50-ha plot, a minimum abundance of 50 trees/species has been used.</p>
 </blockquote>
 <p>– <code>?tt_test()</code></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># Find sufficiently abundant species</span></a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(tree, sp)</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">n_by_sp</a>
-<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">#&gt; # A tibble: 73 x 2</span></a>
-<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">#&gt; # Groups:   sp [73]</span></a>
-<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="co">#&gt;    sp         n</span></a>
-<a class="sourceLine" id="cb27-8" data-line-number="8"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb27-9" data-line-number="9"><span class="co">#&gt;  1 ALCFLO     3</span></a>
-<a class="sourceLine" id="cb27-10" data-line-number="10"><span class="co">#&gt;  2 ALCLAT     1</span></a>
-<a class="sourceLine" id="cb27-11" data-line-number="11"><span class="co">#&gt;  3 ANDINE     2</span></a>
-<a class="sourceLine" id="cb27-12" data-line-number="12"><span class="co">#&gt;  4 ARDGLA     2</span></a>
-<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="co">#&gt;  5 ARTALT     1</span></a>
-<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="co">#&gt;  6 BRUPOR     1</span></a>
-<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="co">#&gt;  7 BUCTET     8</span></a>
-<a class="sourceLine" id="cb27-16" data-line-number="16"><span class="co">#&gt;  8 BYRSPI    11</span></a>
-<a class="sourceLine" id="cb27-17" data-line-number="17"><span class="co">#&gt;  9 CALCAL     1</span></a>
-<a class="sourceLine" id="cb27-18" data-line-number="18"><span class="co">#&gt; 10 CASARB    94</span></a>
-<a class="sourceLine" id="cb27-19" data-line-number="19"><span class="co">#&gt; # ... with 63 more rows</span></a>
-<a class="sourceLine" id="cb27-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb27-21" data-line-number="21">n_sp50plus &lt;-<span class="st"> </span><span class="kw">filter</span>(n_by_sp, n <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>)</a>
-<a class="sourceLine" id="cb27-22" data-line-number="22">n_sp50plus</a>
-<a class="sourceLine" id="cb27-23" data-line-number="23"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
-<a class="sourceLine" id="cb27-24" data-line-number="24"><span class="co">#&gt; # Groups:   sp [3]</span></a>
-<a class="sourceLine" id="cb27-25" data-line-number="25"><span class="co">#&gt;   sp         n</span></a>
-<a class="sourceLine" id="cb27-26" data-line-number="26"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb27-27" data-line-number="27"><span class="co">#&gt; 1 CASARB    94</span></a>
-<a class="sourceLine" id="cb27-28" data-line-number="28"><span class="co">#&gt; 2 PREMON   252</span></a>
-<a class="sourceLine" id="cb27-29" data-line-number="29"><span class="co">#&gt; 3 SLOBER    84</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># Find sufficiently abundant species</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(tree, sp)</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">n_by_sp</a>
+<a class="sourceLine" id="cb26-5" data-line-number="5"><span class="co">#&gt; # A tibble: 73 x 2</span></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="co">#&gt; # Groups:   sp [73]</span></a>
+<a class="sourceLine" id="cb26-7" data-line-number="7"><span class="co">#&gt;    sp         n</span></a>
+<a class="sourceLine" id="cb26-8" data-line-number="8"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb26-9" data-line-number="9"><span class="co">#&gt;  1 ALCFLO     3</span></a>
+<a class="sourceLine" id="cb26-10" data-line-number="10"><span class="co">#&gt;  2 ALCLAT     1</span></a>
+<a class="sourceLine" id="cb26-11" data-line-number="11"><span class="co">#&gt;  3 ANDINE     2</span></a>
+<a class="sourceLine" id="cb26-12" data-line-number="12"><span class="co">#&gt;  4 ARDGLA     2</span></a>
+<a class="sourceLine" id="cb26-13" data-line-number="13"><span class="co">#&gt;  5 ARTALT     1</span></a>
+<a class="sourceLine" id="cb26-14" data-line-number="14"><span class="co">#&gt;  6 BRUPOR     1</span></a>
+<a class="sourceLine" id="cb26-15" data-line-number="15"><span class="co">#&gt;  7 BUCTET     8</span></a>
+<a class="sourceLine" id="cb26-16" data-line-number="16"><span class="co">#&gt;  8 BYRSPI    11</span></a>
+<a class="sourceLine" id="cb26-17" data-line-number="17"><span class="co">#&gt;  9 CALCAL     1</span></a>
+<a class="sourceLine" id="cb26-18" data-line-number="18"><span class="co">#&gt; 10 CASARB    94</span></a>
+<a class="sourceLine" id="cb26-19" data-line-number="19"><span class="co">#&gt; # ... with 63 more rows</span></a>
+<a class="sourceLine" id="cb26-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb26-21" data-line-number="21">n_sp50plus &lt;-<span class="st"> </span><span class="kw">filter</span>(n_by_sp, n <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb26-22" data-line-number="22">n_sp50plus</a>
+<a class="sourceLine" id="cb26-23" data-line-number="23"><span class="co">#&gt; # A tibble: 3 x 2</span></a>
+<a class="sourceLine" id="cb26-24" data-line-number="24"><span class="co">#&gt; # Groups:   sp [3]</span></a>
+<a class="sourceLine" id="cb26-25" data-line-number="25"><span class="co">#&gt;   sp         n</span></a>
+<a class="sourceLine" id="cb26-26" data-line-number="26"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb26-27" data-line-number="27"><span class="co">#&gt; 1 CASARB    94</span></a>
+<a class="sourceLine" id="cb26-28" data-line-number="28"><span class="co">#&gt; 2 PREMON   252</span></a>
+<a class="sourceLine" id="cb26-29" data-line-number="29"><span class="co">#&gt; 3 SLOBER    84</span></a></code></pre></div>
 <p>We need habitat data. Bad habitat data is a common cause of errors. The safest way to create it is with <code>fgeo_habitat()</code> (see <code>?fgeo_habitat()</code>).</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">habitat &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="kw">str</span>(habitat)</a>
-<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="co">#&gt; Classes 'fgeo_habitat', 'tbl_df', 'tbl' and 'data.frame':    400 obs. of  3 variables:</span></a>
-<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="co">#&gt;  $ gx      : num  0 0 0 0 0 0 0 0 0 0 ...</span></a>
-<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="co">#&gt;  $ gy      : num  0 20 40 60 80 100 120 140 160 180 ...</span></a>
-<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="co">#&gt;  $ habitats: int  1 1 1 1 1 1 1 1 1 1 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">habitat &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw">str</span>(habitat)</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co">#&gt; Classes 'fgeo_habitat', 'tbl_df', 'tbl' and 'data.frame':    400 obs. of  3 variables:</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="co">#&gt;  $ gx      : num  0 0 0 0 0 0 0 0 0 0 ...</span></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">#&gt;  $ gy      : num  0 20 40 60 80 100 120 140 160 180 ...</span></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">#&gt;  $ habitats: int  1 1 1 1 1 1 1 1 1 1 ...</span></a></code></pre></div>
 <p>You can visualize the habitats with <code>plot()</code>.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">plot</span>(habitat)</a></code></pre></div>
-<p><img src="fgeo_files/figure-html/unnamed-chunk-24-1.png" width="700"></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">plot</span>(habitat)</a></code></pre></div>
+<p><img src="fgeo_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 <p>FYI, <code>habitats</code> result from hierarchical clustering on three variables computed from the elevation dataset: mean elevation, convexity and slope.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">fgeo_topography</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="co">#&gt; # A tibble: 400 x 5</span></a>
-<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="co">#&gt;       gx    gy meanelev convex slope</span></a>
-<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="co">#&gt;  * &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="co">#&gt;  1     0     0     365. -0.390  8.87</span></a>
-<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="co">#&gt;  2     0    20     365. -0.285 13.7 </span></a>
-<a class="sourceLine" id="cb30-7" data-line-number="7"><span class="co">#&gt;  3     0    40     367.  0.210 14.4 </span></a>
-<a class="sourceLine" id="cb30-8" data-line-number="8"><span class="co">#&gt;  4     0    60     367.  0.34  15.9 </span></a>
-<a class="sourceLine" id="cb30-9" data-line-number="9"><span class="co">#&gt;  5     0    80     362. -0.255 20.8 </span></a>
-<a class="sourceLine" id="cb30-10" data-line-number="10"><span class="co">#&gt;  6     0   100     358. -0.510 12.4 </span></a>
-<a class="sourceLine" id="cb30-11" data-line-number="11"><span class="co">#&gt;  7     0   120     359. -0.28  17.1 </span></a>
-<a class="sourceLine" id="cb30-12" data-line-number="12"><span class="co">#&gt;  8     0   140     360. -0.265 22.1 </span></a>
-<a class="sourceLine" id="cb30-13" data-line-number="13"><span class="co">#&gt;  9     0   160     362.  0.055 24.3 </span></a>
-<a class="sourceLine" id="cb30-14" data-line-number="14"><span class="co">#&gt; 10     0   180     364.  0.415 15.2 </span></a>
-<a class="sourceLine" id="cb30-15" data-line-number="15"><span class="co">#&gt; # ... with 390 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">fgeo_topography</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co">#&gt; # A tibble: 400 x 5</span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="co">#&gt;       gx    gy meanelev convex slope</span></a>
+<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="co">#&gt;  * &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="co">#&gt;  1     0     0     365. -0.390  8.87</span></a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"><span class="co">#&gt;  2     0    20     365. -0.285 13.7 </span></a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"><span class="co">#&gt;  3     0    40     367.  0.210 14.4 </span></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8"><span class="co">#&gt;  4     0    60     367.  0.34  15.9 </span></a>
+<a class="sourceLine" id="cb29-9" data-line-number="9"><span class="co">#&gt;  5     0    80     362. -0.255 20.8 </span></a>
+<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="co">#&gt;  6     0   100     358. -0.510 12.4 </span></a>
+<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="co">#&gt;  7     0   120     359. -0.28  17.1 </span></a>
+<a class="sourceLine" id="cb29-12" data-line-number="12"><span class="co">#&gt;  8     0   140     360. -0.265 22.1 </span></a>
+<a class="sourceLine" id="cb29-13" data-line-number="13"><span class="co">#&gt;  9     0   160     362.  0.055 24.3 </span></a>
+<a class="sourceLine" id="cb29-14" data-line-number="14"><span class="co">#&gt; 10     0   180     364.  0.415 15.2 </span></a>
+<a class="sourceLine" id="cb29-15" data-line-number="15"><span class="co">#&gt; # ... with 390 more rows</span></a></code></pre></div>
 <p>And now we are ready to run the test.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">tt &lt;-<span class="st"> </span><span class="kw">tt_test</span>(chosen_trees, <span class="dt">sp =</span> n_sp50plus<span class="op">$</span>sp, <span class="dt">habitat =</span> habitat)</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="co">#&gt; Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.</span></a>
-<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="co">#&gt; Using `gridsize = 20`. To change this value see `?tt_test()`.</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">tt &lt;-<span class="st"> </span><span class="kw">tt_test</span>(chosen_trees, <span class="dt">sp =</span> n_sp50plus<span class="op">$</span>sp, <span class="dt">habitat =</span> habitat)</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="co">#&gt; Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.</span></a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="co">#&gt; Using `gridsize = 20`. To change this value see `?tt_test()`.</span></a></code></pre></div>
 <p>The output of <code>tt_test()</code> is a list. Large lists are awkward to view – unless you use <code>View()</code> in RStudio.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">View</span>(tt)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">View</span>(tt)</a></code></pre></div>
 <p>You can reduce the <code>tt</code> from a list of matrices to a single matrix with <code>Reduce()</code>.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">Reduce</span>(rbind, tt)</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="co">#&gt;        N.Hab.1 Gr.Hab.1 Ls.Hab.1 Eq.Hab.1 Rep.Agg.Neut.1 Obs.Quantile.1</span></a>
-<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co">#&gt; CASARB      29     1418      179        3              0       0.886250</span></a>
-<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="co">#&gt; PREMON      91     1483      116        1              0       0.926875</span></a>
-<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="co">#&gt; SLOBER      18      387     1212        1              0       0.241875</span></a>
-<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="co">#&gt;        N.Hab.2 Gr.Hab.2 Ls.Hab.2 Eq.Hab.2 Rep.Agg.Neut.2 Obs.Quantile.2</span></a>
-<a class="sourceLine" id="cb33-7" data-line-number="7"><span class="co">#&gt; CASARB      20      416     1182        2              0        0.26000</span></a>
-<a class="sourceLine" id="cb33-8" data-line-number="8"><span class="co">#&gt; PREMON      89     1142      455        3              0        0.71375</span></a>
-<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="co">#&gt; SLOBER      24      810      788        2              0        0.50625</span></a>
-<a class="sourceLine" id="cb33-10" data-line-number="10"><span class="co">#&gt;        N.Hab.3 Gr.Hab.3 Ls.Hab.3 Eq.Hab.3 Rep.Agg.Neut.3 Obs.Quantile.3</span></a>
-<a class="sourceLine" id="cb33-11" data-line-number="11"><span class="co">#&gt; CASARB      12      804      790        6              0       0.502500</span></a>
-<a class="sourceLine" id="cb33-12" data-line-number="12"><span class="co">#&gt; PREMON      40      409     1189        2              0       0.255625</span></a>
-<a class="sourceLine" id="cb33-13" data-line-number="13"><span class="co">#&gt; SLOBER      17     1182      414        4              0       0.738750</span></a>
-<a class="sourceLine" id="cb33-14" data-line-number="14"><span class="co">#&gt;        N.Hab.4 Gr.Hab.4 Ls.Hab.4 Eq.Hab.4 Rep.Agg.Neut.4 Obs.Quantile.4</span></a>
-<a class="sourceLine" id="cb33-15" data-line-number="15"><span class="co">#&gt; CASARB       5      554     1040        6              0        0.34625</span></a>
-<a class="sourceLine" id="cb33-16" data-line-number="16"><span class="co">#&gt; PREMON      14       76     1523        1              0        0.04750</span></a>
-<a class="sourceLine" id="cb33-17" data-line-number="17"><span class="co">#&gt; SLOBER       7      912      680        8              0        0.57000</span></a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">Reduce</span>(rbind, tt)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="co">#&gt;        N.Hab.1 Gr.Hab.1 Ls.Hab.1 Eq.Hab.1 Rep.Agg.Neut.1 Obs.Quantile.1</span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="co">#&gt; CASARB      29     1418      179        3              0       0.886250</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="co">#&gt; PREMON      91     1483      116        1              0       0.926875</span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="co">#&gt; SLOBER      18      387     1212        1              0       0.241875</span></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="co">#&gt;        N.Hab.2 Gr.Hab.2 Ls.Hab.2 Eq.Hab.2 Rep.Agg.Neut.2 Obs.Quantile.2</span></a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="co">#&gt; CASARB      20      416     1182        2              0        0.26000</span></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8"><span class="co">#&gt; PREMON      89     1142      455        3              0        0.71375</span></a>
+<a class="sourceLine" id="cb32-9" data-line-number="9"><span class="co">#&gt; SLOBER      24      810      788        2              0        0.50625</span></a>
+<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="co">#&gt;        N.Hab.3 Gr.Hab.3 Ls.Hab.3 Eq.Hab.3 Rep.Agg.Neut.3 Obs.Quantile.3</span></a>
+<a class="sourceLine" id="cb32-11" data-line-number="11"><span class="co">#&gt; CASARB      12      804      790        6              0       0.502500</span></a>
+<a class="sourceLine" id="cb32-12" data-line-number="12"><span class="co">#&gt; PREMON      40      409     1189        2              0       0.255625</span></a>
+<a class="sourceLine" id="cb32-13" data-line-number="13"><span class="co">#&gt; SLOBER      17     1182      414        4              0       0.738750</span></a>
+<a class="sourceLine" id="cb32-14" data-line-number="14"><span class="co">#&gt;        N.Hab.4 Gr.Hab.4 Ls.Hab.4 Eq.Hab.4 Rep.Agg.Neut.4 Obs.Quantile.4</span></a>
+<a class="sourceLine" id="cb32-15" data-line-number="15"><span class="co">#&gt; CASARB       5      554     1040        6              0        0.34625</span></a>
+<a class="sourceLine" id="cb32-16" data-line-number="16"><span class="co">#&gt; PREMON      14       76     1523        1              0        0.04750</span></a>
+<a class="sourceLine" id="cb32-17" data-line-number="17"><span class="co">#&gt; SLOBER       7      912      680        8              0        0.57000</span></a></code></pre></div>
 <p>Alternatively, transform the list to a dataframe.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">tt_df &lt;-<span class="st"> </span><span class="kw">to_df</span>(tt)</a>
-<a class="sourceLine" id="cb34-2" data-line-number="2">tt_df</a>
-<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="co">#&gt; # A tibble: 12 x 8</span></a>
-<a class="sourceLine" id="cb34-4" data-line-number="4"><span class="co">#&gt;    habitat sp     distribution stem_count Eq.Hab Gr.Hab Ls.Hab Obs.Quantile</span></a>
-<a class="sourceLine" id="cb34-5" data-line-number="5"><span class="co">#&gt;  * &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;        &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb34-6" data-line-number="6"><span class="co">#&gt;  1 1       CASARB neutral              29      3   1418    179       0.886 </span></a>
-<a class="sourceLine" id="cb34-7" data-line-number="7"><span class="co">#&gt;  2 1       PREMON neutral              91      1   1483    116       0.927 </span></a>
-<a class="sourceLine" id="cb34-8" data-line-number="8"><span class="co">#&gt;  3 1       SLOBER neutral              18      1    387   1212       0.242 </span></a>
-<a class="sourceLine" id="cb34-9" data-line-number="9"><span class="co">#&gt;  4 2       CASARB neutral              20      2    416   1182       0.26  </span></a>
-<a class="sourceLine" id="cb34-10" data-line-number="10"><span class="co">#&gt;  5 2       PREMON neutral              89      3   1142    455       0.714 </span></a>
-<a class="sourceLine" id="cb34-11" data-line-number="11"><span class="co">#&gt;  6 2       SLOBER neutral              24      2    810    788       0.506 </span></a>
-<a class="sourceLine" id="cb34-12" data-line-number="12"><span class="co">#&gt;  7 3       CASARB neutral              12      6    804    790       0.502 </span></a>
-<a class="sourceLine" id="cb34-13" data-line-number="13"><span class="co">#&gt;  8 3       PREMON neutral              40      2    409   1189       0.256 </span></a>
-<a class="sourceLine" id="cb34-14" data-line-number="14"><span class="co">#&gt;  9 3       SLOBER neutral              17      4   1182    414       0.739 </span></a>
-<a class="sourceLine" id="cb34-15" data-line-number="15"><span class="co">#&gt; 10 4       CASARB neutral               5      6    554   1040       0.346 </span></a>
-<a class="sourceLine" id="cb34-16" data-line-number="16"><span class="co">#&gt; 11 4       PREMON neutral              14      1     76   1523       0.0475</span></a>
-<a class="sourceLine" id="cb34-17" data-line-number="17"><span class="co">#&gt; 12 4       SLOBER neutral               7      8    912    680       0.570</span></a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">tt_df &lt;-<span class="st"> </span><span class="kw">to_df</span>(tt)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">tt_df</a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co">#&gt; # A tibble: 12 x 8</span></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="co">#&gt;    habitat sp     distribution stem_count Eq.Hab Gr.Hab Ls.Hab Obs.Quantile</span></a>
+<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="co">#&gt;  * &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;        &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="co">#&gt;  1 1       CASARB neutral              29      3   1418    179       0.886 </span></a>
+<a class="sourceLine" id="cb33-7" data-line-number="7"><span class="co">#&gt;  2 1       PREMON neutral              91      1   1483    116       0.927 </span></a>
+<a class="sourceLine" id="cb33-8" data-line-number="8"><span class="co">#&gt;  3 1       SLOBER neutral              18      1    387   1212       0.242 </span></a>
+<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="co">#&gt;  4 2       CASARB neutral              20      2    416   1182       0.26  </span></a>
+<a class="sourceLine" id="cb33-10" data-line-number="10"><span class="co">#&gt;  5 2       PREMON neutral              89      3   1142    455       0.714 </span></a>
+<a class="sourceLine" id="cb33-11" data-line-number="11"><span class="co">#&gt;  6 2       SLOBER neutral              24      2    810    788       0.506 </span></a>
+<a class="sourceLine" id="cb33-12" data-line-number="12"><span class="co">#&gt;  7 3       CASARB neutral              12      6    804    790       0.502 </span></a>
+<a class="sourceLine" id="cb33-13" data-line-number="13"><span class="co">#&gt;  8 3       PREMON neutral              40      2    409   1189       0.256 </span></a>
+<a class="sourceLine" id="cb33-14" data-line-number="14"><span class="co">#&gt;  9 3       SLOBER neutral              17      4   1182    414       0.739 </span></a>
+<a class="sourceLine" id="cb33-15" data-line-number="15"><span class="co">#&gt; 10 4       CASARB neutral               5      6    554   1040       0.346 </span></a>
+<a class="sourceLine" id="cb33-16" data-line-number="16"><span class="co">#&gt; 11 4       PREMON neutral              14      1     76   1523       0.0475</span></a>
+<a class="sourceLine" id="cb33-17" data-line-number="17"><span class="co">#&gt; 12 4       SLOBER neutral               7      8    912    680       0.570</span></a></code></pre></div>
 </div>
 <div id="krige-soil-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#krige-soil-data" class="anchor"></a>Krige soil data</h2>
 <p>In this section we will krige soil data.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"krig"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw"><a href="../reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"krig"</span>)</a></code></pre></div>
 <p><strong>fgeo</strong> provides a fake soil dataset for examples.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">str</span>(soil_fake)</a>
-<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    30 obs. of  5 variables:</span></a>
-<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="co">#&gt;  $ gx: int  40 56 61 67 113 173 239 257 283 294 ...</span></a>
-<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="co">#&gt;  $ gy: int  193 30 102 110 16 134 252 442 288 181 ...</span></a>
-<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="co">#&gt;  $ mg: num  0.67 0.5 0.65 0.5 0.56 0.74 0.47 0.52 0.45 0.7 ...</span></a>
-<a class="sourceLine" id="cb36-6" data-line-number="6"><span class="co">#&gt;  $ c : num  1.75 2.25 2.05 2.35 1.45 1.55 0.85 2.25 0.45 2.45 ...</span></a>
-<a class="sourceLine" id="cb36-7" data-line-number="7"><span class="co">#&gt;  $ p : num  6.5 5.9 6.4 6.4 6.2 7 5.9 6.2 6.7 7.1 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">str</span>(soil_fake)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    30 obs. of  5 variables:</span></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="co">#&gt;  $ gx: int  40 56 61 67 113 173 239 257 283 294 ...</span></a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="co">#&gt;  $ gy: int  193 30 102 110 16 134 252 442 288 181 ...</span></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5"><span class="co">#&gt;  $ mg: num  0.67 0.5 0.65 0.5 0.56 0.74 0.47 0.52 0.45 0.7 ...</span></a>
+<a class="sourceLine" id="cb35-6" data-line-number="6"><span class="co">#&gt;  $ c : num  1.75 2.25 2.05 2.35 1.45 1.55 0.85 2.25 0.45 2.45 ...</span></a>
+<a class="sourceLine" id="cb35-7" data-line-number="7"><span class="co">#&gt;  $ p : num  6.5 5.9 6.4 6.4 6.2 7 5.9 6.2 6.7 7.1 ...</span></a></code></pre></div>
 <p>The data contains multiple soil variables; here we use only two of them.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">soil_vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"c"</span>, <span class="st">"p"</span>)</a>
-<a class="sourceLine" id="cb37-2" data-line-number="2">krig_list &lt;-<span class="st"> </span><span class="kw">krig</span>(soil_fake, soil_vars, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">soil_vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"c"</span>, <span class="st">"p"</span>)</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">krig_list &lt;-<span class="st"> </span><span class="kw">krig</span>(soil_fake, soil_vars, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p>The output is a nested list, which is awkward to view on the console but you can view it in RStudio with <code>View()</code> and summarize it with <code>summary()</code></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">summary</span>(krig_list)</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; var: c </span></a>
-<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="co">#&gt; df</span></a>
-<a class="sourceLine" id="cb38-4" data-line-number="4"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
-<a class="sourceLine" id="cb38-5" data-line-number="5"><span class="co">#&gt;  $ x: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
-<a class="sourceLine" id="cb38-6" data-line-number="6"><span class="co">#&gt;  $ y: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
-<a class="sourceLine" id="cb38-7" data-line-number="7"><span class="co">#&gt;  $ z: num  2.13 2.12 2.1 2.09 2.07 ...</span></a>
-<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-9" data-line-number="9"><span class="co">#&gt; df.poly</span></a>
-<a class="sourceLine" id="cb38-10" data-line-number="10"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
-<a class="sourceLine" id="cb38-11" data-line-number="11"><span class="co">#&gt;  $ gx: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
-<a class="sourceLine" id="cb38-12" data-line-number="12"><span class="co">#&gt;  $ gy: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
-<a class="sourceLine" id="cb38-13" data-line-number="13"><span class="co">#&gt;  $ z : num  2.13 2.12 2.1 2.09 2.07 ...</span></a>
-<a class="sourceLine" id="cb38-14" data-line-number="14"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-15" data-line-number="15"><span class="co">#&gt; lambda</span></a>
-<a class="sourceLine" id="cb38-16" data-line-number="16"><span class="co">#&gt; 'numeric'</span></a>
-<a class="sourceLine" id="cb38-17" data-line-number="17"><span class="co">#&gt;  num 1</span></a>
-<a class="sourceLine" id="cb38-18" data-line-number="18"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-19" data-line-number="19"><span class="co">#&gt; vg</span></a>
-<a class="sourceLine" id="cb38-20" data-line-number="20"><span class="co">#&gt; 'variogram'</span></a>
-<a class="sourceLine" id="cb38-21" data-line-number="21"><span class="co">#&gt; List of 20</span></a>
-<a class="sourceLine" id="cb38-22" data-line-number="22"><span class="co">#&gt;  $ u               : num [1:9] 60.9 86.5 103 122.7 146.1 ...</span></a>
-<a class="sourceLine" id="cb38-23" data-line-number="23"><span class="co">#&gt;  $ v               : num [1:9] 0.284 0.422 0.882 0.543 0.211 ...</span></a>
-<a class="sourceLine" id="cb38-24" data-line-number="24"><span class="co">#&gt;  $ n               : num [1:9] 7 9 10 10 18 19 36 34 38</span></a>
-<a class="sourceLine" id="cb38-25" data-line-number="25"><span class="co">#&gt;  $ sd              : num [1:9] 0.414 0.48 0.633 0.501 0.405 ...</span></a>
-<a class="sourceLine" id="cb38-26" data-line-number="26"><span class="co">#&gt;  $ bins.lim        : num [1:31] 1.00e-12 2.00 2.38 2.84 3.38 ...</span></a>
-<a class="sourceLine" id="cb38-27" data-line-number="27"><span class="co">#&gt;  $ ind.bin         : logi [1:30] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></a>
-<a class="sourceLine" id="cb38-28" data-line-number="28"><span class="co">#&gt;  $ var.mark        : num 0.317</span></a>
-<a class="sourceLine" id="cb38-29" data-line-number="29"><span class="co">#&gt;  $ beta.ols        : num 1.36e-09</span></a>
-<a class="sourceLine" id="cb38-30" data-line-number="30"><span class="co">#&gt;  $ output.type     : chr "bin"</span></a>
-<a class="sourceLine" id="cb38-31" data-line-number="31"><span class="co">#&gt;  $ max.dist        : num 320</span></a>
-<a class="sourceLine" id="cb38-32" data-line-number="32"><span class="co">#&gt;  $ estimator.type  : chr "classical"</span></a>
-<a class="sourceLine" id="cb38-33" data-line-number="33"><span class="co">#&gt;  $ n.data          : int 30</span></a>
-<a class="sourceLine" id="cb38-34" data-line-number="34"><span class="co">#&gt;  $ lambda          : num 1</span></a>
-<a class="sourceLine" id="cb38-35" data-line-number="35"><span class="co">#&gt;  $ trend           : chr "cte"</span></a>
-<a class="sourceLine" id="cb38-36" data-line-number="36"><span class="co">#&gt;  $ pairs.min       : num 5</span></a>
-<a class="sourceLine" id="cb38-37" data-line-number="37"><span class="co">#&gt;  $ nugget.tolerance: num 1e-12</span></a>
-<a class="sourceLine" id="cb38-38" data-line-number="38"><span class="co">#&gt;  $ direction       : chr "omnidirectional"</span></a>
-<a class="sourceLine" id="cb38-39" data-line-number="39"><span class="co">#&gt;  $ tolerance       : chr "none"</span></a>
-<a class="sourceLine" id="cb38-40" data-line-number="40"><span class="co">#&gt;  $ uvec            : num [1:30] 1 2.19 2.61 3.11 3.7 ...</span></a>
-<a class="sourceLine" id="cb38-41" data-line-number="41"><span class="co">#&gt;  $ call            : language variog(geodata = geodata, breaks = breaks, trend = trend, pairs.min = 5)</span></a>
-<a class="sourceLine" id="cb38-42" data-line-number="42"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-43" data-line-number="43"><span class="co">#&gt; vm</span></a>
-<a class="sourceLine" id="cb38-44" data-line-number="44"><span class="co">#&gt; 'variomodel', variofit'</span></a>
-<a class="sourceLine" id="cb38-45" data-line-number="45"><span class="co">#&gt; List of 17</span></a>
-<a class="sourceLine" id="cb38-46" data-line-number="46"><span class="co">#&gt;  $ nugget               : num 0.352</span></a>
-<a class="sourceLine" id="cb38-47" data-line-number="47"><span class="co">#&gt;  $ cov.pars             : num [1:2] 0 160</span></a>
-<a class="sourceLine" id="cb38-48" data-line-number="48"><span class="co">#&gt;  $ cov.model            : chr "exponential"</span></a>
-<a class="sourceLine" id="cb38-49" data-line-number="49"><span class="co">#&gt;  $ kappa                : num 0.5</span></a>
-<a class="sourceLine" id="cb38-50" data-line-number="50"><span class="co">#&gt;  $ value                : num 4.64</span></a>
-<a class="sourceLine" id="cb38-51" data-line-number="51"><span class="co">#&gt;  $ trend                : chr "cte"</span></a>
-<a class="sourceLine" id="cb38-52" data-line-number="52"><span class="co">#&gt;  $ beta.ols             : num 1.36e-09</span></a>
-<a class="sourceLine" id="cb38-53" data-line-number="53"><span class="co">#&gt;  $ practicalRange       : num 480</span></a>
-<a class="sourceLine" id="cb38-54" data-line-number="54"><span class="co">#&gt;  $ max.dist             : num 320</span></a>
-<a class="sourceLine" id="cb38-55" data-line-number="55"><span class="co">#&gt;  $ minimisation.function: chr "optim"</span></a>
-<a class="sourceLine" id="cb38-56" data-line-number="56"><span class="co">#&gt;  $ weights              : chr "npairs"</span></a>
-<a class="sourceLine" id="cb38-57" data-line-number="57"><span class="co">#&gt;  $ method               : chr "WLS"</span></a>
-<a class="sourceLine" id="cb38-58" data-line-number="58"><span class="co">#&gt;  $ fix.nugget           : logi FALSE</span></a>
-<a class="sourceLine" id="cb38-59" data-line-number="59"><span class="co">#&gt;  $ fix.kappa            : logi TRUE</span></a>
-<a class="sourceLine" id="cb38-60" data-line-number="60"><span class="co">#&gt;  $ lambda               : num 1</span></a>
-<a class="sourceLine" id="cb38-61" data-line-number="61"><span class="co">#&gt;  $ message              : chr "optim convergence code: 0"</span></a>
-<a class="sourceLine" id="cb38-62" data-line-number="62"><span class="co">#&gt;  $ call                 : language variofit(vario = vg, ini.cov.pars = c(initialVal, startRange), cov.model = varModels[i],      nugget = initialVal)</span></a>
-<a class="sourceLine" id="cb38-63" data-line-number="63"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-64" data-line-number="64"><span class="co">#&gt; var: p </span></a>
-<a class="sourceLine" id="cb38-65" data-line-number="65"><span class="co">#&gt; df</span></a>
-<a class="sourceLine" id="cb38-66" data-line-number="66"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
-<a class="sourceLine" id="cb38-67" data-line-number="67"><span class="co">#&gt;  $ x: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
-<a class="sourceLine" id="cb38-68" data-line-number="68"><span class="co">#&gt;  $ y: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
-<a class="sourceLine" id="cb38-69" data-line-number="69"><span class="co">#&gt;  $ z: num  6.37 6.35 6.33 6.31 6.29 ...</span></a>
-<a class="sourceLine" id="cb38-70" data-line-number="70"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-71" data-line-number="71"><span class="co">#&gt; df.poly</span></a>
-<a class="sourceLine" id="cb38-72" data-line-number="72"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
-<a class="sourceLine" id="cb38-73" data-line-number="73"><span class="co">#&gt;  $ gx: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
-<a class="sourceLine" id="cb38-74" data-line-number="74"><span class="co">#&gt;  $ gy: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
-<a class="sourceLine" id="cb38-75" data-line-number="75"><span class="co">#&gt;  $ z : num  6.37 6.35 6.33 6.31 6.29 ...</span></a>
-<a class="sourceLine" id="cb38-76" data-line-number="76"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-77" data-line-number="77"><span class="co">#&gt; lambda</span></a>
-<a class="sourceLine" id="cb38-78" data-line-number="78"><span class="co">#&gt; 'numeric'</span></a>
-<a class="sourceLine" id="cb38-79" data-line-number="79"><span class="co">#&gt;  num 1</span></a>
-<a class="sourceLine" id="cb38-80" data-line-number="80"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-81" data-line-number="81"><span class="co">#&gt; vg</span></a>
-<a class="sourceLine" id="cb38-82" data-line-number="82"><span class="co">#&gt; 'variogram'</span></a>
-<a class="sourceLine" id="cb38-83" data-line-number="83"><span class="co">#&gt; List of 20</span></a>
-<a class="sourceLine" id="cb38-84" data-line-number="84"><span class="co">#&gt;  $ u               : num [1:9] 60.9 86.5 103 122.7 146.1 ...</span></a>
-<a class="sourceLine" id="cb38-85" data-line-number="85"><span class="co">#&gt;  $ v               : num [1:9] 0.396 0.4 0.11 0.402 0.385 ...</span></a>
-<a class="sourceLine" id="cb38-86" data-line-number="86"><span class="co">#&gt;  $ n               : num [1:9] 7 9 10 10 18 19 36 34 38</span></a>
-<a class="sourceLine" id="cb38-87" data-line-number="87"><span class="co">#&gt;  $ sd              : num [1:9] 0.592 0.414 0.133 0.409 0.488 ...</span></a>
-<a class="sourceLine" id="cb38-88" data-line-number="88"><span class="co">#&gt;  $ bins.lim        : num [1:31] 1.00e-12 2.00 2.38 2.84 3.38 ...</span></a>
-<a class="sourceLine" id="cb38-89" data-line-number="89"><span class="co">#&gt;  $ ind.bin         : logi [1:30] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></a>
-<a class="sourceLine" id="cb38-90" data-line-number="90"><span class="co">#&gt;  $ var.mark        : num 0.267</span></a>
-<a class="sourceLine" id="cb38-91" data-line-number="91"><span class="co">#&gt;  $ beta.ols        : num -3.14e-09</span></a>
-<a class="sourceLine" id="cb38-92" data-line-number="92"><span class="co">#&gt;  $ output.type     : chr "bin"</span></a>
-<a class="sourceLine" id="cb38-93" data-line-number="93"><span class="co">#&gt;  $ max.dist        : num 320</span></a>
-<a class="sourceLine" id="cb38-94" data-line-number="94"><span class="co">#&gt;  $ estimator.type  : chr "classical"</span></a>
-<a class="sourceLine" id="cb38-95" data-line-number="95"><span class="co">#&gt;  $ n.data          : int 30</span></a>
-<a class="sourceLine" id="cb38-96" data-line-number="96"><span class="co">#&gt;  $ lambda          : num 1</span></a>
-<a class="sourceLine" id="cb38-97" data-line-number="97"><span class="co">#&gt;  $ trend           : chr "cte"</span></a>
-<a class="sourceLine" id="cb38-98" data-line-number="98"><span class="co">#&gt;  $ pairs.min       : num 5</span></a>
-<a class="sourceLine" id="cb38-99" data-line-number="99"><span class="co">#&gt;  $ nugget.tolerance: num 1e-12</span></a>
-<a class="sourceLine" id="cb38-100" data-line-number="100"><span class="co">#&gt;  $ direction       : chr "omnidirectional"</span></a>
-<a class="sourceLine" id="cb38-101" data-line-number="101"><span class="co">#&gt;  $ tolerance       : chr "none"</span></a>
-<a class="sourceLine" id="cb38-102" data-line-number="102"><span class="co">#&gt;  $ uvec            : num [1:30] 1 2.19 2.61 3.11 3.7 ...</span></a>
-<a class="sourceLine" id="cb38-103" data-line-number="103"><span class="co">#&gt;  $ call            : language variog(geodata = geodata, breaks = breaks, trend = trend, pairs.min = 5)</span></a>
-<a class="sourceLine" id="cb38-104" data-line-number="104"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb38-105" data-line-number="105"><span class="co">#&gt; vm</span></a>
-<a class="sourceLine" id="cb38-106" data-line-number="106"><span class="co">#&gt; 'variomodel', variofit'</span></a>
-<a class="sourceLine" id="cb38-107" data-line-number="107"><span class="co">#&gt; List of 17</span></a>
-<a class="sourceLine" id="cb38-108" data-line-number="108"><span class="co">#&gt;  $ nugget               : num 0.305</span></a>
-<a class="sourceLine" id="cb38-109" data-line-number="109"><span class="co">#&gt;  $ cov.pars             : num [1:2] 0 160</span></a>
-<a class="sourceLine" id="cb38-110" data-line-number="110"><span class="co">#&gt;  $ cov.model            : chr "exponential"</span></a>
-<a class="sourceLine" id="cb38-111" data-line-number="111"><span class="co">#&gt;  $ kappa                : num 0.5</span></a>
-<a class="sourceLine" id="cb38-112" data-line-number="112"><span class="co">#&gt;  $ value                : num 0.818</span></a>
-<a class="sourceLine" id="cb38-113" data-line-number="113"><span class="co">#&gt;  $ trend                : chr "cte"</span></a>
-<a class="sourceLine" id="cb38-114" data-line-number="114"><span class="co">#&gt;  $ beta.ols             : num -3.14e-09</span></a>
-<a class="sourceLine" id="cb38-115" data-line-number="115"><span class="co">#&gt;  $ practicalRange       : num 479</span></a>
-<a class="sourceLine" id="cb38-116" data-line-number="116"><span class="co">#&gt;  $ max.dist             : num 320</span></a>
-<a class="sourceLine" id="cb38-117" data-line-number="117"><span class="co">#&gt;  $ minimisation.function: chr "optim"</span></a>
-<a class="sourceLine" id="cb38-118" data-line-number="118"><span class="co">#&gt;  $ weights              : chr "npairs"</span></a>
-<a class="sourceLine" id="cb38-119" data-line-number="119"><span class="co">#&gt;  $ method               : chr "WLS"</span></a>
-<a class="sourceLine" id="cb38-120" data-line-number="120"><span class="co">#&gt;  $ fix.nugget           : logi FALSE</span></a>
-<a class="sourceLine" id="cb38-121" data-line-number="121"><span class="co">#&gt;  $ fix.kappa            : logi TRUE</span></a>
-<a class="sourceLine" id="cb38-122" data-line-number="122"><span class="co">#&gt;  $ lambda               : num 1</span></a>
-<a class="sourceLine" id="cb38-123" data-line-number="123"><span class="co">#&gt;  $ message              : chr "optim convergence code: 0"</span></a>
-<a class="sourceLine" id="cb38-124" data-line-number="124"><span class="co">#&gt;  $ call                 : language variofit(vario = vg, ini.cov.pars = c(initialVal, startRange), cov.model = varModels[i],      nugget = initialVal)</span></a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">summary</span>(krig_list)</a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="co">#&gt; var: c </span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="co">#&gt; df</span></a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
+<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="co">#&gt;  $ x: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
+<a class="sourceLine" id="cb37-6" data-line-number="6"><span class="co">#&gt;  $ y: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"><span class="co">#&gt;  $ z: num  2.13 2.12 2.1 2.09 2.07 ...</span></a>
+<a class="sourceLine" id="cb37-8" data-line-number="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-9" data-line-number="9"><span class="co">#&gt; df.poly</span></a>
+<a class="sourceLine" id="cb37-10" data-line-number="10"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt;  $ gx: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
+<a class="sourceLine" id="cb37-12" data-line-number="12"><span class="co">#&gt;  $ gy: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
+<a class="sourceLine" id="cb37-13" data-line-number="13"><span class="co">#&gt;  $ z : num  2.13 2.12 2.1 2.09 2.07 ...</span></a>
+<a class="sourceLine" id="cb37-14" data-line-number="14"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-15" data-line-number="15"><span class="co">#&gt; lambda</span></a>
+<a class="sourceLine" id="cb37-16" data-line-number="16"><span class="co">#&gt; 'numeric'</span></a>
+<a class="sourceLine" id="cb37-17" data-line-number="17"><span class="co">#&gt;  num 1</span></a>
+<a class="sourceLine" id="cb37-18" data-line-number="18"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-19" data-line-number="19"><span class="co">#&gt; vg</span></a>
+<a class="sourceLine" id="cb37-20" data-line-number="20"><span class="co">#&gt; 'variogram'</span></a>
+<a class="sourceLine" id="cb37-21" data-line-number="21"><span class="co">#&gt; List of 20</span></a>
+<a class="sourceLine" id="cb37-22" data-line-number="22"><span class="co">#&gt;  $ u               : num [1:9] 60.9 86.5 103 122.7 146.1 ...</span></a>
+<a class="sourceLine" id="cb37-23" data-line-number="23"><span class="co">#&gt;  $ v               : num [1:9] 0.284 0.422 0.882 0.543 0.211 ...</span></a>
+<a class="sourceLine" id="cb37-24" data-line-number="24"><span class="co">#&gt;  $ n               : num [1:9] 7 9 10 10 18 19 36 34 38</span></a>
+<a class="sourceLine" id="cb37-25" data-line-number="25"><span class="co">#&gt;  $ sd              : num [1:9] 0.414 0.48 0.633 0.501 0.405 ...</span></a>
+<a class="sourceLine" id="cb37-26" data-line-number="26"><span class="co">#&gt;  $ bins.lim        : num [1:31] 1.00e-12 2.00 2.38 2.84 3.38 ...</span></a>
+<a class="sourceLine" id="cb37-27" data-line-number="27"><span class="co">#&gt;  $ ind.bin         : logi [1:30] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></a>
+<a class="sourceLine" id="cb37-28" data-line-number="28"><span class="co">#&gt;  $ var.mark        : num 0.317</span></a>
+<a class="sourceLine" id="cb37-29" data-line-number="29"><span class="co">#&gt;  $ beta.ols        : num 1.36e-09</span></a>
+<a class="sourceLine" id="cb37-30" data-line-number="30"><span class="co">#&gt;  $ output.type     : chr "bin"</span></a>
+<a class="sourceLine" id="cb37-31" data-line-number="31"><span class="co">#&gt;  $ max.dist        : num 320</span></a>
+<a class="sourceLine" id="cb37-32" data-line-number="32"><span class="co">#&gt;  $ estimator.type  : chr "classical"</span></a>
+<a class="sourceLine" id="cb37-33" data-line-number="33"><span class="co">#&gt;  $ n.data          : int 30</span></a>
+<a class="sourceLine" id="cb37-34" data-line-number="34"><span class="co">#&gt;  $ lambda          : num 1</span></a>
+<a class="sourceLine" id="cb37-35" data-line-number="35"><span class="co">#&gt;  $ trend           : chr "cte"</span></a>
+<a class="sourceLine" id="cb37-36" data-line-number="36"><span class="co">#&gt;  $ pairs.min       : num 5</span></a>
+<a class="sourceLine" id="cb37-37" data-line-number="37"><span class="co">#&gt;  $ nugget.tolerance: num 1e-12</span></a>
+<a class="sourceLine" id="cb37-38" data-line-number="38"><span class="co">#&gt;  $ direction       : chr "omnidirectional"</span></a>
+<a class="sourceLine" id="cb37-39" data-line-number="39"><span class="co">#&gt;  $ tolerance       : chr "none"</span></a>
+<a class="sourceLine" id="cb37-40" data-line-number="40"><span class="co">#&gt;  $ uvec            : num [1:30] 1 2.19 2.61 3.11 3.7 ...</span></a>
+<a class="sourceLine" id="cb37-41" data-line-number="41"><span class="co">#&gt;  $ call            : language variog(geodata = geodata, breaks = breaks, trend = trend, pairs.min = 5)</span></a>
+<a class="sourceLine" id="cb37-42" data-line-number="42"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-43" data-line-number="43"><span class="co">#&gt; vm</span></a>
+<a class="sourceLine" id="cb37-44" data-line-number="44"><span class="co">#&gt; 'variomodel', variofit'</span></a>
+<a class="sourceLine" id="cb37-45" data-line-number="45"><span class="co">#&gt; List of 17</span></a>
+<a class="sourceLine" id="cb37-46" data-line-number="46"><span class="co">#&gt;  $ nugget               : num 0.352</span></a>
+<a class="sourceLine" id="cb37-47" data-line-number="47"><span class="co">#&gt;  $ cov.pars             : num [1:2] 0 160</span></a>
+<a class="sourceLine" id="cb37-48" data-line-number="48"><span class="co">#&gt;  $ cov.model            : chr "exponential"</span></a>
+<a class="sourceLine" id="cb37-49" data-line-number="49"><span class="co">#&gt;  $ kappa                : num 0.5</span></a>
+<a class="sourceLine" id="cb37-50" data-line-number="50"><span class="co">#&gt;  $ value                : num 4.64</span></a>
+<a class="sourceLine" id="cb37-51" data-line-number="51"><span class="co">#&gt;  $ trend                : chr "cte"</span></a>
+<a class="sourceLine" id="cb37-52" data-line-number="52"><span class="co">#&gt;  $ beta.ols             : num 1.36e-09</span></a>
+<a class="sourceLine" id="cb37-53" data-line-number="53"><span class="co">#&gt;  $ practicalRange       : num 480</span></a>
+<a class="sourceLine" id="cb37-54" data-line-number="54"><span class="co">#&gt;  $ max.dist             : num 320</span></a>
+<a class="sourceLine" id="cb37-55" data-line-number="55"><span class="co">#&gt;  $ minimisation.function: chr "optim"</span></a>
+<a class="sourceLine" id="cb37-56" data-line-number="56"><span class="co">#&gt;  $ weights              : chr "npairs"</span></a>
+<a class="sourceLine" id="cb37-57" data-line-number="57"><span class="co">#&gt;  $ method               : chr "WLS"</span></a>
+<a class="sourceLine" id="cb37-58" data-line-number="58"><span class="co">#&gt;  $ fix.nugget           : logi FALSE</span></a>
+<a class="sourceLine" id="cb37-59" data-line-number="59"><span class="co">#&gt;  $ fix.kappa            : logi TRUE</span></a>
+<a class="sourceLine" id="cb37-60" data-line-number="60"><span class="co">#&gt;  $ lambda               : num 1</span></a>
+<a class="sourceLine" id="cb37-61" data-line-number="61"><span class="co">#&gt;  $ message              : chr "optim convergence code: 0"</span></a>
+<a class="sourceLine" id="cb37-62" data-line-number="62"><span class="co">#&gt;  $ call                 : language variofit(vario = vg, ini.cov.pars = c(initialVal, startRange), cov.model = varModels[i],      nugget = initialVal)</span></a>
+<a class="sourceLine" id="cb37-63" data-line-number="63"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-64" data-line-number="64"><span class="co">#&gt; var: p </span></a>
+<a class="sourceLine" id="cb37-65" data-line-number="65"><span class="co">#&gt; df</span></a>
+<a class="sourceLine" id="cb37-66" data-line-number="66"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
+<a class="sourceLine" id="cb37-67" data-line-number="67"><span class="co">#&gt;  $ x: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
+<a class="sourceLine" id="cb37-68" data-line-number="68"><span class="co">#&gt;  $ y: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
+<a class="sourceLine" id="cb37-69" data-line-number="69"><span class="co">#&gt;  $ z: num  6.37 6.35 6.33 6.31 6.29 ...</span></a>
+<a class="sourceLine" id="cb37-70" data-line-number="70"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-71" data-line-number="71"><span class="co">#&gt; df.poly</span></a>
+<a class="sourceLine" id="cb37-72" data-line-number="72"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    1150 obs. of  3 variables:</span></a>
+<a class="sourceLine" id="cb37-73" data-line-number="73"><span class="co">#&gt;  $ gx: num  10 30 50 70 90 110 130 150 170 190 ...</span></a>
+<a class="sourceLine" id="cb37-74" data-line-number="74"><span class="co">#&gt;  $ gy: num  10 10 10 10 10 10 10 10 10 10 ...</span></a>
+<a class="sourceLine" id="cb37-75" data-line-number="75"><span class="co">#&gt;  $ z : num  6.37 6.35 6.33 6.31 6.29 ...</span></a>
+<a class="sourceLine" id="cb37-76" data-line-number="76"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-77" data-line-number="77"><span class="co">#&gt; lambda</span></a>
+<a class="sourceLine" id="cb37-78" data-line-number="78"><span class="co">#&gt; 'numeric'</span></a>
+<a class="sourceLine" id="cb37-79" data-line-number="79"><span class="co">#&gt;  num 1</span></a>
+<a class="sourceLine" id="cb37-80" data-line-number="80"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-81" data-line-number="81"><span class="co">#&gt; vg</span></a>
+<a class="sourceLine" id="cb37-82" data-line-number="82"><span class="co">#&gt; 'variogram'</span></a>
+<a class="sourceLine" id="cb37-83" data-line-number="83"><span class="co">#&gt; List of 20</span></a>
+<a class="sourceLine" id="cb37-84" data-line-number="84"><span class="co">#&gt;  $ u               : num [1:9] 60.9 86.5 103 122.7 146.1 ...</span></a>
+<a class="sourceLine" id="cb37-85" data-line-number="85"><span class="co">#&gt;  $ v               : num [1:9] 0.396 0.4 0.11 0.402 0.385 ...</span></a>
+<a class="sourceLine" id="cb37-86" data-line-number="86"><span class="co">#&gt;  $ n               : num [1:9] 7 9 10 10 18 19 36 34 38</span></a>
+<a class="sourceLine" id="cb37-87" data-line-number="87"><span class="co">#&gt;  $ sd              : num [1:9] 0.592 0.414 0.133 0.409 0.488 ...</span></a>
+<a class="sourceLine" id="cb37-88" data-line-number="88"><span class="co">#&gt;  $ bins.lim        : num [1:31] 1.00e-12 2.00 2.38 2.84 3.38 ...</span></a>
+<a class="sourceLine" id="cb37-89" data-line-number="89"><span class="co">#&gt;  $ ind.bin         : logi [1:30] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></a>
+<a class="sourceLine" id="cb37-90" data-line-number="90"><span class="co">#&gt;  $ var.mark        : num 0.267</span></a>
+<a class="sourceLine" id="cb37-91" data-line-number="91"><span class="co">#&gt;  $ beta.ols        : num -3.14e-09</span></a>
+<a class="sourceLine" id="cb37-92" data-line-number="92"><span class="co">#&gt;  $ output.type     : chr "bin"</span></a>
+<a class="sourceLine" id="cb37-93" data-line-number="93"><span class="co">#&gt;  $ max.dist        : num 320</span></a>
+<a class="sourceLine" id="cb37-94" data-line-number="94"><span class="co">#&gt;  $ estimator.type  : chr "classical"</span></a>
+<a class="sourceLine" id="cb37-95" data-line-number="95"><span class="co">#&gt;  $ n.data          : int 30</span></a>
+<a class="sourceLine" id="cb37-96" data-line-number="96"><span class="co">#&gt;  $ lambda          : num 1</span></a>
+<a class="sourceLine" id="cb37-97" data-line-number="97"><span class="co">#&gt;  $ trend           : chr "cte"</span></a>
+<a class="sourceLine" id="cb37-98" data-line-number="98"><span class="co">#&gt;  $ pairs.min       : num 5</span></a>
+<a class="sourceLine" id="cb37-99" data-line-number="99"><span class="co">#&gt;  $ nugget.tolerance: num 1e-12</span></a>
+<a class="sourceLine" id="cb37-100" data-line-number="100"><span class="co">#&gt;  $ direction       : chr "omnidirectional"</span></a>
+<a class="sourceLine" id="cb37-101" data-line-number="101"><span class="co">#&gt;  $ tolerance       : chr "none"</span></a>
+<a class="sourceLine" id="cb37-102" data-line-number="102"><span class="co">#&gt;  $ uvec            : num [1:30] 1 2.19 2.61 3.11 3.7 ...</span></a>
+<a class="sourceLine" id="cb37-103" data-line-number="103"><span class="co">#&gt;  $ call            : language variog(geodata = geodata, breaks = breaks, trend = trend, pairs.min = 5)</span></a>
+<a class="sourceLine" id="cb37-104" data-line-number="104"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb37-105" data-line-number="105"><span class="co">#&gt; vm</span></a>
+<a class="sourceLine" id="cb37-106" data-line-number="106"><span class="co">#&gt; 'variomodel', variofit'</span></a>
+<a class="sourceLine" id="cb37-107" data-line-number="107"><span class="co">#&gt; List of 17</span></a>
+<a class="sourceLine" id="cb37-108" data-line-number="108"><span class="co">#&gt;  $ nugget               : num 0.305</span></a>
+<a class="sourceLine" id="cb37-109" data-line-number="109"><span class="co">#&gt;  $ cov.pars             : num [1:2] 0 160</span></a>
+<a class="sourceLine" id="cb37-110" data-line-number="110"><span class="co">#&gt;  $ cov.model            : chr "exponential"</span></a>
+<a class="sourceLine" id="cb37-111" data-line-number="111"><span class="co">#&gt;  $ kappa                : num 0.5</span></a>
+<a class="sourceLine" id="cb37-112" data-line-number="112"><span class="co">#&gt;  $ value                : num 0.818</span></a>
+<a class="sourceLine" id="cb37-113" data-line-number="113"><span class="co">#&gt;  $ trend                : chr "cte"</span></a>
+<a class="sourceLine" id="cb37-114" data-line-number="114"><span class="co">#&gt;  $ beta.ols             : num -3.14e-09</span></a>
+<a class="sourceLine" id="cb37-115" data-line-number="115"><span class="co">#&gt;  $ practicalRange       : num 479</span></a>
+<a class="sourceLine" id="cb37-116" data-line-number="116"><span class="co">#&gt;  $ max.dist             : num 320</span></a>
+<a class="sourceLine" id="cb37-117" data-line-number="117"><span class="co">#&gt;  $ minimisation.function: chr "optim"</span></a>
+<a class="sourceLine" id="cb37-118" data-line-number="118"><span class="co">#&gt;  $ weights              : chr "npairs"</span></a>
+<a class="sourceLine" id="cb37-119" data-line-number="119"><span class="co">#&gt;  $ method               : chr "WLS"</span></a>
+<a class="sourceLine" id="cb37-120" data-line-number="120"><span class="co">#&gt;  $ fix.nugget           : logi FALSE</span></a>
+<a class="sourceLine" id="cb37-121" data-line-number="121"><span class="co">#&gt;  $ fix.kappa            : logi TRUE</span></a>
+<a class="sourceLine" id="cb37-122" data-line-number="122"><span class="co">#&gt;  $ lambda               : num 1</span></a>
+<a class="sourceLine" id="cb37-123" data-line-number="123"><span class="co">#&gt;  $ message              : chr "optim convergence code: 0"</span></a>
+<a class="sourceLine" id="cb37-124" data-line-number="124"><span class="co">#&gt;  $ call                 : language variofit(vario = vg, ini.cov.pars = c(initialVal, startRange), cov.model = varModels[i],      nugget = initialVal)</span></a></code></pre></div>
 <p>You can also pull a dataframe containing the results of all the soil variables.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">krig_df &lt;-<span class="st"> </span><span class="kw">to_df</span>(krig_list, <span class="dt">item =</span> <span class="st">"df"</span>)</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="kw">as_tibble</span>(<span class="kw">filter</span>(krig_df,var <span class="op">==</span><span class="st"> "c"</span>))</a>
-<a class="sourceLine" id="cb39-3" data-line-number="3"><span class="co">#&gt; # A tibble: 1,150 x 4</span></a>
-<a class="sourceLine" id="cb39-4" data-line-number="4"><span class="co">#&gt;    var       x     y     z</span></a>
-<a class="sourceLine" id="cb39-5" data-line-number="5"><span class="co">#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb39-6" data-line-number="6"><span class="co">#&gt;  1 c        10    10  2.13</span></a>
-<a class="sourceLine" id="cb39-7" data-line-number="7"><span class="co">#&gt;  2 c        30    10  2.12</span></a>
-<a class="sourceLine" id="cb39-8" data-line-number="8"><span class="co">#&gt;  3 c        50    10  2.10</span></a>
-<a class="sourceLine" id="cb39-9" data-line-number="9"><span class="co">#&gt;  4 c        70    10  2.09</span></a>
-<a class="sourceLine" id="cb39-10" data-line-number="10"><span class="co">#&gt;  5 c        90    10  2.07</span></a>
-<a class="sourceLine" id="cb39-11" data-line-number="11"><span class="co">#&gt;  6 c       110    10  2.06</span></a>
-<a class="sourceLine" id="cb39-12" data-line-number="12"><span class="co">#&gt;  7 c       130    10  2.04</span></a>
-<a class="sourceLine" id="cb39-13" data-line-number="13"><span class="co">#&gt;  8 c       150    10  2.03</span></a>
-<a class="sourceLine" id="cb39-14" data-line-number="14"><span class="co">#&gt;  9 c       170    10  2.01</span></a>
-<a class="sourceLine" id="cb39-15" data-line-number="15"><span class="co">#&gt; 10 c       190    10  2.00</span></a>
-<a class="sourceLine" id="cb39-16" data-line-number="16"><span class="co">#&gt; # ... with 1,140 more rows</span></a>
-<a class="sourceLine" id="cb39-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb39-18" data-line-number="18"><span class="kw">as_tibble</span>(<span class="kw">filter</span>(krig_df, var <span class="op">==</span><span class="st"> "p"</span>))</a>
-<a class="sourceLine" id="cb39-19" data-line-number="19"><span class="co">#&gt; # A tibble: 1,150 x 4</span></a>
-<a class="sourceLine" id="cb39-20" data-line-number="20"><span class="co">#&gt;    var       x     y     z</span></a>
-<a class="sourceLine" id="cb39-21" data-line-number="21"><span class="co">#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb39-22" data-line-number="22"><span class="co">#&gt;  1 p        10    10  6.37</span></a>
-<a class="sourceLine" id="cb39-23" data-line-number="23"><span class="co">#&gt;  2 p        30    10  6.35</span></a>
-<a class="sourceLine" id="cb39-24" data-line-number="24"><span class="co">#&gt;  3 p        50    10  6.33</span></a>
-<a class="sourceLine" id="cb39-25" data-line-number="25"><span class="co">#&gt;  4 p        70    10  6.31</span></a>
-<a class="sourceLine" id="cb39-26" data-line-number="26"><span class="co">#&gt;  5 p        90    10  6.29</span></a>
-<a class="sourceLine" id="cb39-27" data-line-number="27"><span class="co">#&gt;  6 p       110    10  6.27</span></a>
-<a class="sourceLine" id="cb39-28" data-line-number="28"><span class="co">#&gt;  7 p       130    10  6.26</span></a>
-<a class="sourceLine" id="cb39-29" data-line-number="29"><span class="co">#&gt;  8 p       150    10  6.24</span></a>
-<a class="sourceLine" id="cb39-30" data-line-number="30"><span class="co">#&gt;  9 p       170    10  6.23</span></a>
-<a class="sourceLine" id="cb39-31" data-line-number="31"><span class="co">#&gt; 10 p       190    10  6.21</span></a>
-<a class="sourceLine" id="cb39-32" data-line-number="32"><span class="co">#&gt; # ... with 1,140 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">krig_df &lt;-<span class="st"> </span><span class="kw">to_df</span>(krig_list, <span class="dt">item =</span> <span class="st">"df"</span>)</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="kw">as_tibble</span>(<span class="kw">filter</span>(krig_df,var <span class="op">==</span><span class="st"> "c"</span>))</a>
+<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="co">#&gt; # A tibble: 1,150 x 4</span></a>
+<a class="sourceLine" id="cb38-4" data-line-number="4"><span class="co">#&gt;    var       x     y     z</span></a>
+<a class="sourceLine" id="cb38-5" data-line-number="5"><span class="co">#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb38-6" data-line-number="6"><span class="co">#&gt;  1 c        10    10  2.13</span></a>
+<a class="sourceLine" id="cb38-7" data-line-number="7"><span class="co">#&gt;  2 c        30    10  2.12</span></a>
+<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="co">#&gt;  3 c        50    10  2.10</span></a>
+<a class="sourceLine" id="cb38-9" data-line-number="9"><span class="co">#&gt;  4 c        70    10  2.09</span></a>
+<a class="sourceLine" id="cb38-10" data-line-number="10"><span class="co">#&gt;  5 c        90    10  2.07</span></a>
+<a class="sourceLine" id="cb38-11" data-line-number="11"><span class="co">#&gt;  6 c       110    10  2.06</span></a>
+<a class="sourceLine" id="cb38-12" data-line-number="12"><span class="co">#&gt;  7 c       130    10  2.04</span></a>
+<a class="sourceLine" id="cb38-13" data-line-number="13"><span class="co">#&gt;  8 c       150    10  2.03</span></a>
+<a class="sourceLine" id="cb38-14" data-line-number="14"><span class="co">#&gt;  9 c       170    10  2.01</span></a>
+<a class="sourceLine" id="cb38-15" data-line-number="15"><span class="co">#&gt; 10 c       190    10  2.00</span></a>
+<a class="sourceLine" id="cb38-16" data-line-number="16"><span class="co">#&gt; # ... with 1,140 more rows</span></a>
+<a class="sourceLine" id="cb38-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb38-18" data-line-number="18"><span class="kw">as_tibble</span>(<span class="kw">filter</span>(krig_df, var <span class="op">==</span><span class="st"> "p"</span>))</a>
+<a class="sourceLine" id="cb38-19" data-line-number="19"><span class="co">#&gt; # A tibble: 1,150 x 4</span></a>
+<a class="sourceLine" id="cb38-20" data-line-number="20"><span class="co">#&gt;    var       x     y     z</span></a>
+<a class="sourceLine" id="cb38-21" data-line-number="21"><span class="co">#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb38-22" data-line-number="22"><span class="co">#&gt;  1 p        10    10  6.37</span></a>
+<a class="sourceLine" id="cb38-23" data-line-number="23"><span class="co">#&gt;  2 p        30    10  6.35</span></a>
+<a class="sourceLine" id="cb38-24" data-line-number="24"><span class="co">#&gt;  3 p        50    10  6.33</span></a>
+<a class="sourceLine" id="cb38-25" data-line-number="25"><span class="co">#&gt;  4 p        70    10  6.31</span></a>
+<a class="sourceLine" id="cb38-26" data-line-number="26"><span class="co">#&gt;  5 p        90    10  6.29</span></a>
+<a class="sourceLine" id="cb38-27" data-line-number="27"><span class="co">#&gt;  6 p       110    10  6.27</span></a>
+<a class="sourceLine" id="cb38-28" data-line-number="28"><span class="co">#&gt;  7 p       130    10  6.26</span></a>
+<a class="sourceLine" id="cb38-29" data-line-number="29"><span class="co">#&gt;  8 p       150    10  6.24</span></a>
+<a class="sourceLine" id="cb38-30" data-line-number="30"><span class="co">#&gt;  9 p       170    10  6.23</span></a>
+<a class="sourceLine" id="cb38-31" data-line-number="31"><span class="co">#&gt; 10 p       190    10  6.21</span></a>
+<a class="sourceLine" id="cb38-32" data-line-number="32"><span class="co">#&gt; # ... with 1,140 more rows</span></a></code></pre></div>
 </div>
   </div>
 
@@ -662,7 +657,6 @@
       <li><a href="#exploring-the-distribution-of-status-and-tree-diameter">Exploring the distribution of status and tree diameter</a></li>
       <li><a href="#determining-tree-status-based-on-stem-status">Determining tree status based on stem status</a></li>
       <li><a href="#picking-a-dbh-range">Picking a <code>dbh</code> range</a></li>
-      <li><a href="#dropping-missing-values">Dropping missing values</a></li>
       <li><a href="#calculating-abundance">Calculating abundance</a></li>
       <li><a href="#picking-the-most-abundant-species">Picking the most abundant species</a></li>
       <li><a href="#mapping-the-distribution-of-tree-species">Mapping the distribution of tree species</a></li>
