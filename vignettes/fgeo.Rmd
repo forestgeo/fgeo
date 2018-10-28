@@ -144,19 +144,14 @@ ten_plus <- pick_dbh_min(alive_trees, 10)
 range(ten_plus$dbh, na.rm = TRUE)
 ```
 
-## Dropping missing values 
-
-Drop missing values of `dbh` with an informative warning.
-
-```{r}
-non_missing <- drop_if_na(ten_plus, "dbh")
-```
-
 ## Calculating abundance
 
 Calculate the total abundance of stems and trees.
 
 ```{r}
+# Drop missing values of `dbh`
+non_missing <- filter(ten_plus, !is.na(dbh))
+
 # Stem abundance
 abundance(non_missing)
 

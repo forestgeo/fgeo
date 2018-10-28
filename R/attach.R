@@ -9,7 +9,6 @@
 fgeo_core <- function() {
   c(
     "fgeo.abundance",
-    "fgeo.base",
     "fgeo.data",
     "fgeo.demography",
     "fgeo.habitat",

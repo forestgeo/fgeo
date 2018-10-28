@@ -113,15 +113,12 @@ ten_plus <- pick_dbh_min(alive_trees, 10)
 range(ten_plus$dbh, na.rm = TRUE)
 ```
 
-Drop missing values of `dbh` with an informative warning.
-
-```{r}
-non_missing <- drop_if_na(ten_plus, "dbh")
-```
-
 Count distinct values of `stemID` and `treeID`.
 
 ```{r}
+# Drop missing values of `dbh`
+non_missing <- filter(ten_plus, !is.na(dbh))
+
 # Stem abundance
 abundance(non_missing)
 

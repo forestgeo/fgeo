@@ -19,8 +19,7 @@ to analyze trees abundance, demography, and habitats
 also includes general-purpose functions to simplify the visualization
 (<a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>) and
 manipulation
-(<a href=https://forestgeo.github.io/fgeo.base>fgeo.base</a>,
-<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>) of
+(<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>) of
 ForestGEO datasets (e.g.
 <a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>).
 
@@ -53,11 +52,10 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9005     v fgeo.habitat    0.0.0.9006
-#> v fgeo.base       0.0.0.9001     v fgeo.map        0.0.0.9402
-#> v fgeo.data       0.0.0.9005     v fgeo.tool       0.0.0.9003
-#> v fgeo.demography 0.0.0.9102
+#> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
+#> v fgeo.demography 0.0.0.9102     v fgeo.tool       0.0.0.9003
 #> 
 ```
 
@@ -136,16 +134,12 @@ range(ten_plus$dbh, na.rm = TRUE)
 #> [1]   10 1405
 ```
 
-Drop missing values of `dbh` with an informative warning.
-
-``` r
-non_missing <- drop_if_na(ten_plus, "dbh")
-#> Warning: Dropping 5255 rows with missing `dbh` values.
-```
-
 Count distinct values of `stemID` and `treeID`.
 
 ``` r
+# Drop missing values of `dbh`
+non_missing <- filter(ten_plus, !is.na(dbh))
+
 # Stem abundance
 abundance(non_missing)
 #> Warning: `treeid`: Duplicated values were detected. Do you need to pick
