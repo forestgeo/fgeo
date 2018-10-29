@@ -166,7 +166,3 @@ Data have been made available as required by the journal to enable reproduction 
 * [Getting help](SUPPORT.md).
 * [Contributing](CONTRIBUTING.md).
 * [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Acknowledgments
-
-Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are many other people that deserve special acknowledgements; I thank them in the documentation and home page of each individual package that make up the __fgeo__ development.
