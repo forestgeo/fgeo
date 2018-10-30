@@ -29,7 +29,7 @@ Authors@R:
       person(given = "Kyle",
              family = "Harms",
              role = "aut",
-             email = "FIXME@FIXME"),
+             email = " kharms@lsu.edu"),
       person(given = "David",
              family = "Kenfack",
              role = c("aut", "rev"),

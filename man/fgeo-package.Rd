@@ -27,15 +27,27 @@ Useful links:
 \author{
 \strong{Maintainer}: Mauro Lepore \email{leporem@si.edu} [contractor]
 
-Other contributors:
+Authors:
 \itemize{
   \item Gabriel Arellano \email{gabriel.arellano.torres@gmail.com} [reviewer]
+  \item  Richard  Condit \email{richardcondit@gmail.com}
   \item Stuart Davies \email{daviess@si.edu} [reviewer]
+  \item Matteo Detto \email{teoparaglider@gmail.com}
+  \item Pamela Hall \email{phall@alum.mit.edu}
+  \item Kyle Harms \email{ kharms@lsu.edu}
+  \item David Kenfack \email{KenfackD@si.edu } [reviewer]
+  \item Sean McMahon \email{mcmahons@si.edu} [reviewer]
+  \item Sabrina Russo \email{srusso2@unl.edu} [reviewer]
+  \item Kristina Teixeira \email{TeixeiraK@si.edu} [reviewer]
+  \item Graham Zemunik \email{grah.zem@gmail.com} [reviewer]
+  \item Daniel Zuleta \email{dfzuleta@gmail.com} [reviewer]
+}
+
+Other contributors:
+\itemize{
   \item Lauren Krizel \email{KrizelL@si.edu} [reviewer]
   \item Suzanne Lao \email{laoz@si.edu} [reviewer]
-  \item Sean McMahon \email{mcmahons@si.edu} [reviewer]
   \item Haley Overstreet \email{OverstreetH@si.edu} [reviewer]
-  \item Kristina Teixeira \email{TeixeiraK@si.edu} [reviewer]
   \item CTFS-ForestGEO \email{ForestGEO@si.edu} [copyright holder, funder]
 }
 
