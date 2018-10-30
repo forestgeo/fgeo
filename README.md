@@ -23,21 +23,120 @@ manipulation
 ForestGEO datasets (e.g.
 <a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>).
 
-[Quick search – click here to search by package, function, dataset, or
-help
-file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
+  - [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask
+    Questions, report bugs, or propose features.
 
-[Questions and Answers – click here to find answers to frequently asked
-questions about
-fgeo.](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html)
+  - [Quick search – click here to search by package, function, dataset,
+    or help
+    file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
 ## Installation
 
-    # install.packages("devtools")
+### Before you install **fgeo**
+
+Before you install **fgeo** you may try it at <https://bit.ly/fgeo-demo>
+(you will need to create a free rstudio.cloud account).
+
+### Can you skip the detailed installation?
+
+Skip this section if you understand this code and it works for you.
+Otherwise keep reading.
+
+``` r
+# install.packages(devtools)
+devtools::install_github("forestgeo/fgeo")
+```
+
+### Detailed installation
+
+**fgeo** will fail to install unless you have the right R environment.
+These next steps will ensure you have everything you need. Feel free to
+[ask me for
+    hlep](https://github.com/forestgeo/fgeo/issues/new).
+
+#### 1\. Update R, RStudio, and R packages
+
+  - [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
+  - [why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
+
+#### 2\. Instruct RStudio not to preserve your workspace between sesisons
+
+  - [How? and
+    Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
+
+<img src="https://i.imgur.com/QqPyHJu.png" align="center" height=450/>
+
+#### 3\. Create a new RStudio project (or use the package here)
+
+  - [How?](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
+  - [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
+
+#### 4\. Install the package **devtools**
+
+In R
+    run:
+
+``` r
+install.packages("devtools")
+```
+
+#### 5\. Install package development utilities for your platform
+
+  - [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
+
+#### 6\. Create an account on <https://github.com/>
+
+#### 7\. Generate a GitHub token named exactly `GITHUB_PAT`
+
+In R run:
+
+``` r
+usethis::browse_github_pat()
+```
+
+  - You will be sent to GitHub and you should see something like this:
+
+<img src="https://i.imgur.com/huJ6l7n.png" align="center" height=300/>
+
+…
+
+  - Make sure your token description says exactly `GITHUB_PAT` and click
+    *Generate token*
+
+…
+
+<img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
+
+#### 8\. Store your new token in the envitonmental variable `GITHUB_PAT`
+
+In R run:
+
+``` r
+usethis::edit_r_environ()
+```
+
+  - A file called .Renviron will open. Type the name and value of your
+    GitHub token. **Ensure to end this file with a new empty line**.
+    Your .Renviron file should now look like this:
+
+<img src="https://i.imgur.com/QSEuzbF.png" align="center" height=100/>
+
+…
+
+  - Save and close .Renviron.
+
+#### 9\. Press Cmd/Ctrl + Shift + F10 to restart RStudio
+
+#### 10\. Install from GitHub the package **fgeo**
+
+In R run this:
+
     devtools::install_github("forestgeo/fgeo")
 
-For details on how to install packages from GitHub, see [this
+For more details on how to install packages from GitHub, see [this
 article](https://goo.gl/dQKEeg).
+
+You can remove **fgeo** with `remove.packages("fgeo")`.
 
 ## Example
 
@@ -45,14 +144,14 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007
 #> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> 
 ```
 
-Need help? Use `fgeo_help()` to search every help file in the fgeo
+Need help? Use `fgeo_help()` to search every help file in the **fgeo**
 package.
 
 ``` r
