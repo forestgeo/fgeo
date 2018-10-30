@@ -1,26 +1,53 @@
 Package: fgeo
 Title: Easily Install and Load Multiple Packages
 Version: 0.0.0.9002
-Authors@R: c(
-    person("Mauro", "Lepore", , "leporem@si.edu", role = c("aut", "ctr", "cre")),
-    person("Gabriel", "Arellano", , "gabriel.arellano.torres@gmail.com", role = c("rev")),
-    person("Stuart", "Davies", , "daviess@si.edu", role = c("rev")),
-    person("Lauren", "Krizel", , "KrizelL@si.edu", role = c("rev")),
-    person("Suzanne", "Lao", , "laoz@si.edu", role = c("rev")),
-    person("Sean", "McMahon", , "mcmahons@si.edu", role = c("rev")),
-    person("Haley", "Overstreet", , "OverstreetH@si.edu", role = c("rev")),
-    person("Kristina", "Teixeira", , "TeixeiraK@si.edu", role = c("rev")),
-    person("CTFS-ForestGEO", , , "ForestGEO@si.edu", role = c("cph", "fnd"))
-  )
-Description: 'fgeo' installs and loads multiple R packages of ForestGEO in
-    a single step. Each individual package is a self-contained module. Together,
-    all the packages in 'fgeo' provide a wide range of tools to analyze forest
-    diversity and dynamics. The modular structure of 'fgeo' makes it easy to add 
-    and maintain more tools as they become available. Learn more about the 
-    'fgeo' package at <http://forestgeo.github.io/fgeo>; and learn
-    more about ForestGEO at <http://www.forestgeo.si.edu/>.
+Authors@R: 
+    c(person(given = "Mauro",
+             family = "Lepore",
+             role = c("aut", "ctr", "cre"),
+             email = "leporem@si.edu"),
+      person(given = "Gabriel",
+             family = "Arellano",
+             role = "rev",
+             email = "gabriel.arellano.torres@gmail.com"),
+      person(given = "Stuart",
+             family = "Davies",
+             role = "rev",
+             email = "daviess@si.edu"),
+      person(given = "Lauren",
+             family = "Krizel",
+             role = "rev",
+             email = "KrizelL@si.edu"),
+      person(given = "Suzanne",
+             family = "Lao",
+             role = "rev",
+             email = "laoz@si.edu"),
+      person(given = "Sean",
+             family = "McMahon",
+             role = "rev",
+             email = "mcmahons@si.edu"),
+      person(given = "Haley",
+             family = "Overstreet",
+             role = "rev",
+             email = "OverstreetH@si.edu"),
+      person(given = "Kristina",
+             family = "Teixeira",
+             role = "rev",
+             email = "TeixeiraK@si.edu"),
+      person(given = "CTFS-ForestGEO",
+             role = c("cph", "fnd"),
+             email = "ForestGEO@si.edu"))
+Description: 'fgeo' installs and loads multiple R packages
+    of ForestGEO in a single step. Each individual package is a
+    self-contained module. Together, all the packages in 'fgeo' provide a
+    wide range of tools to analyze forest diversity and dynamics. The
+    modular structure of 'fgeo' makes it easy to add and maintain more
+    tools as they become available. Learn more about the 'fgeo' package at
+    <http://forestgeo.github.io/fgeo>; and learn more about ForestGEO at
+    <http://www.forestgeo.si.edu/>.
 License: GPL-3
-URL: http://forestgeo.github.io/fgeo, https://github.com/forestgeo/fgeo
+URL: http://forestgeo.github.io/fgeo,
+    https://github.com/forestgeo/fgeo
 BugReports: https://github.com/forestgeo/fgeo/issues
 Imports: 
     cli,
@@ -28,6 +55,7 @@ Imports:
     dplyr,
     fgeo.abundance,
     fgeo.base,
+    fgeo.ctfs,
     fgeo.data,
     fgeo.demography,
     fgeo.habitat,
@@ -46,14 +74,16 @@ Suggests:
     rmarkdown,
     testthat,
     tibble
-VignetteBuilder: knitr
+VignetteBuilder: 
+    knitr
 Remotes: 
-    forestgeo/fgeo.abundance@*release,
+    forestgeo/fgeo.abundance,
     forestgeo/fgeo.base,
-    forestgeo/fgeo.data@*release,
-    forestgeo/fgeo.demography@*release,
-    forestgeo/fgeo.habitat@*release,
-    forestgeo/fgeo.map@*release,
+    forestgeo/fgeo.ctfs,
+    forestgeo/fgeo.data,
+    forestgeo/fgeo.demography,
+    forestgeo/fgeo.habitat,
+    forestgeo/fgeo.map,
     forestgeo/fgeo.tool
 Encoding: UTF-8
 LazyData: true
