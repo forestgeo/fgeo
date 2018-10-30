@@ -33,13 +33,6 @@ fgeo.](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.
 
 ## Installation
 
-Install the pre-release version of **fgeo**:
-
-    # install.packages("devtools")
-    devtools::install_github("forestgeo/fgeo@pre-release")
-
-Or install the development version of **fgeo**:
-
     # install.packages("devtools")
     devtools::install_github("forestgeo/fgeo")
 
@@ -52,10 +45,10 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.abundance  0.0.0.9005     v fgeo.habitat    0.0.0.9006
+#> -- Attaching packages ------------------------------------------------- fgeo 0.0.0.9002 --
+#> v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007
 #> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
-#> v fgeo.demography 0.0.0.9102     v fgeo.tool       0.0.0.9003
+#> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> 
 ```
 
