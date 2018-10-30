@@ -253,7 +253,7 @@ str(habitat)
 You can visualize the habitats with `plot()`.
 
 ```{r}
-plot(habitat)
+autoplot(habitat)
 ```
 
 FYI, `habitats` result from hierarchical clustering on three variables computed from the elevation dataset: mean elevation, convexity and slope.

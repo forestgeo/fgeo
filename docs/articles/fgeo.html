@@ -138,10 +138,10 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9005     v fgeo.habitat    0.0.0.9006</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.demography 0.0.0.9102     v fgeo.tool       0.0.0.9003</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; </span></a></code></pre></div>
 </div>
 <div id="data" class="section level2">
@@ -409,7 +409,7 @@
 <a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">#&gt;  $ gy      : num  0 20 40 60 80 100 120 140 160 180 ...</span></a>
 <a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">#&gt;  $ habitats: int  1 1 1 1 1 1 1 1 1 1 ...</span></a></code></pre></div>
 <p>You can visualize the habitats with <code>plot()</code>.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">plot</span>(habitat)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">autoplot</span>(habitat)</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 <p>FYI, <code>habitats</code> result from hierarchical clustering on three variables computed from the elevation dataset: mean elevation, convexity and slope.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">fgeo_topography</span>(luquillo_elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
