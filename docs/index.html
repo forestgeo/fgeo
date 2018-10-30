@@ -162,53 +162,57 @@
 <h3 class="hasAnchor">
 <a href="#detailed-installation" class="anchor"></a>Detailed installation</h3>
 <p><strong>fgeo</strong> will fail to install unless you have the right R environment. These next steps will ensure you have everything you need. Feel free to <a href="https://github.com/forestgeo/fgeo/issues/new">ask me for hlep</a>.</p>
-<div id="update-r-rstudio-and-r-packages" class="section level5">
-<h5 class="hasAnchor">
-<a href="#update-r-rstudio-and-r-packages" class="anchor"></a>1. Update R, RStudio, and R packages</h5>
+<div id="update-r-rstudio-and-r-packages" class="section level4">
+<h4 class="hasAnchor">
+<a href="#update-r-rstudio-and-r-packages" class="anchor"></a>1. Update R, RStudio, and R packages</h4>
 <ul>
 <li><a href="https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/">How?</a></li>
 <li><a href="https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/">why?</a></li>
 </ul>
 </div>
-<div id="instruct-rstudio-not-to-preserve-your-workspace-between-sesisons" class="section level5">
-<h5 class="hasAnchor">
-<a href="#instruct-rstudio-not-to-preserve-your-workspace-between-sesisons" class="anchor"></a>2. Instruct RStudio not to preserve your workspace between sesisons</h5>
+<div id="instruct-rstudio-not-to-preserve-your-workspace-between-sesisons" class="section level4">
+<h4 class="hasAnchor">
+<a href="#instruct-rstudio-not-to-preserve-your-workspace-between-sesisons" class="anchor"></a>2. Instruct RStudio not to preserve your workspace between sesisons</h4>
 <ul>
 <li><a href="https://r4ds.had.co.nz/workflow-projects.html#what-is-real">How? and Why?</a></li>
 </ul>
 <p><img src="https://i.imgur.com/QqPyHJu.png" align="center" height="450/"></p>
 </div>
-<div id="create-a-new-rstudio-project-or-use-the-package-here" class="section level5">
-<h5 class="hasAnchor">
-<a href="#create-a-new-rstudio-project-or-use-the-package-here" class="anchor"></a>3. Create a new RStudio project (or use the package here)</h5>
+<div id="create-a-new-rstudio-project-or-use-the-package-here" class="section level4">
+<h4 class="hasAnchor">
+<a href="#create-a-new-rstudio-project-or-use-the-package-here" class="anchor"></a>3. Create a new RStudio project (or use the package here)</h4>
 <ul>
 <li><a href="https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects">How?</a></li>
 <li><a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">Why?</a></li>
 </ul>
 </div>
-<div id="install-the-package-devtools" class="section level5">
-<h5 class="hasAnchor">
-<a href="#install-the-package-devtools" class="anchor"></a>4. Install the package <strong>devtools</strong>
-</h5>
+<div id="close-any-other-r-session" class="section level4">
+<h4 class="hasAnchor">
+<a href="#close-any-other-r-session" class="anchor"></a>4. Close any other R session</h4>
+</div>
+<div id="install-the-package-devtools" class="section level4">
+<h4 class="hasAnchor">
+<a href="#install-the-package-devtools" class="anchor"></a>5. Install the package <strong>devtools</strong>
+</h4>
 <p>In R run:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">"devtools"</span>)</a></code></pre></div>
 </div>
-<div id="install-package-development-utilities-for-your-platform" class="section level5">
-<h5 class="hasAnchor">
-<a href="#install-package-development-utilities-for-your-platform" class="anchor"></a>5. Install package development utilities for your platform</h5>
+<div id="install-package-development-utilities-for-your-platform" class="section level4">
+<h4 class="hasAnchor">
+<a href="#install-package-development-utilities-for-your-platform" class="anchor"></a>6. Install package development utilities for your platform</h4>
 <ul>
 <li><a href="https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites">How?</a></li>
 </ul>
 </div>
-<div id="create-an-account-on-httpsgithub-com" class="section level5">
-<h5 class="hasAnchor">
-<a href="#create-an-account-on-httpsgithub-com" class="anchor"></a>6. Create an account on <a href="https://github.com/" class="uri">https://github.com/</a>
-</h5>
+<div id="create-an-account-on-httpsgithub-com" class="section level4">
+<h4 class="hasAnchor">
+<a href="#create-an-account-on-httpsgithub-com" class="anchor"></a>7. Create an account on <a href="https://github.com/" class="uri">https://github.com/</a>
+</h4>
 </div>
-<div id="generate-a-github-token-named-exactly-github_pat" class="section level5">
-<h5 class="hasAnchor">
-<a href="#generate-a-github-token-named-exactly-github_pat" class="anchor"></a>7. Generate a GitHub token named exactly <code>GITHUB_PAT</code>
-</h5>
+<div id="generate-a-github-token-named-exactly-github_pat" class="section level4">
+<h4 class="hasAnchor">
+<a href="#generate-a-github-token-named-exactly-github_pat" class="anchor"></a>8. Generate a GitHub token named exactly <code>GITHUB_PAT</code>
+</h4>
 <p>In R run:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">usethis<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">browse_github_pat</a></span>()</a></code></pre></div>
 <ul>
@@ -223,10 +227,10 @@
 <p>…</p>
 <p><img src="https://i.imgur.com/iXWITVV.png" align="center" height="100/"></p>
 </div>
-<div id="store-your-new-token-in-the-envitonmental-variable-github_pat" class="section level5">
-<h5 class="hasAnchor">
-<a href="#store-your-new-token-in-the-envitonmental-variable-github_pat" class="anchor"></a>8. Store your new token in the envitonmental variable <code>GITHUB_PAT</code>
-</h5>
+<div id="store-your-new-token-in-the-envitonmental-variable-github_pat" class="section level4">
+<h4 class="hasAnchor">
+<a href="#store-your-new-token-in-the-envitonmental-variable-github_pat" class="anchor"></a>9. Store your new token in the envitonmental variable <code>GITHUB_PAT</code>
+</h4>
 <p>In R run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">usethis<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/usethis/topics/edit">edit_r_environ</a></span>()</a></code></pre></div>
 <ul>
@@ -238,14 +242,14 @@
 <li>Save and close .Renviron.</li>
 </ul>
 </div>
-<div id="press-cmdctrl-shift-f10-to-restart-rstudio" class="section level5">
-<h5 class="hasAnchor">
-<a href="#press-cmdctrl-shift-f10-to-restart-rstudio" class="anchor"></a>9. Press Cmd/Ctrl + Shift + F10 to restart RStudio</h5>
+<div id="press-cmdctrl-shift-f10-to-restart-rstudio" class="section level4">
+<h4 class="hasAnchor">
+<a href="#press-cmdctrl-shift-f10-to-restart-rstudio" class="anchor"></a>10. Press Cmd/Ctrl + Shift + F10 to restart RStudio</h4>
 </div>
-<div id="install-from-github-the-package-fgeo" class="section level5">
-<h5 class="hasAnchor">
-<a href="#install-from-github-the-package-fgeo" class="anchor"></a>10. Install from GitHub the package <strong>fgeo</strong>
-</h5>
+<div id="install-from-github-the-package-fgeo" class="section level4">
+<h4 class="hasAnchor">
+<a href="#install-from-github-the-package-fgeo" class="anchor"></a>11. Install from GitHub the package <strong>fgeo</strong>
+</h4>
 <p>In R run this:</p>
 <pre><code><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <p>For more details on how to install packages from GitHub, see <a href="https://goo.gl/dQKEeg">this article</a>.</p>

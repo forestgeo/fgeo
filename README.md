@@ -71,7 +71,9 @@ These next steps will ensure you have everything you need. Feel free to
   - [How?](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
   - [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
 
-#### 4\. Install the package **devtools**
+#### 4\. Close any other R session
+
+#### 5\. Install the package **devtools**
 
 In R
     run:
@@ -80,13 +82,13 @@ In R
 install.packages("devtools")
 ```
 
-#### 5\. Install package development utilities for your platform
+#### 6\. Install package development utilities for your platform
 
   - [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
 
-#### 6\. Create an account on <https://github.com/>
+#### 7\. Create an account on <https://github.com/>
 
-#### 7\. Generate a GitHub token named exactly `GITHUB_PAT`
+#### 8\. Generate a GitHub token named exactly `GITHUB_PAT`
 
 In R run:
 
@@ -107,7 +109,7 @@ usethis::browse_github_pat()
 
 <img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
 
-#### 8\. Store your new token in the envitonmental variable `GITHUB_PAT`
+#### 9\. Store your new token in the envitonmental variable `GITHUB_PAT`
 
 In R run:
 
@@ -125,9 +127,9 @@ usethis::edit_r_environ()
 
   - Save and close .Renviron.
 
-#### 9\. Press Cmd/Ctrl + Shift + F10 to restart RStudio
+#### 10\. Press Cmd/Ctrl + Shift + F10 to restart RStudio
 
-#### 10\. Install from GitHub the package **fgeo**
+#### 11\. Install from GitHub the package **fgeo**
 
 In R run this:
 
