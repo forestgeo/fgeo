@@ -37,7 +37,7 @@ ForestGEO datasets (e.g.
 Before you install **fgeo** you may try it at <https://bit.ly/fgeo-demo>
 (you will need to create a free rstudio.cloud account).
 
-### Can you skip this section?
+### Can you skip the detailed installation?
 
 Skip this section if you understand this code and it works for you.
 Otherwise keep reading.
@@ -71,7 +71,7 @@ These next steps will ensure you have everything you need. Feel free to
   - [How?](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
   - [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
 
-#### 4\. Install the package devtools
+#### 4\. Install the package **devtools**
 
 In R
     run:
@@ -127,7 +127,7 @@ usethis::edit_r_environ()
 
 #### 9\. Press Cmd/Ctrl + Shift + F10 to restart RStudio
 
-#### 10\. Install from GitHub the package fgeo
+#### 10\. Install from GitHub the package **fgeo**
 
 In R run this:
 
@@ -136,20 +136,22 @@ In R run this:
 For more details on how to install packages from GitHub, see [this
 article](https://goo.gl/dQKEeg).
 
+You can remove **fgeo** with `remove.packages("fgeo")`.
+
 ## Example
 
 Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007
 #> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> 
 ```
 
-Need help? Use `fgeo_help()` to search every help file in the fgeo
+Need help? Use `fgeo_help()` to search every help file in the **fgeo**
 package.
 
 ``` r

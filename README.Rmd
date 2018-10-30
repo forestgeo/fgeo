@@ -43,7 +43,7 @@ __fgeo__ installs and loads multiple R packages, functions, and datasets to anal
 
 Before you install __fgeo__ you may try it at https://bit.ly/fgeo-demo (you will need to create a free rstudio.cloud account).
 
-### Can you skip this section?
+### Can you skip the detailed installation?
 
 Skip this section if you understand this code and it works for you. Otherwise keep reading.
 
@@ -72,7 +72,7 @@ __fgeo__ will fail to install unless you have the right R environment. These nex
 * [How?](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
 * [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
 
-#### 4. Install the package devtools
+#### 4. Install the package __devtools__
 
 In R run:
 
@@ -124,7 +124,7 @@ usethis::edit_r_environ()
 
 #### 9. Press Cmd/Ctrl + Shift + F10 to restart RStudio
 
-#### 10. Install from GitHub the package fgeo
+#### 10. Install from GitHub the package __fgeo__
 
 In R run this:
 
@@ -132,7 +132,9 @@ In R run this:
 devtools::install_github("forestgeo/fgeo")
 ```
 
-For more details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg).
+For more details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg). 
+
+You can remove __fgeo__ with `remove.packages("fgeo")`.
 
 ## Example
 
@@ -142,7 +144,7 @@ Load all __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-Need help? Use `fgeo_help()` to search every help file in the fgeo package.
+Need help? Use `fgeo_help()` to search every help file in the __fgeo__ package.
 
 ```R
 fgeo_help()
