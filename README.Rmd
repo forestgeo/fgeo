@@ -41,11 +41,11 @@ __fgeo__ installs and loads multiple R packages, functions, and datasets to anal
 
 ### Before you install __fgeo__
 
-Before you install __fgeo__ you may try it at https://bit.ly/fgeo-demo (you will need to create a free rstudio.cloud account).
+Before you install __fgeo__, you may try it at https://bit.ly/fgeo-demo (you will need to create a free rstudio.cloud account).
 
 ### Can you skip the detailed installation?
 
-Skip this section if you understand this code and it works for you. Otherwise keep reading.
+Skip this section if you understand this code and it works for you. Otherwise, keep reading.
 
 ```R
 # install.packages(devtools)
@@ -54,14 +54,14 @@ devtools::install_github("forestgeo/fgeo")
 
 ### Detailed installation
 
-__fgeo__ will fail to install unless you have the right R environment. These next steps will ensure you have everything you need. Feel free to [ask me for hlep](https://github.com/forestgeo/fgeo/issues/new).
+__fgeo__ will fail to install unless you have the right R environment. These next steps will ensure you have everything you need. Feel free to [ask me for help](https://github.com/forestgeo/fgeo/issues/new).
 
 #### 1. Update R, RStudio, and R packages
 
 * [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
-* [why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
+* [Why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
 
-#### 2. Instruct RStudio not to preserve your workspace between sesisons
+#### 2. Instruct RStudio not to preserve your workspace between sessions
 
 * [How? and Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
 
@@ -76,7 +76,7 @@ __fgeo__ will fail to install unless you have the right R environment. These nex
 
 #### 5. Install the tidyverse
 
-In R run:
+In R, run:
 
 ```R
 install.packages("tidyverse")
@@ -90,7 +90,7 @@ Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
 
 #### 7. Install the package __devtools__
 
-In R run:
+In R, run:
 
 ```R
 install.packages("devtools")
@@ -112,7 +112,7 @@ Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
 
 #### 12. Generate a GitHub token named exactly `GITHUB_PAT`
 
-In R run:
+In R, run:
 
 ```R
 usethis::browse_github_pat()
@@ -132,7 +132,7 @@ usethis::browse_github_pat()
 
 #### 13. Store your new token in the envitonmental variable `GITHUB_PAT`
 
-In R run:
+In R, run:
 
 ```R
 usethis::edit_r_environ()
@@ -152,7 +152,7 @@ Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
 
 #### 15. Install from GitHub the package __fgeo__
 
-In R run this:
+In R, run this:
 
 ```
 devtools::install_github("forestgeo/fgeo")
