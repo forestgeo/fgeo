@@ -73,22 +73,50 @@ These next steps will ensure you have everything you need. Feel free to
 
 #### 4\. Close any other R session
 
-#### 5\. Install the package **devtools**
+#### 5\. Install the tidyverse
 
-In R
-    run:
+In R run:
+
+``` r
+install.packages("tidyverse")
+```
+
+(This will get you most of the packages on which **fgeo** depends. Those
+dependencies would be installed by **fgeo** anyway but doing it now
+helps separate potential issues installing **fgeo** itself from issues
+installing its dependencies.)
+
+#### 6\. Restart R
+
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
+Restart R*.
+
+#### 7\. Install the package **devtools**
+
+In R run:
 
 ``` r
 install.packages("devtools")
 ```
 
-#### 6\. Install package development utilities for your platform
+#### 8\. Restart R again
+
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
+Restart
+    R*.
+
+#### 9\. Install package development utilities for your platform
 
   - [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
 
-#### 7\. Create an account on <https://github.com/>
+#### 10\. Restart R again
 
-#### 8\. Generate a GitHub token named exactly `GITHUB_PAT`
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
+Restart R*.
+
+#### 11\. Create an account on <https://github.com/>
+
+#### 12\. Generate a GitHub token named exactly `GITHUB_PAT`
 
 In R run:
 
@@ -103,13 +131,14 @@ usethis::browse_github_pat()
 …
 
   - Make sure your token description says exactly `GITHUB_PAT` and click
-    *Generate token*
+    *Generate
+token*
 
 …
 
 <img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
 
-#### 9\. Store your new token in the envitonmental variable `GITHUB_PAT`
+#### 13\. Store your new token in the envitonmental variable `GITHUB_PAT`
 
 In R run:
 
@@ -127,9 +156,12 @@ usethis::edit_r_environ()
 
   - Save and close .Renviron.
 
-#### 10\. Press Cmd/Ctrl + Shift + F10 to restart RStudio
+#### 14\. Restart R again
 
-#### 11\. Install from GitHub the package **fgeo**
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
+Restart R*.
+
+#### 15\. Install from GitHub the package **fgeo**
 
 In R run this:
 
@@ -146,7 +178,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages -------------------------------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007
 #> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004

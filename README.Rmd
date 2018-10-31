@@ -73,7 +73,22 @@ __fgeo__ will fail to install unless you have the right R environment. These nex
 * [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
 
 #### 4. Close any other R session
-#### 5. Install the package __devtools__
+
+#### 5. Install the tidyverse
+
+In R run:
+
+```R
+install.packages("tidyverse")
+```
+
+(This will get you most of the packages on which __fgeo__ depends. Those dependencies would be installed by __fgeo__ anyway but doing it now helps separate potential issues installing __fgeo__ itself from issues installing its dependencies.)
+
+#### 6. Restart R
+
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
+
+#### 7. Install the package __devtools__
 
 In R run:
 
@@ -81,13 +96,21 @@ In R run:
 install.packages("devtools")
 ```
 
-#### 6. Install package development utilities for your platform
+#### 8. Restart R again
+
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
+
+#### 9. Install package development utilities for your platform
 
 * [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
 
-#### 7. Create an account on https://github.com/
+#### 10. Restart R again
 
-#### 8. Generate a GitHub token named exactly `GITHUB_PAT`
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
+
+#### 11. Create an account on https://github.com/
+
+#### 12. Generate a GitHub token named exactly `GITHUB_PAT`
 
 In R run:
 
@@ -107,7 +130,7 @@ usethis::browse_github_pat()
 
 <img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
 
-#### 9. Store your new token in the envitonmental variable `GITHUB_PAT`
+#### 13. Store your new token in the envitonmental variable `GITHUB_PAT`
 
 In R run:
 
@@ -123,9 +146,11 @@ usethis::edit_r_environ()
 
 * Save and close  .Renviron.
 
-#### 10. Press Cmd/Ctrl + Shift + F10 to restart RStudio
+#### 14. Restart R again
 
-#### 11. Install from GitHub the package __fgeo__
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
+
+#### 15. Install from GitHub the package __fgeo__
 
 In R run this:
 
