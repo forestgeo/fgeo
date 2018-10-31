@@ -40,7 +40,7 @@ Authors@R:
              email = "KrizelL@si.edu"),
       person(given = "Suzanne",
              family = "Lao",
-             role = "rev",
+             role = c("aut", "rev"),
              email = "laoz@si.edu"),
       person(given = "Sean",
              family = "McMahon",
