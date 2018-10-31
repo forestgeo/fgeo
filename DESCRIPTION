@@ -1,5 +1,5 @@
 Package: fgeo
-Title: Easily Install and Load Multiple Packages
+Title: Install and Load Multiple Packages in One Step
 Version: 0.0.0.9002
 Authors@R: 
     c(person(given = "Mauro",

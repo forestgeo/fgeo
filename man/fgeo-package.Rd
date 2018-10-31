@@ -4,7 +4,7 @@
 \name{fgeo-package}
 \alias{fgeo}
 \alias{fgeo-package}
-\title{fgeo: Easily Install and Load Multiple Packages}
+\title{fgeo: Install and Load Multiple Packages in One Step}
 \description{
 'fgeo' installs and loads multiple R packages
     of ForestGEO in a single step. Each individual package is a
