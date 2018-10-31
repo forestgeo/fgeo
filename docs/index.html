@@ -149,42 +149,44 @@
 <h3 class="hasAnchor">
 <a href="#before-you-install-fgeo" class="anchor"></a>Before you install <strong>fgeo</strong>
 </h3>
-<p>Before you install <strong>fgeo</strong> you may try it at <a href="https://bit.ly/fgeo-demo" class="uri">https://bit.ly/fgeo-demo</a> (you will need to create a free rstudio.cloud account).</p>
+<p>Before you install <strong>fgeo</strong>, you may try it at <a href="https://bit.ly/fgeo-demo" class="uri">https://bit.ly/fgeo-demo</a> (you will need to create a free rstudio.cloud account).</p>
 </div>
 <div id="can-you-skip-the-detailed-installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#can-you-skip-the-detailed-installation" class="anchor"></a>Can you skip the detailed installation?</h3>
-<p>Skip this section if you understand this code and it works for you. Otherwise keep reading.</p>
+<p>Skip this section if you understand this code and it works for you. Otherwise, keep reading.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages(devtools)</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>)</a></code></pre></div>
 </div>
 <div id="detailed-installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#detailed-installation" class="anchor"></a>Detailed installation</h3>
-<p><strong>fgeo</strong> will fail to install unless you have the right R environment. These next steps will ensure you have everything you need. Feel free to <a href="https://github.com/forestgeo/fgeo/issues/new">ask me for hlep</a>.</p>
+<p><strong>fgeo</strong> will fail to install unless you have the right R environment. These next steps will ensure you have everything you need. Feel free to <a href="https://github.com/forestgeo/fgeo/issues/new">ask me for help</a>.</p>
 <div id="update-r-rstudio-and-r-packages" class="section level4">
 <h4 class="hasAnchor">
 <a href="#update-r-rstudio-and-r-packages" class="anchor"></a>1. Update R, RStudio, and R packages</h4>
 <ul>
 <li><a href="https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/">How?</a></li>
-<li><a href="https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/">why?</a></li>
+<li><a href="https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/">Why?</a></li>
 </ul>
 </div>
-<div id="instruct-rstudio-not-to-preserve-your-workspace-between-sesisons" class="section level4">
+<div id="instruct-rstudio-not-to-preserve-your-workspace-between-sessions" class="section level4">
 <h4 class="hasAnchor">
-<a href="#instruct-rstudio-not-to-preserve-your-workspace-between-sesisons" class="anchor"></a>2. Instruct RStudio not to preserve your workspace between sesisons</h4>
+<a href="#instruct-rstudio-not-to-preserve-your-workspace-between-sessions" class="anchor"></a>2. Instruct RStudio not to preserve your workspace between sessions</h4>
 <ul>
-<li><a href="https://r4ds.had.co.nz/workflow-projects.html#what-is-real">How? and Why?</a></li>
+<li><a href="https://r4ds.had.co.nz/workflow-projects.html#what-is-real">Why?</a></li>
 </ul>
+<p>In RStudio go to:</p>
+<p><em>Tools &gt; Global Options…</em></p>
 <p><img src="https://i.imgur.com/QqPyHJu.png" align="center" height="450/"></p>
 </div>
 <div id="create-a-new-rstudio-project-or-use-the-package-here" class="section level4">
 <h4 class="hasAnchor">
-<a href="#create-a-new-rstudio-project-or-use-the-package-here" class="anchor"></a>3. Create a new RStudio project (or use the package here)</h4>
+<a href="#create-a-new-rstudio-project-or-use-the-package-here" class="anchor"></a>3. Create a New RStudio project (or use the package here)</h4>
 <ul>
-<li><a href="https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects">How?</a></li>
 <li><a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">Why?</a></li>
 </ul>
+<p><img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height="350/"></p>
 </div>
 <div id="close-any-other-r-session" class="section level4">
 <h4 class="hasAnchor">
@@ -193,7 +195,7 @@
 <div id="install-the-tidyverse" class="section level4">
 <h4 class="hasAnchor">
 <a href="#install-the-tidyverse" class="anchor"></a>5. Install the tidyverse</h4>
-<p>In R run:</p>
+<p>In R, run:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">"tidyverse"</span>)</a></code></pre></div>
 <p>(This will get you most of the packages on which <strong>fgeo</strong> depends. Those dependencies would be installed by <strong>fgeo</strong> anyway but doing it now helps separate potential issues installing <strong>fgeo</strong> itself from issues installing its dependencies.)</p>
 </div>
@@ -206,7 +208,7 @@
 <h4 class="hasAnchor">
 <a href="#install-the-package-devtools" class="anchor"></a>7. Install the package <strong>devtools</strong>
 </h4>
-<p>In R run:</p>
+<p>In R, run:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">"devtools"</span>)</a></code></pre></div>
 </div>
 <div id="restart-r-again" class="section level4">
@@ -235,7 +237,7 @@
 <h4 class="hasAnchor">
 <a href="#generate-a-github-token-named-exactly-github_pat" class="anchor"></a>12. Generate a GitHub token named exactly <code>GITHUB_PAT</code>
 </h4>
-<p>In R run:</p>
+<p>In R, run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">usethis<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">browse_github_pat</a></span>()</a></code></pre></div>
 <ul>
 <li>You will be sent to GitHub and you should see something like this:</li>
@@ -253,7 +255,7 @@
 <h4 class="hasAnchor">
 <a href="#store-your-new-token-in-the-envitonmental-variable-github_pat" class="anchor"></a>13. Store your new token in the envitonmental variable <code>GITHUB_PAT</code>
 </h4>
-<p>In R run:</p>
+<p>In R, run:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">usethis<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/usethis/topics/edit">edit_r_environ</a></span>()</a></code></pre></div>
 <ul>
 <li>A file called .Renviron will open. Type the name and value of your GitHub token. <strong>Ensure to end this file with a new empty line</strong>. Your .Renviron file should now look like this:</li>
@@ -273,7 +275,7 @@
 <h4 class="hasAnchor">
 <a href="#install-from-github-the-package-fgeo" class="anchor"></a>15. Install from GitHub the package <strong>fgeo</strong>
 </h4>
-<p>In R run this:</p>
+<p>In R, run this:</p>
 <pre><code><a href="http://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github("forestgeo/fgeo")</a></code></pre>
 <p>For more details on how to install packages from GitHub, see <a href="https://goo.gl/dQKEeg">this article</a>.</p>
 <p>You can remove <strong>fgeo</strong> with <code>remove.packages("fgeo")</code>.</p>
@@ -285,7 +287,7 @@
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------------- fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007</span></a>
 <a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402</span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004</span></a>

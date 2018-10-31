@@ -34,13 +34,14 @@ ForestGEO datasets (e.g.
 
 ### Before you install **fgeo**
 
-Before you install **fgeo** you may try it at <https://bit.ly/fgeo-demo>
-(you will need to create a free rstudio.cloud account).
+Before you install **fgeo**, you may try it at
+<https://bit.ly/fgeo-demo> (you will need to create a free rstudio.cloud
+account).
 
 ### Can you skip the detailed installation?
 
 Skip this section if you understand this code and it works for you.
-Otherwise keep reading.
+Otherwise, keep reading.
 
 ``` r
 # install.packages(devtools)
@@ -52,30 +53,35 @@ devtools::install_github("forestgeo/fgeo")
 **fgeo** will fail to install unless you have the right R environment.
 These next steps will ensure you have everything you need. Feel free to
 [ask me for
-    hlep](https://github.com/forestgeo/fgeo/issues/new).
+    help](https://github.com/forestgeo/fgeo/issues/new).
 
 #### 1\. Update R, RStudio, and R packages
 
   - [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
-  - [why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
+  - [Why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
 
-#### 2\. Instruct RStudio not to preserve your workspace between sesisons
+#### 2\. Instruct RStudio not to preserve your workspace between sessions
 
-  - [How? and
-    Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
+  - [Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
+
+In RStudio go to:
+
+*Tools \> Global
+    Options…*
 
 <img src="https://i.imgur.com/QqPyHJu.png" align="center" height=450/>
 
-#### 3\. Create a new RStudio project (or use the package here)
+#### 3\. Create a New RStudio project (or use the package here)
 
-  - [How?](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
   - [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
+
+<img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height=350/>
 
 #### 4\. Close any other R session
 
 #### 5\. Install the tidyverse
 
-In R run:
+In R, run:
 
 ``` r
 install.packages("tidyverse")
@@ -93,7 +99,7 @@ Restart R*.
 
 #### 7\. Install the package **devtools**
 
-In R run:
+In R, run:
 
 ``` r
 install.packages("devtools")
@@ -118,7 +124,7 @@ Restart R*.
 
 #### 12\. Generate a GitHub token named exactly `GITHUB_PAT`
 
-In R run:
+In R, run:
 
 ``` r
 usethis::browse_github_pat()
@@ -140,7 +146,7 @@ token*
 
 #### 13\. Store your new token in the envitonmental variable `GITHUB_PAT`
 
-In R run:
+In R, run:
 
 ``` r
 usethis::edit_r_environ()
@@ -163,7 +169,7 @@ Restart R*.
 
 #### 15\. Install from GitHub the package **fgeo**
 
-In R run this:
+In R, run this:
 
     devtools::install_github("forestgeo/fgeo")
 
@@ -178,7 +184,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages -------------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007
 #> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004

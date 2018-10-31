@@ -63,14 +63,19 @@ __fgeo__ will fail to install unless you have the right R environment. These nex
 
 #### 2. Instruct RStudio not to preserve your workspace between sessions
 
-* [How? and Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
+* [Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
+
+In RStudio go to:
+
+_Tools > Global Options..._
 
 <img src="https://i.imgur.com/QqPyHJu.png" align="center" height=450/>
 
-#### 3. Create a new RStudio project (or use the package here)
+#### 3. Create a New RStudio project (or use the package here)
 
-* [How?](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
 * [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
+
+<img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height=350/>
 
 #### 4. Close any other R session
 
