@@ -171,7 +171,7 @@ In R, run this:
 #### Troubleshooting: Mac users may need XQuartz
 
 If you are a mac user, **fgeo** may fail to install with the error
-below. Install XQuartz from \<xquartz.macosforge.org\> and try to
+below. Install XQuartz from <https://www.xquartz.org/> and try to
 install **fgeo** again.
 
 ``` r

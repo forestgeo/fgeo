@@ -161,7 +161,7 @@ devtools::install_github("forestgeo/fgeo")
 
 #### Troubleshooting: Mac users may need XQuartz
 
-If you are a mac user, __fgeo__ may fail to install with the error below. Install XQuartz from <xquartz.macosforge.org> and try to install __fgeo__ again.
+If you are a mac user, __fgeo__ may fail to install with the error below. Install XQuartz from https://www.xquartz.org/ and try to install __fgeo__ again.
 
 ```R
 Error : .onLoad failed in loadNamespace() for 'tcltk', details:
