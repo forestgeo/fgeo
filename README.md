@@ -108,21 +108,16 @@ install.packages("devtools")
 #### 8\. Restart R again
 
 Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
-Restart
-    R*.
+Restart R*.
 
-#### 9\. Install package development utilities for your platform
-
-  - [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
-
-#### 10\. Restart R again
+#### 9\. Restart R again
 
 Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
 Restart R*.
 
-#### 11\. Create an account on <https://github.com/>
+#### 10\. Create an account on <https://github.com/>
 
-#### 12\. Generate a GitHub token named exactly `GITHUB_PAT`
+#### 11\. Generate a GitHub token named exactly `GITHUB_PAT`
 
 In R, run:
 
@@ -144,7 +139,7 @@ token*
 
 <img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
 
-#### 13\. Store your new token in the envitonmental variable `GITHUB_PAT`
+#### 12\. Store your new token in the envitonmental variable `GITHUB_PAT`
 
 In R, run:
 
@@ -162,16 +157,39 @@ usethis::edit_r_environ()
 
   - Save and close .Renviron.
 
-#### 14\. Restart R again
+#### 13\. Restart R again
 
 Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
 Restart R*.
 
-#### 15\. Install from GitHub the package **fgeo**
+#### 14\. Install from GitHub the package **fgeo**
 
 In R, run this:
 
     devtools::install_github("forestgeo/fgeo")
+
+#### Trouble shooting: Mac users may need XQuartz
+
+If you are a mac user, **fgeo** may fail to install with the error
+below. Install XQuartz from \<xquartz.macosforge.org\> and try to
+install **fgeo** again.
+
+``` r
+Error : .onLoad failed in loadNamespace() for 'tcltk', details:
+  call: fun(libname, pkgname)
+  error: X11 library is missing: install XQuartz from xquartz.macosforge.org
+```
+
+#### Trouble shooting: Maybe install package development utilities
+
+This is optional but sometimes you may want to install the *source*
+version of R packages from CRAN or GitHub. If that package contains a
+`src/` folder you will need to install package development
+    utilities.
+
+  - [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
+
+-----
 
 For more details on how to install packages from GitHub, see [this
 article](https://goo.gl/dQKEeg).
@@ -184,7 +202,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007
 #> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
