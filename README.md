@@ -168,7 +168,7 @@ In R, run this:
 
     devtools::install_github("forestgeo/fgeo")
 
-#### Trouble shooting: Mac users may need XQuartz
+#### Troubleshooting: Mac users may need XQuartz
 
 If you are a mac user, **fgeo** may fail to install with the error
 below. Install XQuartz from \<xquartz.macosforge.org\> and try to
@@ -180,7 +180,7 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
   error: X11 library is missing: install XQuartz from xquartz.macosforge.org
 ```
 
-#### Trouble shooting: Maybe install package development utilities
+#### Troubleshooting: Maybe install package development utilities
 
 This is optional but sometimes you may want to install the *source*
 version of R packages from CRAN or GitHub. If that package contains a
