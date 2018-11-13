@@ -1,3 +1,4 @@
+^inst/buildignore$
 ^tmp\.sh$
 ^ship\.sh$
 ^appveyor\.yml$

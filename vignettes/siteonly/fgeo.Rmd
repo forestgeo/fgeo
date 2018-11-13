@@ -37,7 +37,7 @@ fgeo_help("datasets")
 We will use a dataset of stems censused in one hectare from the forest plot in Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
 
 ```{r}
-stem <- luquillo_stem_1ha
+stem <- luquillo_stem_random
 str(stem)
 ```
 

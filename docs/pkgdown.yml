@@ -2,8 +2,8 @@ pandoc: 2.1.1
 pkgdown: 1.1.0.9000
 pkgdown_sha: ~
 articles:
-  fgeo: fgeo.html
   eda: siteonly/eda.html
+  fgeo: siteonly/fgeo.html
   questions-and-answers: siteonly/questions-and-answers.html
   quick-search: siteonly/quick-search.html
 urls:

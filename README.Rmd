@@ -207,17 +207,8 @@ fgeo_help("datasets")
 
 ```{r}
 # Short name
-stem <- luquillo_stem_1ha
-# This dataset comes with multiple censuses.
-unique(stem$CensusID)
-stem
-```
-
-Pick one census from the bottom (n < 0) rank of `CensusID`. 
-
-```{r}
-stem6 <- pick_top(stem, var = CensusID, n = -1)
-unique(stem6$CensusID)
+stem6 <- luquillo_stem6_random
+stem6
 ```
 
 Determine the status of each tree based on the status of each stem.

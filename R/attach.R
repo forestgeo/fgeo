@@ -11,7 +11,7 @@ fgeo_core <- function() {
     "fgeo.abundance",
     "fgeo.data",
     "fgeo.demography",
-                        # "fgeo.habitat",
+    "fgeo.habitat",
     "fgeo.map",
     "fgeo.tool"
   )

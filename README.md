@@ -14,9 +14,8 @@ status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/p
 **fgeo** installs and loads multiple R packages, functions, and datasets
 to analyze trees abundance, demography, and habitats
 (<a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>,
-<a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a>,
-<a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>). It
-also includes general-purpose functions to simplify the visualization
+<a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a>).
+It also includes general-purpose functions to simplify the visualization
 (<a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>) and
 manipulation
 (<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>) of
@@ -202,10 +201,10 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007
-#> v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402
-#> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
+#> -- Attaching packages -------------------------------------- fgeo 0.0.0.9002 --
+#> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
+#> v fgeo.data       0.0.0.9005     v fgeo.tool       0.0.0.9004
+#> v fgeo.demography 0.0.0.9103
 #> 
 ```
 
@@ -228,35 +227,24 @@ fgeo_help("datasets")
 
 ``` r
 # Short name
-stem <- luquillo_stem_1ha
-# This dataset comes with multiple censuses.
-unique(stem$CensusID)
-#> [1] 1 2 3 4 5 6
-stem
-#> # A tibble: 72,582 x 19
+stem6 <- luquillo_stem6_random
+stem6
+#> # A tibble: 1,320 x 19
 #>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
 #>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#>  1     46     46 1000~ 100001  PSYB~ 921      164.  416.        46        1
-#>  2     47     47 1000~ 100002  PSYB~ 921      165.  416         47        1
-#>  3     47     48 1000~ 100003  PSYB~ 921      165.  416         48        1
-#>  4     47     49 1000~ 100004  PSYB~ 921      165.  416         49        1
-#>  5     47     50 1000~ 100005  PSYB~ 921      165.  416         50        1
-#>  6     47     51 1000~ 100006  PSYB~ 921      165.  416         51        1
-#>  7     47     52 1000~ 100007  PSYB~ 921      165.  416         52        1
-#>  8     47     53 1000~ 100008  PSYB~ 921      165.  416         53        1
-#>  9     47     54 1000~ 100009  PSYB~ 921      165.  416         54        1
-#> 10     47     55 1000~ 100010  PSYB~ 921      165.  416         55        1
-#> # ... with 72,572 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
+#>  1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
+#>  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
+#>  3    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA
+#>  4    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA
+#>  5    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6
+#>  6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
+#>  7    602    736 1006~ 100649  GUAG~ 821     149.   414.    614253        6
+#>  8    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6
+#>  9    647    793 1007~ 100708  SCHM~ 821     143.   411.    614211        6
+#> 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.    603131        6
+#> # ... with 1,310 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
 #> #   hom <dbl>, ExactDate <date>, DFstatus <chr>, codes <chr>,
 #> #   countPOM <dbl>, status <chr>, date <dbl>
-```
-
-Pick one census from the bottom (n \< 0) rank of `CensusID`.
-
-``` r
-stem6 <- pick_top(stem, var = CensusID, n = -1)
-unique(stem6$CensusID)
-#> [1] 6
 ```
 
 Determine the status of each tree based on the status of each stem.
@@ -269,11 +257,9 @@ alive_trees <- subset(stem6, status_tree == "A")
 some_cols <- c( "treeID", "status_tree", "stemID", "status")
 example_tree <- 46
 subset(alive_trees, treeID == example_tree, some_cols)
-#> # A tibble: 2 x 4
-#>   treeID status_tree stemID status
-#>    <int> <chr>        <int> <chr> 
-#> 1     46 A               46 D     
-#> 2     46 A           114033 G
+#> # A tibble: 0 x 4
+#> # ... with 4 variables: treeID <int>, status_tree <chr>, stemID <int>,
+#> #   status <chr>
 ```
 
 Pick stems of 10 mm or more.
@@ -281,7 +267,7 @@ Pick stems of 10 mm or more.
 ``` r
 ten_plus <- pick_dbh_min(alive_trees, 10)
 range(ten_plus$dbh, na.rm = TRUE)
-#> [1]   10 1405
+#> [1]  10.2 992.0
 ```
 
 Count distinct values of `stemID` and `treeID`.
@@ -297,7 +283,7 @@ abundance(non_missing)
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
-#> 1  2564
+#> 1   840
 
 # Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
 largest_stem <- fgeo.tool::pick_main_stem(non_missing)
@@ -305,7 +291,7 @@ abundance(largest_stem)
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
-#> 1  2319
+#> 1   786
 ```
 
 Count largest stems (unique `treeID`s) by species.
@@ -313,21 +299,21 @@ Count largest stems (unique `treeID`s) by species.
 ``` r
 by_sp <- group_by(largest_stem, sp)
 abundance(by_sp)
-#> # A tibble: 70 x 2
-#> # Groups:   sp [70]
+#> # A tibble: 65 x 2
+#> # Groups:   sp [65]
 #>    sp         n
 #>    <chr>  <int>
-#>  1 ALCFLO    11
-#>  2 ALCLAT    15
-#>  3 ANDINE     1
-#>  4 ANTOBT     1
-#>  5 ARDGLA     1
-#>  6 BUCTET    11
-#>  7 BYRSPI    25
-#>  8 CALCAL     2
-#>  9 CASARB   489
-#> 10 CASSYL    58
-#> # ... with 60 more rows
+#>  1 ALCFLO     3
+#>  2 ANDINE     2
+#>  3 ARDGLA     2
+#>  4 ARTALT     1
+#>  5 BUCTET     7
+#>  6 BYRSPI    10
+#>  7 CALCAL     1
+#>  8 CASARB    66
+#>  9 CASSYL    26
+#> 10 CECSCH    29
+#> # ... with 55 more rows
 ```
 
 [Get
