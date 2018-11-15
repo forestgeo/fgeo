@@ -43,18 +43,16 @@ Before you install __fgeo__, you may try it at https://bit.ly/fgeo-demo (you wil
 
 ## Installation
 
-* This code may be enought if you have some experience installing packages from GitHub. If this is unclear or fails, try the next point.
+* Try this if you have installed packages from GitHub before.
 
 ```R
 # install.packages(devtools)
 devtools::install_github("forestgeo/fgeo")
 ```
 
-* You can [install fgeo from its source code](https://github.com/forestgeo/fgeo-build#install-fgeo). This is useful when GitHub limits how much you can download (to increase your download limit follow the link in the next point).
+* Try [installing fgeo from its source code](https://github.com/forestgeo/fgeo-build#install-fgeo) if you exceeded GitHub's rate-limit (to increase your rate-limit follow the link in the next point).
 
-* If you need more help try reading  [this](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
-
-For more details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg). 
+* Read the [detailed instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github) if you need more help. For more details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg). 
 
 You can remove __fgeo__ with `remove.packages("fgeo")`.
 
