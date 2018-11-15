@@ -1,3 +1,4 @@
+^buildignore-utils\.R$
 ^inst/buildignore$
 ^tmp\.sh$
 ^ship\.sh$

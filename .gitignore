@@ -1,3 +1,4 @@
+buildignore-utils.R
 inst/doc
 inst/fgeo-logo
 .Rproj.user

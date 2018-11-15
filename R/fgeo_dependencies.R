@@ -1,5 +1,6 @@
 #' List package dependencies (imports and suggests) of __fgeo__.
 #'
+#' @param matches String to `grep()` the output.
 #' @param include_self Include fgeo in the list?
 #' @param section Either "Imports" or "Suggests".
 #'
@@ -9,7 +10,8 @@
 #'
 #' @keywords internal
 #' @export
-fgeo_dependencies <- function(include_self = TRUE,
+fgeo_dependencies <- function(matches = NULL,
+                              include_self = TRUE,
                               section = c("Imports", "Suggests")) {
   section <- section[[1]]
   raw <- utils::packageDescription("fgeo")[[section]]
@@ -28,6 +30,10 @@ fgeo_dependencies <- function(include_self = TRUE,
 
   if (include_self) {
     names <- c(names, "fgeo")
+  }
+
+  if (!is.null(matches)) {
+    names <- grep(matches, names, value = TRUE)
   }
 
   names
