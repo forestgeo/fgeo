@@ -34,28 +34,26 @@ Before you install **fgeo**, you may try it at
 <https://bit.ly/fgeo-demo> (you will need to create a free rstudio.cloud
 account).
 
-## Install from GitHub (if you did it before)
+## Installation
 
-Read the following sections if this is unclear or fails.
+  - This code may be enought if you have some experience installing
+    packages from GitHub. If this is unclear or fails, try the next
+    point.
+
+<!-- end list -->
 
 ``` r
 # install.packages(devtools)
 devtools::install_github("forestgeo/fgeo")
 ```
 
-## Install from source code
+  - You can [install fgeo from its source
+    code](https://github.com/forestgeo/fgeo-build#install-fgeo). This is
+    useful when GitHub limits how much you can download (to increase
+    your download limit follow the link in the next point).
 
-If you struggle to install **fgeo** from GitHub, you may [install it
-from its source
-code](https://github.com/forestgeo/fgeo-build#install-fgeo).
-
-## Install from GitHub (troubleshootig)
-
-Read
-[this](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github)
-if you need to trouble sheet the installation from GitHub.
-
-–
+  - If you need more help try reading
+    [this](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
 
 For more details on how to install packages from GitHub, see [this
 article](https://goo.gl/dQKEeg).
