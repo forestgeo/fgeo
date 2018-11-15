@@ -88,11 +88,11 @@ Imports:
     fgeo.abundance,
     fgeo.base,
     fgeo.ctfs,
-    fgeo.data,
     fgeo.demography,
     fgeo.habitat,
     fgeo.map,
     fgeo.tool,
+    fgeo.x,
     magrittr,
     purrr,
     remotes,
@@ -100,8 +100,8 @@ Imports:
     rstudioapi,
     utils
 Suggests: 
-    DT,
     covr,
+    DT,
     knitr,
     rmarkdown,
     testthat,
@@ -112,11 +112,11 @@ Remotes:
     forestgeo/fgeo.abundance,
     forestgeo/fgeo.base,
     forestgeo/fgeo.ctfs,
-    forestgeo/fgeo.data,
     forestgeo/fgeo.demography,
     forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
-    forestgeo/fgeo.tool
+    forestgeo/fgeo.tool,
+    forestgeo/fgeo.x
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

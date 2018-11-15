@@ -9,11 +9,11 @@
 fgeo_core <- function() {
   c(
     "fgeo.abundance",
-    "fgeo.data",
     "fgeo.demography",
     "fgeo.habitat",
     "fgeo.map",
-    "fgeo.tool"
+    "fgeo.tool",
+    "fgeo.x"
   )
 }
 

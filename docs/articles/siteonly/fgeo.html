@@ -138,7 +138,7 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library</code>().</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------- fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9006     v fgeo.habitat    0.0.0.9007</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.data       0.0.0.9005     v fgeo.map        0.0.0.9402</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004</span></a>
@@ -288,20 +288,18 @@
 <a class="sourceLine" id="cb16-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
 <a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">abundance</span>(non_missing)</a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
-<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co">#&gt; main stems?</span></a>
-<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="co">#&gt; 1   840</span></a>
-<a class="sourceLine" id="cb16-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb16-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
-<a class="sourceLine" id="cb16-14" data-line-number="14">main_stems &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
-<a class="sourceLine" id="cb16-15" data-line-number="15"><span class="kw">abundance</span>(main_stems)</a>
-<a class="sourceLine" id="cb16-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb16-17" data-line-number="17"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb16-18" data-line-number="18"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb16-19" data-line-number="19"><span class="co">#&gt; 1   786</span></a></code></pre></div>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="co">#&gt; 1   840</span></a>
+<a class="sourceLine" id="cb16-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
+<a class="sourceLine" id="cb16-12" data-line-number="12">main_stems &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb16-13" data-line-number="13"><span class="kw">abundance</span>(main_stems)</a>
+<a class="sourceLine" id="cb16-14" data-line-number="14"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb16-15" data-line-number="15"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb16-16" data-line-number="16"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb16-17" data-line-number="17"><span class="co">#&gt; 1   786</span></a></code></pre></div>
 <p>Calculate the abundance of trees by species.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(main_stems, sp)</a>
 <a class="sourceLine" id="cb17-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>

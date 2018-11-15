@@ -20,7 +20,7 @@ describe("fgeo_docs()", {
   })
 
   it("with a pattern returns that pattern", {
-    expect_equal(fgeo_docs("data", package)$package, "fgeo.data")
+    expect_equal(fgeo_docs("abundance", package)$package, "fgeo.abundance")
   })
 
   it("errs with infomative error messages", {
