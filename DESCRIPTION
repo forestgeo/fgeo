@@ -89,7 +89,6 @@ Imports:
     fgeo.base,
     fgeo.ctfs,
     fgeo.demography,
-    fgeo.habitat,
     fgeo.map,
     fgeo.tool,
     fgeo.x,
@@ -113,7 +112,6 @@ Remotes:
     forestgeo/fgeo.base,
     forestgeo/fgeo.ctfs,
     forestgeo/fgeo.demography,
-    forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
     forestgeo/fgeo.tool,
     forestgeo/fgeo.x

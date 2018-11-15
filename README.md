@@ -19,8 +19,7 @@ It also includes general-purpose functions to simplify the visualization
 (<a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>) and
 manipulation
 (<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>) of
-ForestGEO datasets (e.g.
-<a href=https://forestgeo.github.io/fgeo.data>fgeo.data</a>).
+ForestGEO datasets (e.g. <a href=https://forestgeo.github.io/></a>).
 
   - [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask
     Questions, report bugs, or propose features.
@@ -29,166 +28,28 @@ ForestGEO datasets (e.g.
     or help
     file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
-## Installation
-
-### Before you install **fgeo**
+## Before you install **fgeo**
 
 Before you install **fgeo**, you may try it at
 <https://bit.ly/fgeo-demo> (you will need to create a free rstudio.cloud
 account).
 
-### Can you skip the detailed installation?
+## Install from GitHub (if you did it before)
 
-Skip this section if you understand this code and it works for you.
-Otherwise, keep reading.
+Read the following sections if this is unclear or fails.
 
 ``` r
 # install.packages(devtools)
 devtools::install_github("forestgeo/fgeo")
 ```
 
-### Detailed installation
+## Install from source code
 
-**fgeo** will fail to install unless you have the right R environment.
-These next steps will ensure you have everything you need. Feel free to
-[ask me for
-    help](https://github.com/forestgeo/fgeo/issues/new).
+If you struggle to install **fgeo** from GitHub, you may [install it
+from its source
+code](https://github.com/forestgeo/fgeo-build#install-fgeo).
 
-#### 1\. Update R, RStudio, and R packages
-
-  - [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
-  - [Why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
-
-#### 2\. Instruct RStudio not to preserve your workspace between sessions
-
-  - [Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
-
-In RStudio go to:
-
-*Tools \> Global
-    Options…*
-
-<img src="https://i.imgur.com/QqPyHJu.png" align="center" height=450/>
-
-#### 3\. Create a New RStudio project (or use the package here)
-
-  - [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
-
-<img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height=350/>
-
-#### 4\. Close any other R session
-
-#### 5\. Install the tidyverse
-
-In R, run:
-
-``` r
-install.packages("tidyverse")
-```
-
-(This will get you most of the packages on which **fgeo** depends. Those
-dependencies would be installed by **fgeo** anyway but doing it now
-helps separate potential issues installing **fgeo** itself from issues
-installing its dependencies.)
-
-#### 6\. Restart R
-
-Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
-Restart R*.
-
-#### 7\. Install the package **devtools**
-
-In R, run:
-
-``` r
-install.packages("devtools")
-```
-
-#### 8\. Restart R again
-
-Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
-Restart R*.
-
-#### 9\. Restart R again
-
-Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
-Restart R*.
-
-#### 10\. Create an account on <https://github.com/>
-
-#### 11\. Generate a GitHub token named exactly `GITHUB_PAT`
-
-In R, run:
-
-``` r
-usethis::browse_github_pat()
-```
-
-  - You will be sent to GitHub and you should see something like this:
-
-<img src="https://i.imgur.com/huJ6l7n.png" align="center" height=300/>
-
-…
-
-  - Make sure your token description says exactly `GITHUB_PAT` and click
-    *Generate
-token*
-
-…
-
-<img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
-
-#### 12\. Store your new token in the envitonmental variable `GITHUB_PAT`
-
-In R, run:
-
-``` r
-usethis::edit_r_environ()
-```
-
-  - A file called .Renviron will open. Type the name and value of your
-    GitHub token. **Ensure to end this file with a new empty line**.
-    Your .Renviron file should now look like this:
-
-<img src="https://i.imgur.com/QSEuzbF.png" align="center" height=100/>
-
-…
-
-  - Save and close .Renviron.
-
-#### 13\. Restart R again
-
-Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
-Restart R*.
-
-#### 14\. Install from GitHub the package **fgeo**
-
-In R, run this:
-
-    devtools::install_github("forestgeo/fgeo")
-
-#### Troubleshooting: Mac users may need XQuartz
-
-If you are a mac user, **fgeo** may fail to install with the error
-below. Install XQuartz from <https://www.xquartz.org/> and try to
-install **fgeo** again.
-
-``` r
-Error : .onLoad failed in loadNamespace() for 'tcltk', details:
-  call: fun(libname, pkgname)
-  error: X11 library is missing: install XQuartz from xquartz.macosforge.org
-```
-
-#### Troubleshooting: Maybe install package development utilities
-
-This is optional but sometimes you may want to install the *source*
-version of R packages from CRAN or GitHub. If that package contains a
-`src/` folder you will need to install package development
-    utilities.
-
-  - [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
-
------
+## Install from GitHub (troubleshootig)
 
 For more details on how to install packages from GitHub, see [this
 article](https://goo.gl/dQKEeg).
@@ -201,10 +62,10 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
-#> v fgeo.data       0.0.0.9005     v fgeo.tool       0.0.0.9004
-#> v fgeo.demography 0.0.0.9103
+#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9002 --
+#> v fgeo.abundance  0.0.0.9006     v fgeo.tool       0.0.0.9004
+#> v fgeo.demography 0.0.0.9103     v fgeo.x          0.0.0.9000
+#> v fgeo.map        0.0.0.9402
 #> 
 ```
 
@@ -227,7 +88,7 @@ fgeo_help("datasets")
 
 ``` r
 # Short name
-stem6 <- luquillo_stem6_random
+stem6 <- download_data("luquillo_stem6_random")
 stem6
 #> # A tibble: 1,320 x 19
 #>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
@@ -252,14 +113,23 @@ Determine the status of each tree based on the status of each stem.
 ``` r
 stem6 <- add_status_tree(stem6, status_a = "A", status_d = "D")
 alive_trees <- subset(stem6, status_tree == "A")
-
-# Note that alive trees may have some missing, gone or dead stems
-some_cols <- c( "treeID", "status_tree", "stemID", "status")
-example_tree <- 46
-subset(alive_trees, treeID == example_tree, some_cols)
-#> # A tibble: 0 x 4
-#> # ... with 4 variables: treeID <int>, status_tree <chr>, stemID <int>,
-#> #   status <chr>
+alive_trees
+#> # A tibble: 1,182 x 20
+#>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#>  1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
+#>  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
+#>  3    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA
+#>  4    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA
+#>  5    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6
+#>  6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
+#>  7    602    736 1006~ 100649  GUAG~ 821     149.   414.    614253        6
+#>  8    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6
+#>  9    647    793 1007~ 100708  SCHM~ 821     143.   411.    614211        6
+#> 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.    603131        6
+#> # ... with 1,172 more rows, and 10 more variables: dbh <dbl>, pom <chr>,
+#> #   hom <dbl>, ExactDate <date>, DFstatus <chr>, codes <chr>,
+#> #   countPOM <dbl>, status <chr>, date <dbl>, status_tree <chr>
 ```
 
 Pick stems of 10 mm or more.

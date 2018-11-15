@@ -167,12 +167,16 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>fgeo_dependencies</span>(<span class='kw'>include_self</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>section</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Imports"</span>,
-  <span class='st'>"Suggests"</span>))</pre>
+    <pre class="usage"><span class='fu'>fgeo_dependencies</span>(<span class='kw'>matches</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>include_self</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>section</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Imports"</span>, <span class='st'>"Suggests"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>matches</th>
+      <td><p>String to <code>grep()</code> the output.</p></td>
+    </tr>
     <tr>
       <th>include_self</th>
       <td><p>Include fgeo in the list?</p></td>
