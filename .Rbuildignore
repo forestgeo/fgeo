@@ -1,3 +1,4 @@
+^vignettes$
 ^buildignore-utils\.R$
 ^inst/buildignore$
 ^tmp\.sh$
@@ -15,4 +16,4 @@
 ^codecov\.yml$
 ^tmp\.R$
 ^\.github$
-^vignettes/siteonly/eda\.Rmd$
+
