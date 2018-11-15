@@ -51,6 +51,12 @@ code](https://github.com/forestgeo/fgeo-build#install-fgeo).
 
 ## Install from GitHub (troubleshootig)
 
+Read
+[this](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github)
+if you need to trouble sheet the installation from GitHub.
+
+–
+
 For more details on how to install packages from GitHub, see [this
 article](https://goo.gl/dQKEeg).
 

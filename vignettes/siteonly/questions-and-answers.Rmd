@@ -23,7 +23,7 @@ __fgeo__ is an umbrella: It is a meta-package that gathers multiple modules of F
 
 See [Search Packages] and follow the links to online documentation.
 
-## How Can I install fgeo if the main installation instructions fail?
+## How can I troubleshoot the installation from GitHub?
 
 ### Install from Github (troubleshooting)
 
