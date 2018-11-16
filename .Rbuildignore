@@ -1,8 +1,4 @@
-^vignettes$
-^buildignore-utils\.R$
-^inst/buildignore$
-^tmp\.sh$
-^ship\.sh$
+^\.buildignore$
 ^appveyor\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
@@ -14,6 +10,5 @@
 ^LICENSE\.md$
 ^pkgdown$
 ^codecov\.yml$
-^tmp\.R$
 ^\.github$
-
+^vignettes$

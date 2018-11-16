@@ -24,9 +24,10 @@ fgeo_build <- function(binary = FALSE) {
     binary = binary
   )
 
-  rename_output(pkg, path, subdir)
+  # rename_output(pkg, path, subdir)
 }
 
+# FIXME: Assigns the wrong names
 rename_output <- function(pkg, path, subdir) {
   old_nms <- fs::dir_ls(glue::glue("../fgeo-build/{subdir}"))
   new_nms <- old_nms %>%
