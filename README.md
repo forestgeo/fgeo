@@ -45,15 +45,11 @@ account).
 devtools::install_github("forestgeo/fgeo")
 ```
 
-  - Try [installing fgeo from its source
-    code](https://github.com/forestgeo/fgeo-build#install-fgeo) if you
-    exceeded GitHub’s rate-limit (to increase your rate-limit follow the
-    link in the next point).
+  - Try the helper package
+    [**fgeo.install**](https://github.com/forestgeo/fgeo.install#fgeoinstall).
 
-  - Read the [detailed
-    instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github)
-    if you need more help. For more details on how to install packages
-    from GitHub, see [this article](https://goo.gl/dQKEeg).
+  - Try more [detailed
+    instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
 
 You can remove **fgeo** with `remove.packages("fgeo")`.
 
@@ -63,7 +59,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages --------------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.tool       0.0.0.9004
 #> v fgeo.demography 0.0.0.9103     v fgeo.x          0.0.0.9000
 #> v fgeo.map        0.0.0.9402
