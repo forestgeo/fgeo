@@ -30,28 +30,39 @@ ForestGEO datasets (e.g.
     or help
     file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
-## Before you install **fgeo**
+## Installation
 
 Before you install **fgeo**, you may try it at
 <https://bit.ly/fgeo-demo> (you will need to create a free rstudio.cloud
 account).
 
-## Installation
+1.  Ensure you have a recent version of R.
 
-  - Try this if you have installed packages from GitHub before.
+2.  Ensure you have updated packages (see `?update.packages()`).
+
+3.  Install **devtools**.
 
 <!-- end list -->
 
 ``` r
-# install.packages(devtools)
+install.packages("devtools")
+```
+
+4.a. Install **fgeo** directly from GitHub with:
+
+``` r
 devtools::install_github("forestgeo/fgeo")
 ```
 
-  - Try the helper package
-    [**fgeo.install**](https://github.com/forestgeo/fgeo.install#fgeoinstall).
+4.b. Or install **fgeo** with some help:
 
-  - Try more [detailed
-    instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
+``` r
+devtools::install_github("forestgeo/fgeo.install")
+fgeo.install::install_fgeo()
+```
+
+If you need more help, try these [detailed
+instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
 
 You can remove **fgeo** with `remove.packages("fgeo")`.
 

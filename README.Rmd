@@ -37,22 +37,35 @@ __fgeo__ installs and loads multiple R packages, functions, and datasets to anal
 
 * [Quick search -- click here to search by package, function, dataset, or help file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
-## Before you install __fgeo__
+## Installation
 
 Before you install __fgeo__, you may try it at https://bit.ly/fgeo-demo (you will need to create a free rstudio.cloud account).
 
-## Installation
+1. Ensure you have a recent version of R.
 
-* Try this if you have installed packages from GitHub before.
+2. Ensure you have updated packages (see `?update.packages()`).
+
+3. Install __devtools__.
+
+``` r
+install.packages("devtools")
+```
+
+4.a. Install __fgeo__ directly from GitHub with:
 
 ```R
-# install.packages(devtools)
 devtools::install_github("forestgeo/fgeo")
 ```
 
-* Try the helper package [__fgeo.install__](https://github.com/forestgeo/fgeo.install#fgeoinstall).
+4.b. Or install __fgeo__ with some help:
 
-* Try more [detailed instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
+
+```R
+devtools::install_github("forestgeo/fgeo.install")
+fgeo.install::install_fgeo()
+```
+
+If you need more help, try these [detailed instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
 
 You can remove __fgeo__ with `remove.packages("fgeo")`.
 
