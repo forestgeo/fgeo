@@ -195,8 +195,6 @@ update.packages()
 
 * Restart R (go to _Session &gt; Restart R_).
 
----
-
 </p></details><ol>
 <li>Install <strong>devtools</strong>.</li>
 </ol>
@@ -222,7 +220,9 @@ update.packages()
 
 * [Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
 
-In RStudio go to _Tools &gt; Global Options..._
+In RStudio go to:
+
+_Tools &gt; Global Options..._
 
 <img src="https://i.imgur.com/QqPyHJu.png" align="center" height="450/">
 
@@ -239,31 +239,43 @@ Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session &gt; Restart R
 
 #### Increase the rate limit to install from GitHub
 
-* Ensure you have an account on GitHub (https://github.com/).
+1. Ensure you have an account on GitHub (https://github.com/).
 
-* Generate a GitHub token named exactly `GITHUB_PAT` by running `usethis::browse_github_pat()` in R.
+2. Generate a GitHub token named exactly `GITHUB_PAT`
 
-* You will be sent to GitHub and you should see something like this:
+In R, run:
+
+```R
+usethis::browse_github_pat()
+```
+
+You will be sent to GitHub and you should see something like this:
 
 <img src="https://i.imgur.com/huJ6l7n.png" align="center" height="300/">
 
 ...
 
-* Make sure your token description says exactly `GITHUB_PAT` and click _Generate token_
+Make sure your token description says exactly `GITHUB_PAT` and click _Generate token_
 
 ...
 
 <img src="https://i.imgur.com/iXWITVV.png" align="center" height="100/">
 
-* Store your new token in the environmental variable `GITHUB_PAT` by running `usethis::edit_r_environ()` in R.
+3. Store your new token in the environmental variable `GITHUB_PAT`
 
-* A file called .Renviron will open. Type the name and value of your GitHub token. __Ensure to end this file with a new empty line__. Your .Renviron file should now look like this:
+In R, run:
+
+```R
+usethis::edit_r_environ()
+```
+
+A file called .Renviron will open. Type the name and value of your GitHub token. __Ensure to end this file with a new empty line__. Your .Renviron file should now look like this:
 
 <img src="https://i.imgur.com/QSEuzbF.png" align="center" height="100/">
 
 ...
 
-* Save and close  .Renviron.
+Save and close  .Renviron.
 
 #### Install package development utilities
 
@@ -281,8 +293,6 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
   error: X11 library is missing: install XQuartz from xquartz.macosforge.org
 ```
 
----
-
 </p></details>
 </div>
 <div id="example" class="section level2">
@@ -290,7 +300,7 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------ fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402</span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000</span></a>

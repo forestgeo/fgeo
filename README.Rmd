@@ -35,39 +35,136 @@ __fgeo__ installs and loads multiple R packages, functions, and datasets to anal
 
 * [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask Questions, report bugs, or propose features.
 
-* [Quick search -- click here to search by package, function, dataset, or help file.](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
+* [Quick search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html) -- click here to search by package, function, dataset, or help file.
+
+* [Try __fgeo__ before you install it](https://bit.ly/fgeo-demo).
 
 ## Installation
 
-Before you install __fgeo__, you may try it at https://bit.ly/fgeo-demo (you will need to create a free rstudio.cloud account).
+<details> <summary><strong>Tidy your R environment</strong></summary> <p>
 
-1. Ensure you have a recent version of R.
+* Ensure you have a recent version of R.
 
-2. Ensure you have updated packages (see `?update.packages()`).
+```{r}
+R.version.string
+```
 
-3. Install __devtools__.
+* Ensure you have updated packages.
+
+```R
+update.packages()
+```
+
+* Close all other R sessions.
+
+* Restart R (go to _Session > Restart R_).
+
+---
+
+</p></details>
+
+
+
+1. Install __devtools__.
 
 ``` r
 install.packages("devtools")
 ```
 
-4.a. Install __fgeo__ directly from GitHub with:
+2. Install __fgeo__ 
+
+Option 1: Install from GitHub:
 
 ```R
 devtools::install_github("forestgeo/fgeo")
 ```
 
-4.b. Or install __fgeo__ with some help:
-
+Option 2: Install via __fgeo.install__:
 
 ```R
 devtools::install_github("forestgeo/fgeo.install")
 fgeo.install::install_fgeo()
 ```
 
-If you need more help, try these [detailed instructions](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-can-i-troubleshoot-the-installation-from-github).
+You can remove __fgeo__ and all other packages with `remove.packages("fgeo")`, `remove.packages("fgeo.abundance")`, and so on.
 
-You can remove __fgeo__ with `remove.packages("fgeo")`.
+
+
+<details> <summary><strong>Avoid or fix common installation problems</strong></summary> <p>
+
+#### Update R, RStudio, and R packages
+
+* [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
+* [Why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
+
+#### Instruct RStudio not to preserve your workspace between sessions
+
+* [Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
+
+In RStudio go to _Tools > Global Options..._
+
+<img src="https://i.imgur.com/QqPyHJu.png" align="center" height=450/>
+
+#### Use RStudio projects (or the [__here__](https://here.r-lib.org/) package)
+
+* [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
+
+<img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height=350/>
+
+#### Restart R many times each day
+
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
+
+
+#### Increase the rate limit to install from GitHub
+
+* Ensure you have an account on GitHub (https://github.com/).
+
+* Generate a GitHub token named exactly `GITHUB_PAT` by running `usethis::browse_github_pat()` in R.
+
+* You will be sent to GitHub and you should see something like this:
+
+<img src="https://i.imgur.com/huJ6l7n.png" align="center" height=300/>
+
+...
+
+* Make sure your token description says exactly `GITHUB_PAT` and click _Generate token_
+
+...
+
+<img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
+
+* Store your new token in the environmental variable `GITHUB_PAT` by running `usethis::edit_r_environ()` in R.
+
+* A file called .Renviron will open. Type the name and value of your GitHub token. __Ensure to end this file with a new empty line__. Your .Renviron file should now look like this:
+
+<img src="https://i.imgur.com/QSEuzbF.png" align="center" height=100/>
+
+...
+
+* Save and close  .Renviron.
+
+#### Install package development utilities
+
+Sometimes you may want to install the _source_ version of R packages from CRAN or GitHub. If that package contains a `src/` folder you will need to install package development utilities.
+
+* [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
+
+#### Troubleshoot: error: X11 library is missing: install XQuartz ...
+
+If you are a mac user, __fgeo__ may fail to install with the error below. Install XQuartz from https://www.xquartz.org/ and try to install __fgeo__ again.
+
+```R
+Error : .onLoad failed in loadNamespace() for 'tcltk', details:
+  call: fun(libname, pkgname)
+  error: X11 library is missing: install XQuartz from xquartz.macosforge.org
+```
+
+---
+
+</p></details>
+
+
 
 ## Example
 
