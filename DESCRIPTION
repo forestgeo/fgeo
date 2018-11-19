@@ -95,8 +95,8 @@ Imports:
     fgeo.base,
     fgeo.ctfs,
     fgeo.tool,
-    fgeo.abundance,
     fgeo.map,
+    fgeo.abundance,
     fgeo.demography,
     fgeo.habitat
 Suggests: 
