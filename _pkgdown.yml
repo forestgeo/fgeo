@@ -42,19 +42,19 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Get started"
-      href: articles/fgeo.html
+      href: articles/siteonly/fgeo.html
     - text: "Tutorials"
       menu:
-      - text: Visualization basics
+      - text: "Visualization basics"
         href: https://fgeocomm.shinyapps.io/basics-vis/
-      - text: Programming basics
+      - text: "Programming basics"
         href: https://fgeocomm.shinyapps.io/basics-programming/
-      - text: Tibbles
+      - text: "Tibbles"
         href: https://fgeocomm.shinyapps.io/transform-tibbles/
-      - text: Isolating data with dplyr
+      - text: "Isolating data with dplyr"
         href: https://fgeocomm.shinyapps.io/transform-isolating/
 
-      - text: Exploratory data analysis
+      - text: "Exploratory data analysis"
         href: articles/siteonly/eda.html
 
     - text: "Reference"
