@@ -29,9 +29,9 @@ ForestGEO datasets (e.g.
   - [Try **fgeo** before you install
 it](https://bit.ly/fgeo-demo).
 
-### [Quick Search (funtions, packages, datasets)](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
+### [Quick Search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
-![](https://i.imgur.com/aMr0S5e.gif)
+![](https://i.imgur.com/tSqisFN.gif)
 
 ## Installation
 
