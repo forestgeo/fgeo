@@ -35,9 +35,11 @@ __fgeo__ installs and loads multiple R packages, functions, and datasets to anal
 
 * [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask Questions, report bugs, or propose features.
 
-* [Quick search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html) -- click here to search by package, function, dataset, or help file.
-
 * [Try __fgeo__ before you install it](https://bit.ly/fgeo-demo).
+
+### [Quick Search (funtions, packages, datasets)](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
+
+![](https://i.imgur.com/aMr0S5e.gif)
 
 ## Installation
 

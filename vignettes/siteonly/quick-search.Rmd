@@ -43,6 +43,15 @@ fgeo_link <- function(x) {
 }
 ```
 
+## Search Anything
+
+```{r}
+fgeo_docs( , package, topic, alias, title) %>%
+  fgeo_link() %>% 
+  DT::datatable(escape = FALSE)
+```
+
+
 ## Search Packages
 
 ```{r}
@@ -53,14 +62,6 @@ fgeo:::fgeo_packages() %>%
     )
   ) %>% 
   knitr::kable(escape = FALSE)
-```
-
-## Search Anything
-
-```{r}
-fgeo_docs( , package, topic, alias, title) %>%
-  fgeo_link() %>% 
-  DT::datatable(escape = FALSE)
 ```
 
 ## Search Datasets

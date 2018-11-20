@@ -26,11 +26,12 @@ ForestGEO datasets (e.g.
   - [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask
     Questions, report bugs, or propose features.
 
-  - [Quick
-    search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
-    – click here to search by package, function, dataset, or help file.
+  - [Try **fgeo** before you install
+it](https://bit.ly/fgeo-demo).
 
-  - [Try **fgeo** before you install it](https://bit.ly/fgeo-demo).
+### [Quick Search (funtions, packages, datasets)](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
+
+![](https://i.imgur.com/aMr0S5e.gif)
 
 ## Installation
 
@@ -192,7 +193,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages -------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000
