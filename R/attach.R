@@ -1,22 +1,3 @@
-#' Core packages of __fgeo__.
-#'
-#' @family functions for developers
-#'
-#' @return A string.
-#'
-#' @keywords internal
-#' @export
-fgeo_core <- function() {
-  c(
-    "fgeo.abundance",
-    "fgeo.demography",
-    "fgeo.habitat",
-    "fgeo.map",
-    "fgeo.tool",
-    "fgeo.x"
-  )
-}
-
 core_loaded <- function() {
   search <- paste0("package:", fgeo_core())
   fgeo_core()[search %in% search()]

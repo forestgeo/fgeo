@@ -36,8 +36,8 @@ fgeo_docs("predicate", concept, topic, title)
 fgeo_docs("abundance", -package)
 }
 \seealso{
-Other functions for developers: \code{\link{fgeo_core}},
-  \code{\link{fgeo_dependencies}}
+Other functions for developers: \code{\link{fgeo_dependencies}},
+  \code{\link{fgeo}}
 }
 \concept{functions for developers}
 \keyword{internal}
