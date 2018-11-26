@@ -39,3 +39,4 @@ fgeo_index <- function(.f, nm, ...) {
   nm_var <- fgeo_index[[nm]]
   dplyr::arrange(fgeo_index, .data$package, nm_var)
 }
+

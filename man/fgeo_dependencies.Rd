@@ -22,7 +22,7 @@ List package dependencies (imports and suggests) of \strong{fgeo}.
 }
 \seealso{
 Other functions for developers: \code{\link{fgeo_docs}},
-  \code{\link{fgeo}}
+  \code{\link{fgeo_pkgs}}
 }
 \concept{functions for developers}
 \keyword{internal}

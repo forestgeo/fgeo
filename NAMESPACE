@@ -2,12 +2,11 @@
 
 S3method(print,fgeo_conflicts)
 export("%>%")
-export(fgeo)
 export(fgeo_core)
 export(fgeo_dependencies)
 export(fgeo_docs)
 export(fgeo_help)
 export(fgeo_help_addin)
+export(fgeo_pkgs)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)
-importFrom(utils,ls.str)
