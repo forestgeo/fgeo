@@ -10,9 +10,9 @@ fgeo_link <- function(pkg, fun = NULL) {
   if (!is.null(fun)) {
     ending <- paste0("/reference/", ">", fun)
   }
-  paste0("<a href=", fgeosite_pkg(pkg), ending, "</a>")
+  paste0("<a href=", forestgeo_url(pkg), ending, "</a>")
 }
 
-fgeosite_pkg <- function(pkg) {
+forestgeo_url <- function(pkg) {
   paste0("https://forestgeo.github.io/", pkg)
 }

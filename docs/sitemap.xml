@@ -7,9 +7,6 @@
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo-package.html</loc>
   </url>
   <url>
-    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_core.html</loc>
-  </url>
-  <url>
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo_dependencies.html</loc>
   </url>
   <url>
@@ -20,6 +17,9 @@
   </url>
   <url>
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo_link.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/fgeo_pkgs.html</loc>
   </url>
   <url>
     <loc>https://forestgeo.github.io/fgeo//reference/pipe.html</loc>

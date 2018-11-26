@@ -7,19 +7,10 @@
 #'
 #' @keywords internal
 #' @noRd
-fgeo_packages <- function() {
+table_core <- function() {
   fgeo_index(.f = utils::packageDescription, nm = "Title", fields = "Title")
 }
 
-#' Create a table of some component of __fgeo__'s documentation.
-#'
-#' @param .f A function to map to each core-package of fgeo.
-#' @param nm A name for the column storing the results of `.f`.
-#' @param keep_reexported Logical; `TRUE` includes reexported functions.
-#' @param ... Additional arguments passed to `.f`.
-#'
-#' @keywords internal
-#' @noRd
 fgeo_index <- function(.f, nm, ...) {
   fgeo_pkg <- c("fgeo", fgeo_core())
   fgeo_index <- fgeo_pkg %>%
@@ -39,4 +30,3 @@ fgeo_index <- function(.f, nm, ...) {
   nm_var <- fgeo_index[[nm]]
   dplyr::arrange(fgeo_index, .data$package, nm_var)
 }
-
