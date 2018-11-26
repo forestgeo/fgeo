@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>List package dependencies (imports and suggests) of <strong>fgeo</strong>. — fgeo_dependencies • fgeo</title>
+<title>All and core <strong>fgeo</strong> packages. — fgeo_pkgs • fgeo</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="List package dependencies (imports and suggests) of <strong>fgeo</strong>. — fgeo_dependencies" />
+<meta property="og:title" content="All and core <strong>fgeo</strong> packages. — fgeo_pkgs" />
 
-<meta property="og:description" content="List package dependencies (imports and suggests) of fgeo." />
+<meta property="og:description" content="All and core fgeo packages." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -156,57 +156,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>List package dependencies (imports and suggests) of <strong>fgeo</strong>.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/forestgeo/fgeo/blob/master/R/fgeo_dependencies.R'><code>R/fgeo_dependencies.R</code></a></small>
-    <div class="hidden name"><code>fgeo_dependencies.Rd</code></div>
+    <h1>All and core <strong>fgeo</strong> packages.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/forestgeo/fgeo/blob/master/R/fgeo_pkgs.R'><code>R/fgeo_pkgs.R</code></a></small>
+    <div class="hidden name"><code>fgeo_pkgs.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>List package dependencies (imports and suggests) of <strong>fgeo</strong>.</p>
+    <p>All and core <strong>fgeo</strong> packages.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>fgeo_dependencies</span>(<span class='kw'>matches</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>include_self</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>section</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Imports"</span>, <span class='st'>"Suggests"</span>))</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>matches</th>
-      <td><p>String to <code><a href='https://www.rdocumentation.org/packages/base/topics/grep'>grep()</a></code> the output.</p></td>
-    </tr>
-    <tr>
-      <th>include_self</th>
-      <td><p>Include fgeo in the list?</p></td>
-    </tr>
-    <tr>
-      <th>section</th>
-      <td><p>Either "Imports" or "Suggests".</p></td>
-    </tr>
-    </table>
-    
+    <pre class="usage"><span class='fu'>fgeo_pkgs</span>(<span class='kw'>include_self</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>fgeo_core</span>()</pre>
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A string.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other functions for developers: <code><a href='fgeo_docs.html'>fgeo_docs</a></code>,
-  <code><a href='fgeo_pkgs.html'>fgeo_pkgs</a></code></p></div>
+    <div class='dont-index'><p>Other functions for developers: <code><a href='fgeo_dependencies.html'>fgeo_dependencies</a></code>,
+  <code><a href='fgeo_docs.html'>fgeo_docs</a></code></p></div>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>fgeo_pkgs</span>()</div><div class='output co'>#&gt; [1] "fgeo.x"          "fgeo.base"       "fgeo.ctfs"       "fgeo.tool"      
+#&gt; [5] "fgeo.map"        "fgeo.abundance"  "fgeo.demography" "fgeo.habitat"   
+#&gt; [9] "fgeo"           </div><div class='input'><span class='fu'>fgeo_pkgs</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] "fgeo.x"          "fgeo.base"       "fgeo.ctfs"       "fgeo.tool"      
+#&gt; [5] "fgeo.map"        "fgeo.abundance"  "fgeo.demography" "fgeo.habitat"   </div><div class='input'><span class='fu'>fgeo_core</span>()</div><div class='output co'>#&gt; [1] "fgeo.abundance"  "fgeo.demography" "fgeo.habitat"    "fgeo.map"       
+#&gt; [5] "fgeo.tool"       "fgeo.x"         </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

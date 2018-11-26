@@ -54,7 +54,7 @@ fgeo_core()
 ## What are the core packages for?
 
 ```{r, echo=FALSE}
-fgeo:::fgeo_packages()
+fgeo:::table_core()
 ```
 
 ## How can I learn more?

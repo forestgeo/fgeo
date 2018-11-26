@@ -1,3 +1,40 @@
+#' All and core __fgeo__ packages.
+#'
+#' @family functions for developers
+#'
+#' @return A string.
+#'
+#' @keywords internal
+#' @export
+#' @examples
+#' fgeo_pkgs()
+#' fgeo_pkgs(FALSE)
+#' fgeo_core()
+fgeo_pkgs <- function(include_self = TRUE) {
+  fgeo <- fgeo_dependencies(
+    matches = "fgeo", include_self = TRUE, section = "Imports"
+  )
+
+  if (include_self) {
+    return(fgeo)
+  }
+
+  grep("^fgeo$", fgeo, invert = TRUE, value = TRUE)
+}
+
+#' @rdname fgeo_pkgs
+#' @export
+fgeo_core <- function() {
+  c(
+    "fgeo.abundance",
+    "fgeo.demography",
+    "fgeo.habitat",
+    "fgeo.map",
+    "fgeo.tool",
+    "fgeo.x"
+  )
+}
+
 #' Create a table of __fgeo__'s package-names and titles.
 #'
 #' @section Acknowledgments:
@@ -7,19 +44,10 @@
 #'
 #' @keywords internal
 #' @noRd
-fgeo_packages <- function() {
+table_core <- function() {
   fgeo_index(.f = utils::packageDescription, nm = "Title", fields = "Title")
 }
 
-#' Create a table of some component of __fgeo__'s documentation.
-#'
-#' @param .f A function to map to each core-package of fgeo.
-#' @param nm A name for the column storing the results of `.f`.
-#' @param keep_reexported Logical; `TRUE` includes reexported functions.
-#' @param ... Additional arguments passed to `.f`.
-#'
-#' @keywords internal
-#' @noRd
 fgeo_index <- function(.f, nm, ...) {
   fgeo_pkg <- c("fgeo", fgeo_core())
   fgeo_index <- fgeo_pkg %>%

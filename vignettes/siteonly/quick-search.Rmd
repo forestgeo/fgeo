@@ -51,11 +51,10 @@ fgeo_docs( , package, topic, alias, title) %>%
   DT::datatable(escape = FALSE)
 ```
 
-
 ## Search Packages
 
 ```{r}
-fgeo:::fgeo_packages() %>% 
+fgeo:::table_core() %>% 
   rename(title = Title) %>% 
   mutate(package = glue::glue(
       "<a href=https://forestgeo.github.io/{package}>{package}</a>"

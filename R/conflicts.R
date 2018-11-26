@@ -10,7 +10,7 @@ fgeo_conflicts <- function() {
 
   conflicts <- purrr::keep(objs, ~ length(.x) > 1)
 
-  fgeo_names <- paste0("package:", fgeo_packages())
+  fgeo_names <- paste0("package:", table_core())
   conflicts <- purrr::keep(conflicts, ~ any(.x %in% fgeo_names))
 
   conflict_funs <- purrr::imap(conflicts, confirm_conflict)
