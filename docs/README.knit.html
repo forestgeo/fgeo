@@ -186,7 +186,7 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p><strong>Preconditions</strong></p>
+<p><strong>Expected R environment</strong></p>
 <ul>
 <li>R version is recent</li>
 <li>All packages are updated (run <code><a href="https://www.rdocumentation.org/packages/utils/topics/update.packages">update.packages()</a></code>)</li>
@@ -196,14 +196,24 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a></code></pre></div>
 <p><strong>Option 1: Install from GitHub</strong></p>
 <p>You need an <em>authenticated</em> GitHub-account (see <a href="https://usethis.r-lib.org/reference/browse_github_pat.html"><code><a href="https://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">usethis::browse_github_pat()</a></code></a>).</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>, <span class="st">`</span><span class="dt">upgrade = "never")</span></a></code></pre></div>
 <p><strong>Option 2: Install via <a href="https://github.com/forestgeo/fgeo.install#-fgeoinstall"><strong>fgeo.install</strong></a></strong></p>
 <p>You don’t need a GitHub account.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo.install"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">fgeo.install<span class="op">::</span><span class="kw">install_dependencies</span>()</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">fgeo.install<span class="op">::</span><span class="kw">install_fgeo</span>()</a></code></pre></div>
-<details><summary><strong>More tips to avoid or fix common installation problems</strong></summary>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co"># For speed, install fgeo with:</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">fgeo.install<span class="op">::</span><span class="kw">install_from_cache</span>()</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co"># For latest features, install fgeo with:</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">fgeo.install<span class="op">::</span><span class="kw">install_from_github</span>()</a></code></pre></div>
+<hr>
+<ul>
+<li>To upgrade packages see <code>?devtools::update_packages()</code>
+</li>
+<li>To remove packages see <code>?remove.packages()</code>
+</li>
+</ul>
+<details><summary><strong>Tips to avoid or fix common installation problems</strong></summary>
 
 #### Update R, RStudio, and R packages
 
@@ -270,15 +280,14 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
   error: X11 library is missing: install XQuartz from xquartz.macosforge.org
 ```
 
-</details><hr>
-<p>You can remove <strong>fgeo</strong> and all other packages with <code><a href="https://www.rdocumentation.org/packages/utils/topics/remove.packages">remove.packages("fgeo")</a></code>, <code><a href="https://www.rdocumentation.org/packages/utils/topics/remove.packages">remove.packages("fgeo.abundance")</a></code>, and so on.</p>
+</details>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402</span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000</span></a>
