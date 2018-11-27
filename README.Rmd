@@ -48,7 +48,7 @@ __fgeo__ installs and loads multiple R packages, functions, and datasets to anal
 
 ## Installation
 
-__Preconditions__
+__Expected R environment__
 
 * R version is recent
 * All packages are updated (run `update.packages()`)
@@ -64,7 +64,7 @@ __Option 1: Install from GitHub__
 You need an _authenticated_ GitHub-account (see [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
 
 ```R
-devtools::install_github("forestgeo/fgeo")
+devtools::install_github("forestgeo/fgeo", `upgrade = "never")
 ```
 
 __Option 2: Install via [__fgeo.install__](https://github.com/forestgeo/fgeo.install#-fgeoinstall)__
@@ -74,13 +74,21 @@ You don't need a GitHub account.
 ```R
 devtools::install_github("forestgeo/fgeo.install")
 
-fgeo.install::install_dependencies()
-fgeo.install::install_fgeo()
+# For speed, install fgeo with:
+fgeo.install::install_from_cache()
+
+# For latest features, install fgeo with:
+fgeo.install::install_from_github()
 ```
 
+---
+
+* To upgrade packages see `?devtools::update_packages()`
+* To remove packages see `?remove.packages()`
 
 
-<details> <summary><strong>More tips to avoid or fix common installation problems</strong></summary>
+
+<details> <summary><strong>Tips to avoid or fix common installation problems</strong></summary>
 
 #### Update R, RStudio, and R packages
 
@@ -148,12 +156,6 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 ```
 
 </details>
-
-
-
----
-
-You can remove __fgeo__ and all other packages with `remove.packages("fgeo")`, `remove.packages("fgeo.abundance")`, and so on.
 
 
 

@@ -40,7 +40,7 @@ it](https://bit.ly/fgeo-demo).
 
 ## Installation
 
-**Preconditions**
+**Expected R environment**
 
   - R version is recent
   - All packages are updated (run `update.packages()`)
@@ -59,7 +59,7 @@ You need an *authenticated* GitHub-account (see
 [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
 
 ``` r
-devtools::install_github("forestgeo/fgeo")
+devtools::install_github("forestgeo/fgeo", `upgrade = "never")
 ```
 
 **Option 2: Install via
@@ -70,13 +70,21 @@ You don’t need a GitHub account.
 ``` r
 devtools::install_github("forestgeo/fgeo.install")
 
-fgeo.install::install_dependencies()
-fgeo.install::install_fgeo()
+# For speed, install fgeo with:
+fgeo.install::install_from_cache()
+
+# For latest features, install fgeo with:
+fgeo.install::install_from_github()
 ```
+
+-----
+
+  - To upgrade packages see `?devtools::update_packages()`
+  - To remove packages see `?remove.packages()`
 
 <details>
 
-<summary><strong>More tips to avoid or fix common installation
+<summary><strong>Tips to avoid or fix common installation
 problems</strong></summary>
 
 #### Update R, RStudio, and R packages
@@ -157,19 +165,13 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 </details>
 
------
-
-You can remove **fgeo** and all other packages with
-`remove.packages("fgeo")`, `remove.packages("fgeo.abundance")`, and so
-on.
-
 ## Example
 
 Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9002 --
+#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000
