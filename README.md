@@ -45,7 +45,7 @@ it](https://bit.ly/fgeo-demo).
   - R version is recent
   - All packages are updated (run `update.packages()`)
   - No other R session is running
-  - Current R session is clean (click Session \> Restart R)
+  - Current R session is clean (click *Session \> Restart R*)
 
 <!-- end list -->
 
