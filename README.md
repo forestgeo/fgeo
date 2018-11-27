@@ -65,6 +65,14 @@ devtools::install_github("forestgeo/fgeo", `upgrade = "never")
 **Option 2: Install via
 [**fgeo.install**](https://github.com/forestgeo/fgeo.install#-fgeoinstall)**
 
+<details>
+
+<summary><strong> Demo </strong></summary>
+
+![](https://i.imgur.com/JSNJWSH.gif)
+
+</details>
+
 You don’t need a GitHub account.
 
 ``` r
