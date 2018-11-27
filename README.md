@@ -67,9 +67,12 @@ devtools::install_github("forestgeo/fgeo", `upgrade = "never")
 
 <details>
 
-<summary><strong> Demo </strong></summary>
+<summary><strong> Demo
+</strong></summary>
 
-![](https://i.imgur.com/JSNJWSH.gif)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0EFcu14bi30" frameborder="0" allowfullscreen>
+
+</iframe>
 
 </details>
 
