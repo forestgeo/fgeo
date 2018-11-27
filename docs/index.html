@@ -135,49 +135,40 @@
 
 <p><strong>fgeo</strong> installs and loads multiple R packages, functions, and datasets to analyze trees abundance, demography, and habitats (<a href="https://forestgeo.github.io/fgeo.abundance">fgeo.abundance</a>, <a href="https://forestgeo.github.io/fgeo.demography">fgeo.demography</a>, <a href="https://forestgeo.github.io/fgeo.habitat">fgeo.habitat</a>). It also includes general-purpose functions to simplify the visualization (<a href="https://forestgeo.github.io/fgeo.map">fgeo.map</a>) and manipulation (<a href="https://forestgeo.github.io/fgeo.tool">fgeo.tool</a>) of ForestGEO datasets (e.g. <a href="https://forestgeo.github.io/fgeo.x">fgeo.x</a>).</p>
 <ul>
-<li><p><a href="https://github.com/forestgeo/fgeo/issues/new">Contact me</a> to ask Questions, report bugs, or propose features.</p></li>
-<li><p><a href="https://bit.ly/fgeo-demo">Try <strong>fgeo</strong> before you install it</a>.</p></li>
+<li>
+<a href="https://github.com/forestgeo/fgeo/issues/new">Contact me</a> to ask Questions, report bugs, or propose features.</li>
+<li>
+<a href="https://bit.ly/fgeo-demo">Try <strong>fgeo</strong> before you install it</a>.</li>
 </ul>
-<div id="quick-search" class="section level3">
-<h3 class="hasAnchor">
-<a href="#quick-search" class="anchor"></a><a href="https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html">Quick Search</a>
-</h3>
+<div id="quick-search" class="section level2">
+<h2 class="hasAnchor">
+<a href="#quick-search" class="anchor"></a><a href="https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html">Quick search</a>
+</h2>
+<details><p><summary><strong> Demo </strong></summary></p>
 <p><img src="https://i.imgur.com/tSqisFN.gif"></p>
+</details>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<details><summary><strong>Tidy your R environment</strong></summary><p>
-</p>
+<p><strong>Preconditions</strong></p>
 <ul>
-<li>Ensure you have a recent version of R.</li>
+<li>R version is recent</li>
+<li>All packages are updated (run <code><a href="https://www.rdocumentation.org/packages/utils/topics/update.packages">update.packages()</a></code>)</li>
+<li>No other R session is running</li>
+<li>Current R session is clean (click Session &gt; Restart R)</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">R.version.string</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; [1] "R version 3.5.1 (2018-07-02)"</span></a></code></pre></div>
-<ul>
-<li>Ensure you have updated packages.</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/update.packages">update.packages</a></span>()</a></code></pre></div>
-<ul>
-<li><p>Close all other R sessions.</p></li>
-<li><p>Restart R (go to <em>Session &gt; Restart R</em>).</p></li>
-</ul>
-<hr></details><ol style="list-style-type: decimal">
-<li>Install <strong>devtools</strong>.</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a></code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li>Install <strong>fgeo</strong>
-</li>
-</ol>
-<p>Option 1: Install from GitHub:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>)</a></code></pre></div>
-<p>Option 2: Install via <strong>fgeo.install</strong>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo.install"</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">fgeo.install<span class="op">::</span><span class="kw">install_fgeo</span>()</a></code></pre></div>
-<p>You can remove <strong>fgeo</strong> and all other packages with <code><a href="https://www.rdocumentation.org/packages/utils/topics/remove.packages">remove.packages("fgeo")</a></code>, <code><a href="https://www.rdocumentation.org/packages/utils/topics/remove.packages">remove.packages("fgeo.abundance")</a></code>, and so on.</p>
-<details><summary><strong>Avoid or fix common installation problems</strong></summary><p>
-</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a></code></pre></div>
+<p><strong>Option 1: Install from GitHub</strong></p>
+<p>You need an <em>authenticated</em> GitHub-account (see <a href="https://usethis.r-lib.org/reference/browse_github_pat.html"><code><a href="https://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">usethis::browse_github_pat()</a></code></a>).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>)</a></code></pre></div>
+<p><strong>Option 2: Install via <a href="https://github.com/forestgeo/fgeo.install#-fgeoinstall"><strong>fgeo.install</strong></a></strong></p>
+<p>You don’t need a GitHub account.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo.install"</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">fgeo.install<span class="op">::</span><span class="kw">install_dependencies</span>()</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">fgeo.install<span class="op">::</span><span class="kw">install_fgeo</span>()</a></code></pre></div>
+<details><p><summary><strong>More tips to avoid or fix common installation problems</strong></summary></p>
 <div id="update-r-rstudio-and-r-packages" class="section level4">
 <h4 class="hasAnchor">
 <a href="#update-r-rstudio-and-r-packages" class="anchor"></a>Update R, RStudio, and R packages</h4>
@@ -212,9 +203,9 @@
 <h4 class="hasAnchor">
 <a href="#increase-the-rate-limit-to-install-from-github" class="anchor"></a>Increase the rate limit to install from GitHub</h4>
 <ul>
-<li><p>Ensure you have an account on GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>).</p></li>
-<li><p>Generate a GitHub token named exactly <code>GITHUB_PAT</code> by running <code><a href="https://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">usethis::browse_github_pat()</a></code> in R.</p></li>
-<li><p>You will be sent to GitHub and you should see something like this:</p></li>
+<li>Ensure you have an account on GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>).</li>
+<li>Generate a GitHub token named exactly <code>GITHUB_PAT</code> by running <code><a href="https://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">usethis::browse_github_pat()</a></code> in R.</li>
+<li>You will be sent to GitHub and you should see something like this:</li>
 </ul>
 <p><img src="https://i.imgur.com/huJ6l7n.png" align="center" height="300/"></p>
 <p>…</p>
@@ -225,8 +216,8 @@
 <p>…</p>
 <p><img src="https://i.imgur.com/iXWITVV.png" align="center" height="100/"></p>
 <ul>
-<li><p>Store your new token in the environmental variable <code>GITHUB_PAT</code> by running <code><a href="https://www.rdocumentation.org/packages/usethis/topics/edit">usethis::edit_r_environ()</a></code> in R.</p></li>
-<li><p>A file called .Renviron will open. Type the name and value of your GitHub token. <strong>Ensure to end this file with a new empty line</strong>. Your .Renviron file should now look like this:</p></li>
+<li>Store your new token in the environmental variable <code>GITHUB_PAT</code> by running <code><a href="https://www.rdocumentation.org/packages/usethis/topics/edit">usethis::edit_r_environ()</a></code> in R.</li>
+<li>A file called .Renviron will open. Type the name and value of your GitHub token. <strong>Ensure to end this file with a new empty line</strong>. Your .Renviron file should now look like this:</li>
 </ul>
 <p><img src="https://i.imgur.com/QSEuzbF.png" align="center" height="100/"></p>
 <p>…</p>
@@ -237,7 +228,7 @@
 <div id="install-package-development-utilities" class="section level4">
 <h4 class="hasAnchor">
 <a href="#install-package-development-utilities" class="anchor"></a>Install package development utilities</h4>
-<p>Sometimes you may want to install the <em>source</em> version of R packages from CRAN or GitHub. If that package contains a <code>src/</code> folder you will need to install package development utilities.</p>
+<p>Sometimes you may want to install the <em>source</em> version of an R package from CRAN or GitHub. If that package contains a <code>src/</code> folder you will need to install package development utilities.</p>
 <ul>
 <li><a href="https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites">How?</a></li>
 </ul>
@@ -246,10 +237,12 @@
 <h4 class="hasAnchor">
 <a href="#troubleshoot-error-x11-library-is-missing-install-xquartz" class="anchor"></a>Troubleshoot: error: X11 library is missing: install XQuartz …</h4>
 <p>If you are a mac user, <strong>fgeo</strong> may fail to install with the error below. Install XQuartz from <a href="https://www.xquartz.org/" class="uri">https://www.xquartz.org/</a> and try to install <strong>fgeo</strong> again.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">Error <span class="op">:</span><span class="st"> </span>.onLoad failed <span class="cf">in</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ns-load">loadNamespace</a></span>() <span class="cf">for</span> <span class="st">'tcltk'</span>, details<span class="op">:</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span>call<span class="op">:</span><span class="st"> </span><span class="kw">fun</span>(libname, pkgname)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  error<span class="op">:</span><span class="st"> </span>X11 library is missing<span class="op">:</span><span class="st"> </span>install XQuartz from xquartz.macosforge.org</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">Error <span class="op">:</span><span class="st"> </span>.onLoad failed <span class="cf">in</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ns-load">loadNamespace</a></span>() <span class="cf">for</span> <span class="st">'tcltk'</span>, details<span class="op">:</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span>call<span class="op">:</span><span class="st"> </span><span class="kw">fun</span>(libname, pkgname)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  error<span class="op">:</span><span class="st"> </span>X11 library is missing<span class="op">:</span><span class="st"> </span>install XQuartz from xquartz.macosforge.org</a></code></pre></div>
+
 <hr>
+<p>You can remove <strong>fgeo</strong> and all other packages with <code><a href="https://www.rdocumentation.org/packages/utils/topics/remove.packages">remove.packages("fgeo")</a></code>, <code><a href="https://www.rdocumentation.org/packages/utils/topics/remove.packages">remove.packages("fgeo.abundance")</a></code>, and so on.</p>
 </div>
 </details>
 </div>
@@ -257,108 +250,108 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------------- fgeo 0.0.0.9002 --</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">#&gt; </span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; </span></a></code></pre></div>
 <p>Need help? Use <code><a href="reference/fgeo_help.html">fgeo_help()</a></code> to search every help file in the <strong>fgeo</strong> package.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
 <p><img src="https://i.imgur.com/k4wz4Ah.png"></p>
 <p>You can narrow down your search by using a keyword.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"datasets"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"datasets"</span>)</a></code></pre></div>
 <p><img src="https://i.imgur.com/YlgRljc.png"></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Short name</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">stem6 &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_stem6_random"</span>)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">stem6</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt; # A tibble: 1,320 x 19</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt;  1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6</span></a>
-<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt;  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6</span></a>
-<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt;  3    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA</span></a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt;  4    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA</span></a>
-<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt;  5    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6</span></a>
-<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt;  6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6</span></a>
-<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt;  7    602    736 1006~ 100649  GUAG~ 821     149.   414.    614253        6</span></a>
-<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt;  8    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6</span></a>
-<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="co">#&gt;  9    647    793 1007~ 100708  SCHM~ 821     143.   411.    614211        6</span></a>
-<a class="sourceLine" id="cb10-16" data-line-number="16"><span class="co">#&gt; 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.    603131        6</span></a>
-<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="co">#&gt; # ... with 1,310 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb10-18" data-line-number="18"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb10-19" data-line-number="19"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># Short name</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">stem6 &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_stem6_random"</span>)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">stem6</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; # A tibble: 1,320 x 19</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt;  1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt;  3    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt;  4    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt;  5    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt;  6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt;  7    602    736 1006~ 100649  GUAG~ 821     149.   414.    614253        6</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt;  8    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="co">#&gt;  9    647    793 1007~ 100708  SCHM~ 821     143.   411.    614211        6</span></a>
+<a class="sourceLine" id="cb8-16" data-line-number="16"><span class="co">#&gt; 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.    603131        6</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="co">#&gt; # ... with 1,310 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb8-18" data-line-number="18"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb8-19" data-line-number="19"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Determine the status of each tree based on the status of each stem.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">add_status_tree</span>(stem6, <span class="dt">status_a =</span> <span class="st">"A"</span>, <span class="dt">status_d =</span> <span class="st">"D"</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">alive_trees &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/subset">subset</a></span>(stem6, status_tree <span class="op">==</span><span class="st"> "A"</span>)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">alive_trees</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; # A tibble: 1,182 x 20</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt;  1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6</span></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt;  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6</span></a>
-<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt;  3    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA</span></a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;  4    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA</span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt;  5    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6</span></a>
-<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt;  6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6</span></a>
-<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt;  7    602    736 1006~ 100649  GUAG~ 821     149.   414.    614253        6</span></a>
-<a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt;  8    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6</span></a>
-<a class="sourceLine" id="cb11-15" data-line-number="15"><span class="co">#&gt;  9    647    793 1007~ 100708  SCHM~ 821     143.   411.    614211        6</span></a>
-<a class="sourceLine" id="cb11-16" data-line-number="16"><span class="co">#&gt; 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.    603131        6</span></a>
-<a class="sourceLine" id="cb11-17" data-line-number="17"><span class="co">#&gt; # ... with 1,172 more rows, and 10 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb11-18" data-line-number="18"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb11-19" data-line-number="19"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;, status_tree &lt;chr&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">stem6 &lt;-<span class="st"> </span><span class="kw">add_status_tree</span>(stem6, <span class="dt">status_a =</span> <span class="st">"A"</span>, <span class="dt">status_d =</span> <span class="st">"D"</span>)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">alive_trees &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/subset">subset</a></span>(stem6, status_tree <span class="op">==</span><span class="st"> "A"</span>)</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">alive_trees</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; # A tibble: 1,182 x 20</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt;  1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt;  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;  3    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt;  4    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt;  5    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt;  6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt;  7    602    736 1006~ 100649  GUAG~ 821     149.   414.    614253        6</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt;  8    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt;  9    647    793 1007~ 100708  SCHM~ 821     143.   411.    614211        6</span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt; 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.    603131        6</span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; # ... with 1,172 more rows, and 10 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; #   countPOM &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;, status_tree &lt;chr&gt;</span></a></code></pre></div>
 <p>Pick stems of 10 mm or more.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">ten_plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(alive_trees, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/range">range</a></span>(ten_plus<span class="op">$</span>dbh, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; [1]  10.2 992.0</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">ten_plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(alive_trees, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/range">range</a></span>(ten_plus<span class="op">$</span>dbh, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt; [1]  10.2 992.0</span></a></code></pre></div>
 <p>Count distinct values of <code>stemID</code> and <code>treeID</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Drop missing values of `dbh`</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(ten_plus, <span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="kw">abundance</span>(non_missing)</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; main stems?</span></a>
-<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="co">#&gt; 1   840</span></a>
-<a class="sourceLine" id="cb13-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
-<a class="sourceLine" id="cb13-14" data-line-number="14">largest_stem &lt;-<span class="st"> </span>fgeo.tool<span class="op">::</span><span class="kw">pick_main_stem</span>(non_missing)</a>
-<a class="sourceLine" id="cb13-15" data-line-number="15"><span class="kw">abundance</span>(largest_stem)</a>
-<a class="sourceLine" id="cb13-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
-<a class="sourceLine" id="cb13-17" data-line-number="17"><span class="co">#&gt;       n</span></a>
-<a class="sourceLine" id="cb13-18" data-line-number="18"><span class="co">#&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb13-19" data-line-number="19"><span class="co">#&gt; 1   786</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># Drop missing values of `dbh`</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(ten_plus, <span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="kw">abundance</span>(non_missing)</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; main stems?</span></a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt; 1   840</span></a>
+<a class="sourceLine" id="cb11-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
+<a class="sourceLine" id="cb11-14" data-line-number="14">largest_stem &lt;-<span class="st"> </span>fgeo.tool<span class="op">::</span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb11-15" data-line-number="15"><span class="kw">abundance</span>(largest_stem)</a>
+<a class="sourceLine" id="cb11-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb11-17" data-line-number="17"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb11-18" data-line-number="18"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb11-19" data-line-number="19"><span class="co">#&gt; 1   786</span></a></code></pre></div>
 <p>Count largest stems (unique <code>treeID</code>s) by species.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(largest_stem, sp)</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">abundance</span>(by_sp)</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="co">#&gt; # A tibble: 65 x 2</span></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="co">#&gt; # Groups:   sp [65]</span></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">#&gt;    sp         n</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="co">#&gt;  1 ALCFLO     3</span></a>
-<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co">#&gt;  2 ANDINE     2</span></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co">#&gt;  3 ARDGLA     2</span></a>
-<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co">#&gt;  4 ARTALT     1</span></a>
-<a class="sourceLine" id="cb14-11" data-line-number="11"><span class="co">#&gt;  5 BUCTET     7</span></a>
-<a class="sourceLine" id="cb14-12" data-line-number="12"><span class="co">#&gt;  6 BYRSPI    10</span></a>
-<a class="sourceLine" id="cb14-13" data-line-number="13"><span class="co">#&gt;  7 CALCAL     1</span></a>
-<a class="sourceLine" id="cb14-14" data-line-number="14"><span class="co">#&gt;  8 CASARB    66</span></a>
-<a class="sourceLine" id="cb14-15" data-line-number="15"><span class="co">#&gt;  9 CASSYL    26</span></a>
-<a class="sourceLine" id="cb14-16" data-line-number="16"><span class="co">#&gt; 10 CECSCH    29</span></a>
-<a class="sourceLine" id="cb14-17" data-line-number="17"><span class="co">#&gt; # ... with 55 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(largest_stem, sp)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">abundance</span>(by_sp)</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; # A tibble: 65 x 2</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt; # Groups:   sp [65]</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt;    sp         n</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt;  1 ALCFLO     3</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co">#&gt;  2 ANDINE     2</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co">#&gt;  3 ARDGLA     2</span></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="co">#&gt;  4 ARTALT     1</span></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co">#&gt;  5 BUCTET     7</span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12"><span class="co">#&gt;  6 BYRSPI    10</span></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13"><span class="co">#&gt;  7 CALCAL     1</span></a>
+<a class="sourceLine" id="cb12-14" data-line-number="14"><span class="co">#&gt;  8 CASARB    66</span></a>
+<a class="sourceLine" id="cb12-15" data-line-number="15"><span class="co">#&gt;  9 CASSYL    26</span></a>
+<a class="sourceLine" id="cb12-16" data-line-number="16"><span class="co">#&gt; 10 CECSCH    29</span></a>
+<a class="sourceLine" id="cb12-17" data-line-number="17"><span class="co">#&gt; # ... with 55 more rows</span></a></code></pre></div>
 <p><a href="https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started">Get started</a></p>
-<p><a href="http://bit.ly/fgeo-demo">Try <strong>fgeo</strong> on rstudio.cloud</a></p>
 </div>
 <div id="related-projects" class="section level2">
 <h2 class="hasAnchor">
 <a href="#related-projects" class="anchor"></a>Related projects</h2>
 <p>(Not maintained by ForestGEO)</p>
 <ul>
-<li><p><a href="http://ctfs.si.edu/Public/CTFSRPackage/">CTFS-R Package</a>: The original package of CTFS functions. No longer supported by ForestGEO.</p></li>
+<li>
+<a href="http://ctfs.si.edu/Public/CTFSRPackage/">CTFS-R Package</a>: The original package of CTFS functions. No longer supported by ForestGEO.</li>
 <li>
 <a href="https://CRAN.R-project.org/package=BIOMASS"><strong>BIOMASS</strong></a>: An R package to estimate above-ground biomass in tropical forests.
 <ul>
@@ -374,12 +367,12 @@
 <a href="#r-code-from-recent-publications-by-forestgeo-partners" class="anchor"></a>R code from recent publications by ForestGEO partners</h2>
 <p>Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators (PIs). If you wish to publish papers based on these data, you are also required to get permission from the PIs of the corresponding ForestGEO plots.</p>
 <ul>
-<li><p><a href="https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth">Soil drivers of local-scale tree growth in a lowland tropical forest (Zemunik et al., 2018).</a></p></li>
+<li><a href="https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth">Soil drivers of local-scale tree growth in a lowland tropical forest (Zemunik et al., 2018).</a></li>
 <li>
-<p><a href="https://github.com/forestgeo/LaManna_et_al_Science">Plant diversity increases with the strength of negative density dependence at the global scale (LaManna et al., 2018)</a></p>
+<a href="https://github.com/forestgeo/LaManna_et_al_Science">Plant diversity increases with the strength of negative density dependence at the global scale (LaManna et al., 2018)</a>
 <ul>
-<li><p>Response #1: LaManna et al. 2018. Response to Comment on “Plant diversity increases with the strength of negative density dependence at the global scale” Science Vol. 360, Issue 6391, eaar3824. DOI: 10.1126/science.aar3824</p></li>
-<li><p>Response #2: LaManna et al. 2018. Response to Comment on “Plant diversity increases with the strength of negative density dependence at the global scale”. Science Vol. 360, Issue 6391, eaar5245. DOI: 10.1126/science.aar5245</p></li>
+<li>Response #1: LaManna et al. 2018. Response to Comment on “Plant diversity increases with the strength of negative density dependence at the global scale” Science Vol. 360, Issue 6391, eaar3824. DOI: 10.1126/science.aar3824</li>
+<li>Response #2: LaManna et al. 2018. Response to Comment on “Plant diversity increases with the strength of negative density dependence at the global scale”. Science Vol. 360, Issue 6391, eaar5245. DOI: 10.1126/science.aar5245</li>
 </ul>
 </li>
 </ul>

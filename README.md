@@ -25,50 +25,27 @@ ForestGEO datasets (e.g.
 
   - [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask
     Questions, report bugs, or propose features.
-
   - [Try **fgeo** before you install
 it](https://bit.ly/fgeo-demo).
 
-### [Quick Search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
-
-![](https://i.imgur.com/tSqisFN.gif)
-
-## Installation
+## [Quick search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
 <details>
 
-<summary><strong>Tidy your R environment</strong></summary>
+<summary><strong> Demo </strong></summary>
 
-<p>
-
-  - Ensure you have a recent version of R.
-
-<!-- end list -->
-
-``` r
-R.version.string
-#> [1] "R version 3.5.1 (2018-07-02)"
-```
-
-  - Ensure you have updated packages.
-
-<!-- end list -->
-
-``` r
-update.packages()
-```
-
-  - Close all other R sessions.
-
-  - Restart R (go to *Session \> Restart R*).
-
------
-
-</p>
+![](https://i.imgur.com/tSqisFN.gif)
 
 </details>
 
-1.  Install **devtools**.
+## Installation
+
+**Preconditions**
+
+  - R version is recent
+  - All packages are updated (run `update.packages()`)
+  - No other R session is running
+  - Current R session is clean (click Session \> Restart R)
 
 <!-- end list -->
 
@@ -76,31 +53,31 @@ update.packages()
 install.packages("devtools")
 ```
 
-2.  Install **fgeo**
+**Option 1: Install from GitHub**
 
-Option 1: Install from GitHub:
+You need an *authenticated* GitHub-account (see
+[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
 
 ``` r
 devtools::install_github("forestgeo/fgeo")
 ```
 
-Option 2: Install via **fgeo.install**:
+**Option 2: Install via
+[**fgeo.install**](https://github.com/forestgeo/fgeo.install#-fgeoinstall)**
+
+You don’t need a GitHub account.
 
 ``` r
 devtools::install_github("forestgeo/fgeo.install")
+
+fgeo.install::install_dependencies()
 fgeo.install::install_fgeo()
 ```
 
-You can remove **fgeo** and all other packages with
-`remove.packages("fgeo")`, `remove.packages("fgeo.abundance")`, and so
-on.
-
 <details>
 
-<summary><strong>Avoid or fix common installation
+<summary><strong>More tips to avoid or fix common installation
 problems</strong></summary>
-
-<p>
 
 #### Update R, RStudio, and R packages
 
@@ -130,10 +107,8 @@ Restart R*.
 #### Increase the rate limit to install from GitHub
 
   - Ensure you have an account on GitHub (<https://github.com/>).
-
   - Generate a GitHub token named exactly `GITHUB_PAT` by running
     `usethis::browse_github_pat()` in R.
-
   - You will be sent to GitHub and you should see something like this:
 
 <img src="https://i.imgur.com/huJ6l7n.png" align="center" height=300/>
@@ -149,7 +124,6 @@ Restart R*.
 
   - Store your new token in the environmental variable `GITHUB_PAT` by
     running `usethis::edit_r_environ()` in R.
-
   - A file called .Renviron will open. Type the name and value of your
     GitHub token. **Ensure to end this file with a new empty line**.
     Your .Renviron file should now look like this:
@@ -162,7 +136,7 @@ Restart R*.
 
 #### Install package development utilities
 
-Sometimes you may want to install the *source* version of R packages
+Sometimes you may want to install the *source* version of an R package
 from CRAN or GitHub. If that package contains a `src/` folder you will
 need to install package development
     utilities.
@@ -181,11 +155,13 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
   error: X11 library is missing: install XQuartz from xquartz.macosforge.org
 ```
 
+</details>
+
 -----
 
-</p>
-
-</details>
+You can remove **fgeo** and all other packages with
+`remove.packages("fgeo")`, `remove.packages("fgeo.abundance")`, and so
+on.
 
 ## Example
 
@@ -193,7 +169,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ------------------------------------------------ fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000
@@ -320,8 +296,6 @@ abundance(by_sp)
 [Get
 started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
-[Try **fgeo** on rstudio.cloud](http://bit.ly/fgeo-demo)
-
 ## Related projects
 
 (Not maintained by ForestGEO)
@@ -329,11 +303,9 @@ started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
   - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The
     original package of CTFS functions. No longer supported by
     ForestGEO.
-
   - [**BIOMASS**](https://CRAN.R-project.org/package=BIOMASS): An R
     package to estimate above-ground biomass in tropical
         forests.
-    
       - [Description](https://CRAN.R-project.org/package=BIOMASS)
       - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
       - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
@@ -350,16 +322,13 @@ corresponding ForestGEO plots.
   - [Soil drivers of local-scale tree growth in a lowland tropical
     forest (Zemunik et
     al., 2018).](https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth)
-
   - [Plant diversity increases with the strength of negative density
     dependence at the global scale (LaManna et
     al., 2018)](https://github.com/forestgeo/LaManna_et_al_Science)
-    
       - Response \#1: LaManna et al. 2018. Response to Comment on “Plant
         diversity increases with the strength of negative density
         dependence at the global scale” Science Vol. 360, Issue 6391,
         eaar3824. DOI: 10.1126/science.aar3824
-    
       - Response \#2: LaManna et al. 2018. Response to Comment on “Plant
         diversity increases with the strength of negative density
         dependence at the global scale”. Science Vol. 360, Issue 6391,
