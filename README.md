@@ -70,6 +70,14 @@ devtools::install_github("forestgeo/fgeo.install")
 fgeo.install::install_github2()
 ```
 
+<details>
+
+<summary><strong> Demo </strong></summary>
+
+![](https://i.imgur.com/LhUa17A.gif)
+
+</details>
+
 -----
 
   - To upgrade packages see `?devtools::update_packages()`
