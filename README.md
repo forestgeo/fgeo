@@ -47,45 +47,27 @@ it](https://bit.ly/fgeo-demo).
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-<!-- end list -->
-
-``` r
-install.packages("devtools")
-```
-
 **Option 1: Install from GitHub**
 
 You need an *authenticated* GitHub-account (see
 [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
 
 ``` r
-devtools::install_github("forestgeo/fgeo", `upgrade = "never")
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo", upgrade = "never")
 ```
 
 **Option 2: Install via
 [**fgeo.install**](https://github.com/forestgeo/fgeo.install#-fgeoinstall)**
 
-<details>
-
-<summary><strong> Demo
-</strong></summary>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0EFcu14bi30" frameborder="0" allowfullscreen>
-
-</iframe>
-
-</details>
-
 You don’t need a GitHub account.
 
 ``` r
+install.packages("devtools")
 devtools::install_github("forestgeo/fgeo.install")
 
-# For speed, install fgeo with:
-fgeo.install::install_from_cache()
-
-# For latest features, install fgeo with:
-fgeo.install::install_from_github()
+# If needed, installs dependencies from CRAN and fgeo packages from GitHub
+fgeo.install::install_github2()
 ```
 
 -----
@@ -182,29 +164,18 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000
 #> 
 ```
 
-Need help? Use `fgeo_help()` to search every help file in the **fgeo**
-package.
-
 ``` r
-fgeo_help()
+fgeo_help("abundance")
 ```
 
-![](https://i.imgur.com/k4wz4Ah.png)
-
-You can narrow down your search by using a keyword.
-
-``` r
-fgeo_help("datasets")
-```
-
-![](https://i.imgur.com/YlgRljc.png)
+<img src="https://i.imgur.com/s1wkAD4.png" width="550" />
 
 ``` r
 # Short name

@@ -55,36 +55,25 @@ __Expected R environment__
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-``` r
-install.packages("devtools")
-```
-
 __Option 1: Install from GitHub__
 
 You need an _authenticated_ GitHub-account (see [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
 
 ```R
-devtools::install_github("forestgeo/fgeo", `upgrade = "never")
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo", upgrade = "never")
 ```
 
 __Option 2: Install via [__fgeo.install__](https://github.com/forestgeo/fgeo.install#-fgeoinstall)__
 
-<details><summary><strong> Demo </strong></summary>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0EFcu14bi30" frameborder="0" allowfullscreen></iframe>
-
-</details>
-
 You don't need a GitHub account.
 
 ```R
+install.packages("devtools")
 devtools::install_github("forestgeo/fgeo.install")
 
-# For speed, install fgeo with:
-fgeo.install::install_from_cache()
-
-# For latest features, install fgeo with:
-fgeo.install::install_from_github()
+# If needed, installs dependencies from CRAN and fgeo packages from GitHub
+fgeo.install::install_github2()
 ```
 
 ---
@@ -173,21 +162,13 @@ Load all __fgeo__ packages in one step.
 library(fgeo)
 ```
 
-Need help? Use `fgeo_help()` to search every help file in the __fgeo__ package.
-
 ```R
-fgeo_help()
+fgeo_help("abundance")
 ```
 
-![](https://i.imgur.com/k4wz4Ah.png)
-
-You can narrow down your search by using a keyword.
-
-```R
-fgeo_help("datasets")
+```{r, out.width="550", echo=FALSE}
+knitr::include_graphics("https://i.imgur.com/s1wkAD4.png")
 ```
-
-![](https://i.imgur.com/YlgRljc.png)
 
 ```{r}
 # Short name
