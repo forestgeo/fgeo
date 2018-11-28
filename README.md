@@ -23,10 +23,12 @@ manipulation
 ForestGEO datasets (e.g.
 <a href=https://forestgeo.github.io/fgeo.x>fgeo.x</a>).
 
+  - [Related
+    projects](https://forestgeo.github.io/fgeo/#related-projects).
+  - [Try **fgeo** before you install it](https://bit.ly/fgeo-demo).
   - [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask
-    Questions, report bugs, or propose features.
-  - [Try **fgeo** before you install
-it](https://bit.ly/fgeo-demo).
+    Questions, report bugs, or propose
+features.
 
 ## [Quick search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
 
@@ -172,7 +174,7 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
 #> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
 #> v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000
@@ -290,17 +292,21 @@ started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 ## Related projects
 
-(Not maintained by ForestGEO)
+Additional packages maintained by ForestGEO but not included in
+**fgeo**:
+
+  - [**fgeo.data**](https://forestgeo.github.io/fgeo.data/): Open
+    datasets of ForestGEO.
+  - [**fgeo.krig**](https://forestgeo.github.io/fgeo.krig/): Analyze
+    soils.
+
+Other packages not maintained by ForestGEO:
 
   - [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The
     original package of CTFS functions. No longer supported by
     ForestGEO.
   - [**BIOMASS**](https://CRAN.R-project.org/package=BIOMASS): An R
-    package to estimate above-ground biomass in tropical
-        forests.
-      - [Description](https://CRAN.R-project.org/package=BIOMASS)
-      - [Manual](https://cran.r-project.org/web/packages/BIOMASS/BIOMASS.pdf)
-      - [Vignette](https://cran.r-project.org/web/packages/BIOMASS/vignettes/VignetteBiomass.html)
+    package to estimate above-ground biomass in tropical forests.
 
 ## R code from recent publications by ForestGEO partners
 
