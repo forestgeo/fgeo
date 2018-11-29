@@ -111,7 +111,7 @@ VignetteBuilder:
 Remotes: 
     forestgeo/fgeo.abundance,
     forestgeo/fgeo.base,
-    forestgeo/fgeo.ctfs@release,
+    forestgeo/fgeo.ctfs,
     forestgeo/fgeo.demography,
     forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
