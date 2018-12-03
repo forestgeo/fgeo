@@ -9,7 +9,6 @@ test_that("is sensitive to `include_self`", {
       "fgeo.tool",
       "fgeo.map",
       "fgeo.abundance",
-      "fgeo.demography",
       "fgeo.habitat",
       "fgeo"
   )
@@ -22,14 +21,12 @@ test_that("is sensitive to `include_self`", {
       "fgeo.tool",
       "fgeo.map",
       "fgeo.abundance",
-      "fgeo.demography",
       "fgeo.habitat"
   )
   expect_equal(fgeo_pkgs(FALSE), pkgs2)
 
   core <- c(
       "fgeo.abundance",
-      "fgeo.demography",
       "fgeo.habitat",
       "fgeo.map",
       "fgeo.tool",

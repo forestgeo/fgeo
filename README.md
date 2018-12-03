@@ -14,7 +14,7 @@ status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/p
 **fgeo** installs and loads multiple R packages, functions, and datasets
 to analyze trees abundance, demography, and habitats
 (<a href=https://forestgeo.github.io/fgeo.abundance>fgeo.abundance</a>,
-<a href=https://forestgeo.github.io/fgeo.demography>fgeo.demography</a>,
+<a href=https://forestgeo.github.io/fgeo.ctfs>fgeo.ctfs</a>,
 <a href=https://forestgeo.github.io/fgeo.habitat>fgeo.habitat</a>). It
 also includes general-purpose functions to simplify the visualization
 (<a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>) and
@@ -166,10 +166,10 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.abundance  0.0.0.9006     v fgeo.map        0.0.0.9402
-#> v fgeo.demography 0.0.0.9103     v fgeo.tool       0.0.0.9004
-#> v fgeo.habitat    0.0.0.9007     v fgeo.x          0.0.0.9000
+#> -- Attaching packages ------------------------------------------------------------ fgeo 0.0.0.9002 --
+#> v fgeo.abundance 0.0.0.9006     v fgeo.map       0.0.0.9402
+#> v fgeo.ctfs      0.0.0.9003     v fgeo.tool      0.0.0.9004
+#> v fgeo.habitat   0.0.0.9007     v fgeo.x         0.0.0.9000
 #> 
 ```
 

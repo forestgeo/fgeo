@@ -61,6 +61,53 @@ stem6 <- pick_top(stem, var = CensusID, n = -1)
 unique(stem6$CensusID)
 ```
 
+## Demography
+
+```{r}
+census5 <- fgeo.data::luquillo_tree5_random
+census6 <- fgeo.data::luquillo_tree6_random
+
+recruitment_impl(census5, census6)
+```
+
+With `to_df()` we convert the result of any demography function to a tibble -- a convenient dataframe.
+
+```{r}
+to_df(
+  recruitment_impl(census5, census6)
+)
+```
+
+We can aggregate results by any number of variables:
+
+* To aggregate by a single variable, you can pass the variable directly to `split1`.
+
+```{r}
+to_df(recruitment_impl(census5, census6, split1 = census5$sp))
+```
+
+* To aggregate by multiple variables, use `interaction()` (but aggregating by more than one variable may be slow and confusing).
+
+```{r}
+sp_quadrat <- interaction(census5$sp, census5$quadrat)
+by_many <- recruitment_impl(census5, census6, split1 = sp_quadrat)
+to_df(by_many)
+```
+
+To separate the multiple groups we can use `tidyr::separate()`.
+
+```{r}
+tidyr::separate(to_df(by_many), groups, into = c("species", "quadrats"))
+```
+
+The same works for mortality and growth.
+
+```{r}
+to_df(mortality_impl(census5, census6, split1 = sp_quadrat))
+
+to_df(growth_impl(census5, census6, split1 = sp_quadrat))
+```
+
 ## Exploring the distribution of status and tree diameter
 
 Two columns that are commonly useful in ForestGEO datasets are `status` and `dbh` (diameter at breast height). We will begin by better understanding what type of variables they are. For this, base R provides useful functions.
@@ -206,3 +253,37 @@ Tweak to focus on the hectare available in the data.
 autoplot(species_elevation, xlim = c(100, 200), ylim = c(400, 500))
 ```
 
+
+
+## Species-habitat associations
+
+```{r}
+tree <- fgeo.data::luquillo_tree5_random
+elevation <- fgeo.data::luquillo_elevation
+
+# Pick alive trees, of 10 mm or more
+census <- filter(tree, status == "A", dbh >= 10)
+
+# Pick sufficiently abundant species
+pick <- filter(add_count(census, sp), n > 50)
+species <- unique(pick$sp)
+
+# Use your habitat data or create it from elevation data
+habitat <- fgeo.tool::fgeo_habitat(elevation, gridsize = 20, n = 4)
+
+# A list or matrices
+tt_lst <- tt_test(census, species, habitat)
+tt_lst
+
+# A simple summary to help you interpret the results
+summary(tt_lst)
+
+# A combined matrix
+Reduce(rbind, tt_lst)
+
+# A dataframe
+dfm <- to_df(tt_lst)
+
+# Using dplyr to summarize results by species and distribution
+summarize(group_by(dfm, sp, distribution), n = sum(stem_count))
+```

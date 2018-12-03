@@ -27,7 +27,7 @@ fgeo_pkgs <- function(include_self = TRUE) {
 fgeo_core <- function() {
   c(
     "fgeo.abundance",
-    "fgeo.demography",
+    "fgeo.ctfs",
     "fgeo.habitat",
     "fgeo.map",
     "fgeo.tool",
