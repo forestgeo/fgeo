@@ -25,10 +25,10 @@ link_core <- function(pattern) {
   fgeo:::fgeo_link(core[grepl(pattern, core)])
 }
 
-analyze <- "abundance|demography|habitat|krig"
-visualize <- "map|plot"
-manipulate <- "base|tool"
-datasets <- "data|x"
+analyze <- "abundance|ctfs|habitat"
+visualize <- "map"
+manipulate <- "tool"
+datasets <- "x"
 ```
 
 __fgeo__ installs and loads multiple R packages, functions, and datasets to analyze trees abundance, demography, and habitats (`r link_core(analyze)`). It also includes general-purpose functions to simplify the visualization (`r link_core(visualize)`) and manipulation (`r link_core(manipulate)`) of ForestGEO datasets (e.g. `r link_core(datasets)`). 
