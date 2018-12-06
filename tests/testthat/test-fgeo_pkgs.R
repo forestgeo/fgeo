@@ -4,7 +4,6 @@ test_that("is sensitive to `include_self`", {
 
   pkgs <- c(
       "fgeo.x",
-      "fgeo.base",
       "fgeo.ctfs",
       "fgeo.tool",
       "fgeo.map",

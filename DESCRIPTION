@@ -92,7 +92,6 @@ Imports:
     rstudioapi,
     utils,
     fgeo.x,
-    fgeo.base,
     fgeo.ctfs,
     fgeo.tool,
     fgeo.map,
@@ -109,7 +108,6 @@ VignetteBuilder:
     knitr
 Remotes: 
     forestgeo/fgeo.abundance,
-    forestgeo/fgeo.base,
     forestgeo/fgeo.ctfs,
     forestgeo/fgeo.habitat,
     forestgeo/fgeo.map,
