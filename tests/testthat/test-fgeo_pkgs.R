@@ -3,7 +3,6 @@ context("fgeo_pkgs")
 test_that("is sensitive to `include_self`", {
 
   pkgs <- c(
-      "fgeo.x",
       "fgeo.ctfs",
       "fgeo.tool",
       "fgeo.map",
@@ -21,8 +20,7 @@ test_that("is sensitive to `include_self`", {
     "fgeo.ctfs",
     "fgeo.habitat",
     "fgeo.map",
-    "fgeo.tool",
-    "fgeo.x"
+    "fgeo.tool"
   )
   expect_equal(fgeo_core(), core)
 })

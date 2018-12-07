@@ -30,8 +30,7 @@ fgeo_core <- function() {
     "fgeo.ctfs",
     "fgeo.habitat",
     "fgeo.map",
-    "fgeo.tool",
-    "fgeo.x"
+    "fgeo.tool"
   )
 }
 
