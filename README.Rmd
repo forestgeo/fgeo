@@ -25,7 +25,7 @@ link_core <- function(pattern) {
   fgeo:::fgeo_link(core[grepl(pattern, core)])
 }
 
-analyze <- "abundance|ctfs|habitat"
+analyze <- "analyze"
 visualize <- "map"
 manipulate <- "tool"
 datasets <- "x"

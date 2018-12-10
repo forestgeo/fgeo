@@ -85,18 +85,16 @@ Imports:
     cli,
     crayon,
     dplyr,
+    fgeo.analyze,
+    fgeo.map,
+    fgeo.tool,
+    fgeo.x,
     magrittr,
     purrr,
     remotes,
     rlang,
     rstudioapi,
-    utils,
-    fgeo.x,
-    fgeo.ctfs,
-    fgeo.tool,
-    fgeo.map,
-    fgeo.abundance,
-    fgeo.habitat
+    utils
 Suggests: 
     covr,
     DT,
@@ -107,9 +105,7 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes: 
-    forestgeo/fgeo.abundance,
-    forestgeo/fgeo.ctfs,
-    forestgeo/fgeo.habitat,
+    forestgeo/fgeo.analyze,
     forestgeo/fgeo.map,
     forestgeo/fgeo.tool,
     forestgeo/fgeo.x
