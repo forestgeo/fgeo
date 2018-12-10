@@ -1,28 +1,28 @@
 context("fgeo_pkgs")
 
+expect_sorted_equal <- function(object, expected, ...) {
+  testthat::expect_equal(sort(object), sort(expected))
+}
+
 test_that("is sensitive to `include_self`", {
 
   pkgs <- c(
       "fgeo.x",
-      "fgeo.ctfs",
       "fgeo.tool",
+      "fgeo.analyze",
       "fgeo.map",
-      "fgeo.abundance",
-      "fgeo.habitat",
       "fgeo"
   )
-  expect_equal(fgeo_pkgs(), pkgs)
+  expect_sorted_equal(fgeo_pkgs(), pkgs)
 
   pkgs2 <- setdiff(pkgs, "fgeo")
-  expect_equal(fgeo_pkgs(FALSE), pkgs2)
+  expect_sorted_equal(fgeo_pkgs(FALSE), pkgs2)
 
   core <- c(
-    "fgeo.abundance",
-    "fgeo.ctfs",
-    "fgeo.habitat",
-    "fgeo.map",
+    "fgeo.x",
     "fgeo.tool",
-    "fgeo.x"
+    "fgeo.analyze",
+    "fgeo.map"
   )
-  expect_equal(fgeo_core(), core)
+  expect_sorted_equal(fgeo_core(), core)
 })

@@ -26,12 +26,10 @@ fgeo_pkgs <- function(include_self = TRUE) {
 #' @export
 fgeo_core <- function() {
   c(
-    "fgeo.abundance",
-    "fgeo.ctfs",
-    "fgeo.habitat",
-    "fgeo.map",
+    "fgeo.x",
     "fgeo.tool",
-    "fgeo.x"
+    "fgeo.analyze",
+    "fgeo.map"
   )
 }
 
