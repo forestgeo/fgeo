@@ -1,20 +1,52 @@
+# Implementation ----------------------------------------------------------
+
+select_docs <- function(package, ...) {
+  columns <- rlang::enquos(...)
+  package_docs(package = package) %>%
+    dplyr::filter(!keyword %in% "internal") %>%
+    dplyr::select(!!! columns) %>%
+    unique()
+}
+
+package_docs <- function(pattern = NULL, ..., package) {
+  vars <- rlang::enquos(...)
+
+  docs <- utils::hsearch_db(package = package)
+  docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
+  docs <- docs %>%
+    tibble::as.tibble() %>%
+    purrr::set_names(tolower) %>%
+    dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
+    dplyr::distinct()
+
+  missing_vars <- !any(purrr::map_lgl(vars, rlang::is_quosure))
+  if (!missing_vars) {
+    docs <- dplyr::select(docs, !!! vars)
+  }
+
+  if (!is.null(pattern)) {
+    docs <- dplyr::filter_all(docs, dplyr::any_vars(grepl(pattern, .)))
+  }
+
+  unique(docs)
+}
+
 #' Help to reexport alias from other packages.
-#'
 #' @param package Lengh-1 character vector giving the package name.
 #' @param alias Lengh-1 character vector giving the alias name.
-#'
 #' @keywords internal
 #' @noRd
-export_outsider <- function(package, alias) {
+export_outsider_package <- function(package, alias) {
+  link <- link_package_topic(package, alias)
   glue::glue("
+    # Source: {link}
     #' @importFrom {package} {alias}
     #' @export
     {package}::{alias}
 
     ")
 }
-
-export_insider <- function(package, alias) {
+export_insider_package <- function(package, alias) {
   link <- link_package_topic(package, alias)
   glue::glue("
     # Source: {link}
@@ -30,18 +62,10 @@ link_package_topic <- function(package, alias) {
   pull_topic <- function(package, alias) {
     .alias <- rlang::enquo(alias)
     alias_topic <- select_docs(package, alias, topic)
-    filter(alias_topic, .data$alias %in% !!.alias)$topic
+    dplyr::filter(alias_topic, .data$alias %in% !!.alias)$topic
   }
   topic <- pull_topic(package, alias)
   glue::glue("https://forestgeo.github.io/{package}/reference/{topic}")
-}
-
-select_docs <- function(package, ...) {
-  columns <- rlang::enquos(...)
-  fgeo_docs(package = package) %>%
-    dplyr::filter(!keyword %in% "internal") %>%
-    dplyr::select(!!! columns) %>%
-    unique()
 }
 
 pull_aliass <- function(package, ...) {
@@ -49,14 +73,33 @@ pull_aliass <- function(package, ...) {
     dplyr::pull(alias)
 }
 
-# Example
-library(purrr)
-library(dplyr)
-library(fgeo)
 
-# these_packages <- c("fgeo.x", "fgeo.tool")
-these_packages <- c("fgeo.x")
-these_packages %>%
-  map(., ~pull(select_docs(.x, alias))) %>%
-  set_names(these_packages) %>%
-  imap(~export_insider(.y, .x))
+# Interface ---------------------------------------------------------------
+
+#' Export objects from packages.
+#'
+#' Use `export_insider()` to reexport objects as if they were native.
+#' Use `export_outsider()` to export objects as if they were foreign.
+#'
+#' @param packages Character vector giving name of packages.
+#'
+#' @return Output of `glue::glue()`.
+#' @examples
+#' packages <- c("fgeo.x", "fgeo.tool")
+#' export_insider(packages)
+#' export_outsider(packages)
+#' @keywords internal
+#' @noRd
+NULL
+export <- function(insider_or_outsider){
+  force(insider_or_outsider)
+  function(packages) {
+  packages %>%
+    purrr::map(., ~dplyr::pull(select_docs(.x, alias))) %>%
+    purrr::set_names(packages) %>%
+    purrr::imap(~insider_or_outsider(.y, .x))
+  }
+}
+export_insider <- export(export_insider_package)
+export_outsider <- export(export_outsider_package)
+
