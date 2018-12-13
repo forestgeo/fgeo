@@ -204,7 +204,7 @@ non_missing <- filter(ten_plus, !is.na(dbh))
 abundance(non_missing)
 
 # Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
-largest_stem <- fgeo.tool::pick_main_stem(non_missing)
+largest_stem <- pick_main_stem(non_missing)
 abundance(largest_stem)
 ```
 

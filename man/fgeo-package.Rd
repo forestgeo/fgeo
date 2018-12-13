@@ -4,16 +4,34 @@
 \name{fgeo-package}
 \alias{fgeo}
 \alias{fgeo-package}
-\title{fgeo: Install and Load Multiple Packages in One Step}
+\title{fgeo: Analyze ForestGEO data.}
 \description{
-'fgeo' installs and loads multiple R packages
-    of ForestGEO in a single step. Each individual package is a
-    self-contained module. Together, all the packages in 'fgeo' provide a
-    wide range of tools to analyze forest diversity and dynamics. The
-    modular structure of 'fgeo' makes it easy to add and maintain more
-    tools as they become available. Learn more about the 'fgeo' package at
-    <http://forestgeo.github.io/fgeo>; and learn more about ForestGEO at
-    <http://www.forestgeo.si.edu/>.
+fgeo: Analyze ForestGEO data.
+}
+\examples{
+fgeo_link <- function(x) {
+  x \%>\%
+    dplyr::mutate(
+      topic = glue::glue_data(
+        .,
+        "<a href=https://forestgeo.github.io/\\\\
+        {package}/reference/{topic}>{topic}</a>"
+      ),
+      package = glue::glue_data(
+        .,
+        "<a href=https://forestgeo.github.io/\\\\
+        {package}>{package}</a>"
+      )
+      ) \%>\%
+    dplyr::arrange(package)
+}
+
+fgeo_docs("", package, topic, alias, title, keyword) \%>\%
+  dplyr::filter(!keyword \%in\% "internal") \%>\%
+  dplyr::select(.data$alias, .data$topic, dplyr::everything()) \%>\%
+  fgeo_link() \%>\%
+  dplyr::select(-.data$package, -.data$keyword) \%>\%
+  dplyr::rename(name = .data$alias, source = .data$topic)
 }
 \seealso{
 Useful links:
@@ -52,4 +70,3 @@ Other contributors:
 }
 
 }
-\keyword{internal}
