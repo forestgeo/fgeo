@@ -41,12 +41,6 @@ export_package <- function(package, alias, template) {
   path <- fgeo_example(template)
   glue::glue(glue::glue_collapse(readLines(path), sep = "\n"))
 }
-export_native_package <- function(package, alias) {
-  export_package(package, alias, "template-native.txt")
-}
-export_foreing_package <- function(package, alias) {
-  export_package(package, alias, "template-foreing.txt")
-}
 
 link_package_topic <- function(package, alias) {
   pull_topic <- function(package, alias) {
@@ -81,15 +75,15 @@ pull_aliass <- function(package, ...) {
 #' @keywords internal
 #' @noRd
 NULL
-export <- function(insider_or_outsider){
-  force(insider_or_outsider)
+export <- function(template){
+  force(template)
   function(packages) {
   packages %>%
     purrr::map(., ~dplyr::pull(select_docs(.x, alias))) %>%
     purrr::set_names(packages) %>%
-    purrr::imap(~insider_or_outsider(.y, .x))
+    purrr::imap(~export_package(.y, .x, template))
   }
 }
-export_native <- export(export_native_package)
-export_foreign <- export(export_foreing_package)
+export_native <- export("template-native.txt")
+export_foreign <- export("template-foreign.txt")
 
