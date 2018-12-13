@@ -2,33 +2,10 @@
 
 select_docs <- function(package, ...) {
   columns <- rlang::enquos(...)
-  package_docs(package = package) %>%
+  fgeo_docs(package = package) %>%
     dplyr::filter(!keyword %in% "internal") %>%
     dplyr::select(!!! columns) %>%
     unique()
-}
-
-package_docs <- function(pattern = NULL, ..., package) {
-  vars <- rlang::enquos(...)
-
-  docs <- utils::hsearch_db(package = package)
-  docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
-  docs <- docs %>%
-    tibble::as.tibble() %>%
-    purrr::set_names(tolower) %>%
-    dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
-    dplyr::distinct()
-
-  missing_vars <- !any(purrr::map_lgl(vars, rlang::is_quosure))
-  if (!missing_vars) {
-    docs <- dplyr::select(docs, !!! vars)
-  }
-
-  if (!is.null(pattern)) {
-    docs <- dplyr::filter_all(docs, dplyr::any_vars(grepl(pattern, .)))
-  }
-
-  unique(docs)
 }
 
 link_package_topic <- function(package, alias) {
