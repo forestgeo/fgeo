@@ -81,6 +81,7 @@ License: GPL-3
 URL: http://forestgeo.github.io/fgeo,
     https://github.com/forestgeo/fgeo
 BugReports: https://github.com/forestgeo/fgeo/issues
+Depends: fgeo.x
 Imports: 
     cli,
     crayon,
@@ -88,13 +89,13 @@ Imports:
     fgeo.analyze,
     fgeo.map,
     fgeo.tool,
-    fgeo.x,
     magrittr,
     purrr,
     remotes,
     rlang,
     rstudioapi,
-    utils
+    utils,
+    glue
 Suggests: 
     covr,
     DT,
