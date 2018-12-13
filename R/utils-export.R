@@ -31,17 +31,6 @@ package_docs <- function(pattern = NULL, ..., package) {
   unique(docs)
 }
 
-#' Help to reexport alias from other packages.
-#' @param package Lengh-1 character vector giving the package name.
-#' @param alias Lengh-1 character vector giving the alias name.
-#' @keywords internal
-#' @noRd
-export_package <- function(package, alias, template) {
-  link <- link_package_topic(package, alias)
-  path <- fgeo_example(template)
-  glue::glue(glue::glue_collapse(readLines(path), sep = "\n"))
-}
-
 link_package_topic <- function(package, alias) {
   pull_topic <- function(package, alias) {
     .alias <- rlang::enquo(alias)
@@ -87,3 +76,8 @@ export <- function(template){
 export_native <- export("template-native.txt")
 export_foreign <- export("template-foreign.txt")
 
+export_package <- function(package, alias, template) {
+  link <- link_package_topic(package, alias)
+  path <- fgeo_example(template)
+  glue::glue(glue::glue_collapse(readLines(path), sep = "\n"))
+}
