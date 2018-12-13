@@ -1,0 +1,4 @@
+# Source: {link}
+#' @importFrom {package} {alias}
+#' @export
+{package}::{alias}

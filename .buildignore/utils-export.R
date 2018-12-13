@@ -36,26 +36,16 @@ package_docs <- function(pattern = NULL, ..., package) {
 #' @param alias Lengh-1 character vector giving the alias name.
 #' @keywords internal
 #' @noRd
-export_outsider_package <- function(package, alias) {
+export_package <- function(package, alias, template) {
   link <- link_package_topic(package, alias)
-  glue::glue("
-    # Source: {link}
-    #' @importFrom {package} {alias}
-    #' @export
-    {package}::{alias}
-
-    ")
+  path <- fgeo_example(template)
+  glue::glue(glue::glue_collapse(readLines(path), sep = "\n"))
 }
-export_insider_package <- function(package, alias) {
-  link <- link_package_topic(package, alias)
-  glue::glue("
-    # Source: {link}
-    #' @importFrom {package} {alias}
-    #' @inherit {package}::{alias}
-    #' @export
-    {alias} <- {package}::{alias}
-
-    ")
+export_native_package <- function(package, alias) {
+  export_package(package, alias, "template-native.txt")
+}
+export_foreing_package <- function(package, alias) {
+  export_package(package, alias, "template-foreing.txt")
 }
 
 link_package_topic <- function(package, alias) {
@@ -78,16 +68,16 @@ pull_aliass <- function(package, ...) {
 
 #' Export objects from packages.
 #'
-#' Use `export_insider()` to reexport objects as if they were native.
-#' Use `export_outsider()` to export objects as if they were foreign.
+#' Use `export_native()` to reexport objects as if they were native.
+#' Use `export_foreign()` to export objects as if they were foreign.
 #'
 #' @param packages Character vector giving name of packages.
 #'
 #' @return Output of `glue::glue()`.
 #' @examples
 #' packages <- c("fgeo.x", "fgeo.tool")
-#' export_insider(packages)
-#' export_outsider(packages)
+#' export_native(packages)
+#' export_foreign(packages)
 #' @keywords internal
 #' @noRd
 NULL
@@ -100,6 +90,6 @@ export <- function(insider_or_outsider){
     purrr::imap(~insider_or_outsider(.y, .x))
   }
 }
-export_insider <- export(export_insider_package)
-export_outsider <- export(export_outsider_package)
+export_native <- export(export_native_package)
+export_foreign <- export(export_foreing_package)
 
