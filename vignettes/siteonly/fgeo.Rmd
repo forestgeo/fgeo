@@ -23,8 +23,8 @@ This article shows some of the key features of __fgeo__ applied to an explorator
 In every new R session you need to "open" __fgeo__ with `library`().
 
 ```{r}
-library(fgeo)
 library(fgeo.data)
+library(fgeo)
 ```
 
 ## Data
@@ -67,14 +67,14 @@ unique(stem6$CensusID)
 census5 <- fgeo.data::luquillo_tree5_random
 census6 <- fgeo.data::luquillo_tree6_random
 
-recruitment_impl(census5, census6)
+recruitment_ctfs(census5, census6)
 ```
 
 With `to_df()` we convert the result of any demography function to a tibble -- a convenient dataframe.
 
 ```{r}
 to_df(
-  recruitment_impl(census5, census6)
+  recruitment_ctfs(census5, census6)
 )
 ```
 
@@ -83,14 +83,14 @@ We can aggregate results by any number of variables:
 * To aggregate by a single variable, you can pass the variable directly to `split1`.
 
 ```{r}
-to_df(recruitment_impl(census5, census6, split1 = census5$sp))
+to_df(recruitment_ctfs(census5, census6, split1 = census5$sp))
 ```
 
 * To aggregate by multiple variables, use `interaction()` (but aggregating by more than one variable may be slow and confusing).
 
 ```{r}
 sp_quadrat <- interaction(census5$sp, census5$quadrat)
-by_many <- recruitment_impl(census5, census6, split1 = sp_quadrat)
+by_many <- recruitment_ctfs(census5, census6, split1 = sp_quadrat)
 to_df(by_many)
 ```
 
@@ -103,9 +103,9 @@ tidyr::separate(to_df(by_many), groups, into = c("species", "quadrats"))
 The same works for mortality and growth.
 
 ```{r}
-to_df(mortality_impl(census5, census6, split1 = sp_quadrat))
+to_df(mortality_ctfs(census5, census6, split1 = sp_quadrat))
 
-to_df(growth_impl(census5, census6, split1 = sp_quadrat))
+to_df(growth_ctfs(census5, census6, split1 = sp_quadrat))
 ```
 
 ## Exploring the distribution of status and tree diameter
@@ -269,7 +269,7 @@ pick <- filter(add_count(census, sp), n > 50)
 species <- unique(pick$sp)
 
 # Use your habitat data or create it from elevation data
-habitat <- fgeo.tool::fgeo_habitat(elevation, gridsize = 20, n = 4)
+habitat <- fgeo_habitat(elevation, gridsize = 20, n = 4)
 
 # A list or matrices
 tt_lst <- tt_test(census, species, habitat)
@@ -282,8 +282,5 @@ summary(tt_lst)
 Reduce(rbind, tt_lst)
 
 # A dataframe
-dfm <- to_df(tt_lst)
-
-# Using dplyr to summarize results by species and distribution
-summarize(group_by(dfm, sp, distribution), n = sum(stem_count))
+to_df(tt_lst)
 ```

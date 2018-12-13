@@ -263,9 +263,9 @@
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------- fgeo 0.0.0.9002 --</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9000</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.tool    0.0.0.9004     v fgeo.map     0.0.0.9402</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.tool    0.0.0.9005     v fgeo.map     0.0.0.9402</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; </span></a></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"abundance"</span>)</a></code></pre></div>
 <p><img src="https://i.imgur.com/s1wkAD4.png" width="550"></p>
@@ -326,7 +326,7 @@
 <a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt; 1   840</span></a>
 <a class="sourceLine" id="cb9-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
-<a class="sourceLine" id="cb9-14" data-line-number="14">largest_stem &lt;-<span class="st"> </span>fgeo.tool<span class="op">::</span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
 <a class="sourceLine" id="cb9-15" data-line-number="15"><span class="kw">abundance</span>(largest_stem)</a>
 <a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
 <a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt;       n</span></a>

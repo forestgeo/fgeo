@@ -164,9 +164,9 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9000
-#> v fgeo.tool    0.0.0.9004     v fgeo.map     0.0.0.9402
+#> -- Attaching packages --------------------------------------- fgeo 0.0.0.9002 --
+#> v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003
+#> v fgeo.tool    0.0.0.9005     v fgeo.map     0.0.0.9402
 #> 
 ```
 
@@ -246,7 +246,7 @@ abundance(non_missing)
 #> 1   840
 
 # Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
-largest_stem <- fgeo.tool::pick_main_stem(non_missing)
+largest_stem <- pick_main_stem(non_missing)
 abundance(largest_stem)
 #> # A tibble: 1 x 1
 #>       n
