@@ -15,7 +15,7 @@ export_outsider <- function(package, alias) {
 }
 
 export_insider <- function(package, alias) {
-  link <- link_package_alias(package, alias)
+  link <- link_package_topic(package, alias)
   glue::glue("
     # Source: {link}
     #' @importFrom {package} {alias}
@@ -26,8 +26,14 @@ export_insider <- function(package, alias) {
     ")
 }
 
-link_package_alias <- function(package, alias) {
-  glue::glue("https://forestgeo.github.io/{package}/reference/{alias}")
+link_package_topic <- function(package, alias) {
+  pull_topic <- function(package, alias) {
+    .alias <- rlang::enquo(alias)
+    alias_topic <- select_docs(package, alias, topic)
+    filter(alias_topic, .data$alias %in% !!.alias)$topic
+  }
+  topic <- pull_topic(package, alias)
+  glue::glue("https://forestgeo.github.io/{package}/reference/{topic}")
 }
 
 select_docs <- function(package, ...) {
