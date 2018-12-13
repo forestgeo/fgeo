@@ -1,40 +1,56 @@
-#' Help to reexport objects from other packages.
+#' Help to reexport alias from other packages.
 #'
 #' @param package Lengh-1 character vector giving the package name.
-#' @param object Lengh-1 character vector giving the object name.
+#' @param alias Lengh-1 character vector giving the alias name.
 #'
 #' @keywords internal
 #' @noRd
-export_outsider <- function(package, object) {
+export_outsider <- function(package, alias) {
   glue::glue("
-    #' @importFrom {package} {object}
+    #' @importFrom {package} {alias}
     #' @export
-    {package}::{object}
+    {package}::{alias}
 
     ")
 }
 
-export_insider <- function(package, object) {
+export_insider <- function(package, alias) {
+  link <- link_package_alias(package, alias)
   glue::glue("
-    #' @importFrom {package} {object}
-    #' @inherit {package}::{object}
+    # Source: {link}
+    #' @importFrom {package} {alias}
+    #' @inherit {package}::{alias}
     #' @export
-    {object} <- {package}::{object}
+    {alias} <- {package}::{alias}
 
     ")
 }
 
-pull_topics <- function(package) {
+link_package_alias <- function(package, alias) {
+  glue::glue("https://forestgeo.github.io/{package}/reference/{alias}")
+}
+
+select_docs <- function(package, ...) {
+  columns <- rlang::enquos(...)
   fgeo_docs(package = package) %>%
     dplyr::filter(!keyword %in% "internal") %>%
-    dplyr::pull(topic) %>%
+    dplyr::select(!!! columns) %>%
     unique()
+}
+
+pull_aliass <- function(package, ...) {
+  select_docs(package, alias) %>%
+    dplyr::pull(alias)
 }
 
 # Example
 library(purrr)
-these_packages <- c("fgeo.x", "fgeo.tool")
+library(dplyr)
+library(fgeo)
+
+# these_packages <- c("fgeo.x", "fgeo.tool")
+these_packages <- c("fgeo.x")
 these_packages %>%
-  map(pull_topics) %>%
+  map(., ~pull(select_docs(.x, alias))) %>%
   set_names(these_packages) %>%
   imap(~export_insider(.y, .x))
