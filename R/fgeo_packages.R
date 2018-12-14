@@ -2,9 +2,11 @@
 #'
 #' @return A string.
 #' @examples
+#' \dontrun{
 #' fgeo_packages()
 #' fgeo_packages(FALSE)
 #' fgeo_core()
+#' }
 #' @noRd
 fgeo_packages <- function(include_self = TRUE) {
   fgeo <- fgeo_dependencies(

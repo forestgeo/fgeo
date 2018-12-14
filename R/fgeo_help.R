@@ -22,11 +22,7 @@
 #'
 #' @examples
 #' if (interactive()) fgeo_help()
-#' if (interactive()) fgeo_help("fgeo", package = "fgeo")
-#'
-#' results <- fgeo_help("fgeo", package = "fgeo.tool")
-#' if (interactive()) results
-#' str(results)
+#' if (interactive()) fgeo_help("fgeo", package = "fgeo.x")
 fgeo_help <- function(pattern = "", package = fgeo::fgeo_core()) {
   utils::help.search(pattern = pattern, package = package)
 }
