@@ -20,6 +20,17 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
 ```{r, echo=FALSE}
+#' Creates a functional link when used with DT table.
+#' @param package,topic String; the name of a package (`package`) and function (`topic`).
+#' @noRd
+fgeo_link <- function(package, topic = NULL) {
+  end <- glue::glue(">{package}")
+  if (!is.null(topic)) {end <- glue::glue("/reference/>{topic}")}
+  glue::glue("<a href=https://forestgeo.github.io/{package}{end}</a>")
+}
+```
+
+```{r, echo=FALSE}
 link_core <- function(pattern) {
   core <- fgeo::fgeo_core()
   fgeo:::fgeo_link(core[grepl(pattern, core)])
@@ -30,6 +41,7 @@ visualize <- "map"
 manipulate <- "tool"
 datasets <- "x"
 ```
+
 
 __fgeo__ installs and loads multiple R packages, functions, and datasets to analyze trees abundance, demography, and habitats (`r link_core(analyze)`). It also includes general-purpose functions to simplify the visualization (`r link_core(visualize)`) and manipulation (`r link_core(manipulate)`) of ForestGEO datasets (e.g. `r link_core(datasets)`). 
 
