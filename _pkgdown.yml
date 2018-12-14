@@ -88,3 +88,7 @@ reference:
   contents:
   - fgeo_help
 
+- title: Example datasets
+  contents:
+  - has_concept("datasets")
+

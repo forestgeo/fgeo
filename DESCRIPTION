@@ -89,6 +89,7 @@ Imports:
     fgeo.map,
     fgeo.tool,
     fgeo.x,
+    glue,
     magrittr,
     purrr,
     remotes,

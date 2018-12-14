@@ -1,3 +1,4 @@
+^tmp\.sh$
 ^\.buildignore$
 ^appveyor\.yml$
 ^.*\.Rproj$
