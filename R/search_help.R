@@ -25,10 +25,10 @@
 #' search_help("abundance", -package)
 #' @keywords internal
 #' @noRd
-search_help <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
+search_help <- function(pattern = NULL, ..., package = NULL) {
   vars <- rlang::enquos(...)
 
-  docs <- utils::hsearch_db(package = package)
+  docs <- utils::hsearch_db(package = package %||% fgeo_core())
   docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
   docs <- docs %>%
     tibble::as.tibble() %>%
@@ -47,6 +47,4 @@ search_help <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
 
   unique(docs)
 }
-
-search_help <- search_help
 
