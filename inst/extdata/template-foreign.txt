@@ -1,0 +1,5 @@
+# Source: {link}
+#' @importFrom {package} {alias}
+#' @inherit {package}::{alias}
+#' @export
+{package}::{alias}

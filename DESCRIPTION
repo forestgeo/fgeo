@@ -91,17 +91,16 @@ Imports:
     fgeo.x,
     magrittr,
     purrr,
-    remotes,
     rlang,
     rstudioapi,
+    tibble,
     utils
 Suggests: 
     covr,
     DT,
     knitr,
     rmarkdown,
-    testthat,
-    tibble
+    testthat
 VignetteBuilder: 
     knitr
 Remotes: 

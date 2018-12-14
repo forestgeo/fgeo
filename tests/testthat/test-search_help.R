@@ -1,31 +1,31 @@
-context("fgeo_docs")
+context("search_help")
 
-describe("fgeo_docs()", {
+describe("search_help()", {
   it("with no arguments returns all columns", {
     cols <- c(
       "package", "title", "topic", "type", "alias", "keyword", "concept"
     )
-    expect_named(fgeo_docs(), cols)
-    expect_is(fgeo_docs(), "tbl")
+    expect_named(search_help(), cols)
+    expect_is(search_help(), "tbl")
   })
 
   it("with one column name returns only that colum", {
     cols <- c("package")
-    expect_named(fgeo_docs(NULL, package), cols)
+    expect_named(search_help(NULL, package), cols)
   })
 
   it("excludes columns", {
     cols <- c("topic", "type", "alias", "keyword", "concept")
-    expect_named(fgeo_docs(NULL, -package, -title), cols)
+    expect_named(search_help(NULL, -package, -title), cols)
   })
 
   it("with a pattern returns that pattern", {
-    expect_equal(fgeo_docs("tool", package)$package, "fgeo.tool")
+    expect_equal(search_help("tool", package)$package, "fgeo.tool")
   })
 
   it("errs with infomative error messages", {
-    expect_error(fgeo_docs(NULL, invalid), "object.*not found")
-    expect_error(fgeo_docs(invalid), "object.*not found")
+    expect_error(search_help(NULL, invalid), "object.*not found")
+    expect_error(search_help(invalid), "object.*not found")
   })
 })
 

@@ -1,11 +1,35 @@
+#' All and core __fgeo__ packages.
+#'
+#' @param include_self Logical. Should the output include fgeo?
+#' @return A string.
+#' @noRd
+fgeo_packages <- function(include_self = TRUE) {
+  fgeo <- fgeo_dependencies(
+    matches = "fgeo", include_self = TRUE, section = "Imports"
+  )
+
+  if (include_self) {
+    return(fgeo)
+  }
+
+  grep("^fgeo$", fgeo, invert = TRUE, value = TRUE)
+}
+
+fgeo_core <- function() {
+  c(
+    "fgeo.x",
+    "fgeo.tool",
+    "fgeo.analyze",
+    "fgeo.map"
+  )
+}
+
 #' Create a table of __fgeo__'s package-names and titles.
 #'
 #' @section Acknowledgments:
 #' [Jim Hester advised](https://goo.gl/Qzp5kR) and [Nathan Werth
 #' advised](http://bit.ly/2H8bwaj) helped develop the implementation details of
 #' this function.
-#'
-#' @keywords internal
 #' @noRd
 table_core <- function() {
   fgeo_index(.f = utils::packageDescription, nm = "Title", fields = "Title")

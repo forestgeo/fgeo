@@ -11,25 +11,21 @@
 #'   packages of __fgeo__.
 #'
 #' @family functions for developers
-#'
 #' @return A dataframe.
-#'
-#' @keywords internal
-#'
-#' @export
 #' @examples
 #' # Filter rows with a matching pattern.
-#' fgeo_docs("predicate")
+#' search_help("abundance")
 #'
 #' # Select specific columns
-#' fgeo_docs("predicate", concept, topic, title)
+#' search_help("abundance", concept, topic, title)
 #'
 #' # Exclude specific columns
-#' fgeo_docs("abundance", -package)
-fgeo_docs <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
+#' search_help("abundance", -package)
+#' @noRd
+search_help <- function(pattern = NULL, ..., package = NULL) {
   vars <- rlang::enquos(...)
 
-  docs <- utils::hsearch_db(package = package)
+  docs <- utils::hsearch_db(package = package %||% fgeo_core())
   docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
   docs <- docs %>%
     tibble::as.tibble() %>%
@@ -48,3 +44,4 @@ fgeo_docs <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
 
   unique(docs)
 }
+

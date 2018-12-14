@@ -2,15 +2,16 @@
 #'
 #' This function lists all the conflicts between packages in fgeo
 #' and other packages that you have loaded.
-#'
 #' @noRd
 fgeo_conflicts <- function() {
   envs <- purrr::set_names(search())
-  objs <- invert(lapply(envs, ls_env))
+
+  objs <- invert(lapply(envs, function(env) ls(pos = env)))
 
   conflicts <- purrr::keep(objs, ~ length(.x) > 1)
 
-  fgeo_names <- paste0("package:", table_core())
+  fgeo_imports <- fgeo_dependencies(section = "Imports", include_self = TRUE)
+  fgeo_names <- paste0("package:", fgeo_imports)
   conflicts <- purrr::keep(conflicts, ~ any(.x %in% fgeo_names))
 
   conflict_funs <- purrr::imap(conflicts, confirm_conflict)
@@ -67,16 +68,4 @@ confirm_conflict <- function(packages, name) {
     return()
 
   packages
-}
-
-# xxx checked. Remove when done.
-ls_env <- function(env) {
-  x <- ls(pos = env)
-#  # This is legacy code, likely irrelevant. Keeping it in case I need to
-#  # understand something later.
-#  # These potential conflicts apply to the tidyverse but to fgeo
-#  if (identical(env, "package:dplyr")) {
-#    x <- setdiff(x, c("intersect", "setdiff", "setequal", "union"))
-#  }
-  x
 }
