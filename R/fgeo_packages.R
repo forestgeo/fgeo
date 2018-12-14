@@ -1,10 +1,40 @@
+#' All and core __fgeo__ packages.
+#'
+#' @return A string.
+#' @examples
+#' fgeo_packages()
+#' fgeo_packages(FALSE)
+#' fgeo_core()
+#' @noRd
+fgeo_packages <- function(include_self = TRUE) {
+  fgeo <- fgeo_dependencies(
+    matches = "fgeo", include_self = TRUE, section = "Imports"
+  )
+
+  if (include_self) {
+    return(fgeo)
+  }
+
+  grep("^fgeo$", fgeo, invert = TRUE, value = TRUE)
+}
+
+#' @rdname fgeo_packages
+#' @export
+fgeo_core <- function() {
+  c(
+    "fgeo.x",
+    "fgeo.tool",
+    "fgeo.analyze",
+    "fgeo.map"
+  )
+}
+
 #' Create a table of __fgeo__'s package-names and titles.
 #'
 #' @section Acknowledgments:
 #' [Jim Hester advised](https://goo.gl/Qzp5kR) and [Nathan Werth
 #' advised](http://bit.ly/2H8bwaj) helped develop the implementation details of
 #' this function.
-#'
 #' @keywords internal
 #' @noRd
 table_core <- function() {
