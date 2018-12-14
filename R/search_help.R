@@ -16,16 +16,16 @@
 #'
 #' @examples
 #' # Filter rows with a matching pattern.
-#' fgeo_docs("predicate")
+#' search_help("predicate")
 #'
 #' # Select specific columns
-#' fgeo_docs("predicate", concept, topic, title)
+#' search_help("predicate", concept, topic, title)
 #'
 #' # Exclude specific columns
-#' fgeo_docs("abundance", -package)
+#' search_help("abundance", -package)
 #' @keywords internal
 #' @noRd
-fgeo_docs <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
+search_help <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
   vars <- rlang::enquos(...)
 
   docs <- utils::hsearch_db(package = package)
@@ -47,4 +47,6 @@ fgeo_docs <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
 
   unique(docs)
 }
+
+search_help <- search_help
 

@@ -39,7 +39,7 @@ export_package <- function(package, alias, template) {
 
 select_docs <- function(package, ...) {
   columns <- rlang::enquos(...)
-  fgeo_docs(package = package) %>%
+  search_help(package = package) %>%
     dplyr::filter(!keyword %in% "internal") %>%
     dplyr::select(!!! columns) %>%
     unique()
