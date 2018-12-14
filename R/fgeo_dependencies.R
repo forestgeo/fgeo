@@ -7,9 +7,7 @@
 #' @family functions for developers
 #'
 #' @return A string.
-#'
-#' @keywords internal
-#' @export
+#' @noRd
 fgeo_dependencies <- function(matches = NULL,
                               include_self = TRUE,
                               section = c("Imports", "Suggests")) {

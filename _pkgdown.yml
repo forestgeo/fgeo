@@ -84,6 +84,6 @@ navbar:
       href: https://github.com/forestgeo/fgeo
 
 reference:
-- title: Find functions and datasets in core fgeo packages
+- title: Explore fgeo
   contents:
   - fgeo_help

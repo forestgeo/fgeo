@@ -14,9 +14,6 @@
 #'
 #' @return A dataframe.
 #'
-#' @keywords internal
-#'
-#' @export
 #' @examples
 #' # Filter rows with a matching pattern.
 #' fgeo_docs("predicate")
@@ -26,6 +23,8 @@
 #'
 #' # Exclude specific columns
 #' fgeo_docs("abundance", -package)
+#' @keywords internal
+#' @noRd
 fgeo_docs <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
   vars <- rlang::enquos(...)
 
@@ -48,3 +47,4 @@ fgeo_docs <- function(pattern = NULL, ..., package = fgeo::fgeo_core()) {
 
   unique(docs)
 }
+

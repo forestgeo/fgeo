@@ -13,7 +13,6 @@
 #' packages <- c("fgeo.x", "fgeo.tool")
 #' export_native(packages)
 #' export_foreign(packages)
-#' @keywords internal
 #' @noRd
 NULL
 export <- function(template){

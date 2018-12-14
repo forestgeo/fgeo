@@ -20,9 +20,5 @@ fgeo_pkgs()
 fgeo_pkgs(FALSE)
 fgeo_core()
 }
-\seealso{
-Other functions for developers: \code{\link{fgeo_dependencies}},
-  \code{\link{fgeo_docs}}
-}
 \concept{functions for developers}
 \keyword{internal}
