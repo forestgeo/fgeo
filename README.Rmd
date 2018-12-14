@@ -26,12 +26,10 @@ fgeo_link <- function(package, topic = NULL) {
   if (!is.null(topic)) {end <- glue::glue("/reference/>{topic}")}
   glue::glue("<a href=https://forestgeo.github.io/{package}{end}</a>")
 }
-```
 
-```{r, echo=FALSE}
 link_core <- function(pattern) {
-  core <- fgeo::fgeo_core()
-  fgeo:::fgeo_link(core[grepl(pattern, core)])
+  core <- fgeo:::fgeo_core()
+  fgeo_link(core[grepl(pattern, core)])
 }
 
 analyze <- "analyze"

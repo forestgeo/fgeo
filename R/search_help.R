@@ -13,16 +13,14 @@
 #' @family functions for developers
 #' @return A dataframe.
 #' @examples
-#' \dontrun{
 #' # Filter rows with a matching pattern.
-#' search_help("predicate")
+#' search_help("abundance")
 #'
 #' # Select specific columns
-#' search_help("predicate", concept, topic, title)
+#' search_help("abundance", concept, topic, title)
 #'
 #' # Exclude specific columns
 #' search_help("abundance", -package)
-#' }
 #' @noRd
 search_help <- function(pattern = NULL, ..., package = NULL) {
   vars <- rlang::enquos(...)

@@ -5,7 +5,7 @@
 \alias{fgeo_help_addin}
 \title{Get help with \strong{fgeo}.}
 \usage{
-fgeo_help(pattern = "", package = fgeo::fgeo_core())
+fgeo_help(pattern = "", package = NULL)
 
 fgeo_help_addin()
 }
@@ -33,7 +33,7 @@ Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.
 }
 \examples{
 if (interactive()) fgeo_help()
-if (interactive()) fgeo_help("fgeo", package = "fgeo.x")
+if (interactive()) fgeo_help("stem", package = "fgeo.x")
 }
 \seealso{
 \code{\link[utils:help.search]{utils::help.search()}}.
