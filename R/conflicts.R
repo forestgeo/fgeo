@@ -2,8 +2,6 @@
 #'
 #' This function lists all the conflicts between packages in fgeo
 #' and other packages that you have loaded.
-#'
-#' @noRd
 fgeo_conflicts <- function() {
   envs <- purrr::set_names(search())
 

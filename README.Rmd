@@ -20,9 +20,7 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
 ```{r, echo=FALSE}
-#' Creates a functional link when used with DT table.
-#' @param package,topic String; the name of a package (`package`) and function (`topic`).
-#' @noRd
+# Creates a functional link when used with DT table.
 fgeo_link <- function(package, topic = NULL) {
   end <- glue::glue(">{package}")
   if (!is.null(topic)) {end <- glue::glue("/reference/>{topic}")}

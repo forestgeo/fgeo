@@ -11,10 +11,9 @@
 #'   packages of __fgeo__.
 #'
 #' @family functions for developers
-#'
 #' @return A dataframe.
-#'
 #' @examples
+#' \dontrun{
 #' # Filter rows with a matching pattern.
 #' search_help("predicate")
 #'
@@ -23,8 +22,7 @@
 #'
 #' # Exclude specific columns
 #' search_help("abundance", -package)
-#' @keywords internal
-#' @noRd
+#' }
 search_help <- function(pattern = NULL, ..., package = NULL) {
   vars <- rlang::enquos(...)
 
