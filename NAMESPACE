@@ -2,9 +2,7 @@
 
 S3method(print,fgeo_conflicts)
 export("%>%")
-export(fgeo_core)
 export(fgeo_help)
 export(fgeo_help_addin)
-export(fgeo_packages)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)

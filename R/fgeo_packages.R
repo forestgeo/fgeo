@@ -18,8 +18,6 @@ fgeo_packages <- function(include_self = TRUE) {
   grep("^fgeo$", fgeo, invert = TRUE, value = TRUE)
 }
 
-#' @rdname fgeo_packages
-#' @export
 fgeo_core <- function() {
   c(
     "fgeo.x",
