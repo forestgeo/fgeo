@@ -20,7 +20,4 @@ A string.
 \description{
 List package dependencies (imports and suggests) of \strong{fgeo}.
 }
-\seealso{
-Other functions for developers: \code{\link{search_help}}
-}
 \concept{functions for developers}

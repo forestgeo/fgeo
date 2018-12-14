@@ -2,6 +2,7 @@
 #'
 #' @param include_self Logical. Should the output include fgeo?
 #' @return A string.
+#' @noRd
 fgeo_packages <- function(include_self = TRUE) {
   fgeo <- fgeo_dependencies(
     matches = "fgeo", include_self = TRUE, section = "Imports"
@@ -29,6 +30,7 @@ fgeo_core <- function() {
 #' [Jim Hester advised](https://goo.gl/Qzp5kR) and [Nathan Werth
 #' advised](http://bit.ly/2H8bwaj) helped develop the implementation details of
 #' this function.
+#' @noRd
 table_core <- function() {
   fgeo_index(.f = utils::packageDescription, nm = "Title", fields = "Title")
 }

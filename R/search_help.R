@@ -23,6 +23,7 @@
 #' # Exclude specific columns
 #' search_help("abundance", -package)
 #' }
+#' @noRd
 search_help <- function(pattern = NULL, ..., package = NULL) {
   vars <- rlang::enquos(...)
 

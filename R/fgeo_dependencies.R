@@ -5,6 +5,7 @@
 #' @param section Either "Imports" or "Suggests".
 #' @family functions for developers
 #' @return A string.
+#' @noRd
 fgeo_dependencies <- function(matches = NULL,
                               include_self = TRUE,
                               section = c("Imports", "Suggests")) {
@@ -34,10 +35,3 @@ fgeo_dependencies <- function(matches = NULL,
   names
 }
 
-fgeo_imports <- function(include_self = TRUE) {
-  fgeo_dependencies(include_self = TRUE, section = "Imports")
-}
-
-fgeo_suggests <- function() {
-  fgeo_dependencies(include_self = FALSE, section = "Suggests")
-}

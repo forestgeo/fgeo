@@ -29,10 +29,19 @@ export_foreign <- export("template-foreign.txt")
 export_package <- function(package, alias, template) {
   link <- link_package_topic(package, alias)
   # Hide roxygen2 comments in templates. They conflict with devtools::document()
-  result <- readLines(fgeo_example(template))
+  result <- readLines(fgeo_extdata(template))
   glue(glue_collapse(result, sep = "\n"))
 }
 
+# From readr
+fgeo_extdata <- function(path = NULL) {
+  if (is.null(path)) {
+    dir(system.file("extdata", package = "fgeo"))
+  }
+  else {
+    system.file("extdata", path, package = "fgeo", mustWork = TRUE)
+  }
+}
 
 # Implementation ----------------------------------------------------------
 

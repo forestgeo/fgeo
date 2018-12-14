@@ -41,11 +41,3 @@ style_grey <- function(level, ...) {
   )
 }
 
-fgeo_example <- function(path = NULL) {
-  if (is.null(path)) {
-    dir(system.file("extdata", package = "fgeo"))
-  }
-  else {
-    system.file("extdata", path, package = "fgeo", mustWork = TRUE)
-  }
-}
