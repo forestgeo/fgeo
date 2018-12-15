@@ -27,13 +27,17 @@ search_help <- function(pattern = NULL,
                         package = NULL,
                         include_internal = FALSE) {
   vars <- rlang::enquos(...)
-  docs <- utils::hsearch_db(package = package %||% fgeo_packages())
-  docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
-  docs <- docs %>%
-    tibble::as.tibble() %>%
-    purrr::set_names(tolower) %>%
-    dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
-    dplyr::distinct()
+
+  search_docs <- function(package) {
+    docs <- utils::hsearch_db(package = package %||% fgeo_packages())
+    docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
+    docs %>%
+      tibble::as.tibble() %>%
+      purrr::set_names(tolower) %>%
+      dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
+      dplyr::distinct()
+  }
+  docs <- search_docs(package)
 
   if (!include_internal) {
     docs <- dplyr::filter(docs, !.data$keyword %in% "internal")
