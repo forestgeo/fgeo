@@ -31,11 +31,8 @@ search_help <- function(pattern = NULL,
     result <- exclude_internal(result)
   if (using_dots(enquos(...)))
     result <- select_columns(result, enquos(...))
-
-  if (!is.null(pattern)) {
-    result <- dplyr::filter_all(result, dplyr::any_vars(grepl(pattern, .)))
-  }
-
+  if (!is.null(pattern))
+    result <- filter_rows_xxx(result, pattern)
   unique(result)
 }
 
@@ -59,4 +56,8 @@ exclude_internal <- function(x) {
 
 select_columns <- function(x, dots) {
   dplyr::select(x, !!! dots)
+}
+
+filter_rows_xxx <- function(result, pattern) {
+  dplyr::filter_all(result, dplyr::any_vars(grepl(pattern, .)))
 }
