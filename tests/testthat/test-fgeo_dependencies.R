@@ -16,3 +16,11 @@ test_that("is sensitive to `include_fgeo`", {
   )
 })
 
+test_that("warns nonsenseical argument combination", {
+  expect_message(
+    fgeo_dependencies("fgeo", include_self = TRUE, section = "Suggests"),
+    "Ignoring"
+  )
+
+})
+

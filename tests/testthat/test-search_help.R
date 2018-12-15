@@ -39,3 +39,9 @@ test_that("doesn't include package documentation", {
     any(grepl("fgeo.x-package", unique(search_docs("fgeo.x")$alias)))
   )
 })
+
+test_that("known concept retrieves known alias", {
+  retrieved_docs <- pick_concept("functions to explore fgeo")$alias
+  expect_true(any(grepl("fgeo_help", unique(retrieved_docs)))
+  )
+})
