@@ -25,15 +25,11 @@ library(tidyverse)
 ```{r functions}
 has_concept <- function(string) {
   fgeo:::search_help() %>% 
-    family_contains(string) %>% 
+    dplyr::filter(concept %in% string) %>% 
     collapse_alias() %>% 
     # TODO: Add param link
     link() %>% 
     dplyr::select(columns())
-}
-
-family_contains <- function(entries, string) {
-  dplyr::filter(entries, concept %in% string)
 }
 
 collapse_alias <- function(entries) {
