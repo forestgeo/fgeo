@@ -22,14 +22,15 @@ library(fgeo)
 library(tidyverse)
 ```
 
-```{r}
+```{r functions}
 has_concept <- function(string) {
   fgeo:::search_help() %>% 
+    filter(!keyword %in% "internal") %>% 
     family_contains(string) %>% 
     collapse_alias() %>% 
     # TODO: Add param link
     link() %>% 
-    dplyr::select(package, topic, alias, title)
+    dplyr::select(columns)
 }
 
 family_contains <- function(entries, string) {
@@ -67,12 +68,25 @@ link_pkg <- function(x) {
 datatable_n <- function(x, n = nrow(x)) {
   DT::datatable(x, escape = FALSE, options = list(pageLength = n))
 }
+
+columns <- c("topic", "alias", "title")
 ```
 
-### Explore fgeo
+### Help
 
 ```{r}
 datatable_n(has_concept("functions to explore fgeo"))
+```
+
+### Plot
+
+```{r}
+fgeo:::search_help("fgeo.map") %>% 
+  collapse_alias() %>% 
+  link() %>% 
+  dplyr::select(columns) %>% 
+  unique() %>% 
+  datatable_n()
 ```
 
 ### Abundance
@@ -96,7 +110,14 @@ datatable_n(has_concept("habitat functions"))
 ### Datasets
 
 ```{r}
-datatable_n(has_concept("datasets"))
+fgeo_x <- fgeo:::search_help("fgeo.x") %>% 
+  filter(!keyword %in% "internal") %>% 
+  collapse_alias() %>% 
+  link() %>% 
+  dplyr::select(columns) %>% 
+  unique()
+family_datasets <- has_concept("datasets")
+all_datasets <- suppressWarnings(dplyr::bind_rows(fgeo_x, family_datasets))
+
+datatable_n(all_datasets)
 ```
-
-
