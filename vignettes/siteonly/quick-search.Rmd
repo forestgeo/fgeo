@@ -1,5 +1,5 @@
 ---
-title: "Quick Search"
+title: "Reference"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Quick Search}
@@ -43,45 +43,13 @@ fgeo_link <- function(x) {
 }
 ```
 
-## Search Anything
+See also [fgeo_help()](https://forestgeo.github.io/fgeo/reference/fgeo_help.html).
 
 ```{r}
-fgeo:::search_help( , package, topic, alias, title) %>%
+helpfiles <- fgeo:::search_help( , package, topic, alias, title) 
+show_n_entries <- nrow(helpfiles)
+helpfiles %>%
   fgeo_link() %>% 
-  DT::datatable(escape = FALSE)
+  DT::datatable(escape = FALSE, options = list(pageLength = show_n_entries))
 ```
-
-## Search Packages
-
-```{r}
-fgeo:::table_core() %>% 
-  rename(title = Title) %>% 
-  mutate(package = glue::glue(
-      "<a href=https://forestgeo.github.io/{package}>{package}</a>"
-    )
-  ) %>% 
-  knitr::kable(escape = FALSE)
-```
-
-## Search Datasets
-
-```{r}
-fgeo:::search_help() %>% 
-  filter(keyword == "datasets") %>% 
-  select(package, topic, alias, title) %>% 
-  fgeo_link() %>% 
-  DT::datatable(escape = FALSE)
-```
-
-## Search Help
-
-See `?fgeo_help()`, and the RStudio addin "fgeo_help".
-
-<img src="https://i.imgur.com/Y4ZjT7C.png" align="center" height=150 />
-
-[Customizing Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/206382178?version=1.1.453&mode=desktop)
-
-<img src="https://i.imgur.com/Q1vvHvC.png" align="center" height=200 />
-
-<img src="https://i.imgur.com/2poDy9U.png" align="center" height=150 />
 
