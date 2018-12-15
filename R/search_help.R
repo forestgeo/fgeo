@@ -42,12 +42,20 @@ search_help <- function(pattern = NULL,
 search_docs <- function(package) {
     docs <- utils::hsearch_db(package = package %||% fgeo_packages())
     docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
+
+
     docs %>%
       tibble::as.tibble() %>%
       purrr::set_names(tolower) %>%
+      exclude_package_doc(package) %>%
       dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
       dplyr::distinct()
   }
+
+exclude_package_doc <- function(.data, package) {
+  package_doc <- c(package, glue::glue("{package}-package"))
+  dplyr::filter(.data, !.data$alias %in% package_doc)
+}
 
 using_dots <- function(dots) {
   any(purrr::map_lgl(dots, rlang::is_quosure))
@@ -63,4 +71,41 @@ select_these_cols <- function(x, dots) {
 
 filter_this_pattern <- function(result, pattern) {
   dplyr::filter_all(result, dplyr::any_vars(grepl(pattern, .)))
+}
+
+pick_docs <- function(.f) {
+  force(.f)
+  function(entry, cols = NULL, url = "https://forestgeo.github.io/") {
+    .f(entry) %>%
+      collapse_alias() %>%
+      link_topic(url) %>%
+      select(cols %||% names(.)) %>%
+      unique()
+  }
+}
+pick_package <- pick_docs(search_help)
+pick_concept <- pick_docs(
+  function(string)
+    search_help() %>%
+    filter(.data$concept %in% string)
+)
+
+collapse_alias <- function(x) {
+  x %>%
+    group_by(topic) %>%
+    mutate(name = paste0(unique(alias), collapse = ", ")) %>%
+    ungroup()
+}
+
+link_topic <- function(x, url) {
+  x %>%
+    mutate(
+      topic = glue::glue_data(
+        ., "<a href={url}{package}/reference/{topic}>{topic}</a>"
+      ),
+      package = glue::glue_data(
+        ., "<a href={url}{package}>{package}</a>"
+      )
+    ) %>%
+    dplyr::arrange(package)
 }

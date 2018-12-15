@@ -29,3 +29,13 @@ test_that("errs with infomative error messages", {
 
 
 
+context("pick_package")
+
+test_that("doesn't include package documentation", {
+  expect_false(
+    any(grepl("fgeo.x", unique(search_docs("fgeo.x")$alias)))
+  )
+  expect_false(
+    any(grepl("fgeo.x-package", unique(search_docs("fgeo.x")$alias)))
+  )
+})

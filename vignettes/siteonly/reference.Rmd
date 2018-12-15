@@ -22,47 +22,6 @@ knitr::opts_chunk$set(
 ```{r functions}
 library(dplyr)
 library(rlang)
-
-pick_docs <- function(.f) {
-  force(.f)
-  function(entry, cols = NULL, url = "https://forestgeo.github.io/") {
-    .f(entry) %>% 
-      collapse_alias() %>% 
-      link_topic(url) %>% 
-      select(cols %||% names(.)) %>%
-      unique()
-  }
-}
-pick_package <- pick_docs(fgeo:::search_help)
-pick_concept <- pick_docs(
-  function(string) 
-    fgeo:::search_help() %>% 
-    filter(.data$concept %in% string)
-)
-
-collapse_alias <- function(x) {
-  x %>% 
-    group_by(topic) %>% 
-    mutate(name = paste0(unique(alias), collapse = ", ")) %>% 
-    ungroup()
-}
-
-link_topic <- function(x, url) {
-  x %>% 
-    mutate(
-      topic = glue::glue_data(
-        ., "<a href={url}{package}/reference/{topic}>{topic}</a>"
-      ),
-      package = glue::glue_data(
-        ., "<a href={url}{package}>{package}</a>"
-      )
-    ) %>% 
-    dplyr::arrange(package)
-}
-
-datatable_n <- function(x, n = nrow(x)) {
-  DT::datatable(x, escape = FALSE, options = list(pageLength = n))
-}
 ```
 
 ```{r prefill-arguments}
@@ -70,10 +29,16 @@ datatable_n <- function(x, n = nrow(x)) {
 relevant_columns <- function() c("alias", "topic", "title")
 fgeo_url <- "https://forestgeo.github.io/"
 pick_fgeo_package <- function(x, cols, url) {
-  pick_package(x, cols = relevant_columns(), url = fgeo_url)
+  fgeo:::pick_package(x, cols = relevant_columns(), url = fgeo_url)
 }
 pick_fgeo_concept <- function(x) {
-  pick_concept(x, cols = relevant_columns(), url = fgeo_url)
+  fgeo:::pick_concept(x, cols = relevant_columns(), url = fgeo_url)
+}
+```
+
+```{r datatable}
+datatable_n <- function(x, n = nrow(x)) {
+  DT::datatable(x, escape = FALSE, options = list(pageLength = n))
 }
 ```
 
