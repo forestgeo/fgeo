@@ -28,15 +28,7 @@ ForestGEO datasets (e.g.
     Questions, report bugs, or propose
 features.
 
-## [Quick search](https://forestgeo.github.io/fgeo/articles/siteonly/quick-search.html)
-
-<details>
-
-<summary><strong> Demo </strong></summary>
-
-![](https://i.imgur.com/tSqisFN.gif)
-
-</details>
+## [Reference](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
 
 ## Installation
 
@@ -164,10 +156,10 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages -------------------------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003
 #> v fgeo.tool    0.0.0.9005     v fgeo.map     0.0.0.9402
-#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
+#> -- Conflicts ---------------------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.analyze::check_crucial_names() masks fgeo.tool::check_crucial_names()
 #> x fgeo.tool::filter()                 masks stats::filter()
 ```

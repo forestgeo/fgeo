@@ -58,9 +58,7 @@ navbar:
         href: articles/siteonly/eda.html
 
     - text: "Reference"
-      href: reference/index.html
-    - text: "Quick Search"
-      href: articles/siteonly/quick-search.html
+      href: articles/siteonly/reference.html
 
   right:
 

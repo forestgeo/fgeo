@@ -1,0 +1,126 @@
+---
+title: "Reference"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Quick Search}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message=FALSE, 
+  warning=FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r functions}
+library(dplyr)
+library(rlang)
+
+pick_docs <- function(.f) {
+  force(.f)
+  function(entry, cols = NULL, url = "https://forestgeo.github.io/") {
+    .f(entry) %>% 
+      collapse_alias() %>% 
+      link_topic(url) %>% 
+      select(cols %||% names(.)) %>%
+      unique()
+  }
+}
+pick_package <- pick_docs(fgeo:::search_help)
+pick_concept <- pick_docs(
+  function(string) 
+    fgeo:::search_help() %>% 
+    filter(.data$concept %in% string)
+)
+
+collapse_alias <- function(x) {
+  x %>% 
+    group_by(topic) %>% 
+    mutate(name = paste0(unique(alias), collapse = ", ")) %>% 
+    ungroup()
+}
+
+link_topic <- function(x, url) {
+  x %>% 
+    mutate(
+      topic = glue::glue_data(
+        ., "<a href={url}{package}/reference/{topic}>{topic}</a>"
+      ),
+      package = glue::glue_data(
+        ., "<a href={url}{package}>{package}</a>"
+      )
+    ) %>% 
+    dplyr::arrange(package)
+}
+
+datatable_n <- function(x, n = nrow(x)) {
+  DT::datatable(x, escape = FALSE, options = list(pageLength = n))
+}
+```
+
+```{r prefill-arguments}
+# Partially fill arguments with specific details for forestgeo.
+relevant_columns <- function() c("alias", "topic", "title")
+fgeo_url <- "https://forestgeo.github.io/"
+pick_fgeo_package <- function(x, cols, url) {
+  pick_package(x, cols = relevant_columns(), url = fgeo_url)
+}
+pick_fgeo_concept <- function(x) {
+  pick_concept(x, cols = relevant_columns(), url = fgeo_url)
+}
+```
+
+### Help
+
+```{r}
+pick_fgeo_concept("functions to explore fgeo") %>% 
+  datatable_n()
+```
+
+### Abundance
+
+```{r}
+pick_fgeo_concept("functions for abundance and basal area") %>% 
+  datatable_n()
+```
+
+### Demography
+
+```{r}
+pick_fgeo_concept("demography functions") %>% 
+  datatable_n()
+```
+
+### Habitat
+
+```{r}
+pick_fgeo_concept("habitat functions") %>% 
+  datatable_n()
+```
+
+### Plot
+
+```{r}
+pick_fgeo_package("fgeo.map") %>% 
+  datatable_n()
+```
+
+### Datasets
+
+```{r}
+all_datasets <- suppressWarnings(
+  dplyr::bind_rows(
+    pick_fgeo_package("fgeo.x"), 
+    pick_fgeo_concept("datasets")
+  )
+)
+all_datasets %>% 
+  datatable_n()
+```

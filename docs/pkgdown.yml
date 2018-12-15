@@ -5,7 +5,7 @@ articles:
   eda: siteonly/eda.html
   fgeo: siteonly/fgeo.html
   questions-and-answers: siteonly/questions-and-answers.html
-  quick-search: siteonly/quick-search.html
+  reference: siteonly/reference.html
 urls:
   reference: https://forestgeo.github.io/fgeo//reference
   article: https://forestgeo.github.io/fgeo//articles

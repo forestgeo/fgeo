@@ -22,26 +22,45 @@
 #' # Exclude specific columns
 #' search_help("abundance", -package)
 #' @noRd
-search_help <- function(pattern = NULL, ..., package = NULL) {
-  vars <- rlang::enquos(...)
-
-  docs <- utils::hsearch_db(package = package %||% fgeo_core())
-  docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
-  docs <- docs %>%
-    tibble::as.tibble() %>%
-    purrr::set_names(tolower) %>%
-    dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
-    dplyr::distinct()
-
-  missing_vars <- !any(purrr::map_lgl(vars, rlang::is_quosure))
-  if (!missing_vars) {
-    docs <- dplyr::select(docs, !!! vars)
+search_help <- function(pattern = NULL,
+                        ...,
+                        package = NULL,
+                        exclude_internal = TRUE) {
+  result <- search_docs(package)
+  if (exclude_internal) {
+    result <- exclude_internal_functions(result)
   }
-
+  if (using_dots(enquos(...))) {
+    result <- select_these_cols(result, enquos(...))
+  }
   if (!is.null(pattern)) {
-    docs <- dplyr::filter_all(docs, dplyr::any_vars(grepl(pattern, .)))
+    result <- filter_this_pattern(result, pattern)
   }
-
-  unique(docs)
+  unique(result)
 }
 
+search_docs <- function(package) {
+    docs <- utils::hsearch_db(package = package %||% fgeo_packages())
+    docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
+    docs %>%
+      tibble::as.tibble() %>%
+      purrr::set_names(tolower) %>%
+      dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
+      dplyr::distinct()
+  }
+
+using_dots <- function(dots) {
+  any(purrr::map_lgl(dots, rlang::is_quosure))
+}
+
+exclude_internal_functions <- function(x) {
+  dplyr::filter(x, !.data$keyword %in% "internal")
+}
+
+select_these_cols <- function(x, dots) {
+  dplyr::select(x, !!! dots)
+}
+
+filter_this_pattern <- function(result, pattern) {
+  dplyr::filter_all(result, dplyr::any_vars(grepl(pattern, .)))
+}
