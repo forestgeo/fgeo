@@ -27,9 +27,7 @@ search_help <- function(pattern = NULL,
                         package = NULL,
                         include_internal = FALSE) {
   vars <- rlang::enquos(...)
-  selected_packages <- package %||% c("fgeo", fgeo_core())
-
-  docs <- utils::hsearch_db(package = selected_packages)
+  docs <- utils::hsearch_db(package = package %||% fgeo_packages())
   docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
   docs <- docs %>%
     tibble::as.tibble() %>%
