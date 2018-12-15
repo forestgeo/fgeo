@@ -37,8 +37,12 @@ search_help <- function(pattern = NULL,
     dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
     dplyr::distinct()
 
-  missing_vars <- !any(purrr::map_lgl(vars, rlang::is_quosure))
-  if (!missing_vars) {
+  if (!include_internal) {
+    docs <- dplyr::filter(docs, !.data$keyword %in% "internal")
+  }
+
+  user_selects_specific_vars <- any(purrr::map_lgl(vars, rlang::is_quosure))
+  if (user_selects_specific_vars) {
     docs <- dplyr::select(docs, !!! vars)
   }
 
@@ -46,11 +50,6 @@ search_help <- function(pattern = NULL,
     docs <- dplyr::filter_all(docs, dplyr::any_vars(grepl(pattern, .)))
   }
 
-  if (include_internal) {
-    return(unique(docs))
-  }
-
-  unique(docs) %>%
-    dplyr::filter(!.data$keyword %in% "internal")
+  unique(docs)
 }
 
