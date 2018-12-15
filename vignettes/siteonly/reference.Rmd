@@ -17,24 +17,28 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-
-library(fgeo)
-library(tidyverse)
 ```
 
 ```{r functions}
-#' @importFrom dplyr filter select arrange mutate group ungroup %>%
-has_concept <- function(string) {
-  fgeo:::search_help() %>% 
-    filter(.data$concept %in% string) %>% 
-    collapse_alias() %>% 
-    link_topic() %>% 
-    select(columns())
-}
+library(dplyr)
+library(rlang)
 
-columns <- function() {
-  c("alias", "topic", "title")
+pick_docs <- function(.f) {
+  force(.f)
+  function(entry, cols = NULL, url = "https://forestgeo.github.io/") {
+    .f(entry) %>% 
+      collapse_alias() %>% 
+      link_topic(url) %>% 
+      select(cols %||% names(.)) %>%
+      unique()
+  }
 }
+pick_package <- pick_docs(fgeo:::search_help)
+pick_concept <- pick_docs(
+  function(string) 
+    fgeo:::search_help() %>% 
+    filter(.data$concept %in% string)
+)
 
 collapse_alias <- function(x) {
   x %>% 
@@ -43,14 +47,14 @@ collapse_alias <- function(x) {
     ungroup()
 }
 
-link_topic <- function(x, base = "https://forestgeo.github.io/") {
+link_topic <- function(x, url) {
   x %>% 
     mutate(
       topic = glue::glue_data(
-        ., "<a href={base}{package}/reference/{topic}>{topic}</a>"
+        ., "<a href={url}{package}/reference/{topic}>{topic}</a>"
       ),
       package = glue::glue_data(
-        ., "<a href={base}{package}>{package}</a>"
+        ., "<a href={url}{package}>{package}</a>"
       )
     ) %>% 
     dplyr::arrange(package)
@@ -59,54 +63,64 @@ link_topic <- function(x, base = "https://forestgeo.github.io/") {
 datatable_n <- function(x, n = nrow(x)) {
   DT::datatable(x, escape = FALSE, options = list(pageLength = n))
 }
+```
 
+```{r prefill-arguments}
+# Partially fill arguments with specific details for forestgeo.
+relevant_columns <- function() c("alias", "topic", "title")
+fgeo_url <- "https://forestgeo.github.io/"
+pick_fgeo_package <- function(x, cols, url) {
+  pick_package(x, cols = relevant_columns(), url = fgeo_url)
+}
+pick_fgeo_concept <- function(x) {
+  pick_concept(x, cols = relevant_columns(), url = fgeo_url)
+}
 ```
 
 ### Help
 
 ```{r}
-datatable_n(has_concept("functions to explore fgeo"))
+pick_fgeo_concept("functions to explore fgeo") %>% 
+  datatable_n()
 ```
 
 ### Abundance
 
 ```{r}
-datatable_n(has_concept("functions for abundance and basal area"))
+pick_fgeo_concept("functions for abundance and basal area") %>% 
+  datatable_n()
 ```
 
 ### Demography
 
 ```{r}
-datatable_n(has_concept("demography functions"))
+pick_fgeo_concept("demography functions") %>% 
+  datatable_n()
 ```
 
 ### Habitat
 
 ```{r}
-datatable_n(has_concept("habitat functions"))
+pick_fgeo_concept("habitat functions") %>% 
+  datatable_n()
 ```
 
 ### Plot
 
 ```{r}
-fgeo:::search_help("fgeo.map") %>% 
-  collapse_alias() %>% 
-  link_topic() %>% 
-  select(columns()) %>% 
-  unique() %>% 
+pick_fgeo_package("fgeo.map") %>% 
   datatable_n()
 ```
 
 ### Datasets
 
 ```{r}
-fgeo_x <- fgeo:::search_help("fgeo.x") %>% 
-  collapse_alias() %>% 
-  link_topic() %>% 
-  select(columns()) %>% 
-  unique()
-family_datasets <- has_concept("datasets")
-all_datasets <- suppressWarnings(dplyr::bind_rows(fgeo_x, family_datasets))
-
-datatable_n(all_datasets)
+all_datasets <- suppressWarnings(
+  dplyr::bind_rows(
+    pick_fgeo_package("fgeo.x"), 
+    pick_fgeo_concept("datasets")
+  )
+)
+all_datasets %>% 
+  datatable_n()
 ```
