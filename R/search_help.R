@@ -32,6 +32,10 @@ search_help <- function(pattern = NULL,
 
   if (using_dots(enquos(...))) {
     result <- dplyr::select(result, !!! enquos(...))
+    select_specific_columns <- function(...) {
+      dplyr::select(result, !!! enquos(...))
+    }
+
   }
 
   if (!is.null(pattern)) {
