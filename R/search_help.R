@@ -24,8 +24,9 @@
 #' @noRd
 search_help <- function(pattern = NULL, ..., package = NULL) {
   vars <- rlang::enquos(...)
+  selected_packages <- package %||% fgeo_core()
 
-  docs <- utils::hsearch_db(package = package %||% fgeo_core())
+  docs <- utils::hsearch_db(package = selected_packages)
   docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
   docs <- docs %>%
     tibble::as.tibble() %>%

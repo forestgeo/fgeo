@@ -53,3 +53,10 @@ helpfiles %>%
   DT::datatable(escape = FALSE, options = list(pageLength = show_n_entries))
 ```
 
+### Explore fgeo
+
+```{r}
+fgeo:::search_help() 
+```
+
+
