@@ -30,9 +30,9 @@ search_help <- function(pattern = NULL,
   if (exclude_internal)
     result <- exclude_internal(result)
   if (using_dots(enquos(...)))
-    result <- select_columns(result, enquos(...))
+    result <- select_these_columns(result, enquos(...))
   if (!is.null(pattern))
-    result <- filter_rows_xxx(result, pattern)
+    result <- filter_this_pattern(result, pattern)
   unique(result)
 }
 
@@ -54,10 +54,10 @@ exclude_internal <- function(x) {
   dplyr::filter(x, !.data$keyword %in% "internal")
 }
 
-select_columns <- function(x, dots) {
+select_these_columns <- function(x, dots) {
   dplyr::select(x, !!! dots)
 }
 
-filter_rows_xxx <- function(result, pattern) {
+filter_this_pattern <- function(result, pattern) {
   dplyr::filter_all(result, dplyr::any_vars(grepl(pattern, .)))
 }
