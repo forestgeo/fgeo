@@ -25,7 +25,6 @@ library(tidyverse)
 ```{r functions}
 has_concept <- function(string) {
   fgeo:::search_help() %>% 
-    filter(!keyword %in% "internal") %>% 
     family_contains(string) %>% 
     collapse_alias() %>% 
     # TODO: Add param link
@@ -113,7 +112,6 @@ fgeo:::search_help("fgeo.map") %>%
 
 ```{r}
 fgeo_x <- fgeo:::search_help("fgeo.x") %>% 
-  filter(!keyword %in% "internal") %>% 
   collapse_alias() %>% 
   link() %>% 
   dplyr::select(columns()) %>% 

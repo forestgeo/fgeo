@@ -22,7 +22,10 @@
 #' # Exclude specific columns
 #' search_help("abundance", -package)
 #' @noRd
-search_help <- function(pattern = NULL, ..., package = NULL) {
+search_help <- function(pattern = NULL,
+                        ...,
+                        package = NULL,
+                        include_internal = FALSE) {
   vars <- rlang::enquos(...)
   selected_packages <- package %||% c("fgeo", fgeo_core())
 
@@ -43,6 +46,11 @@ search_help <- function(pattern = NULL, ..., package = NULL) {
     docs <- dplyr::filter_all(docs, dplyr::any_vars(grepl(pattern, .)))
   }
 
-  unique(docs)
+  if (include_internal) {
+    return(unique(docs))
+  }
+
+  unique(docs) %>%
+    dplyr::filter(!.data$keyword %in% "internal")
 }
 
