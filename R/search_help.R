@@ -27,12 +27,9 @@ search_help <- function(pattern = NULL,
                         package = NULL,
                         exclude_internal = TRUE) {
   result <- search_docs(package)
-  if (exclude_internal)
-    result <- exclude_internal_functions(result)
-  if (using_dots(enquos(...)))
-    result <- select_these_columns(result, enquos(...))
-  if (!is.null(pattern))
-    result <- filter_this_pattern(result, pattern)
+  if (exclude_internal) result <- exclude_internal_functions(result)
+  if (using_dots(enquos(...))) result <- select_these_cols(result, enquos(...))
+  if (!is.null(pattern)) result <- filter_this_pattern(result, pattern)
   unique(result)
 }
 
@@ -54,7 +51,7 @@ exclude_internal_functions <- function(x) {
   dplyr::filter(x, !.data$keyword %in% "internal")
 }
 
-select_these_columns <- function(x, dots) {
+select_these_cols <- function(x, dots) {
   dplyr::select(x, !!! dots)
 }
 
