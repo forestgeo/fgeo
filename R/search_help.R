@@ -28,12 +28,7 @@ search_help <- function(pattern = NULL,
                         exclude_internal = TRUE) {
   result <- search_docs(package)
 
-  if (exclude_internal) {
-    exclude_internal <- function(x) {
-      dplyr::filter(x, !.data$keyword %in% "internal")
-    }
-    result <- exclude_internal(result)
-  }
+  if (exclude_internal) result <- exclude_internal(result)
 
   if (using_dots(enquos(...))) {
     result <- dplyr::select(result, !!! enquos(...))
@@ -58,4 +53,8 @@ search_docs <- function(package) {
 
 using_dots <- function(dots) {
   any(purrr::map_lgl(dots, rlang::is_quosure))
+}
+
+exclude_internal <- function(x) {
+  dplyr::filter(x, !.data$keyword %in% "internal")
 }
