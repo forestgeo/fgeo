@@ -25,10 +25,28 @@
 search_help <- function(pattern = NULL,
                         ...,
                         package = NULL,
-                        include_internal = FALSE) {
-  vars <- rlang::enquos(...)
+                        exclude_internal = TRUE) {
+  result <- search_docs(package)
 
-  search_docs <- function(package) {
+  if (exclude_internal) {
+    exclude_internal <- function(x) {
+      dplyr::filter(x, !.data$keyword %in% "internal")
+    }
+    result <- exclude_internal(result)
+  }
+
+  if (using_dots(enquos(...))) {
+    result <- dplyr::select(result, !!! enquos(...))
+  }
+
+  if (!is.null(pattern)) {
+    result <- dplyr::filter_all(result, dplyr::any_vars(grepl(pattern, .)))
+  }
+
+  unique(result)
+}
+
+search_docs <- function(package) {
     docs <- utils::hsearch_db(package = package %||% fgeo_packages())
     docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
     docs %>%
@@ -37,21 +55,7 @@ search_help <- function(pattern = NULL,
       dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
       dplyr::distinct()
   }
-  docs <- search_docs(package)
 
-  if (!include_internal) {
-    docs <- dplyr::filter(docs, !.data$keyword %in% "internal")
-  }
-
-  user_selects_specific_vars <- any(purrr::map_lgl(vars, rlang::is_quosure))
-  if (user_selects_specific_vars) {
-    docs <- dplyr::select(docs, !!! vars)
-  }
-
-  if (!is.null(pattern)) {
-    docs <- dplyr::filter_all(docs, dplyr::any_vars(grepl(pattern, .)))
-  }
-
-  unique(docs)
+using_dots <- function(dots) {
+  any(purrr::map_lgl(dots, rlang::is_quosure))
 }
-
