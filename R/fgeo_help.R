@@ -23,6 +23,7 @@
 #' @examples
 #' if (interactive()) fgeo_help()
 #' if (interactive()) fgeo_help("stem", package = "fgeo.x")
+#' @family functions to explore fgeo
 fgeo_help <- function(pattern = "", package = NULL) {
   utils::help.search(
     pattern = pattern,

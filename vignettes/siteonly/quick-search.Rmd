@@ -3,8 +3,10 @@ title: "Reference"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Quick Search}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
@@ -21,11 +23,27 @@ library(tidyverse)
 ```
 
 ```{r}
-link_pkg <- function(x) {
-  glue::glue("<a href=https://forestgeo.github.io/{package}>{package}</a>")
+has_concept <- function(string) {
+  fgeo:::search_help() %>% 
+    family_contains(string) %>% 
+    collapse_alias() %>% 
+    # TODO: Add param link
+    link() %>% 
+    dplyr::select(package, topic, alias, title)
 }
 
-fgeo_link <- function(x) {
+family_contains <- function(entries, string) {
+  dplyr::filter(entries, concept %in% string)
+}
+
+collapse_alias <- function(entries) {
+  entries %>% 
+    dplyr::group_by(topic) %>% 
+    dplyr::mutate(name = paste0(unique(alias), collapse = ", ")) %>% 
+    dplyr::ungroup()
+}
+
+link <- function(x) {
   x %>% 
     dplyr::mutate(
       topic = glue::glue_data(
@@ -41,22 +59,44 @@ fgeo_link <- function(x) {
     ) %>% 
     dplyr::arrange(package)
 }
-```
 
-See also [fgeo_help()](https://forestgeo.github.io/fgeo/reference/fgeo_help.html).
+link_pkg <- function(x) {
+  glue::glue("<a href=https://forestgeo.github.io/{package}>{package}</a>")
+}
 
-```{r}
-helpfiles <- fgeo:::search_help( , package, topic, alias, title) 
-show_n_entries <- nrow(helpfiles)
-helpfiles %>%
-  fgeo_link() %>% 
-  DT::datatable(escape = FALSE, options = list(pageLength = show_n_entries))
+datatable_n <- function(x, n = nrow(x)) {
+  DT::datatable(x, escape = FALSE, options = list(pageLength = n))
+}
 ```
 
 ### Explore fgeo
 
 ```{r}
-fgeo:::search_help() 
+datatable_n(has_concept("functions to explore fgeo"))
+```
+
+### Abundance
+
+```{r}
+datatable_n(has_concept("functions for abundance and basal area"))
+```
+
+### Demography
+
+```{r}
+datatable_n(has_concept("demography functions"))
+```
+
+### Habitat
+
+```{r}
+datatable_n(has_concept("habitat functions"))
+```
+
+### Datasets
+
+```{r}
+datatable_n(has_concept("datasets"))
 ```
 
 
