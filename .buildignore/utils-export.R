@@ -1,5 +1,25 @@
+library(dplyr)
+library(fgeo)
 
-# Interface ---------------------------------------------------------------
+this_package <- "fgeo.analyze"
+package_docs <- search_help(, alias, topic, package) %>%
+  filter(.data$package %in% this_package)
+
+export_one_object <- function(package, topic, alias) {
+  glue::glue("
+    #' @importFrom {package} {topic}
+    #' @export
+    {package}::{alias}
+  ")
+}
+
+package_docs %>%
+  purrr::pmap(export_one_object) %>%
+  glue::glue_collapse("\n\n")
+
+
+
+# Old approach ------------------------------------------------------------
 
 #' Export objects from packages.
 #'
@@ -11,8 +31,8 @@
 #' @return Output of `glue::glue()`.
 #' @examples
 #' packages <- c("fgeo.x", "fgeo.tool")
-#' export_native(packages)
 #' export_foreign(packages)
+#' export_native(packages)
 NULL
 export <- function(template){
   force(template)
