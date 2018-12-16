@@ -45,14 +45,10 @@ custom_datatable <- function(x) {
     x, 
     escape = FALSE, 
     rownames = NULL,
-    # colnames = NULL,
     options = list(
-      # dom = 't',
-      # bSort = FALSE,
       lengthChange = FALSE,
       paging = FALSE,
       pageLength = nrow(x)
-      
     )
   )
 }
