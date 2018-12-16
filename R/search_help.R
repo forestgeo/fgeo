@@ -30,11 +30,11 @@ search_help <- function(pattern = NULL,
   if (exclude_internal) {
     result <- exclude_internal_functions(result)
   }
-  if (using_dots(enquos(...))) {
+  if (want_specific_cols(enquos(...))) {
     result <- select_these_cols(result, enquos(...))
   }
   if (!is.null(pattern)) {
-    result <- filter_this_pattern(result, pattern)
+    result <- pick_this_pattern(result, pattern)
   }
   unique(result)
 }
@@ -45,22 +45,64 @@ search_docs <- function(package) {
     docs %>%
       tibble::as.tibble() %>%
       purrr::set_names(tolower) %>%
-      dplyr::select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
-      dplyr::distinct()
+      exclude_package_doc(package) %>%
+      select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
+      unique()
   }
 
-using_dots <- function(dots) {
-  any(purrr::map_lgl(dots, rlang::is_quosure))
+exclude_package_doc <- function(.data, package) {
+  .data %>%
+    filter(!.data$alias %in% c(package, glue("{package}-package")))
 }
 
-exclude_internal_functions <- function(x) {
-  dplyr::filter(x, !.data$keyword %in% "internal")
+want_specific_cols <- function(elipsis) {
+  any(purrr::map_lgl(elipsis, rlang::is_quosure))
 }
 
-select_these_cols <- function(x, dots) {
-  dplyr::select(x, !!! dots)
+exclude_internal_functions <- function(.data) {
+  .data %>%
+    filter(!.data$keyword %in% "internal")
 }
 
-filter_this_pattern <- function(result, pattern) {
-  dplyr::filter_all(result, dplyr::any_vars(grepl(pattern, .)))
+select_these_cols <- function(.data, elipsis) {
+  .data %>%
+    select(!!! elipsis)
+}
+
+pick_this_pattern <- function(.data, pattern) {
+  .data %>%
+    dplyr::filter_all(dplyr::any_vars(grepl(pattern, .)))
+}
+
+pick_docs <- function(pick_these) {
+  force(pick_these)
+  function(.data, cols = NULL, url = "https://forestgeo.github.io/") {
+    pick_these(.data) %>%
+      collapse_alias() %>%
+      link_topic(url) %>%
+      select(cols %||% names(.)) %>%
+      unique()
+  }
+}
+pick_package <- pick_docs(search_help)
+pick_concept <- pick_docs(
+  function(family_string)
+    search_help() %>%
+    filter(.data$concept %in% family_string)
+)
+
+collapse_alias <- function(.data) {
+  .data %>%
+    group_by(.data$topic) %>%
+    mutate(name = paste0(unique(.data$alias), collapse = ", ")) %>%
+    ungroup()
+}
+
+link_topic <- function(.data, url) {
+  .data %>%
+    mutate(
+      topic   = glue("<a href={url}{package}/reference/{topic}>{topic}</a>"),
+      package = glue("<a href={url}{package}>{package}</a>")
+    ) %>%
+    arrange(.data$package)
 }

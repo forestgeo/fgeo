@@ -1,7 +1,3 @@
-collapse <- function(...) {
-  paste0(..., collapse = ", ")
-}
-
 msg <- function(..., startup = FALSE) {
   if (startup) {
     if (!isTRUE(getOption("fgeo.quiet"))) {

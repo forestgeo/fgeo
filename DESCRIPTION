@@ -94,7 +94,8 @@ Imports:
     rlang,
     rstudioapi,
     tibble,
-    utils
+    utils,
+    glue
 Suggests: 
     covr,
     DT,
