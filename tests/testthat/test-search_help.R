@@ -37,6 +37,14 @@ test_that("outputs an entry for fgeo_elevation", {
       )
     )
   )
+  expect_true(
+    any(
+      grepl(
+        "fgeo_elevation",
+        fgeo:::pick_package("fgeo.tool")$alias
+      )
+    )
+  )
 })
 
 

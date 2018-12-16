@@ -81,6 +81,9 @@ navbar:
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
 
+toc:
+  depth: 3
+
 reference:
 - title: Explore fgeo
   contents:

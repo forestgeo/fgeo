@@ -40,22 +40,36 @@ pick_fgeo_concept <- function(x) {
 ```
 
 ```{r datatable}
-custom_datatable <- function(x) {
+custom_datatable <- function(x, 
+                             options = list(
+                               lengthChange = FALSE,
+                               paging = FALSE,
+                               pageLength = nrow(x))) {
   DT::datatable(
     x, 
     escape = FALSE, 
     rownames = NULL,
-    # colnames = NULL,
-    options = list(
-      # f: filtering, t: table, i: information
-      dom =  'fti',
-      lengthChange = FALSE,
-      paging = FALSE,
-      pageLength = nrow(x)
-    )
+    options = options
   )
 }
 ```
+
+#### Global search
+
+```{r, warning=FALSE}
+fgeo:::fgeo_packages() %>% 
+  purrr::map_dfr(pick_fgeo_package) %>% 
+  unique() %>% 
+  custom_datatable(
+    options = list(
+      lengthChange = TRUE,
+      paging = TRUE,
+      pageLength = 3
+    )
+  )
+```
+
+## Index
 
 ### Help
 
@@ -85,6 +99,13 @@ pick_fgeo_concept("habitat functions") %>%
   custom_datatable()
 ```
 
+### Wrangle
+
+```{r}
+pick_fgeo_package("fgeo.tool") %>% 
+  custom_datatable()
+```
+
 ### Plot
 
 ```{r}
@@ -104,3 +125,4 @@ all_datasets <- suppressWarnings(
 all_datasets %>% 
   custom_datatable()
 ```
+#
