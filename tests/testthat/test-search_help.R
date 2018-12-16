@@ -1,5 +1,7 @@
 context("search_help")
 
+library(fgeo)
+
 test_that("with no arguments returns all columns", {
   cols <- c(
     "package", "title", "topic", "type", "alias", "keyword", "concept"

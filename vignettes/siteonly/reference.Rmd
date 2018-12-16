@@ -22,6 +22,7 @@ knitr::opts_chunk$set(
 ```{r functions}
 library(dplyr)
 library(rlang)
+library(fgeo)
 ```
 
 ```{r prefill-arguments}
@@ -29,10 +30,12 @@ library(rlang)
 relevant_columns <- function() c("alias", "topic", "title")
 fgeo_url <- "https://forestgeo.github.io/"
 pick_fgeo_package <- function(x, cols, url) {
-  fgeo:::pick_package(x, cols = relevant_columns(), url = fgeo_url)
+  fgeo:::pick_package(x, cols = relevant_columns(), url = fgeo_url) %>% 
+    mutate(alias = fgeo:::strip_s3class(.data$alias))
 }
 pick_fgeo_concept <- function(x) {
-  fgeo:::pick_concept(x, cols = relevant_columns(), url = fgeo_url)
+  fgeo:::pick_concept(x, cols = relevant_columns(), url = fgeo_url) %>% 
+    mutate(alias = fgeo:::strip_s3class(.data$alias))
 }
 ```
 
