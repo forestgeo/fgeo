@@ -1,6 +1,6 @@
 ---
 title: "Reference"
-output: rmarkdown::html_vignette
+output: html_vignette
 vignette: >
   %\VignetteIndexEntry{Quick Search}
   %\VignetteEncoding{UTF-8}
@@ -12,8 +12,8 @@ editor_options:
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   echo = FALSE,
-  message=FALSE, 
-  warning=FALSE,
+  message = FALSE,
+  warning = FALSE,
   collapse = TRUE,
   comment = "#>"
 )
@@ -22,6 +22,7 @@ knitr::opts_chunk$set(
 ```{r functions}
 library(dplyr)
 library(rlang)
+library(fgeo)
 ```
 
 ```{r prefill-arguments}
@@ -29,52 +30,87 @@ library(rlang)
 relevant_columns <- function() c("alias", "topic", "title")
 fgeo_url <- "https://forestgeo.github.io/"
 pick_fgeo_package <- function(x, cols, url) {
-  fgeo:::pick_package(x, cols = relevant_columns(), url = fgeo_url)
+  fgeo:::pick_package(x, cols = relevant_columns(), url = fgeo_url) %>% 
+    mutate(alias = fgeo:::strip_s3class(.data$alias))
 }
 pick_fgeo_concept <- function(x) {
-  fgeo:::pick_concept(x, cols = relevant_columns(), url = fgeo_url)
+  fgeo:::pick_concept(x, cols = relevant_columns(), url = fgeo_url) %>% 
+    mutate(alias = fgeo:::strip_s3class(.data$alias))
 }
 ```
 
 ```{r datatable}
-datatable_n <- function(x, n = nrow(x)) {
-  DT::datatable(x, escape = FALSE, options = list(pageLength = n))
+custom_datatable <- function(x, 
+                             options = list(
+                               lengthChange = FALSE,
+                               paging = FALSE,
+                               pageLength = nrow(x))) {
+  DT::datatable(
+    x, 
+    escape = FALSE, 
+    rownames = NULL,
+    options = options
+  )
 }
 ```
+
+#### Global search
+
+```{r, warning=FALSE}
+fgeo:::fgeo_packages() %>% 
+  purrr::map_dfr(pick_fgeo_package) %>% 
+  unique() %>% 
+  custom_datatable(
+    options = list(
+      lengthChange = TRUE,
+      paging = TRUE,
+      pageLength = 3
+    )
+  )
+```
+
+## Index
 
 ### Help
 
 ```{r}
 pick_fgeo_concept("functions to explore fgeo") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Abundance
 
 ```{r}
 pick_fgeo_concept("functions for abundance and basal area") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Demography
 
 ```{r}
 pick_fgeo_concept("demography functions") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Habitat
 
 ```{r}
 pick_fgeo_concept("habitat functions") %>% 
-  datatable_n()
+  custom_datatable()
+```
+
+### Wrangle
+
+```{r}
+pick_fgeo_package("fgeo.tool") %>% 
+  custom_datatable()
 ```
 
 ### Plot
 
 ```{r}
 pick_fgeo_package("fgeo.map") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Datasets
@@ -87,5 +123,6 @@ all_datasets <- suppressWarnings(
   )
 )
 all_datasets %>% 
-  datatable_n()
+  custom_datatable()
 ```
+#

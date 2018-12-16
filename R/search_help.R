@@ -40,15 +40,15 @@ search_help <- function(pattern = NULL,
 }
 
 search_docs <- function(package) {
-    docs <- utils::hsearch_db(package = package %||% fgeo_packages())
-    docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
-    docs %>%
-      tibble::as.tibble() %>%
-      purrr::set_names(tolower) %>%
-      exclude_package_doc(package) %>%
-      select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
-      unique()
-  }
+  docs <- utils::hsearch_db(package = package %||% fgeo_packages())
+  docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
+  docs %>%
+    tibble::as.tibble() %>%
+    purrr::set_names(tolower) %>%
+    exclude_package_doc(package) %>%
+    select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
+    unique()
+}
 
 exclude_package_doc <- function(.data, package) {
   .data %>%
