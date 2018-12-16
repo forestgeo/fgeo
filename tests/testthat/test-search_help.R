@@ -27,16 +27,7 @@ test_that("errs with infomative error messages", {
   expect_error(search_help(invalid), "object.*not found")
 })
 
-
 test_that("outputs an entry for fgeo_elevation", {
-  expect_true(
-    any(
-      grepl(
-        "fgeo_elevation",
-        fgeo:::pick_concept("habitat functions")$alias
-      )
-    )
-  )
   expect_true(
     any(
       grepl(
