@@ -1,6 +1,6 @@
 ---
 title: "Reference"
-output: rmarkdown::html_vignette
+output: html_vignette
 vignette: >
   %\VignetteIndexEntry{Quick Search}
   %\VignetteEncoding{UTF-8}
@@ -45,7 +45,10 @@ custom_datatable <- function(x) {
     x, 
     escape = FALSE, 
     rownames = NULL,
+    # colnames = NULL,
     options = list(
+      # f: filtering, t: table, i: information
+      dom =  'fti',
       lengthChange = FALSE,
       paging = FALSE,
       pageLength = nrow(x)
