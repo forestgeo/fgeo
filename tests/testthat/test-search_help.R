@@ -1,7 +1,5 @@
 context("search_help")
 
-library(fgeo)
-
 test_that("with no arguments returns all columns", {
   cols <- c(
     "package", "title", "topic", "type", "alias", "keyword", "concept"
@@ -27,6 +25,18 @@ test_that("with a pattern returns that pattern", {
 test_that("errs with infomative error messages", {
   expect_error(search_help(NULL, invalid), "object.*not found")
   expect_error(search_help(invalid), "object.*not found")
+})
+
+
+test_that("outputs an entry for fgeo_elevation", {
+  expect_true(
+    any(
+      grepl(
+        "fgeo_elevation",
+        fgeo:::pick_concept("habitat functions")$alias
+      )
+    )
+  )
 })
 
 

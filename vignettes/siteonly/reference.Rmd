@@ -12,8 +12,8 @@ editor_options:
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   echo = FALSE,
-  message=FALSE, 
-  warning=FALSE,
+  message = FALSE,
+  warning = FALSE,
   collapse = TRUE,
   comment = "#>"
 )
@@ -40,8 +40,21 @@ pick_fgeo_concept <- function(x) {
 ```
 
 ```{r datatable}
-datatable_n <- function(x, n = nrow(x)) {
-  DT::datatable(x, escape = FALSE, options = list(pageLength = n))
+custom_datatable <- function(x) {
+  DT::datatable(
+    x, 
+    escape = FALSE, 
+    rownames = NULL,
+    # colnames = NULL,
+    options = list(
+      # dom = 't',
+      # bSort = FALSE,
+      lengthChange = FALSE,
+      paging = FALSE,
+      pageLength = nrow(x)
+      
+    )
+  )
 }
 ```
 
@@ -49,35 +62,35 @@ datatable_n <- function(x, n = nrow(x)) {
 
 ```{r}
 pick_fgeo_concept("functions to explore fgeo") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Abundance
 
 ```{r}
 pick_fgeo_concept("functions for abundance and basal area") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Demography
 
 ```{r}
 pick_fgeo_concept("demography functions") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Habitat
 
 ```{r}
 pick_fgeo_concept("habitat functions") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Plot
 
 ```{r}
 pick_fgeo_package("fgeo.map") %>% 
-  datatable_n()
+  custom_datatable()
 ```
 
 ### Datasets
@@ -90,5 +103,5 @@ all_datasets <- suppressWarnings(
   )
 )
 all_datasets %>% 
-  datatable_n()
+  custom_datatable()
 ```
