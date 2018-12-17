@@ -58,6 +58,11 @@ custom_table <- function(x) {
 }
 ```
 
+```{r}
+DT::datatable(mtcars, options = list(search = list(search = "Mazda")))
+```
+
+
 ### Help
 
 ```{r}
