@@ -2,7 +2,7 @@
 % Please edit documentation in R/reexport-fgeo-analyze.R
 \name{abundance}
 \alias{abundance}
-\title{Abundance: Please see \code{?fgeo.analyze::abundance}.}
+\title{Abundance and basal area, optionally by groups.}
 \description{
-Abundance: Please see \code{?fgeo.analyze::abundance}.
+See \code{\link[fgeo.analyze:abundance]{fgeo.analyze::abundance()}}.
 }

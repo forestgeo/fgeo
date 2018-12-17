@@ -11,24 +11,18 @@ status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](htt
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-**fgeo** installs and loads multiple R packages, functions, and datasets
-to analyze trees abundance, demography, and habitats
-(<a href=https://forestgeo.github.io/fgeo.analyze>fgeo.analyze</a>). It
-also includes general-purpose functions to simplify the visualization
-(<a href=https://forestgeo.github.io/fgeo.map>fgeo.map</a>) and
-manipulation
-(<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>) of
-ForestGEO datasets (e.g.
-<a href=https://forestgeo.github.io/fgeo.x>fgeo.x</a>).
+**fgeo** installs and loads multiple R functions, and datasets to
+visualize and manipulate ForestGEO datasets, and to analyze trees
+abundance, demography, and habitats.
 
+  - [Search functions and
+    datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
   - [Related
-    projects](https://forestgeo.github.io/fgeo/#related-projects).
-  - [Try **fgeo** before you install it](https://bit.ly/fgeo-demo).
-  - [Contact me](https://github.com/forestgeo/fgeo/issues/new) to ask
-    Questions, report bugs, or propose
-features.
-
-## [Reference](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
+    projects](https://forestgeo.github.io/fgeo/#related-projects)
+  - [Try **fgeo** before you install it](https://bit.ly/fgeo-demo)
+  - [Contact the
+    maintainer](https://github.com/forestgeo/fgeo/issues/new) to ask
+    questions, report bugs, or propose features
 
 ## Installation
 
@@ -160,8 +154,8 @@ Load all **fgeo** packages in one step.
 # * always (see `?usethis::edit_r_profile()`): `options("fgeo.quiet" = TRUE)`
 library(fgeo)
 #> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003
-#> v fgeo.tool    0.0.0.9005     v fgeo.map     0.0.0.9402
+#> v fgeo.x    0.0.0.9000     v fgeo.map  0.0.0.9402
+#> v fgeo.tool 0.0.0.9005
 #> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
