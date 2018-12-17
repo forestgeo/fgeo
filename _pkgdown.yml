@@ -1,4 +1,56 @@
+navbar:
+  type: default
+  left:
+  - text: "Get started"
+    href: articles/siteonly/fgeo.html
+  - text: "Tutorials"
+    menu:
+    - text: "Visualization basics"
+      href: https://fgeocomm.shinyapps.io/basics-vis/
+    - text: "Programming basics"
+      href: https://fgeocomm.shinyapps.io/basics-programming/
+    - text: "Tibbles"
+      href: https://fgeocomm.shinyapps.io/transform-tibbles/
+    - text: "Isolating data with dplyr"
+      href: https://fgeocomm.shinyapps.io/transform-isolating/
+    - text: "Exploratory data analysis"
+      href: articles/siteonly/eda.html
+  - text: "Reference"
+    href: articles/siteonly/reference.html
+  right:
+  - text: "Community"
+    menu:
+    - text: "Q&A"
+      href: articles/siteonly/questions-and-answers.html
+    - text: "Try fgeo in rstudio.cloud"
+      href: https://rstudio.cloud/project/43852
+    - text: "Resources"
+      href: https://github.com/forestgeo/learn/issues
+    - text: "Discuss"
+      href: https://github.com/forestgeo/forum/issues
+    - text: "Blog"
+      href: https://fgeo.netlify.com/
+  - icon: fa-gavel
+    href: https://github.com/maurolepore
+  - icon: fa-github
+    href: https://github.com/forestgeo/fgeo
+
+reference:
+  - title: Objects from fgeo
+    contents:
+    - -reexports
+  - title: Objects exported from other packages
+    contents:
+    - reexports
+
 url: https://forestgeo.github.io/fgeo/
+
+template:
+  params:
+    bootswatch: united
+
+toc:
+  depth: 3
 
 authors:
   Mauro Lepore:
@@ -23,64 +75,3 @@ authors:
     href: http://russolab.unl.edu
   CTFS-ForestGEO:
     href: http://www.forestgeo.si.edu/
-
-
-
-template:
-  params:
-    bootswatch: united
-
-
-
-
-navbar:
-  type: default
-  left:
-  - text: "Home"
-    href: index.html
-  - text: "Get started"
-    href: articles/siteonly/fgeo.html
-  - text: "Tutorials"
-    menu:
-    - text: "Visualization basics"
-      href: https://fgeocomm.shinyapps.io/basics-vis/
-    - text: "Programming basics"
-      href: https://fgeocomm.shinyapps.io/basics-programming/
-    - text: "Tibbles"
-      href: https://fgeocomm.shinyapps.io/transform-tibbles/
-    - text: "Isolating data with dplyr"
-      href: https://fgeocomm.shinyapps.io/transform-isolating/
-    - text: "Exploratory data analysis"
-      href: articles/siteonly/eda.html
-
-  - text: "Reference"
-    href: articles/siteonly/reference.html
-
-  right:
-  - text: "Community"
-    menu:
-    - text: "Q&A"
-      href: articles/siteonly/questions-and-answers.html
-    - text: "Try fgeo in rstudio.cloud"
-      href: https://rstudio.cloud/project/43852
-    - text: "Resources"
-      href: https://github.com/forestgeo/learn/issues
-    - text: "Discuss"
-      href: https://github.com/forestgeo/forum/issues
-    - text: "Blog"
-      href: https://fgeo.netlify.com/
-  - icon: fa-gavel
-    href: https://github.com/maurolepore
-  - icon: fa-github
-    href: https://github.com/forestgeo/fgeo
-
-toc:
-  depth: 3
-
-reference:
-  - title: Objects from fgeo
-    contents:
-    - -reexports
-  - title: Objects exported from other packages
-    contents:
-    - reexports
