@@ -38,6 +38,10 @@ test_that("outputs an entry for fgeo_elevation", {
   )
 })
 
+test_that("is sensitive to argument `package`", {
+  expect_equal(unique(search_help(package = "fgeo")$package), "fgeo")
+})
+
 
 
 context("pick_package")

@@ -39,13 +39,16 @@ search_help <- function(pattern = NULL,
   unique(result)
 }
 
-search_docs <- function(package) {
-  docs <- utils::hsearch_db(package = package %||% fgeo_packages())
+search_docs <- function(packages) {
+  these_packages <- packages %||% fgeo_packages()
+  # Surprisingly all packages that match are included
+  docs <- utils::hsearch_db(package = these_packages)
   docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
   docs %>%
     tibble::as.tibble() %>%
     purrr::set_names(tolower) %>%
-    exclude_package_doc(package) %>%
+    filter(.data$package %in% these_packages) %>%
+    exclude_package_doc(packages) %>%
     select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
     unique()
 }
