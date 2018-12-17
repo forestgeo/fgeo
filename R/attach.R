@@ -1,13 +1,3 @@
-core_not_reexported <- function() {
-  reexported <- "fgeo.analyze"
-  setdiff(fgeo_to_attach(), reexported)
-}
-
-core_loaded <- function() {
-  search <- paste0("package:", fgeo_to_attach())
-  fgeo_to_attach()[search %in% search()]
-}
-
 core_unloaded <- function() {
   search <- paste0("package:", fgeo_to_attach())
   fgeo_to_attach()[!search %in% search()]
