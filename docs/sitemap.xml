@@ -4,6 +4,9 @@
     <loc>https://forestgeo.github.io/fgeo//index.html</loc>
   </url>
   <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/abundance.html</loc>
+  </url>
+  <url>
     <loc>https://forestgeo.github.io/fgeo//reference/fgeo-package.html</loc>
   </url>
   <url>
@@ -11,6 +14,18 @@
   </url>
   <url>
     <loc>https://forestgeo.github.io/fgeo//reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//articles/siteonly/eda.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//articles/siteonly/fgeo.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo//articles/siteonly/questions-and-answers.html</loc>
   </url>
   <url>
     <loc>https://forestgeo.github.io/fgeo//articles/siteonly/reference.html</loc>
