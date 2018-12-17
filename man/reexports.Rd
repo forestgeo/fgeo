@@ -3,6 +3,7 @@
 \docType{import}
 \name{reexports}
 \alias{reexports}
+\alias{abundance}
 \alias{basal_area}
 \alias{abundance_byyr}
 \alias{basal_area_byyr}
@@ -20,6 +21,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{fgeo.analyze}{\code{\link[fgeo.analyze]{basal_area}}, \code{\link[fgeo.analyze]{abundance_byyr}}, \code{\link[fgeo.analyze]{basal_area_byyr}}, \code{\link[fgeo.analyze]{fgeo_habitat}}, \code{\link[fgeo.analyze]{fgeo_topography}}, \code{\link[fgeo.analyze]{growth_ctfs}}, \code{\link[fgeo.analyze]{mortality_ctfs}}, \code{\link[fgeo.analyze]{recruitment_ctfs}}, \code{\link[fgeo.analyze]{to_df}}, \code{\link[fgeo.analyze]{tt_test}}}
+  \item{fgeo.analyze}{\code{\link[fgeo.analyze]{abundance}}, \code{\link[fgeo.analyze]{basal_area}}, \code{\link[fgeo.analyze]{abundance_byyr}}, \code{\link[fgeo.analyze]{basal_area_byyr}}, \code{\link[fgeo.analyze]{fgeo_habitat}}, \code{\link[fgeo.analyze]{fgeo_topography}}, \code{\link[fgeo.analyze]{growth_ctfs}}, \code{\link[fgeo.analyze]{mortality_ctfs}}, \code{\link[fgeo.analyze]{recruitment_ctfs}}, \code{\link[fgeo.analyze]{to_df}}, \code{\link[fgeo.analyze]{tt_test}}}
 }}
 

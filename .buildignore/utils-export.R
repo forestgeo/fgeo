@@ -4,6 +4,7 @@ library(fgeo)
 export_one_object <- function(package, topic, alias) {
   glue::glue("
     #' @importFrom {package} {alias}
+    NULL
     #' @export
     {package}::{alias}
   ")

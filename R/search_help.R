@@ -5,7 +5,7 @@
 #' @param ... Bare names of the columns to select. Valid names are `package`,
 #'   `name`, `title`, `topic`, `type`, `alias`, `keyword`, `concept`. If no name
 #'   is given, then all names are returned.
-#' @param package A character vector with the names of packages to search
+#' @param packages A character vector with the names of packages to search
 #'   through, or NULL in which case all available packages in the library trees
 #'   specified by lib.loc are searched. Defaults to search only the core
 #'   packages of __fgeo__.
@@ -24,9 +24,9 @@
 #' @noRd
 search_help <- function(pattern = NULL,
                         ...,
-                        package = NULL,
+                        packages = NULL,
                         exclude_internal = TRUE) {
-  result <- search_docs(package)
+  result <- search_docs(packages)
   if (exclude_internal) {
     result <- exclude_internal_functions(result)
   }
@@ -39,13 +39,16 @@ search_help <- function(pattern = NULL,
   unique(result)
 }
 
-search_docs <- function(package) {
-  docs <- utils::hsearch_db(package = package %||% fgeo_packages())
+search_docs <- function(packages) {
+  these_packages <- packages %||% fgeo_packages()
+  # Surprisingly all packages that match are included
+  docs <- utils::hsearch_db(package = these_packages)
   docs <- suppressMessages(purrr::reduce(docs, dplyr::full_join))
   docs %>%
     tibble::as.tibble() %>%
     purrr::set_names(tolower) %>%
-    exclude_package_doc(package) %>%
+    filter(.data$package %in% these_packages) %>%
+    exclude_package_doc(packages) %>%
     select(-.data$libpath, -.data$id, -.data$encoding, -.data$name) %>%
     unique()
 }

@@ -1,4 +1,4 @@
-#' Get help with __fgeo__.
+#' Get help with fgeo.
 #'
 #' * `fgeo_help()` finds all __fgeo__ help files. You can refine
 #' your search directly on the viewer panel of RStudio or by passing a string
