@@ -84,7 +84,3 @@ navbar:
 toc:
   depth: 3
 
-reference:
-- title: Explore fgeo
-  contents:
-  - fgeo_help
