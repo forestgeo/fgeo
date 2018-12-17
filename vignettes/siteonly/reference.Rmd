@@ -29,82 +29,72 @@ library(fgeo)
 # Partially fill arguments with specific details for forestgeo.
 relevant_columns <- function() c("alias", "topic", "title")
 fgeo_url <- "https://forestgeo.github.io/"
-pick_fgeo_package <- function(x, cols, url) {
-  fgeo:::pick_package(x, cols = relevant_columns(), url = fgeo_url) %>% 
-    group_by(.data$title) %>% 
-    mutate(
-      alias = paste(fgeo:::strip_s3class(.data$alias), collapse = ", ")
-    ) %>% 
-    ungroup() %>% 
-    unique()
+
+pick_fgeo_doc <- function(.f) {
+  function(x) {
+    .f(x, cols = relevant_columns(), url = fgeo_url) %>% 
+      group_by(.data$title) %>% 
+      mutate(
+        alias = paste(fgeo:::strip_s3class(.data$alias), collapse = ", ")
+      ) %>% 
+      ungroup() %>% 
+      unique()
+  }
 }
-pick_fgeo_concept <- function(x) {
-  fgeo:::pick_concept(x, cols = relevant_columns(), url = fgeo_url) %>% 
-    group_by(.data$title) %>% 
-    mutate(
-      alias = paste(fgeo:::strip_s3class(.data$alias), collapse = ", ")
-    ) %>% 
-    ungroup() %>% 
-    unique()
-}
+pick_fgeo_concept <- pick_fgeo_doc(fgeo:::pick_concept)
+pick_fgeo_package <- pick_fgeo_doc(fgeo:::pick_package)
 ```
 
-```{r datatable}
-custom_datatable <- function(x, 
-                             options = list(
-                               dom = 't',
-                               lengthChange = FALSE,
-                               paging = FALSE,
-                               pageLength = nrow(x))) {
-  DT::datatable(
+```{r}
+custom_table <- function(x) {
+  knitr::kable(
     x, 
-    escape = FALSE, 
-    rownames = NULL,
-    options = options
+    col.names = NULL
   )
 }
 ```
+
 
 ### Help
 
 ```{r}
 pick_fgeo_concept("functions to explore fgeo") %>% 
-  custom_datatable()
+  custom_table()
 ```
 
 ### Abundance
 
 ```{r}
 pick_fgeo_concept("functions for abundance and basal area") %>% 
-  custom_datatable()
+  custom_table()
 ```
 
 ### Demography
 
 ```{r}
 pick_fgeo_concept("demography functions") %>% 
-  custom_datatable()
+  custom_table()
 ```
 
 ### Habitat
 
 ```{r}
 pick_fgeo_concept("habitat functions") %>% 
-  custom_datatable()
+  custom_table()
 ```
 
 ### Plot
 
 ```{r}
 pick_fgeo_package("fgeo.map") %>% 
-  custom_datatable()
+  custom_table()
 ```
 
 ### Wrangle
 
 ```{r}
 pick_fgeo_package("fgeo.tool") %>% 
-  custom_datatable()
+  custom_table()
 ```
 
 ### Datasets
@@ -117,6 +107,6 @@ all_datasets <- suppressWarnings(
   )
 )
 all_datasets %>% 
-  custom_datatable()
+  custom_table()
 ```
-#
+
