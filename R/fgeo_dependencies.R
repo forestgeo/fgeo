@@ -3,8 +3,9 @@
 #' @param matches String to `grep()` the output.
 #' @param include_self Include fgeo in the list?
 #' @param section Either "Imports" or "Suggests".
-#' @family functions for developers
 #' @return A string.
+#'
+#' @family functions for developers
 #' @noRd
 fgeo_dependencies <- function(matches = NULL,
                               include_self = TRUE,

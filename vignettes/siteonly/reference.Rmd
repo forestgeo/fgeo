@@ -79,6 +79,13 @@ fgeo:::fgeo_packages() %>%
   )
 ```
 
+### Explore fgeo
+
+```{r}
+pick_fgeo_concept("functions to explore fgeo") %>% 
+  custom_table()
+```
+
 ### Abundance
 
 ```{r}
