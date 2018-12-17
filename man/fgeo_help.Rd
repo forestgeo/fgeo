@@ -37,5 +37,7 @@ if (interactive()) fgeo_help("stem", package = "fgeo.x")
 }
 \seealso{
 \code{\link[utils:help.search]{utils::help.search()}}.
+
+Other functions to explore fgeo: \code{\link{fgeo_browse}}
 }
 \concept{functions to explore fgeo}
