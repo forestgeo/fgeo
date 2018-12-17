@@ -5,7 +5,7 @@
 #' @param ... Bare names of the columns to select. Valid names are `package`,
 #'   `name`, `title`, `topic`, `type`, `alias`, `keyword`, `concept`. If no name
 #'   is given, then all names are returned.
-#' @param package A character vector with the names of packages to search
+#' @param packages A character vector with the names of packages to search
 #'   through, or NULL in which case all available packages in the library trees
 #'   specified by lib.loc are searched. Defaults to search only the core
 #'   packages of __fgeo__.
@@ -24,9 +24,9 @@
 #' @noRd
 search_help <- function(pattern = NULL,
                         ...,
-                        package = NULL,
+                        packages = NULL,
                         exclude_internal = TRUE) {
-  result <- search_docs(package)
+  result <- search_docs(packages)
   if (exclude_internal) {
     result <- exclude_internal_functions(result)
   }

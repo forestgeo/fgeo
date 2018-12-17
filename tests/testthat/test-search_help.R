@@ -38,8 +38,14 @@ test_that("outputs an entry for fgeo_elevation", {
   )
 })
 
-test_that("is sensitive to argument `package`", {
-  expect_equal(unique(search_help(package = "fgeo")$package), "fgeo")
+test_that("is sensitive to argument `packages`", {
+  expect_equal(unique(search_help(packages = "fgeo")$package), "fgeo")
+
+  pkgs <- sort(c("fgeo", "fgeo.x"))
+  expect_equal(
+    sort(unique(search_help(packages = pkgs)$package)),
+    pkgs
+  )
 })
 
 
