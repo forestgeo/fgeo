@@ -46,10 +46,11 @@ pick_fgeo_concept <- pick_fgeo_doc(fgeo:::pick_concept)
 pick_fgeo_package <- pick_fgeo_doc(fgeo:::pick_package)
 ```
 
-```{r}
+```{r, warning=FALSE}
 custom_table <- function(x) {
   knitr::kable(
     x, 
+    format = "html",
     col.names = NULL,
     escape = FALSE
     ) %>%
@@ -58,16 +59,24 @@ custom_table <- function(x) {
 }
 ```
 
-```{r}
-DT::datatable(mtcars, options = list(search = list(search = "Mazda")))
-```
+Search globally in the search box below, or navigate the index clicking the menu on the right.
 
+### Global search
 
-### Help
-
-```{r}
-pick_fgeo_concept("functions to explore fgeo") %>% 
-  custom_table()
+```{r, warning=FALSE}
+fgeo:::fgeo_packages() %>% 
+  purrr::map_dfr(pick_fgeo_package) %>% 
+  unique() %>% 
+  purrr::set_names(c("", "object", "description")) %>% 
+  DT::datatable(
+    escape = FALSE,
+    rownames = NULL,
+    options = list(
+      # f: filter, t: table, i: information
+      dom = "fti",
+      search = list(search = "fgeo_help")
+    )
+  )
 ```
 
 ### Abundance
