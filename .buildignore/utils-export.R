@@ -1,19 +1,19 @@
 library(dplyr)
 library(fgeo)
 
-this_package <- "fgeo.analyze"
-package_docs <- search_help(, alias, topic, package) %>%
-  filter(.data$package %in% this_package)
-
 export_one_object <- function(package, topic, alias) {
   glue::glue("
-    #' @importFrom {package} {topic}
+    #' @importFrom {package} {alias}
     #' @export
     {package}::{alias}
   ")
 }
 
-package_docs %>%
+this_package <- "fgeo.analyze"
+tibble(
+  package = this_package,
+  alias = ls(glue::glue("package:{this_package}"))
+) %>%
   purrr::pmap(export_one_object) %>%
   glue::glue_collapse("\n\n")
 
