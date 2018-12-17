@@ -45,12 +45,6 @@ devtools::install_github("forestgeo/fgeo")
 
 [More information](https://forestgeo.github.io/fgeo/index.html#installation)
 
-## What are the core packages of __fgeo__?
-
-```{r, echo=FALSE}
-fgeo:::fgeo_core()
-```
-
 ## What are the core packages for?
 
 ```{r, echo=FALSE}

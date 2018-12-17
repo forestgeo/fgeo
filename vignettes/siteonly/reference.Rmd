@@ -35,7 +35,7 @@ pick_fgeo_doc <- function(.f) {
     .f(x, cols = relevant_columns(), url = fgeo_url) %>% 
       group_by(.data$title) %>% 
       mutate(
-        alias = paste(fgeo:::strip_s3class(.data$alias), collapse = ", ")
+        alias = paste(unique(fgeo:::strip_s3class(.data$alias)), collapse = ", ")
       ) %>% 
       ungroup() %>% 
       select(topic, alias, title) %>% 
@@ -74,7 +74,7 @@ fgeo:::fgeo_packages() %>%
     options = list(
       # f: filter, t: table, i: information
       dom = "fti",
-      search = list(search = "fgeo_help")
+      search = list(search = "topography")
     )
   )
 ```

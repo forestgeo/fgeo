@@ -1,19 +1,21 @@
 # Source: https://github.com/forestgeo/fgeo.analyze/tree/master/R
 
-#' Abundance: Please see `?fgeo.analyze::abundance`.
-#' @name abundance
-NULL
+
 # FIXME: Something is wrong with the documentation of abundance. It makes
 # pkgdown::build_site() fail with 'Error in asNamespace(ns) : not a namespace'.
-# Hack: Use `@name abundance` above and `@noRd` below.
-#' @noRd
+# I'm hacking this for now with `@name`, `@rdname` and `@noRd`.
+#' Abundance and basal area, optionally by groups.
+#'
+#' See [fgeo.analyze::abundance()].
 #' @importFrom fgeo.analyze abundance
+#' @rdname abundance
+#' @name abundance
 NULL
 #' @export
+#' @noRd
 fgeo.analyze::abundance
 
 #' @importFrom fgeo.analyze basal_area
-NULL
 #' @export
 fgeo.analyze::basal_area
 
