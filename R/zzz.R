@@ -1,6 +1,5 @@
 .onAttach <- function(...) {
-  needed <- fgeo_core()[!is_attached(fgeo_core())]
-  if (length(needed) == 0)
+  if (all_attached(fgeo_core()))
     return()
 
   crayon::num_colors(TRUE)
@@ -8,6 +7,11 @@
 
   x <- fgeo_conflicts()
   msg(fgeo_conflict_message(x), startup = TRUE)
+}
+
+all_attached <- function(packages) {
+  needed <- packages[!is_attached(packages)]
+  length(needed) == 0
 }
 
 is_attached <- function(x) {

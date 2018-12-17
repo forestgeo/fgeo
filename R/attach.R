@@ -1,3 +1,8 @@
+core_not_reexported <- function() {
+  reexported <- "fgeo.analyze"
+  setdiff(fgeo_core(), reexported)
+}
+
 core_loaded <- function() {
   search <- paste0("package:", fgeo_core())
   fgeo_core()[search %in% search()]
@@ -31,7 +36,7 @@ fgeo_attach <- function() {
     packages <- append(packages, "")
   }
 
-  col1 <- 1:floor(length(packages)/2)
+  col1 <- 1:floor(length(packages) / 2)
   info <- paste0(packages[col1], "     ", packages[-col1])
 
   msg(paste(info, collapse = "\n"), startup = TRUE)
