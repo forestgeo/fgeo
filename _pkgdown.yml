@@ -35,9 +35,10 @@ home:
   - text: Learn more about ForestGEO
     href: http://www.forestgeo.si.edu/
 
+
+
 navbar:
   type: default
-
   left:
     - text: "Home"
       href: index.html
@@ -53,15 +54,13 @@ navbar:
         href: https://fgeocomm.shinyapps.io/transform-tibbles/
       - text: "Isolating data with dplyr"
         href: https://fgeocomm.shinyapps.io/transform-isolating/
-
       - text: "Exploratory data analysis"
         href: articles/siteonly/eda.html
-
     - text: "Reference"
+      href: reference/index.html
+    - text: "Index"
       href: articles/siteonly/reference.html
-
   right:
-
     - text: "Community"
       menu:
       - text: "Q&A"
@@ -74,10 +73,8 @@ navbar:
         href: https://github.com/forestgeo/forum/issues
       - text: "Blog"
         href: https://fgeo.netlify.com/
-
     - icon: fa-gavel
       href: https://github.com/maurolepore
-
     - icon: fa-github
       href: https://github.com/forestgeo/fgeo
 
