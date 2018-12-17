@@ -3,7 +3,7 @@
 \name{fgeo_help}
 \alias{fgeo_help}
 \alias{fgeo_help_addin}
-\title{Get help with \strong{fgeo}.}
+\title{Get help with fgeo.}
 \usage{
 fgeo_help(pattern = "", package = NULL)
 
