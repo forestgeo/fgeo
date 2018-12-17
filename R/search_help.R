@@ -101,7 +101,7 @@ collapse_alias <- function(.data) {
 link_topic <- function(.data, url) {
   .data %>%
     mutate(
-      topic   = glue("<a href={url}{package}/reference/{topic}>{topic}</a>"),
+      topic   = glue("<a href={url}{package}/reference/{topic}>?</a>"),
       package = glue("<a href={url}{package}>{package}</a>")
     ) %>%
     arrange(.data$package)
