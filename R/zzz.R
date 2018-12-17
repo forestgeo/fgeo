@@ -1,5 +1,5 @@
 .onAttach <- function(...) {
-  if (all_attached(fgeo_core()))
+  if (all_attached(fgeo_to_attach()))
     return()
 
   crayon::num_colors(TRUE)
