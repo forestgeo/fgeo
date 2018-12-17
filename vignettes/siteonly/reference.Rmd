@@ -31,17 +31,28 @@ relevant_columns <- function() c("alias", "topic", "title")
 fgeo_url <- "https://forestgeo.github.io/"
 pick_fgeo_package <- function(x, cols, url) {
   fgeo:::pick_package(x, cols = relevant_columns(), url = fgeo_url) %>% 
-    mutate(alias = fgeo:::strip_s3class(.data$alias))
+    group_by(.data$title) %>% 
+    mutate(
+      alias = paste(fgeo:::strip_s3class(.data$alias), collapse = ", ")
+    ) %>% 
+    ungroup() %>% 
+    unique()
 }
 pick_fgeo_concept <- function(x) {
   fgeo:::pick_concept(x, cols = relevant_columns(), url = fgeo_url) %>% 
-    mutate(alias = fgeo:::strip_s3class(.data$alias))
+    group_by(.data$title) %>% 
+    mutate(
+      alias = paste(fgeo:::strip_s3class(.data$alias), collapse = ", ")
+    ) %>% 
+    ungroup() %>% 
+    unique()
 }
 ```
 
 ```{r datatable}
 custom_datatable <- function(x, 
                              options = list(
+                               dom = 't',
                                lengthChange = FALSE,
                                paging = FALSE,
                                pageLength = nrow(x))) {
@@ -53,23 +64,6 @@ custom_datatable <- function(x,
   )
 }
 ```
-
-#### Global search
-
-```{r, warning=FALSE}
-fgeo:::fgeo_packages() %>% 
-  purrr::map_dfr(pick_fgeo_package) %>% 
-  unique() %>% 
-  custom_datatable(
-    options = list(
-      lengthChange = TRUE,
-      paging = TRUE,
-      pageLength = 3
-    )
-  )
-```
-
-## Index
 
 ### Help
 
@@ -99,17 +93,17 @@ pick_fgeo_concept("habitat functions") %>%
   custom_datatable()
 ```
 
-### Wrangle
-
-```{r}
-pick_fgeo_package("fgeo.tool") %>% 
-  custom_datatable()
-```
-
 ### Plot
 
 ```{r}
 pick_fgeo_package("fgeo.map") %>% 
+  custom_datatable()
+```
+
+### Wrangle
+
+```{r}
+pick_fgeo_package("fgeo.tool") %>% 
   custom_datatable()
 ```
 
