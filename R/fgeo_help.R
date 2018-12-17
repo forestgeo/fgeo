@@ -27,7 +27,7 @@
 fgeo_help <- function(pattern = "", package = NULL) {
   utils::help.search(
     pattern = pattern,
-    package = package %||% fgeo_core()
+    package = package %||% fgeo_to_attach()
   )
 }
 

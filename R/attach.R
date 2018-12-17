@@ -1,11 +1,6 @@
-core_loaded <- function() {
-  search <- paste0("package:", fgeo_core())
-  fgeo_core()[search %in% search()]
-}
-
 core_unloaded <- function() {
-  search <- paste0("package:", fgeo_core())
-  fgeo_core()[!search %in% search()]
+  search <- paste0("package:", fgeo_to_attach())
+  fgeo_to_attach()[!search %in% search()]
 }
 
 fgeo_attach <- function() {
@@ -31,7 +26,7 @@ fgeo_attach <- function() {
     packages <- append(packages, "")
   }
 
-  col1 <- 1:floor(length(packages)/2)
+  col1 <- 1:floor(length(packages) / 2)
   info <- paste0(packages[col1], "     ", packages[-col1])
 
   msg(paste(info, collapse = "\n"), startup = TRUE)

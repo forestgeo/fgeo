@@ -15,11 +15,10 @@ fgeo_packages <- function(include_self = TRUE) {
   grep("^fgeo$", fgeo, invert = TRUE, value = TRUE)
 }
 
-fgeo_core <- function() {
+fgeo_to_attach <- function() {
   c(
     "fgeo.x",
     "fgeo.tool",
-    "fgeo.analyze",
     "fgeo.map"
   )
 }
@@ -36,7 +35,7 @@ table_core <- function() {
 }
 
 fgeo_index <- function(.f, nm, ...) {
-  fgeo_pkg <- c("fgeo", fgeo_core())
+  fgeo_pkg <- c("fgeo", fgeo_to_attach())
   fgeo_index <- fgeo_pkg %>%
     purrr::set_names() %>%
     purrr::map(.f = .f, ...) %>%

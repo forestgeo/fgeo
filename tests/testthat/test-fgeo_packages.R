@@ -6,25 +6,24 @@ expect_sorted_equal <- function(object, expected, ...) {
 
 test_that("is sensitive to `include_self`", {
 
-  pkgs <- c(
+  install_these <- c(
       "fgeo.x",
       "fgeo.tool",
       "fgeo.analyze",
       "fgeo.map",
       "fgeo"
   )
-  expect_sorted_equal(fgeo_packages(), pkgs)
+  expect_sorted_equal(fgeo_packages(), install_these)
 
-  pkgs2 <- setdiff(pkgs, "fgeo")
+  pkgs2 <- setdiff(install_these, "fgeo")
   expect_sorted_equal(fgeo_packages(FALSE), pkgs2)
 
-  core <- c(
+  attach_these <- c(
     "fgeo.x",
     "fgeo.tool",
-    "fgeo.analyze",
     "fgeo.map"
   )
-  expect_sorted_equal(fgeo_core(), core)
+  expect_sorted_equal(fgeo_to_attach(), attach_these)
 })
 
 context("table_core")
