@@ -5,7 +5,7 @@
 \alias{fgeo_help_addin}
 \title{Get help with fgeo.}
 \usage{
-fgeo_help(pattern = "", package = NULL)
+fgeo_help(pattern = "", package = NULL, rebuild = FALSE, ...)
 
 fgeo_help_addin()
 }
@@ -16,6 +16,13 @@ all the documentation of \strong{fgeo} packages.}
 
 \item{package}{A character string giving the name or one or more
 core-packages of \strong{fgeo}.}
+
+\item{rebuild}{a logical indicating whether the help database should
+    be rebuilt.  This will be done automatically if \code{lib.loc} or
+    the search path is changed, or if \code{package} is used and a value
+    is not found.}
+
+\item{...}{Other arguments passed to \code{\link[utils:help.search]{utils::help.search()}}.}
 }
 \value{
 The results are returned in a list object of class "hsearch", which
@@ -33,6 +40,7 @@ Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.
 }
 \examples{
 if (interactive()) fgeo_help()
+as_tibble(fgeo_help()$matches)
 if (interactive()) fgeo_help("stem", package = "fgeo.x")
 }
 \seealso{
