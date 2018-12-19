@@ -20,14 +20,15 @@ This article shows some of the key features of __fgeo__ applied to an explorator
 
 ## Packages 
 
-In every new R session you need to "open" __fgeo__ with `library`().
+In every new R session you need to "open" __fgeo__ with `library()`.
 
 ```{r}
 library(fgeo)
 ```
 
-## Data
+You may suppress the startup message with `suppressPackageStartupMessages()` or add  `options("fgeo.quiet" = TRUE)` to .Rprofile (see [`usethis::edit_r_profile()`](https://usethis.r-lib.org/reference/edit.html)).
 
+## Data
 
 You may use you own data but __fgeo__ comes with some example datasets.
 
