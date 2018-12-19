@@ -18,8 +18,7 @@ fgeo_packages <- function(include_self = TRUE) {
 fgeo_to_attach <- function() {
   c(
     "fgeo.x",
-    "fgeo.tool",
-    "fgeo.map"
+    "fgeo.tool"
   )
 }
 

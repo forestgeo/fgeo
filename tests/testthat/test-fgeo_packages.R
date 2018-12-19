@@ -20,8 +20,7 @@ test_that("is sensitive to `include_self`", {
 
   attach_these <- c(
     "fgeo.x",
-    "fgeo.tool",
-    "fgeo.map"
+    "fgeo.tool"
   )
   expect_sorted_equal(fgeo_to_attach(), attach_these)
 })
