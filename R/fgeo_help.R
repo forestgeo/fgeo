@@ -28,7 +28,7 @@
 #' as_tibble(fgeo_help()$matches)
 #' if (interactive()) fgeo_help("stem", package = "fgeo.x")
 #' @family functions to explore fgeo
-fgeo_help <- function(pattern = "", package = NULL, rebuild = FALSE, ...) {
+fgeo_help <- function(pattern = "", package = NULL, rebuild = TRUE, ...) {
   utils::help.search(
     pattern = pattern,
     package = package %||% fgeo_packages(),
