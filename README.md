@@ -147,21 +147,24 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 Load all **fgeo** packages in one step.
 
 ``` r
-# You may suppress startup message once or always
-# * once: `suppressPackageStartupMessages(library(fgeo))`
-# * always (see `?usethis::edit_r_profile()`): `options("fgeo.quiet" = TRUE)`
 library(fgeo)
-#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.x    0.0.0.9000     v fgeo.tool 0.0.0.9005
-#> -- Conflicts ------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts --------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
-``` r
-fgeo_help("abundance")
-```
+On an interactive session, `fgeo_help()` and `fgeo_browse_reference()`
+help you to search documentation.
 
-<img src="https://i.imgur.com/s1wkAD4.png" width="550" />
+``` r
+if (interactive()) {
+  # To search on the viewer; accepts keywords.
+  fgeo_help()
+  # To search on a web browser.
+  fgeo_browse_reference() 
+}
+```
 
 ``` r
 # Short name
