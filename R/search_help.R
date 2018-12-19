@@ -77,22 +77,20 @@ pick_this_pattern <- function(.data, pattern) {
     dplyr::filter_all(dplyr::any_vars(grepl(pattern, .)))
 }
 
-pick_docs <- function(pick_these) {
-  force(pick_these)
-  function(.data, cols = NULL, url = "https://forestgeo.github.io/") {
-    pick_these(.data) %>%
+
+pick_docs <- function(column_name) {
+  force(column_name)
+  function(.string, cols = NULL, url = "https://forestgeo.github.io/") {
+    search_help() %>%
+      filter(.[[column_name]] %in% .string) %>%
       collapse_alias() %>%
       link_topic(url) %>%
       select(cols %||% names(.)) %>%
       unique()
   }
 }
-pick_package <- pick_docs(search_help)
-pick_concept <- pick_docs(
-  function(family_string)
-    search_help() %>%
-    filter(.data$concept %in% family_string)
-)
+pick_package <- pick_docs("package")
+pick_concept <- pick_docs("concept")
 
 collapse_alias <- function(.data) {
   .data %>%

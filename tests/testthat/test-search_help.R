@@ -61,6 +61,17 @@ test_that("doesn't include package documentation", {
   )
 })
 
+test_that("includes only the given package", {
+  expect_equal(
+    actual <- unique(pick_package("fgeo")$package),
+    expect <- "<a href=https://forestgeo.github.io/fgeo>fgeo</a>"
+  )
+})
+
+
+
+context("pick_concept")
+
 test_that("known concept retrieves known alias", {
   retrieved_docs <- pick_concept("functions to explore fgeo")$alias
   expect_true(any(grepl("fgeo_help", unique(retrieved_docs)))
