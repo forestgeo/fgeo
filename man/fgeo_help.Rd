@@ -5,7 +5,7 @@
 \alias{fgeo_help_addin}
 \title{Get help with fgeo.}
 \usage{
-fgeo_help(pattern = "", package = NULL, rebuild = FALSE, ...)
+fgeo_help(pattern = "", package = NULL, rebuild = TRUE, ...)
 
 fgeo_help_addin()
 }

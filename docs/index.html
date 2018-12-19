@@ -149,12 +149,11 @@
 <li>No other R session is running</li>
 <li>Current R session is clean (click <em>Session &gt; Restart R</em>)</li>
 </ul>
-<p><strong>Option 1: Install from GitHub</strong></p>
-<p>You need an <em>authenticated</em> GitHub-account (see <a href="https://usethis.r-lib.org/reference/browse_github_pat.html"><code><a href="https://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">usethis::browse_github_pat()</a></code></a>).</p>
+<p><strong>Option 1: Install direclty</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>, <span class="dt">upgrade =</span> <span class="st">"never"</span>)</a></code></pre></div>
+<p>(If you reach GitHub’s rate limit see <a href="https://usethis.r-lib.org/reference/browse_github_pat.html"><code><a href="https://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">usethis::browse_github_pat()</a></code></a>).</p>
 <p><strong>Option 2: Install via <a href="https://github.com/forestgeo/fgeo.install#-fgeoinstall"><strong>fgeo.install</strong></a></strong></p>
-<p>You don’t need a GitHub account.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo.install"</span>)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"></a>
@@ -251,9 +250,9 @@
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co"># * once: `suppressPackageStartupMessages(library(fgeo))`</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># * always (see `?usethis::edit_r_profile()`): `options("fgeo.quiet" = TRUE)`</span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; -- Attaching packages ----------------------------------------- fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; v fgeo.x    0.0.0.9000     v fgeo.tool 0.0.0.9005</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ---------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------------- fgeo_conflicts() --</span></a>
 <a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>(<span class="st">"abundance"</span>)</a></code></pre></div>
 <p><img src="https://i.imgur.com/s1wkAD4.png" width="550"></p>
