@@ -10,7 +10,7 @@ export_one_object <- function(package, topic, alias) {
   ")
 }
 
-this_package <- "fgeo.analyze"
+this_package <- "fgeo.map"
 tibble(
   package = this_package,
   alias = ls(glue::glue("package:{this_package}"))

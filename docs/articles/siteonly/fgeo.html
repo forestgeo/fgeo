@@ -492,11 +492,11 @@
 <p>Map the most abundant species.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">example_elevation &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>elevation</a>
 <a class="sourceLine" id="cb27-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">species_elevation &lt;-<span class="st"> </span><span class="kw">sp_elev</span>(picked_stems, example_elevation)</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="kw">autoplot</span>(species_elevation)</a></code></pre></div>
+<a class="sourceLine" id="cb27-3" data-line-number="3">species_elevation &lt;-<span class="st"> </span><span class="kw"><a href="https://forestgeo.github.io/fgeo.map//reference/sp_elev.html">sp_elev</a></span>(picked_stems, example_elevation)</a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span>(species_elevation)</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 <p>Tweak to focus on the hectare available in the data.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">autoplot</span>(species_elevation, <span class="dt">xlim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">400</span>, <span class="dv">500</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span>(species_elevation, <span class="dt">xlim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">400</span>, <span class="dv">500</span>))</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-24-1.png" width="700"></p>
 </div>
 <div id="species-habitat-associations" class="section level2">
