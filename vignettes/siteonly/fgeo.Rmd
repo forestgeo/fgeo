@@ -23,13 +23,13 @@ This article shows some of the key features of __fgeo__ applied to an explorator
 In every new R session you need to "open" __fgeo__ with `library`().
 
 ```{r}
-library(fgeo.data)
 library(fgeo)
 ```
 
 ## Data
 
-You may load your own data. Here we will use data from the __fgeo.data__ package -- which comes with __fgeo__.
+
+You may use you own data but __fgeo__ comes with some example datasets.
 
 ```R
 fgeo_help("datasets")
@@ -38,13 +38,14 @@ fgeo_help("datasets")
 We will use a dataset of stems censused in one hectare from the forest plot in Luquillo, Puerto Rico (https://forestgeo.si.edu/sites/north-america/luquillo).
 
 ```{r}
-stem <- luquillo_stem_random
+stem <- download_data("luquillo_stem6_random")
 str(stem)
 ```
 
 For a description of the columns, see `?data_dictionary`.
 
 ```{r}
+data_dictionary <- download_data("data_dictionary")
 str(data_dictionary)
 
 cols <- names(stem)
@@ -64,8 +65,8 @@ unique(stem6$CensusID)
 ## Demography
 
 ```{r}
-census5 <- fgeo.data::luquillo_tree5_random
-census6 <- fgeo.data::luquillo_tree6_random
+census5 <- download_data("luquillo_tree5_random")
+census6 <- download_data("luquillo_tree6_random")
 
 recruitment_ctfs(census5, census6)
 ```
@@ -242,8 +243,9 @@ fgeo_help("map")
 Map the most abundant species.
 
 ```{r}
-# luquillo_elevation comes with fgeo
-species_elevation <- sp_elev(picked_stems, luquillo_elevation)
+example_elevation <- fgeo.x::elevation
+
+species_elevation <- sp_elev(picked_stems, example_elevation)
 autoplot(species_elevation)
 ```
 
@@ -258,8 +260,8 @@ autoplot(species_elevation, xlim = c(100, 200), ylim = c(400, 500))
 ## Species-habitat associations
 
 ```{r}
-tree <- fgeo.data::luquillo_tree5_random
-elevation <- fgeo.data::luquillo_elevation
+tree <- download_data("luquillo_tree5_random")
+elevation <- download_data("luquillo_elevation")
 
 # Pick alive trees, of 10 mm or more
 census <- filter(tree, status == "A", dbh >= 10)
