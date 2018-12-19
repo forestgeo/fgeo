@@ -114,28 +114,12 @@ pick_fgeo_concept("habitat functions") %>%
   custom_table()
 ```
 
-### Datasets
-
-```{r}
-pick_fgeo_concept("datasets") %>% 
-  custom_table()
-```
-
-
-
-
-
-
-
-
 ### Miscellaneous tools
 
 #### Import ForestGEO data
 
 ```{r}
-pick_fgeo_concept(c(
-  "functions to import ForestGEO data"
-)) %>% 
+pick_fgeo_concept("functions to import ForestGEO data") %>% 
   custom_table()
 ```
 
@@ -144,9 +128,7 @@ pick_fgeo_concept(c(
 Notice that function names have the format `input_output`.
 
 ```{r}
-pick_fgeo_concept(c(
-  "general functions to import data"
-)) %>% 
+pick_fgeo_concept("general functions to import data") %>% 
   custom_table()
 ```
 
@@ -155,7 +137,7 @@ pick_fgeo_concept(c(
 Notice that function names have the format `input_output`.
 
 ```{r}
-pick_fgeo_concept(c("general functions to export data")) %>%
+pick_fgeo_concept("general functions to export data") %>%
   custom_table()
 ```
 
@@ -182,17 +164,20 @@ pick_fgeo_concept(c(
 #### Add new columns to a dataframe
 
 ```{r}
-pick_fgeo_concept(c(
-  "functions to add columns to dataframes"
-)) %>% 
+pick_fgeo_concept("functions to add columns to dataframes") %>% 
   custom_table()
 ```
 
 #### Create different classes of ForestGEO data
 
 ```{r}
-pick_fgeo_concept(c(
-  "functions to construct fgeo classes"
-)) %>% 
+pick_fgeo_concept("functions to construct fgeo classes") %>% 
+  custom_table()
+```
+
+### Datasets
+
+```{r}
+pick_fgeo_concept("datasets") %>% 
   custom_table()
 ```
