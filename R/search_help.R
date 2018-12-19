@@ -87,11 +87,15 @@ pick_docs <- function(pick_these) {
       unique()
   }
 }
-pick_package <- pick_docs(search_help)
-pick_concept <- pick_docs(
-  function(family_string)
+pick_package <- pick_docs(
+  function(x)
     search_help() %>%
-    filter(.data$concept %in% family_string)
+    filter(.data$package %in% x)
+)
+pick_concept <- pick_docs(
+  function(x)
+    search_help() %>%
+    filter(.data$concept %in% x)
 )
 
 collapse_alias <- function(.data) {
