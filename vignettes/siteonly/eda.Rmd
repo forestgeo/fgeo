@@ -37,7 +37,7 @@ We will use the dataset `luquillo_stem_random` from the __fgeo.data__ package (h
 
 ```{r, eval=TRUE}
 # Convenient nickname
-stem <- fgeo.data::luquillo_stem_random
+stem <- fgeo.x::download_data("luquillo_stem_random")
 ```
 
 ## Style
