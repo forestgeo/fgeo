@@ -54,18 +54,16 @@ __Expected R environment__
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-__Option 1: Install from GitHub__
-
-You need an _authenticated_ GitHub-account (see [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
+__Option 1: Install direclty__
 
 ```R
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo", upgrade = "never")
 ```
 
-__Option 2: Install via [__fgeo.install__](https://github.com/forestgeo/fgeo.install#-fgeoinstall)__
+(If you reach GitHub's rate limit see [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
 
-You don't need a GitHub account.
+__Option 2: Install via [__fgeo.install__](https://github.com/forestgeo/fgeo.install#-fgeoinstall)__
 
 ```R
 install.packages("devtools")

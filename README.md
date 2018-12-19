@@ -33,20 +33,18 @@ abundance, demography, and habitats.
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-**Option 1: Install from GitHub**
-
-You need an *authenticated* GitHub-account (see
-[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
+**Option 1: Install direclty**
 
 ``` r
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo", upgrade = "never")
 ```
 
+(If you reach GitHub’s rate limit see
+[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
+
 **Option 2: Install via
 [**fgeo.install**](https://github.com/forestgeo/fgeo.install#-fgeoinstall)**
-
-You don’t need a GitHub account.
 
 ``` r
 install.packages("devtools")
@@ -153,10 +151,9 @@ Load all **fgeo** packages in one step.
 # * once: `suppressPackageStartupMessages(library(fgeo))`
 # * always (see `?usethis::edit_r_profile()`): `options("fgeo.quiet" = TRUE)`
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.x    0.0.0.9000     v fgeo.map  0.0.0.9402
-#> v fgeo.tool 0.0.0.9005
-#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
+#> -- Attaching packages ----------------------------------------- fgeo 0.0.0.9002 --
+#> v fgeo.x    0.0.0.9000     v fgeo.tool 0.0.0.9005
+#> -- Conflicts ------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
