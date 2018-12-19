@@ -12,6 +12,9 @@
 #'   all the documentation of __fgeo__ packages.
 #' @param package A character string giving the name or one or more
 #'   core-packages of __fgeo__.
+#' @inheritParams utils::help.search
+#' @param ... Other arguments passed to [utils::help.search()].
+#'
 #'
 #' @seealso [utils::help.search()].
 #'
@@ -22,12 +25,15 @@
 #'
 #' @examples
 #' if (interactive()) fgeo_help()
+#' as_tibble(fgeo_help()$matches)
 #' if (interactive()) fgeo_help("stem", package = "fgeo.x")
 #' @family functions to explore fgeo
-fgeo_help <- function(pattern = "", package = NULL) {
+fgeo_help <- function(pattern = "", package = NULL, rebuild = FALSE, ...) {
   utils::help.search(
     pattern = pattern,
-    package = package %||% fgeo_to_attach()
+    package = package %||% fgeo_packages(),
+    rebuild = rebuild,
+    ...
   )
 }
 
