@@ -92,7 +92,6 @@ pick_docs <- function(column_name) {
 pick_package <- pick_docs("package")
 pick_concept <- pick_docs("concept")
 
-
 collapse_alias <- function(.data) {
   .data %>%
     group_by(.data$topic) %>%

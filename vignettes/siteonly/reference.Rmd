@@ -86,6 +86,13 @@ pick_fgeo_concept("functions to explore fgeo") %>%
   custom_table()
 ```
 
+### Plot
+
+```{r}
+pick_fgeo_concept("plot functions") %>% 
+  custom_table()
+```
+
 ### Abundance
 
 ```{r}
@@ -107,13 +114,6 @@ pick_fgeo_concept("habitat functions") %>%
   custom_table()
 ```
 
-### Plot
-
-```{r}
-pick_fgeo_package("fgeo.map") %>% 
-  custom_table()
-```
-
 ### Wrangle
 
 ```{r}
@@ -124,13 +124,7 @@ pick_fgeo_package("fgeo.tool") %>%
 ### Datasets
 
 ```{r}
-all_datasets <- suppressWarnings(
-  dplyr::bind_rows(
-    pick_fgeo_package("fgeo.x"), 
-    pick_fgeo_concept("datasets")
-  )
-)
-all_datasets %>% 
+pick_fgeo_concept("datasets") %>% 
   custom_table()
 ```
 
