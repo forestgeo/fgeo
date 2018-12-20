@@ -11,15 +11,15 @@ status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](htt
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-**fgeo** installs and loads multiple R functions, and datasets to
-visualize and manipulate ForestGEO datasets, and to analyze trees
-abundance, demography, and habitats.
+**fgeo** provides functions to manipulate and visualize
+[ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze the
+abundance, demography, and habitats of forest trees.
 
   - [Search functions and
     datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
   - [Related
     projects](https://forestgeo.github.io/fgeo/#related-projects)
-  - [Try **fgeo** before you install it](https://bit.ly/fgeo-demo)
+  - [Try **fgeo** online](https://bit.ly/fgeo-demo)
   - [Contact the
     maintainer](https://github.com/forestgeo/fgeo/issues/new) to ask
     questions, report bugs, or propose features
@@ -148,9 +148,9 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages -------------------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.x    0.0.0.9000     v fgeo.tool 0.0.0.9005
-#> -- Conflicts --------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ---------------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -159,9 +159,9 @@ help you to search documentation.
 
 ``` r
 if (interactive()) {
-  # To search on the viewer; accepts keywords.
+  # To search on the viewer; accepts keywords
   fgeo_help()
-  # To search on a web browser.
+  # To search on a web browser
   fgeo_browse_reference() 
 }
 ```
