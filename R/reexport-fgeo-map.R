@@ -1,7 +1,5 @@
 # Source: https://github.com/forestgeo/fgeo.map/tree/master/R
 
-
-
 #' @importFrom fgeo.map autoplot
 NULL
 #' @export

@@ -1,6 +1,5 @@
 # Source: https://github.com/forestgeo/fgeo.analyze/tree/master/R
 
-
 # FIXME: Something is wrong with the documentation of abundance. It makes
 # pkgdown::build_site() fail with 'Error in asNamespace(ns) : not a namespace'.
 # I'm hacking this for now with `@name`, `@rdname` and `@noRd`.

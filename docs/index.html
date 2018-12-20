@@ -301,7 +301,7 @@
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; [1]  10.2 992.0</span></a></code></pre></div>
 <p>Count distinct values of <code>stemID</code> and <code>treeID</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Drop missing values of `dbh`</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(ten_plus, <span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw">filter</span>(ten_plus, <span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
 <a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw"><a href="reference/abundance.html">abundance</a></span>(non_missing)</a>

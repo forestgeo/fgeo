@@ -12,4 +12,9 @@ test_that("all objects are reexported", {
     setdiff(ls("package:fgeo.map"), ls("package:fgeo")),
     character(0)
   )
+  library(fgeo.tool)
+  expect_equal(
+    setdiff(ls("package:fgeo.tool"), ls("package:fgeo")),
+    character(0)
+  )
 })
