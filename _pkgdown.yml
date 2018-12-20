@@ -35,14 +35,6 @@ navbar:
   - icon: fa-github
     href: https://github.com/forestgeo/fgeo
 
-reference:
-  - title: Objects from fgeo
-    contents:
-    - -reexports
-  - title: Objects exported from other packages
-    contents:
-    - reexports
-
 url: https://forestgeo.github.io/fgeo/
 
 template:

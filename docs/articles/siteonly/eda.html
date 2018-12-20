@@ -296,7 +296,7 @@
 <a href="#continuous-variables" class="anchor"></a>Continuous variables</h3>
 <p>A variable is continuous if it can take any of an infinite set of ordered values. To examine the distribution of a continuous variable, use a histogram. You should always explore a variety of binwidths when working with histograms, as different binwidths can reveal different patterns.</p>
 <p>Let’s explore <code>dbh</code>, which represents the stem diameter at breast height. Now we will focus on small stems; we will explore big stems later. And we will try bars of different widths (with <code>binwidth</code>) and choose one for further analyses.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">small_dbh &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(stem, dbh <span class="op">&lt;</span><span class="st"> </span><span class="dv">300</span>)</a>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">small_dbh &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(stem, dbh <span class="op">&lt;</span><span class="st"> </span><span class="dv">300</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co"># Save data and mappings in "p" to reuse them later.</span></a>
 <a class="sourceLine" id="cb9-4" data-line-number="4">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(small_dbh, <span class="kw">aes</span>(dbh))</a></code></pre></div>
@@ -311,7 +311,7 @@
 <a class="sourceLine" id="cb13-2" data-line-number="2">useful_binwidth &lt;-<span class="st"> </span><span class="dv">30</span></a></code></pre></div>
 <p>To overlay multiple histograms in the same plot, <code>geom_freqpoly()</code> may produce clearer plots than <code>geom_histogram()</code>, because it is easier to understand overlying lines than bars.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># Make n groups with ~ numbers of observations with `ggplot2::cut_number()`</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">small_cut_number &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(small_dbh, <span class="dt">equal_n =</span> <span class="kw">cut_number</span>(dbh, <span class="dt">n =</span> <span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">small_cut_number &lt;-<span class="st"> </span><span class="kw">mutate</span>(small_dbh, <span class="dt">equal_n =</span> <span class="kw">cut_number</span>(dbh, <span class="dt">n =</span> <span class="dv">5</span>))</a>
 <a class="sourceLine" id="cb14-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb14-4" data-line-number="4">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> small_cut_number, <span class="kw">aes</span>(<span class="dt">x =</span> dbh, <span class="dt">color =</span> equal_n))</a>
 <a class="sourceLine" id="cb14-5" data-line-number="5"></a>
@@ -333,8 +333,8 @@
 </ul>
 <p>The latter two plots give a good estimate of the most common stem-diameters. You can compute the same count manually by cutting the variable <code>dbh</code> with <code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">ggplot2::cut_width()</a></code>, and then counting the unique pieces with <code><a href="http://dplyr.tidyverse.org/reference/tally.html">dplyr::count()</a></code>.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">small_dbh <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">dbh_mm =</span> <span class="kw">cut_width</span>(dbh, <span class="dt">width =</span> useful_binwidth)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/tally.html">count</a></span>(dbh_mm, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dbh_mm =</span> <span class="kw">cut_width</span>(dbh, <span class="dt">width =</span> useful_binwidth)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(dbh_mm, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co">#&gt; # A tibble: 11 x 2</span></a>
 <a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">#&gt;    dbh_mm        n</span></a>
 <a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt;    &lt;fct&gt;     &lt;int&gt;</span></a>
@@ -355,7 +355,7 @@
 <h3 class="hasAnchor">
 <a href="#clustered-values" class="anchor"></a>Clustered values</h3>
 <p>In this section we will focus on the largest stems; later we will explore all stems.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">large_dbh &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(dbh <span class="op">&gt;</span><span class="st"> </span><span class="dv">300</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">large_dbh &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(dbh <span class="op">&gt;</span><span class="st"> </span><span class="dv">300</span>)</a></code></pre></div>
 <p>Clusters of similar values suggest that subgroups exist in your data. To understand the subgroups, ask:</p>
 <ul>
 <li>How are the observations within each cluster similar to each other?</li>
@@ -392,9 +392,9 @@
 <p>This allows us to see that <code>dbh</code> values over ~625 are unusual and may be outliers. We can pluck them out with <code><a href="http://dplyr.tidyverse.org/reference/filter.html">dplyr::filter()</a></code> and select a subset of informative variables:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">treshold &lt;-<span class="st"> </span><span class="dv">625</span></a>
 <a class="sourceLine" id="cb21-2" data-line-number="2">unusual &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(dbh <span class="op">&gt;</span><span class="st"> </span>treshold ) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(stemID, ExactDate, status, gx, gy, dbh) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(dbh)</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(dbh <span class="op">&gt;</span><span class="st"> </span>treshold ) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(stemID, ExactDate, status, gx, gy, dbh) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="st">  </span><span class="kw">arrange</span>(dbh)</a>
 <a class="sourceLine" id="cb21-6" data-line-number="6">unusual</a>
 <a class="sourceLine" id="cb21-7" data-line-number="7"><span class="co">#&gt; # A tibble: 19 x 6</span></a>
 <a class="sourceLine" id="cb21-8" data-line-number="8"><span class="co">#&gt;    stemID ExactDate  status    gx    gy   dbh</span></a>
@@ -437,7 +437,7 @@
 <li>Drop the entire row with the strange values:</li>
 </ol>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">are_usual &lt;-<span class="st"> </span><span class="op">!</span>stem<span class="op">$</span>stemID <span class="op">%in%</span><span class="st"> </span>unusual<span class="op">$</span>stemID</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2">usual &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(stem, are_usual)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">usual &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(stem, are_usual)</a>
 <a class="sourceLine" id="cb23-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb23-4" data-line-number="4"><span class="co"># Confirm dataset of usual stems has less rows than full dataset.</span></a>
 <a class="sourceLine" id="cb23-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/nrow">nrow</a></span>(stem)</a>
@@ -450,7 +450,7 @@
 </ol>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">are_unusual &lt;-<span class="st"> </span><span class="op">!</span>are_usual</a>
 <a class="sourceLine" id="cb24-2" data-line-number="2">with_unusual_made_NA &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">dbh =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse</a></span>(are_unusual, <span class="ot">NA_real_</span>, dbh))</a></code></pre></div>
+<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dbh =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse</a></span>(are_unusual, <span class="ot">NA_real_</span>, dbh))</a></code></pre></div>
 <p><code><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse()</a></code> has three arguments. The first argument <code>test</code> should be a logical vector. The result will contain the value of the second argument, <code>yes</code>, when <code>test</code> is <code>TRUE</code>, and the value of the third argument, <code>no</code>, when it is <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co"># Confirm no rows have been removed,</span></a>
 <a class="sourceLine" id="cb25-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/nrow">nrow</a></span>(stem)</a>
@@ -460,8 +460,8 @@
 <a class="sourceLine" id="cb25-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb25-7" data-line-number="7"><span class="co"># but dbh of unusual stems is NA</span></a>
 <a class="sourceLine" id="cb25-8" data-line-number="8">unusual_only &lt;-<span class="st"> </span>with_unusual_made_NA <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(are_unusual) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(dbh, stemID)</a>
+<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(are_unusual) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="st">  </span><span class="kw">select</span>(dbh, stemID)</a>
 <a class="sourceLine" id="cb25-11" data-line-number="11">unusual_only</a>
 <a class="sourceLine" id="cb25-12" data-line-number="12"><span class="co">#&gt; # A tibble: 24 x 2</span></a>
 <a class="sourceLine" id="cb25-13" data-line-number="13"><span class="co">#&gt;      dbh stemID</span></a>
@@ -477,7 +477,7 @@
 <a class="sourceLine" id="cb25-23" data-line-number="23"><span class="co">#&gt;  9    NA  30562</span></a>
 <a class="sourceLine" id="cb25-24" data-line-number="24"><span class="co">#&gt; 10    NA  32585</span></a>
 <a class="sourceLine" id="cb25-25" data-line-number="25"><span class="co">#&gt; # ... with 14 more rows</span></a></code></pre></div>
-<p>Alternatively to <code><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse()</a></code>, use <code><a href="http://dplyr.tidyverse.org/reference/case_when.html">dplyr::case_when()</a></code>. <code>case_when()</code> is particularly useful inside <code><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> when you want to create a new variable that relies on a complex combination of existing variables.</p>
+<p>Alternatively to <code><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse()</a></code>, use <code><a href="http://dplyr.tidyverse.org/reference/case_when.html">dplyr::case_when()</a></code>. <code>case_when()</code> is particularly useful inside <code>mutate()</code> when you want to create a new variable that relies on a complex combination of existing variables.</p>
 <p>It is not obvious where you should plot missing values in a plot, so <strong>ggplot2</strong> does not include them, but it does warn that they have been removed (left plot below). To suppress that warning, set <code>na.rm = TRUE</code> (right plot below).</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># Left: Keep NAs and get a warning on the console</span></a>
 <a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">ggplot</span>(unusual_only, <span class="kw">aes</span>(dbh)) <span class="op">+</span><span class="st"> </span></a>
@@ -493,7 +493,7 @@
 <p>Other times, you may want to understand what makes observations with missing values different to observations with recorded values.</p>
 <p>For example, you might want to compare the <code>status</code> for stems with missing and non-missing values of <code>dbh</code>. You can do this by making a new variable with <code><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na()</a></code>.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">missing_dbh &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">missing =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">missing =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
 <a class="sourceLine" id="cb27-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb27-4" data-line-number="4"><span class="kw">ggplot</span>(missing_dbh) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb27-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(status, <span class="dt">fill =</span> missing))</a></code></pre></div>
@@ -517,7 +517,7 @@
 <p>It is common to explore the distribution of a continuous variable broken down by a categorical variable. The default appearance of <code>geom_freqpoly()</code> is not that useful for that sort of comparison since the height is given by the count. That means if one of the groups is much smaller than the others, it is hard to see the differences in shape. For example, let’s explore how stem diameter (<code>dbh</code>) varies with species (<code>sp</code>):</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="co"># The dataset has too many species; choosing just a few for clarity</span></a>
 <a class="sourceLine" id="cb28-2" data-line-number="2">few_sp &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/unique">unique</a></span>(stem<span class="op">$</span>sp)[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb28-3" data-line-number="3">data_few_sp &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(stem, sp <span class="op">%in%</span><span class="st"> </span>few_sp)</a>
+<a class="sourceLine" id="cb28-3" data-line-number="3">data_few_sp &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(stem, sp <span class="op">%in%</span><span class="st"> </span>few_sp)</a>
 <a class="sourceLine" id="cb28-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb28-5" data-line-number="5"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(dbh)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb28-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_freqpoly</span>(<span class="kw">aes</span>(<span class="dt">color =</span> sp))</a>
@@ -550,7 +550,7 @@
 <p>We see much less information about the distribution, but the boxplots are much more compact so we can more easily compare them (and fit more on one plot).</p>
 <p>Above we ordered the variable <code>sp</code> by its frequency. Now, to make the trend easier to see, we can reorder <code>sp</code> based on the median value of <code>dbh</code>. One way to do that is with <code><a href="https://www.rdocumentation.org/packages/stats/topics/reorder.factor">reorder()</a></code>.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">data_few_sp &lt;-<span class="st"> </span>data_few_sp <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">sp =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/reorder.factor">reorder</a></span>(sp, dbh, <span class="dt">FUN =</span> median, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sp =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/reorder.factor">reorder</a></span>(sp, dbh, <span class="dt">FUN =</span> median, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb32-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb32-4" data-line-number="4"><span class="kw">ggplot</span>(data_few_sp, <span class="kw">aes</span>(sp, dbh)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb32-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_boxplot</span>()</a>
@@ -601,19 +601,19 @@
 <a class="sourceLine" id="cb37-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggbeeswarm)</a>
 <a class="sourceLine" id="cb37-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb37-4" data-line-number="4">small_dataset &lt;-<span class="st"> </span>data_few_sp <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(sp) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="st">  </span><span class="kw">group_by</span>(sp) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb37-6" data-line-number="6"><span class="st">  </span><span class="kw">sample_n</span>(<span class="dv">50</span>)</a>
 <a class="sourceLine" id="cb37-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb37-8" data-line-number="8">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(small_dataset, <span class="kw">aes</span>(sp, dbh))</a>
 <a class="sourceLine" id="cb37-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb37-10" data-line-number="10">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 89 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 93 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>()</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 89 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 93 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span>ggbeeswarm<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggbeeswarm/topics/geom_quasirandom">geom_quasirandom</a></span>()</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 89 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 93 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -632,7 +632,7 @@
 <a class="sourceLine" id="cb41-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_size_area</span>(<span class="dt">max_size =</span> <span class="dv">10</span>)</a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-38-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">few_spp_n &lt;-<span class="st"> </span>data_few_sp <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/tally.html">count</a></span>(sp, status)</a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(sp, status)</a>
 <a class="sourceLine" id="cb42-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb42-4" data-line-number="4">few_spp_n</a>
 <a class="sourceLine" id="cb42-5" data-line-number="5"><span class="co">#&gt; # A tibble: 18 x 3</span></a>
@@ -667,7 +667,7 @@
 <p>You have already seen one great way to visualize the covariation between two continuous variables: draw a scatterplot with <code>geom_point()</code>. You can see covariation as a pattern in the points. For example, we can estimate the basal area of each stem as a function of <code>dbh</code> with the equation <code>ba = 1 / 4 * pi * (dbh)^2</code>. I will add some error to make the pattern a little more interesting.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1">error &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Normal">rnorm</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(stem<span class="op">$</span>dbh))</a>
 <a class="sourceLine" id="cb44-2" data-line-number="2">stem &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">ba =</span> (<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">4</span> <span class="op">*</span><span class="st"> </span>(dbh)<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>error)</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ba =</span> (<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">4</span> <span class="op">*</span><span class="st"> </span>(dbh)<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>error)</a>
 <a class="sourceLine" id="cb44-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb44-5" data-line-number="5">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(stem, <span class="kw">aes</span>(dbh, ba))</a>
 <a class="sourceLine" id="cb44-6" data-line-number="6">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
@@ -718,7 +718,7 @@
 <a class="sourceLine" id="cb49-3" data-line-number="3">mod &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/lm">lm</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Log">log</a></span>(ba) <span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Log">log</a></span>(dbh), <span class="dt">data =</span> stem)</a>
 <a class="sourceLine" id="cb49-4" data-line-number="4">resid_added &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb49-5" data-line-number="5"><span class="st">  </span><span class="kw">add_residuals</span>(mod) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">resid =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Log">exp</a></span>(resid))</a>
+<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">resid =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Log">exp</a></span>(resid))</a>
 <a class="sourceLine" id="cb49-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb49-8" data-line-number="8"><span class="kw">ggplot</span>(<span class="dt">data =</span> resid_added, <span class="kw">aes</span>(<span class="dt">x =</span> dbh, <span class="dt">y =</span> resid)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb49-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_point</span>()</a>
