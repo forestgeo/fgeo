@@ -38,11 +38,11 @@ manipulate <- "tool"
 datasets <- "x"
 ```
 
-__fgeo__ installs and loads multiple R functions, and datasets to visualize and manipulate ForestGEO datasets, and to analyze trees abundance, demography, and habitats.
+__fgeo__ provides functions to manipulate and visualize [ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze the abundance, demography, and habitats of forest trees.
 
 * [Search functions and datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
 * [Related projects](https://forestgeo.github.io/fgeo/#related-projects)
-* [Try __fgeo__ before you install it](https://bit.ly/fgeo-demo)
+* [Try __fgeo__ online](https://bit.ly/fgeo-demo)
 * [Contact the maintainer](https://github.com/forestgeo/fgeo/issues/new) to ask questions, report bugs, or propose features
 
 ## Installation

@@ -4,16 +4,13 @@
 \name{fgeo-package}
 \alias{fgeo}
 \alias{fgeo-package}
-\title{fgeo: Install and Load Multiple Packages in One Step}
+\title{fgeo: Analyze Forest Diversity and Dynamics}
 \description{
-'fgeo' installs and loads multiple R packages
-    of ForestGEO in a single step. Each individual package is a
-    self-contained module. Together, all the packages in 'fgeo' provide a
-    wide range of tools to analyze forest diversity and dynamics. The
-    modular structure of 'fgeo' makes it easy to add and maintain more
-    tools as they become available. Learn more about the 'fgeo' package at
-    <http://forestgeo.github.io/fgeo>; and learn more about ForestGEO at
-    <http://www.forestgeo.si.edu/>.
+\bold{fgeo} helps you to analyze forest diversity and dynamics. It provides
+    functions to manipulate and visualize ForestGEO datasets, and to analyze the
+    abundance, demography, and habitats of forest trees. Learn more about the
+    \bold{fgeo} package at \url{http://forestgeo.github.io/fgeo}; and learn more
+    about ForestGEO at \url{http://www.forestgeo.si.edu/}.
 }
 \seealso{
 Useful links:
