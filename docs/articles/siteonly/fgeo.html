@@ -132,10 +132,11 @@
 <a href="#packages" class="anchor"></a>Packages</h2>
 <p>In every new R session you need to “open” <strong>fgeo</strong> with <code><a href="https://www.rdocumentation.org/packages/base/topics/library">library()</a></code>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------------------- fgeo 0.0.0.9002 --</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.x    0.0.0.9000     v fgeo.tool 0.0.0.9005</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; -- Conflicts ---------------------------------------------------------------- fgeo_conflicts() --</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.map     0.0.0.9402     v fgeo.tool    0.0.0.9005</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ---------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <p>You may suppress the startup message with <code><a href="https://www.rdocumentation.org/packages/base/topics/message">suppressPackageStartupMessages()</a></code> or add <code><a href="https://www.rdocumentation.org/packages/base/topics/options">options("fgeo.quiet" = TRUE)</a></code> to .Rprofile (see <a href="https://usethis.r-lib.org/reference/edit.html"><code><a href="https://www.rdocumentation.org/packages/usethis/topics/edit">usethis::edit_r_profile()</a></code></a>).</p>
 </div>
 <div id="data" class="section level2">
@@ -214,7 +215,7 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">census5 &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_tree5_random"</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">census6 &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_tree6_random"</span>)</a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/demography_ctfs">recruitment_ctfs</a></span>(census5, census6)</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">recruitment_ctfs</span>(census5, census6)</a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; Detected dbh ranges:</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
@@ -242,9 +243,9 @@
 <a class="sourceLine" id="cb6-29" data-line-number="29"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb6-30" data-line-number="30"><span class="co">#&gt; $date2</span></a>
 <a class="sourceLine" id="cb6-31" data-line-number="31"><span class="co">#&gt; [1] 20594.2</span></a></code></pre></div>
-<p>With <code><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df()</a></code> we convert the result of any demography function to a tibble – a convenient dataframe.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df</a></span>(</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/demography_ctfs">recruitment_ctfs</a></span>(census5, census6)</a>
+<p>With <code>to_df()</code> we convert the result of any demography function to a tibble – a convenient dataframe.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">to_df</span>(</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="kw">recruitment_ctfs</span>(census5, census6)</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3">)</a>
 <a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; Detected dbh ranges:</span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
@@ -258,7 +259,7 @@
 <ul>
 <li>To aggregate by a single variable, you can pass the variable directly to <code>split1</code>.</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/demography_ctfs">recruitment_ctfs</a></span>(census5, census6, <span class="dt">split1 =</span> census5<span class="op">$</span>sp))</a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">to_df</span>(<span class="kw">recruitment_ctfs</span>(census5, census6, <span class="dt">split1 =</span> census5<span class="op">$</span>sp))</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; Detected dbh ranges:</span></a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
 <a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
@@ -281,12 +282,12 @@
 <li>To aggregate by multiple variables, use <code><a href="https://www.rdocumentation.org/packages/base/topics/interaction">interaction()</a></code> (but aggregating by more than one variable may be slow and confusing).</li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">sp_quadrat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/interaction">interaction</a></span>(census5<span class="op">$</span>sp, census5<span class="op">$</span>quadrat)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">by_many &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/demography_ctfs">recruitment_ctfs</a></span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">by_many &lt;-<span class="st"> </span><span class="kw">recruitment_ctfs</span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat)</a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt; Detected dbh ranges:</span></a>
 <a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
 <a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
 <a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df</a></span>(by_many)</a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="kw">to_df</span>(by_many)</a>
 <a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; # A tibble: 26,207 x 9</span></a>
 <a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;    groups         N2     R  rate lower  upper  time date1 date2</span></a>
 <a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
@@ -302,7 +303,7 @@
 <a class="sourceLine" id="cb9-20" data-line-number="20"><span class="co">#&gt; 10 SLOBER.1007     0     0    NA    NA NA     NA    18890    NA</span></a>
 <a class="sourceLine" id="cb9-21" data-line-number="21"><span class="co">#&gt; # ... with 26,197 more rows</span></a></code></pre></div>
 <p>To separate the multiple groups we can use <code><a href="https://tidyr.tidyverse.org/reference/separate.html">tidyr::separate()</a></code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df</a></span>(by_many), groups, <span class="dt">into =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"species"</span>, <span class="st">"quadrats"</span>))</a>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span>(<span class="kw">to_df</span>(by_many), groups, <span class="dt">into =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"species"</span>, <span class="st">"quadrats"</span>))</a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co">#&gt; # A tibble: 26,207 x 10</span></a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt;    species quadrats    N2     R  rate lower  upper  time date1 date2</span></a>
 <a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
@@ -318,7 +319,7 @@
 <a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt; 10 SLOBER  1007         0     0    NA    NA NA     NA    18890    NA</span></a>
 <a class="sourceLine" id="cb10-15" data-line-number="15"><span class="co">#&gt; # ... with 26,197 more rows</span></a></code></pre></div>
 <p>The same works for mortality and growth.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/demography_ctfs">mortality_ctfs</a></span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat))</a>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">to_df</span>(<span class="kw">mortality_ctfs</span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat))</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt; Detected dbh ranges:</span></a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
 <a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
@@ -338,7 +339,7 @@
 <a class="sourceLine" id="cb11-18" data-line-number="18"><span class="co">#&gt; 10 SLOBER.1007     1     1   Inf 0.0382 Inf      4.50 18890 20534   101  </span></a>
 <a class="sourceLine" id="cb11-19" data-line-number="19"><span class="co">#&gt; # ... with 26,197 more rows</span></a>
 <a class="sourceLine" id="cb11-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb11-21" data-line-number="21"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/demography_ctfs">growth_ctfs</a></span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat))</a>
+<a class="sourceLine" id="cb11-21" data-line-number="21"><span class="kw">to_df</span>(<span class="kw">growth_ctfs</span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat))</a>
 <a class="sourceLine" id="cb11-22" data-line-number="22"><span class="co">#&gt; Detected dbh ranges:</span></a>
 <a class="sourceLine" id="cb11-23" data-line-number="23"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
 <a class="sourceLine" id="cb11-24" data-line-number="24"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
@@ -432,7 +433,7 @@
 <a class="sourceLine" id="cb22-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(ten_plus, <span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
 <a class="sourceLine" id="cb22-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb22-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
-<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="kw"><a href="../../reference/abundance.html">abundance</a></span>(non_missing)</a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="kw">abundance</span>(non_missing)</a>
 <a class="sourceLine" id="cb22-6" data-line-number="6"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
 <a class="sourceLine" id="cb22-7" data-line-number="7"><span class="co">#&gt; main stems?</span></a>
 <a class="sourceLine" id="cb22-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
@@ -442,14 +443,14 @@
 <a class="sourceLine" id="cb22-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb22-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
 <a class="sourceLine" id="cb22-14" data-line-number="14">main_stems &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
-<a class="sourceLine" id="cb22-15" data-line-number="15"><span class="kw"><a href="../../reference/abundance.html">abundance</a></span>(main_stems)</a>
+<a class="sourceLine" id="cb22-15" data-line-number="15"><span class="kw">abundance</span>(main_stems)</a>
 <a class="sourceLine" id="cb22-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
 <a class="sourceLine" id="cb22-17" data-line-number="17"><span class="co">#&gt;       n</span></a>
 <a class="sourceLine" id="cb22-18" data-line-number="18"><span class="co">#&gt;   &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb22-19" data-line-number="19"><span class="co">#&gt; 1   786</span></a></code></pre></div>
 <p>Calculate the abundance of trees by species.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(main_stems, sp)</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw"><a href="../../reference/abundance.html">abundance</a></span>(by_sp)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
 <a class="sourceLine" id="cb23-3" data-line-number="3">n_by_sp</a>
 <a class="sourceLine" id="cb23-4" data-line-number="4"><span class="co">#&gt; # A tibble: 65 x 2</span></a>
 <a class="sourceLine" id="cb23-5" data-line-number="5"><span class="co">#&gt; # Groups:   sp [65]</span></a>
@@ -492,11 +493,11 @@
 <p>Map the most abundant species.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">example_elevation &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>elevation</a>
 <a class="sourceLine" id="cb27-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">species_elevation &lt;-<span class="st"> </span><span class="kw"><a href="https://forestgeo.github.io/fgeo.map//reference/sp_elev.html">sp_elev</a></span>(picked_stems, example_elevation)</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span>(species_elevation)</a></code></pre></div>
+<a class="sourceLine" id="cb27-3" data-line-number="3">species_elevation &lt;-<span class="st"> </span><span class="kw">sp_elev</span>(picked_stems, example_elevation)</a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="kw">autoplot</span>(species_elevation)</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 <p>Tweak to focus on the hectare available in the data.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span>(species_elevation, <span class="dt">xlim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">400</span>, <span class="dv">500</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">autoplot</span>(species_elevation, <span class="dt">xlim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">400</span>, <span class="dv">500</span>))</a></code></pre></div>
 <p><img src="fgeo_files/figure-html/unnamed-chunk-24-1.png" width="700"></p>
 </div>
 <div id="species-habitat-associations" class="section level2">
@@ -513,10 +514,10 @@
 <a class="sourceLine" id="cb29-9" data-line-number="9">species &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/unique">unique</a></span>(pick<span class="op">$</span>sp)</a>
 <a class="sourceLine" id="cb29-10" data-line-number="10"></a>
 <a class="sourceLine" id="cb29-11" data-line-number="11"><span class="co"># Use your habitat data or create it from elevation data</span></a>
-<a class="sourceLine" id="cb29-12" data-line-number="12">habitat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/fgeo_habitat">fgeo_habitat</a></span>(elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb29-12" data-line-number="12">habitat &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb29-13" data-line-number="13"></a>
 <a class="sourceLine" id="cb29-14" data-line-number="14"><span class="co"># A list or matrices</span></a>
-<a class="sourceLine" id="cb29-15" data-line-number="15">tt_lst &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/tt_test">tt_test</a></span>(census, species, habitat)</a>
+<a class="sourceLine" id="cb29-15" data-line-number="15">tt_lst &lt;-<span class="st"> </span><span class="kw">tt_test</span>(census, species, habitat)</a>
 <a class="sourceLine" id="cb29-16" data-line-number="16"><span class="co">#&gt; Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.</span></a>
 <a class="sourceLine" id="cb29-17" data-line-number="17"><span class="co">#&gt; Using `gridsize = 20`. To change this value see `?tt_test()`.</span></a>
 <a class="sourceLine" id="cb29-18" data-line-number="18">tt_lst</a>
@@ -577,7 +578,7 @@
 <a class="sourceLine" id="cb29-73" data-line-number="73"><span class="co">#&gt; SLOBER       8      833      764        3              0       0.520625</span></a>
 <a class="sourceLine" id="cb29-74" data-line-number="74"></a>
 <a class="sourceLine" id="cb29-75" data-line-number="75"><span class="co"># A dataframe</span></a>
-<a class="sourceLine" id="cb29-76" data-line-number="76"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.analyze/topics/to_df">to_df</a></span>(tt_lst)</a>
+<a class="sourceLine" id="cb29-76" data-line-number="76"><span class="kw">to_df</span>(tt_lst)</a>
 <a class="sourceLine" id="cb29-77" data-line-number="77"><span class="co">#&gt; # A tibble: 12 x 8</span></a>
 <a class="sourceLine" id="cb29-78" data-line-number="78"><span class="co">#&gt;    habitat sp     N.Hab Gr.Hab Ls.Hab Eq.Hab Rep.Agg.Neut Obs.Quantile</span></a>
 <a class="sourceLine" id="cb29-79" data-line-number="79"><span class="co">#&gt;  * &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;</span></a>

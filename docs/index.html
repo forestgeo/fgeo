@@ -245,10 +245,11 @@
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Load all <strong>fgeo</strong> packages in one step.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------------------- fgeo 0.0.0.9002 --</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.x    0.0.0.9000     v fgeo.tool 0.0.0.9005</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; -- Conflicts ---------------------------------------------------------------- fgeo_conflicts() --</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.map     0.0.0.9402     v fgeo.tool    0.0.0.9005</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ---------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <p>On an interactive session, <code><a href="reference/fgeo_help.html">fgeo_help()</a></code> and <code><a href="reference/fgeo_browse.html">fgeo_browse_reference()</a></code> help you to search documentation.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="cf">if</span> (<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/interactive">interactive</a></span>()) {</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="co"># To search on the viewer; accepts keywords</span></a>
@@ -304,7 +305,7 @@
 <a class="sourceLine" id="cb9-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(ten_plus, <span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dbh))</a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw"><a href="reference/abundance.html">abundance</a></span>(non_missing)</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">abundance</span>(non_missing)</a>
 <a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
 <a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; main stems?</span></a>
 <a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
@@ -314,14 +315,14 @@
 <a class="sourceLine" id="cb9-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
 <a class="sourceLine" id="cb9-14" data-line-number="14">largest_stem &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
-<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="kw"><a href="reference/abundance.html">abundance</a></span>(largest_stem)</a>
+<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="kw">abundance</span>(largest_stem)</a>
 <a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
 <a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt;       n</span></a>
 <a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt;   &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; 1   786</span></a></code></pre></div>
 <p>Count largest stems (unique <code>treeID</code>s) by species.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(largest_stem, sp)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw"><a href="reference/abundance.html">abundance</a></span>(by_sp)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">abundance</span>(by_sp)</a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt; # A tibble: 65 x 2</span></a>
 <a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt; # Groups:   sp [65]</span></a>
 <a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt;    sp         n</span></a>
