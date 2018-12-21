@@ -149,7 +149,8 @@ Load all **fgeo** packages in one step.
 ``` r
 library(fgeo)
 #> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.x    0.0.0.9000     v fgeo.tool 0.0.0.9005
+#> v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003
+#> v fgeo.map     0.0.0.9402     v fgeo.tool    0.0.0.9005
 #> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
