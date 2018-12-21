@@ -27,9 +27,3 @@ test_that("is sensitive to `include_self`", {
   expect_sorted_equal(fgeo_to_attach(), attach_these)
 })
 
-context("table_core")
-
-test_that("indexing functions output a dataframe", {
-  expect_type(table_core(), "list")
-  expect_is(table_core(), "data.frame")
-})
