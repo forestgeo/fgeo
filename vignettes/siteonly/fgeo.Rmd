@@ -53,16 +53,6 @@ cols <- names(stem)
 filter(data_dictionary, column %in% cols)
 ```
 
-This dataset comes with multiple censuses. We will pick only the latest one.
-
-```{r}
-unique(stem$CensusID)
-
-# `pick_top()` with n < 0 from the bottom rank of `var`. See ?pick_top().
-stem6 <- pick_top(stem, var = CensusID, n = -1)
-unique(stem6$CensusID)
-```
-
 ## Demography
 
 ```{r}
@@ -223,14 +213,13 @@ n_by_sp
 What are the three most abundant tree species?
 
 ```{r}
-top3 <- pick_top(n_by_sp, n, -3)
-top3
+(top3_species <- arrange(n_by_sp, desc(n))[["sp"]][1:3])
 ```
 
 Now we can pick the `alive_trees` of only the `top3` species.
 
 ```{r}
-picked_stems <- filter(alive_trees, sp %in% top3$sp)
+picked_stems <- filter(alive_trees, sp %in% top3_species)
 ```
 
 ## Mapping the distribution of tree species
