@@ -10,7 +10,7 @@ test_that("is sensitive to `include_self`", {
       "fgeo.x",
       "fgeo.tool",
       "fgeo.analyze",
-      "fgeo.map",
+      "fgeo.plot",
       "fgeo"
   )
   expect_sorted_equal(fgeo_packages(), install_these)
@@ -20,7 +20,7 @@ test_that("is sensitive to `include_self`", {
 
   attach_these <- c(
     "fgeo.x",
-    "fgeo.map",
+    "fgeo.plot",
     "fgeo.analyze",
     "fgeo.tool"
   )
