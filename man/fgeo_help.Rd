@@ -2,12 +2,9 @@
 % Please edit documentation in R/fgeo_help.R
 \name{fgeo_help}
 \alias{fgeo_help}
-\alias{fgeo_help_addin}
 \title{Get help with fgeo.}
 \usage{
 fgeo_help(pattern = "", package = NULL, rebuild = TRUE, ...)
-
-fgeo_help_addin()
 }
 \arguments{
 \item{pattern}{A character string to be matched in the name, alias or title
@@ -42,6 +39,7 @@ Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.
 if (interactive()) fgeo_help()
 as_tibble(fgeo_help()$matches)
 if (interactive()) fgeo_help("stem", package = "fgeo.x")
+
 }
 \seealso{
 \code{\link[utils:help.search]{utils::help.search()}}.

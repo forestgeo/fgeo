@@ -15,19 +15,18 @@
 #' @inheritParams utils::help.search
 #' @param ... Other arguments passed to [utils::help.search()].
 #'
-#'
 #' @seealso [utils::help.search()].
 #'
 #' @return The results are returned in a list object of class "hsearch", which
 #'   has a print method for nicely formatting the results of the query.
 #'
-#' @export
-#'
 #' @examples
 #' if (interactive()) fgeo_help()
 #' as_tibble(fgeo_help()$matches)
 #' if (interactive()) fgeo_help("stem", package = "fgeo.x")
+#'
 #' @family functions to explore fgeo
+#' @export
 fgeo_help <- function(pattern = "", package = NULL, rebuild = TRUE, ...) {
   utils::help.search(
     pattern = pattern,
@@ -35,10 +34,4 @@ fgeo_help <- function(pattern = "", package = NULL, rebuild = TRUE, ...) {
     rebuild = rebuild,
     ...
   )
-}
-
-#' @export
-#' @rdname fgeo_help
-fgeo_help_addin <- function() {
-  rstudioapi::sendToConsole("fgeo::fgeo_help(pattern = '')")
 }
