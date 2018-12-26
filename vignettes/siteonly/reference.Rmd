@@ -19,34 +19,24 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r functions}
+```{r}
 library(dplyr)
-library(rlang)
 library(fgeo)
-```
-
-```{r prefill-arguments}
-# Partially fill arguments with specific details for forestgeo.
-relevant_columns <- function() c("alias", "topic", "title")
-fgeo_url <- "https://forestgeo.github.io/"
-
-pick_fgeo_doc <- function(.f) {
-  function(x) {
-    .f(x, cols = relevant_columns(), url = fgeo_url) %>% 
-      group_by(.data$title) %>% 
-      mutate(
-        alias = paste(unique(fgeo:::strip_s3class(.data$alias)), collapse = ", ")
-      ) %>% 
-      ungroup() %>% 
-      select(topic, alias, title) %>% 
-      unique()
-  }
-}
-pick_fgeo_concept <- pick_fgeo_doc(fgeo:::pick_concept)
-pick_fgeo_package <- pick_fgeo_doc(fgeo:::pick_package)
+library(pkgdoc)
 ```
 
 ```{r, warning=FALSE}
+
+url_fgeo <- "https://forestgeo.github.io/"
+
+fgeo_reference_concept <- function(x) {
+  reference_concept(x, url = url_fgeo, packages = fgeo:::fgeo_packages())
+}
+
+fgeo_reference_package <- function(x) {
+  reference_package(x, url = url_fgeo, packages = fgeo:::fgeo_packages())
+}
+
 custom_table <- function(x) {
   knitr::kable(
     x, 
@@ -65,7 +55,7 @@ Search globally in the search box below, or navigate the index clicking the menu
 
 ```{r, warning=FALSE}
 fgeo:::fgeo_packages() %>% 
-  purrr::map_dfr(pick_fgeo_package) %>% 
+  purrr::map_dfr(reference_package) %>% 
   unique() %>% 
   purrr::set_names(c("", "object", "description")) %>% 
   DT::datatable(
@@ -82,35 +72,35 @@ fgeo:::fgeo_packages() %>%
 ### Explore fgeo
 
 ```{r}
-pick_fgeo_concept("functions to explore fgeo") %>% 
+fgeo_reference_concept("functions to explore fgeo") %>% 
   custom_table()
 ```
 
 ### Plot
 
 ```{r}
-pick_fgeo_concept("plot functions") %>% 
+fgeo_reference_concept("plot functions") %>% 
   custom_table()
 ```
 
 ### Abundance
 
 ```{r}
-pick_fgeo_concept("functions for abundance and basal area") %>% 
+fgeo_reference_concept("functions for abundance and basal area") %>% 
   custom_table()
 ```
 
 ### Demography
 
 ```{r}
-pick_fgeo_concept("demography functions") %>% 
+fgeo_reference_concept("demography functions") %>% 
   custom_table()
 ```
 
 ### Habitat
 
 ```{r}
-pick_fgeo_concept("habitat functions") %>% 
+fgeo_reference_concept("habitat functions") %>% 
   custom_table()
 ```
 
@@ -119,7 +109,7 @@ pick_fgeo_concept("habitat functions") %>%
 #### Import ForestGEO data
 
 ```{r}
-pick_fgeo_concept("functions to import ForestGEO data") %>% 
+fgeo_reference_concept("functions to import ForestGEO data") %>% 
   custom_table()
 ```
 
@@ -128,7 +118,7 @@ pick_fgeo_concept("functions to import ForestGEO data") %>%
 Notice that function names have the format `input_output`.
 
 ```{r}
-pick_fgeo_concept("general functions to import data") %>% 
+fgeo_reference_concept("general functions to import data") %>% 
   custom_table()
 ```
 
@@ -137,14 +127,14 @@ pick_fgeo_concept("general functions to import data") %>%
 Notice that function names have the format `input_output`.
 
 ```{r}
-pick_fgeo_concept("general functions to export data") %>%
+fgeo_reference_concept("general functions to export data") %>%
   custom_table()
 ```
 
 #### Edit data in place
 
 ```{r}
-pick_fgeo_concept(c(
+fgeo_reference_concept(c(
   "functions to edit ForestGEO data in place",
   "general functions to edit data in place"
 )) %>% 
@@ -154,7 +144,7 @@ pick_fgeo_concept(c(
 #### Pick/drop rows with matching conditions 
 
 ```{r}
-pick_fgeo_concept(c(
+fgeo_reference_concept(c(
   "functions to pick or drop rows of a ForestGEO dataframe",
   "general functions to pick or drop rows of a dataframe"
 )) %>% 
@@ -164,20 +154,20 @@ pick_fgeo_concept(c(
 #### Add new columns to a dataframe
 
 ```{r}
-pick_fgeo_concept("functions to add columns to dataframes") %>% 
+fgeo_reference_concept("functions to add columns to dataframes") %>% 
   custom_table()
 ```
 
 #### Create different classes of ForestGEO data
 
 ```{r}
-pick_fgeo_concept("functions to construct fgeo classes") %>% 
+fgeo_reference_concept("functions to construct fgeo classes") %>% 
   custom_table()
 ```
 
 ### Datasets
 
 ```{r}
-pick_fgeo_concept("datasets") %>% 
+fgeo_reference_concept("datasets") %>% 
   custom_table()
 ```

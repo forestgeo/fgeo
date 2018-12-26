@@ -28,7 +28,7 @@ fgeo_link <- function(package, topic = NULL) {
 }
 
 link_core <- function(pattern) {
-  core <- fgeo:::fgeo_to_attach()()
+  core <- fgeo_to_attach()()
   fgeo_link(core[grepl(pattern, core)])
 }
 

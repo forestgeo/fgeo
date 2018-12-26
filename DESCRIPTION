@@ -84,7 +84,7 @@ Imports:
     crayon,
     dplyr,
     fgeo.analyze,
-    fgeo.map,
+    fgeo.plot,
     fgeo.tool,
     fgeo.x,
     magrittr,
@@ -105,7 +105,7 @@ VignetteBuilder:
     knitr
 Remotes: 
     forestgeo/fgeo.analyze,
-    forestgeo/fgeo.map,
+    forestgeo/fgeo.plot,
     forestgeo/fgeo.tool,
     forestgeo/fgeo.x
 Encoding: UTF-8
