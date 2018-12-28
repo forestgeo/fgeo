@@ -1,17 +1,14 @@
 #' Get help with fgeo.
 #'
-#' * `fgeo_help()` finds all __fgeo__ help files. You can refine
-#' your search directly on the viewer panel of RStudio or by passing a string
-#' to `fgeo_help()` (e.g. `fgeo_help("datasets")`).
-#' * `fgeo_help_adin()` runs `fgeo_help()` from the RStudio Addins menu or by
-#' associating a keyboard shortcut to it (see Tools > Modify Keyboard
-#' Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.
+#' [fgeo_help()] finds all __fgeo__ help files. You can refine
+#' your search directly on the viewer panel of RStudio or via a string passed
+#' as the first argument to [fgeo_help()].
 #'
 #' @param pattern A character string to be matched in the name, alias or title
 #'   of a topic's documentation. Defaults to matching anything, which retrieves
 #'   all the documentation of __fgeo__ packages.
-#' @param package A character string giving the name or one or more
-#'   core-packages of __fgeo__.
+#' @param package A character string giving the name of one or more
+#'   packages to limit the search, or `NULL` to search all fgeo packages.
 #' @inheritParams utils::help.search
 #' @param ... Other arguments passed to [utils::help.search()].
 #'
@@ -21,9 +18,15 @@
 #'   has a print method for nicely formatting the results of the query.
 #'
 #' @examples
-#' if (interactive()) fgeo_help()
+#' if (interactive()) {
+#'   fgeo_help()
+#' }
+#'
 #' as_tibble(fgeo_help()$matches)
-#' if (interactive()) fgeo_help("stem", package = "fgeo.x")
+#'
+#' if (interactive()) {
+#'   fgeo_help("stem", package = "fgeo.x")
+#' }
 #'
 #' @family functions to explore fgeo
 #' @export
