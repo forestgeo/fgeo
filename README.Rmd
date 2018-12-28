@@ -54,7 +54,7 @@ __Expected R environment__
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-__Option 1: Install direclty__
+__Option 1: Install directly__
 
 ```R
 install.packages("devtools")
@@ -247,4 +247,4 @@ Data have been made available as required by the journal to enable reproduction 
 
 ## Acknowledgments
 
-Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are many other people that deserve special acknowledgements; I thank them in the documentation and home page of each individual package that make up the __fgeo__ development.
+Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are many other people that deserve special acknowledgment; I thank them in the documentation and home page of each individual package that make up the __fgeo__ development.

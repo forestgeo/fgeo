@@ -267,7 +267,6 @@ census <- filter(tree5, status == "A", dbh >= 10)
 
 # Pick sufficiently abundant species
 pick <- filter(add_count(census, sp), n > 50)
-species <- unique(pick$sp)
 
 # Use your habitat data or create it from elevation data
 habitat <- fgeo_habitat(elevation, gridsize = 20, n = 4)
@@ -277,19 +276,19 @@ We have everything we need. We can now calculate species-habitat associations wi
 
 ```{r}
 # A list or matrices
-tt_lst <- tt_test(census, species, habitat)
-tt_lst
+tt_test_result <- tt_test(pick, habitat)
+tt_test_result
 ```
 
 Finally, here are some ways you may visualize the results.
 
 ```{r}
 # A simple summary to help you interpret the results
-summary(tt_lst)
+summary(tt_test_result)
 
 # A combined matrix
-Reduce(rbind, tt_lst)
+Reduce(rbind, tt_test_result)
 
 # A dataframe
-to_df(tt_lst)
+to_df(tt_test_result)
 ```

@@ -11,8 +11,8 @@ fgeo_help(pattern = "", package = NULL, rebuild = TRUE, ...)
 of a topic's documentation. Defaults to matching anything, which retrieves
 all the documentation of \strong{fgeo} packages.}
 
-\item{package}{A character string giving the name or one or more
-core-packages of \strong{fgeo}.}
+\item{package}{A character string giving the name of one or more
+packages to limit the search, or \code{NULL} to search all fgeo packages.}
 
 \item{rebuild}{a logical indicating whether the help database should
     be rebuilt.  This will be done automatically if \code{lib.loc} or
@@ -26,19 +26,20 @@ The results are returned in a list object of class "hsearch", which
 has a print method for nicely formatting the results of the query.
 }
 \description{
-\itemize{
-\item \code{fgeo_help()} finds all \strong{fgeo} help files. You can refine
-your search directly on the viewer panel of RStudio or by passing a string
-to \code{fgeo_help()} (e.g. \code{fgeo_help("datasets")}).
-\item \code{fgeo_help_adin()} runs \code{fgeo_help()} from the RStudio Addins menu or by
-associating a keyboard shortcut to it (see Tools > Modify Keyboard
-Shortcuts...), for example, Ctr/Cmd + Shift + Alt + F1.
-}
+\code{\link[=fgeo_help]{fgeo_help()}} finds all \strong{fgeo} help files. You can refine
+your search directly on the viewer panel of RStudio or via a string passed
+as the first argument to \code{\link[=fgeo_help]{fgeo_help()}}.
 }
 \examples{
-if (interactive()) fgeo_help()
+if (interactive()) {
+  fgeo_help()
+}
+
 as_tibble(fgeo_help()$matches)
-if (interactive()) fgeo_help("stem", package = "fgeo.x")
+
+if (interactive()) {
+  fgeo_help("stem", package = "fgeo.x")
+}
 
 }
 \seealso{
