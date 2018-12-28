@@ -33,7 +33,7 @@ abundance, demography, and habitats of forest trees.
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-**Option 1: Install direclty**
+**Option 1: Install directly**
 
 ``` r
 install.packages("devtools")
@@ -148,10 +148,10 @@ Load all **fgeo** packages in one step.
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ------------------------------------------------------ fgeo 0.0.0.9002 --
 #> v fgeo.x       0.0.0.9000     v fgeo.analyze 0.0.0.9003
-#> v fgeo.map     0.0.0.9402     v fgeo.tool    0.0.0.9005
-#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
+#> v fgeo.plot    0.0.0.9402     v fgeo.tool    0.0.0.9005
+#> -- Conflicts -------------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -323,6 +323,6 @@ corresponding ForestGEO plots.
 Thanks to all partners of ForestGEO for sharing their ideas and code.
 For feedback on **fgeo**, special thanks to Gabriel Arellano, Stuart
 Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are
-many other people that deserve special acknowledgements; I thank them in
+many other people that deserve special acknowledgment; I thank them in
 the documentation and home page of each individual package that make up
 the **fgeo** development.
