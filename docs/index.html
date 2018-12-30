@@ -363,24 +363,22 @@
 <ul>
 <li>Demography</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">census1 &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>tree5</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">census2 &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>tree6</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="kw">to_df</span>(</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">  <span class="kw">recruitment_ctfs</span>(census1, census2)</a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">)</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; Detected dbh ranges:</span></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt;   * `census1` = 10.9-323.</span></a>
-<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt;   * `census2` = 10.5-347.</span></a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt; # A tibble: 1 x 8</span></a>
-<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt;      N2     R   rate   lower  upper  time  date1  date2</span></a>
-<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt; 1    29     3 0.0241 0.00846 0.0681  4.53 18938. 20601.</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># `tree5` and `tree6` come with fgeo</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">to_df</span>(</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="kw">recruitment_ctfs</span>(tree5, tree6)</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">)</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;   * `census1` = 10.9-323.</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt;   * `census2` = 10.5-347.</span></a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt; # A tibble: 1 x 8</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;      N2     R   rate   lower  upper  time  date1  date2</span></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt; 1    29     3 0.0241 0.00846 0.0681  4.53 18938. 20601.</span></a></code></pre></div>
 <ul>
 <li>Species-habitats association</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">elevation &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>elevation</a>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># `elevation` comes with fgeo</span></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2">habitats &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw">autoplot</span>(habitats)</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-10-1.png" width="700"></p>

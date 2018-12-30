@@ -224,18 +224,16 @@ basal_area(by_species)
 * Demography
 
 ```{r}
-census1 <- fgeo.x::tree5
-census2 <- fgeo.x::tree6
-
+# `tree5` and `tree6` come with fgeo
 to_df(
-  recruitment_ctfs(census1, census2)
+  recruitment_ctfs(tree5, tree6)
 )
 ```
 
 * Species-habitats association
 
 ```{r}
-elevation <- fgeo.x::elevation
+# `elevation` comes with fgeo
 habitats <- fgeo_habitat(elevation, gridsize = 20, n = 4)
 autoplot(habitats)
 ```
