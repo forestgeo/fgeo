@@ -145,8 +145,8 @@ fgeo_reference_concept(c(
 
 ```{r}
 fgeo_reference_concept(c(
-  "functions to pick or drop rows of a ForestGEO dataframe",
-  "general functions to pick or drop rows of a dataframe"
+  "general functions to pick or drop rows of a dataframe",
+  "functions to pick or drop rows of a ForestGEO dataframe"
 )) %>% 
   custom_table()
 ```
