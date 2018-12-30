@@ -55,7 +55,7 @@ Search globally in the search box below, or navigate the index clicking the menu
 
 ```{r, warning=FALSE}
 fgeo:::fgeo_packages() %>% 
-  purrr::map_dfr(reference_package) %>% 
+  purrr::map_dfr(reference_package, url = url_fgeo) %>% 
   unique() %>% 
   purrr::set_names(c("", "object", "description")) %>% 
   DT::datatable(
@@ -155,13 +155,6 @@ fgeo_reference_concept(c(
 
 ```{r}
 fgeo_reference_concept("functions to add columns to dataframes") %>% 
-  custom_table()
-```
-
-#### Create different classes of ForestGEO data
-
-```{r}
-fgeo_reference_concept("functions to construct fgeo classes") %>% 
   custom_table()
 ```
 
