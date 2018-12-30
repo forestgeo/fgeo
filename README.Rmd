@@ -159,6 +159,8 @@ Load all __fgeo__ packages in one step.
 library(fgeo)
 ```
 
+#### Explore
+
 On an interactive session, `fgeo_help()` and `fgeo_browse_reference()` help you to search documentation.
 
 ```{r}
@@ -170,46 +172,79 @@ if (interactive()) {
 }
 ```
 
+#### Datasets
+
+__fgeo__ includes multiple small datasets. For example:
+
 ```{r}
-# Short name
+tree5
+```
+
+Some larger datasets are not stored locally but can be downloaded.
+
+```{r}
 stem6 <- download_data("luquillo_stem6_random")
 stem6
 ```
 
-Determine the status of each tree based on the status of each stem.
+For simplicity, let's focus on a few species.
 
 ```{r}
-stem6 <- add_status_tree(stem6, status_a = "A", status_d = "D")
-alive_trees <- subset(stem6, status_tree == "A")
-alive_trees
+few_species <-  c("PREMON", "CASARB")
+census <- filter(stem6, sp %in% few_species)
+
+census
 ```
 
-Pick stems of 10 mm or more.
+#### Plot
+
+Common plots are simple to make.
 
 ```{r}
-ten_plus <- pick_dbh_min(alive_trees, 10)
-range(ten_plus$dbh, na.rm = TRUE)
+autoplot(sp(census))
 ```
 
-Count distinct values of `stemID` and `treeID`.
+#### Analyze
+
+__fgeo__ includes some common analyses:
+
+* Abundance and basal area
 
 ```{r}
-# Drop missing values of `dbh`
-non_missing <- filter(ten_plus, !is.na(dbh))
+abundance(census)
 
-# Stem abundance
-abundance(non_missing)
+abundance(
+  pick_main_stem(census)
+)
 
-# Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)
-largest_stem <- pick_main_stem(non_missing)
-abundance(largest_stem)
+by_species <- group_by(census, sp)
+basal_area(by_species)
 ```
 
-Count largest stems (unique `treeID`s) by species.
+* Demography
 
 ```{r}
-by_sp <- group_by(largest_stem, sp)
-abundance(by_sp)
+# `tree5` and `tree6` come with fgeo
+to_df(
+  recruitment_ctfs(tree5, tree6)
+)
+```
+
+* Species-habitats association
+
+```{r}
+# `elevation` comes with fgeo
+habitats <- fgeo_habitat(elevation, gridsize = 20, n = 4)
+autoplot(habitats)
+```
+
+```{r}
+# This analysis makes sense only for tree tables
+tree <- download_data("luquillo_tree5_random")
+
+to_df(
+  tt_test(tree, habitats)
+)
 ```
 
 [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
