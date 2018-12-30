@@ -158,13 +158,6 @@ fgeo_reference_concept("functions to add columns to dataframes") %>%
   custom_table()
 ```
 
-#### Create different classes of ForestGEO data
-
-```{r}
-fgeo_reference_concept("functions to construct fgeo classes") %>% 
-  custom_table()
-```
-
 ### Datasets
 
 ```{r}
