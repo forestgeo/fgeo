@@ -143,8 +143,6 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ## Example
 
-Load all **fgeo** packages in one step.
-
 ``` r
 library(fgeo)
 #> -- Attaching packages ------------------------------------------------------- fgeo 0.0.0.9002 --
@@ -153,8 +151,6 @@ library(fgeo)
 #> -- Conflicts --------------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
-
-#### Explore
 
 On an interactive session, `fgeo_help()` and `fgeo_browse_reference()`
 help you to search documentation.
@@ -168,58 +164,14 @@ if (interactive()) {
 }
 ```
 
-#### Datasets
-
-**fgeo** includes multiple small datasets. For example:
-
-``` r
-tree5
-#> # A tibble: 30 x 19
-#>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#>  1   7624 160987 1089~ 175325  TRIP~ 722     139.  425.     486675        5
-#>  2   8055  10036 1094~ 109482  CECS~ 522      94.8 424.     468874        5
-#>  3  19930 117849 1234~ 165576  CASA~ 425      61.3 496.     471979        5
-#>  4  23746  29677 14473 14473   PREM~ 617     100.  328.     442571        5
-#>  5  31702  39793 22889 22889   SLOB~ 304      53.8  73.8    447307        5
-#>  6  35355  44026 27538 27538   SLOB~ 1106    203.  110.     449169        5
-#>  7  35891  44634 282   282     DACE~ 901     172.   14.7    434266        5
-#>  8  39705  48888 33371 33370   CASS~ 1010    184.  194.     451067        5
-#>  9  50184  60798 5830  5830    MATD~ 1007    191.  132.     437645        5
-#> 10  57380 155867 66962 171649  SLOB~ 1414    274.  279.     459427        5
-#> # ... with 20 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
-#> #   hom <dbl>, ExactDate <date>, DFstatus <chr>, codes <chr>,
-#> #   nostems <dbl>, status <chr>, date <dbl>
-```
-
-Some larger datasets are not stored locally but can be downloaded.
+The first examples use a dataset that is stored online. For simplicity,
+we will focus on only a few species.
 
 ``` r
-stem6 <- download_data("luquillo_stem6_random")
-stem6
-#> # A tibble: 1,320 x 19
-#>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#>  1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
-#>  2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
-#>  3    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA
-#>  4    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA
-#>  5    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6
-#>  6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
-#>  7    602    736 1006~ 100649  GUAG~ 821     149.   414.    614253        6
-#>  8    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6
-#>  9    647    793 1007~ 100708  SCHM~ 821     143.   411.    614211        6
-#> 10   1086   1339 10122 10122   DRYG~ 413      68.9  253.    603131        6
-#> # ... with 1,310 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
-#> #   hom <dbl>, ExactDate <date>, DFstatus <chr>, codes <chr>,
-#> #   countPOM <dbl>, status <chr>, date <dbl>
-```
+downloaded_census <- download_data("luquillo_stem6_random")
 
-For simplicity, let’s focus on a few species.
-
-``` r
 few_species <-  c("PREMON", "CASARB")
-census <- filter(stem6, sp %in% few_species)
+census <- filter(downloaded_census, sp %in% few_species)
 
 census
 #> # A tibble: 433 x 19
@@ -240,23 +192,15 @@ census
 #> #   countPOM <dbl>, status <chr>, date <dbl>
 ```
 
-#### Plot
-
-Common plots are simple to make.
+Species distribution:
 
 ``` r
 autoplot(sp(census))
 ```
 
-![](man/figures/README-unnamed-chunk-7-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-5-1.png)<!-- -->
 
-#### Analyze
-
-**fgeo** includes some common analyses:
-
-  - Abundance and basal area
-
-<!-- end list -->
+Abundance and basal area:
 
 ``` r
 abundance(census)
@@ -276,6 +220,7 @@ abundance(
 #> 1   346
 
 by_species <- group_by(census, sp)
+
 basal_area(by_species)
 #> # A tibble: 2 x 2
 #> # Groups:   sp [2]
@@ -285,43 +230,32 @@ basal_area(by_species)
 #> 2 PREMON   3892799.
 ```
 
-  - Demography
-
-<!-- end list -->
+Demography:
 
 ``` r
 # `tree5` and `tree6` come with fgeo
 to_df(
-  recruitment_ctfs(tree5, tree6)
+  mortality_ctfs(tree5, tree6)
 )
 #> Detected dbh ranges:
 #>   * `census1` = 10.9-323.
 #>   * `census2` = 10.5-347.
 #> Using dbh `mindbh = 0` and above.
-#> # A tibble: 1 x 8
-#>      N2     R   rate   lower  upper  time  date1  date2
-#>   <dbl> <dbl>  <dbl>   <dbl>  <dbl> <dbl>  <dbl>  <dbl>
-#> 1    29     3 0.0241 0.00846 0.0681  4.53 18938. 20601.
+#> # A tibble: 1 x 9
+#>       N     D    rate   lower  upper  time  date1  date2 dbhmean
+#>   <dbl> <dbl>   <dbl>   <dbl>  <dbl> <dbl>  <dbl>  <dbl>   <dbl>
+#> 1    27     1 0.00834 0.00195 0.0448  4.52 18938. 20590.    101.
 ```
 
-  - Species-habitats association
-
-<!-- end list -->
-
-``` r
-# `elevation` comes with fgeo
-habitats <- fgeo_habitat(elevation, gridsize = 20, n = 4)
-autoplot(habitats)
-```
-
-![](man/figures/README-unnamed-chunk-10-1.png)<!-- -->
+Species-habitats association:
 
 ``` r
 # This analysis makes sense only for tree tables
 tree <- download_data("luquillo_tree5_random")
 
+# `habitat` comes with fgeo
 to_df(
-  tt_test(tree, habitats)
+  tt_test(tree, habitat)
 )
 #> Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.
 #> Using `gridsize = 20`. To change this value see `?tt_test()`.
