@@ -165,15 +165,16 @@ help you to search documentation.
 
 ### Access and manipulate data
 
-`path_example()` allows you to access datasets stored in your system.
+`example_path()` allows you to access datasets stored in your R
+libraries.
 
 ``` r
-path_example()
+example_path()
 #>  [1] "csv"           "mixed_files"   "rdata"         "rdata_one"    
 #>  [5] "rds"           "taxa.csv"      "tsv"           "vft_4quad.csv"
 #>  [9] "view"          "weird"         "xl"
 
-(vft_file <- path_example("view/vft_4quad.csv"))
+(vft_file <- example_path("view/vft_4quad.csv"))
 #> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/view/vft_4quad.csv"
 ```
 
@@ -212,7 +213,7 @@ read_vft(vft_file)
 `rds_list()`, `csv_list()`, and friends).
 
 ``` r
-(rdata_files <- path_example("rdata"))
+(rdata_files <- example_path("rdata"))
 #> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/rdata"
 dir(rdata_files)
 #> [1] "tree5.RData" "tree6.RData"

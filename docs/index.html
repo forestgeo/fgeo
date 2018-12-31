@@ -262,13 +262,13 @@
 <div id="access-and-manipulate-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#access-and-manipulate-data" class="anchor"></a>Access and manipulate data</h3>
-<p><code>path_example()</code> allows you to access datasets stored in your system.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">path_example</span>()</a>
+<p><code>example_path()</code> allows you to access datasets stored in your system.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">example_path</span>()</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt;  [1] "csv"           "mixed_files"   "rdata"         "rdata_one"    </span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;  [5] "rds"           "taxa.csv"      "tsv"           "vft_4quad.csv"</span></a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;  [9] "view"          "weird"         "xl"</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">(vft_file &lt;-<span class="st"> </span><span class="kw">path_example</span>(<span class="st">"view/vft_4quad.csv"</span>))</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">(vft_file &lt;-<span class="st"> </span><span class="kw">example_path</span>(<span class="st">"view/vft_4quad.csv"</span>))</a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/view/vft_4quad.csv"</span></a></code></pre></div>
 <div id="read_table" class="section level4">
 <h4 class="hasAnchor">
@@ -302,7 +302,7 @@
 <a href="#input_list" class="anchor"></a><code>&lt;input&gt;_list()</code>
 </h4>
 <p><code>rdata_list()</code> imports multiple .csv files into a list (see also <code>rds_list()</code>, <code>csv_list()</code>, and friends).</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">(rdata_files &lt;-<span class="st"> </span><span class="kw">path_example</span>(<span class="st">"rdata"</span>))</a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">(rdata_files &lt;-<span class="st"> </span><span class="kw">example_path</span>(<span class="st">"rdata"</span>))</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/rdata"</span></a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list.files">dir</a></span>(rdata_files)</a>
 <a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; [1] "tree5.RData" "tree6.RData"</span></a>

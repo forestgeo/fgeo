@@ -173,12 +173,12 @@ if (interactive()) {
 
 ### Access and manipulate data
 
-`path_example()` allows you to access datasets stored in your system.
+`example_path()` allows you to access datasets stored in your R libraries.
 
 ```{r}
-path_example()
+example_path()
 
-(vft_file <- path_example("view/vft_4quad.csv"))
+(vft_file <- example_path("view/vft_4quad.csv"))
 ```
 
 #### `read_<table>()`
@@ -194,7 +194,7 @@ read_vft(vft_file)
 `rdata_list()` imports multiple .csv files into a list (see also `rds_list()`, `csv_list()`, and friends).
 
 ```{r}
-(rdata_files <- path_example("rdata"))
+(rdata_files <- example_path("rdata"))
 dir(rdata_files)
 
 (censuses <- rdata_list(rdata_files))
