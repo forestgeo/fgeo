@@ -1,8 +1,6 @@
 navbar:
   type: default
   left:
-  - text: "Get started"
-    href: articles/siteonly/fgeo.html
   - text: "Tutorials"
     menu:
     - text: "Visualization basics"
