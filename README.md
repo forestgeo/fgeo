@@ -12,9 +12,10 @@ status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](htt
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
 **fgeo** install and loads multiple R packages to analyze forest
-diversity and dynamics. It allows you to more easily access, manipulate,
-and plot [ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze
-abundance, demography, and species-habitats associations.
+diversity and dynamics. It allows you to access, manipulate, and plot
+[ForestGEO](https://forestgeo.si.edu/) datasets, and to do common
+analyses including abundance, demography, and species-habitats
+associations.
 
   - [Search functions and
     datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
@@ -244,7 +245,7 @@ dir(rdata_files)
 
 #### `list_<output>()`
 
-`list_csv()` exports a each dataframe in a list to a corresponding .csv
+`list_csv()` exports each dataframe in a list to a corresponding .csv
 file.
 
 ``` r
@@ -274,6 +275,14 @@ list_df(censuses)
 ```
 
 #### `pick_<what>()` and `drop_<what>()`
+
+**fgeo** is pipe-friendly. You may not use pipes but often they make
+code easier to read.
+
+> Use %\>% to emphasise a sequence of actions, rather than the object
+> that the actions are being performed on.
+
+– <https://style.tidyverse.org/pipes.html>
 
 `pick_dbh_under()`, `drop_status()` and friends pick and drop rows from
 a ForestGEO ViewFullTable or census table.

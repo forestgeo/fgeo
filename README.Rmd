@@ -40,7 +40,7 @@ manipulate <- "tool"
 datasets <- "x"
 ```
 
-__fgeo__ install and loads multiple R packages to analyze forest diversity and dynamics. It allows you to  more easily access, manipulate, and plot [ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze abundance, demography, and species-habitats associations.
+__fgeo__ install and loads multiple R packages to analyze forest diversity and dynamics. It allows you to access, manipulate, and plot [ForestGEO](https://forestgeo.si.edu/) datasets, and to do common analyses including abundance, demography, and species-habitats associations.
 
 * [Search functions and datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
 * [Try __fgeo__ online](https://bit.ly/fgeo-demo)
@@ -203,7 +203,7 @@ dir(rdata_files)
 #### `list_<output>()`
 
 
-`list_csv()` exports a each dataframe in a list to a corresponding .csv file.
+`list_csv()` exports each dataframe in a list to a corresponding .csv file.
 
 ```{r}
 folder <- tempdir()
@@ -219,6 +219,12 @@ list_df(censuses)
 ```
 
 #### `pick_<what>()` and `drop_<what>()`
+
+__fgeo__ is pipe-friendly. You may not use pipes but often they make code easier to read.
+
+> Use %>% to emphasise a sequence of actions, rather than the object that the actions are being performed on.
+
+-- <https://style.tidyverse.org/pipes.html>
 
 `pick_dbh_under()`, `drop_status()` and friends pick and drop rows from a ForestGEO ViewFullTable or census table.
 
