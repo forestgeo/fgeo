@@ -275,60 +275,6 @@ list_df(censuses)
 
 #### `pick_<what>()` and `drop_<what>()`
 
-`pick()` picks rows from a list of dataframes, applying conditions to a
-`key` dataframe and propagating the picked row-indices to all other
-dataframes in the list.
-
-``` r
-pick(censuses, dbh < 100)
-#> $tree5
-#> # A tibble: 2 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    466597        5
-#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    466623        5
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
-#> 
-#> $tree6
-#> # A tibble: 2 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    578696        6
-#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    617049        6
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
-```
-
-Most functions are pipe-friendly. This is the same:
-
-``` r
-# Same
-censuses %>% 
-  pick(dbh < 100)
-#> $tree5
-#> # A tibble: 2 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    466597        5
-#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    466623        5
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
-#> 
-#> $tree6
-#> # A tibble: 2 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    578696        6
-#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    617049        6
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
-```
-
 `pick_dbh_under()`, `drop_status()` and friends pick and drop rows from
 a ForestGEO ViewFullTable or census table.
 
@@ -442,7 +388,7 @@ class(sp(stem_2sp))
 autoplot(sp(stem_2sp))
 ```
 
-![](man/figures/README-unnamed-chunk-15-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-13-1.png)<!-- -->
 
   - Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev`
     of a `census` and `elevation` dataset, respectively – i.e. to plot
@@ -458,7 +404,7 @@ class(sp_elev(stem_2sp, elevation))
 autoplot(sp_elev(stem_2sp, elevation))
 ```
 
-![](man/figures/README-unnamed-chunk-16-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-14-1.png)<!-- -->
 
 ### Analyze
 
