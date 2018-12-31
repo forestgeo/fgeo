@@ -332,7 +332,7 @@ result <- tt_test(tree, habitat)
 
 to_df(result)
 
-head(summary(result))
+summary(result)
 ```
 
 [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
