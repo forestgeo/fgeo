@@ -220,20 +220,6 @@ list_df(censuses)
 
 #### `pick_<what>()` and `drop_<what>()`
 
-`pick()` picks rows from a list of dataframes, applying conditions to a `key` dataframe and propagating the picked row-indices to all other dataframes in the list.
-
-```{r}
-pick(censuses, dbh < 100)
-```
-
-Most functions are pipe-friendly. This is the same:
-
-```{r}
-# Same
-censuses %>% 
-  pick(dbh < 100)
-```
-
 `pick_dbh_under()`, `drop_status()` and friends pick and drop rows from a ForestGEO ViewFullTable or census table.
 
 ```{r}
