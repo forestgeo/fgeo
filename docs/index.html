@@ -242,10 +242,10 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005</span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; -- Conflicts --------------------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ----------------------------------------------------- fgeo_conflicts() --</span></a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <div id="explore-fgeo" class="section level3">
 <h3 class="hasAnchor">
@@ -568,14 +568,21 @@
 <a class="sourceLine" id="cb21-21" data-line-number="21"><span class="co">#&gt; 10 2       ANDINE     1   1081    510      9            0        0.676</span></a>
 <a class="sourceLine" id="cb21-22" data-line-number="22"><span class="co">#&gt; # ... with 282 more rows</span></a>
 <a class="sourceLine" id="cb21-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb21-24" data-line-number="24"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(result))</a>
-<a class="sourceLine" id="cb21-25" data-line-number="25"><span class="co">#&gt;   Species Habitat_1  Habitat_2 Habitat_3 Habitat_4</span></a>
-<a class="sourceLine" id="cb21-26" data-line-number="26"><span class="co">#&gt; 1  DACEXC  repelled    neutral   neutral   neutral</span></a>
-<a class="sourceLine" id="cb21-27" data-line-number="27"><span class="co">#&gt; 2  MYRSPL   neutral aggregated   neutral  repelled</span></a>
-<a class="sourceLine" id="cb21-28" data-line-number="28"><span class="co">#&gt; 3  CASARB   neutral    neutral   neutral   neutral</span></a>
-<a class="sourceLine" id="cb21-29" data-line-number="29"><span class="co">#&gt; 4  GUAGUI   neutral    neutral  repelled  repelled</span></a>
-<a class="sourceLine" id="cb21-30" data-line-number="30"><span class="co">#&gt; 5  PREMON   neutral    neutral   neutral   neutral</span></a>
-<a class="sourceLine" id="cb21-31" data-line-number="31"><span class="co">#&gt; 6  SCHMOR   neutral    neutral   neutral   neutral</span></a></code></pre></div>
+<a class="sourceLine" id="cb21-24" data-line-number="24"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(result)</a>
+<a class="sourceLine" id="cb21-25" data-line-number="25"><span class="co">#&gt; # A tibble: 73 x 5</span></a>
+<a class="sourceLine" id="cb21-26" data-line-number="26"><span class="co">#&gt;    species habitat_1 habitat_2  habitat_3 habitat_4</span></a>
+<a class="sourceLine" id="cb21-27" data-line-number="27"><span class="co">#&gt;  * &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;    </span></a>
+<a class="sourceLine" id="cb21-28" data-line-number="28"><span class="co">#&gt;  1 DACEXC  repelled  neutral    neutral   neutral  </span></a>
+<a class="sourceLine" id="cb21-29" data-line-number="29"><span class="co">#&gt;  2 MYRSPL  neutral   aggregated neutral   repelled </span></a>
+<a class="sourceLine" id="cb21-30" data-line-number="30"><span class="co">#&gt;  3 CASARB  neutral   neutral    neutral   neutral  </span></a>
+<a class="sourceLine" id="cb21-31" data-line-number="31"><span class="co">#&gt;  4 GUAGUI  neutral   neutral    repelled  repelled </span></a>
+<a class="sourceLine" id="cb21-32" data-line-number="32"><span class="co">#&gt;  5 PREMON  neutral   neutral    neutral   neutral  </span></a>
+<a class="sourceLine" id="cb21-33" data-line-number="33"><span class="co">#&gt;  6 SCHMOR  neutral   neutral    neutral   neutral  </span></a>
+<a class="sourceLine" id="cb21-34" data-line-number="34"><span class="co">#&gt;  7 DRYGLA  neutral   repelled   repelled  neutral  </span></a>
+<a class="sourceLine" id="cb21-35" data-line-number="35"><span class="co">#&gt;  8 HOMRAC  neutral   neutral    neutral   repelled </span></a>
+<a class="sourceLine" id="cb21-36" data-line-number="36"><span class="co">#&gt;  9 OCOLEU  neutral   neutral    neutral   repelled </span></a>
+<a class="sourceLine" id="cb21-37" data-line-number="37"><span class="co">#&gt; 10 MANBID  neutral   neutral    neutral   neutral  </span></a>
+<a class="sourceLine" id="cb21-38" data-line-number="38"><span class="co">#&gt; # ... with 63 more rows</span></a></code></pre></div>
 <p><a href="https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started">Get started</a></p>
 </div>
 </div>
