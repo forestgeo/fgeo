@@ -11,14 +11,13 @@ status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](htt
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-**fgeo** provides functions to manipulate and visualize
-[ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze the
-abundance, demography, and habitats of forest trees.
+**fgeo** install and loads multiple R packages to analyze forest
+diversity and dynamics. It allows you to more easily access, manipulate,
+and plot [ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze
+abundance, demography, and species-habitats associations.
 
   - [Search functions and
     datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
-  - [Related
-    projects](https://forestgeo.github.io/fgeo/#related-projects)
   - [Try **fgeo** online](https://bit.ly/fgeo-demo)
   - [Ask questions, report bugs, or propose
     features](https://github.com/forestgeo/fgeo/issues/new)
@@ -152,88 +151,342 @@ library(fgeo)
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
+### Explore **fgeo**
+
 On an interactive session, `fgeo_help()` and `fgeo_browse_reference()`
 help you to search documentation.
 
+    if (interactive()) {
+      # To search on the viewer; accepts keywords
+      fgeo_help()
+      # To search on a web browser
+      fgeo_browse_reference() 
+    }
+
+### Access and manipulate data
+
+#### `read_<table>()`
+
+`read_vft()` and `read_taxa()` import ViewFullTable and ViewTaxonomy
+from .tsv or .csv files.
+
 ``` r
-if (interactive()) {
-  # To search on the viewer; accepts keywords
-  fgeo_help()
-  # To search on a web browser
-  fgeo_browse_reference() 
-}
+(vft_file <- x_example("vft_4quad.csv"))
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/vft_4quad.csv"
+
+read_vft(vft_file)
+#> # A tibble: 500 x 32
+#>     DBHID PlotName PlotID Family Genus SpeciesName Mnemonic Subspecies
+#>     <int> <chr>     <int> <chr>  <chr> <chr>       <chr>    <chr>     
+#>  1 385164 luquillo      1 Rubia~ Psyc~ brachiata   PSYBRA   <NA>      
+#>  2 385261 luquillo      1 Urtic~ Cecr~ schreberia~ CECSCH   <NA>      
+#>  3 384600 luquillo      1 Rubia~ Psyc~ brachiata   PSYBRA   <NA>      
+#>  4 608789 luquillo      1 Rubia~ Psyc~ berteroana  PSYBER   <NA>      
+#>  5 388579 luquillo      1 Areca~ Pres~ acuminata   PREMON   <NA>      
+#>  6 384626 luquillo      1 Arali~ Sche~ morototoni  SCHMOR   <NA>      
+#>  7 410958 luquillo      1 Rubia~ Psyc~ brachiata   PSYBRA   <NA>      
+#>  8 385102 luquillo      1 Piper~ Piper glabrescens PIPGLA   <NA>      
+#>  9 353163 luquillo      1 Areca~ Pres~ acuminata   PREMON   <NA>      
+#> 10 481018 luquillo      1 Salic~ Case~ arborea     CASARB   <NA>      
+#> # ... with 490 more rows, and 24 more variables: SpeciesID <int>,
+#> #   SubspeciesID <chr>, QuadratName <chr>, QuadratID <int>, PX <dbl>,
+#> #   PY <dbl>, QX <dbl>, QY <dbl>, TreeID <int>, Tag <chr>, StemID <int>,
+#> #   StemNumber <int>, StemTag <int>, PrimaryStem <chr>, CensusID <int>,
+#> #   PlotCensusNumber <int>, DBH <dbl>, HOM <dbl>, ExactDate <date>,
+#> #   Date <int>, ListOfTSM <chr>, HighHOM <int>, LargeStem <chr>,
+#> #   Status <chr>
 ```
 
-The first examples use a dataset that is stored online. For simplicity,
-we will focus on only a few species.
+#### `<input>_list()`
+
+`rdata_list()` (also `rds_list()`, `csv_list()` and others) imports
+multiple .csv files into a list.
 
 ``` r
-downloaded_census <- download_data("luquillo_stem6_random")
+(rdata_files <- tool_example("rdata"))
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.tool/extdata/rdata"
+dir(rdata_files)
+#> [1] "tree5.RData" "tree6.RData"
 
-few_species <-  c("PREMON", "CASARB")
-census <- filter(downloaded_census, sp %in% few_species)
-
-census
-#> # A tibble: 433 x 19
-#>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#>  1    180    222 1001~ 100095  CASA~ 921     165.   410.        NA       NA
-#>  2    180    223 1001~ 100096  CASA~ 921     165.   410.        NA       NA
-#>  3    180    224 1001~ 100171  CASA~ 921     165.   410.    617046        6
-#>  4    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
-#>  5    631    775 10069 10069   PREM~ 213      38.3  245.    598429        6
-#>  6   1380   1702 1015~ 101560  CASA~ 820     142.   386.    614023        6
-#>  7   1840   2240 10208 10208   PREM~ 613     116.   245.    607825        6
-#>  8   2849   3421 1031~ 103156  CASA~ 420      79.2  389.    603814        6
-#>  9   3354   4054 1037~ 103756  CASA~ 220      32.0  385.    599273        6
-#> 10   3354   4055 1037~ 103757  CASA~ 220      32.0  385.        NA       NA
-#> # ... with 423 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
-#> #   hom <dbl>, ExactDate <date>, DFstatus <chr>, codes <chr>,
-#> #   countPOM <dbl>, status <chr>, date <dbl>
+(censuses <- rdata_list(rdata_files))
+#> $tree5
+#> # A tibble: 3 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    439947        5
+#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    466597        5
+#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    466623        5
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+#> 
+#> $tree6
+#> # A tibble: 3 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
+#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
+#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
 ```
 
-Species distribution:
+#### `list_<output>()`
+
+`list_csv()` exports a each dataframe in a list to a corresponding .csv
+file.
 
 ``` r
-autoplot(sp(census))
+folder <- tempdir()
+list_csv(censuses, folder)
+
+dir(folder, pattern = "[.]csv$")
+#> [1] "tree5.csv" "tree6.csv"
 ```
 
-![](man/figures/README-unnamed-chunk-5-1.png)<!-- -->
-
-Abundance and basal area:
+`list_df()` reduces a list of dataframes to a single dataframe.
 
 ``` r
-abundance(census)
-#> Warning: `treeid`: Duplicated values were detected. Do you need to pick
-#> main stems?
-#> # A tibble: 1 x 1
-#>       n
-#>   <int>
-#> 1   433
+list_df(censuses)
+#> # A tibble: 6 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    439947        5
+#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    466597        5
+#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    466623        5
+#> 4    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
+#> 5    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
+#> 6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+```
 
+#### `pick_<what>()` and `drop_<what>()`
+
+`pick()` picks rows from a list of dataframes, applying conditions to a
+`key` dataframe and propagating the picked row-indices to all other
+dataframes in the list.
+
+``` r
+pick(censuses, dbh < 100)
+#> $tree5
+#> # A tibble: 2 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    466597        5
+#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    466623        5
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+#> 
+#> $tree6
+#> # A tibble: 2 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    578696        6
+#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+```
+
+Most functions are pipe-friendly. This is the same:
+
+``` r
+# Same
+censuses %>% 
+  pick(dbh < 100)
+#> $tree5
+#> # A tibble: 2 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    466597        5
+#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    466623        5
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+#> 
+#> $tree6
+#> # A tibble: 2 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    578696        6
+#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+```
+
+`pick_dbh_under()`, `drop_status()` and friends pick and drop rows from
+a ForestGEO ViewFullTable or census table.
+
+``` r
+(census <- censuses[[2]])
+#> # A tibble: 3 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
+#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
+#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+
+census %>% 
+  pick_dbh_under(100)
+#> # A tibble: 2 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    578696        6
+#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+```
+
+`pick_main_stem()` and `pick_main_stemid()` pick the main stem or main
+stemid(s) of each tree in each census.
+
+``` r
+stem <- download_data("luquillo_stem6_random")
+
+dim(stem)
+#> [1] 1320   19
+dim(pick_main_stem(stem))
+#> [1] 1000   19
+```
+
+#### `add_<column(s)>()`
+
+`add_status_tree()`adds the column `status_tree` based on the status of
+all stems of each tree.
+
+``` r
+stem %>% 
+  select(CensusID, treeID, stemID, status) %>% 
+  add_status_tree()
+#> # A tibble: 1,320 x 5
+#>    CensusID treeID stemID status status_tree
+#>       <int>  <int>  <int> <chr>  <chr>      
+#>  1        6    104    143 A      A          
+#>  2        6    119    158 A      A          
+#>  3       NA    180    222 G      A          
+#>  4       NA    180    223 G      A          
+#>  5        6    180    224 G      A          
+#>  6        6    180    225 A      A          
+#>  7        6    602    736 A      A          
+#>  8        6    631    775 A      A          
+#>  9        6    647    793 A      A          
+#> 10        6   1086   1339 A      A          
+#> # ... with 1,310 more rows
+```
+
+`add_index()` and friends add columns to a ForestGEO-like dataframe.
+
+``` r
+stem %>% 
+  select(gx, gy) %>% 
+  add_index()
+#> Guessing: plotdim = c(320, 500)
+#> * If guess is wrong, provide the correct argument `plotdim`
+#> # A tibble: 1,320 x 3
+#>       gx    gy index
+#>    <dbl> <dbl> <dbl>
+#>  1  10.3  245.    13
+#>  2 183.   410.   246
+#>  3 165.   410.   221
+#>  4 165.   410.   221
+#>  5 165.   410.   221
+#>  6 165.   410.   221
+#>  7 149.   414.   196
+#>  8  38.3  245.    38
+#>  9 143.   411.   196
+#> 10  68.9  253.    88
+#> # ... with 1,310 more rows
+```
+
+### Plot data
+
+For simplicity, we will focus on only a few species.
+
+``` r
+stem_2sp <- stem %>% 
+  filter(sp %in% c("PREMON", "CASARB"))
+```
+
+`autoplot()` and friends produce different output depending on the class
+of input. You can create different input classes, for example, with
+`sp()` and `sp_elev()`:
+
+  - Use `sp(census)` to plot the column `sp` of a `census` dataset –
+    i.e. to plot species distribution.
+
+<!-- end list -->
+
+``` r
+class(sp(stem_2sp))
+#> [1] "sp"         "tbl_df"     "tbl"        "data.frame"
+
+autoplot(sp(stem_2sp))
+```
+
+![](man/figures/README-unnamed-chunk-14-1.png)<!-- -->
+
+  - Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev`
+    of a `census` and `elevation` dataset, respectively – i.e. to plot
+    species distribution and topography.
+
+<!-- end list -->
+
+``` r
+data("elevation")
+class(sp_elev(stem_2sp, elevation))
+#> [1] "sp_elev" "list"
+
+autoplot(sp_elev(stem_2sp, elevation))
+```
+
+![](man/figures/README-unnamed-chunk-15-1.png)<!-- -->
+
+### Analyze
+
+#### Abundance
+
+`abundance()` and `basal_area()` calculate abundance and basal area,
+optionally by groups.
+
+``` r
 abundance(
   pick_main_stem(census)
 )
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
-#> 1   346
+#> 1     3
 
 by_species <- group_by(census, sp)
 
 basal_area(by_species)
-#> # A tibble: 2 x 2
-#> # Groups:   sp [2]
+#> # A tibble: 3 x 2
+#> # Groups:   sp [3]
 #>   sp     basal_area
 #>   <chr>       <dbl>
-#> 1 CASARB    535153.
-#> 2 PREMON   3892799.
+#> 1 CASARB      1669.
+#> 2 DACEXC     29865.
+#> 3 MYRSPL      1583.
 ```
 
-Demography:
+#### Demography
+
+`recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate
+recruitment, mortality, and growth. They all output a list. `to_df()`
+converts the output from a list to a more convenient dataframe.
 
 ``` r
-# `tree5` and `tree6` come with fgeo
+data("tree5")
+
 to_df(
   mortality_ctfs(tree5, tree6)
 )
@@ -247,18 +500,22 @@ to_df(
 #> 1    27     1 0.00834 0.00195 0.0448  4.52 18938. 20590.    101.
 ```
 
-Species-habitats association:
+#### Species-habitats association
+
+`tt_test()` runs a torus translation test to determine habitat
+associations of tree species. `to_df()` converts the output from a list
+to a more convenient dataframe. `summary()` helps you to interpret the
+result.
 
 ``` r
 # This analysis makes sense only for tree tables
 tree <- download_data("luquillo_tree5_random")
-
-# `habitat` comes with fgeo
-to_df(
-  tt_test(tree, habitat)
-)
+data("habitat")
+result <- tt_test(tree, habitat)
 #> Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.
 #> Using `gridsize = 20`. To change this value see `?tt_test()`.
+
+to_df(result)
 #> # A tibble: 292 x 8
 #>    habitat sp     N.Hab Gr.Hab Ls.Hab Eq.Hab Rep.Agg.Neut Obs.Quantile
 #>  * <chr>   <chr>  <dbl>  <dbl>  <dbl>  <dbl>        <dbl>        <dbl>
@@ -273,6 +530,15 @@ to_df(
 #>  9 1       ANDINE     1   1117    466     17            0        0.698
 #> 10 2       ANDINE     1   1081    510      9            0        0.676
 #> # ... with 282 more rows
+
+head(summary(result))
+#>   Species Habitat_1  Habitat_2 Habitat_3 Habitat_4
+#> 1  DACEXC  repelled    neutral   neutral   neutral
+#> 2  MYRSPL   neutral aggregated   neutral  repelled
+#> 3  CASARB   neutral    neutral   neutral   neutral
+#> 4  GUAGUI   neutral    neutral  repelled  repelled
+#> 5  PREMON   neutral    neutral   neutral   neutral
+#> 6  SCHMOR   neutral    neutral   neutral   neutral
 ```
 
 [Get

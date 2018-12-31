@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -38,10 +40,9 @@ manipulate <- "tool"
 datasets <- "x"
 ```
 
-__fgeo__ provides functions to manipulate and visualize [ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze the abundance, demography, and habitats of forest trees.
+__fgeo__ install and loads multiple R packages to analyze forest diversity and dynamics. It allows you to  more easily access, manipulate, and plot [ForestGEO](https://forestgeo.si.edu/) datasets, and to analyze abundance, demography, and species-habitats associations.
 
 * [Search functions and datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
-* [Related projects](https://forestgeo.github.io/fgeo/#related-projects)
 * [Try __fgeo__ online](https://bit.ly/fgeo-demo)
 * [Ask questions, report bugs, or propose features](https://github.com/forestgeo/fgeo/issues/new)
 
@@ -157,9 +158,11 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 library(fgeo)
 ```
 
+### Explore __fgeo__
+
 On an interactive session, `fgeo_help()` and `fgeo_browse_reference()` help you to search documentation.
 
-```{r}
+```
 if (interactive()) {
   # To search on the viewer; accepts keywords
   fgeo_help()
@@ -168,28 +171,134 @@ if (interactive()) {
 }
 ```
 
-The first examples use a dataset that is stored online. For simplicity, we will focus on only a few species.
+### Access and manipulate data
+
+#### `read_<table>()`
+
+`read_vft()` and `read_taxa()` import ViewFullTable and ViewTaxonomy from .tsv or .csv files.
 
 ```{r}
-downloaded_census <- download_data("luquillo_stem6_random")
+(vft_file <- x_example("vft_4quad.csv"))
 
-few_species <-  c("PREMON", "CASARB")
-census <- filter(downloaded_census, sp %in% few_species)
-
-census
+read_vft(vft_file)
 ```
 
-Species distribution:
+#### `<input>_list()`
+
+`rdata_list()` (also `rds_list()`, `csv_list()` and others) imports multiple .csv files into a list.
 
 ```{r}
-autoplot(sp(census))
+(rdata_files <- tool_example("rdata"))
+dir(rdata_files)
+
+(censuses <- rdata_list(rdata_files))
 ```
 
-Abundance and basal area:
+#### `list_<output>()`
+
+
+`list_csv()` exports a each dataframe in a list to a corresponding .csv file.
 
 ```{r}
-abundance(census)
+folder <- tempdir()
+list_csv(censuses, folder)
 
+dir(folder, pattern = "[.]csv$")
+```
+
+`list_df()` reduces a list of dataframes to a single dataframe.
+
+```{r}
+list_df(censuses)
+```
+
+#### `pick_<what>()` and `drop_<what>()`
+
+`pick()` picks rows from a list of dataframes, applying conditions to a `key` dataframe and propagating the picked row-indices to all other dataframes in the list.
+
+```{r}
+pick(censuses, dbh < 100)
+```
+
+Most functions are pipe-friendly. This is the same:
+
+```{r}
+# Same
+censuses %>% 
+  pick(dbh < 100)
+```
+
+`pick_dbh_under()`, `drop_status()` and friends pick and drop rows from a ForestGEO ViewFullTable or census table.
+
+```{r}
+(census <- censuses[[2]])
+
+census %>% 
+  pick_dbh_under(100)
+```
+
+`pick_main_stem()` and `pick_main_stemid()` pick the main stem or main stemid(s) of each tree in each census.
+
+```{r}
+stem <- download_data("luquillo_stem6_random")
+
+dim(stem)
+dim(pick_main_stem(stem))
+```
+
+#### `add_<column(s)>()`
+
+`add_status_tree()`adds the column `status_tree` based on the status of all stems of each tree.
+
+```{r}
+stem %>% 
+  select(CensusID, treeID, stemID, status) %>% 
+  add_status_tree()
+```
+
+`add_index()` and friends add columns to a ForestGEO-like dataframe.
+
+```{r}
+stem %>% 
+  select(gx, gy) %>% 
+  add_index()
+```
+
+### Plot data
+
+For simplicity, we will focus on only a few species.
+
+```{r}
+stem_2sp <- stem %>% 
+  filter(sp %in% c("PREMON", "CASARB"))
+```
+
+`autoplot()` and friends produce different output depending on the class of input. You can create different input classes, for example, with `sp()` and `sp_elev()`:
+
+* Use `sp(census)` to plot the column `sp` of a `census` dataset -- i.e. to plot species distribution.
+
+```{r}
+class(sp(stem_2sp))
+
+autoplot(sp(stem_2sp))
+```
+
+* Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev` of a `census` and `elevation` dataset, respectively -- i.e. to plot species distribution and topography.
+
+```{r}
+data("elevation")
+class(sp_elev(stem_2sp, elevation))
+
+autoplot(sp_elev(stem_2sp, elevation))
+```
+
+### Analyze
+
+#### Abundance
+
+`abundance()` and `basal_area()` calculate abundance and basal area, optionally by groups.
+
+```{r}
 abundance(
   pick_main_stem(census)
 )
@@ -199,25 +308,31 @@ by_species <- group_by(census, sp)
 basal_area(by_species)
 ```
 
-Demography:
+#### Demography
+
+`recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate recruitment, mortality, and growth. They all output a list. `to_df()` converts the output from a list to a more convenient dataframe.
 
 ```{r}
-# `tree5` and `tree6` come with fgeo
+data("tree5")
+
 to_df(
   mortality_ctfs(tree5, tree6)
 )
 ```
 
-Species-habitats association:
+#### Species-habitats association
+
+`tt_test()` runs a torus translation test to determine habitat associations of tree species. `to_df()` converts the output from a list to a more convenient dataframe. `summary()` helps you to interpret the result.
 
 ```{r}
 # This analysis makes sense only for tree tables
 tree <- download_data("luquillo_tree5_random")
+data("habitat")
+result <- tt_test(tree, habitat)
 
-# `habitat` comes with fgeo
-to_df(
-  tt_test(tree, habitat)
-)
+to_df(result)
+
+head(summary(result))
 ```
 
 [Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
