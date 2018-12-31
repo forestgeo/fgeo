@@ -1,0 +1,133 @@
+---
+title: "fgeo 1.0.0 release candidate"
+author: Mauro Lepore
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  eval = TRUE,
+  comment = "#>",
+  fig.show = "hold",
+  fig.align = "center",
+  out.width = "70%", 
+  fig.width = 9.5, 
+  fig.asp = 0.7
+)
+```
+
+[__fgeo__](https://forestgeo.github.io/fgeo/index.html) is a collection of R packages to analyze forest diversity and dynamics. Its first release is planned for February 2019. Before that, we would love you to [give us some feedback, and report issues](https://github.com/forestgeo/fgeo/issues).
+
+This post highlights the major features. For more details please see the [Example](https://forestgeo.github.io/fgeo/index.html#example) and [Reference](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html) sections.
+
+### Explore fgeo
+
+Use [`fgeo_help()`](https://forestgeo.github.io/fgeo/reference/fgeo_help) to search documentation. It is similar to `utils::help.search()` but specific for __fgeo__.
+
+### Access and manipulate data
+
+__fgeo__ comes with small datasets for examples. When you use __fgeo__ you can also use many datasets directly.
+
+```{r}
+library(fgeo)
+
+tree5
+```
+
+Other datasets are stored in R's library. You can access them with [`example_path()`](https://forestgeo.github.io/fgeo.x/reference/example_path).
+
+```{r}
+example_path("rdata")
+
+dir(example_path("rdata"))
+```
+
+Larger datasets live online. You can download them with [`download_data()`](https://forestgeo.github.io/fgeo.x/reference/download_data).
+
+```{r}
+download_data("luquillo_tree5_random")
+```
+
+Use [`read_vft()`](https://forestgeo.github.io/fgeo.tool/reference/read_vft) to read your own ViewFullTable. Compared to `utils::read.csv()` it is easier to use and safer.
+
+```{r}
+(viewfulltable_file <- example_path("view/vft_4quad.csv"))
+
+read_vft(viewfulltable_file)
+```
+
+Use [`rdata_list()`](https://forestgeo.github.io/fgeo.tool/reference/dir_list) to read multiple censuses at once.
+
+```{r}
+(census_files <- example_path("rdata"))
+
+dir(census_files)
+
+rdata_list(census_files)
+```
+
+### Plot
+
+```{r}
+# Using only two species to keep the example small
+two_species <-  c("PREMON", "CASARB")
+
+# The pipe operator (`%>%`) can make your code easier to read
+census <- download_data("luquillo_stem6_random") %>% 
+  filter(sp %in% two_species)
+```
+
+Use `autoplot()` to plot different classes of ForestGEO data. For example:
+
+* [`autoplot()` species distribution](https://forestgeo.github.io/fgeo.plot/reference/autoplot.sp_elev)
+
+```{r}
+class(sp(census))
+
+autoplot(sp(census))
+```
+
+* [`autoplot()` habitats](https://forestgeo.github.io/fgeo.plot/reference/autoplot.fgeo_habitat)
+
+```{r}
+# Using `data()` just for clarity
+data("habitat")
+
+class(habitat)
+
+autoplot(habitat)
+```
+
+### Aanalyzse
+
+The available analyses include [abundance](https://forestgeo.github.io/fgeo.analyze/reference/abundance), [mortality](https://forestgeo.github.io/fgeo.analyze/reference/recruitment_ctfs), and [species-habitat association](https://forestgeo.github.io/fgeo.analyze/reference/tt_test).
+
+```{r}
+census %>% 
+  pick_main_stem() %>% 
+  group_by(sp) %>% 
+  abundance()
+```
+
+```{r}
+data("tree5")
+data("tree6")
+
+to_df(
+  mortality_ctfs(tree5, tree6)
+)
+```
+
+```{r}
+tree <- download_data("luquillo_tree5_random")
+data("habitat")
+
+summary(
+  tt_test(tree, habitat)
+)
+```
+

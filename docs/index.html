@@ -78,6 +78,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="articles/siteonly/fgeo-1-0-0-release-candidate.html">fgeo 1.0.0 release candidate</a>
+    </li>
+    <li>
       <a href="articles/siteonly/questions-and-answers.html">Q&amp;A</a>
     </li>
     <li>
@@ -126,7 +129,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#analyze-forest-diversity-and-dynamics" class="anchor"></a><img src="https://i.imgur.com/vTLlhbp.png" align="right" height="88"> Analyze forest diversity and dynamics</h1></div>
 
-<p><strong>fgeo</strong> install and loads multiple R packages to analyze forest diversity and dynamics. It allows you to more easily access, manipulate, and plot <a href="https://forestgeo.si.edu/">ForestGEO</a> datasets, and to analyze abundance, demography, and species-habitats associations.</p>
+<p><strong>fgeo</strong> install and loads multiple R packages to analyze forest diversity and dynamics. It allows you to access, manipulate, and plot <a href="https://forestgeo.si.edu/">ForestGEO</a> datasets, and to do common analyses including abundance, demography, and species-habitats associations.</p>
 <ul>
 <li><a href="https://forestgeo.github.io/fgeo/articles/siteonly/reference.html">Search functions and datasets</a></li>
 <li><a href="https://bit.ly/fgeo-demo">Try <strong>fgeo</strong> online</a></li>
@@ -331,7 +334,7 @@
 <h4 class="hasAnchor">
 <a href="#list_output" class="anchor"></a><code>list_&lt;output&gt;()</code>
 </h4>
-<p><code>list_csv()</code> exports a each dataframe in a list to a corresponding .csv file.</p>
+<p><code>list_csv()</code> exports each dataframe in a list to a corresponding .csv file.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">folder &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/tempfile">tempdir</a></span>()</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">list_csv</span>(censuses, folder)</a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"></a>
@@ -356,6 +359,11 @@
 <h4 class="hasAnchor">
 <a href="#pick_what-and-drop_what" class="anchor"></a><code>pick_&lt;what&gt;()</code> and <code>drop_&lt;what&gt;()</code>
 </h4>
+<p><strong>fgeo</strong> is pipe-friendly. You may not use pipes but often they make code easier to read.</p>
+<blockquote>
+<p>Use %&gt;% to emphasise a sequence of actions, rather than the object that the actions are being performed on.</p>
+</blockquote>
+<p>– <a href="https://style.tidyverse.org/pipes.html" class="uri">https://style.tidyverse.org/pipes.html</a></p>
 <p><code>pick_dbh_under()</code>, <code>drop_status()</code> and friends pick and drop rows from a ForestGEO ViewFullTable or census table.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">(census &lt;-<span class="st"> </span>censuses[[<span class="dv">2</span>]])</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt; # A tibble: 3 x 19</span></a>

@@ -18,6 +18,8 @@ navbar:
   right:
   - text: "Community"
     menu:
+    - text: "fgeo 1.0.0 release candidate"
+      href: articles/siteonly/fgeo-1-0-0-release-candidate.html
     - text: "Q&A"
       href: articles/siteonly/questions-and-answers.html
     - text: "Try fgeo in rstudio.cloud"
