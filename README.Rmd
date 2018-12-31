@@ -153,13 +153,9 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ## Example
 
-Load all __fgeo__ packages in one step.
-
 ```{r example}
 library(fgeo)
 ```
-
-#### Explore
 
 On an interactive session, `fgeo_help()` and `fgeo_browse_reference()` help you to search documentation.
 
@@ -172,43 +168,24 @@ if (interactive()) {
 }
 ```
 
-#### Datasets
-
-__fgeo__ includes multiple small datasets. For example:
+The first examples use a dataset that is stored online. For simplicity, we will focus on only a few species.
 
 ```{r}
-tree5
-```
+downloaded_census <- download_data("luquillo_stem6_random")
 
-Some larger datasets are not stored locally but can be downloaded.
-
-```{r}
-stem6 <- download_data("luquillo_stem6_random")
-stem6
-```
-
-For simplicity, let's focus on a few species.
-
-```{r}
 few_species <-  c("PREMON", "CASARB")
-census <- filter(stem6, sp %in% few_species)
+census <- filter(downloaded_census, sp %in% few_species)
 
 census
 ```
 
-#### Plot
-
-Common plots are simple to make.
+Species distribution:
 
 ```{r}
 autoplot(sp(census))
 ```
 
-#### Analyze
-
-__fgeo__ includes some common analyses:
-
-* Abundance and basal area
+Abundance and basal area:
 
 ```{r}
 abundance(census)
@@ -218,32 +195,28 @@ abundance(
 )
 
 by_species <- group_by(census, sp)
+
 basal_area(by_species)
 ```
 
-* Demography
+Demography:
 
 ```{r}
 # `tree5` and `tree6` come with fgeo
 to_df(
-  recruitment_ctfs(tree5, tree6)
+  mortality_ctfs(tree5, tree6)
 )
 ```
 
-* Species-habitats association
-
-```{r}
-# `elevation` comes with fgeo
-habitats <- fgeo_habitat(elevation, gridsize = 20, n = 4)
-autoplot(habitats)
-```
+Species-habitats association:
 
 ```{r}
 # This analysis makes sense only for tree tables
 tree <- download_data("luquillo_tree5_random")
 
+# `habitat` comes with fgeo
 to_df(
-  tt_test(tree, habitats)
+  tt_test(tree, habitat)
 )
 ```
 
