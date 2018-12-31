@@ -173,22 +173,28 @@ if (interactive()) {
 
 ### Access and manipulate data
 
-#### `read_<table>()`
-
-`read_vft()` and `read_taxa()` import ViewFullTable and ViewTaxonomy from .tsv or .csv files.
+`example_path()` allows you to access datasets stored in your R libraries.
 
 ```{r}
-(vft_file <- x_example("vft_4quad.csv"))
+example_path()
 
+(vft_file <- example_path("view/vft_4quad.csv"))
+```
+
+#### `read_<table>()`
+
+`read_vft()` and `read_taxa()` import a ViewFullTable and ViewTaxonomy from .tsv or .csv files.
+
+```{r}
 read_vft(vft_file)
 ```
 
 #### `<input>_list()`
 
-`rdata_list()` (also `rds_list()`, `csv_list()` and others) imports multiple .csv files into a list.
+`rdata_list()` imports multiple .csv files into a list (see also `rds_list()`, `csv_list()`, and friends).
 
 ```{r}
-(rdata_files <- tool_example("rdata"))
+(rdata_files <- example_path("rdata"))
 dir(rdata_files)
 
 (censuses <- rdata_list(rdata_files))

@@ -144,10 +144,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005
 #> v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000
-#> -- Conflicts --------------------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -165,15 +165,25 @@ help you to search documentation.
 
 ### Access and manipulate data
 
+`example_path()` allows you to access datasets stored in your R
+libraries.
+
+``` r
+example_path()
+#>  [1] "csv"           "mixed_files"   "rdata"         "rdata_one"    
+#>  [5] "rds"           "taxa.csv"      "tsv"           "vft_4quad.csv"
+#>  [9] "view"          "weird"         "xl"
+
+(vft_file <- example_path("view/vft_4quad.csv"))
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/view/vft_4quad.csv"
+```
+
 #### `read_<table>()`
 
-`read_vft()` and `read_taxa()` import ViewFullTable and ViewTaxonomy
+`read_vft()` and `read_taxa()` import a ViewFullTable and ViewTaxonomy
 from .tsv or .csv files.
 
 ``` r
-(vft_file <- x_example("vft_4quad.csv"))
-#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/vft_4quad.csv"
-
 read_vft(vft_file)
 #> # A tibble: 500 x 32
 #>     DBHID PlotName PlotID Family Genus SpeciesName Mnemonic Subspecies
@@ -199,12 +209,12 @@ read_vft(vft_file)
 
 #### `<input>_list()`
 
-`rdata_list()` (also `rds_list()`, `csv_list()` and others) imports
-multiple .csv files into a list.
+`rdata_list()` imports multiple .csv files into a list (see also
+`rds_list()`, `csv_list()`, and friends).
 
 ``` r
-(rdata_files <- tool_example("rdata"))
-#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.tool/extdata/rdata"
+(rdata_files <- example_path("rdata"))
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/rdata"
 dir(rdata_files)
 #> [1] "tree5.RData" "tree6.RData"
 
@@ -432,7 +442,7 @@ class(sp(stem_2sp))
 autoplot(sp(stem_2sp))
 ```
 
-![](man/figures/README-unnamed-chunk-14-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-15-1.png)<!-- -->
 
   - Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev`
     of a `census` and `elevation` dataset, respectively – i.e. to plot
@@ -448,7 +458,7 @@ class(sp_elev(stem_2sp, elevation))
 autoplot(sp_elev(stem_2sp, elevation))
 ```
 
-![](man/figures/README-unnamed-chunk-15-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-16-1.png)<!-- -->
 
 ### Analyze
 
@@ -531,14 +541,21 @@ to_df(result)
 #> 10 2       ANDINE     1   1081    510      9            0        0.676
 #> # ... with 282 more rows
 
-head(summary(result))
-#>   Species Habitat_1  Habitat_2 Habitat_3 Habitat_4
-#> 1  DACEXC  repelled    neutral   neutral   neutral
-#> 2  MYRSPL   neutral aggregated   neutral  repelled
-#> 3  CASARB   neutral    neutral   neutral   neutral
-#> 4  GUAGUI   neutral    neutral  repelled  repelled
-#> 5  PREMON   neutral    neutral   neutral   neutral
-#> 6  SCHMOR   neutral    neutral   neutral   neutral
+summary(result)
+#> # A tibble: 73 x 5
+#>    species habitat_1 habitat_2  habitat_3 habitat_4
+#>  * <chr>   <chr>     <chr>      <chr>     <chr>    
+#>  1 DACEXC  repelled  neutral    neutral   neutral  
+#>  2 MYRSPL  neutral   aggregated neutral   repelled 
+#>  3 CASARB  neutral   neutral    neutral   neutral  
+#>  4 GUAGUI  neutral   neutral    repelled  repelled 
+#>  5 PREMON  neutral   neutral    neutral   neutral  
+#>  6 SCHMOR  neutral   neutral    neutral   neutral  
+#>  7 DRYGLA  neutral   repelled   repelled  neutral  
+#>  8 HOMRAC  neutral   neutral    neutral   repelled 
+#>  9 OCOLEU  neutral   neutral    neutral   repelled 
+#> 10 MANBID  neutral   neutral    neutral   neutral  
+#> # ... with 63 more rows
 ```
 
 [Get
