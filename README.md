@@ -165,7 +165,7 @@ help you to search documentation.
 
 ### Access and manipulate data
 
-#### `read_<table>()` family
+#### `read_<table>()`
 
 `read_vft()` and `read_taxa()` import ViewFullTable and ViewTaxonomy
 from .tsv or .csv files.
@@ -197,7 +197,7 @@ read_vft(vft_file)
 #> #   Status <chr>
 ```
 
-#### `<input>_list()` family
+#### `<input>_list()`
 
 `rdata_list()` (also `rds_list()`, `csv_list()` and others) imports
 multiple .csv files into a list.
@@ -232,7 +232,7 @@ dir(rdata_files)
 #> #   status <chr>, date <dbl>
 ```
 
-#### `list_<output>()` family
+#### `list_<output>()`
 
 `list_csv()` exports a each dataframe in a list to a corresponding .csv
 file.
@@ -263,7 +263,7 @@ list_df(censuses)
 #> #   status <chr>, date <dbl>
 ```
 
-#### `pick_<what>()` and `drop_<what>()` family
+#### `pick_<what>()` and `drop_<what>()`
 
 `pick()` picks rows from a list of dataframes, applying conditions to a
 `key` dataframe and propagating the picked row-indices to all other
@@ -358,7 +358,7 @@ dim(pick_main_stem(stem))
 #> [1] 1000   19
 ```
 
-#### `add_<column(s)>()` family
+#### `add_<column(s)>()`
 
 `add_status_tree()`adds the column `status_tree` based on the status of
 all stems of each tree.
@@ -454,6 +454,9 @@ autoplot(sp_elev(stem_2sp, elevation))
 
 #### Abundance
 
+`abundance()` and `basal_area()` calculate abundance and basal area,
+optionally by groups.
+
 ``` r
 abundance(
   pick_main_stem(census)
@@ -477,8 +480,13 @@ basal_area(by_species)
 
 #### Demography
 
+`recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate
+recruitment, mortality, and growth. They all output a list. `to_df()`
+converts the output from a list to a more convenient dataframe.
+
 ``` r
-# `tree5` and `tree6` come with fgeo
+data("tree5")
+
 to_df(
   mortality_ctfs(tree5, tree6)
 )
@@ -494,16 +502,20 @@ to_df(
 
 #### Species-habitats association
 
+`tt_test()` runs a torus translation test to determine habitat
+associations of tree species. `to_df()` converts the output from a list
+to a more convenient dataframe. `summary()` helps you to interpret the
+result.
+
 ``` r
 # This analysis makes sense only for tree tables
 tree <- download_data("luquillo_tree5_random")
-
-# `habitat` comes with fgeo
-to_df(
-  tt_test(tree, habitat)
-)
+data("habitat")
+result <- tt_test(tree, habitat)
 #> Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.
 #> Using `gridsize = 20`. To change this value see `?tt_test()`.
+
+to_df(result)
 #> # A tibble: 292 x 8
 #>    habitat sp     N.Hab Gr.Hab Ls.Hab Eq.Hab Rep.Agg.Neut Obs.Quantile
 #>  * <chr>   <chr>  <dbl>  <dbl>  <dbl>  <dbl>        <dbl>        <dbl>
@@ -518,6 +530,15 @@ to_df(
 #>  9 1       ANDINE     1   1117    466     17            0        0.698
 #> 10 2       ANDINE     1   1081    510      9            0        0.676
 #> # ... with 282 more rows
+
+head(summary(result))
+#>   Species Habitat_1  Habitat_2 Habitat_3 Habitat_4
+#> 1  DACEXC  repelled    neutral   neutral   neutral
+#> 2  MYRSPL   neutral aggregated   neutral  repelled
+#> 3  CASARB   neutral    neutral   neutral   neutral
+#> 4  GUAGUI   neutral    neutral  repelled  repelled
+#> 5  PREMON   neutral    neutral   neutral   neutral
+#> 6  SCHMOR   neutral    neutral   neutral   neutral
 ```
 
 [Get
