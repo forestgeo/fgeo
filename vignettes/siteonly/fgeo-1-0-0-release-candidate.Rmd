@@ -102,7 +102,7 @@ class(habitat)
 autoplot(habitat)
 ```
 
-### Aanalyzse
+### Analyze
 
 The available analyses include [abundance](https://forestgeo.github.io/fgeo.analyze/reference/abundance), [mortality](https://forestgeo.github.io/fgeo.analyze/reference/recruitment_ctfs), and [species-habitat association](https://forestgeo.github.io/fgeo.analyze/reference/tt_test).
 
