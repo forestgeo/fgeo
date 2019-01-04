@@ -145,10 +145,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages --------------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005
 #> v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000
-#> -- Conflicts ------------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ----------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -176,7 +176,7 @@ example_path()
 #>  [9] "view"          "weird"         "xl"
 
 (vft_file <- example_path("view/vft_4quad.csv"))
-#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/view/vft_4quad.csv"
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/view/vft_4quad.csv"
 ```
 
 #### `read_<table>()`
@@ -215,7 +215,7 @@ read_vft(vft_file)
 
 ``` r
 (rdata_files <- example_path("rdata"))
-#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.1/library/fgeo.x/extdata/rdata"
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata"
 dir(rdata_files)
 #> [1] "tree5.RData" "tree6.RData"
 
@@ -446,13 +446,14 @@ basal_area(by_species)
 #### Demography
 
 `recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate
-recruitment, mortality, and growth. They all output a list. `to_df()`
-converts the output from a list to a more convenient dataframe.
+recruitment, mortality, and growth. They all output a list.
+`as_tibble()` converts the output from a list to a more convenient
+dataframe.
 
 ``` r
 data("tree5")
 
-to_df(
+as_tibble(
   mortality_ctfs(tree5, tree6)
 )
 #> Detected dbh ranges:
@@ -468,9 +469,9 @@ to_df(
 #### Species-habitats association
 
 `tt_test()` runs a torus translation test to determine habitat
-associations of tree species. `to_df()` converts the output from a list
-to a more convenient dataframe. `summary()` helps you to interpret the
-result.
+associations of tree species. `as_tibble()` converts the output from a
+list to a more convenient dataframe. `summary()` helps you to interpret
+the result.
 
 ``` r
 # This analysis makes sense only for tree tables
@@ -480,7 +481,7 @@ result <- tt_test(tree, habitat)
 #> Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.
 #> Using `gridsize = 20`. To change this value see `?tt_test()`.
 
-to_df(result)
+as_tibble(result)
 #> # A tibble: 292 x 8
 #>    habitat sp     N.Hab Gr.Hab Ls.Hab Eq.Hab Rep.Agg.Neut Obs.Quantile
 #>  * <chr>   <chr>  <dbl>  <dbl>  <dbl>  <dbl>        <dbl>        <dbl>
@@ -497,20 +498,20 @@ to_df(result)
 #> # ... with 282 more rows
 
 summary(result)
-#> # A tibble: 73 x 5
-#>    species habitat_1 habitat_2  habitat_3 habitat_4
-#>  * <chr>   <chr>     <chr>      <chr>     <chr>    
-#>  1 DACEXC  repelled  neutral    neutral   neutral  
-#>  2 MYRSPL  neutral   aggregated neutral   repelled 
-#>  3 CASARB  neutral   neutral    neutral   neutral  
-#>  4 GUAGUI  neutral   neutral    repelled  repelled 
-#>  5 PREMON  neutral   neutral    neutral   neutral  
-#>  6 SCHMOR  neutral   neutral    neutral   neutral  
-#>  7 DRYGLA  neutral   repelled   repelled  neutral  
-#>  8 HOMRAC  neutral   neutral    neutral   repelled 
-#>  9 OCOLEU  neutral   neutral    neutral   repelled 
-#> 10 MANBID  neutral   neutral    neutral   neutral  
-#> # ... with 63 more rows
+#> # A tibble: 292 x 3
+#>    sp     habitat association
+#>    <chr>  <chr>   <chr>      
+#>  1 ALCFLO 1       neutral    
+#>  2 ALCFLO 2       neutral    
+#>  3 ALCFLO 3       repelled   
+#>  4 ALCFLO 4       repelled   
+#>  5 ALCLAT 1       repelled   
+#>  6 ALCLAT 2       neutral    
+#>  7 ALCLAT 3       repelled   
+#>  8 ALCLAT 4       repelled   
+#>  9 ANDINE 1       neutral    
+#> 10 ANDINE 2       neutral    
+#> # ... with 282 more rows
 ```
 
 [Get

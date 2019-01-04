@@ -65,7 +65,7 @@ Two columns that are commonly useful in ForestGEO datasets are `status` and `dbh
 `status` is a categorical variable. 
 
 ```{r}
-summary(stem$status)
+str(stem$status)
 ```
 
 We can count the number of observations in each category with `table()`, then visualize the result with `barplot()`.
@@ -78,7 +78,7 @@ barplot(by_category)
 `dbh` is a continuous numeric variable.
 
 ```{r}
-summary(stem$dbh)
+str(stem$dbh)
 ```
 
 (Note the missing values (`NA`s).)
@@ -216,10 +216,10 @@ census6 <- download_data("luquillo_tree6_random")
 recruitment_ctfs(census5, census6)
 ```
 
-With `to_df()` we convert the result of any demography function to a tibble -- a convenient dataframe.
+With `as_tibble()` we convert the result of any demography function to a tibble -- a convenient dataframe.
 
 ```{r}
-to_df(
+as_tibble(
   recruitment_ctfs(census5, census6)
 )
 ```
@@ -229,7 +229,7 @@ We can aggregate results by any number of variables:
 * To aggregate by a single variable, you can pass the variable directly to `split1`.
 
 ```{r}
-to_df(recruitment_ctfs(census5, census6, split1 = census5$sp))
+as_tibble(recruitment_ctfs(census5, census6, split1 = census5$sp))
 ```
 
 * To aggregate by multiple variables, use `interaction()` (but aggregating by more than one variable may be slow and confusing).
@@ -237,21 +237,21 @@ to_df(recruitment_ctfs(census5, census6, split1 = census5$sp))
 ```{r}
 sp_quadrat <- interaction(census5$sp, census5$quadrat)
 by_many <- recruitment_ctfs(census5, census6, split1 = sp_quadrat)
-to_df(by_many)
+as_tibble(by_many)
 ```
 
 To separate the multiple groups we can use `tidyr::separate()`.
 
 ```{r}
-tidyr::separate(to_df(by_many), groups, into = c("species", "quadrats"))
+tidyr::separate(as_tibble(by_many), groups, into = c("species", "quadrats"))
 ```
 
 The same works for mortality and growth.
 
 ```{r}
-to_df(mortality_ctfs(census5, census6, split1 = sp_quadrat))
+as_tibble(mortality_ctfs(census5, census6, split1 = sp_quadrat))
 
-to_df(growth_ctfs(census5, census6, split1 = sp_quadrat))
+as_tibble(growth_ctfs(census5, census6, split1 = sp_quadrat))
 ```
 
 ## Species-habitat associations
@@ -290,5 +290,5 @@ summary(tt_test_result)
 Reduce(rbind, tt_test_result)
 
 # A dataframe
-to_df(tt_test_result)
+as_tibble(tt_test_result)
 ```
