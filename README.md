@@ -145,10 +145,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ----------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005
 #> v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000
-#> -- Conflicts ----------------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -208,19 +208,40 @@ read_vft(vft_file)
 #> #   Status <chr>
 ```
 
-#### `<input>_list()`
+#### Importing multiple censuses from a directory into a list
 
-`rdata_list()` imports multiple .csv files into a list (see also
-`rds_list()`, `csv_list()`, and friends).
+(This and the following sections don’t use **fgeo** because other
+packages already do this well.)
+
+Combine `fs::dir_ls()` with `purrr::map()` to import multiple censuses
+from a directory into a list:
+
+  - Use `fs::dir_ls()` to create the paths to the files you want to
+    import.
+  - Use `purrr::map()` to iterate over each path and apply a custom
+    function to import them.
+
+<!-- end list -->
 
 ``` r
+library(purrr)
+#> 
+#> Attaching package: 'purrr'
+#> The following object is masked from 'package:fgeo.tool':
+#> 
+#>     %||%
+library(fs)
+
 (rdata_files <- example_path("rdata"))
 #> [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata"
-dir(rdata_files)
-#> [1] "tree5.RData" "tree6.RData"
+(paths <- fs::dir_ls(rdata_files))
+#> C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree5.RData
+#> C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree6.RData
 
-(censuses <- rdata_list(rdata_files))
-#> $tree5
+# The formula syntax `~ fun(.x)` is a shortcut for `function(.x) fun(.x)`
+censuses <- map(paths, ~ get(load(.x)))
+censuses
+#> $`C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree5.RData`
 #> # A tibble: 3 x 19
 #>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
 #>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
@@ -231,7 +252,7 @@ dir(rdata_files)
 #> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
 #> #   status <chr>, date <dbl>
 #> 
-#> $tree6
+#> $`C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree6.RData`
 #> # A tibble: 3 x 19
 #>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
 #>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
@@ -243,35 +264,28 @@ dir(rdata_files)
 #> #   status <chr>, date <dbl>
 ```
 
-#### `list_<output>()`
+#### Exporting multiple censuses from a list into a directory
 
-`list_csv()` exports each dataframe in a list to a corresponding .csv
-file.
+  - Use `purrr::walk2()` to map over two things in parallel – each
+    census to each path to a file. It is similar to `purrr::map2()` and
+    `base::Map()` but prints nothing to the console.
 
-``` r
-folder <- tempdir()
-list_csv(censuses, folder)
-
-dir(folder, pattern = "[.]csv$")
-#> [1] "tree5.csv" "tree6.csv"
-```
-
-`list_df()` reduces a list of dataframes to a single dataframe.
+<!-- end list -->
 
 ``` r
-list_df(censuses)
-#> # A tibble: 6 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    439947        5
-#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    466597        5
-#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    466623        5
-#> 4    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
-#> 5    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
-#> 6    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
+(files <- path_file(names(censuses)))
+#> tree5.RData tree6.RData
+(folder <- tempdir())
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpodZVTI"
+(paths <- path(folder, files))
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpodZVTI/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpodZVTI/tree6.RData
+
+walk2(censuses, paths, ~ save(.x, file = .y))
+
+# Confirm that the folder contains the files we just saved
+path_file(dir_ls(folder, regexp = "tree"))
+#> tree5.RData tree6.RData
 ```
 
 #### `pick_<what>()` and `drop_<what>()`
@@ -397,7 +411,7 @@ class(sp(stem_2sp))
 autoplot(sp(stem_2sp))
 ```
 
-![](man/figures/README-unnamed-chunk-13-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-12-1.png)<!-- -->
 
   - Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev`
     of a `census` and `elevation` dataset, respectively – i.e. to plot
@@ -413,7 +427,7 @@ class(sp_elev(stem_2sp, elevation))
 autoplot(sp_elev(stem_2sp, elevation))
 ```
 
-![](man/figures/README-unnamed-chunk-14-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-13-1.png)<!-- -->
 
 ### Analyze
 
