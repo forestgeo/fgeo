@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Get started</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Get started</h1>
+
+
+
+<p>This article shows some of the key features of <strong>fgeo</strong> applied to an exploratory data analysis. For a deeper and general approach to exploratory data analysis, see <a href="http://r4ds.had.co.nz/exploratory-data-analysis.html">this book section</a>. A version adapted for ForestGEO is available <a href="https://forestgeo.github.io/fgeo/articles/siteonly/eda.html">here</a>.</p>
+<p>In every new R session you need to “open” <strong>fgeo</strong> with <code>library()</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fgeo)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ----------------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<p>You may suppress the start-up message with <code>suppressPackageStartupMessages()</code> or add <code>options(&quot;fgeo.quiet&quot; = TRUE)</code> to .Rprofile (see <a href="https://usethis.r-lib.org/reference/edit.html"><code>usethis::edit_r_profile()</code></a>).</p>
+<p>You may use you own data but <strong>fgeo</strong> comes with some example datasets.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">fgeo_help</span>(<span class="st">&quot;datasets&quot;</span>)</a></code></pre></div>
+<p>We will start with a dataset of stems censused in one hectare from the forest plot in Luquillo, Puerto Rico (<a href="https://forestgeo.si.edu/sites/north-america/luquillo" class="uri">https://forestgeo.si.edu/sites/north-america/luquillo</a>).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">stem &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">&quot;luquillo_stem_random&quot;</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">str</span>(stem)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    7920 obs. of  19 variables:</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;  $ treeID   : int  104 119 180 180 180 180 602 631 647 1086 ...</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;  $ stemID   : int  143 158 222 223 224 225 736 775 793 1339 ...</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  $ tag      : chr  &quot;10009&quot; &quot;100104&quot; &quot;100171&quot; &quot;100171&quot; ...</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;  $ StemTag  : chr  &quot;10009&quot; &quot;100104&quot; &quot;100095&quot; &quot;100096&quot; ...</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  $ sp       : chr  &quot;DACEXC&quot; &quot;MYRSPL&quot; &quot;CASARB&quot; &quot;CASARB&quot; ...</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  $ quadrat  : chr  &quot;113&quot; &quot;1021&quot; &quot;921&quot; &quot;921&quot; ...</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  $ gx       : num  10.3 182.9 164.6 164.6 164.6 ...</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  $ gy       : num  245 410 410 410 410 ...</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  $ MeasureID: int  143 158 222 223 224 225 736 775 793 1339 ...</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  $ CensusID : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  $ dbh      : num  115 16 17.2 11.7 80 19.4 24.1 100 146 165 ...</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;  $ pom      : chr  &quot;1.2&quot; &quot;1.3&quot; &quot;1.3&quot; &quot;1.3&quot; ...</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;  $ hom      : num  1.2 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 1.3 ...</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt;  $ ExactDate: Date, format: &quot;1991-06-11&quot; &quot;1993-07-28&quot; ...</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt;  $ DFstatus : chr  &quot;alive&quot; &quot;alive&quot; &quot;alive&quot; &quot;alive&quot; ...</span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt;  $ codes    : chr  &quot;MAIN;A&quot; &quot;MAIN;A&quot; &quot;SPROUT;A&quot; &quot;SPROUT;A&quot; ...</span></a>
+<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt;  $ countPOM : num  1 1 1 1 1 1 1 1 1 1 ...</span></a>
+<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt;  $ status   : chr  &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; ...</span></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">#&gt;  $ date     : num  11484 12262 12263 12263 12263 ...</span></a></code></pre></div>
+<p>This dataset comes with multiple censuses but we will pick the latest one.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">unique</span>(stem<span class="op">$</span>CensusID)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; [1] 1 2 3 4 5 6</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">stem &lt;-<span class="st"> </span><span class="kw">filter</span>(stem, CensusID <span class="op">%in%</span><span class="st"> </span><span class="kw">max</span>(<span class="kw">unique</span>(stem<span class="op">$</span>CensusID)))</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">unique</span>(stem<span class="op">$</span>CensusID)</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [1] 6</span></a></code></pre></div>
+<p>For a description of the columns, see <code>?data_dictionary</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">data_dictionary &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">&quot;data_dictionary&quot;</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">str</span>(data_dictionary)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; Classes 'tbl_df', 'tbl' and 'data.frame':    242 obs. of  3 variables:</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;  $ table      : chr  &quot;Census&quot; &quot;Census&quot; &quot;Census&quot; &quot;Census&quot; ...</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt;  $ column     : chr  &quot;CensusID&quot; &quot;PlotID&quot; &quot;PlotCensusNumber&quot; &quot;StartDate&quot; ...</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;  $ description: chr  &quot;Primary key, an integer  automatically generated to uniquely identify a census.&quot; &quot;Foreign Key to Site table.&quot; &quot;Integer census number for an individual plot, 1=first census, 2=second census, etc. If there are more than one &quot;| __truncated__ &quot;Date on which the first measurement of the census was taken.&quot; ...</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">cols &lt;-<span class="st"> </span><span class="kw">names</span>(stem)</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw">filter</span>(data_dictionary, column <span class="op">%in%</span><span class="st"> </span>cols)</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; # A tibble: 20 x 3</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;    table           column   description                                    </span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;    &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;                                          </span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  1 Census          CensusID Primary key, an integer  automatically generat~</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;  2 CensusQuadrat   CensusID Foreign Key to Census table.                   </span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt;  3 DataCollection  CensusID Foreign Key to Census table.                   </span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt;  4 DBH             CensusID Foreign Key to Census table.                   </span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt;  5 DBH             ExactDa~ Date on which the measurement was taken.       </span></a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt;  6 DBHAttributes   CensusID Foreign Key to Census table.                   </span></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt;  7 Measurement     Measure~ Primary key, an integer  automatically generat~</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt;  8 Measurement     CensusID Foreign Key to Census table.                   </span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt;  9 Measurement     ExactDa~ &quot;Date on which measurement has been done  (for~</span></a>
+<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt; 10 MeasurementAtt~ Measure~ Foreign Key to Measurement table.              </span></a>
+<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt; 11 MeasurementAtt~ CensusID Foreign Key to Census table.                   </span></a>
+<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt; 12 RemeasAttribs   CensusID Foreign Key to Census table.                   </span></a>
+<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">#&gt; 13 Remeasurement   CensusID Foreign Key to  Census table.                  </span></a>
+<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co">#&gt; 14 Remeasurement   ExactDa~ &quot;Date of remeasurement.  (format is yyyy-mm-dd~</span></a>
+<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co">#&gt; 15 SpeciesInvento~ CensusID Foreign Key to  Census table.                  </span></a>
+<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">#&gt; 16 Stem            StemTag  The stem tag used in the field to identify the~</span></a>
+<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co">#&gt; 17 TreeAttributes  CensusID Foreign Key to  Census table.                  </span></a>
+<a class="sourceLine" id="cb5-30" data-line-number="30"><span class="co">#&gt; 18 ViewFullTable   StemTag  The stem tag used in the field to identify the~</span></a>
+<a class="sourceLine" id="cb5-31" data-line-number="31"><span class="co">#&gt; 19 ViewFullTable   CensusID Foreign Key to  Census table.                  </span></a>
+<a class="sourceLine" id="cb5-32" data-line-number="32"><span class="co">#&gt; 20 ViewFullTable   ExactDa~ Date on which the measurement was taken (forma~</span></a></code></pre></div>
+<div id="exploring-the-distribution-of-status-and-tree-diameter" class="section level2">
+<h2>Exploring the distribution of status and tree diameter</h2>
+<p>Two columns that are commonly useful in ForestGEO datasets are <code>status</code> and <code>dbh</code> (diameter at breast height). We will begin by better understanding what type of variables they are. For this, base R provides useful functions.</p>
+<p><code>status</code> is a categorical variable.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">str</span>(stem<span class="op">$</span>status)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt;  chr [1:1320] &quot;A&quot; &quot;A&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;D&quot; &quot;A&quot; ...</span></a></code></pre></div>
+<p>We can count the number of observations in each category with <code>table()</code>, then visualize the result with <code>barplot()</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">by_category &lt;-<span class="st"> </span><span class="kw">table</span>(stem<span class="op">$</span>status)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">barplot</span>(by_category)</a></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAAAS1BMVEUAAAAAACsAAFUAKysAK4AAVaorAAArACsrgNRVAABVVStVqv+AKwCA1P+qVQCq1ICq//++vr7UgCvU////qlX/1ID//6r//9T///9uHD5IAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAEhUlEQVR4nO3d21rTQBRA4RSlWilRa0/v/6SS9ABf6XRl50TTWeuKC2cTfmMy0AaLvd2s+OoDuPcEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIJiQLtlUff0Z6DDub9CQKvi5+GD9emDxy8CtFueWVbf/w1wMPdYBGi7eDl9uM7mH5lnEBS8Bh1PIa9BibaLw10sm/NnoH1QEWuIQ+itYYD+RnokoIYbxWyBmm4UcwVqfJvPFSi9Uby44OYK1OAMyhuowUYxcyDeKOYO1HCcQDAuX6CyKJ7rzeJL4g9kDlTdu8riuboWeZG+Un2bX89e997mr1dvFA9bxNRPFPMG8gyiztegD3vqa+OyBfIu1tM4gWCcQDBOIBgnEIwTCMYJBOMEgnECwTiBYJxAME4gGCcQjBMIxgn0aYovPYfGCQTjBIJxAsE4gWCcQDBOIBgnEIwTCMYJBOMEgnECwTiBYFy+QPisRuZA/KxG3kC+0x5q8FBv3kCeQZTPalA+q9HPOIFgXL5AbhRv50bxdt7mIR/qhTyDKDeKlBvFfsYJBONyB9rMU09DZQ50ugLd2EvnDXS6eXkGJdsuqvuXQDcqZ68C3eztG9Z7Axr0d8rFj24z/3ZvQEN+uhZHt1smH3oWqNk4gWCcQDBOIBgnEIwTCMYJBOMEgnECwTiBYJxAME4gGCfQpylf+srqBIAuxgkE4wSCcQLBOIFgXNsjbvnD5YyA2q0TCNYJBOsEgnUCwTqBYJ1AsE4gWCcQrBMI1gkE6wSCdQLBOoFgnUCwTiBYJxCsuyOggZ9ZnTzQ0M+sTh1o8CcOpw7U/JnVlu/sbvtD+5afrnegxv+V8SMVvAbRM6uPV+yEw2dWH6+e90GPl0CQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQNB4QGWbl4rKw6soyd9XlKx+/aWPF19GA9r8+JV8y0O6sv4aN/Pn4Lr6FbzdssVnvGw0oNXT7/Rv9kp2ANqvZ6+hZcffsrZbRmE/NxbQ27G2OdwjUHTpcdl+Ff8ruWwsoOocWAXPg/37V1qGLicf3kTQubGAqq9wuwgf9/lUCF1NPrwNpXMjAW3mlU0Zvmh2AarugN2v0iMBrYp29+t2/8TOp2rq/2gKNA7Q8SK7XUQv0x0v0pMBOt2mw5fpbrf56QCd/kYPl6LwwvCy49tNy2Ii+6D3344bvUx3+1ajh42036xSAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQf8Bte8pT58ac6YAAAAASUVORK5CYII=" /><!-- --></p>
+<p><code>dbh</code> is a continuous numeric variable.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">str</span>(stem<span class="op">$</span>dbh)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt;  num [1:1320] 195 44.9 NA NA NA 46.1 33.1 139 248 176 ...</span></a></code></pre></div>
+<p>(Note the missing values (<code>NA</code>s).)</p>
+<p>And we can visualize its distribution with <code>hist()</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">hist</span>(stem<span class="op">$</span>dbh)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Unfortunately <code>hist()</code> dropped missing values silently. But we can better understand how missing values of <code>dbh</code> relate to <code>status</code> by extracting only the columns <code>dbh</code> and <code>status</code>, and picking only the rows where <code>dbh</code> is missing.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">dbh_status &lt;-<span class="st"> </span>stem[<span class="kw">c</span>(<span class="st">&quot;dbh&quot;</span>, <span class="st">&quot;status&quot;</span>)]</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">missing &lt;-<span class="st"> </span><span class="kw">filter</span>(dbh_status, <span class="kw">is.na</span>(dbh))</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">unique</span>(missing)</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt; # A tibble: 2 x 2</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt;     dbh status</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt; </span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt; 1    NA G     </span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; 2    NA D</span></a></code></pre></div>
+<p>Another approach is to count missing values.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">missing &lt;-<span class="st"> </span><span class="kw">transform</span>(stem, <span class="dt">na =</span> <span class="kw">ifelse</span>(<span class="kw">is.na</span>(dbh), <span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">table</span>(missing<span class="op">$</span>na, missing<span class="op">$</span>status)</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt;        </span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt;           A   D   G</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt;   FALSE 840   0   0</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt;   TRUE    0 166 314</span></a></code></pre></div>
+<p>We learn that <code>dbh</code> is missing where a tree is dead (<code>status = D</code>) or gone (<code>status = G</code>). This makes sense and, depending on the type of analysis we want to do, we may want to keep or remove missing values.</p>
+</div>
+<div id="determining-tree-status-based-on-stem-status" class="section level2">
+<h2>Determining tree status based on stem status</h2>
+<p>Now we are ready to clean the data. For example, we can pick trees which status is “A” (alive). At ForestGEO, working with <code>status</code> is so common that <strong>fgeo</strong> provides a specialized function.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">fgeo_help</span>(<span class="st">&quot;status&quot;</span>)</a></code></pre></div>
+<p>In <code>stem</code>, the variable <code>status</code> records the status of each individual stem. How can we determine the status of a tree based on the status of each of its stems? That is the job of <code>add_status_tree()</code>.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">stem &lt;-<span class="st"> </span><span class="kw">add_status_tree</span>(stem, <span class="dt">status_a =</span> <span class="st">&quot;A&quot;</span>, <span class="dt">status_d =</span> <span class="st">&quot;D&quot;</span>)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">alive_trees &lt;-<span class="st"> </span><span class="kw">filter</span>(stem, status_tree <span class="op">==</span><span class="st"> &quot;A&quot;</span>)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co"># Note that alive trees may have some missing, gone or dead stems</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">some_cols &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="st">&quot;treeID&quot;</span>, <span class="st">&quot;status_tree&quot;</span>, <span class="st">&quot;stemID&quot;</span>, <span class="st">&quot;status&quot;</span>)</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6">example_tree &lt;-<span class="st"> </span><span class="dv">46</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">example_rows &lt;-<span class="st"> </span><span class="kw">filter</span>(alive_trees, treeID <span class="op">==</span><span class="st"> </span>example_tree)</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="kw">select</span>(example_rows, some_cols)</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#&gt; # A tibble: 0 x 4</span></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt; # ... with 4 variables: treeID &lt;int&gt;, status_tree &lt;chr&gt;, stemID &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="co">#&gt; #   status &lt;chr&gt;</span></a></code></pre></div>
+</div>
+<div id="picking-a-dbh-range" class="section level2">
+<h2>Picking a <code>dbh</code> range</h2>
+<p>Another very common task when working with ForestGEO data is to pick stems of a particular <code>dbh</code> range.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">fgeo_help</span>(<span class="st">&quot;dbh&quot;</span>)</a></code></pre></div>
+<p>Pick stems of 10 mm or more.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">ten_plus &lt;-<span class="st"> </span><span class="kw">pick_dbh_min</span>(alive_trees, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">range</span>(ten_plus<span class="op">$</span>dbh, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt; [1]  10.2 992.0</span></a></code></pre></div>
+</div>
+<div id="calculating-abundance" class="section level2">
+<h2>Calculating abundance</h2>
+<p>Calculate the total abundance of stems and trees.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># Drop missing values of `dbh`</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">non_missing &lt;-<span class="st"> </span><span class="kw">filter</span>(ten_plus, <span class="op">!</span><span class="kw">is.na</span>(dbh))</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co"># Stem abundance</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">abundance</span>(non_missing)</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#&gt; Warning: `treeid`: Duplicated values were detected. Do you need to pick</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co">#&gt; main stems?</span></a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="co">#&gt; 1   840</span></a>
+<a class="sourceLine" id="cb16-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb16-13" data-line-number="13"><span class="co"># Tree abundance (picking main stems -- with highest `hom` and largest `dbh`)</span></a>
+<a class="sourceLine" id="cb16-14" data-line-number="14">main_stems &lt;-<span class="st"> </span><span class="kw">pick_main_stem</span>(non_missing)</a>
+<a class="sourceLine" id="cb16-15" data-line-number="15"><span class="kw">abundance</span>(main_stems)</a>
+<a class="sourceLine" id="cb16-16" data-line-number="16"><span class="co">#&gt; # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb16-17" data-line-number="17"><span class="co">#&gt;       n</span></a>
+<a class="sourceLine" id="cb16-18" data-line-number="18"><span class="co">#&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb16-19" data-line-number="19"><span class="co">#&gt; 1   786</span></a></code></pre></div>
+<p>Calculate the abundance of trees by species.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">by_sp &lt;-<span class="st"> </span><span class="kw">group_by</span>(main_stems, sp)</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">n_by_sp &lt;-<span class="st"> </span><span class="kw">abundance</span>(by_sp)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3">n_by_sp</a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co">#&gt; # A tibble: 65 x 2</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; # Groups:   sp [65]</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">#&gt;    sp         n</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt;  1 ALCFLO     3</span></a>
+<a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt;  2 ANDINE     2</span></a>
+<a class="sourceLine" id="cb17-10" data-line-number="10"><span class="co">#&gt;  3 ARDGLA     2</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="co">#&gt;  4 ARTALT     1</span></a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="co">#&gt;  5 BUCTET     7</span></a>
+<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="co">#&gt;  6 BYRSPI    10</span></a>
+<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="co">#&gt;  7 CALCAL     1</span></a>
+<a class="sourceLine" id="cb17-15" data-line-number="15"><span class="co">#&gt;  8 CASARB    66</span></a>
+<a class="sourceLine" id="cb17-16" data-line-number="16"><span class="co">#&gt;  9 CASSYL    26</span></a>
+<a class="sourceLine" id="cb17-17" data-line-number="17"><span class="co">#&gt; 10 CECSCH    29</span></a>
+<a class="sourceLine" id="cb17-18" data-line-number="18"><span class="co">#&gt; # ... with 55 more rows</span></a></code></pre></div>
+</div>
+<div id="picking-the-most-abundant-species" class="section level2">
+<h2>Picking the most abundant species</h2>
+<p>What are the three most abundant tree species?</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">(top3_species &lt;-<span class="st"> </span><span class="kw">arrange</span>(n_by_sp, <span class="kw">desc</span>(n))[[<span class="st">&quot;sp&quot;</span>]][<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="co">#&gt; [1] &quot;PREMON&quot; &quot;CASARB&quot; &quot;SLOBER&quot;</span></a></code></pre></div>
+<p>Now we can pick the <code>alive_trees</code> of only the <code>top3</code> species.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">picked_stems &lt;-<span class="st"> </span><span class="kw">filter</span>(alive_trees, sp <span class="op">%in%</span><span class="st"> </span>top3_species)</a></code></pre></div>
+</div>
+<div id="mapping-the-distribution-of-tree-species" class="section level2">
+<h2>Mapping the distribution of tree species</h2>
+<p><strong>fgeo</strong> includes some functions specialized in mapping ForestGEO’s data.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">fgeo_help</span>(<span class="st">&quot;map&quot;</span>)</a></code></pre></div>
+<p>Map the most abundant species.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">example_elevation &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>elevation</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">species_elevation &lt;-<span class="st"> </span><span class="kw">sp_elev</span>(picked_stems, example_elevation)</a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="kw">autoplot</span>(species_elevation)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Tweak to focus on the hectare available in the data.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">autoplot</span>(species_elevation, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">200</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">400</span>, <span class="dv">500</span>))</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="demography" class="section level2">
+<h2>Demography</h2>
+<p>In this section we will use two other datasets.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">census5 &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">&quot;luquillo_tree5_random&quot;</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">census6 &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">&quot;luquillo_tree6_random&quot;</span>)</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="kw">recruitment_ctfs</span>(census5, census6)</a>
+<a class="sourceLine" id="cb23-5" data-line-number="5"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
+<a class="sourceLine" id="cb23-7" data-line-number="7"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
+<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb23-9" data-line-number="9"><span class="co">#&gt; $N2</span></a>
+<a class="sourceLine" id="cb23-10" data-line-number="10"><span class="co">#&gt; [1] 809</span></a>
+<a class="sourceLine" id="cb23-11" data-line-number="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb23-12" data-line-number="12"><span class="co">#&gt; $R</span></a>
+<a class="sourceLine" id="cb23-13" data-line-number="13"><span class="co">#&gt; [1] 43</span></a>
+<a class="sourceLine" id="cb23-14" data-line-number="14"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb23-15" data-line-number="15"><span class="co">#&gt; $rate</span></a>
+<a class="sourceLine" id="cb23-16" data-line-number="16"><span class="co">#&gt; [1] 0.01205766</span></a>
+<a class="sourceLine" id="cb23-17" data-line-number="17"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb23-18" data-line-number="18"><span class="co">#&gt; $lower</span></a>
+<a class="sourceLine" id="cb23-19" data-line-number="19"><span class="co">#&gt; [1] 0.008953252</span></a>
+<a class="sourceLine" id="cb23-20" data-line-number="20"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb23-21" data-line-number="21"><span class="co">#&gt; $upper</span></a>
+<a class="sourceLine" id="cb23-22" data-line-number="22"><span class="co">#&gt; [1] 0.01622177</span></a>
+<a class="sourceLine" id="cb23-23" data-line-number="23"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb23-24" data-line-number="24"><span class="co">#&gt; $time</span></a>
+<a class="sourceLine" id="cb23-25" data-line-number="25"><span class="co">#&gt; [1] 4.529631</span></a>
+<a class="sourceLine" id="cb23-26" data-line-number="26"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb23-27" data-line-number="27"><span class="co">#&gt; $date1</span></a>
+<a class="sourceLine" id="cb23-28" data-line-number="28"><span class="co">#&gt; [1] 18938.5</span></a>
+<a class="sourceLine" id="cb23-29" data-line-number="29"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb23-30" data-line-number="30"><span class="co">#&gt; $date2</span></a>
+<a class="sourceLine" id="cb23-31" data-line-number="31"><span class="co">#&gt; [1] 20594.2</span></a></code></pre></div>
+<p>With <code>as_tibble()</code> we convert the result of any demography function to a tibble – a convenient dataframe.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">as_tibble</span>(</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">  <span class="kw">recruitment_ctfs</span>(census5, census6)</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
+<a class="sourceLine" id="cb24-6" data-line-number="6"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
+<a class="sourceLine" id="cb24-7" data-line-number="7"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb24-8" data-line-number="8"><span class="co">#&gt; # A tibble: 1 x 8</span></a>
+<a class="sourceLine" id="cb24-9" data-line-number="9"><span class="co">#&gt;      N2     R   rate   lower  upper  time  date1  date2</span></a>
+<a class="sourceLine" id="cb24-10" data-line-number="10"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb24-11" data-line-number="11"><span class="co">#&gt; 1   809    43 0.0121 0.00895 0.0162  4.53 18939. 20594.</span></a></code></pre></div>
+<p>We can aggregate results by any number of variables:</p>
+<ul>
+<li>To aggregate by a single variable, you can pass the variable directly to <code>split1</code>.</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">as_tibble</span>(<span class="kw">recruitment_ctfs</span>(census5, census6, <span class="dt">split1 =</span> census5<span class="op">$</span>sp))</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="co">#&gt; # A tibble: 73 x 9</span></a>
+<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="co">#&gt;    groups    N2     R     rate    lower    upper  time  date1  date2</span></a>
+<a class="sourceLine" id="cb25-8" data-line-number="8"><span class="co">#&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="co">#&gt;  1 ALCFLO     3     0   0       0         0.205   4.51 18980. 20626 </span></a>
+<a class="sourceLine" id="cb25-10" data-line-number="10"><span class="co">#&gt;  2 ALCLAT     0     0  NA      NA        NA      NA    18945     NA </span></a>
+<a class="sourceLine" id="cb25-11" data-line-number="11"><span class="co">#&gt;  3 ANDINE     2     0   0       0         0.273   4.50 18979  20623 </span></a>
+<a class="sourceLine" id="cb25-12" data-line-number="12"><span class="co">#&gt;  4 ARDGLA     2     0   0       0         0.269   4.56 18855  20522 </span></a>
+<a class="sourceLine" id="cb25-13" data-line-number="13"><span class="co">#&gt;  5 ARTALT     1     0   0       0         0.410   4.50 18904  20548 </span></a>
+<a class="sourceLine" id="cb25-14" data-line-number="14"><span class="co">#&gt;  6 BRUPOR     0     0  NA      NA        NA      NA    18893     NA </span></a>
+<a class="sourceLine" id="cb25-15" data-line-number="15"><span class="co">#&gt;  7 BUCTET     7     0   0       0         0.102   4.54 18902  20570.</span></a>
+<a class="sourceLine" id="cb25-16" data-line-number="16"><span class="co">#&gt;  8 BYRSPI    10     0   0       0         0.0742  4.52 18983. 20650.</span></a>
+<a class="sourceLine" id="cb25-17" data-line-number="17"><span class="co">#&gt;  9 CALCAL     1     1 Inf      NA       Inf      NA       NA  20626 </span></a>
+<a class="sourceLine" id="cb25-18" data-line-number="18"><span class="co">#&gt; 10 CASARB    70     5   0.0164  0.00712   0.0377  4.52 18984. 20637.</span></a>
+<a class="sourceLine" id="cb25-19" data-line-number="19"><span class="co">#&gt; # ... with 63 more rows</span></a></code></pre></div>
+<ul>
+<li>To aggregate by multiple variables, use <code>interaction()</code> (but aggregating by more than one variable may be slow and confusing).</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">sp_quadrat &lt;-<span class="st"> </span><span class="kw">interaction</span>(census5<span class="op">$</span>sp, census5<span class="op">$</span>quadrat)</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">by_many &lt;-<span class="st"> </span><span class="kw">recruitment_ctfs</span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat)</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
+<a class="sourceLine" id="cb26-5" data-line-number="5"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb26-7" data-line-number="7"><span class="kw">as_tibble</span>(by_many)</a>
+<a class="sourceLine" id="cb26-8" data-line-number="8"><span class="co">#&gt; # A tibble: 26,207 x 9</span></a>
+<a class="sourceLine" id="cb26-9" data-line-number="9"><span class="co">#&gt;    groups         N2     R  rate lower  upper  time date1 date2</span></a>
+<a class="sourceLine" id="cb26-10" data-line-number="10"><span class="co">#&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb26-11" data-line-number="11"><span class="co">#&gt;  1 PREMON.1001     1     0     0     0  0.399  4.62 18806 20495</span></a>
+<a class="sourceLine" id="cb26-12" data-line-number="12"><span class="co">#&gt;  2 DACEXC.1002     1     0     0     0  0.399  4.63 18805 20495</span></a>
+<a class="sourceLine" id="cb26-13" data-line-number="13"><span class="co">#&gt;  3 DACEXC.1005     1     0     0     0  0.404  4.56 18849 20515</span></a>
+<a class="sourceLine" id="cb26-14" data-line-number="14"><span class="co">#&gt;  4 TRIPAL.1005     0     0    NA    NA NA     NA    18849    NA</span></a>
+<a class="sourceLine" id="cb26-15" data-line-number="15"><span class="co">#&gt;  5 MANBID.1006     1     0     0     0  0.404  4.56 18849 20515</span></a>
+<a class="sourceLine" id="cb26-16" data-line-number="16"><span class="co">#&gt;  6 EUGSTA.1007     1     0     0     0  0.410  4.50 18891 20534</span></a>
+<a class="sourceLine" id="cb26-17" data-line-number="17"><span class="co">#&gt;  7 MANBID.1007     1     0     0     0  0.410  4.50 18892 20535</span></a>
+<a class="sourceLine" id="cb26-18" data-line-number="18"><span class="co">#&gt;  8 MATDOM.1007     1     0     0     0  0.410  4.50 18891 20535</span></a>
+<a class="sourceLine" id="cb26-19" data-line-number="19"><span class="co">#&gt;  9 MICPRA.1007     0     0    NA    NA NA     NA    18891    NA</span></a>
+<a class="sourceLine" id="cb26-20" data-line-number="20"><span class="co">#&gt; 10 SLOBER.1007     0     0    NA    NA NA     NA    18890    NA</span></a>
+<a class="sourceLine" id="cb26-21" data-line-number="21"><span class="co">#&gt; # ... with 26,197 more rows</span></a></code></pre></div>
+<p>To separate the multiple groups we can use <code>tidyr::separate()</code>.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">tidyr<span class="op">::</span><span class="kw">separate</span>(<span class="kw">as_tibble</span>(by_many), groups, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;species&quot;</span>, <span class="st">&quot;quadrats&quot;</span>))</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="co">#&gt; # A tibble: 26,207 x 10</span></a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co">#&gt;    species quadrats    N2     R  rate lower  upper  time date1 date2</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">#&gt;  1 PREMON  1001         1     0     0     0  0.399  4.62 18806 20495</span></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">#&gt;  2 DACEXC  1002         1     0     0     0  0.399  4.63 18805 20495</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="co">#&gt;  3 DACEXC  1005         1     0     0     0  0.404  4.56 18849 20515</span></a>
+<a class="sourceLine" id="cb27-8" data-line-number="8"><span class="co">#&gt;  4 TRIPAL  1005         0     0    NA    NA NA     NA    18849    NA</span></a>
+<a class="sourceLine" id="cb27-9" data-line-number="9"><span class="co">#&gt;  5 MANBID  1006         1     0     0     0  0.404  4.56 18849 20515</span></a>
+<a class="sourceLine" id="cb27-10" data-line-number="10"><span class="co">#&gt;  6 EUGSTA  1007         1     0     0     0  0.410  4.50 18891 20534</span></a>
+<a class="sourceLine" id="cb27-11" data-line-number="11"><span class="co">#&gt;  7 MANBID  1007         1     0     0     0  0.410  4.50 18892 20535</span></a>
+<a class="sourceLine" id="cb27-12" data-line-number="12"><span class="co">#&gt;  8 MATDOM  1007         1     0     0     0  0.410  4.50 18891 20535</span></a>
+<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="co">#&gt;  9 MICPRA  1007         0     0    NA    NA NA     NA    18891    NA</span></a>
+<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="co">#&gt; 10 SLOBER  1007         0     0    NA    NA NA     NA    18890    NA</span></a>
+<a class="sourceLine" id="cb27-15" data-line-number="15"><span class="co">#&gt; # ... with 26,197 more rows</span></a></code></pre></div>
+<p>The same works for mortality and growth.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">as_tibble</span>(<span class="kw">mortality_ctfs</span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat))</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="co">#&gt; # A tibble: 26,207 x 10</span></a>
+<a class="sourceLine" id="cb28-7" data-line-number="7"><span class="co">#&gt;    groups          N     D  rate  lower   upper  time date1 date2 dbhmean</span></a>
+<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="co">#&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb28-9" data-line-number="9"><span class="co">#&gt;  1 PREMON.1001     1     0     0 0        0.399  4.62 18806 20495   136  </span></a>
+<a class="sourceLine" id="cb28-10" data-line-number="10"><span class="co">#&gt;  2 DACEXC.1002     1     0     0 0        0.399  4.63 18805 20495   419  </span></a>
+<a class="sourceLine" id="cb28-11" data-line-number="11"><span class="co">#&gt;  3 DACEXC.1005     1     0     0 0        0.404  4.56 18849 20515    58  </span></a>
+<a class="sourceLine" id="cb28-12" data-line-number="12"><span class="co">#&gt;  4 TRIPAL.1005     1     1   Inf 0.0377 Inf      4.56 18849 20515    42.5</span></a>
+<a class="sourceLine" id="cb28-13" data-line-number="13"><span class="co">#&gt;  5 MANBID.1006     1     0     0 0        0.404  4.56 18849 20515    30.6</span></a>
+<a class="sourceLine" id="cb28-14" data-line-number="14"><span class="co">#&gt;  6 EUGSTA.1007     1     0     0 0        0.410  4.50 18891 20534    55  </span></a>
+<a class="sourceLine" id="cb28-15" data-line-number="15"><span class="co">#&gt;  7 MANBID.1007     1     0     0 0        0.410  4.50 18892 20535    15  </span></a>
+<a class="sourceLine" id="cb28-16" data-line-number="16"><span class="co">#&gt;  8 MATDOM.1007     1     0     0 0        0.410  4.50 18891 20535   240  </span></a>
+<a class="sourceLine" id="cb28-17" data-line-number="17"><span class="co">#&gt;  9 MICPRA.1007     1     1   Inf 0.0383 Inf      4.50 18891 20534    12.2</span></a>
+<a class="sourceLine" id="cb28-18" data-line-number="18"><span class="co">#&gt; 10 SLOBER.1007     1     1   Inf 0.0382 Inf      4.50 18890 20534   101  </span></a>
+<a class="sourceLine" id="cb28-19" data-line-number="19"><span class="co">#&gt; # ... with 26,197 more rows</span></a>
+<a class="sourceLine" id="cb28-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb28-21" data-line-number="21"><span class="kw">as_tibble</span>(<span class="kw">growth_ctfs</span>(census5, census6, <span class="dt">split1 =</span> sp_quadrat))</a>
+<a class="sourceLine" id="cb28-22" data-line-number="22"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb28-23" data-line-number="23"><span class="co">#&gt;   * `census1` = 10-955.</span></a>
+<a class="sourceLine" id="cb28-24" data-line-number="24"><span class="co">#&gt;   * `census2` = 10.2-992.</span></a>
+<a class="sourceLine" id="cb28-25" data-line-number="25"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb28-26" data-line-number="26"><span class="co">#&gt; # A tibble: 26,207 x 8</span></a>
+<a class="sourceLine" id="cb28-27" data-line-number="27"><span class="co">#&gt;    groups          rate     N  clim dbhmean  time date1 date2</span></a>
+<a class="sourceLine" id="cb28-28" data-line-number="28"><span class="co">#&gt;    &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb28-29" data-line-number="29"><span class="co">#&gt;  1 PREMON.1001  -0.216      1    NA   136    4.62 18806 20495</span></a>
+<a class="sourceLine" id="cb28-30" data-line-number="30"><span class="co">#&gt;  2 DACEXC.1002   0.864      1    NA   419    4.63 18805 20495</span></a>
+<a class="sourceLine" id="cb28-31" data-line-number="31"><span class="co">#&gt;  3 DACEXC.1005   0.438      1    NA    58    4.56 18849 20515</span></a>
+<a class="sourceLine" id="cb28-32" data-line-number="32"><span class="co">#&gt;  4 TRIPAL.1005  NA          0    NA    NA   NA       NA    NA</span></a>
+<a class="sourceLine" id="cb28-33" data-line-number="33"><span class="co">#&gt;  5 MANBID.1006  -0.0219     1    NA    30.6  4.56 18849 20515</span></a>
+<a class="sourceLine" id="cb28-34" data-line-number="34"><span class="co">#&gt;  6 EUGSTA.1007   0.222      1    NA    55    4.50 18891 20534</span></a>
+<a class="sourceLine" id="cb28-35" data-line-number="35"><span class="co">#&gt;  7 MANBID.1007  -0.111      1    NA    15    4.50 18892 20535</span></a>
+<a class="sourceLine" id="cb28-36" data-line-number="36"><span class="co">#&gt;  8 MATDOM.1007   0          1    NA   240    4.50 18891 20535</span></a>
+<a class="sourceLine" id="cb28-37" data-line-number="37"><span class="co">#&gt;  9 MICPRA.1007  NA          0    NA    NA   NA       NA    NA</span></a>
+<a class="sourceLine" id="cb28-38" data-line-number="38"><span class="co">#&gt; 10 SLOBER.1007  NA          0    NA    NA   NA       NA    NA</span></a>
+<a class="sourceLine" id="cb28-39" data-line-number="39"><span class="co">#&gt; # ... with 26,197 more rows</span></a></code></pre></div>
+</div>
+<div id="species-habitat-associations" class="section level2">
+<h2>Species-habitat associations</h2>
+<p>In this section we will use a tree and elevation data, and we will create habitat data from the elevation data.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">tree5 &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">&quot;luquillo_tree5_random&quot;</span>)</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">elevation &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">&quot;luquillo_elevation&quot;</span>)</a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="co"># Pick alive trees, of 10 mm or more</span></a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">census &lt;-<span class="st"> </span><span class="kw">filter</span>(tree5, status <span class="op">==</span><span class="st"> &quot;A&quot;</span>, dbh <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"><span class="co"># Pick sufficiently abundant species</span></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">pick &lt;-<span class="st"> </span><span class="kw">filter</span>(<span class="kw">add_count</span>(census, sp), n <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb29-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="co"># Use your habitat data or create it from elevation data</span></a>
+<a class="sourceLine" id="cb29-11" data-line-number="11">habitat &lt;-<span class="st"> </span><span class="kw">fgeo_habitat</span>(elevation, <span class="dt">gridsize =</span> <span class="dv">20</span>, <span class="dt">n =</span> <span class="dv">4</span>)</a></code></pre></div>
+<p>We have everything we need. We can now calculate species-habitat associations with <code>tt_test()</code>.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co"># A list or matrices</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">tt_test_result &lt;-<span class="st"> </span><span class="kw">tt_test</span>(pick, habitat)</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="co">#&gt; Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.</span></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="co">#&gt; Using `gridsize = 20`. To change this value see `?tt_test()`.</span></a>
+<a class="sourceLine" id="cb30-5" data-line-number="5">tt_test_result</a>
+<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb30-7" data-line-number="7"><span class="co">#&gt;        N.Hab.1 Gr.Hab.1 Ls.Hab.1 Eq.Hab.1 Rep.Agg.Neut.1 Obs.Quantile.1</span></a>
+<a class="sourceLine" id="cb30-8" data-line-number="8"><span class="co">#&gt; CASARB      35     1313      282        5              0       0.820625</span></a>
+<a class="sourceLine" id="cb30-9" data-line-number="9"><span class="co">#&gt;        N.Hab.2 Gr.Hab.2 Ls.Hab.2 Eq.Hab.2 Rep.Agg.Neut.2 Obs.Quantile.2</span></a>
+<a class="sourceLine" id="cb30-10" data-line-number="10"><span class="co">#&gt; CASARB      24      394     1204        2              0        0.24625</span></a>
+<a class="sourceLine" id="cb30-11" data-line-number="11"><span class="co">#&gt;        N.Hab.3 Gr.Hab.3 Ls.Hab.3 Eq.Hab.3 Rep.Agg.Neut.3 Obs.Quantile.3</span></a>
+<a class="sourceLine" id="cb30-12" data-line-number="12"><span class="co">#&gt; CASARB      11      482     1114        4              0        0.30125</span></a>
+<a class="sourceLine" id="cb30-13" data-line-number="13"><span class="co">#&gt;        N.Hab.4 Gr.Hab.4 Ls.Hab.4 Eq.Hab.4 Rep.Agg.Neut.4 Obs.Quantile.4</span></a>
+<a class="sourceLine" id="cb30-14" data-line-number="14"><span class="co">#&gt; CASARB       8     1217      377        6              0       0.760625</span></a>
+<a class="sourceLine" id="cb30-15" data-line-number="15"><span class="co">#&gt; attr(,&quot;fixed_nan&quot;)</span></a>
+<a class="sourceLine" id="cb30-16" data-line-number="16"><span class="co">#&gt; [1] FALSE</span></a>
+<a class="sourceLine" id="cb30-17" data-line-number="17"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb30-18" data-line-number="18"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb30-19" data-line-number="19"><span class="co">#&gt;        N.Hab.1 Gr.Hab.1 Ls.Hab.1 Eq.Hab.1 Rep.Agg.Neut.1 Obs.Quantile.1</span></a>
+<a class="sourceLine" id="cb30-20" data-line-number="20"><span class="co">#&gt; PREMON      94     1005      594        1              0       0.628125</span></a>
+<a class="sourceLine" id="cb30-21" data-line-number="21"><span class="co">#&gt;        N.Hab.2 Gr.Hab.2 Ls.Hab.2 Eq.Hab.2 Rep.Agg.Neut.2 Obs.Quantile.2</span></a>
+<a class="sourceLine" id="cb30-22" data-line-number="22"><span class="co">#&gt; PREMON      97     1478      120        2              0        0.92375</span></a>
+<a class="sourceLine" id="cb30-23" data-line-number="23"><span class="co">#&gt;        N.Hab.3 Gr.Hab.3 Ls.Hab.3 Eq.Hab.3 Rep.Agg.Neut.3 Obs.Quantile.3</span></a>
+<a class="sourceLine" id="cb30-24" data-line-number="24"><span class="co">#&gt; PREMON      39      230     1367        3              0        0.14375</span></a>
+<a class="sourceLine" id="cb30-25" data-line-number="25"><span class="co">#&gt;        N.Hab.4 Gr.Hab.4 Ls.Hab.4 Eq.Hab.4 Rep.Agg.Neut.4 Obs.Quantile.4</span></a>
+<a class="sourceLine" id="cb30-26" data-line-number="26"><span class="co">#&gt; PREMON      15      130     1465        5              0        0.08125</span></a>
+<a class="sourceLine" id="cb30-27" data-line-number="27"><span class="co">#&gt; attr(,&quot;fixed_nan&quot;)</span></a>
+<a class="sourceLine" id="cb30-28" data-line-number="28"><span class="co">#&gt; [1] FALSE</span></a>
+<a class="sourceLine" id="cb30-29" data-line-number="29"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb30-30" data-line-number="30"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb30-31" data-line-number="31"><span class="co">#&gt;        N.Hab.1 Gr.Hab.1 Ls.Hab.1 Eq.Hab.1 Rep.Agg.Neut.1 Obs.Quantile.1</span></a>
+<a class="sourceLine" id="cb30-32" data-line-number="32"><span class="co">#&gt; SLOBER      21      270     1328        2              0        0.16875</span></a>
+<a class="sourceLine" id="cb30-33" data-line-number="33"><span class="co">#&gt;        N.Hab.2 Gr.Hab.2 Ls.Hab.2 Eq.Hab.2 Rep.Agg.Neut.2 Obs.Quantile.2</span></a>
+<a class="sourceLine" id="cb30-34" data-line-number="34"><span class="co">#&gt; SLOBER      25      516     1082        2              0         0.3225</span></a>
+<a class="sourceLine" id="cb30-35" data-line-number="35"><span class="co">#&gt;        N.Hab.3 Gr.Hab.3 Ls.Hab.3 Eq.Hab.3 Rep.Agg.Neut.3 Obs.Quantile.3</span></a>
+<a class="sourceLine" id="cb30-36" data-line-number="36"><span class="co">#&gt; SLOBER      21     1336      260        4              0          0.835</span></a>
+<a class="sourceLine" id="cb30-37" data-line-number="37"><span class="co">#&gt;        N.Hab.4 Gr.Hab.4 Ls.Hab.4 Eq.Hab.4 Rep.Agg.Neut.4 Obs.Quantile.4</span></a>
+<a class="sourceLine" id="cb30-38" data-line-number="38"><span class="co">#&gt; SLOBER       8     1193      396       11              0       0.745625</span></a>
+<a class="sourceLine" id="cb30-39" data-line-number="39"><span class="co">#&gt; attr(,&quot;fixed_nan&quot;)</span></a>
+<a class="sourceLine" id="cb30-40" data-line-number="40"><span class="co">#&gt; [1] FALSE</span></a></code></pre></div>
+<p>Finally, here are some ways you may visualize the results.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="co"># A simple summary to help you interpret the results</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="kw">summary</span>(tt_test_result)</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="co">#&gt; # A tibble: 12 x 3</span></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="co">#&gt;    sp     habitat association</span></a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="co">#&gt;    &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      </span></a>
+<a class="sourceLine" id="cb31-6" data-line-number="6"><span class="co">#&gt;  1 CASARB 1       neutral    </span></a>
+<a class="sourceLine" id="cb31-7" data-line-number="7"><span class="co">#&gt;  2 CASARB 2       neutral    </span></a>
+<a class="sourceLine" id="cb31-8" data-line-number="8"><span class="co">#&gt;  3 CASARB 3       neutral    </span></a>
+<a class="sourceLine" id="cb31-9" data-line-number="9"><span class="co">#&gt;  4 CASARB 4       neutral    </span></a>
+<a class="sourceLine" id="cb31-10" data-line-number="10"><span class="co">#&gt;  5 PREMON 1       neutral    </span></a>
+<a class="sourceLine" id="cb31-11" data-line-number="11"><span class="co">#&gt;  6 PREMON 2       neutral    </span></a>
+<a class="sourceLine" id="cb31-12" data-line-number="12"><span class="co">#&gt;  7 PREMON 3       neutral    </span></a>
+<a class="sourceLine" id="cb31-13" data-line-number="13"><span class="co">#&gt;  8 PREMON 4       neutral    </span></a>
+<a class="sourceLine" id="cb31-14" data-line-number="14"><span class="co">#&gt;  9 SLOBER 1       neutral    </span></a>
+<a class="sourceLine" id="cb31-15" data-line-number="15"><span class="co">#&gt; 10 SLOBER 2       neutral    </span></a>
+<a class="sourceLine" id="cb31-16" data-line-number="16"><span class="co">#&gt; 11 SLOBER 3       neutral    </span></a>
+<a class="sourceLine" id="cb31-17" data-line-number="17"><span class="co">#&gt; 12 SLOBER 4       neutral</span></a>
+<a class="sourceLine" id="cb31-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb31-19" data-line-number="19"><span class="co"># A combined matrix</span></a>
+<a class="sourceLine" id="cb31-20" data-line-number="20"><span class="kw">Reduce</span>(rbind, tt_test_result)</a>
+<a class="sourceLine" id="cb31-21" data-line-number="21"><span class="co">#&gt;        N.Hab.1 Gr.Hab.1 Ls.Hab.1 Eq.Hab.1 Rep.Agg.Neut.1 Obs.Quantile.1</span></a>
+<a class="sourceLine" id="cb31-22" data-line-number="22"><span class="co">#&gt; CASARB      35     1313      282        5              0       0.820625</span></a>
+<a class="sourceLine" id="cb31-23" data-line-number="23"><span class="co">#&gt; PREMON      94     1005      594        1              0       0.628125</span></a>
+<a class="sourceLine" id="cb31-24" data-line-number="24"><span class="co">#&gt; SLOBER      21      270     1328        2              0       0.168750</span></a>
+<a class="sourceLine" id="cb31-25" data-line-number="25"><span class="co">#&gt;        N.Hab.2 Gr.Hab.2 Ls.Hab.2 Eq.Hab.2 Rep.Agg.Neut.2 Obs.Quantile.2</span></a>
+<a class="sourceLine" id="cb31-26" data-line-number="26"><span class="co">#&gt; CASARB      24      394     1204        2              0        0.24625</span></a>
+<a class="sourceLine" id="cb31-27" data-line-number="27"><span class="co">#&gt; PREMON      97     1478      120        2              0        0.92375</span></a>
+<a class="sourceLine" id="cb31-28" data-line-number="28"><span class="co">#&gt; SLOBER      25      516     1082        2              0        0.32250</span></a>
+<a class="sourceLine" id="cb31-29" data-line-number="29"><span class="co">#&gt;        N.Hab.3 Gr.Hab.3 Ls.Hab.3 Eq.Hab.3 Rep.Agg.Neut.3 Obs.Quantile.3</span></a>
+<a class="sourceLine" id="cb31-30" data-line-number="30"><span class="co">#&gt; CASARB      11      482     1114        4              0        0.30125</span></a>
+<a class="sourceLine" id="cb31-31" data-line-number="31"><span class="co">#&gt; PREMON      39      230     1367        3              0        0.14375</span></a>
+<a class="sourceLine" id="cb31-32" data-line-number="32"><span class="co">#&gt; SLOBER      21     1336      260        4              0        0.83500</span></a>
+<a class="sourceLine" id="cb31-33" data-line-number="33"><span class="co">#&gt;        N.Hab.4 Gr.Hab.4 Ls.Hab.4 Eq.Hab.4 Rep.Agg.Neut.4 Obs.Quantile.4</span></a>
+<a class="sourceLine" id="cb31-34" data-line-number="34"><span class="co">#&gt; CASARB       8     1217      377        6              0       0.760625</span></a>
+<a class="sourceLine" id="cb31-35" data-line-number="35"><span class="co">#&gt; PREMON      15      130     1465        5              0       0.081250</span></a>
+<a class="sourceLine" id="cb31-36" data-line-number="36"><span class="co">#&gt; SLOBER       8     1193      396       11              0       0.745625</span></a>
+<a class="sourceLine" id="cb31-37" data-line-number="37"></a>
+<a class="sourceLine" id="cb31-38" data-line-number="38"><span class="co"># A dataframe</span></a>
+<a class="sourceLine" id="cb31-39" data-line-number="39"><span class="kw">as_tibble</span>(tt_test_result)</a>
+<a class="sourceLine" id="cb31-40" data-line-number="40"><span class="co">#&gt; # A tibble: 12 x 8</span></a>
+<a class="sourceLine" id="cb31-41" data-line-number="41"><span class="co">#&gt;    habitat sp     N.Hab Gr.Hab Ls.Hab Eq.Hab Rep.Agg.Neut Obs.Quantile</span></a>
+<a class="sourceLine" id="cb31-42" data-line-number="42"><span class="co">#&gt;  * &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb31-43" data-line-number="43"><span class="co">#&gt;  1 1       CASARB    35   1313    282      5            0       0.821 </span></a>
+<a class="sourceLine" id="cb31-44" data-line-number="44"><span class="co">#&gt;  2 2       CASARB    24    394   1204      2            0       0.246 </span></a>
+<a class="sourceLine" id="cb31-45" data-line-number="45"><span class="co">#&gt;  3 3       CASARB    11    482   1114      4            0       0.301 </span></a>
+<a class="sourceLine" id="cb31-46" data-line-number="46"><span class="co">#&gt;  4 4       CASARB     8   1217    377      6            0       0.761 </span></a>
+<a class="sourceLine" id="cb31-47" data-line-number="47"><span class="co">#&gt;  5 1       PREMON    94   1005    594      1            0       0.628 </span></a>
+<a class="sourceLine" id="cb31-48" data-line-number="48"><span class="co">#&gt;  6 2       PREMON    97   1478    120      2            0       0.924 </span></a>
+<a class="sourceLine" id="cb31-49" data-line-number="49"><span class="co">#&gt;  7 3       PREMON    39    230   1367      3            0       0.144 </span></a>
+<a class="sourceLine" id="cb31-50" data-line-number="50"><span class="co">#&gt;  8 4       PREMON    15    130   1465      5            0       0.0812</span></a>
+<a class="sourceLine" id="cb31-51" data-line-number="51"><span class="co">#&gt;  9 1       SLOBER    21    270   1328      2            0       0.169 </span></a>
+<a class="sourceLine" id="cb31-52" data-line-number="52"><span class="co">#&gt; 10 2       SLOBER    25    516   1082      2            0       0.322 </span></a>
+<a class="sourceLine" id="cb31-53" data-line-number="53"><span class="co">#&gt; 11 3       SLOBER    21   1336    260      4            0       0.835 </span></a>
+<a class="sourceLine" id="cb31-54" data-line-number="54"><span class="co">#&gt; 12 4       SLOBER     8   1193    396     11            0       0.746</span></a></code></pre></div>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

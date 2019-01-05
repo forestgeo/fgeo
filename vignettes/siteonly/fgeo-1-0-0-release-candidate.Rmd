@@ -117,7 +117,7 @@ census %>%
 data("tree5")
 data("tree6")
 
-to_df(
+as_tibble(
   mortality_ctfs(tree5, tree6)
 )
 ```

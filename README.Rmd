@@ -308,19 +308,19 @@ basal_area(by_species)
 
 #### Demography
 
-`recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate recruitment, mortality, and growth. They all output a list. `to_df()` converts the output from a list to a more convenient dataframe.
+`recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate recruitment, mortality, and growth. They all output a list. `as_tibble()` converts the output from a list to a more convenient dataframe.
 
 ```{r}
 data("tree5")
 
-to_df(
+as_tibble(
   mortality_ctfs(tree5, tree6)
 )
 ```
 
 #### Species-habitats association
 
-`tt_test()` runs a torus translation test to determine habitat associations of tree species. `to_df()` converts the output from a list to a more convenient dataframe. `summary()` helps you to interpret the result.
+`tt_test()` runs a torus translation test to determine habitat associations of tree species. `as_tibble()` converts the output from a list to a more convenient dataframe. `summary()` helps you to interpret the result.
 
 ```{r}
 # This analysis makes sense only for tree tables
@@ -328,7 +328,7 @@ tree <- download_data("luquillo_tree5_random")
 data("habitat")
 result <- tt_test(tree, habitat)
 
-to_df(result)
+as_tibble(result)
 
 summary(result)
 ```
