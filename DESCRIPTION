@@ -69,10 +69,9 @@ Authors@R:
       person(given = "CTFS-ForestGEO",
              role = c("cph", "fnd"),
              email = "ForestGEO@si.edu"))
-Description:  fgeo helps you to analyze forest diversity
-    and dynamics. It provides functions to manipulate and visualize
-    ForestGEO datasets, and to analyze the abundance, demography, and
-    habitats of forest trees (<http://www.forestgeo.si.edu/>). 
+Description: A tool to manipulate and visualize ForestGEO
+    datasets, and to analyze the abundance, demography, and habitats of
+    forest trees (<http://www.forestgeo.si.edu/>).
 License: GPL-3
 URL: http://forestgeo.github.io/fgeo,
     https://github.com/forestgeo/fgeo
