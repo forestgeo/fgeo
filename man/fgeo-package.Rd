@@ -6,11 +6,9 @@
 \alias{fgeo-package}
 \title{fgeo: Analyze Forest Diversity and Dynamics}
 \description{
-\bold{fgeo} helps you to analyze forest diversity and dynamics. It provides
-    functions to manipulate and visualize ForestGEO datasets, and to analyze the
-    abundance, demography, and habitats of forest trees. Learn more about the
-    \bold{fgeo} package at \url{http://forestgeo.github.io/fgeo}; and learn more
-    about ForestGEO at \url{http://www.forestgeo.si.edu/}.
+A tool to manipulate and visualize ForestGEO
+    datasets, and to analyze the abundance, demography, and habitats of
+    forest trees (<http://www.forestgeo.si.edu/>).
 }
 \seealso{
 Useful links:
