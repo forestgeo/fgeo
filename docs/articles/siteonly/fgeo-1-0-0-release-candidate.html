@@ -140,10 +140,10 @@
 <a href="#access-and-manipulate-data" class="anchor"></a>Access and manipulate data</h3>
 <p><strong>fgeo</strong> comes with small datasets for examples. When you use <strong>fgeo</strong> you can also use many datasets directly.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------ fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ----------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; -- Conflicts -------------------------------------------- fgeo_conflicts() --</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb1-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb1-8" data-line-number="8">tree5</a>
@@ -212,116 +212,87 @@
 <a class="sourceLine" id="cb4-22" data-line-number="22"><span class="co">#&gt; #   PlotCensusNumber &lt;int&gt;, DBH &lt;dbl&gt;, HOM &lt;dbl&gt;, ExactDate &lt;date&gt;,</span></a>
 <a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">#&gt; #   Date &lt;int&gt;, ListOfTSM &lt;chr&gt;, HighHOM &lt;int&gt;, LargeStem &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb4-24" data-line-number="24"><span class="co">#&gt; #   Status &lt;chr&gt;</span></a></code></pre></div>
-<p>Use <a href="https://forestgeo.github.io/fgeo.tool/reference/dir_list"><code>rdata_list()</code></a> to read multiple censuses at once.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">(census_files &lt;-<span class="st"> </span><span class="kw">example_path</span>(<span class="st">"rdata"</span>))</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata"</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list.files">dir</a></span>(census_files)</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; [1] "tree5.RData" "tree6.RData"</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="kw">rdata_list</span>(census_files)</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; $tree5</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; # A tibble: 3 x 19</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;    &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 1    104    143 10009 10009   DACE~ 113      10.3  245.    439947        5</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    466597        5</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 3    180    225 1001~ 100174  CASA~ 921     165.   410.    466623        5</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; # ... with 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;, hom &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; #   ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;, nostems &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; #   status &lt;chr&gt;, date &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; $tree6</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; # A tibble: 3 x 19</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt;   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt;    &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt; 1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6</span></a>
-<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt; 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6</span></a>
-<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">#&gt; 3    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6</span></a>
-<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co">#&gt; # ... with 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;, hom &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co">#&gt; #   ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;, nostems &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">#&gt; #   status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 </div>
 <div id="plot" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plot" class="anchor"></a>Plot</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Using only two species to keep the example small</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">two_species &lt;-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"PREMON"</span>, <span class="st">"CASARB"</span>)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co"># The pipe operator (`%&gt;%`) can make your code easier to read</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">census &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_stem6_random"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(sp <span class="op">%in%</span><span class="st"> </span>two_species)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Using only two species to keep the example small</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">two_species &lt;-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"PREMON"</span>, <span class="st">"CASARB"</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co"># The pipe operator (`%&gt;%`) can make your code easier to read</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">census &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_stem6_random"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(sp <span class="op">%in%</span><span class="st"> </span>two_species)</a></code></pre></div>
 <p>Use <code>autoplot()</code> to plot different classes of ForestGEO data. For example:</p>
 <ul>
 <li><a href="https://forestgeo.github.io/fgeo.plot/reference/autoplot.sp_elev"><code>autoplot()</code> species distribution</a></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(<span class="kw">sp</span>(census))</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; [1] "sp"         "tbl_df"     "tbl"        "data.frame"</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">autoplot</span>(<span class="kw">sp</span>(census))</a></code></pre></div>
-<p><img src="fgeo-1-0-0-release-candidate_files/figure-html/unnamed-chunk-7-1.png" width="70%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(<span class="kw">sp</span>(census))</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; [1] "sp"         "tbl_df"     "tbl"        "data.frame"</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">autoplot</span>(<span class="kw">sp</span>(census))</a></code></pre></div>
+<p><img src="fgeo-1-0-0-release-candidate_files/figure-html/unnamed-chunk-6-1.png" width="70%" style="display: block; margin: auto;"></p>
 <ul>
 <li><a href="https://forestgeo.github.io/fgeo.plot/reference/autoplot.fgeo_habitat"><code>autoplot()</code> habitats</a></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># Using `data()` just for clarity</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"habitat"</span>)</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(habitat)</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; [1] "fgeo_habitat" "tbl_df"       "tbl"          "data.frame"</span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="kw">autoplot</span>(habitat)</a></code></pre></div>
-<p><img src="fgeo-1-0-0-release-candidate_files/figure-html/unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Using `data()` just for clarity</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"habitat"</span>)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(habitat)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; [1] "fgeo_habitat" "tbl_df"       "tbl"          "data.frame"</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">autoplot</span>(habitat)</a></code></pre></div>
+<p><img src="fgeo-1-0-0-release-candidate_files/figure-html/unnamed-chunk-7-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="analyze" class="section level3">
 <h3 class="hasAnchor">
 <a href="#analyze" class="anchor"></a>Analyze</h3>
 <p>The available analyses include <a href="https://forestgeo.github.io/fgeo.analyze/reference/abundance">abundance</a>, <a href="https://forestgeo.github.io/fgeo.analyze/reference/recruitment_ctfs">mortality</a>, and <a href="https://forestgeo.github.io/fgeo.analyze/reference/tt_test">species-habitat association</a>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">census <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw">pick_main_stem</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(sp) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="st">  </span><span class="kw">abundance</span>()</a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; # A tibble: 2 x 2</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; # Groups:   sp [2]</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt;   sp         n</span></a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt; 1 CASARB    94</span></a>
-<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; 2 PREMON   252</span></a></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"tree5"</span>)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"tree6"</span>)</a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">census <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">pick_main_stem</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(sp) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="st">  </span><span class="kw">abundance</span>()</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; # A tibble: 2 x 2</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; # Groups:   sp [2]</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt;   sp         n</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt; 1 CASARB    94</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt; 2 PREMON   252</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"tree5"</span>)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"tree6"</span>)</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="kw">as_tibble</span>(</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">  <span class="kw">mortality_ctfs</span>(tree5, tree6)</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; Detected dbh ranges:</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt;   * `census1` = 10.9-323.</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;   * `census2` = 10.5-347.</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt; # A tibble: 1 x 9</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt;       N     D    rate   lower  upper  time  date1  date2 dbhmean</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt; 1    27     1 0.00834 0.00195 0.0448  4.52 18938. 20590.    101.</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">tree &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_tree5_random"</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"habitat"</span>)</a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="kw">as_tibble</span>(</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="kw">mortality_ctfs</span>(tree5, tree6)</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="kw">tt_test</span>(tree, habitat)</a>
 <a class="sourceLine" id="cb10-6" data-line-number="6">)</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt; Detected dbh ranges:</span></a>
-<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt;   * `census1` = 10.9-323.</span></a>
-<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt;   * `census2` = 10.5-347.</span></a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt; Using dbh `mindbh = 0` and above.</span></a>
-<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; # A tibble: 1 x 9</span></a>
-<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt;       N     D    rate   lower  upper  time  date1  date2 dbhmean</span></a>
-<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt; 1    27     1 0.00834 0.00195 0.0448  4.52 18938. 20590.    101.</span></a></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">tree &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_tree5_random"</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"habitat"</span>)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">  <span class="kw">tt_test</span>(tree, habitat)</a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">)</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.</span></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt; Using `gridsize = 20`. To change this value see `?tt_test()`.</span></a>
-<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt; # A tibble: 292 x 3</span></a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt;    sp     habitat association</span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt;    &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      </span></a>
-<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt;  1 ALCFLO 1       neutral    </span></a>
-<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt;  2 ALCFLO 2       neutral    </span></a>
-<a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt;  3 ALCFLO 3       repelled   </span></a>
-<a class="sourceLine" id="cb11-15" data-line-number="15"><span class="co">#&gt;  4 ALCFLO 4       repelled   </span></a>
-<a class="sourceLine" id="cb11-16" data-line-number="16"><span class="co">#&gt;  5 ALCLAT 1       repelled   </span></a>
-<a class="sourceLine" id="cb11-17" data-line-number="17"><span class="co">#&gt;  6 ALCLAT 2       neutral    </span></a>
-<a class="sourceLine" id="cb11-18" data-line-number="18"><span class="co">#&gt;  7 ALCLAT 3       repelled   </span></a>
-<a class="sourceLine" id="cb11-19" data-line-number="19"><span class="co">#&gt;  8 ALCLAT 4       repelled   </span></a>
-<a class="sourceLine" id="cb11-20" data-line-number="20"><span class="co">#&gt;  9 ANDINE 1       neutral    </span></a>
-<a class="sourceLine" id="cb11-21" data-line-number="21"><span class="co">#&gt; 10 ANDINE 2       neutral    </span></a>
-<a class="sourceLine" id="cb11-22" data-line-number="22"><span class="co">#&gt; # ... with 282 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt; Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; Using `gridsize = 20`. To change this value see `?tt_test()`.</span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt; # A tibble: 292 x 3</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt;    sp     habitat association</span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt;    &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      </span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt;  1 ALCFLO 1       neutral    </span></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt;  2 ALCFLO 2       neutral    </span></a>
+<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt;  3 ALCFLO 3       repelled   </span></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="co">#&gt;  4 ALCFLO 4       repelled   </span></a>
+<a class="sourceLine" id="cb10-16" data-line-number="16"><span class="co">#&gt;  5 ALCLAT 1       repelled   </span></a>
+<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="co">#&gt;  6 ALCLAT 2       neutral    </span></a>
+<a class="sourceLine" id="cb10-18" data-line-number="18"><span class="co">#&gt;  7 ALCLAT 3       repelled   </span></a>
+<a class="sourceLine" id="cb10-19" data-line-number="19"><span class="co">#&gt;  8 ALCLAT 4       repelled   </span></a>
+<a class="sourceLine" id="cb10-20" data-line-number="20"><span class="co">#&gt;  9 ANDINE 1       neutral    </span></a>
+<a class="sourceLine" id="cb10-21" data-line-number="21"><span class="co">#&gt; 10 ANDINE 2       neutral    </span></a>
+<a class="sourceLine" id="cb10-22" data-line-number="22"><span class="co">#&gt; # ... with 282 more rows</span></a></code></pre></div>
 </div>
   </div>
 

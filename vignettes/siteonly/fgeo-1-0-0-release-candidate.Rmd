@@ -60,16 +60,6 @@ Use [`read_vft()`](https://forestgeo.github.io/fgeo.tool/reference/read_vft) to 
 read_vft(viewfulltable_file)
 ```
 
-Use [`rdata_list()`](https://forestgeo.github.io/fgeo.tool/reference/dir_list) to read multiple censuses at once.
-
-```{r}
-(census_files <- example_path("rdata"))
-
-dir(census_files)
-
-rdata_list(census_files)
-```
-
 ### Plot
 
 ```{r}
