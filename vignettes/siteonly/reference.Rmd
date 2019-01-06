@@ -6,7 +6,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 ```{r setup, include = FALSE}
@@ -110,24 +110,6 @@ fgeo_reference_concept("habitat functions") %>%
 
 ```{r}
 fgeo_reference_concept("functions to import ForestGEO data") %>% 
-  custom_table()
-```
-
-#### Import multiple files from a directory into a list
-
-Notice that function names have the format `input_output`.
-
-```{r}
-fgeo_reference_concept("general functions to import data") %>% 
-  custom_table()
-```
-
-#### Export a list as multiple files in a directory
-
-Notice that function names have the format `input_output`.
-
-```{r}
-fgeo_reference_concept("general functions to export data") %>%
   custom_table()
 ```
 
