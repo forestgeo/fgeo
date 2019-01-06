@@ -61,7 +61,7 @@ Search globally in the search box below, or navigate the index clicking the menu
 ```{r, warning=FALSE}
 fgeo:::fgeo_packages() %>% 
   purrr::map_dfr(reference_package, url = url_fgeo) %>% 
-  select(., -package, -concept) %>% 
+  select(-package, -concept) %>% 
   unique() %>% 
   purrr::set_names(c("", "object", "description")) %>% 
   DT::datatable(
