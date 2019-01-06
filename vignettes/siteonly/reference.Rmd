@@ -6,7 +6,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
@@ -30,19 +30,24 @@ library(pkgdoc)
 url_fgeo <- "https://forestgeo.github.io/"
 
 fgeo_reference_concept <- function(x) {
-  reference_concept(x, url = url_fgeo, packages = fgeo:::fgeo_packages())
+  reference_concept(x, url = url_fgeo, packages = fgeo:::fgeo_packages()) %>% 
+    custom_table()
 }
 
 fgeo_reference_package <- function(x) {
-  reference_package(x, url = url_fgeo, packages = fgeo:::fgeo_packages())
+  reference_package(x, url = url_fgeo, packages = fgeo:::fgeo_packages()) %>% 
+    custom_table()
 }
 
 custom_table <- function(x) {
-  knitr::kable(
-    x, 
-    format = "html",
-    col.names = NULL,
-    escape = FALSE
+  x %>% 
+    select(-package, -concept) %>% 
+    unique() %>%
+    knitr::kable(
+      x, 
+      format = "html",
+      col.names = NULL,
+      escape = FALSE
     ) %>%
     kableExtra::column_spec(1, bold = TRUE) %>% 
     kableExtra::column_spec(2, width = "20em")
@@ -56,6 +61,7 @@ Search globally in the search box below, or navigate the index clicking the menu
 ```{r, warning=FALSE}
 fgeo:::fgeo_packages() %>% 
   purrr::map_dfr(reference_package, url = url_fgeo) %>% 
+  select(., -package, -concept) %>% 
   unique() %>% 
   purrr::set_names(c("", "object", "description")) %>% 
   DT::datatable(
@@ -72,36 +78,31 @@ fgeo:::fgeo_packages() %>%
 ### Explore fgeo
 
 ```{r}
-fgeo_reference_concept("functions to explore fgeo") %>% 
-  custom_table()
+fgeo_reference_concept("functions to explore fgeo")
 ```
 
 ### Plot
 
 ```{r}
-fgeo_reference_concept("plot functions") %>% 
-  custom_table()
+fgeo_reference_concept("plot functions")
 ```
 
 ### Abundance
 
 ```{r}
-fgeo_reference_concept("functions for abundance and basal area") %>% 
-  custom_table()
+fgeo_reference_concept("functions for abundance and basal area")
 ```
 
 ### Demography
 
 ```{r}
-fgeo_reference_concept("demography functions") %>% 
-  custom_table()
+fgeo_reference_concept("demography functions") 
 ```
 
 ### Habitat
 
 ```{r}
-fgeo_reference_concept("habitat functions") %>% 
-  custom_table()
+fgeo_reference_concept("habitat functions")
 ```
 
 ### Miscellaneous tools
@@ -109,8 +110,7 @@ fgeo_reference_concept("habitat functions") %>%
 #### Import ForestGEO data
 
 ```{r}
-fgeo_reference_concept("functions to import ForestGEO data") %>% 
-  custom_table()
+fgeo_reference_concept("functions to import ForestGEO data")
 ```
 
 #### Edit data in place
@@ -119,8 +119,7 @@ fgeo_reference_concept("functions to import ForestGEO data") %>%
 fgeo_reference_concept(c(
   "functions to edit ForestGEO data in place",
   "general functions to edit data in place"
-)) %>% 
-  custom_table()
+))
 ```
 
 #### Pick/drop rows with matching conditions 
@@ -129,20 +128,17 @@ fgeo_reference_concept(c(
 fgeo_reference_concept(c(
   "general functions to pick or drop rows of a dataframe",
   "functions to pick or drop rows of a ForestGEO dataframe"
-)) %>% 
-  custom_table()
+))
 ```
 
 #### Add new columns to a dataframe
 
 ```{r}
-fgeo_reference_concept("functions to add columns to dataframes") %>% 
-  custom_table()
+fgeo_reference_concept("functions to add columns to dataframes")
 ```
 
 ### Datasets
 
 ```{r}
-fgeo_reference_concept("datasets") %>% 
-  custom_table()
+fgeo_reference_concept("datasets")
 ```
