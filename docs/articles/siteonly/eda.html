@@ -138,12 +138,12 @@
 <p>You will learn to explore your data systematically by using modern and powerful tools for visualization and transformation. An exploratory data analysis is an iterative process that aims to use data and some research questions to learn something that can help you refine those questions and move forward along the learning spiral.</p>
 <p>If you are new to the <strong>tidyverse</strong>, you may feel a little frustrated at the beginning, but your effort will quickly pay-off. The tools in the <strong>tidyverse</strong> are powerful, relatively easy to use, and consistent; so once you learn some of the tools, you will learn most other tools intuitively.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tidyverse)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ------------------------------------ tidyverse 1.2.1 --</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ---------------------------------------------- tidyverse 1.2.1 --</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v ggplot2 3.1.0     v purrr   0.2.5</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v tibble  2.0.0     v dplyr   0.7.8</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; v tidyr   0.8.2     v stringr 1.3.1</span></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; v readr   1.3.1     v forcats 0.3.0</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts --------------------------------------- tidyverse_conflicts() --</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; -- Conflicts ------------------------------------------------- tidyverse_conflicts() --</span></a>
 <a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></a></code></pre></div>
 <p>We will use the dataset <code>luquillo_stem_random</code> from the <strong>fgeo.data</strong> package (<a href="https://forestgeo.github.io/fgeo.data/" class="uri">https://forestgeo.github.io/fgeo.data/</a>), which records trees censused in a forest plot in Luquillo, Puerto Rico.</p>
@@ -331,7 +331,7 @@
 <li>Which values are rare? Why? Does that match your expectations?</li>
 <li>Can you see any unusual patterns? What might explain them?</li>
 </ul>
-<p>The latter two plots give a good estimate of the most common stem-diameters. You can compute the same count manually by cutting the variable <code>dbh</code> with <code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">ggplot2::cut_width()</a></code>, and then counting the unique pieces with <code><a href="https://www.rdocumentation.org/packages/dplyr/topics/tally">dplyr::count()</a></code>.</p>
+<p>The latter two plots give a good estimate of the most common stem-diameters. You can compute the same count manually by cutting the variable <code>dbh</code> with <code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">ggplot2::cut_width()</a></code>, and then counting the unique pieces with <code><a href="https://dplyr.tidyverse.org/reference/tally.html">dplyr::count()</a></code>.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">small_dbh <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dbh_mm =</span> <span class="kw">cut_width</span>(dbh, <span class="dt">width =</span> useful_binwidth)) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(dbh_mm, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</a>
@@ -389,7 +389,7 @@
 <a class="sourceLine" id="cb20-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 2676 rows containing non-finite values (stat_bin).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-17-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p><code>coord_cartesian()</code> also has an <code>xlim</code> argument for when you need to zoom into the x-axis. <strong>ggplot2</strong> also has <code><a href="https://www.rdocumentation.org/packages/graphics/topics/plot.window">xlim()</a></code> and <code><a href="https://www.rdocumentation.org/packages/graphics/topics/plot.window">ylim()</a></code> functions that work slightly differently: they throw away the data outside the limits.</p>
-<p>This allows us to see that <code>dbh</code> values over ~625 are unusual and may be outliers. We can pluck them out with <code><a href="https://www.rdocumentation.org/packages/dplyr/topics/filter">dplyr::filter()</a></code> and select a subset of informative variables:</p>
+<p>This allows us to see that <code>dbh</code> values over ~625 are unusual and may be outliers. We can pluck them out with <code><a href="https://dplyr.tidyverse.org/reference/filter.html">dplyr::filter()</a></code> and select a subset of informative variables:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">treshold &lt;-<span class="st"> </span><span class="dv">625</span></a>
 <a class="sourceLine" id="cb21-2" data-line-number="2">unusual &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(dbh <span class="op">&gt;</span><span class="st"> </span>treshold ) <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -446,7 +446,7 @@
 <a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">#&gt; [1] 7896</span></a></code></pre></div>
 <p>I do not recommend this option: That one measurement is invalid does not mean all the measurements are invalid. Additionally, if you have low quality data, by the time you have applied this approach to every variable you might find that you are left with no data!</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Instead, I recommend replacing the unusual values with missing values. The easiest way to do this is to use <code><a href="https://www.rdocumentation.org/packages/dplyr/topics/mutate">dplyr::mutate()</a></code> to replace the variable with a modified copy. You can use the <code><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse()</a></code> function to replace unusual values with <code>NA</code>:</li>
+<li>Instead, I recommend replacing the unusual values with missing values. The easiest way to do this is to use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></code> to replace the variable with a modified copy. You can use the <code><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse()</a></code> function to replace unusual values with <code>NA</code>:</li>
 </ol>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">are_unusual &lt;-<span class="st"> </span><span class="op">!</span>are_usual</a>
 <a class="sourceLine" id="cb24-2" data-line-number="2">with_unusual_made_NA &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -477,7 +477,7 @@
 <a class="sourceLine" id="cb25-23" data-line-number="23"><span class="co">#&gt;  9    NA  30562</span></a>
 <a class="sourceLine" id="cb25-24" data-line-number="24"><span class="co">#&gt; 10    NA  32585</span></a>
 <a class="sourceLine" id="cb25-25" data-line-number="25"><span class="co">#&gt; # ... with 14 more rows</span></a></code></pre></div>
-<p>Alternatively to <code><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse()</a></code>, use <code><a href="https://www.rdocumentation.org/packages/dplyr/topics/case_when">dplyr::case_when()</a></code>. <code>case_when()</code> is particularly useful inside <code>mutate()</code> when you want to create a new variable that relies on a complex combination of existing variables.</p>
+<p>Alternatively to <code><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse()</a></code>, use <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">dplyr::case_when()</a></code>. <code>case_when()</code> is particularly useful inside <code>mutate()</code> when you want to create a new variable that relies on a complex combination of existing variables.</p>
 <p>It is not obvious where you should plot missing values in a plot, so <strong>ggplot2</strong> does not include them, but it does warn that they have been removed (left plot below). To suppress that warning, set <code>na.rm = TRUE</code> (right plot below).</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># Left: Keep NAs and get a warning on the console</span></a>
 <a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">ggplot</span>(unusual_only, <span class="kw">aes</span>(dbh)) <span class="op">+</span><span class="st"> </span></a>
@@ -607,13 +607,13 @@
 <a class="sourceLine" id="cb37-8" data-line-number="8">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(small_dataset, <span class="kw">aes</span>(sp, dbh))</a>
 <a class="sourceLine" id="cb37-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb37-10" data-line-number="10">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 77 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">#&gt; Warning: Removed 83 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>()</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 77 rows containing missing values (geom_point).</span></a></code></pre></div>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 83 rows containing missing values (geom_point).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span>ggbeeswarm<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggbeeswarm/topics/geom_quasirandom">geom_quasirandom</a></span>()</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 77 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="co">#&gt; Warning: Removed 83 rows containing missing values (position_quasirandom).</span></a></code></pre></div>
 <p><img src="eda_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
