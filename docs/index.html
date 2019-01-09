@@ -239,10 +239,10 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages --------------------------------------------- fgeo 0.0.0.9002 --</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9002 --</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ----------------------------------------------------- fgeo_conflicts() --</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; v fgeo.plot    0.0.0.9402     v fgeo.x       1.0.0</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ------------------------------------------------------- fgeo_conflicts() --</span></a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <div id="explore-fgeo" class="section level3">
 <h3 class="hasAnchor">
@@ -351,10 +351,10 @@
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">(files &lt;-<span class="st"> </span><span class="kw">path_file</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(censuses)))</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; tree5.RData tree6.RData</span></a>
 <a class="sourceLine" id="cb9-3" data-line-number="3">(folder &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/tempfile">tempdir</a></span>())</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpmYbUEu"</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpIhf9dh"</span></a>
 <a class="sourceLine" id="cb9-5" data-line-number="5">(paths &lt;-<span class="st"> </span><span class="kw">path</span>(folder, files))</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpmYbUEu/tree5.RData</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpmYbUEu/tree6.RData</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpIhf9dh/tree5.RData</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpIhf9dh/tree6.RData</span></a>
 <a class="sourceLine" id="cb9-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb9-9" data-line-number="9"><span class="kw">walk2</span>(censuses, paths, <span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/save">save</a></span>(.x, <span class="dt">file =</span> .y))</a>
 <a class="sourceLine" id="cb9-10" data-line-number="10"></a>
