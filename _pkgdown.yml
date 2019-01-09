@@ -1,6 +1,8 @@
 navbar:
   type: default
   left:
+  - text: "Reference"
+    href: articles/siteonly/reference.html
   - text: "Tutorials"
     menu:
     - text: "Visualization basics"
@@ -13,8 +15,6 @@ navbar:
       href: https://fgeocomm.shinyapps.io/transform-isolating/
     - text: "Exploratory data analysis"
       href: articles/siteonly/eda.html
-  - text: "Reference"
-    href: articles/siteonly/reference.html
   right:
   - text: "Community"
     menu:
