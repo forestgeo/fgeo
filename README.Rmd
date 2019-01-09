@@ -340,8 +340,6 @@ as_tibble(result)
 summary(result)
 ```
 
-[Get started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
-
 ## Related projects
 
 Additional packages maintained by ForestGEO but not included in __fgeo__:

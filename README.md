@@ -145,10 +145,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9002 --
 #> v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005
-#> v fgeo.plot    0.0.0.9402     v fgeo.x       0.0.0.9000
-#> -- Conflicts ------------------------------------- fgeo_conflicts() --
+#> v fgeo.plot    0.0.0.9402     v fgeo.x       1.0.0
+#> -- Conflicts ------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -210,7 +210,7 @@ read_vft(vft_file)
 
 #### Importing multiple censuses from a directory into a list
 
-(This and the following sections don’t use **fgeo** because other
+(This and the following section don’t use **fgeo** because other
 packages already do this well.)
 
 Combine `fs::dir_ls()` with `purrr::map()` to import multiple censuses
@@ -276,10 +276,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpodZVTI"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpuuGjCq"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpodZVTI/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpodZVTI/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpuuGjCq/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpuuGjCq/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
@@ -527,9 +527,6 @@ summary(result)
 #> 10 ANDINE 2       neutral    
 #> # ... with 282 more rows
 ```
-
-[Get
-started](https://forestgeo.github.io/fgeo/articles/fgeo.html#get-started)
 
 ## Related projects
 

@@ -105,7 +105,7 @@ fgeo_reference_concept("demography functions")
 fgeo_reference_concept("habitat functions")
 ```
 
-### Miscellaneous tools
+### Import and manipulate ForestGEO data
 
 #### Import ForestGEO data
 
