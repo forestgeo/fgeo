@@ -102,7 +102,7 @@ Remotes:
     forestgeo/fgeo.analyze,
     forestgeo/fgeo.plot,
     forestgeo/fgeo.tool,
-    forestgeo/fgeo.x
+    forestgeo/fgeo.x@*release
 Encoding: UTF-8
 Language: en-US
 LazyData: true
