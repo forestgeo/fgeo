@@ -100,7 +100,7 @@ Suggests:
     testthat
 Remotes: 
     forestgeo/fgeo.analyze@*release,
-    forestgeo/fgeo.plot,
+    forestgeo/fgeo.plot@*release,
     forestgeo/fgeo.tool@*release,
     forestgeo/fgeo.x@*release
 Encoding: UTF-8
