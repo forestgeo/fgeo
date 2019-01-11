@@ -1,6 +1,6 @@
 Package: fgeo
 Title: Analyze Forest Diversity and Dynamics
-Version: 0.0.0.9002
+Version: 1.0.0
 Authors@R: 
     c(person(given = "Mauro",
              family = "Lepore",
@@ -69,9 +69,11 @@ Authors@R:
       person(given = "CTFS-ForestGEO",
              role = c("cph", "fnd"),
              email = "ForestGEO@si.edu"))
-Description: A tool to manipulate and visualize ForestGEO
-    datasets, and to analyze the abundance, demography, and habitats of
-    forest trees (<http://www.forestgeo.si.edu/>).
+Description: Install, load, and access the documentation of
+    multiple packages to analyze forest diversity and dynamics. 'fgeo'
+    allows you to manipulate and plot ForestGEO data, and to do common
+    analyses including abundance, demography, and species-habitats
+    associations (<http://www.forestgeo.si.edu/>).
 License: GPL-3
 URL: http://forestgeo.github.io/fgeo,
     https://github.com/forestgeo/fgeo

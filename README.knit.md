@@ -5,14 +5,7 @@ editor_options:
 ---
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  fig.show = "hold",
-  comment = "#>",
-  fig.path = "man/figures/README-"
-)
-```
+
 
 # <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analyze forest diversity and dynamics
 
@@ -21,24 +14,7 @@ knitr::opts_chunk$set(
 [![Coverage status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](https://codecov.io/github/forestgeo/fgeo?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-```{r, echo=FALSE}
-# Creates a functional link when used with DT table.
-fgeo_link <- function(package, topic = NULL) {
-  end <- glue::glue(">{package}")
-  if (!is.null(topic)) {end <- glue::glue("/reference/>{topic}")}
-  glue::glue("<a href=https://forestgeo.github.io/{package}{end}</a>")
-}
 
-link_core <- function(pattern) {
-  core <- fgeo_to_attach()()
-  fgeo_link(core[grepl(pattern, core)])
-}
-
-analyze <- "analyze"
-visualize <- "map"
-manipulate <- "tool"
-datasets <- "x"
-```
 
 __fgeo__ helps you to install, load, and access the documentation of multiple packages to analyze forest diversity and dynamics. it allows you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common analyses including abundance, demography, and species-habitats associations.
 
@@ -154,8 +130,14 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ## Example
 
-```{r example}
+
+```r
 library(fgeo)
+#> -- Attaching packages -------------------------------------------- fgeo 0.0.0.9002 --
+#> v fgeo.analyze 1.0.0     v fgeo.tool    1.0.0
+#> v fgeo.plot    1.0.0     v fgeo.x       1.0.0
+#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
+#> x fgeo.tool::filter() masks stats::filter()
 ```
 
 ### Explore __fgeo__
@@ -175,18 +157,44 @@ if (interactive()) {
 
 `example_path()` allows you to access datasets stored in your R libraries.
 
-```{r}
+
+```r
 example_path()
+#>  [1] "csv"           "mixed_files"   "rdata"         "rdata_one"    
+#>  [5] "rds"           "taxa.csv"      "tsv"           "vft_4quad.csv"
+#>  [9] "view"          "weird"         "xl"
 
 (vft_file <- example_path("view/vft_4quad.csv"))
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/view/vft_4quad.csv"
 ```
 
 #### `read_<table>()`
 
 `read_vft()` and `read_taxa()` import a ViewFullTable and ViewTaxonomy from .tsv or .csv files.
 
-```{r}
+
+```r
 read_vft(vft_file)
+#> # A tibble: 500 x 32
+#>     DBHID PlotName PlotID Family Genus SpeciesName Mnemonic Subspecies
+#>     <int> <chr>     <int> <chr>  <chr> <chr>       <chr>    <chr>     
+#>  1 385164 luquillo      1 Rubia~ Psyc~ brachiata   PSYBRA   <NA>      
+#>  2 385261 luquillo      1 Urtic~ Cecr~ schreberia~ CECSCH   <NA>      
+#>  3 384600 luquillo      1 Rubia~ Psyc~ brachiata   PSYBRA   <NA>      
+#>  4 608789 luquillo      1 Rubia~ Psyc~ berteroana  PSYBER   <NA>      
+#>  5 388579 luquillo      1 Areca~ Pres~ acuminata   PREMON   <NA>      
+#>  6 384626 luquillo      1 Arali~ Sche~ morototoni  SCHMOR   <NA>      
+#>  7 410958 luquillo      1 Rubia~ Psyc~ brachiata   PSYBRA   <NA>      
+#>  8 385102 luquillo      1 Piper~ Piper glabrescens PIPGLA   <NA>      
+#>  9 353163 luquillo      1 Areca~ Pres~ acuminata   PREMON   <NA>      
+#> 10 481018 luquillo      1 Salic~ Case~ arborea     CASARB   <NA>      
+#> # ... with 490 more rows, and 24 more variables: SpeciesID <int>,
+#> #   SubspeciesID <chr>, QuadratName <chr>, QuadratID <int>, PX <dbl>,
+#> #   PY <dbl>, QX <dbl>, QY <dbl>, TreeID <int>, Tag <chr>, StemID <int>,
+#> #   StemNumber <int>, StemTag <int>, PrimaryStem <chr>, CensusID <int>,
+#> #   PlotCensusNumber <int>, DBH <dbl>, HOM <dbl>, ExactDate <date>,
+#> #   Date <int>, ListOfTSM <chr>, HighHOM <int>, LargeStem <chr>,
+#> #   Status <chr>
 ```
 
 #### Importing multiple censuses from a directory into a list
@@ -198,31 +206,67 @@ Combine `fs::dir_ls()` with `purrr::map()` to import multiple censuses from a di
 * Use `fs::dir_ls()` to create the paths to the files you want to import.
 * Use `purrr::map()` to iterate over each path and apply a custom function to import them.
 
-```{r}
+
+```r
 library(purrr)
+#> 
+#> Attaching package: 'purrr'
+#> The following object is masked from 'package:fgeo.tool':
+#> 
+#>     %||%
 library(fs)
 
 (rdata_files <- example_path("rdata"))
+#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata"
 (paths <- fs::dir_ls(rdata_files))
+#> C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree5.RData
+#> C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree6.RData
 
 # The formula syntax `~ fun(.x)` is a shortcut for `function(.x) fun(.x)`
 censuses <- map(paths, ~ get(load(.x)))
 censuses
+#> $`C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree5.RData`
+#> # A tibble: 3 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    439947        5
+#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    466597        5
+#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    466623        5
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
+#> 
+#> $`C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree6.RData`
+#> # A tibble: 3 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
+#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
+#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
 ```
 
 #### Exporting multiple censuses from a list into a directory
 
 * Use `purrr::walk2()` to map over two things in parallel -- each census to each path to a file. It is similar to `purrr::map2()` and `base::Map()` but prints nothing to the console.
 
-```{r}
+
+```r
 (files <- path_file(names(censuses)))
+#> tree5.RData tree6.RData
 (folder <- tempdir())
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpkzNEjv"
 (paths <- path(folder, files))
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpkzNEjv/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpkzNEjv/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
 # Confirm that the folder contains the files we just saved
 path_file(dir_ls(folder, regexp = "tree"))
+#> tree5.RData tree6.RData
 ```
 
 #### `pick_<what>()` and `drop_<what>()`
@@ -235,142 +279,48 @@ __fgeo__ is pipe-friendly. You may not use pipes but often they make code easier
 
 `pick_dbh_under()`, `drop_status()` and friends pick and drop rows from a ForestGEO ViewFullTable or census table.
 
-```{r}
+
+```r
 (census <- censuses[[2]])
+#> # A tibble: 3 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
+#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
+#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
 
 census %>% 
   pick_dbh_under(100)
+#> # A tibble: 2 x 19
+#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    578696        6
+#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    617049        6
+#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
+#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
+#> #   status <chr>, date <dbl>
 ```
 
 `pick_main_stem()` and `pick_main_stemid()` pick the main stem or main stemid(s) of each tree in each census.
 
-```{r}
-stem <- download_data("luquillo_stem6_random")
-
-dim(stem)
-dim(pick_main_stem(stem))
-```
-
-#### `add_<column(s)>()`
-
-`add_status_tree()`adds the column `status_tree` based on the status of all stems of each tree.
-
-```{r}
-stem %>% 
-  select(CensusID, treeID, stemID, status) %>% 
-  add_status_tree()
-```
-
-`add_index()` and friends add columns to a ForestGEO-like dataframe.
-
-```{r}
-stem %>% 
-  select(gx, gy) %>% 
-  add_index()
-```
-
-### Plot data
-
-For simplicity, we will focus on only a few species.
-
-```{r}
-stem_2sp <- stem %>% 
-  filter(sp %in% c("PREMON", "CASARB"))
-```
-
-`autoplot()` and friends produce different output depending on the class of input. You can create different input classes, for example, with `sp()` and `sp_elev()`:
-
-* Use `sp(census)` to plot the column `sp` of a `census` dataset -- i.e. to plot species distribution.
-
-```{r}
-class(sp(stem_2sp))
-
-autoplot(sp(stem_2sp))
-```
-
-* Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev` of a `census` and `elevation` dataset, respectively -- i.e. to plot species distribution and topography.
-
-```{r}
-data("elevation")
-class(sp_elev(stem_2sp, elevation))
-
-autoplot(sp_elev(stem_2sp, elevation))
-```
-
-### Analyze
-
-#### Abundance
-
-`abundance()` and `basal_area()` calculate abundance and basal area, optionally by groups.
-
-```{r}
-abundance(
-  pick_main_stem(census)
-)
-
-by_species <- group_by(census, sp)
-
-basal_area(by_species)
-```
-
-#### Demography
-
-`recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate recruitment, mortality, and growth. They all output a list. `as_tibble()` converts the output from a list to a more convenient dataframe.
-
-```{r}
-data("tree5")
-
-as_tibble(
-  mortality_ctfs(tree5, tree6)
-)
-```
-
-#### Species-habitats association
-
-`tt_test()` runs a torus translation test to determine habitat associations of tree species. `as_tibble()` converts the output from a list to a more convenient dataframe. `summary()` helps you to interpret the result.
-
-```{r}
-# This analysis makes sense only for tree tables
-tree <- download_data("luquillo_tree5_random")
-data("habitat")
-result <- tt_test(tree, habitat)
-
-as_tibble(result)
-
-summary(result)
-```
-
-## Related projects
-
-Additional packages maintained by ForestGEO but not included in __fgeo__:
-
-* [__fgeo.data__](https://forestgeo.github.io/fgeo.data/): Open datasets of ForestGEO.
-* [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/): Analyze soils.
 
 
 
-Other packages not maintained by ForestGEO:
-
-* [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The original package of CTFS functions. No longer supported by ForestGEO.
-* [__BIOMASS__](https://CRAN.R-project.org/package=BIOMASS): An R package to estimate above-ground biomass in tropical forests.
 
 
 
-## R code from recent publications by ForestGEO partners
 
-Data have been made available as required by the journal to enable reproduction of the results presented in the paper. Please do not share these data without permission of the ForestGEO plot Principal Investigators (PIs). If you wish to publish papers based on these data, you are also required to get permission from the PIs of the corresponding ForestGEO plots.
 
-* [Soil drivers of local-scale tree growth in a lowland tropical forest (Zemunik et al., 2018).](https://github.com/SoilLabAtSTRI/Soil-drivers-of-tree-growth)
-* [Plant diversity increases with the strength of negative density dependence at the global scale (LaManna et al., 2018)](https://github.com/forestgeo/LaManna_et_al_Science)
-    * Response #1: LaManna et al. 2018. Response to Comment on "Plant diversity increases with the strength of negative density dependence at the global scale" Science Vol. 360, Issue 6391, eaar3824. DOI: 10.1126/science.aar3824
-    * Response #2: LaManna et al. 2018. Response to Comment on "Plant diversity increases with the strength of negative density dependence at the global scale". Science Vol. 360, Issue 6391, eaar5245. DOI: 10.1126/science.aar5245
 
-## Information
 
-* [Getting help](SUPPORT.md).
-* [Contributing](CONTRIBUTING.md).
-* [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Acknowledgments
 
-Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are many other people that deserve special acknowledgment; I thank them in the documentation and home page of each individual package that make up the __fgeo__ development.
+
+
+
+
+
+
