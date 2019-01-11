@@ -57,6 +57,15 @@ __Expected R environment__
 
 __Option 1: Install directly__
 
+Install the latest GitHub release of **fgeo** with:
+
+```
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo@*release")
+```
+
+Or install the development version of **fgeo** with:
+
 ```R
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo", upgrade = "never")
@@ -69,8 +78,6 @@ __Option 2: Install via [__fgeo.install__](https://github.com/forestgeo/fgeo.ins
 ```R
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo.install")
-
-# If needed, installs dependencies from CRAN and fgeo packages from GitHub
 fgeo.install::install_fgeo()
 ```
 
