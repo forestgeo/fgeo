@@ -99,9 +99,9 @@ Suggests:
     spelling,
     testthat
 Remotes: 
-    forestgeo/fgeo.analyze,
+    forestgeo/fgeo.analyze@*release,
     forestgeo/fgeo.plot,
-    forestgeo/fgeo.tool,
+    forestgeo/fgeo.tool@*release,
     forestgeo/fgeo.x@*release
 Encoding: UTF-8
 Language: en-US
