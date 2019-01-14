@@ -154,30 +154,23 @@
 <h3 class="hasAnchor">
 <a href="#access-and-manipulate-data" class="anchor"></a>Access and manipulate data</h3>
 <p><strong>fgeo</strong> comes with small datasets for examples. When you use <strong>fgeo</strong> you can also use many datasets directly.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; -- Attaching packages ----------------------------------------------- fgeo 1.0.0.9000 --</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; v fgeo.analyze 1.0.0.9000     v fgeo.tool    1.0.0.9000</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; v fgeo.plot    1.0.0.9000     v fgeo.x       1.0.0.9000</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; -- Conflicts ------------------------------------------------------- fgeo_conflicts() --</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; x fgeo.tool::filter() masks stats::filter()</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">tree5</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt; # A tibble: 30 x 19</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt;  1   7624 160987 1089~ 175325  TRIP~ 722     139.  425.     486675        5</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt;  2   8055  10036 1094~ 109482  CECS~ 522      94.8 424.     468874        5</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt;  3  19930 117849 1234~ 165576  CASA~ 425      61.3 496.     471979        5</span></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt;  4  23746  29677 14473 14473   PREM~ 617     100.  328.     442571        5</span></a>
-<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt;  5  31702  39793 22889 22889   SLOB~ 304      53.8  73.8    447307        5</span></a>
-<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt;  6  35355  44026 27538 27538   SLOB~ 1106    203.  110.     449169        5</span></a>
-<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt;  7  35891  44634 282   282     DACE~ 901     172.   14.7    434266        5</span></a>
-<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#&gt;  8  39705  48888 33371 33370   CASS~ 1010    184.  194.     451067        5</span></a>
-<a class="sourceLine" id="cb1-20" data-line-number="20"><span class="co">#&gt;  9  50184  60798 5830  5830    MATD~ 1007    191.  132.     437645        5</span></a>
-<a class="sourceLine" id="cb1-21" data-line-number="21"><span class="co">#&gt; 10  57380 155867 66962 171649  SLOB~ 1414    274.  279.     459427        5</span></a>
-<a class="sourceLine" id="cb1-22" data-line-number="22"><span class="co">#&gt; # ... with 20 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb1-23" data-line-number="23"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb1-24" data-line-number="24"><span class="co">#&gt; #   nostems &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">tree5</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; # A tibble: 30 x 19</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt;    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt;     &lt;int&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt;  1   7624 160987 1089~ 175325  TRIP~ 722     139.  425.     486675        5</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt;  2   8055  10036 1094~ 109482  CECS~ 522      94.8 424.     468874        5</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt;  3  19930 117849 1234~ 165576  CASA~ 425      61.3 496.     471979        5</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt;  4  23746  29677 14473 14473   PREM~ 617     100.  328.     442571        5</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#&gt;  5  31702  39793 22889 22889   SLOB~ 304      53.8  73.8    447307        5</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt;  6  35355  44026 27538 27538   SLOB~ 1106    203.  110.     449169        5</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co">#&gt;  7  35891  44634 282   282     DACE~ 901     172.   14.7    434266        5</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co">#&gt;  8  39705  48888 33371 33370   CASS~ 1010    184.  194.     451067        5</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt;  9  50184  60798 5830  5830    MATD~ 1007    191.  132.     437645        5</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="co">#&gt; 10  57380 155867 66962 171649  SLOB~ 1414    274.  279.     459427        5</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="co">#&gt; # ... with 20 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; #   nostems &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Other datasets are stored in R’s library. You can access them with <a href="https://forestgeo.github.io/fgeo.x/reference/example_path"><code>example_path()</code></a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">example_path</span>(<span class="st">"rdata"</span>)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata"</span></a>
@@ -308,6 +301,7 @@
 <a class="sourceLine" id="cb10-20" data-line-number="20"><span class="co">#&gt;  9 ANDINE 1       neutral    </span></a>
 <a class="sourceLine" id="cb10-21" data-line-number="21"><span class="co">#&gt; 10 ANDINE 2       neutral    </span></a>
 <a class="sourceLine" id="cb10-22" data-line-number="22"><span class="co">#&gt; # ... with 282 more rows</span></a></code></pre></div>
+<p><a href="https://forestgeo.github.io/fgeo/">Get started with <strong>fgeo</strong></a></p>
 </div>
   </div>
 
