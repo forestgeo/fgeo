@@ -5,8 +5,8 @@
 #' as the first argument to [fgeo_help()].
 #'
 #' @param pattern A character string to be matched in the name, alias or title
-#'   of a topic's documentation. Defaults to matching anything, which retrieves
-#'   all the documentation of __fgeo__ packages.
+#'   of a topic's documentation. Defaults to matching everything, which
+#'   retrieves all the documentation of __fgeo__ packages.
 #' @param package A character string giving the name of one or more
 #'   packages to limit the search, or `NULL` to search all fgeo packages.
 #' @inheritParams utils::help.search
