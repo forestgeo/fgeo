@@ -6,7 +6,11 @@
 
 ## R CMD check results
 
-xxxxxxx
+WARNING
+* New submission
+* Unknown, possibly mis-spelled, fields in DESCRIPTION: 'Remotes'
+* Strong dependencies not in mainstream repositories:
+  fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
 
 ## Downstream dependencies
 
