@@ -1,7 +1,7 @@
 # fgeo (development version)
 
-* Work in progress.
+* Prepare the first public release
 
-# fgeo 1.0.0 (GitHub release)
+# fgeo 1.0.0 (internal GitHub release)
 
-* Initial GitHub release. For CRAN, fgeo.x, fgeo.tool, fgeo.analyze, and fgeo.plot must be released first.
+* Internal GitHub release.
