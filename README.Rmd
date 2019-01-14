@@ -40,7 +40,7 @@ manipulate <- "tool"
 datasets <- "x"
 ```
 
-__fgeo__ install and loads multiple R packages to analyze forest diversity and dynamics. It allows you to access, manipulate, and plot [ForestGEO](https://forestgeo.si.edu/) datasets, and to do common analyses including abundance, demography, and species-habitats associations.
+__fgeo__ helps you to install, load, and access the documentation of multiple packages to analyze forest diversity and dynamics. It allows you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common analyses including abundance, demography, and species-habitats associations.
 
 * [Search functions and datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
 * [Try __fgeo__ online](https://bit.ly/fgeo-demo)
@@ -55,23 +55,18 @@ __Expected R environment__
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-__Option 1: Install directly__
+Install the latest stable version of **fgeo** with:
+
+```
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo@*release")
+```
+
+Or install the development version of **fgeo** with:
 
 ```R
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo", upgrade = "never")
-```
-
-(If you reach GitHub's rate limit see [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
-
-__Option 2: Install via [__fgeo.install__](https://github.com/forestgeo/fgeo.install#-fgeoinstall)__
-
-```R
-install.packages("devtools")
-devtools::install_github("forestgeo/fgeo.install")
-
-# If needed, installs dependencies from CRAN and fgeo packages from GitHub
-fgeo.install::install_fgeo()
 ```
 
 ---
@@ -79,9 +74,19 @@ fgeo.install::install_fgeo()
 * To upgrade packages see `?devtools::update_packages()`
 * To remove packages see `?remove.packages()`
 
-
-
 <details> <summary><strong>Tips to avoid or fix common installation problems</strong></summary>
+
+#### Alternative installation
+
+If you failed to install __fgeo__ try this instead:
+
+```R
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo.install")
+fgeo.install::install_fgeo()
+```
+
+If this still fails, follow the advice below and then try to install __fgeo__ again.
 
 #### Update R, RStudio, and R packages
 
@@ -108,6 +113,10 @@ Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
 
 
 #### Increase the rate limit to install from GitHub
+
+If you reach GitHub's rate limit see [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
+
+If that was unclear continue reading. This describes the same process but in more detail.
 
 * Ensure you have an account on GitHub (https://github.com/).
 * Generate a GitHub token named exactly `GITHUB_PAT` by running `usethis::browse_github_pat()` in R.

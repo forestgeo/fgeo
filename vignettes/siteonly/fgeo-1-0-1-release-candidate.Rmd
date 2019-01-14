@@ -1,7 +1,5 @@
 ---
-title: "fgeo 1.0.0 release candidate"
-author: Mauro Lepore
-date: "`r Sys.Date()`"
+title: "fgeo 1.0.1 release candidate"
 output: rmarkdown::html_vignette
 editor_options: 
   chunk_output_type: console
@@ -20,9 +18,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-[__fgeo__](https://forestgeo.github.io/fgeo/index.html) is a collection of R packages to analyze forest diversity and dynamics. Its first release is planned for February 2019. Before that, we would love you to [give us some feedback, and report issues](https://github.com/forestgeo/fgeo/issues).
+[__fgeo__](https://forestgeo.github.io/fgeo/index.html) is a collection of R packages to analyze forest diversity and dynamics. Its first public release is planned for early 2019. Before that, we would love you to [give us some feedback, and report issues](https://github.com/forestgeo/fgeo/issues).
 
-This post highlights the major features. For more details please see the [Example](https://forestgeo.github.io/fgeo/index.html#example) and [Reference](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html) sections.
+This post highlights the main features. For more details please see the [Example](https://forestgeo.github.io/fgeo/index.html#example) and [Reference](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html) sections.
 
 ### Explore fgeo
 
