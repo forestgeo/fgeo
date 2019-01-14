@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
   fig.width = 9.5, 
   fig.asp = 0.7
 )
+
+library(fgeo)
 ```
 
 [__fgeo__](https://forestgeo.github.io/fgeo/index.html) is a collection of R packages to analyze forest diversity and dynamics. Its first public release is planned for early 2019. Before that, we would love you to [give us some feedback, and report issues](https://github.com/forestgeo/fgeo/issues).
@@ -31,8 +33,6 @@ Use [`fgeo_help()`](https://forestgeo.github.io/fgeo/reference/fgeo_help) to sea
 __fgeo__ comes with small datasets for examples. When you use __fgeo__ you can also use many datasets directly.
 
 ```{r}
-library(fgeo)
-
 tree5
 ```
 
@@ -119,3 +119,4 @@ summary(
 )
 ```
 
+[Get started with __fgeo__](https://forestgeo.github.io/fgeo/)
