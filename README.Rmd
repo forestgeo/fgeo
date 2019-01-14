@@ -40,7 +40,7 @@ manipulate <- "tool"
 datasets <- "x"
 ```
 
-__fgeo__ helps you to install, load, and access the documentation of multiple packages to analyze forest diversity and dynamics. it allows you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common analyses including abundance, demography, and species-habitats associations.
+__fgeo__ helps you to install, load, and access the documentation of multiple packages to analyze forest diversity and dynamics. It allows you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common analyses including abundance, demography, and species-habitats associations.
 
 * [Search functions and datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
 * [Try __fgeo__ online](https://bit.ly/fgeo-demo)
@@ -55,7 +55,7 @@ __Expected R environment__
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-Install the latest GitHub release of **fgeo** with:
+Install the latest stable version of **fgeo** with:
 
 ```
 install.packages("devtools")

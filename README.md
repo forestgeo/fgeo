@@ -11,11 +11,11 @@ status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](htt
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
-**fgeo** install and loads multiple R packages to analyze forest
-diversity and dynamics. It allows you to access, manipulate, and plot
-[ForestGEO](https://forestgeo.si.edu/) datasets, and to do common
-analyses including abundance, demography, and species-habitats
-associations.
+**fgeo** helps you to install, load, and access the documentation of
+multiple packages to analyze forest diversity and dynamics. It allows
+you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/)
+data, and to do common analyses including abundance, demography, and
+species-habitats associations.
 
   - [Search functions and
     datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
@@ -32,25 +32,16 @@ associations.
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-**Option 1: Install directly**
+Install the latest stable version of **fgeo** with:
+
+    install.packages("devtools")
+    devtools::install_github("forestgeo/fgeo@*release")
+
+Or install the development version of **fgeo** with:
 
 ``` r
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo", upgrade = "never")
-```
-
-(If you reach GitHub’s rate limit see
-[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html)).
-
-**Option 2: Install via
-[**fgeo.install**](https://github.com/forestgeo/fgeo.install#-fgeoinstall)**
-
-``` r
-install.packages("devtools")
-devtools::install_github("forestgeo/fgeo.install")
-
-# If needed, installs dependencies from CRAN and fgeo packages from GitHub
-fgeo.install::install_fgeo()
 ```
 
 -----
@@ -62,6 +53,20 @@ fgeo.install::install_fgeo()
 
 <summary><strong>Tips to avoid or fix common installation
 problems</strong></summary>
+
+#### Alternative installation
+
+If you failed to install **fgeo** try this instead:
+
+``` r
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo.install")
+fgeo.install::install_fgeo()
+```
+
+If this still fails, follow the advice below and then try to install
+**fgeo**
+    again.
 
 #### Update R, RStudio, and R packages
 
@@ -89,6 +94,12 @@ Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
 Restart R*.
 
 #### Increase the rate limit to install from GitHub
+
+If you reach GitHub’s rate limit see
+[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
+
+If that was unclear continue reading. This describes the same process
+but in more detail.
 
   - Ensure you have an account on GitHub (<https://github.com/>).
   - Generate a GitHub token named exactly `GITHUB_PAT` by running
@@ -146,8 +157,8 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 ``` r
 library(fgeo)
 #> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9002 --
-#> v fgeo.analyze 0.0.0.9003     v fgeo.tool    0.0.0.9005
-#> v fgeo.plot    0.0.0.9402     v fgeo.x       1.0.0
+#> v fgeo.analyze 1.0.0          v fgeo.tool    1.0.0     
+#> v fgeo.plot    1.0.0.9000     v fgeo.x       1.0.0.9000
 #> -- Conflicts ------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
@@ -276,10 +287,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpuuGjCq"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpU3uA3r"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpuuGjCq/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpuuGjCq/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpU3uA3r/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpU3uA3r/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
