@@ -55,14 +55,14 @@ __Expected R environment__
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-Install the latest stable version of **fgeo** with:
+Install the latest stable version of all **fgeo** packages with:
 
 ```
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
 ```
 
-Or install the development version of **fgeo** with:
+Or install the development version of all **fgeo** packages with:
 
 ```R
 install.packages("devtools")
