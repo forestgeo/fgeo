@@ -59,7 +59,7 @@ Install the latest stable version of **fgeo** with:
 
 ```
 install.packages("devtools")
-devtools::install_github("forestgeo/fgeo@*release")
+devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
 ```
 
 Or install the development version of **fgeo** with:
@@ -71,7 +71,7 @@ devtools::install_github("forestgeo/fgeo", upgrade = "never")
 
 ---
 
-* To upgrade packages see `?devtools::update_packages()`
+* To update packages see `?update.packages()` and `?devtools::update_packages()`
 * To remove packages see `?remove.packages()`
 
 <details> <summary><strong>Tips to avoid or fix common installation problems</strong></summary>
