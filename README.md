@@ -32,12 +32,12 @@ species-habitats associations.
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-Install the latest stable version of **fgeo** with:
+Install the latest stable version of all **fgeo** packages with:
 
     install.packages("devtools")
-    devtools::install_github("forestgeo/fgeo@*release")
+    devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
 
-Or install the development version of **fgeo** with:
+Or install the development version of all **fgeo** packages with:
 
 ``` r
 install.packages("devtools")
@@ -46,7 +46,8 @@ devtools::install_github("forestgeo/fgeo", upgrade = "never")
 
 -----
 
-  - To upgrade packages see `?devtools::update_packages()`
+  - To update packages see `?update.packages()` and
+    `?devtools::update_packages()`
   - To remove packages see `?remove.packages()`
 
 <details>
@@ -156,10 +157,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------------------------- fgeo 0.0.0.9002 --
+#> -- Attaching packages -------------------------------------------- fgeo 1.0.0.9000 --
 #> v fgeo.analyze 1.0.0          v fgeo.tool    1.0.0     
-#> v fgeo.plot    1.0.0.9000     v fgeo.x       1.0.0.9000
-#> -- Conflicts ------------------------------------------------------- fgeo_conflicts() --
+#> v fgeo.plot    1.0.0          v fgeo.x       1.0.0.9000
+#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -187,7 +188,7 @@ example_path()
 #>  [9] "view"          "weird"         "xl"
 
 (vft_file <- example_path("view/vft_4quad.csv"))
-#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/view/vft_4quad.csv"
+#> [1] "C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/view/vft_4quad.csv"
 ```
 
 #### `read_<table>()`
@@ -244,15 +245,15 @@ library(purrr)
 library(fs)
 
 (rdata_files <- example_path("rdata"))
-#> [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata"
+#> [1] "C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata"
 (paths <- fs::dir_ls(rdata_files))
-#> C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree5.RData
-#> C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree6.RData
+#> C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree5.RData
+#> C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree6.RData
 
 # The formula syntax `~ fun(.x)` is a shortcut for `function(.x) fun(.x)`
 censuses <- map(paths, ~ get(load(.x)))
 censuses
-#> $`C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree5.RData`
+#> $`C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree5.RData`
 #> # A tibble: 3 x 19
 #>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
 #>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
@@ -263,7 +264,7 @@ censuses
 #> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
 #> #   status <chr>, date <dbl>
 #> 
-#> $`C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata/tree6.RData`
+#> $`C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree6.RData`
 #> # A tibble: 3 x 19
 #>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
 #>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
@@ -287,10 +288,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpU3uA3r"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmpi0XYTD"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpU3uA3r/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpU3uA3r/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpi0XYTD/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpi0XYTD/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
@@ -591,7 +592,6 @@ corresponding ForestGEO plots.
 
 Thanks to all partners of ForestGEO for sharing their ideas and code.
 For feedback on **fgeo**, special thanks to Gabriel Arellano, Stuart
-Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. There are
-many other people that deserve special acknowledgment; I thank them in
-the documentation and home page of each individual package that make up
-the **fgeo** development.
+Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. For all other
+help, I thank contributors in the the documentation of the features they
+helped with.
