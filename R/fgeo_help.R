@@ -22,7 +22,7 @@
 #'   fgeo_help()
 #' }
 #'
-#' as_tibble(fgeo_help()$matches)
+#' tibble::as_tibble(fgeo_help()$matches)
 #'
 #' if (interactive()) {
 #'   fgeo_help("stem", package = "fgeo.x")
