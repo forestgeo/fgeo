@@ -101,10 +101,10 @@ Suggests:
     spelling,
     testthat
 Remotes: 
-    forestgeo/fgeo.analyze@*release,
-    forestgeo/fgeo.plot@*release,
-    forestgeo/fgeo.tool@*release,
-    forestgeo/fgeo.x@*release
+    forestgeo/fgeo.analyze,
+    forestgeo/fgeo.plot,
+    forestgeo/fgeo.tool,
+    forestgeo/fgeo.x
 Encoding: UTF-8
 Language: en-US
 LazyData: true
