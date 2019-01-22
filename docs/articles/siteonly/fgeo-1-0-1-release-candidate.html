@@ -156,7 +156,7 @@
 <a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; #   nostems &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Other datasets are stored in R’s library. You can access them with <a href="https://forestgeo.github.io/fgeo.x/reference/example_path"><code>example_path()</code></a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">example_path</span>(<span class="st">"rdata"</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/rdata"</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata"</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list.files">dir</a></span>(<span class="kw">example_path</span>(<span class="st">"rdata"</span>))</a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; [1] "tree5.RData" "tree6.RData"</span></a></code></pre></div>
@@ -180,7 +180,7 @@
 <a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; #   nostems &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Use <a href="https://forestgeo.github.io/fgeo.tool/reference/read_vft"><code>read_vft()</code></a> to read your own ViewFullTable. Compared to <code><a href="https://www.rdocumentation.org/packages/utils/topics/read.table">utils::read.csv()</a></code> it is easier to use and safer.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">(viewfulltable_file &lt;-<span class="st"> </span><span class="kw">example_path</span>(<span class="st">"view/vft_4quad.csv"</span>))</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/R-3.5.2/library/fgeo.x/extdata/view/vft_4quad.csv"</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; [1] "C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/view/vft_4quad.csv"</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">read_vft</span>(viewfulltable_file)</a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; # A tibble: 500 x 32</span></a>
