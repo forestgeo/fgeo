@@ -173,8 +173,8 @@ as the first argument to <code>fgeo_help()</code>.</p>
     <tr>
       <th>pattern</th>
       <td><p>A character string to be matched in the name, alias or title
-of a topic's documentation. Defaults to matching anything, which retrieves
-all the documentation of <strong>fgeo</strong> packages.</p></td>
+of a topic's documentation. Defaults to matching everything, which
+retrieves all the documentation of <strong>fgeo</strong> packages.</p></td>
     </tr>
     <tr>
       <th>package</th>
@@ -210,7 +210,7 @@ has a print method for nicely formatting the results of the query.</p>
   <span class='fu'>fgeo_help</span>()
 }
 
-<span class='fu'>as_tibble</span>(<span class='fu'>fgeo_help</span>()$<span class='no'>matches</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 327 x 9</span><span>
+<span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span>(<span class='fu'>fgeo_help</span>()$<span class='no'>matches</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 327 x 9</span><span>
 #&gt;    Topic   Title       Name    ID    Package LibPath      Type  Field Entry     
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     
 #&gt; </span><span style='color: #555555;'> 1</span><span> abunda~ Abundance ~ abunda~ 1/1   fgeo.a~ C:/Users/Le~ help  alias abundance 
