@@ -57,7 +57,7 @@ __Expected R environment__
 
 Install the latest stable version of all **fgeo** packages with:
 
-```
+```R
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
 ```

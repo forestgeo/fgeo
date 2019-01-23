@@ -34,8 +34,10 @@ species-habitats associations.
 
 Install the latest stable version of all **fgeo** packages with:
 
-    install.packages("devtools")
-    devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
+``` r
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
+```
 
 Or install the development version of all **fgeo** packages with:
 
@@ -158,8 +160,8 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 ``` r
 library(fgeo)
 #> -- Attaching packages -------------------------------------------- fgeo 1.0.0.9000 --
-#> v fgeo.analyze 1.0.0          v fgeo.tool    1.0.0     
-#> v fgeo.plot    1.0.0          v fgeo.x       1.0.0.9000
+#> v fgeo.analyze 1.0.0.9000     v fgeo.tool    1.0.0     
+#> v fgeo.plot    1.0.0.9000     v fgeo.x       1.0.0
 #> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
@@ -288,10 +290,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmpi0XYTD"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpaYl7KQ"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpi0XYTD/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpi0XYTD/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpaYl7KQ/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpaYl7KQ/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
