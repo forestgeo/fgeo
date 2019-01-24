@@ -91,7 +91,6 @@ Imports:
     purrr,
     rlang,
     rstudioapi,
-    tibble,
     utils
 Suggests: 
     covr,
