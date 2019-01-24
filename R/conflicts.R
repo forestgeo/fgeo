@@ -58,14 +58,16 @@ confirm_conflict <- function(packages, name) {
     is.function
   )
 
-  if (length(objs) <= 1)
+  if (length(objs) <= 1) {
     return()
+  }
 
   # Remove identical functions
   objs <- objs[!duplicated(objs)]
   packages <- packages[!duplicated(packages)]
-  if (length(objs) == 1)
+  if (length(objs) == 1) {
     return()
+  }
 
   packages
 }

@@ -5,13 +5,12 @@ expect_sorted_equal <- function(object, expected, ...) {
 }
 
 test_that("is sensitive to `include_self`", {
-
   install_these <- c(
-      "fgeo.x",
-      "fgeo.tool",
-      "fgeo.analyze",
-      "fgeo.plot",
-      "fgeo"
+    "fgeo.x",
+    "fgeo.tool",
+    "fgeo.analyze",
+    "fgeo.plot",
+    "fgeo"
   )
   expect_sorted_equal(fgeo_packages(), install_these)
 
@@ -52,5 +51,4 @@ test_that("warns nonsenseical argument combination", {
     fgeo_dependencies("fgeo", include_self = TRUE, section = "Suggests"),
     "Ignoring"
   )
-
 })

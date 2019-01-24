@@ -5,8 +5,9 @@ core_unloaded <- function() {
 
 fgeo_attach <- function() {
   to_load <- core_unloaded()
-  if (length(to_load) == 0)
+  if (length(to_load) == 0) {
     return(invisible())
+  }
 
   msg(
     cli::rule(

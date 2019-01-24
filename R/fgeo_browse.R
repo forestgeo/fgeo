@@ -22,4 +22,3 @@ fgeo_browse <- fgeo_browse_url("index.html")
 #' @rdname fgeo_browse
 #' @export
 fgeo_browse_reference <- fgeo_browse_url("articles/siteonly/reference.html")
-

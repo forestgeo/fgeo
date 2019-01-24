@@ -21,13 +21,12 @@
 #' if (interactive()) {
 #'   fgeo_help()
 #' }
-#'
+#' 
 #' dplyr::as_tibble(fgeo_help()$matches)
-#'
+#' 
 #' if (interactive()) {
 #'   fgeo_help("stem", package = "fgeo.x")
 #' }
-#'
 #' @family functions to explore fgeo
 #' @export
 fgeo_help <- function(pattern = "", package = NULL, rebuild = TRUE, ...) {
