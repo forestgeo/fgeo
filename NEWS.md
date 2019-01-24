@@ -5,7 +5,7 @@
 # fgeo 1.0.1 (GitHub release)
 
 * Style.
-* Prune dependencies.
+* Tidy dependencies.
 
 # fgeo 1.0.0 (GitHub release)
 
