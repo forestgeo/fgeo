@@ -35,7 +35,7 @@ if (interactive()) {
   fgeo_help()
 }
 
-tibble::as_tibble(fgeo_help()$matches)
+dplyr::as_tibble(fgeo_help()$matches)
 
 if (interactive()) {
   fgeo_help("stem", package = "fgeo.x")
