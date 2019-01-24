@@ -79,13 +79,13 @@ URL: http://forestgeo.github.io/fgeo,
     https://github.com/forestgeo/fgeo
 BugReports: https://github.com/forestgeo/fgeo/issues
 Imports: 
+    fgeo.x (>= 1.0.1),
+    fgeo.tool (>= 1.0.1),
+    fgeo.analyze (>= 1.0.1),
+    fgeo.plot (>= 1.0.1),
     cli,
     crayon,
     dplyr,
-    fgeo.analyze,
-    fgeo.plot,
-    fgeo.tool,
-    fgeo.x,
     glue,
     magrittr,
     purrr,
@@ -100,10 +100,10 @@ Suggests:
     spelling,
     testthat
 Remotes: 
-    forestgeo/fgeo.analyze,
-    forestgeo/fgeo.plot,
-    forestgeo/fgeo.tool,
-    forestgeo/fgeo.x
+    forestgeo/fgeo.x@*release,
+    forestgeo/fgeo.tool@*release,
+    forestgeo/fgeo.analyze@*release,
+    forestgeo/fgeo.plot@*release
 Encoding: UTF-8
 Language: en-US
 LazyData: true
