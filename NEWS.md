@@ -1,7 +1,12 @@
 # fgeo (development version)
 
-* Prepare the first public release
+* Work in progress
 
-# fgeo 1.0.0 (internal GitHub release)
+# fgeo 1.0.1 (GitHub release)
+
+* Style.
+* Prune dependencies.
+
+# fgeo 1.0.0 (GitHub release)
 
 * Internal GitHub release.
