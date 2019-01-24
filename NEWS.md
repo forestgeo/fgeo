@@ -1,6 +1,6 @@
 # fgeo (development version)
 
-* Work in progress
+* Work in progress.
 
 # fgeo 1.0.1 (GitHub release)
 
