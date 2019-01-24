@@ -27,4 +27,4 @@ Authors@R field gives persons with non-standard roles:
 
 ## Downstream dependencies
 
-There are currently no downstream dependencies for this package.
+There are currently no downstream dependencies on CRAN for this package.
