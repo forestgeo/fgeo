@@ -16,7 +16,7 @@ fgeo_packages <- function(include_self = TRUE) {
 }
 
 fgeo_to_attach <- function() {
- fgeo_packages(include_self = FALSE)
+  fgeo_packages(include_self = FALSE)
 }
 
 
@@ -31,8 +31,8 @@ fgeo_to_attach <- function() {
 #' @family functions for developers
 #' @noRd
 fgeo_dependencies <- function(matches = NULL,
-  include_self = TRUE,
-  section = c("Imports", "Suggests")) {
+                              include_self = TRUE,
+                              section = c("Imports", "Suggests")) {
   section <- section[[1]]
   raw <- utils::packageDescription("fgeo")[[section]]
   pulled <- strsplit(raw, ",")[[1]]

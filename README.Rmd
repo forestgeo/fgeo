@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-"
 )
+
+options(fgeo.quiet = TRUE)
 ```
 
 # <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analyze forest diversity and dynamics
@@ -57,7 +59,7 @@ __Expected R environment__
 
 Install the latest stable version of all **fgeo** packages with:
 
-```
+```R
 install.packages("devtools")
 devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
 ```
