@@ -61,19 +61,18 @@ Install the latest stable version of all **fgeo** packages with:
 
 ```R
 install.packages("devtools")
-devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
+devtools::install_github("forestgeo/fgeo@*release")
 ```
 
 Or install the development version of all **fgeo** packages with:
 
 ```R
 install.packages("devtools")
-devtools::install_github("forestgeo/fgeo", upgrade = "never")
+devtools::install_github("forestgeo/fgeo")
 ```
 
 ---
 
-* To update packages see `?update.packages()` and `?devtools::update_packages()`
 * To remove packages see `?remove.packages()`
 
 <details> <summary><strong>Tips to avoid or fix common installation problems</strong></summary>

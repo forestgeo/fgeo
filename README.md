@@ -36,20 +36,18 @@ Install the latest stable version of all **fgeo** packages with:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("forestgeo/fgeo@*release", upgrade = "never")
+devtools::install_github("forestgeo/fgeo@*release")
 ```
 
 Or install the development version of all **fgeo** packages with:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("forestgeo/fgeo", upgrade = "never")
+devtools::install_github("forestgeo/fgeo")
 ```
 
 -----
 
-  - To update packages see `?update.packages()` and
-    `?devtools::update_packages()`
   - To remove packages see `?remove.packages()`
 
 <details>
@@ -285,10 +283,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmp6zDVQn"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmpm88Cyy"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp6zDVQn/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp6zDVQn/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpm88Cyy/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpm88Cyy/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
