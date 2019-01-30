@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 options(fgeo.quiet = TRUE)
 ```
 
-[__fgeo__](https://forestgeo.github.io/fgeo/index.html) is a collection of R packages to analyze forest diversity and dynamics. Its first public release is planned for early 2019. Before that, we would love you to [give us some feedback, and report issues](https://github.com/forestgeo/fgeo/issues).
+[__fgeo__](https://forestgeo.github.io/fgeo/index.html) is a collection of R packages to analyze forest diversity and dynamics. We plan to announce it widely in early 2019. Before that, we would love you to [give us some feedback, and report issues](https://github.com/forestgeo/fgeo/issues).
 
 This post highlights the main features. For more details please see the [Example](https://forestgeo.github.io/fgeo/index.html#example) and [Reference](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html) sections.
 

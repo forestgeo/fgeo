@@ -15,6 +15,14 @@ navbar:
       href: https://fgeocomm.shinyapps.io/transform-isolating/
     - text: "Exploratory data analysis"
       href: articles/siteonly/eda.html
+  - text: "News"
+    menu:
+    - text: "Release notes"
+    - text: "Release candidate 1.1.1"
+      href: articles/siteonly/fgeo-1-1-1-release-candidate.html
+    - text: "------------------"
+    - text: "Change log"
+      href: news/index.html
   right:
   - text: "Community"
     menu:
