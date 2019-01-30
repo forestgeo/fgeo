@@ -42,8 +42,7 @@ install.packages("fgeo", repos = these_repos)
 Or install the development version of all **fgeo** packages with:
 
 ``` r
-install.packages("devtools")
-devtools::install_github("forestgeo/fgeo")
+source("https://install-github.me/forestgeo/fgeo")
 ```
 
 -----
@@ -234,10 +233,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpCMorJM"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpY32z7w"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpCMorJM/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpCMorJM/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpY32z7w/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpY32z7w/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
