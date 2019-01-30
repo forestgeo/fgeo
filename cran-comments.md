@@ -20,7 +20,4 @@ Availability using Additional_repositories specification:
 
 ## Downstream dependencies
 
-I checked 4 reverse dependencies (0 from CRAN + 4 from <https://forestgeo.github.io/drat/>; summary at <https://github.com/forestgeo/fgeo/tree/master/revdep>):
-
- * We saw 0 new problems
- * We failed to check 0 packages
+There are currently no reverse dependencies for this package.
