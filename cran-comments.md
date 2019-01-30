@@ -6,8 +6,7 @@
 
 ## R CMD check results
 
-'fgeo' version '1.1.0'
-1 ERROR, 1 WARNING
+fgeo 1.1.0
 
 WARNING
 New submission
@@ -18,21 +17,6 @@ Availability using Additional_repositories specification:
   fgeo.plot      yes   https://forestgeo.github.io/drat/
   fgeo.tool      yes   https://forestgeo.github.io/drat/
   fgeo.x         yes   https://forestgeo.github.io/drat/
-Authors@R field gives persons with non-standard roles:
-  Gabriel Arellano <gabriel.arellano.torres@gmail.com> [aut, rev]: rev
-  Stuart Davies <daviess@si.edu> [aut, rev]: rev
-  David Kenfack <KenfackD@si.edu > [aut, rev]: rev
-  Lauren Krizel <KrizelL@si.edu> [rev]: rev
-  Suzanne Lao <laoz@si.edu> [aut, rev]: rev
-  Sean McMahon <mcmahons@si.edu> [aut, rev]: rev
-  Haley Overstreet <OverstreetH@si.edu> [rev]: rev
-  Sabrina Russo <srusso2@unl.edu> [aut, rev]: rev
-  Kristina Teixeira <TeixeiraK@si.edu> [aut, rev]: rev
-  Graham Zemunik <grah.zem@gmail.com> [aut, rev]: rev
-  Daniel Zuleta <dfzuleta@gmail.com> [aut, rev]: rev
-
-ERROR
-Packages required but not available: 'fgeo.analyze', 'fgeo.plot'
 
 ## Downstream dependencies
 

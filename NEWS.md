@@ -14,4 +14,4 @@
 
 # fgeo 1.0.0 (GitHub release)
 
-* Internal GitHub release.
+* Internal release.
