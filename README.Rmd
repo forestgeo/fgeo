@@ -77,18 +77,6 @@ devtools::install_github("forestgeo/fgeo")
 
 <details> <summary><strong>Tips to avoid or fix common installation problems</strong></summary>
 
-#### Alternative installation
-
-If you failed to install __fgeo__ try this instead:
-
-```R
-install.packages("devtools")
-devtools::install_github("forestgeo/fgeo.install")
-fgeo.install::install_fgeo()
-```
-
-If this still fails, follow the advice below and then try to install __fgeo__ again.
-
 #### Update R, RStudio, and R packages
 
 * [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
@@ -112,45 +100,19 @@ In RStudio go to _Tools > Global Options..._
 
 Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
 
+#### Increase the rate limit to request downloads from GitHub
 
-#### Increase the rate limit to install from GitHub
+See [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
 
-If you reach GitHub's rate limit see [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
+#### Prepare your system to build packages from source
 
-If that was unclear continue reading. This describes the same process but in more detail.
+Sometimes you may need to install the _source_ version of an R package (e.g. from CRAN or GitHub). 
 
-* Ensure you have an account on GitHub (https://github.com/).
-* Generate a GitHub token named exactly `GITHUB_PAT` by running `usethis::browse_github_pat()` in R.
-* You will be sent to GitHub and you should see something like this:
-
-<img src="https://i.imgur.com/huJ6l7n.png" align="center" height=300/>
-
-...
-
-* Make sure your token description says exactly `GITHUB_PAT` and click _Generate token_
-
-...
-
-<img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
-
-* Store your new token in the environmental variable `GITHUB_PAT` by running `usethis::edit_r_environ()` in R.
-* A file called .Renviron will open. Type the name and value of your GitHub token. __Ensure to end this file with a new empty line__. Your .Renviron file should now look like this:
-
-<img src="https://i.imgur.com/QSEuzbF.png" align="center" height=100/>
-
-...
-
-* Save and close  .Renviron.
-
-#### Install package development utilities
-
-Sometimes you may want to install the _source_ version of an R package from CRAN or GitHub. If that package contains a `src/` folder you will need to install package development utilities.
-
-* [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
+* [How?](https://usethis.r-lib.org/articles/articles/usethis-setup.html#prepare-your-system-to-build-packages-from-source)
 
 #### Troubleshoot: error: X11 library is missing: install XQuartz ...
 
-If you are a mac user, __fgeo__ may fail to install with the error below. Install XQuartz from https://www.xquartz.org/ and try to install __fgeo__ again.
+If you are a mac user, [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/) may fail to install with the error below. Install XQuartz from <https://www.xquartz.org/> and try to install [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/) again.
 
 ```R
 Error : .onLoad failed in loadNamespace() for 'tcltk', details:
