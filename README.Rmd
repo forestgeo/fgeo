@@ -67,7 +67,8 @@ install.packages("fgeo", repos = these_repos)
 Or install the development version of all **fgeo** packages with:
 
 ```R
-source("https://install-github.me/forestgeo/fgeo")
+install.packages("devtools")
+devtools::install_github("forestgeo/fgeo")
 ```
 
 ---
