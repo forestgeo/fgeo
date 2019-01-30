@@ -6,25 +6,21 @@
 
 ## R CMD check results
 
-NOTE
+fgeo 1.1.0
+
+WARNING
 New submission
-Unknown, possibly mis-spelled, fields in DESCRIPTION:
-  ‘Remotes’
 Strong dependencies not in mainstream repositories:
   fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
-Authors@R field gives persons with non-standard roles:
-  Gabriel Arellano <gabriel.arellano.torres@gmail.com> [aut, rev]: rev
-  Stuart Davies <daviess@si.edu> [aut, rev]: rev
-  David Kenfack <KenfackD@si.edu > [aut, rev]: rev
-  Lauren Krizel <KrizelL@si.edu> [rev]: rev
-  Suzanne Lao <laoz@si.edu> [aut, rev]: rev
-  Sean McMahon <mcmahons@si.edu> [aut, rev]: rev
-  Haley Overstreet <OverstreetH@si.edu> [rev]: rev
-  Sabrina Russo <srusso2@unl.edu> [aut, rev]: rev
-  Kristina Teixeira <TeixeiraK@si.edu> [aut, rev]: rev
-  Graham Zemunik <grah.zem@gmail.com> [aut, rev]: rev
-  Daniel Zuleta <dfzuleta@gmail.com> [aut, rev]: rev
+Availability using Additional_repositories specification:
+  fgeo.analyze   yes   https://forestgeo.github.io/drat/
+  fgeo.plot      yes   https://forestgeo.github.io/drat/
+  fgeo.tool      yes   https://forestgeo.github.io/drat/
+  fgeo.x         yes   https://forestgeo.github.io/drat/
 
 ## Downstream dependencies
 
-There are currently no downstream dependencies on CRAN for this package.
+I checked 4 reverse dependencies (0 from CRAN + 4 from <https://forestgeo.github.io/drat/>; summary at <https://github.com/forestgeo/fgeo/tree/master/revdep>):
+
+ * We saw 0 new problems
+ * We failed to check 0 packages

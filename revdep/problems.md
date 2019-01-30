@@ -8,7 +8,7 @@ Version: 1.0.1
     ```
     Re-running with no redirection of stdout/stderr.
     Hmm ... looks like a package
-    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpe8oHtH/Rd2pdf4a0c2d8d7e9f'
+    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/RtmpqKvBhi/Rd2pdf7af45c7e6ffc'
     ```
 
 *   checking PDF version of manual ... WARNING
@@ -34,7 +34,7 @@ Version: 1.0.3
     ```
     Re-running with no redirection of stdout/stderr.
     Hmm ... looks like a package
-    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/RtmpiUcvcv/Rd2pdf85cc59f75023'
+    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp0EHT6e/Rd2pdf4d3445896a2e'
     ```
 
 *   checking PDF version of manual ... WARNING
@@ -53,7 +53,7 @@ Version: 1.0.4
     ```
     Re-running with no redirection of stdout/stderr.
     Hmm ... looks like a package
-    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/RtmpYpgsJX/Rd2pdf906c17e448ef'
+    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/RtmpwF0925/Rd2pdf3ac0157250f'
     ```
 
 *   checking PDF version of manual ... WARNING
@@ -79,7 +79,7 @@ Version: 1.0.3
     ```
     Re-running with no redirection of stdout/stderr.
     Hmm ... looks like a package
-    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp23sxbs/Rd2pdf146837085d8e'
+    You may want to clean up by 'rm -Rf C:/Users/LeporeM/AppData/Local/Temp/1/RtmpKUPl4s/Rd2pdf5c5447faa40'
     ```
 
 *   checking PDF version of manual ... WARNING

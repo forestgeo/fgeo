@@ -42,8 +42,7 @@ install.packages("fgeo", repos = these_repos)
 Or install the development version of all **fgeo** packages with:
 
 ``` r
-install.packages("devtools")
-devtools::install_github("forestgeo/fgeo")
+source("https://install-github.me/forestgeo/fgeo")
 ```
 
 -----
@@ -54,20 +53,6 @@ devtools::install_github("forestgeo/fgeo")
 
 <summary><strong>Tips to avoid or fix common installation
 problems</strong></summary>
-
-#### Alternative installation
-
-If you failed to install **fgeo** try this instead:
-
-``` r
-install.packages("devtools")
-devtools::install_github("forestgeo/fgeo.install")
-fgeo.install::install_fgeo()
-```
-
-If this still fails, follow the advice below and then try to install
-**fgeo**
-    again.
 
 #### Update R, RStudio, and R packages
 
@@ -94,56 +79,26 @@ Options…*
 Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
 Restart R*.
 
-#### Increase the rate limit to install from GitHub
+#### Increase the rate limit to request downloads from GitHub
 
-If you reach GitHub’s rate limit see
+See
 [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
 
-If that was unclear continue reading. This describes the same process
-but in more detail.
+#### Prepare your system to build packages from source
 
-  - Ensure you have an account on GitHub (<https://github.com/>).
-  - Generate a GitHub token named exactly `GITHUB_PAT` by running
-    `usethis::browse_github_pat()` in R.
-  - You will be sent to GitHub and you should see something like this:
+Sometimes you may need to install the *source* version of an R package
+(e.g. from CRAN or
+    GitHub).
 
-<img src="https://i.imgur.com/huJ6l7n.png" align="center" height=300/>
-
-…
-
-  - Make sure your token description says exactly `GITHUB_PAT` and click
-    *Generate token*
-
-…
-
-<img src="https://i.imgur.com/iXWITVV.png" align="center" height=100/>
-
-  - Store your new token in the environmental variable `GITHUB_PAT` by
-    running `usethis::edit_r_environ()` in R.
-  - A file called .Renviron will open. Type the name and value of your
-    GitHub token. **Ensure to end this file with a new empty line**.
-    Your .Renviron file should now look like this:
-
-<img src="https://i.imgur.com/QSEuzbF.png" align="center" height=100/>
-
-…
-
-  - Save and close .Renviron.
-
-#### Install package development utilities
-
-Sometimes you may want to install the *source* version of an R package
-from CRAN or GitHub. If that package contains a `src/` folder you will
-need to install package development
-    utilities.
-
-  - [How?](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
+  - [How?](https://usethis.r-lib.org/articles/articles/usethis-setup.html#prepare-your-system-to-build-packages-from-source)
 
 #### Troubleshoot: error: X11 library is missing: install XQuartz …
 
-If you are a mac user, **fgeo** may fail to install with the error
-below. Install XQuartz from <https://www.xquartz.org/> and try to
-install **fgeo** again.
+If you are a mac user,
+[**fgeo.krig**](https://forestgeo.github.io/fgeo.krig/) may fail to
+install with the error below. Install XQuartz from
+<https://www.xquartz.org/> and try to install
+[**fgeo.krig**](https://forestgeo.github.io/fgeo.krig/) again.
 
 ``` r
 Error : .onLoad failed in loadNamespace() for 'tcltk', details:
@@ -232,11 +187,6 @@ from a directory into a list:
 
 ``` r
 library(purrr)
-#> 
-#> Attaching package: 'purrr'
-#> The following object is masked from 'package:fgeo.tool':
-#> 
-#>     %||%
 library(fs)
 
 (rdata_files <- example_path("rdata"))
@@ -283,10 +233,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmp048t2p"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpY32z7w"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp048t2p/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp048t2p/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpY32z7w/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpY32z7w/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
