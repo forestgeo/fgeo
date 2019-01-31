@@ -1,6 +1,7 @@
 # fgeo (development version)
 
 * Work in progress.
+* Use tidy versions.
 
 # fgeo 1.1.0 (GitHub release)
 

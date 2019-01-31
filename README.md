@@ -35,14 +35,18 @@ species-habitats associations.
 Install the latest stable version of all **fgeo** packages with:
 
 ``` r
-these_repos <- c(getOption("repos"), "https://forestgeo.github.io/drat")
-install.packages("fgeo", repos = these_repos)
+options(
+  repos = c(getOption("repos"), forestgeo = "https://forestgeo.github.io/drat")
+)
+
+install.packages("fgeo")
 ```
 
 Or install the development version of all **fgeo** packages with:
 
 ``` r
-source("https://install-github.me/forestgeo/fgeo")
+# install.packages("devtools")
+devtools::install_github("forestgeo/fgeo")
 ```
 
 -----
@@ -233,10 +237,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpY32z7w"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmp4WQTHE"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpY32z7w/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpY32z7w/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp4WQTHE/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp4WQTHE/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 

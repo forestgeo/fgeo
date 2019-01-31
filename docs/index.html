@@ -65,6 +65,9 @@
     <li>
       <a href="articles/siteonly/eda.html">Exploratory data analysis</a>
     </li>
+    <li>
+      <a href="articles/siteonly/simplify-installation.html">Simplify installation</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -76,7 +79,7 @@
   <ul class="dropdown-menu" role="menu">
 <li class="dropdown-header">Release notes</li>
     <li>
-      <a href="articles/siteonly/fgeo-1-1-1-release-candidate.html">Release candidate 1.1.1</a>
+      <a href="articles/siteonly/fgeo-1-1-1-release-candidate.html">Release candidate 1.2.0</a>
     </li>
     <li class="divider">
     </li>
@@ -163,10 +166,13 @@
 <li>Current R session is clean (click <em>Session &gt; Restart R</em>)</li>
 </ul>
 <p>Install the latest stable version of all <strong>fgeo</strong> packages with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">these_repos &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">getOption</a></span>(<span class="st">"repos"</span>), <span class="st">"https://forestgeo.github.io/drat"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"fgeo"</span>, <span class="dt">repos =</span> these_repos)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="dt">repos =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">getOption</a></span>(<span class="st">"repos"</span>), <span class="dt">forestgeo =</span> <span class="st">"https://forestgeo.github.io/drat"</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"fgeo"</span>)</a></code></pre></div>
 <p>Or install the development version of all <strong>fgeo</strong> packages with:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>)</a></code></pre></div>
 <hr>
 <ul>
@@ -334,10 +340,10 @@
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">(files &lt;-<span class="st"> </span><span class="kw">path_file</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(censuses)))</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; tree5.RData tree6.RData</span></a>
 <a class="sourceLine" id="cb9-3" data-line-number="3">(folder &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/tempfile">tempdir</a></span>())</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpC6opi2"</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmp2LcIGr"</span></a>
 <a class="sourceLine" id="cb9-5" data-line-number="5">(paths &lt;-<span class="st"> </span><span class="kw">path</span>(folder, files))</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpC6opi2/tree5.RData</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpC6opi2/tree6.RData</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp2LcIGr/tree5.RData</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp2LcIGr/tree6.RData</span></a>
 <a class="sourceLine" id="cb9-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb9-9" data-line-number="9"><span class="kw">walk2</span>(censuses, paths, <span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/save">save</a></span>(.x, <span class="dt">file =</span> .y))</a>
 <a class="sourceLine" id="cb9-10" data-line-number="10"></a>

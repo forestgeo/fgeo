@@ -1,5 +1,5 @@
 ---
-title: "fgeo 1.1.1 release candidate"
+title: "fgeo 1.2.0 release candidate"
 output: rmarkdown::html_vignette
 editor_options: 
   chunk_output_type: console

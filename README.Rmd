@@ -60,14 +60,17 @@ __Expected R environment__
 Install the latest stable version of all **fgeo** packages with:
 
 ```R
-these_repos <- c(getOption("repos"), "https://forestgeo.github.io/drat")
-install.packages("fgeo", repos = these_repos)
+options(
+  repos = c(getOption("repos"), forestgeo = "https://forestgeo.github.io/drat")
+)
+
+install.packages("fgeo")
 ```
 
 Or install the development version of all **fgeo** packages with:
 
 ```R
-install.packages("devtools")
+# install.packages("devtools")
 devtools::install_github("forestgeo/fgeo")
 ```
 
