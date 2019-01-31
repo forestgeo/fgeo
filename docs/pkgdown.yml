@@ -3,9 +3,11 @@ pkgdown: 1.3.0
 pkgdown_sha: ~
 articles:
   eda: siteonly/eda.html
-  fgeo-1-1-1-release-candidate: siteonly/fgeo-1-1-1-release-candidate.html
+  fgeo-1-2-0-release-candidate: siteonly/fgeo-1-2-0-release-candidate.html
+  miscellaneous-installation-issues: siteonly/miscellaneous-installation-issues.html
   questions-and-answers: siteonly/questions-and-answers.html
   reference: siteonly/reference.html
+  simplify-installation: siteonly/simplify-installation.html
 urls:
   reference: https://forestgeo.github.io/fgeo//reference
   article: https://forestgeo.github.io/fgeo//articles
