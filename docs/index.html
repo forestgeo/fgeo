@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fgeo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.1.9000</span>
       </span>
     </div>
 
@@ -340,10 +340,10 @@
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">(files &lt;-<span class="st"> </span><span class="kw">path_file</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(censuses)))</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; tree5.RData tree6.RData</span></a>
 <a class="sourceLine" id="cb9-3" data-line-number="3">(folder &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/tempfile">tempdir</a></span>())</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpmmmDSK"</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpyCskUU"</span></a>
 <a class="sourceLine" id="cb9-5" data-line-number="5">(paths &lt;-<span class="st"> </span><span class="kw">path</span>(folder, files))</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpmmmDSK/tree5.RData</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpmmmDSK/tree6.RData</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpyCskUU/tree5.RData</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; C:/Users/LeporeM/AppData/Local/Temp/1/RtmpyCskUU/tree6.RData</span></a>
 <a class="sourceLine" id="cb9-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb9-9" data-line-number="9"><span class="kw">walk2</span>(censuses, paths, <span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/save">save</a></span>(.x, <span class="dt">file =</span> .y))</a>
 <a class="sourceLine" id="cb9-10" data-line-number="10"></a>
