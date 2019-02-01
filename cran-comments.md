@@ -6,22 +6,39 @@
 
 ## R CMD check results
 
-fgeo 1.1.1
+using R version 3.4.4 (2018-03-15)
+using platform: x86_64-pc-linux-gnu (64-bit)
+using option ‘--as-cran’
+this is package ‘fgeo’ version ‘1.1.1.9000’
 
-WARNING
-New submission
-Strong dependencies not in mainstream repositories:
-  fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
-Availability using Additional_repositories specification:
-  fgeo.analyze   yes   https://forestgeo.github.io/drat/
-  fgeo.plot      yes   https://forestgeo.github.io/drat/
-  fgeo.tool      yes   https://forestgeo.github.io/drat/
-  fgeo.x         yes   https://forestgeo.github.io/drat/
+Status: 2 NOTEs
+* NOTE 1 raises if the package is built using R v3.5. (<https://ropensci.github.io/dev_guide/building.html#authorship>).
+* NOTE 2 is safe to ignore, except ... FIXME.
 
-* checking dependencies in R code ... NOTE
-Namespaces in Imports field not imported from:
-  ‘fgeo.analyze’ ‘fgeo.plot’ ‘fgeo.tool’ ‘fgeo.x’
-  All declared Imports should be used.
+NOTE 1
+* Authors@R field gives persons with non-standard roles:
+* Gabriel Arellano [aut, rev]: rev
+* Stuart Davies [aut, rev]: rev
+* David Kenfack [aut, rev]: rev
+* Lauren Krizel [rev]: rev
+* Suzanne Lao [aut, rev]: rev
+* Sean McMahon [aut, rev]: rev
+* Haley Overstreet [rev]: rev
+* Sabrina Russo [aut, rev]: rev
+* Kristina Teixeira [aut, rev]: rev
+* Graham Zemunik [aut, rev]: rev
+* Daniel Zuleta [aut, rev]: rev
+
+NOTE 2
+* New submission
+* Version contains large components (1.1.1.9000) ... FIXME
+* Strong dependencies not in mainstream repositories:
+* fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
+* Availability using Additional_repositories specification:
+* fgeo.analyze yes https://forestgeo.github.io/drat/
+* fgeo.plot yes https://forestgeo.github.io/drat/
+* fgeo.tool yes https://forestgeo.github.io/drat/
+* fgeo.x yes https://forestgeo.github.io/drat/
 
 ## Downstream dependencies
 

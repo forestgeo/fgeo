@@ -7,7 +7,6 @@ articles:
   miscellaneous-installation-issues: siteonly/miscellaneous-installation-issues.html
   questions-and-answers: siteonly/questions-and-answers.html
   reference: siteonly/reference.html
-  simplify-installation: siteonly/simplify-installation.html
 urls:
   reference: https://forestgeo.github.io/fgeo//reference
   article: https://forestgeo.github.io/fgeo//articles
