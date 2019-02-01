@@ -6,7 +6,7 @@
 
 ## R CMD check results
 
-fgeo 1.1.0
+fgeo 1.1.1
 
 WARNING
 New submission
@@ -17,6 +17,11 @@ Availability using Additional_repositories specification:
   fgeo.plot      yes   https://forestgeo.github.io/drat/
   fgeo.tool      yes   https://forestgeo.github.io/drat/
   fgeo.x         yes   https://forestgeo.github.io/drat/
+
+* checking dependencies in R code ... NOTE
+Namespaces in Imports field not imported from:
+  ‘fgeo.analyze’ ‘fgeo.plot’ ‘fgeo.tool’ ‘fgeo.x’
+  All declared Imports should be used.
 
 ## Downstream dependencies
 
