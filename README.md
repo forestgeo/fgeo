@@ -25,30 +25,56 @@ species-habitats associations.
 
 ## Installation
 
-**Expected R environment**
+Make sure your R environment is as follows:
 
   - R version is recent
   - All packages are updated (run `update.packages()`)
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-Install the latest stable version of all **fgeo** packages with:
+Setup the “repos” option to include ForestGEO’s CRAN-like repository,
+then install all **fgeo** packages with `install.packages()`:
 
 ``` r
 options(
-  repos = c(getOption("repos"), forestgeo = "https://forestgeo.github.io/drat")
+  repos = c(
+    CRAN = "https://cran.rstudio.com/",
+    forestgeo = "https://forestgeo.github.io/drat"
+  )
 )
 
 install.packages("fgeo")
 ```
 
-Update **fgeo** packages with:
+With this setup you can also update all **fgeo** packages with
+`update.packages()`. To remove packages see
+[`remove.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/remove.packages),
+for example, `remove.packages(c("fgeo.plot", "fgeo.analyze"))`.
+
+<details>
+
+<summary><strong>Setup the “repos” option for every R
+session</strong></summary>
+
+To setup the “repos” option to include ForestGEO’s CRAN-like repository
+in every R session, open .Rprofile (e.g. with
+[`usethis::edit_r_profile()`](https://usethis.r-lib.org/reference/edit.html))
+and add this code:
 
 ``` r
-update.packages(repos = "https://forestgeo.github.io/drat")
+.First <- function() {
+  options(
+    repos = c(
+      CRAN = "https://cran.rstudio.com/",
+      forestgeo = "https://forestgeo.github.io/drat"
+    )
+  )
+}
 ```
 
-To remove packages see `?remove.packages()`
+Then save .Rprofile, close it, and restart R.
+
+</details>
 
 <details>
 
@@ -113,6 +139,11 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
+#> -- Attaching packages ------------------------------------------------- fgeo 1.1.1 --
+#> v fgeo.analyze 1.1.2     v fgeo.tool    1.2.1
+#> v fgeo.plot    1.1.1     v fgeo.x       1.1.0
+#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
+#> x fgeo.tool::filter() masks stats::filter()
 ```
 
 ### Explore **fgeo**
@@ -234,10 +265,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmpu8bJoi"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpA9IrU1"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpu8bJoi/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpu8bJoi/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpA9IrU1/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpA9IrU1/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
