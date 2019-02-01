@@ -67,16 +67,13 @@ options(
 install.packages("fgeo")
 ```
 
-Or install the development version of all **fgeo** packages with:
+Update __fgeo__ packages with:
 
 ```R
-# install.packages("devtools")
-devtools::install_github("forestgeo/fgeo")
+update.packages(repos = "https://forestgeo.github.io/drat")
 ```
 
----
-
-* To remove packages see `?remove.packages()`
+To remove packages see `?remove.packages()`
 
 <details> <summary><strong>Tips to avoid or fix common installation problems</strong></summary>
 

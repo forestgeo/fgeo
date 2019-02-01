@@ -42,16 +42,13 @@ options(
 install.packages("fgeo")
 ```
 
-Or install the development version of all **fgeo** packages with:
+Update **fgeo** packages with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("forestgeo/fgeo")
+update.packages(repos = "https://forestgeo.github.io/drat")
 ```
 
------
-
-  - To remove packages see `?remove.packages()`
+To remove packages see `?remove.packages()`
 
 <details>
 
@@ -237,10 +234,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmp4WQTHE"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\Rtmpu8bJoi"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp4WQTHE/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmp4WQTHE/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpu8bJoi/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/Rtmpu8bJoi/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
