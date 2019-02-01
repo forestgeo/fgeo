@@ -1,9 +1,12 @@
 # fgeo (development version)
 
 * Work in progress.
+
+# fgeo 1.1.1 (GitHub and drat release)
+
 * Use tidy versions.
 
-# fgeo 1.1.0 (GitHub release)
+# fgeo 1.1.0 (GitHub and drat release)
 
 * Import fgeo packages via `Additional_repositories` served at <https://forestgeo.github.io/drat/>
 
