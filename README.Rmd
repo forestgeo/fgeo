@@ -68,7 +68,10 @@ options(
 install.packages("fgeo")
 ```
 
-With this setup you can also update all __fgeo__ packages with `update.packages()`. To remove packages see [`remove.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/remove.packages), for example, `remove.packages(c("fgeo.plot", "fgeo.analyze"))`.
+* Update all packages with [`update.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/update.packages) (you may use `ask = FALSE`).
+* Remove packages with [`remove.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/remove.packages), e.g. `remove.packages(c("fgeo.plot", "fgeo.analyze"))`.
+
+This setup lasts for the current R session only.
 
 <details> <summary><strong>Setup the "repos" option for every R session</strong></summary>
 

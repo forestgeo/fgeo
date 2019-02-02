@@ -46,10 +46,14 @@ options(
 install.packages("fgeo")
 ```
 
-With this setup you can also update all **fgeo** packages with
-`update.packages()`. To remove packages see
-[`remove.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/remove.packages),
-for example, `remove.packages(c("fgeo.plot", "fgeo.analyze"))`.
+  - Update all packages with
+    [`update.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/update.packages)
+    (you may use `ask = FALSE`).
+  - Remove packages with
+    [`remove.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/remove.packages),
+    e.g. `remove.packages(c("fgeo.plot", "fgeo.analyze"))`.
+
+This setup lasts for the current R session only.
 
 <details>
 
@@ -139,10 +143,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------- fgeo 1.1.1 --
-#> v fgeo.analyze 1.1.2     v fgeo.tool    1.2.1
-#> v fgeo.plot    1.1.1     v fgeo.x       1.1.0
-#> -- Conflicts ---------------------------------------------------- fgeo_conflicts() --
+#> -- Attaching packages ------------------------------------------------------------- fgeo 1.1.1 --
+#> v fgeo.analyze 1.1.3     v fgeo.tool    1.2.1
+#> v fgeo.plot    1.1.2     v fgeo.x       1.1.0
+#> -- Conflicts ---------------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -265,10 +269,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpA9IrU1"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpWaiDfU"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpA9IrU1/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpA9IrU1/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpWaiDfU/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpWaiDfU/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
