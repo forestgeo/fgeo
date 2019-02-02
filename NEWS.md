@@ -4,6 +4,7 @@
 
 # fgeo 1.1.1 (GitHub and drat release)
 
+* Meet CRAN standards.
 * Use tidy versions.
 
 # fgeo 1.1.0 (GitHub and drat release)
