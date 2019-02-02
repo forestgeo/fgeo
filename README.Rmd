@@ -55,16 +55,12 @@ Make sure your R environment is as follows:
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-Setup the "repos" option to include ForestGEO's CRAN-like repository, then install all __fgeo__ packages with `install.packages()`:
-
 ```R
-options(
-  repos = c(
-    CRAN = "https://cran.rstudio.com/",
-    forestgeo = "https://forestgeo.github.io/drat"
-  )
-)
+# Include ForestGEO's CRAN-like repository when searching for packages
+install.packages("drat")
+drat::addRepo("forestgeo")
 
+# Install all fgeo packages
 install.packages("fgeo")
 ```
 
