@@ -3,6 +3,7 @@ al
 binwidth
 binwidths
 butitsuremakesthingseasiertoread
+ci
 Cmd
 covariation
 Covariation
@@ -18,6 +19,7 @@ fgeo's
 forestgeo
 ForestGEO
 ForestGEO's
+ForestGEO’s
 funder
 ggbeeswarm
 ggplot
@@ -37,8 +39,10 @@ ly
 modularity
 overplot
 PIs
-Renviron
+repos
+Rprofile
 rstats
+rstudio
 RStudio
 si
 stemid
@@ -47,6 +51,7 @@ th
 tibble
 tibbles
 tidyverse
+travis
 tsv
 ViewFullTable
 ViewTaxonomy
