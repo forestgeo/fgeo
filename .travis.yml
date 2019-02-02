@@ -6,3 +6,5 @@ cache: packages
 after_success:
   - Rscript -e 'covr::codecov()'
 warnings_are_errors: true
+notifications:
+  slack: forestgeo:WtWMP7g7JbJsbPJOvBb3tTTn
