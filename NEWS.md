@@ -1,6 +1,7 @@
 # fgeo (development version)
 
 * Work in progress.
+* Add reviewers  (forestgeo/forum#19).
 
 # fgeo 1.1.1 (GitHub and drat release)
 

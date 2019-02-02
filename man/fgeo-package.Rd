@@ -29,6 +29,10 @@ Authors:
   \item Gabriel Arellano \email{gabriel.arellano.torres@gmail.com} [reviewer]
   \item  Richard  Condit \email{richardcondit@gmail.com}
   \item Stuart Davies \email{daviess@si.edu} [reviewer]
+  \item Erika Gonzalez-Akre \email{GonzalezEB@si.edu} [reviewer]
+  \item Valentine Herrmann \email{HerrmannV@si.edu} [reviewer]
+  \item Aaron Hogan \email{jamesaaronhogan@gmail.com} [reviewer]
+  \item Bier Kraichak \email{ekraichak@gmail.com} [reviewer]
   \item Matteo Detto \email{teoparaglider@gmail.com}
   \item Pamela Hall \email{phall@alum.mit.edu}
   \item Kyle Harms \email{ kharms@lsu.edu}
