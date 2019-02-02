@@ -358,7 +358,7 @@ autoplot(sp(stem_2sp))
 <!-- end list -->
 
 ``` r
-data("elevation")
+elevation <- fgeo.x::elevation
 class(sp_elev(stem_2sp, elevation))
 #> [1] "sp_elev" "list"
 
@@ -418,7 +418,7 @@ recruitment, mortality, and growth. They all output a list.
 dataframe.
 
 ``` r
-data("tree5")
+tree5 <- fgeo.x::tree5
 
 as_tibble(
   mortality_ctfs(tree5, tree6)
@@ -443,7 +443,8 @@ the result.
 ``` r
 # This analysis makes sense only for tree tables
 tree <- download_data("luquillo_tree5_random")
-data("habitat")
+
+habitat <- fgeo.x::habitat
 result <- tt_test(tree, habitat)
 #> Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.
 #> Using `gridsize = 20`. To change this value see `?tt_test()`.
