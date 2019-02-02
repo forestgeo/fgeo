@@ -32,17 +32,14 @@ Make sure your R environment is as follows:
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-Setup the “repos” option to include ForestGEO’s CRAN-like repository,
-then install all **fgeo** packages with `install.packages()`:
+<!-- end list -->
 
 ``` r
-options(
-  repos = c(
-    CRAN = "https://cran.rstudio.com/",
-    forestgeo = "https://forestgeo.github.io/drat"
-  )
-)
+# Include ForestGEO's CRAN-like repository when searching for packages
+install.packages("drat")
+drat::addRepo("forestgeo")
 
+# Install all fgeo packages
 install.packages("fgeo")
 ```
 
@@ -143,10 +140,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------------------------- fgeo 1.1.1 --
+#> -- Attaching packages --------------------------------------------------- fgeo 1.1.1 --
 #> v fgeo.analyze 1.1.3     v fgeo.tool    1.2.1
 #> v fgeo.plot    1.1.2     v fgeo.x       1.1.0
-#> -- Conflicts ---------------------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -269,10 +266,10 @@ censuses
 (files <- path_file(names(censuses)))
 #> tree5.RData tree6.RData
 (folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpWaiDfU"
+#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpURyv4t"
 (paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpWaiDfU/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpWaiDfU/tree6.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpURyv4t/tree5.RData
+#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpURyv4t/tree6.RData
 
 walk2(censuses, paths, ~ save(.x, file = .y))
 
