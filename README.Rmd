@@ -240,7 +240,7 @@ autoplot(sp(stem_2sp))
 * Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev` of a `census` and `elevation` dataset, respectively -- i.e. to plot species distribution and topography.
 
 ```{r}
-data("elevation")
+elevation <- fgeo.x::elevation
 class(sp_elev(stem_2sp, elevation))
 
 autoplot(sp_elev(stem_2sp, elevation))
@@ -267,7 +267,7 @@ basal_area(by_species)
 `recruitment_ctfs()`, `mortality_ctfs()`, and `growth_ctfs()` calculate recruitment, mortality, and growth. They all output a list. `as_tibble()` converts the output from a list to a more convenient dataframe.
 
 ```{r}
-data("tree5")
+tree5 <- fgeo.x::tree5
 
 as_tibble(
   mortality_ctfs(tree5, tree6)
@@ -281,7 +281,8 @@ as_tibble(
 ```{r}
 # This analysis makes sense only for tree tables
 tree <- download_data("luquillo_tree5_random")
-data("habitat")
+
+habitat <- fgeo.x::habitat
 result <- tt_test(tree, habitat)
 
 as_tibble(result)
