@@ -174,42 +174,6 @@ example_path()
 read_vft(vft_file)
 ```
 
-#### Importing multiple censuses from a directory into a list
-
-(This and the following section don't use __fgeo__ because other packages already do this well.)
-
-Combine `fs::dir_ls()` with `purrr::map()` to import multiple censuses from a directory into a list:
-
-* Use `fs::dir_ls()` to create the paths to the files you want to import.
-* Use `purrr::map()` to iterate over each path and apply a custom function to import them.
-
-```{r}
-library(purrr)
-library(fs)
-
-(rdata_files <- example_path("rdata"))
-(paths <- fs::dir_ls(rdata_files))
-
-# The formula syntax `~ fun(.x)` is a shortcut for `function(.x) fun(.x)`
-censuses <- map(paths, ~ get(load(.x)))
-censuses
-```
-
-#### Exporting multiple censuses from a list into a directory
-
-* Use `purrr::walk2()` to map over two things in parallel -- each census to each path to a file. It is similar to `purrr::map2()` and `base::Map()` but prints nothing to the console.
-
-```{r}
-(files <- path_file(names(censuses)))
-(folder <- tempdir())
-(paths <- path(folder, files))
-
-walk2(censuses, paths, ~ save(.x, file = .y))
-
-# Confirm that the folder contains the files we just saved
-path_file(dir_ls(folder, regexp = "tree"))
-```
-
 #### `pick_<what>()` and `drop_<what>()`
 
 __fgeo__ is pipe-friendly. You may not use pipes but often they make code easier to read.
@@ -221,7 +185,7 @@ __fgeo__ is pipe-friendly. You may not use pipes but often they make code easier
 `pick_dbh_under()`, `drop_status()` and friends pick and drop rows from a ForestGEO ViewFullTable or census table.
 
 ```{r}
-(census <- censuses[[2]])
+(census <- fgeo.x::tree5)
 
 census %>% 
   pick_dbh_under(100)

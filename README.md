@@ -203,81 +203,6 @@ read_vft(vft_file)
 #> #   Status <chr>
 ```
 
-#### Importing multiple censuses from a directory into a list
-
-(This and the following section don’t use **fgeo** because other
-packages already do this well.)
-
-Combine `fs::dir_ls()` with `purrr::map()` to import multiple censuses
-from a directory into a list:
-
-  - Use `fs::dir_ls()` to create the paths to the files you want to
-    import.
-  - Use `purrr::map()` to iterate over each path and apply a custom
-    function to import them.
-
-<!-- end list -->
-
-``` r
-library(purrr)
-library(fs)
-
-(rdata_files <- example_path("rdata"))
-#> [1] "C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata"
-(paths <- fs::dir_ls(rdata_files))
-#> C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree5.RData
-#> C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree6.RData
-
-# The formula syntax `~ fun(.x)` is a shortcut for `function(.x) fun(.x)`
-censuses <- map(paths, ~ get(load(.x)))
-censuses
-#> $`C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree5.RData`
-#> # A tibble: 3 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    439947        5
-#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    466597        5
-#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    466623        5
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
-#> 
-#> $`C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/rdata/tree6.RData`
-#> # A tibble: 3 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
-#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
-#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
-```
-
-#### Exporting multiple censuses from a list into a directory
-
-  - Use `purrr::walk2()` to map over two things in parallel – each
-    census to each path to a file. It is similar to `purrr::map2()` and
-    `base::Map()` but prints nothing to the console.
-
-<!-- end list -->
-
-``` r
-(files <- path_file(names(censuses)))
-#> tree5.RData tree6.RData
-(folder <- tempdir())
-#> [1] "C:\\Users\\LeporeM\\AppData\\Local\\Temp\\1\\RtmpURyv4t"
-(paths <- path(folder, files))
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpURyv4t/tree5.RData
-#> C:/Users/LeporeM/AppData/Local/Temp/1/RtmpURyv4t/tree6.RData
-
-walk2(censuses, paths, ~ save(.x, file = .y))
-
-# Confirm that the folder contains the files we just saved
-path_file(dir_ls(folder, regexp = "tree"))
-#> tree5.RData tree6.RData
-```
-
 #### `pick_<what>()` and `drop_<what>()`
 
 **fgeo** is pipe-friendly. You may not use pipes but often they make
@@ -292,24 +217,47 @@ code easier to read.
 a ForestGEO ViewFullTable or census table.
 
 ``` r
-(census <- censuses[[2]])
-#> # A tibble: 3 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    104    143 10009 10009   DACE~ 113      10.3  245.    582850        6
-#> 2    119    158 1001~ 100104  MYRS~ 1021    183.   410.    578696        6
-#> 3    180    225 1001~ 100174  CASA~ 921     165.   410.    617049        6
-#> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
-#> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
-#> #   status <chr>, date <dbl>
+(census <- fgeo.x::tree5)
+#> # A tibble: 30 x 19
+#>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#>  1   7624 160987 1089~ 175325  TRIP~ 722     139.  425.     486675        5
+#>  2   8055  10036 1094~ 109482  CECS~ 522      94.8 424.     468874        5
+#>  3  19930 117849 1234~ 165576  CASA~ 425      61.3 496.     471979        5
+#>  4  23746  29677 14473 14473   PREM~ 617     100.  328.     442571        5
+#>  5  31702  39793 22889 22889   SLOB~ 304      53.8  73.8    447307        5
+#>  6  35355  44026 27538 27538   SLOB~ 1106    203.  110.     449169        5
+#>  7  35891  44634 282   282     DACE~ 901     172.   14.7    434266        5
+#>  8  39705  48888 33371 33370   CASS~ 1010    184.  194.     451067        5
+#>  9  50184  60798 5830  5830    MATD~ 1007    191.  132.     437645        5
+#> 10  57380 155867 66962 171649  SLOB~ 1414    274.  279.     459427        5
+#> # ... with 20 more rows, and 9 more variables: dbh <dbl>, pom <chr>,
+#> #   hom <dbl>, ExactDate <date>, DFstatus <chr>, codes <chr>,
+#> #   nostems <dbl>, status <chr>, date <dbl>
 
 census %>% 
   pick_dbh_under(100)
-#> # A tibble: 2 x 19
-#>   treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
-#>    <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
-#> 1    119    158 1001~ 100104  MYRS~ 1021     183.  410.    578696        6
-#> 2    180    225 1001~ 100174  CASA~ 921      165.  410.    617049        6
+#> # A tibble: 18 x 19
+#>    treeID stemID tag   StemTag sp    quadrat    gx    gy MeasureID CensusID
+#>     <int>  <int> <chr> <chr>   <chr> <chr>   <dbl> <dbl>     <int>    <int>
+#>  1   7624 160987 1089~ 175325  TRIP~ 722     139.  425.     486675        5
+#>  2  19930 117849 1234~ 165576  CASA~ 425      61.3 496.     471979        5
+#>  3  31702  39793 22889 22889   SLOB~ 304      53.8  73.8    447307        5
+#>  4  35355  44026 27538 27538   SLOB~ 1106    203.  110.     449169        5
+#>  5  39705  48888 33371 33370   CASS~ 1010    184.  194.     451067        5
+#>  6  57380 155867 66962 171649  SLOB~ 1414    274.  279.     459427        5
+#>  7  95656 129113 1315~ 131519  OCOL~ 402      79.7  22.8    474157        5
+#>  8  96051 129565 1323~ 132348  HIRR~ 1403    278    40.6    474523        5
+#>  9  96963 130553 1347~ 134707  TETB~ 610     114.  182.     475236        5
+#> 10 115310 150789 1652~ 165286  MANB~ 225      24.0 497.     483175        5
+#> 11 121424 158579 1707~ 170701  CASS~ 811     146.  218.     484785        5
+#> 12 121689 158871 1712~ 171277  INGL~ 515      84.2 285.     485077        5
+#> 13 121953 159139 1718~ 171809  PSYB~ 1318    247.  354.     485345        5
+#> 14 124522 162698 1742~ 174224  CASS~ 1411    279.  210.     488386        5
+#> 15 125038 163236 1753~ 175335  CASS~ 822     153.  426.     488924        5
+#> 16 126087     NA 1773~ <NA>    CASA~ 521      89.8 408.         NA       NA
+#> 17 126803     NA 1785~ <NA>    PSYB~ 622     113.  426          NA       NA
+#> 18 126934     NA 1787~ <NA>    MICR~ 324      47   480.         NA       NA
 #> # ... with 9 more variables: dbh <dbl>, pom <chr>, hom <dbl>,
 #> #   ExactDate <date>, DFstatus <chr>, codes <chr>, nostems <dbl>,
 #> #   status <chr>, date <dbl>
@@ -401,7 +349,7 @@ class(sp(stem_2sp))
 autoplot(sp(stem_2sp))
 ```
 
-![](man/figures/README-unnamed-chunk-12-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-10-1.png)<!-- -->
 
   - Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev`
     of a `census` and `elevation` dataset, respectively – i.e. to plot
@@ -417,7 +365,7 @@ class(sp_elev(stem_2sp, elevation))
 autoplot(sp_elev(stem_2sp, elevation))
 ```
 
-![](man/figures/README-unnamed-chunk-13-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-11-1.png)<!-- -->
 
 ### Analyze
 
@@ -433,18 +381,33 @@ abundance(
 #> # A tibble: 1 x 1
 #>       n
 #>   <int>
-#> 1     3
+#> 1    30
 
 by_species <- group_by(census, sp)
 
 basal_area(by_species)
-#> # A tibble: 3 x 2
-#> # Groups:   sp [3]
-#>   sp     basal_area
-#>   <chr>       <dbl>
-#> 1 CASARB      1669.
-#> 2 DACEXC     29865.
-#> 3 MYRSPL      1583.
+#> # A tibble: 18 x 2
+#> # Groups:   sp [18]
+#>    sp     basal_area
+#>    <chr>       <dbl>
+#>  1 CASARB      437. 
+#>  2 CASSYL     4146. 
+#>  3 CECSCH   144150. 
+#>  4 DACEXC    56832. 
+#>  5 GUAGUI     9161. 
+#>  6 HIRRUG      131. 
+#>  7 INGLAU      141. 
+#>  8 MANBID      167. 
+#>  9 MATDOM    45239. 
+#> 10 MICRAC        0  
+#> 11 OCOLEU      437. 
+#> 12 PREMON    78864. 
+#> 13 PSYBER        0  
+#> 14 PSYBRA      154. 
+#> 15 SCHMOR    41187. 
+#> 16 SLOBER    23377. 
+#> 17 TETBAL      272. 
+#> 18 TRIPAL       93.3
 ```
 
 #### Demography
