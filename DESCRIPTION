@@ -109,7 +109,7 @@ Imports:
     rstudioapi (>= 0.9.0),
     utils
 Suggests: 
-    covr (>= 3.2.1),
+    covr,
     DT (>= 0.5),
     knitr (>= 1.21),
     rmarkdown (>= 1.11),
@@ -121,3 +121,5 @@ Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Depends: 
+    R (>= 3.1)
