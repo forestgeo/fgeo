@@ -5,6 +5,7 @@ cache: packages
 
 matrix:
   include:
+  - os: osx
   - r: devel
   - r: release
     after_success: Rscript -e 'covr::coveralls()'
