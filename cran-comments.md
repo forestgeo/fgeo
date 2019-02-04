@@ -1,15 +1,16 @@
 ## Test environments
 
-* local windows 10 x64, R 3.5.2
-* ubuntu 14.04 (on travis-ci), R 3.5.1
-* win-builder (devel and release)
+* local: mingw32-3.5.2
+* travis: 3.1, 3.2, 3.3, oldrel, release, devel
+* r-hub: windows-x86_64-devel, ubuntu-gcc-release, fedora-clang-devel
+* win-builder: windows-x86_64-devel
 
 ## R CMD check results
 
 using R version 3.4.4 (2018-03-15)
 using platform: x86_64-pc-linux-gnu (64-bit)
-using option ‘--as-cran’
-this is package ‘fgeo’ version ‘1.1.1.9000’
+using option â€˜--as-cranâ€™
+this is package â€˜fgeoâ€™ version â€˜1.1.1.9000â€™
 
 Status: 2 NOTEs
 * NOTE 1 raises if the package is built using R v3.5. (<https://ropensci.github.io/dev_guide/building.html#authorship>).
