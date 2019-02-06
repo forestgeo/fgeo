@@ -12,7 +12,9 @@ matrix:
     after_success: Rscript -e 'covr::coveralls()'
     before_deploy:
     - Rscript -e 'remotes::install_cran("pkgdown")'
-    - Rscript -e 'install.packages("tidyverse")'
+    - Rscript -e 'remotes::install_github("maurolepore/pkgdoc")'
+    - Rscript -e 'install.packages(c("tidyverse", "ggstance", "lvplot"))'
+    - Rscript -e 'install.packages(c("ggbeeswarm", "modelr", "kableExtra", "DT"))'
     deploy:
       provider: script
       script: Rscript -e 'pkgdown::deploy_site_github()'
