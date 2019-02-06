@@ -8,11 +8,6 @@
 
 ## R CMD check results
 
-using R version 3.4.4 (2018-03-15)
-using platform: x86_64-pc-linux-gnu (64-bit)
-using option â€˜--as-cranâ€™
-this is package â€˜fgeoâ€™ version â€˜1.1.1.9000â€™
-
 Status: 2 NOTEs
 * NOTE 1 raises if the package is built using R v3.5. (<https://ropensci.github.io/dev_guide/building.html#authorship>).
 * NOTE 2 is safe to ignore, except ... FIXME.
