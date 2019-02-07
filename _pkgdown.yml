@@ -14,7 +14,7 @@ navbar:
     - text: "Isolating data with dplyr"
       href: https://fgeocomm.shinyapps.io/transform-isolating/
     - text: "Exploratory data analysis"
-      href: articles/siteonly/eda.html
+      href: https://bookdown.org/fgeocomm/eda/
 
   right:
   - text: "Community"
