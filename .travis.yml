@@ -13,7 +13,6 @@ matrix:
     before_deploy:
     - Rscript -e 'remotes::install_cran("pkgdown")'
     - Rscript -e 'remotes::install_github("maurolepore/pkgdoc")'
-    - Rscript -e 'install.packages("DT")'
     deploy:
       provider: script
       script: Rscript -e 'pkgdown::deploy_site_github()'
