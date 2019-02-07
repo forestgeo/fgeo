@@ -1,3 +1,4 @@
+^cm\.sh$
 ^revdep$
 ^cran-comments\.md$
 ^tmp\.sh$
