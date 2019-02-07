@@ -18,6 +18,6 @@
 
 * Tidy dependencies.
 
-# fgeo 1.0.0 ([GitHub](https://github.com/forestgeo/fgeo/releases) release)
+# fgeo 1.0.0 ([GitHub](https://github.com/forestgeo/fgeo/releases))
 
 * Internal release.
