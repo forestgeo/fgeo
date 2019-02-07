@@ -104,10 +104,10 @@ Imports:
     cli (>= 1.0.1),
     crayon (>= 1.3.4),
     dplyr (>= 0.7.8),
-    fgeo.analyze (>= 1.1.2),
-    fgeo.plot (>= 1.1.1),
-    fgeo.tool (>= 1.2.1),
-    fgeo.x (>= 1.1.0),
+    fgeo.analyze (>= 1.1.3),
+    fgeo.plot (>= 1.1.3),
+    fgeo.tool (>= 1.2.2),
+    fgeo.x (>= 1.1.2),
     glue (>= 1.3.0),
     magrittr (>= 1.5),
     purrr (>= 0.3.0),
@@ -117,11 +117,11 @@ Imports:
 Suggests: 
     covr (>= 3.2.1),
     DT (>= 0.5),
+    kableExtra (>= 1.0.1),
     knitr (>= 1.21),
     rmarkdown (>= 1.11),
     spelling (>= 2.0),
-    testthat (>= 2.0.1),
-    kableExtra
+    testthat (>= 2.0.1)
 Additional_repositories: https://forestgeo.github.io/drat/
 Encoding: UTF-8
 Language: en-US
