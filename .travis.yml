@@ -3,6 +3,7 @@
 language: R
 sudo: false
 cache: packages
+latex: false
 
 matrix:
   include:
