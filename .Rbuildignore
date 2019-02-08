@@ -1,5 +1,3 @@
-^ca\.sh$
-^cm\.sh$
 ^revdep$
 ^cran-comments\.md$
 ^tmp\.sh$
