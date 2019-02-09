@@ -8,34 +8,16 @@
 
 ## R CMD check results
 
-Status: 2 NOTEs
-* NOTE 1 raises if the package is built using R v3.5. (<https://ropensci.github.io/dev_guide/building.html#authorship>).
-* NOTE 2 is safe to ignore, except ... FIXME.
+0 errors | 1 warnings | 0 notes
 
-NOTE 1
-* Authors@R field gives persons with non-standard roles:
-* Gabriel Arellano [aut, rev]: rev
-* Stuart Davies [aut, rev]: rev
-* David Kenfack [aut, rev]: rev
-* Lauren Krizel [rev]: rev
-* Suzanne Lao [aut, rev]: rev
-* Sean McMahon [aut, rev]: rev
-* Haley Overstreet [rev]: rev
-* Sabrina Russo [aut, rev]: rev
-* Kristina Teixeira [aut, rev]: rev
-* Graham Zemunik [aut, rev]: rev
-* Daniel Zuleta [aut, rev]: rev
-
-NOTE 2
-* New submission
-* Version contains large components (1.1.1.9000) ... FIXME
-* Strong dependencies not in mainstream repositories:
-* fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
-* Availability using Additional_repositories specification:
-* fgeo.analyze yes https://forestgeo.github.io/drat/
-* fgeo.plot yes https://forestgeo.github.io/drat/
-* fgeo.tool yes https://forestgeo.github.io/drat/
-* fgeo.x yes https://forestgeo.github.io/drat/
+New submission
+Strong dependencies not in mainstream repositories:
+ fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
+Availability using Additional_repositories specification:
+ fgeo.analyze   yes   https://forestgeo.github.io/drat/
+ fgeo.plot      yes   https://forestgeo.github.io/drat/
+ fgeo.tool      yes   https://forestgeo.github.io/drat/
+ fgeo.x         yes   https://forestgeo.github.io/drat/
 
 ## Downstream dependencies
 
