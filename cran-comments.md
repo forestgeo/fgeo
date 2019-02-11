@@ -11,6 +11,8 @@
 0 errors | 1 warnings | 0 notes
 
 New submission
+
+FIXME: For CRAN release, these packages must be released first.
 Strong dependencies not in mainstream repositories:
  fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
 Availability using Additional_repositories specification:

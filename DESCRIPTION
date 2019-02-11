@@ -30,6 +30,10 @@ Authors@R:
              family = "Hall",
              role = "aut",
              email = "phall@alum.mit.edu"),
+      person(given = "Kyle",
+             family = "Harms",
+             role = "aut",
+             email = " kharms@lsu.edu"),
       person(given = "Valentine",
              family = "Herrmann",
              role = c("aut", "rev"),
@@ -42,10 +46,6 @@ Authors@R:
              family = "Kraichak",
              role = c("aut", "rev"),
              email = "ekraichak@gmail.com"),
-      person(given = "Kyle",
-             family = "Harms",
-             role = "aut",
-             email = " kharms@lsu.edu"),
       person(given = "David",
              family = "Kenfack",
              role = c("aut", "rev"),
@@ -89,11 +89,12 @@ Authors@R:
       person(given = "CTFS-ForestGEO",
              role = c("cph", "fnd"),
              email = "ForestGEO@si.edu"))
-Description: Install, load, and access the documentation of
-    multiple packages to analyze forest diversity and dynamics. 'fgeo'
-    allows you to manipulate and plot ForestGEO data, and to do common
-    analyses including abundance, demography, and species-habitats
-    associations (<http://www.forestgeo.si.edu/>).
+Description: 'fgeo' allows you to install, load, and access
+    the documentation of multiple packages to analyze forest diversity and
+    dynamics. The collection includes packages to manipulate and plot
+    ForestGEO data, and to do common analyses including abundance,
+    demography, and species-habitats associations
+    (<http://www.forestgeo.si.edu/>).
 License: GPL-3
 URL: http://forestgeo.github.io/fgeo,
     https://github.com/forestgeo/fgeo
