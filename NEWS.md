@@ -4,7 +4,7 @@
 
 # fgeo 1.1.2 ([GitHub](https://github.com/forestgeo/fgeo/releases) and [drat](https://forestgeo.github.io/drat/))
 
-This release marks that all __fgeo__ packages now meet CRAN standards. [Most changes are internal](CHANGELOG.md), and focused on making __fgeo__ more reliable and easier to maintain.
+This release marks that all __fgeo__ packages now meet CRAN standards. [Most changes are internal](./.github/CHANGELOG.md), and focused on making __fgeo__ more reliable and easier to maintain.
 
 * The required R version is now >= 3.2.
 
