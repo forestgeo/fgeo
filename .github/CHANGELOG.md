@@ -1,4 +1,4 @@
-This document records developer-facing changes (users: see NEWS.md).
+This document records developer-facing changes (users: see [NEWS.md](NEWS.md)).
 
 # fgeo 1.1.2 ([GitHub](https://github.com/forestgeo/fgeo/releases) and [drat](https://forestgeo.github.io/drat/))
 
