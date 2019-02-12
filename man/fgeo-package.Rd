@@ -6,11 +6,12 @@
 \alias{fgeo-package}
 \title{fgeo: Analyze Forest Diversity and Dynamics}
 \description{
-Install, load, and access the documentation of
-    multiple packages to analyze forest diversity and dynamics. 'fgeo'
-    allows you to manipulate and plot ForestGEO data, and to do common
-    analyses including abundance, demography, and species-habitats
-    associations (<http://www.forestgeo.si.edu/>).
+'fgeo' allows you to install, load, and access
+    the documentation of multiple packages to analyze forest diversity and
+    dynamics. The collection includes packages to manipulate and plot
+    ForestGEO data, and to do common analyses including abundance,
+    demography, and species-habitats associations
+    (<http://www.forestgeo.si.edu/>).
 }
 \seealso{
 Useful links:
@@ -32,10 +33,10 @@ Authors:
   \item Matteo Detto \email{teoparaglider@gmail.com}
   \item Erika Gonzalez-Akre \email{GonzalezEB@si.edu} [reviewer]
   \item Pamela Hall \email{phall@alum.mit.edu}
+  \item Kyle Harms \email{ kharms@lsu.edu}
   \item Valentine Herrmann \email{HerrmannV@si.edu} [reviewer]
   \item Aaron Hogan \email{jamesaaronhogan@gmail.com} [reviewer]
   \item Bier Kraichak \email{ekraichak@gmail.com} [reviewer]
-  \item Kyle Harms \email{ kharms@lsu.edu}
   \item David Kenfack \email{KenfackD@si.edu } [reviewer]
   \item Suzanne Lao \email{laoz@si.edu} [reviewer]
   \item Sean McMahon \email{mcmahons@si.edu} [reviewer]
