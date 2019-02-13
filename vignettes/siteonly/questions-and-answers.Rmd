@@ -15,22 +15,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-## What is __fgeo__?
-
-__fgeo__ is a meta R-package that gathers multiple modules of ForestGEO's software -- each module corresponding to an individual R package. This modularity facilitates managing and expanding ForestGEO's software.
-
-## How can I learn about __fgeo__ before installing it?
-
-See [Search Packages] and follow the links to online documentation.
-
-## How can I start using __fgeo__?
-
-From R, begin by [installing __fgeo__](https://forestgeo.github.io/fgeo/#installation). Then load it with:
-
-```{r, warning=FALSE}
-library(fgeo)
-```
-
 ## How to setup .Rprofile for easiest installation of __fgeo__?
 
 1. Open .Rprofile (e.g. with [`usethis::edit_r_profile()`](https://usethis.r-lib.org/reference/edit.html)) and add this code:
@@ -97,43 +81,33 @@ Sometimes you may need to install the _source_ version of an R package (e.g. fro
 
 * [How?](https://usethis.r-lib.org/articles/articles/usethis-setup.html#prepare-your-system-to-build-packages-from-source)
 
-#### Troubleshoot: error: X11 library is missing: install XQuartz ...
+## How to ask questions, report bugs, or propose features
 
-If you are a mac user, [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/) may fail to install with the error below. Install XQuartz from <https://www.xquartz.org/> and try to install [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/) again.
+[Open a new issue](https://github.com/forestgeo/fgeo/issues/new)
 
-```R
-Error : .onLoad failed in loadNamespace() for 'tcltk', details:
-  call: fun(libname, pkgname)
-  error: X11 library is missing: install XQuartz from xquartz.macosforge.org
-```
-
-## How can I learn more?
+## How to get help?
 
 ```R
 fgeo_help()
 ```
 
-<img src="https://i.imgur.com/qprk3wQ.png" align="center" height=500 />
+See also [Getting help with __fgeo__](https://forestgeo.github.io/fgeo/SUPPORT.html) or email Mauro Lepore (leporem\@si.edu).
 
----
-
-## How can I contribute to __fgeo__?
+## How to contribute to __fgeo__?
 
 See [Contributing to __fgeo__](https://forestgeo.github.io/fgeo/CONTRIBUTING.html).
 
-## How can I get help about some code?
+## How to search functions and datasets
 
-See [Getting help with __fgeo__](https://forestgeo.github.io/fgeo/SUPPORT.html) or email Mauro Lepore (leporem\@si.edu).
+See [Reference](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
 
-## How can I report a bug?
+## How to search anything in ForestGEO GitHub's organization?
 
-Open a [New issue](https://github.com/forestgeo/fgeo/issues/new) or email Mauro Lepore (leporem\@si.edu).
+GitHub's search engine is powerful. Go to <https://github.com/forestgeo> and search anything.
 
-## How can I browse source code?
+<img src="https://i.imgur.com/GPOQ99f.png" align="center" width=550/>
 
-Browse all source code at https://github.com/forestgeo/fgeo. 
-
-## How can I find the source code of a specific function?
+## How to search the source code of a specific function?
 
 1. Browse to the relevant package's website (e.g. [fgeo](https://forestgeo.github.io/fgeo/index.html)).
 
@@ -141,17 +115,17 @@ Browse all source code at https://github.com/forestgeo/fgeo.
 
 3. Click the link to _Source_ under the topic's title. For example:
 
-![](https://i.imgur.com/VUq5cb9.png)
+<img src="https://i.imgur.com/VUq5cb9.png" align="center" width=550/>
 
-## Where can I discuss a general question with fgeo's community?
-
-Open a [New issue](https://github.com/forestgeo/forum/issues) at [forestgeo/forum](https://github.com/forestgeo/forum).
-
-## Where can I find or share general resources with fgeo's community?
+## How to search or share general resources with fgeo's community?
 
 Visit [forestgeo/learn](https://github.com/forestgeo/learn).
 
-## How can I try fgeo before I install it?
+## How to discuss a general question with fgeo's community?
+
+Open a [New issue](https://github.com/forestgeo/forum/issues) at [forestgeo/forum](https://github.com/forestgeo/forum).
+
+## How to try fgeo before installling it?
 
 Try __fgeo__ from your webrowser at <http://bit.ly/fgeo-demo>.
 
@@ -159,7 +133,7 @@ Try __fgeo__ from your webrowser at <http://bit.ly/fgeo-demo>.
 
 Contact [__fgeo__'s maintainer](https://github.com/maurolepore).
 
-## How can I get up-to-date with __fgeo__'s developments?
+## How to keep updated with __fgeo__'s developments?
 
 Checkout [__fgeo__'s blog](https://fgeo.netlify.com/).
 
