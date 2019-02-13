@@ -2,7 +2,7 @@
 % Please edit documentation in R/fgeo_packages.R
 \name{fgeo_packages}
 \alias{fgeo_packages}
-\title{Names of the core \strong{fgeo} packages.}
+\title{Names of the core fgeo packages.}
 \usage{
 fgeo_packages(include_self = TRUE)
 }
@@ -13,7 +13,7 @@ fgeo_packages(include_self = TRUE)
 A string.
 }
 \description{
-Names of the core \strong{fgeo} packages.
+Names of the core fgeo packages.
 }
 \examples{
 fgeo_packages()
