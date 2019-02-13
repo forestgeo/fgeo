@@ -3,7 +3,7 @@
 
 # <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analyze forest diversity and dynamics
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
 [![Coverage
@@ -140,10 +140,10 @@ Error : .onLoad failed in loadNamespace() for 'tcltk', details:
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------- fgeo 1.1.1 --
-#> v fgeo.analyze 1.1.3     v fgeo.tool    1.2.1
-#> v fgeo.plot    1.1.2     v fgeo.x       1.1.0
-#> -- Conflicts ------------------------------------------ fgeo_conflicts() --
+#> -- Attaching packages ----------------------------------------- fgeo 1.1.2 --
+#> v fgeo.analyze 1.1.4     v fgeo.tool    1.2.2
+#> v fgeo.plot    1.1.3     v fgeo.x       1.1.2
+#> -- Conflicts -------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
