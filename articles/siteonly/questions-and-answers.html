@@ -126,89 +126,132 @@
 
     
     
-<div id="what-is-fgeo" class="section level2">
+<div id="how-to-setup--rprofile-for-easiest-installation-of-fgeo" class="section level2">
 <h2 class="hasAnchor">
-<a href="#what-is-fgeo" class="anchor"></a>What is <strong>fgeo</strong>?</h2>
-<p><strong>fgeo</strong> is an umbrella: It is a meta-package that gathers multiple modules of ForestGEO’s software – each module corresponding to an individual package. This modularity facilitates managing and expanding ForestGEO’s software.</p>
+<a href="#how-to-setup--rprofile-for-easiest-installation-of-fgeo" class="anchor"></a>How to setup .Rprofile for easiest installation of <strong>fgeo</strong>?</h2>
+<ol style="list-style-type: decimal">
+<li>Open .Rprofile (e.g. with <a href="https://usethis.r-lib.org/reference/edit.html"><code><a href="https://www.rdocumentation.org/packages/usethis/topics/edit">usethis::edit_r_profile()</a></code></a>) and add this code:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">.First &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="dt">repos =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">      <span class="dt">CRAN =</span> <span class="st">"https://cran.rstudio.com/"</span>,</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">      <span class="dt">forestgeo =</span> <span class="st">"https://forestgeo.github.io/drat"</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    )</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">  )</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">}</a></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Save .Rprofile, close it, and restart R.</li>
+</ol>
+<p>In every R session you can now install <strong>fgeo</strong> with <code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages("fgeo")</a></code>.</p>
 </div>
-<div id="how-can-i-learn-about-fgeo-before-installing-it" class="section level2">
+<div id="how-to-update-fgeo" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-learn-about-fgeo-before-installing-it" class="anchor"></a>How can I learn about <strong>fgeo</strong> before installing it?</h2>
-<p>See [Search Packages] and follow the links to online documentation.</p>
+<a href="#how-to-update-fgeo" class="anchor"></a>How to update <strong>fgeo</strong>?</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/update.packages">update.packages</a></span>(<span class="dt">repos =</span> <span class="st">"https://forestgeo.github.io/drat/"</span>)</a></code></pre></div>
 </div>
-<div id="how-can-i-start-using-fgeo" class="section level2">
+<div id="how-to-remove-fgeo" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-start-using-fgeo" class="anchor"></a>How can I start using <strong>fgeo</strong>?</h2>
-<p>From R, begin by <a href="https://forestgeo.github.io/fgeo/#installation">installing <strong>fgeo</strong></a>. Then load it with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; ── Attaching packages ────────────────────────────────── fgeo 1.1.2.9000 ──</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; ✔ fgeo.analyze 1.1.4     ✔ fgeo.tool    1.2.2</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; ✔ fgeo.plot    1.1.3     ✔ fgeo.x       1.1.2</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; ── Conflicts ────────────────────────────────────────── fgeo_conflicts() ──</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt; ✖ fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
+<a href="#how-to-remove-fgeo" class="anchor"></a>How to remove <strong>fgeo</strong>?</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/remove.packages">remove.packages</a></span>(fgeo<span class="op">::</span><span class="kw"><a href="https://forestgeo.github.io/fgeo//reference/fgeo_packages.html">fgeo_packages</a></span>())</a></code></pre></div>
 </div>
-<div id="how-can-i-update-fgeo" class="section level2">
+<div id="how-to-avoid-or-fix-common-installation-problems" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-update-fgeo" class="anchor"></a>How can I update <strong>fgeo</strong>?</h2>
-<blockquote>
-<p>You are advised to run update.packages before install.packages to ensure that any already installed dependencies have their latest versions</p>
-</blockquote>
-<p>– Help file of <code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages()</a></code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/update.packages">update.packages</a></span>()</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"forestgeo/fgeo"</span>)</a></code></pre></div>
-<p><a href="https://forestgeo.github.io/fgeo/index.html#installation">More information</a></p>
+<a href="#how-to-avoid-or-fix-common-installation-problems" class="anchor"></a>How to avoid or fix common installation problems?</h2>
+<div id="update-r-rstudio-and-r-packages" class="section level4">
+<h4 class="hasAnchor">
+<a href="#update-r-rstudio-and-r-packages" class="anchor"></a>Update R, RStudio, and R packages</h4>
+<ul>
+<li><a href="https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/">How?</a></li>
+<li><a href="https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/">Why?</a></li>
+</ul>
 </div>
-<div id="how-can-i-learn-more" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-can-i-learn-more" class="anchor"></a>How can I learn more?</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="../../reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
-<p><img src="https://i.imgur.com/qprk3wQ.png" align="center" height="500"></p>
-<hr>
+<div id="instruct-rstudio-not-to-preserve-your-workspace-between-sessions" class="section level4">
+<h4 class="hasAnchor">
+<a href="#instruct-rstudio-not-to-preserve-your-workspace-between-sessions" class="anchor"></a>Instruct RStudio not to preserve your workspace between sessions</h4>
+<ul>
+<li><a href="https://r4ds.had.co.nz/workflow-projects.html#what-is-real">Why?</a></li>
+</ul>
+<p>In RStudio go to <em>Tools &gt; Global Options…</em></p>
+<p><img src="https://i.imgur.com/QqPyHJu.png" align="center" height="450/"></p>
 </div>
-<div id="how-can-i-contribute-to-fgeo" class="section level2">
+<div id="use-rstudio-projects-or-the-here-package" class="section level4">
+<h4 class="hasAnchor">
+<a href="#use-rstudio-projects-or-the-here-package" class="anchor"></a>Use RStudio projects (or the <a href="https://here.r-lib.org/"><strong>here</strong></a> package)</h4>
+<ul>
+<li><a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">Why?</a></li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height="350/"></p>
+</div>
+<div id="restart-r-many-times-each-day" class="section level4">
+<h4 class="hasAnchor">
+<a href="#restart-r-many-times-each-day" class="anchor"></a>Restart R many times each day</h4>
+<p>Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to <em>Session &gt; Restart R</em>.</p>
+</div>
+<div id="increase-the-rate-limit-to-request-downloads-from-github" class="section level4">
+<h4 class="hasAnchor">
+<a href="#increase-the-rate-limit-to-request-downloads-from-github" class="anchor"></a>Increase the rate limit to request downloads from GitHub</h4>
+<p>See <a href="https://usethis.r-lib.org/reference/browse_github_pat.html"><code><a href="https://www.rdocumentation.org/packages/usethis/topics/browse_github_pat">usethis::browse_github_pat()</a></code></a>.</p>
+</div>
+<div id="prepare-your-system-to-build-packages-from-source" class="section level4">
+<h4 class="hasAnchor">
+<a href="#prepare-your-system-to-build-packages-from-source" class="anchor"></a>Prepare your system to build packages from source</h4>
+<p>Sometimes you may need to install the <em>source</em> version of an R package (e.g. from CRAN or GitHub).</p>
+<ul>
+<li><a href="https://usethis.r-lib.org/articles/articles/usethis-setup.html#prepare-your-system-to-build-packages-from-source">How?</a></li>
+</ul>
+</div>
+</div>
+<div id="how-to-ask-questions-report-bugs-or-propose-features" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-contribute-to-fgeo" class="anchor"></a>How can I contribute to <strong>fgeo</strong>?</h2>
+<a href="#how-to-ask-questions-report-bugs-or-propose-features" class="anchor"></a>How to ask questions, report bugs, or propose features</h2>
+<p><a href="https://github.com/forestgeo/fgeo/issues/new">Open a new issue</a></p>
+</div>
+<div id="how-to-get-help" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-get-help" class="anchor"></a>How to get help?</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="../../reference/fgeo_help.html">fgeo_help</a></span>()</a></code></pre></div>
+<p>See also <a href="https://forestgeo.github.io/fgeo/SUPPORT.html">Getting help with <strong>fgeo</strong></a> or email Mauro Lepore (leporem@si.edu).</p>
+</div>
+<div id="how-to-contribute-to-fgeo" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-contribute-to-fgeo" class="anchor"></a>How to contribute to <strong>fgeo</strong>?</h2>
 <p>See <a href="https://forestgeo.github.io/fgeo/CONTRIBUTING.html">Contributing to <strong>fgeo</strong></a>.</p>
 </div>
-<div id="how-can-i-get-help-about-some-code" class="section level2">
+<div id="how-to-search-functions-and-datasets" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-get-help-about-some-code" class="anchor"></a>How can I get help about some code?</h2>
-<p>See <a href="https://forestgeo.github.io/fgeo/SUPPORT.html">Getting help with <strong>fgeo</strong></a> or email Mauro Lepore (leporem@si.edu).</p>
+<a href="#how-to-search-functions-and-datasets" class="anchor"></a>How to search functions and datasets</h2>
+<p>See <a href="https://forestgeo.github.io/fgeo/articles/siteonly/reference.html">Reference</a></p>
 </div>
-<div id="how-can-i-report-a-bug" class="section level2">
+<div id="how-to-search-anything-in-forestgeo-githubs-organization" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-report-a-bug" class="anchor"></a>How can I report a bug?</h2>
-<p>Open a <a href="https://github.com/forestgeo/fgeo/issues/new">New issue</a> or email Mauro Lepore (leporem@si.edu).</p>
+<a href="#how-to-search-anything-in-forestgeo-githubs-organization" class="anchor"></a>How to search anything in ForestGEO GitHub’s organization?</h2>
+<p>GitHub’s search engine is powerful. Go to <a href="https://github.com/forestgeo" class="uri">https://github.com/forestgeo</a> and search anything.</p>
+<p><img src="https://i.imgur.com/GPOQ99f.png" align="center" width="550/"></p>
 </div>
-<div id="how-can-i-browse-source-code" class="section level2">
+<div id="how-to-search-the-source-code-of-a-specific-function" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-browse-source-code" class="anchor"></a>How can I browse source code?</h2>
-<p>Browse all source code at <a href="https://github.com/forestgeo/fgeo" class="uri">https://github.com/forestgeo/fgeo</a>.</p>
-</div>
-<div id="how-can-i-find-the-source-code-of-a-specific-function" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-can-i-find-the-source-code-of-a-specific-function" class="anchor"></a>How can I find the source code of a specific function?</h2>
+<a href="#how-to-search-the-source-code-of-a-specific-function" class="anchor"></a>How to search the source code of a specific function?</h2>
 <ol style="list-style-type: decimal">
 <li><p>Browse to the relevant package’s website (e.g. <a href="https://forestgeo.github.io/fgeo/index.html">fgeo</a>).</p></li>
 <li><p>Find the function under <em>Reference</em> (e.g. <strong>fgeo</strong>’s <a href="https://forestgeo.github.io/fgeo/reference/index.html">Reference</a>).</p></li>
 <li><p>Click the link to <em>Source</em> under the topic’s title. For example:</p></li>
 </ol>
-<p><img src="https://i.imgur.com/VUq5cb9.png"></p>
+<p><img src="https://i.imgur.com/VUq5cb9.png" align="center" width="550/"></p>
 </div>
-<div id="where-can-i-discuss-a-general-question-with-fgeos-community" class="section level2">
+<div id="how-to-search-or-share-general-resources-with-fgeos-community" class="section level2">
 <h2 class="hasAnchor">
-<a href="#where-can-i-discuss-a-general-question-with-fgeos-community" class="anchor"></a>Where can I discuss a general question with fgeo’s community?</h2>
-<p>Open a <a href="https://github.com/forestgeo/forum/issues">New issue</a> at <a href="https://github.com/forestgeo/forum">forestgeo/forum</a>.</p>
-</div>
-<div id="where-can-i-find-or-share-general-resources-with-fgeos-community" class="section level2">
-<h2 class="hasAnchor">
-<a href="#where-can-i-find-or-share-general-resources-with-fgeos-community" class="anchor"></a>Where can I find or share general resources with fgeo’s community?</h2>
+<a href="#how-to-search-or-share-general-resources-with-fgeos-community" class="anchor"></a>How to search or share general resources with fgeo’s community?</h2>
 <p>Visit <a href="https://github.com/forestgeo/learn">forestgeo/learn</a>.</p>
 </div>
-<div id="how-can-i-try-fgeo-before-i-install-it" class="section level2">
+<div id="how-to-discuss-a-general-question-with-fgeos-community" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-try-fgeo-before-i-install-it" class="anchor"></a>How can I try fgeo before I install it?</h2>
+<a href="#how-to-discuss-a-general-question-with-fgeos-community" class="anchor"></a>How to discuss a general question with fgeo’s community?</h2>
+<p>Open a <a href="https://github.com/forestgeo/forum/issues">New issue</a> at <a href="https://github.com/forestgeo/forum">forestgeo/forum</a>.</p>
+</div>
+<div id="how-to-try-fgeo-before-installling-it" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-try-fgeo-before-installling-it" class="anchor"></a>How to try fgeo before installling it?</h2>
 <p>Try <strong>fgeo</strong> from your webrowser at <a href="http://bit.ly/fgeo-demo" class="uri">http://bit.ly/fgeo-demo</a>.</p>
 </div>
 <div id="how-to-contact-a-human" class="section level2">
@@ -216,9 +259,9 @@
 <a href="#how-to-contact-a-human" class="anchor"></a>How to contact a human?</h2>
 <p>Contact <a href="https://github.com/maurolepore"><strong>fgeo</strong>’s maintainer</a>.</p>
 </div>
-<div id="how-can-i-get-up-to-date-with-fgeos-developments" class="section level2">
+<div id="how-to-keep-updated-with-fgeos-developments" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-can-i-get-up-to-date-with-fgeos-developments" class="anchor"></a>How can I get up-to-date with <strong>fgeo</strong>’s developments?</h2>
+<a href="#how-to-keep-updated-with-fgeos-developments" class="anchor"></a>How to keep updated with <strong>fgeo</strong>’s developments?</h2>
 <p>Checkout <a href="https://fgeo.netlify.com/"><strong>fgeo</strong>’s blog</a>.</p>
 <p>Follow <a href="https://twitter.com/mauro_lepore">@mauro_lepore</a> or <a href="https://twitter.com/search?q=%23fgeo%20%23rstats&amp;src=typd&amp;lang=en">#fgeo #rstats on twitter</a></p>
 </div>
@@ -229,21 +272,21 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#what-is-fgeo">What is <strong>fgeo</strong>?</a></li>
-      <li><a href="#how-can-i-learn-about-fgeo-before-installing-it">How can I learn about <strong>fgeo</strong> before installing it?</a></li>
-      <li><a href="#how-can-i-start-using-fgeo">How can I start using <strong>fgeo</strong>?</a></li>
-      <li><a href="#how-can-i-update-fgeo">How can I update <strong>fgeo</strong>?</a></li>
-      <li><a href="#how-can-i-learn-more">How can I learn more?</a></li>
-      <li><a href="#how-can-i-contribute-to-fgeo">How can I contribute to <strong>fgeo</strong>?</a></li>
-      <li><a href="#how-can-i-get-help-about-some-code">How can I get help about some code?</a></li>
-      <li><a href="#how-can-i-report-a-bug">How can I report a bug?</a></li>
-      <li><a href="#how-can-i-browse-source-code">How can I browse source code?</a></li>
-      <li><a href="#how-can-i-find-the-source-code-of-a-specific-function">How can I find the source code of a specific function?</a></li>
-      <li><a href="#where-can-i-discuss-a-general-question-with-fgeos-community">Where can I discuss a general question with fgeo’s community?</a></li>
-      <li><a href="#where-can-i-find-or-share-general-resources-with-fgeos-community">Where can I find or share general resources with fgeo’s community?</a></li>
-      <li><a href="#how-can-i-try-fgeo-before-i-install-it">How can I try fgeo before I install it?</a></li>
+<li><a href="#how-to-setup--rprofile-for-easiest-installation-of-fgeo">How to setup .Rprofile for easiest installation of <strong>fgeo</strong>?</a></li>
+      <li><a href="#how-to-update-fgeo">How to update <strong>fgeo</strong>?</a></li>
+      <li><a href="#how-to-remove-fgeo">How to remove <strong>fgeo</strong>?</a></li>
+      <li><a href="#how-to-avoid-or-fix-common-installation-problems">How to avoid or fix common installation problems?</a></li>
+      <li><a href="#how-to-ask-questions-report-bugs-or-propose-features">How to ask questions, report bugs, or propose features</a></li>
+      <li><a href="#how-to-get-help">How to get help?</a></li>
+      <li><a href="#how-to-contribute-to-fgeo">How to contribute to <strong>fgeo</strong>?</a></li>
+      <li><a href="#how-to-search-functions-and-datasets">How to search functions and datasets</a></li>
+      <li><a href="#how-to-search-anything-in-forestgeo-githubs-organization">How to search anything in ForestGEO GitHub’s organization?</a></li>
+      <li><a href="#how-to-search-the-source-code-of-a-specific-function">How to search the source code of a specific function?</a></li>
+      <li><a href="#how-to-search-or-share-general-resources-with-fgeos-community">How to search or share general resources with fgeo’s community?</a></li>
+      <li><a href="#how-to-discuss-a-general-question-with-fgeos-community">How to discuss a general question with fgeo’s community?</a></li>
+      <li><a href="#how-to-try-fgeo-before-installling-it">How to try fgeo before installling it?</a></li>
       <li><a href="#how-to-contact-a-human">How to contact a human?</a></li>
-      <li><a href="#how-can-i-get-up-to-date-with-fgeos-developments">How can I get up-to-date with <strong>fgeo</strong>’s developments?</a></li>
+      <li><a href="#how-to-keep-updated-with-fgeos-developments">How to keep updated with <strong>fgeo</strong>’s developments?</a></li>
       </ul>
 </div>
       </div>
