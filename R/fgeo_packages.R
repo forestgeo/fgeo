@@ -1,4 +1,4 @@
-#' Names of the core __fgeo__ packages.
+#' Names of the core fgeo packages.
 #'
 #' @param include_self Logical. Should the output include fgeo?
 #' @return A string.
