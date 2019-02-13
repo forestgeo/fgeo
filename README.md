@@ -12,10 +12,15 @@ status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](htt
 status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
 
 **fgeo** helps you to install, load, and access the documentation of
-multiple packages to analyze forest diversity and dynamics. It allows
-you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/)
-data, and to do common analyses including abundance, demography, and
-species-habitats associations.
+multiple packages to analyze forest diversity and dynamics
+(<a href=https://forestgeo.github.io/fgeo.analyze>fgeo.analyze</a>,
+<a href=https://forestgeo.github.io/fgeo.plot>fgeo.plot</a>,
+<a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>,
+<a href=https://forestgeo.github.io/fgeo.x>fgeo.x</a>). This
+package-collection allows you to manipulate and plot
+[ForestGEO](http://www.forestgeo.si.edu/) data, and to do common
+analyses including abundance, demography, and species-habitats
+associations.
 
   - [Search functions and
     datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
@@ -28,7 +33,8 @@ species-habitats associations.
 Make sure your R environment is as follows:
 
   - R version is recent
-  - All packages are updated (run `update.packages()`)
+  - All packages are updated (run `update.packages()`; maybe use `ask =
+    FALSE`)
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
@@ -43,107 +49,23 @@ drat::addRepo("forestgeo")
 install.packages("fgeo")
 ```
 
-  - Update all packages with
-    [`update.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/update.packages)
-    (you may use `ask = FALSE`).
-  - Remove packages with
-    [`remove.packages()`](https://www.rdocumentation.org/packages/utils/versions/3.5.2/topics/remove.packages),
-    e.g. `remove.packages(c("fgeo.plot", "fgeo.analyze"))`.
-
-This setup lasts for the current R session only.
-
-<details>
-
-<summary><strong>Setup the “repos” option for every R
-session</strong></summary>
-
-To setup the “repos” option to include ForestGEO’s CRAN-like repository
-in every R session, open .Rprofile (e.g. with
-[`usethis::edit_r_profile()`](https://usethis.r-lib.org/reference/edit.html))
-and add this code:
-
-``` r
-.First <- function() {
-  options(
-    repos = c(
-      CRAN = "https://cran.rstudio.com/",
-      forestgeo = "https://forestgeo.github.io/drat"
-    )
-  )
-}
-```
-
-Then save .Rprofile, close it, and restart R.
-
-</details>
-
-<details>
-
-<summary><strong>Tips to avoid or fix common installation
-problems</strong></summary>
-
-#### Update R, RStudio, and R packages
-
-  - [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
-  - [Why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
-
-#### Instruct RStudio not to preserve your workspace between sessions
-
-  - [Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
-
-In RStudio go to *Tools \> Global
-Options…*
-
-<img src="https://i.imgur.com/QqPyHJu.png" align="center" height=450/>
-
-#### Use RStudio projects (or the [**here**](https://here.r-lib.org/) package)
-
-  - [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
-
-<img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height=350/>
-
-#### Restart R many times each day
-
-Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to *Session \>
-Restart R*.
-
-#### Increase the rate limit to request downloads from GitHub
-
-See
-[`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
-
-#### Prepare your system to build packages from source
-
-Sometimes you may need to install the *source* version of an R package
-(e.g. from CRAN or
-    GitHub).
-
-  - [How?](https://usethis.r-lib.org/articles/articles/usethis-setup.html#prepare-your-system-to-build-packages-from-source)
-
-#### Troubleshoot: error: X11 library is missing: install XQuartz …
-
-If you are a mac user,
-[**fgeo.krig**](https://forestgeo.github.io/fgeo.krig/) may fail to
-install with the error below. Install XQuartz from
-<https://www.xquartz.org/> and try to install
-[**fgeo.krig**](https://forestgeo.github.io/fgeo.krig/) again.
-
-``` r
-Error : .onLoad failed in loadNamespace() for 'tcltk', details:
-  call: fun(libname, pkgname)
-  error: X11 library is missing: install XQuartz from xquartz.macosforge.org
-```
-
-</details>
+  - [How to setup .Rprofile for easieast installation of
+    **fgeo**?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-setup-rprofile-for-easieast-installation-of-fgeo)
+  - [How to update
+    **fgeo**?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-update-fgeo)
+  - [How to remove
+    **fgeo**?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-remove-fgeo)
+  - [How to avoid or fix common installation
+    problems?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-avoid-or-fix-common-installation-problems)
 
 ## Example
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ----------------------------------------- fgeo 1.1.2 --
-#> v fgeo.analyze 1.1.4     v fgeo.tool    1.2.2
-#> v fgeo.plot    1.1.3     v fgeo.x       1.1.2
-#> -- Conflicts -------------------------------------------- fgeo_conflicts() --
+#> -- Attaching packages --------------------------------------------- fgeo 1.1.2.9000 --
+#> v fgeo.analyze 1.1.4.9000     v fgeo.tool    1.2.2     
+#> v fgeo.plot    1.1.3          v fgeo.x       1.1.2
+#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
