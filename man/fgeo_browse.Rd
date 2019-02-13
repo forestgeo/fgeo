@@ -19,6 +19,7 @@ if (interactive()) {
 }
 }
 \seealso{
-Other functions to explore fgeo: \code{\link{fgeo_help}}
+Other functions to explore fgeo: \code{\link{fgeo_help}},
+  \code{\link{fgeo_packages}}
 }
 \concept{functions to explore fgeo}
