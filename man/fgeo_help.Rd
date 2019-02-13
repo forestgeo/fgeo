@@ -44,6 +44,7 @@ if (interactive()) {
 \seealso{
 \code{\link[utils:help.search]{utils::help.search()}}.
 
-Other functions to explore fgeo: \code{\link{fgeo_browse}}
+Other functions to explore fgeo: \code{\link{fgeo_browse}},
+  \code{\link{fgeo_packages}}
 }
 \concept{functions to explore fgeo}

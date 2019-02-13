@@ -1,8 +1,12 @@
-#' All and core __fgeo__ packages.
+#' Names of the core __fgeo__ packages.
 #'
 #' @param include_self Logical. Should the output include fgeo?
 #' @return A string.
-#' @noRd
+#' @export
+#' @family functions to explore fgeo
+#' @examples
+#' fgeo_packages()
+#' fgeo_packages(include_self = FALSE)
 fgeo_packages <- function(include_self = TRUE) {
   fgeo <- fgeo_dependencies(
     matches = "fgeo", include_self = TRUE, section = "Imports"
