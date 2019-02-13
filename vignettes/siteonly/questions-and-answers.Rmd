@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 ## What is __fgeo__?
 
-__fgeo__ is an umbrella: It is a meta-package that gathers multiple modules of ForestGEO's software -- each module corresponding to an individual package. This modularity facilitates managing and expanding ForestGEO's software.
+__fgeo__ is a meta R-package that gathers multiple modules of ForestGEO's software -- each module corresponding to an individual R package. This modularity facilitates managing and expanding ForestGEO's software.
 
 ## How can I learn about __fgeo__ before installing it?
 
@@ -31,19 +31,81 @@ From R, begin by [installing __fgeo__](https://forestgeo.github.io/fgeo/#install
 library(fgeo)
 ```
 
-## How can I update __fgeo__?
+## How to setup .Rprofile for easiest installation of __fgeo__?
 
-> You are advised to run update.packages before install.packages to ensure that any already installed dependencies have their latest versions
-
--- Help file of `install.packages()`
+1. Open .Rprofile (e.g. with [`usethis::edit_r_profile()`](https://usethis.r-lib.org/reference/edit.html)) and add this code:
 
 ```R
-# install.packages("devtools")
-update.packages()
-devtools::install_github("forestgeo/fgeo")
+.First <- function() {
+  options(
+    repos = c(
+      CRAN = "https://cran.rstudio.com/",
+      forestgeo = "https://forestgeo.github.io/drat"
+    )
+  )
+}
 ```
 
-[More information](https://forestgeo.github.io/fgeo/index.html#installation)
+2. Save .Rprofile, close it, and restart R.
+
+In every R session you can now install __fgeo__ with `install.packages("fgeo")`.
+
+## How to update __fgeo__?
+
+```R
+update.packages(repos = "https://forestgeo.github.io/drat/")
+```
+
+## How to remove __fgeo__?
+
+```R
+remove.packages(fgeo::fgeo_packages())
+```
+
+## How to avoid or fix common installation problems?
+
+#### Update R, RStudio, and R packages
+
+* [How?](https://fgeo.netlify.com/2018/02/08/2018-02-08-update-r-rstudio-and-r-packages/)
+* [Why?](https://fgeo.netlify.com/2018/03/06/2018-03-06-should-i-update-all-my-r-packages-frequently-yes-no-why/)
+
+#### Instruct RStudio not to preserve your workspace between sessions
+
+* [Why?](https://r4ds.had.co.nz/workflow-projects.html#what-is-real)
+
+In RStudio go to _Tools > Global Options..._
+
+<img src="https://i.imgur.com/QqPyHJu.png" align="center" height=450/>
+
+#### Use RStudio projects (or the [__here__](https://here.r-lib.org/) package)
+
+* [Why?](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)
+
+<img src="https://user-images.githubusercontent.com/5856545/47810353-7d3ef900-dd19-11e8-951f-00afc2280198.png" align="center" height=350/>
+
+#### Restart R many times each day
+
+Press Cmd/Ctrl + Shift + F10 to restart RStudio or go to _Session > Restart R_.
+
+#### Increase the rate limit to request downloads from GitHub
+
+See [`usethis::browse_github_pat()`](https://usethis.r-lib.org/reference/browse_github_pat.html).
+
+#### Prepare your system to build packages from source
+
+Sometimes you may need to install the _source_ version of an R package (e.g. from CRAN or GitHub). 
+
+* [How?](https://usethis.r-lib.org/articles/articles/usethis-setup.html#prepare-your-system-to-build-packages-from-source)
+
+#### Troubleshoot: error: X11 library is missing: install XQuartz ...
+
+If you are a mac user, [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/) may fail to install with the error below. Install XQuartz from <https://www.xquartz.org/> and try to install [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/) again.
+
+```R
+Error : .onLoad failed in loadNamespace() for 'tcltk', details:
+  call: fun(libname, pkgname)
+  error: X11 library is missing: install XQuartz from xquartz.macosforge.org
+```
 
 ## How can I learn more?
 
