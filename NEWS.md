@@ -12,16 +12,17 @@ This release marks that all __fgeo__ packages now meet CRAN standards. [Most cha
 
 Many thanks to those who [reviewed](https://forestgeo.github.io/fgeo/authors.html) __fgeo__ for your contribution in making it better.
 
-# fgeo 1.1.1 ([GitHub](https://github.com/forestgeo/fgeo/releases) and [drat](https://forestgeo.github.io/drat/))
+# fgeo 1.1.1 ([GitHub](https://github.com/forestgeo/fgeo/releases))
 
 * Meet CRAN standards.
+
 * Use tidy versions.
 
-# fgeo 1.1.0 ([GitHub](https://github.com/forestgeo/fgeo/releases) and [drat](https://forestgeo.github.io/drat/))
+# fgeo 1.1.0 ([GitHub](https://github.com/forestgeo/fgeo/releases))
 
 * Import fgeo packages via `Additional_repositories` served at <https://forestgeo.github.io/drat/>
 
-# fgeo 1.0.1 ([GitHub](https://github.com/forestgeo/fgeo/releases) and [drat](https://forestgeo.github.io/drat/))
+# fgeo 1.0.1 ([GitHub](https://github.com/forestgeo/fgeo/releases))
 
 * Style.
 
