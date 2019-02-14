@@ -75,7 +75,8 @@ Authors@R:
       person(given = "Cara",
              family = "Scalpone",
              role = c("rev"),
-             email = "ScalponeC@si.edu"),
+             email = "ScalponeC@si.edu"
+             comment = c(ORCID = "0000-0001-8448-2147")),
       person(given = "Kristina",
              family = "Teixeira",
              role = c("aut", "rev"),
