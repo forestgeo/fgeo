@@ -23,7 +23,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Mauro Lepore \email{leporem@si.edu} [contractor]
+\strong{Maintainer}: Mauro Lepore \email{leporem@si.edu} (0000-0002-1986-7988) [contractor]
 
 Authors:
 \itemize{
@@ -35,13 +35,10 @@ Authors:
   \item Pamela Hall \email{phall@alum.mit.edu}
   \item Kyle Harms \email{ kharms@lsu.edu}
   \item Valentine Herrmann \email{HerrmannV@si.edu} [reviewer]
-  \item Aaron Hogan \email{jamesaaronhogan@gmail.com} [reviewer]
-  \item Bier Kraichak \email{ekraichak@gmail.com} [reviewer]
   \item David Kenfack \email{KenfackD@si.edu } [reviewer]
   \item Suzanne Lao \email{laoz@si.edu} [reviewer]
   \item Sean McMahon \email{mcmahons@si.edu} [reviewer]
   \item Sabrina Russo \email{srusso2@unl.edu} [reviewer]
-  \item Cara Scalpone \email{ScalponeC@si.edu} [reviewer]
   \item Kristina Teixeira \email{TeixeiraK@si.edu} [reviewer]
   \item Graham Zemunik \email{grah.zem@gmail.com} [reviewer]
   \item Daniel Zuleta \email{dfzuleta@gmail.com} [reviewer]
@@ -49,8 +46,11 @@ Authors:
 
 Other contributors:
 \itemize{
+  \item Aaron Hogan \email{jamesaaronhogan@gmail.com} (0000-0001-9806-3074) [reviewer]
+  \item Bier Kraichak \email{ekraichak@gmail.com} [reviewer]
   \item Lauren Krizel \email{KrizelL@si.edu} [reviewer]
   \item Haley Overstreet \email{OverstreetH@si.edu} [reviewer]
+  \item Cara Scalpone \email{ScalponeC@si.edu} [reviewer]
   \item CTFS-ForestGEO \email{ForestGEO@si.edu} [copyright holder, funder]
 }
 
