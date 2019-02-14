@@ -11,7 +11,7 @@ Authors@R:
              family = "Arellano",
              role = c("aut", "rev"),
              email = "gabriel.arellano.torres@gmail.com"),
-      person(given = " Richard ",
+      person(given = "Richard ",
              family = "Condit",
              role = "aut",
              email = "richardcondit@gmail.com"),
