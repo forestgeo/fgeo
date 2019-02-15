@@ -28,13 +28,13 @@ Useful links:
 Authors:
 \itemize{
   \item Gabriel Arellano \email{gabriel.arellano.torres@gmail.com} [reviewer]
-  \item  Richard  Condit \email{richardcondit@gmail.com}
+  \item Richard  Condit \email{richardcondit@gmail.com}
   \item Stuart Davies \email{daviess@si.edu} [reviewer]
   \item Matteo Detto \email{teoparaglider@gmail.com}
   \item Erika Gonzalez-Akre \email{GonzalezEB@si.edu} [reviewer]
   \item Pamela Hall \email{phall@alum.mit.edu}
   \item Kyle Harms \email{ kharms@lsu.edu}
-  \item Valentine Herrmann \email{HerrmannV@si.edu} [reviewer]
+  \item Valentine Herrmann \email{HerrmannV@si.edu} (0000-0002-4519-481X) [reviewer]
   \item David Kenfack \email{KenfackD@si.edu } [reviewer]
   \item Suzanne Lao \email{laoz@si.edu} [reviewer]
   \item Sean McMahon \email{mcmahons@si.edu} [reviewer]
@@ -50,7 +50,7 @@ Other contributors:
   \item Bier Kraichak \email{ekraichak@gmail.com} [reviewer]
   \item Lauren Krizel \email{KrizelL@si.edu} [reviewer]
   \item Haley Overstreet \email{OverstreetH@si.edu} [reviewer]
-  \item Cara Scalpone \email{ScalponeC@si.edu} [reviewer]
+  \item Cara Scalpone \email{ScalponeC@si.edu} (0000-0001-8448-2147) [reviewer]
   \item CTFS-ForestGEO \email{ForestGEO@si.edu} [copyright holder, funder]
 }
 
