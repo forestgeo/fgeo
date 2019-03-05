@@ -80,7 +80,7 @@ Authors@R:
              email = "ScalponeC@si.edu",
              comment = c(ORCID = "0000-0001-8448-2147")),
       person(given = "Kristina",
-             family = "Teixeira",
+             family = "Anderson-Teixeira",
              role = c("aut", "rev"),
              email = "TeixeiraK@si.edu"),
       person(given = "Graham",
