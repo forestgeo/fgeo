@@ -40,9 +40,9 @@ manipulate <- "tool"
 datasets <- "x"
 ```
 
-__fgeo__ helps you to install, load, and access the documentation of multiple packages to analyze forest diversity and dynamics (`r purrr::map_chr(fgeo::fgeo_packages(include_self = FALSE), fgeo_link)`). This package-collection allows you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common analyses including abundance, demography, and species-habitats associations.
+__fgeo__ is a collection of R packages to analyze forest diversity and dynamics: `r purrr::map_chr(fgeo::fgeo_packages(include_self = FALSE), fgeo_link)`. These packages allow you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common analyses including abundance, demography, and species-habitats associations. __fgeo__ itself is also an R package, which allows you to install all __fgeo__ packages with a single R command, and helps you to access all documetation from this central website.
 
-* [Search functions and datasets](articles/siteonly/reference.html)
+* [Search functions, datasets](articles/siteonly/reference.html)
 * [Try __fgeo__ online](https://bit.ly/fgeo-demo)
 * [Ask questions, report bugs, or propose features](https://github.com/forestgeo/fgeo/issues/new)
 
