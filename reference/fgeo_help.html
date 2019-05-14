@@ -211,7 +211,7 @@ has a print method for nicely formatting the results of the query.</p>
   <span class='fu'>fgeo_help</span>()
 }
 
-<span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/reexports.html'>as_tibble</a></span>(<span class='fu'>fgeo_help</span>()$<span class='no'>matches</span>)</div><div class='output co'>#&gt; # A tibble: 334 x 9
+<span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/reexports.html'>as_tibble</a></span>(<span class='fu'>fgeo_help</span>()$<span class='no'>matches</span>)</div><div class='output co'>#&gt; # A tibble: 329 x 9
 #&gt;    Topic   Title        Name    ID    Package LibPath    Type  Field Entry      
 #&gt;    &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      
 #&gt;  1 abunda… Abundance a… abunda… 1/1   fgeo.a… /home/tra… help  alias abundance  
@@ -224,7 +224,7 @@ has a print method for nicely formatting the results of the query.</p>
 #&gt;  8 abunda… Create tabl… abunda… 1/2   fgeo.a… /home/tra… help  Title Create tab…
 #&gt;  9 fgeo.a… fgeo.analyz… fgeo.a… 1/3   fgeo.a… /home/tra… help  alias fgeo.analy…
 #&gt; 10 fgeo.a… fgeo.analyz… fgeo.a… 1/3   fgeo.a… /home/tra… help  alias fgeo.analy…
-#&gt; # … with 324 more rows</div><div class='input'>
+#&gt; # … with 319 more rows</div><div class='input'>
 <span class='kw'>if</span> (<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/interactive'>interactive</a></span>()) {
   <span class='fu'>fgeo_help</span>(<span class='st'>"stem"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fgeo.x"</span>)
 }</div></pre>
