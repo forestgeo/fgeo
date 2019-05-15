@@ -6,12 +6,15 @@
 \alias{fgeo-package}
 \title{fgeo: Analyze Forest Diversity and Dynamics}
 \description{
-'fgeo' allows you to install, load, and access
-    the documentation of multiple packages to analyze forest diversity and
-    dynamics. The collection includes packages to manipulate and plot
-    ForestGEO data, and to do common analyses including abundance,
-    demography, and species-habitats associations
-    (<http://www.forestgeo.si.edu/>).
+To help you access, transform, analyze, and
+    visualize ForestGEO data, we developed a collection of R packages
+    (<https://forestgeo.github.io/fgeo/>). This package, in particular,
+    helps you to install and load the entire package-collection with a
+    single R command, and provides convenient ways to find relevant
+    documentation. Most users should not worry about the individual
+    packages that make up the package-collection; instead, most people
+    should use this package only. To learn more about ForestGEO visit
+    <http://www.forestgeo.si.edu/>.
 }
 \seealso{
 Useful links:
@@ -31,7 +34,7 @@ Authors:
   \item Richard  Condit \email{richardcondit@gmail.com}
   \item Stuart Davies \email{daviess@si.edu} [reviewer]
   \item Matteo Detto \email{teoparaglider@gmail.com}
-  \item Erika Gonzalez-Akre \email{GonzalezEB@si.edu} [reviewer]
+  \item Erika Gonzalez-Akre \email{GonzalezEB@si.edu} (0000-0001-8305-6672) [reviewer]
   \item Pamela Hall \email{phall@alum.mit.edu}
   \item Kyle Harms \email{ kharms@lsu.edu}
   \item Valentine Herrmann \email{HerrmannV@si.edu} (0000-0002-4519-481X) [reviewer]
@@ -39,7 +42,7 @@ Authors:
   \item Suzanne Lao \email{laoz@si.edu} [reviewer]
   \item Sean McMahon \email{mcmahons@si.edu} [reviewer]
   \item Sabrina Russo \email{srusso2@unl.edu} [reviewer]
-  \item Kristina Teixeira \email{TeixeiraK@si.edu} [reviewer]
+  \item Kristina Anderson-Teixeira \email{TeixeiraK@si.edu} [reviewer]
   \item Graham Zemunik \email{grah.zem@gmail.com} [reviewer]
   \item Daniel Zuleta \email{dfzuleta@gmail.com} [reviewer]
 }
