@@ -229,14 +229,10 @@ Additional packages maintained by ForestGEO but not included in __fgeo__:
 * [__fgeo.data__](https://forestgeo.github.io/fgeo.data/): Open datasets of ForestGEO.
 * [__fgeo.krig__](https://forestgeo.github.io/fgeo.krig/): Analyze soils.
 
-
-
 Other packages not maintained by ForestGEO:
 
 * [CTFS-R Package](http://ctfs.si.edu/Public/CTFSRPackage/): The original package of CTFS functions. No longer supported by ForestGEO.
 * [__BIOMASS__](https://CRAN.R-project.org/package=BIOMASS): An R package to estimate above-ground biomass in tropical forests.
-
-
 
 ## R code from recent publications by ForestGEO partners
 
@@ -256,3 +252,5 @@ Data have been made available as required by the journal to enable reproduction 
 ## Acknowledgments
 
 Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. For all other help, I thank contributors in the the documentation of the features they helped with.
+
+

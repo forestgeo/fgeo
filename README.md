@@ -13,17 +13,16 @@ status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/p
 
 **fgeo** helps you to install, load, and access the documentation of
 multiple packages to analyze forest diversity and dynamics
-(<a href=https://forestgeo.github.io/fgeo.analyze>fgeo.analyze</a>,
-<a href=https://forestgeo.github.io/fgeo.plot>fgeo.plot</a>,
+(<a href=https://forestgeo.github.io/fgeo.plot>fgeo.plot</a>,
 <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>,
-<a href=https://forestgeo.github.io/fgeo.x>fgeo.x</a>). This
+<a href=https://forestgeo.github.io/fgeo.x>fgeo.x</a>,
+<a href=https://forestgeo.github.io/fgeo.analyze>fgeo.analyze</a>). This
 package-collection allows you to manipulate and plot
 [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common
 analyses including abundance, demography, and species-habitats
 associations.
 
-  - [Search functions and
-    datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
+  - [Search functions and datasets](articles/siteonly/reference.html)
   - [Try **fgeo** online](https://bit.ly/fgeo-demo)
   - [Ask questions, report bugs, or propose
     features](https://github.com/forestgeo/fgeo/issues/new)
@@ -49,23 +48,23 @@ drat::addRepo("forestgeo")
 install.packages("fgeo")
 ```
 
-  - [How to setup .Rprofile for easieast installation of
-    **fgeo**?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-setup-rprofile-for-easieast-installation-of-fgeo)
+  - [How to setup .Rprofile for easiest installation of
+    **fgeo**?](articles/siteonly/questions-and-answers.html#how-to-setup--rprofile-for-easiest-installation-of-fgeo)
   - [How to update
-    **fgeo**?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-update-fgeo)
+    **fgeo**?](articles/siteonly/questions-and-answers.html#how-to-update-fgeo)
   - [How to remove
-    **fgeo**?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-remove-fgeo)
+    **fgeo**?](articles/siteonly/questions-and-answers.html#how-to-remove-fgeo)
   - [How to avoid or fix common installation
-    problems?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-avoid-or-fix-common-installation-problems)
+    problems?](articles/siteonly/questions-and-answers.html#how-to-avoid-or-fix-common-installation-problems)
 
 ## Example
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------- fgeo 1.1.2.9000 --
-#> v fgeo.analyze 1.1.4.9000     v fgeo.tool    1.2.2     
-#> v fgeo.plot    1.1.3          v fgeo.x       1.1.2
-#> -- Conflicts ----------------------------------------------------- fgeo_conflicts() --
+#> -- Attaching packages ------------------------------------------- fgeo 1.1.2.9000 --
+#> v fgeo.plot    1.1.3     v fgeo.x       1.1.3
+#> v fgeo.tool    1.2.4     v fgeo.analyze 1.1.5
+#> -- Conflicts --------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -93,7 +92,7 @@ example_path()
 #>  [9] "view"          "weird"         "xl"
 
 (vft_file <- example_path("view/vft_4quad.csv"))
-#> [1] "C:/Users/LeporeM/Documents/R/win-library/3.5/fgeo.x/extdata/view/vft_4quad.csv"
+#> [1] "C:/Users/LeporeM/Documents/R/win-library/3.6/fgeo.x/extdata/view/vft_4quad.csv"
 ```
 
 #### `read_<table>()`
