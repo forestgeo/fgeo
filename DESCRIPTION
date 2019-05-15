@@ -110,13 +110,13 @@ BugReports: https://github.com/forestgeo/fgeo/issues
 Depends: 
     R (>= 3.2)
 Imports: 
-    fgeo.plot (>= 1.1.3),
-    fgeo.tool (>= 1.2.4),
-    fgeo.x (>= 1.1.3),
-    fgeo.analyze (>= 1.1.5),
     cli (>= 1.1.0),
     crayon (>= 1.3.4),
     dplyr (>= 0.8.1),
+    fgeo.analyze (>= 1.1.5),
+    fgeo.plot (>= 1.1.3),
+    fgeo.tool (>= 1.2.4),
+    fgeo.x (>= 1.1.3),
     glue (>= 1.3.1),
     magrittr (>= 1.5),
     purrr (>= 0.3.2),
@@ -125,12 +125,12 @@ Imports:
     utils
 Suggests: 
     covr (>= 3.2.1),
-    kableExtra (>= 1.1.0),
-    testthat (>= 2.1.1),
-    rmarkdown (>= 1.12),
     DT (>= 0.6),
+    kableExtra (>= 1.1.0),
     knitr (>= 1.22),
-    spelling (>= 2.1)
+    rmarkdown (>= 1.12),
+    spelling (>= 2.1),
+    testthat (>= 2.1.1)
 Additional_repositories: https://forestgeo.github.io/drat/
 Encoding: UTF-8
 Language: en-US
