@@ -43,12 +43,12 @@ Authors@R:
              comment = c(ORCID = "0000-0002-4519-481X")),
       person(given = "Aaron",
              family = "Hogan",
-             role = c("rev"),
+             role = "rev",
              email = "jamesaaronhogan@gmail.com",
              comment = c(ORCID = "0000-0001-9806-3074")),
       person(given = "Bier",
              family = "Kraichak",
-             role = c("rev"),
+             role = "rev",
              email = "ekraichak@gmail.com"),
       person(given = "David",
              family = "Kenfack",
@@ -76,7 +76,7 @@ Authors@R:
              email = "srusso2@unl.edu"),
       person(given = "Cara",
              family = "Scalpone",
-             role = c("rev"),
+             role = "rev",
              email = "ScalponeC@si.edu",
              comment = c(ORCID = "0000-0001-8448-2147")),
       person(given = "Kristina",
@@ -94,12 +94,15 @@ Authors@R:
       person(given = "CTFS-ForestGEO",
              role = c("cph", "fnd"),
              email = "ForestGEO@si.edu"))
-Description: 'fgeo' allows you to install, load, and access
-    the documentation of multiple packages to analyze forest diversity and
-    dynamics. The collection includes packages to manipulate and plot
-    ForestGEO data, and to do common analyses including abundance,
-    demography, and species-habitats associations
-    (<http://www.forestgeo.si.edu/>).
+Description: To help you access, transform, analyze, and
+    visualize ForestGEO data, we developed a collection of R packages
+    (<https://forestgeo.github.io/fgeo/>). This package, in particular,
+    helps you to install and load the entire package-collection with a
+    single R command, and provides convenient ways to find relevant
+    documentation. Most users should not worry about the individual
+    packages that make up the package-collection; instead, most people
+    should use this package only. To learn more about ForestGEO visit
+    <http://www.forestgeo.si.edu/>.
 License: GPL-3
 URL: http://forestgeo.github.io/fgeo,
     https://github.com/forestgeo/fgeo
