@@ -125,7 +125,7 @@ Visit [forestgeo/learn](https://github.com/forestgeo/learn).
 
 Open a [New issue](https://github.com/forestgeo/forum/issues) at [forestgeo/forum](https://github.com/forestgeo/forum).
 
-## How to try fgeo before installling it?
+## How to try fgeo before installing it?
 
 Try __fgeo__ from your webrowser at <http://bit.ly/fgeo-demo>.
 
