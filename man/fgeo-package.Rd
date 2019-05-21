@@ -11,10 +11,10 @@ To help you access, transform, analyze, and
     (<https://forestgeo.github.io/fgeo/>). This package, in particular,
     helps you to install and load the entire package-collection with a
     single R command, and provides convenient ways to find relevant
-    documentation. Most users should not worry about the individual
-    packages that make up the package-collection; instead, most people
-    should use this package only. To learn more about ForestGEO visit
-    <http://www.forestgeo.si.edu/>.
+    documentation. Most commonly, you should not worry about the
+    individual packages that make up the package-collection as you can
+    access all features via this package. To learn more about ForestGEO
+    visit <http://www.forestgeo.si.edu/>.
 }
 \seealso{
 Useful links:

@@ -1,6 +1,12 @@
+# fgeo 1.1.3
+
 # fgeo (development version)
 
 * Work in progress.
+
+# fgeo 1.1.3 ([GitHub](https://github.com/forestgeo/fgeo/releases))
+
+* First CRAN release.
 
 # fgeo 1.1.2 ([GitHub](https://github.com/forestgeo/fgeo/releases) and [drat](https://forestgeo.github.io/drat/))
 
