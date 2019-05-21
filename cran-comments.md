@@ -11,15 +11,6 @@
 
 New submission
 
-FIXME: For CRAN release, these packages must be released first.
-Strong dependencies not in mainstream repositories:
- fgeo.analyze, fgeo.plot, fgeo.tool, fgeo.x
-Availability using Additional_repositories specification:
- fgeo.analyze   yes   https://forestgeo.github.io/drat/
- fgeo.plot      yes   https://forestgeo.github.io/drat/
- fgeo.tool      yes   https://forestgeo.github.io/drat/
- fgeo.x         yes   https://forestgeo.github.io/drat/
-
 ## Downstream dependencies
 
 There are currently no reverse dependencies for this package.
