@@ -1,5 +1,3 @@
-# fgeo 1.1.3
-
 # fgeo (development version)
 
 * Work in progress.
