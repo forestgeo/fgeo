@@ -50,13 +50,17 @@ Make sure your R environment is as follows:
 * No other R session is running
 * Current R session is clean (click _Session > Restart R_)
 
-```R
-# Include ForestGEO's CRAN-like repository when searching for packages
-install.packages("drat")
-drat::addRepo("forestgeo")
+Install the latest stable version of __fgeo__ from [CRAN](https://cran.r-project.org/) with:
 
-# Install all fgeo packages
+```R
 install.packages("fgeo")
+```
+
+Or install the development version of __fgeo__ from [GitHub](https://github.com/) with:
+
+```R
+# install.packages("devtools")
+devtools::install_github("forestgeo/fgeo.x")
 ```
 
 * [How to setup .Rprofile for easiest installation of __fgeo__?](articles/siteonly/questions-and-answers.html#how-to-setup--rprofile-for-easiest-installation-of-fgeo)
@@ -105,7 +109,7 @@ read_vft(vft_file)
 
 __fgeo__ is pipe-friendly. You may not use pipes but often they make code easier to read.
 
-> Use %>% to emphasise a sequence of actions, rather than the object that the actions are being performed on.
+> Use %>% to emphasize a sequence of actions, rather than the object that the actions are being performed on.
 
 -- <https://style.tidyverse.org/pipes.html>
 

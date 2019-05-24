@@ -3,20 +3,12 @@
 
 # <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analyze forest diversity and dynamics
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build
-status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
-[![Coverage
-status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](https://codecov.io/github/forestgeo/fgeo?branch=master)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
-
 **fgeo** helps you to install, load, and access the documentation of
 multiple packages to analyze forest diversity and dynamics
-(<a href=https://forestgeo.github.io/fgeo.plot>fgeo.plot</a>,
+(<a href=https://forestgeo.github.io/fgeo.analyze>fgeo.analyze</a>,
+<a href=https://forestgeo.github.io/fgeo.plot>fgeo.plot</a>,
 <a href=https://forestgeo.github.io/fgeo.tool>fgeo.tool</a>,
-<a href=https://forestgeo.github.io/fgeo.x>fgeo.x</a>,
-<a href=https://forestgeo.github.io/fgeo.analyze>fgeo.analyze</a>). This
+<a href=https://forestgeo.github.io/fgeo.x>fgeo.x</a>). This
 package-collection allows you to manipulate and plot
 [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common
 analyses including abundance, demography, and species-habitats
@@ -37,15 +29,19 @@ Make sure your R environment is as follows:
   - No other R session is running
   - Current R session is clean (click *Session \> Restart R*)
 
-<!-- end list -->
+Install the latest stable version of **fgeo** from
+[CRAN](https://cran.r-project.org/) with:
 
 ``` r
-# Include ForestGEO's CRAN-like repository when searching for packages
-install.packages("drat")
-drat::addRepo("forestgeo")
-
-# Install all fgeo packages
 install.packages("fgeo")
+```
+
+Or install the development version of **fgeo** from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("forestgeo/fgeo.x")
 ```
 
   - [How to setup .Rprofile for easiest installation of
@@ -61,10 +57,10 @@ install.packages("fgeo")
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ------------------------------------------- fgeo 1.1.2.9000 --
-#> v fgeo.plot    1.1.3     v fgeo.x       1.1.3
-#> v fgeo.tool    1.2.4     v fgeo.analyze 1.1.5
-#> -- Conflicts --------------------------------------------------- fgeo_conflicts() --
+#> -- Attaching packages ---------------------------------------------------- fgeo 1.1.3 --
+#> v fgeo.analyze 1.1.10     v fgeo.tool    1.2.4 
+#> v fgeo.plot    1.1.6      v fgeo.x       1.1.3
+#> -- Conflicts ------------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
