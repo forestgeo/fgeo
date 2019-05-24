@@ -3,6 +3,17 @@
 
 # <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analyze forest diversity and dynamics
 
+<!-- badges: start -->
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Travis build
+status](https://travis-ci.org/forestgeo/fgeo.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo)
+[![Coverage
+status](https://codecov.io/gh/forestgeo/fgeo/branch/master/graph/badge.svg)](https://codecov.io/github/forestgeo/fgeo?branch=master)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/fgeo)](https://cran.r-project.org/package=fgeo)
+<!-- badges: end -->
+
 **fgeo** helps you to install, load, and access the documentation of
 multiple packages to analyze forest diversity and dynamics
 (<a href=https://forestgeo.github.io/fgeo.analyze>fgeo.analyze</a>,
@@ -125,7 +136,7 @@ read_vft(vft_file)
 **fgeo** is pipe-friendly. You may not use pipes but often they make
 code easier to read.
 
-> Use %\>% to emphasise a sequence of actions, rather than the object
+> Use %\>% to emphasize a sequence of actions, rather than the object
 > that the actions are being performed on.
 
 – <https://style.tidyverse.org/pipes.html>
