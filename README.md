@@ -68,10 +68,10 @@ devtools::install_github("forestgeo/fgeo.x")
 
 ``` r
 library(fgeo)
-#> -- Attaching packages ---------------------------------------------------- fgeo 1.1.3 --
+#> -- Attaching packages --------------------------------------------------- fgeo 1.1.3 --
 #> v fgeo.analyze 1.1.10     v fgeo.tool    1.2.4 
 #> v fgeo.plot    1.1.6      v fgeo.x       1.1.3
-#> -- Conflicts ------------------------------------------------------- fgeo_conflicts() --
+#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
