@@ -169,7 +169,7 @@ stem_2sp <- stem %>%
 
 * Use `sp(census)` to plot the column `sp` of a `census` dataset -- i.e. to plot species distribution.
 
-```{r}
+```{r autoplot-sp}
 class(sp(stem_2sp))
 
 autoplot(sp(stem_2sp))
@@ -177,7 +177,7 @@ autoplot(sp(stem_2sp))
 
 * Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev` of a `census` and `elevation` dataset, respectively -- i.e. to plot species distribution and topography.
 
-```{r}
+```{r autoplot-sp-elev}
 elevation <- fgeo.x::elevation
 class(sp_elev(stem_2sp, elevation))
 
@@ -226,6 +226,18 @@ result <- tt_test(tree, habitat)
 as_tibble(result)
 
 summary(result)
+```
+
+## Downloads of fgeo packages
+
+```{r fgeo-downloads, echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+fgeo::fgeo_packages() %>% 
+  cranlogs::cran_downloads(from = "2019-05-09", to = lubridate::today()) %>% 
+  ggplot(aes(date, count)) +
+    geom_col() +
+    labs(caption = "Data from <https://github.com/r-hub/cranlogs>")
 ```
 
 ## Related projects

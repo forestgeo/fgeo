@@ -12,6 +12,9 @@ matrix:
     after_success: Rscript -e 'covr::codecov()'
     before_deploy:
     - Rscript -e 'remotes::install_cran("pkgdown")'
+    - Rscript -e 'remotes::install_cran("ggplot2")'
+    - Rscript -e 'remotes::install_cran("cranlogs")'
+    - Rscript -e 'remotes::install_cran("lubridate")'
     - Rscript -e 'remotes::install_github("maurolepore/pkgdoc")'
     deploy:
       provider: script

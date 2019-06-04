@@ -68,10 +68,10 @@ devtools::install_github("forestgeo/fgeo.x")
 
 ``` r
 library(fgeo)
-#> -- Attaching packages --------------------------------------------------- fgeo 1.1.3 --
+#> -- Attaching packages ------------------------------------------------ fgeo 1.1.3 --
 #> v fgeo.analyze 1.1.10     v fgeo.tool    1.2.4 
 #> v fgeo.plot    1.1.6      v fgeo.x       1.1.3
-#> -- Conflicts ------------------------------------------------------ fgeo_conflicts() --
+#> -- Conflicts --------------------------------------------------- fgeo_conflicts() --
 #> x fgeo.tool::filter() masks stats::filter()
 ```
 
@@ -277,7 +277,7 @@ class(sp(stem_2sp))
 autoplot(sp(stem_2sp))
 ```
 
-![](man/figures/README-unnamed-chunk-10-1.png)<!-- -->
+![](man/figures/README-autoplot-sp-1.png)<!-- -->
 
   - Use `sp_elev(census, elevation)` to plot the columns `sp` and `elev`
     of a `census` and `elevation` dataset, respectively – i.e. to plot
@@ -293,7 +293,7 @@ class(sp_elev(stem_2sp, elevation))
 autoplot(sp_elev(stem_2sp, elevation))
 ```
 
-![](man/figures/README-unnamed-chunk-11-1.png)<!-- -->
+![](man/figures/README-autoplot-sp-elev-1.png)<!-- -->
 
 ### Analyze
 
@@ -409,6 +409,10 @@ summary(result)
 #> 10 ANDINE 2       neutral    
 #> # ... with 282 more rows
 ```
+
+## Downloads of fgeo packages
+
+![](man/figures/README-fgeo-downloads-1.png)<!-- -->
 
 ## Related projects
 
