@@ -458,9 +458,10 @@ corresponding ForestGEO plots.
 
 ## Information
 
-  - [Getting help](SUPPORT.md).
-  - [Contributing](CONTRIBUTING.md).
-  - [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+  - [Getting help](https://forestgeo.github.io/fgeo/SUPPORT.html).
+  - [Contributing](https://forestgeo.github.io/fgeo/CONTRIBUTING.html).
+  - [Contributor Code of
+    Conduct](https://forestgeo.github.io/fgeo/CODE_OF_CONDUCT.html).
 
 ## Acknowledgments
 
