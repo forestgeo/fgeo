@@ -26,7 +26,7 @@ analyses including abundance, demography, and species-habitats
 associations.
 
   - [Search functions and datasets](articles/siteonly/reference.html)
-  - [Try **fgeo** online](https://bit.ly/fgeo-demo)
+  - [Try **fgeo** online](https://rstudio.cloud/project/362373)
   - [Ask questions, report bugs, or propose
     features](https://github.com/forestgeo/fgeo/issues/new)
 
