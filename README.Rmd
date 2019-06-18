@@ -44,8 +44,7 @@ datasets <- "x"
 
 __fgeo__ helps you to install, load, and access the documentation of multiple packages to analyze forest diversity and dynamics (`r purrr::map_chr(fgeo::fgeo_packages(include_self = FALSE), fgeo_link)`). This package-collection allows you to manipulate and plot [ForestGEO](http://www.forestgeo.si.edu/) data, and to do common analyses including abundance, demography, and species-habitats associations.
 
-* [Search functions and datasets](articles/siteonly/reference.html)
-* [Try __fgeo__ online](https://bit.ly/fgeo-demo)
+* [Search functions and datasets](https://forestgeo.github.io/fgeo/articles/siteonly/reference.html)
 * [Ask questions, report bugs, or propose features](https://github.com/forestgeo/fgeo/issues/new)
 
 ## Installation
@@ -70,10 +69,10 @@ Or install the development version of __fgeo__ from [GitHub](https://github.com/
 devtools::install_github("forestgeo/fgeo.x")
 ```
 
-* [How to setup .Rprofile for easiest installation of __fgeo__?](articles/siteonly/questions-and-answers.html#how-to-setup--rprofile-for-easiest-installation-of-fgeo)
-* [How to update __fgeo__?](articles/siteonly/questions-and-answers.html#how-to-update-fgeo)
-* [How to remove __fgeo__?](articles/siteonly/questions-and-answers.html#how-to-remove-fgeo)
-* [How to avoid or fix common installation problems?](articles/siteonly/questions-and-answers.html#how-to-avoid-or-fix-common-installation-problems)
+* [How to setup .Rprofile for easiest installation of __fgeo__?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-setup--rprofile-for-easiest-installation-of-fgeo)
+* [How to update __fgeo__?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-update-fgeo)
+* [How to remove __fgeo__?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-remove-fgeo)
+* [How to avoid or fix common installation problems?](https://forestgeo.github.io/fgeo/articles/siteonly/questions-and-answers.html#how-to-avoid-or-fix-common-installation-problems)
 
 ## Example
 
