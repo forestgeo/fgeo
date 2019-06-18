@@ -16,14 +16,6 @@ Old maintainer(s):
 
 * I have changed my email address in this and all other "fgeo" packages.
 
-
-
-
-FIXME  
-* Version contains large components (1.1.3.9000)
-
-
-
 ## Downstream dependencies
 
 There are currently no reverse dependencies for this package.
