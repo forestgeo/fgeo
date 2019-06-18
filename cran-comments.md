@@ -9,7 +9,20 @@
 
 0 errors | 0 warnings | 1 notes
 
-New submission
+New maintainer:  
+  Mauro Lepore <maurolepore@gmail.com>  
+Old maintainer(s):  
+  Mauro Lepore <leporem@si.edu>  
+
+* I have changed my email address in this and all other "fgeo" packages.
+
+
+
+
+FIXME  
+* Version contains large components (1.1.3.9000)
+
+
 
 ## Downstream dependencies
 
