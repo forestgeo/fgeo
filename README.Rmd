@@ -268,5 +268,5 @@ Data have been made available as required by the journal to enable reproduction 
 
 ## Acknowledgments
 
-Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. For all other help, I thank contributors in the the documentation of the features they helped with.
+Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on __fgeo__, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. For all other help, I thank contributors in the documentation of the features they helped with.
 
