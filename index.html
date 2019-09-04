@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Analyze Forest Diversity and Dynamics • fgeo</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Analyze Forest Diversity and Dynamics">
 <meta property="og:description" content="To help you access, transform, analyze, and
     visualize ForestGEO data, we developed a collection of R packages
@@ -26,7 +27,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-article">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -121,13 +122,9 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    
 
-    
-    
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+      </header><div class="row">
+  <div class="contents col-md-9">
 <div id="analyze-forest-diversity-and-dynamics" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#analyze-forest-diversity-and-dynamics" class="anchor"></a><img src="https://i.imgur.com/vTLlhbp.png" align="right" height="88"> Analyze forest diversity and dynamics</h1></div>
@@ -144,12 +141,12 @@
 <p>Make sure your R environment is as follows:</p>
 <ul>
 <li>R version is recent</li>
-<li>All packages are updated (run <code><a href="https://www.rdocumentation.org/packages/utils/topics/update.packages">update.packages()</a></code>; maybe use <code>ask = FALSE</code>)</li>
+<li>All packages are updated (run <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages()</a></code>; maybe use <code>ask = FALSE</code>)</li>
 <li>No other R session is running</li>
 <li>Current R session is clean (click <em>Session &gt; Restart R</em>)</li>
 </ul>
 <p>Install the latest stable version of <strong>fgeo</strong> from <a href="https://cran.r-project.org/">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"fgeo"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"fgeo"</span>)</a></code></pre></div>
 <p>Or install the development version of <strong>fgeo</strong> from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"forestgeo/fgeo.x"</span>)</a></code></pre></div>
@@ -163,23 +160,23 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; ── Attaching packages ────────────────────────────────── fgeo 1.1.4.9000 ──</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; ✔ fgeo.analyze 1.1.11     ✔ fgeo.tool    1.2.5 </span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; ✔ fgeo.plot    1.1.9      ✔ fgeo.x       1.1.4</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; ── Conflicts ────────────────────────────────────────── fgeo_conflicts() ──</span></a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(fgeo)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; ── Attaching packages ────────────────────────────────────────── fgeo 1.1.3.9000 ──</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; ✔ fgeo.analyze 1.1.10.9000     ✔ fgeo.tool    1.2.5      </span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; ✔ fgeo.plot    1.1.8           ✔ fgeo.x       1.1.4</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; ── Conflicts ────────────────────────────────────────────────── fgeo_conflicts() ──</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; ✖ fgeo.tool::filter() masks stats::filter()</span></a></code></pre></div>
 <div id="explore-fgeo" class="section level3">
 <h3 class="hasAnchor">
 <a href="#explore-fgeo" class="anchor"></a>Explore <strong>fgeo</strong>
 </h3>
 <p>On an interactive session, <code><a href="reference/fgeo_help.html">fgeo_help()</a></code> and <code><a href="reference/fgeo_browse.html">fgeo_browse_reference()</a></code> help you to search documentation.</p>
-<pre><code>if (interactive()) {
-  # To search on the viewer; accepts keywords
-  fgeo_help()
-  # To search on a web browser
-  fgeo_browse_reference() 
-}</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="cf">if</span> (<span class="kw"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span>()) {</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="co"># To search on the viewer; accepts keywords</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw"><a href="reference/fgeo_help.html">fgeo_help</a></span>()</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="co"># To search on a web browser</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="kw"><a href="reference/fgeo_browse.html">fgeo_browse_reference</a></span>() </a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">}</a></code></pre></div>
 </div>
 <div id="access-and-manipulate-data" class="section level3">
 <h3 class="hasAnchor">
@@ -191,7 +188,7 @@
 <a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;  [9] "view"          "weird"         "xl"</span></a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6">(vft_file &lt;-<span class="st"> </span><span class="kw">example_path</span>(<span class="st">"view/vft_4quad.csv"</span>))</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] "/home/travis/R/Library/fgeo.x/extdata/view/vft_4quad.csv"</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] "/home/mauro/R/x86_64-pc-linux-gnu-library/3.6/fgeo.x/extdata/view/vft_4quad.csv"</span></a></code></pre></div>
 <div id="read_table" class="section level4">
 <h4 class="hasAnchor">
 <a href="#read_table" class="anchor"></a><code>read_&lt;table&gt;()</code>
@@ -276,9 +273,9 @@
 <p><code>pick_main_stem()</code> and <code>pick_main_stemid()</code> pick the main stem or main stemid(s) of each tree in each census.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">stem &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_stem6_random"</span>)</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(stem)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(stem)</a>
 <a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; [1] 1320   19</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/dim">dim</a></span>(<span class="kw">pick_main_stem</span>(stem))</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="kw"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="kw">pick_main_stem</span>(stem))</a>
 <a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; [1] 1000   19</span></a></code></pre></div>
 </div>
 <div id="add_columns" class="section level4">
@@ -330,25 +327,25 @@
 <a href="#plot-data" class="anchor"></a>Plot data</h3>
 <p>For simplicity, we will focus on only a few species.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">stem_2sp &lt;-<span class="st"> </span>stem <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(sp <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"PREMON"</span>, <span class="st">"CASARB"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(sp <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"PREMON"</span>, <span class="st">"CASARB"</span>))</a></code></pre></div>
 <p><code>autoplot()</code> and friends produce different output depending on the class of input. You can create different input classes, for example, with <code>sp()</code> and <code>sp_elev()</code>:</p>
 <ul>
 <li>Use <code>sp(census)</code> to plot the column <code>sp</code> of a <code>census</code> dataset – i.e. to plot species distribution.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(<span class="kw">sp</span>(stem_2sp))</a>
+<!-- end list --><div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(<span class="kw">sp</span>(stem_2sp))</a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#&gt; [1] "sp"         "tbl_df"     "tbl"        "data.frame"</span></a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw">autoplot</span>(<span class="kw">sp</span>(stem_2sp))</a></code></pre></div>
-<p><img src="reference/figures/README-autoplot-sp-1.png" width="700"></p>
+<p><img src="reference/figures/README-autoplot-sp-1.png"><!-- --></p>
 <ul>
 <li>Use <code>sp_elev(census, elevation)</code> to plot the columns <code>sp</code> and <code>elev</code> of a <code>census</code> and <code>elevation</code> dataset, respectively – i.e. to plot species distribution and topography.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">elevation &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>elevation</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(<span class="kw">sp_elev</span>(stem_2sp, elevation))</a>
+<!-- end list --><div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">elevation &lt;-<span class="st"> </span>fgeo.x<span class="op">::</span>elevation</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(<span class="kw">sp_elev</span>(stem_2sp, elevation))</a>
 <a class="sourceLine" id="cb13-3" data-line-number="3"><span class="co">#&gt; [1] "sp_elev" "list"</span></a>
 <a class="sourceLine" id="cb13-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb13-5" data-line-number="5"><span class="kw">autoplot</span>(<span class="kw">sp_elev</span>(stem_2sp, elevation))</a></code></pre></div>
-<p><img src="reference/figures/README-autoplot-sp-elev-1.png" width="700"></p>
+<p><img src="reference/figures/README-autoplot-sp-elev-1.png"><!-- --></p>
 </div>
 <div id="analyze" class="section level3">
 <h3 class="hasAnchor">
@@ -412,7 +409,7 @@
 <div id="species-habitats-association" class="section level4">
 <h4 class="hasAnchor">
 <a href="#species-habitats-association" class="anchor"></a>Species-habitats association</h4>
-<p><code>tt_test()</code> runs a torus translation test to determine habitat associations of tree species. <code>as_tibble()</code> converts the output from a list to a more convenient dataframe. <code><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary()</a></code> helps you to interpret the result.</p>
+<p><code>tt_test()</code> runs a torus translation test to determine habitat associations of tree species. <code>as_tibble()</code> converts the output from a list to a more convenient dataframe. <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> helps you to interpret the result.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># This analysis makes sense only for tree tables</span></a>
 <a class="sourceLine" id="cb16-2" data-line-number="2">tree &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_tree5_random"</span>)</a>
 <a class="sourceLine" id="cb16-3" data-line-number="3"></a>
@@ -437,7 +434,7 @@
 <a class="sourceLine" id="cb16-22" data-line-number="22"><span class="co">#&gt; 10 2       ANDINE     1   1081    510      9            0        0.676</span></a>
 <a class="sourceLine" id="cb16-23" data-line-number="23"><span class="co">#&gt; # … with 282 more rows</span></a>
 <a class="sourceLine" id="cb16-24" data-line-number="24"></a>
-<a class="sourceLine" id="cb16-25" data-line-number="25"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(result)</a>
+<a class="sourceLine" id="cb16-25" data-line-number="25"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(result)</a>
 <a class="sourceLine" id="cb16-26" data-line-number="26"><span class="co">#&gt; # A tibble: 292 x 3</span></a>
 <a class="sourceLine" id="cb16-27" data-line-number="27"><span class="co">#&gt;    sp     habitat association</span></a>
 <a class="sourceLine" id="cb16-28" data-line-number="28"><span class="co">#&gt;    &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      </span></a>
@@ -458,7 +455,7 @@
 <div id="downloads-of-fgeo-packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#downloads-of-fgeo-packages" class="anchor"></a>Downloads of fgeo packages</h2>
-<p><img src="reference/figures/README-fgeo-downloads-1.png" width="700"></p>
+<p><img src="reference/figures/README-fgeo-downloads-1.png"><!-- --></p>
 </div>
 <div id="related-projects" class="section level2">
 <h2 class="hasAnchor">
@@ -508,7 +505,7 @@
 <div id="acknowledgments" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgments" class="anchor"></a>Acknowledgments</h2>
-<p>Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on <strong>fgeo</strong>, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. For all other help, I thank contributors in the documentation of the features they helped with.</p>
+<p>Thanks to all partners of ForestGEO for sharing their ideas and code. For feedback on <strong>fgeo</strong>, special thanks to Gabriel Arellano, Stuart Davies, Lauren Krizel, Sean McMahon, and Haley Overstreet. For all other help, I thank contributors in the the documentation of the features they helped with.</p>
 </div>
 </div>
   </div>
@@ -532,11 +529,18 @@
 <li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
 </ul>
 </div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CONTRIBUTING.html">Contributing guide</a></li>
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://forestgeo.si.edu/mauro-lepore">Mauro Lepore</a> <br><small class="roles"> Author, contractor, maintainer </small> <a href="https://orcid.org/0000-0002-1986-7988" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://forestgeo.si.edu/mauro-lepore">Mauro Lepore</a> <br><small class="roles"> Author, contractor, maintainer </small> <a href="https://orcid.org/0000-0002-1986-7988" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li>
 <a href="https://forestgeo.si.edu/arellano-gabriel">Gabriel Arellano</a> <br><small class="roles"> Author, reviewer </small>  </li>
 <li>Richard  Condit <br><small class="roles"> Author </small>  </li>
@@ -544,11 +548,11 @@
 <a href="https://forestgeo.si.edu/stuart-j-davies">Stuart Davies</a> <br><small class="roles"> Author, reviewer </small>  </li>
 <li>Matteo Detto <br><small class="roles"> Author </small>  </li>
 <li>
-<a href="https://sites.google.com/site/forestecoclimlab/people">Erika Gonzalez-Akre</a> <br><small class="roles"> Author, reviewer </small> <a href="https://orcid.org/0000-0001-8305-6672" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://sites.google.com/site/forestecoclimlab/people">Erika Gonzalez-Akre</a> <br><small class="roles"> Author, reviewer </small> <a href="https://orcid.org/0000-0001-8305-6672" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li>Pamela Hall <br><small class="roles"> Author </small>  </li>
 <li>Kyle Harms <br><small class="roles"> Author </small>  </li>
 <li>
-<a href="https://valentineherr.github.io/">Valentine Herrmann</a> <br><small class="roles"> Author, reviewer </small> <a href="https://orcid.org/0000-0002-4519-481X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://valentineherr.github.io/">Valentine Herrmann</a> <br><small class="roles"> Author, reviewer </small> <a href="https://orcid.org/0000-0002-4519-481X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li>
 <a href="https://forestgeo.si.edu/david-kenfack">David Kenfack</a> <br><small class="roles"> Author, reviewer </small>  </li>
 <li>
@@ -566,8 +570,7 @@
 </ul>
 </div>
 
-
-      <div class="dev-status">
+  <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
@@ -577,7 +580,6 @@
 </ul>
 </div>
 </div>
-
 </div>
 
 
@@ -586,12 +588,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

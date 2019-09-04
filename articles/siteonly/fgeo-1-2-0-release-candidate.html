@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>fgeo 1.2.0 release candidate • fgeo</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../../pkgdown.css" rel="stylesheet">
 <script src="../../pkgdown.js"></script><meta property="og:title" content="fgeo 1.2.0 release candidate">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
@@ -113,6 +114,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -131,10 +133,10 @@
 <div id="setup" class="section level3">
 <h3 class="hasAnchor">
 <a href="#setup" class="anchor"></a>Setup</h3>
-<p>To install <strong>fgeo</strong> see <a href="https://forestgeo.github.io/fgeo/#installation">Installation</a>. To use <strong>fgeo</strong> run <code><a href="https://www.rdocumentation.org/packages/base/topics/library">library(fgeo)</a></code> in R.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fgeo)</a></code></pre></div>
+<p>To install <strong>fgeo</strong> see <a href="https://forestgeo.github.io/fgeo/#installation">Installation</a>. To use <strong>fgeo</strong> run <code><a href="https://rdrr.io/r/base/library.html">library(fgeo)</a></code> in R.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(fgeo)</a></code></pre></div>
 <p>All <strong>fgeo</strong> packages are now attached.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/search">search</a></span>()</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/search.html">search</a></span>()</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt;  [1] ".GlobalEnv"           "package:fgeo.x"       "package:fgeo.tool"   </span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt;  [4] "package:fgeo.plot"    "package:fgeo.analyze" "package:fgeo"        </span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;  [7] "package:stats"        "package:graphics"     "package:grDevices"   </span></a>
@@ -144,7 +146,7 @@
 <div id="explore-fgeo" class="section level3">
 <h3 class="hasAnchor">
 <a href="#explore-fgeo" class="anchor"></a>Explore fgeo</h3>
-<p>Use <a href="https://forestgeo.github.io/fgeo/reference/fgeo_help"><code><a href="../../reference/fgeo_help.html">fgeo_help()</a></code></a> to search documentation. It is similar to <code><a href="https://www.rdocumentation.org/packages/utils/topics/help.search">utils::help.search()</a></code> but specific for <strong>fgeo</strong>.</p>
+<p>Use <a href="https://forestgeo.github.io/fgeo/reference/fgeo_help"><code><a href="../../reference/fgeo_help.html">fgeo_help()</a></code></a> to search documentation. It is similar to <code><a href="https://rdrr.io/r/utils/help.search.html">utils::help.search()</a></code> but specific for <strong>fgeo</strong>.</p>
 </div>
 <div id="access-and-manipulate-data" class="section level3">
 <h3 class="hasAnchor">
@@ -171,7 +173,7 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">example_path</span>(<span class="st">"rdata"</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; [1] "/home/travis/R/Library/fgeo.x/extdata/rdata"</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list.files">dir</a></span>(<span class="kw">example_path</span>(<span class="st">"rdata"</span>))</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span>(<span class="kw">example_path</span>(<span class="st">"rdata"</span>))</a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; [1] "tree5.RData" "tree6.RData"</span></a></code></pre></div>
 <p>Larger datasets live online. You can download them with <a href="https://forestgeo.github.io/fgeo.x/reference/download_data"><code>download_data()</code></a>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">download_data</span>(<span class="st">"luquillo_tree5_random"</span>)</a>
@@ -191,7 +193,7 @@
 <a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; # … with 990 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; #   nostems &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
-<p>Use <a href="https://forestgeo.github.io/fgeo.tool/reference/read_vft"><code>read_vft()</code></a> to read your own ViewFullTable. Compared to <code><a href="https://www.rdocumentation.org/packages/utils/topics/read.table">utils::read.csv()</a></code> it is easier to use and safer.</p>
+<p>Use <a href="https://forestgeo.github.io/fgeo.tool/reference/read_vft"><code>read_vft()</code></a> to read your own ViewFullTable. Compared to <code><a href="https://rdrr.io/r/utils/read.table.html">utils::read.csv()</a></code> it is easier to use and safer.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">(viewfulltable_file &lt;-<span class="st"> </span><span class="kw">example_path</span>(<span class="st">"view/vft_4quad.csv"</span>))</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; [1] "/home/travis/R/Library/fgeo.x/extdata/view/vft_4quad.csv"</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"></a>
@@ -221,16 +223,16 @@
 <h3 class="hasAnchor">
 <a href="#plot" class="anchor"></a>Plot</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># Using only two species to keep the example small</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">two_species &lt;-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"PREMON"</span>, <span class="st">"CASARB"</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">two_species &lt;-<span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"PREMON"</span>, <span class="st">"CASARB"</span>)</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co"># The pipe operator (`%&gt;%`) can make your code easier to read</span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5">census &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_stem6_random"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/filter">filter</a></span>(sp <span class="op">%in%</span><span class="st"> </span>two_species)</a></code></pre></div>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(sp <span class="op">%in%</span><span class="st"> </span>two_species)</a></code></pre></div>
 <p>Use <code>autoplot()</code> to plot different classes of ForestGEO data. For example:</p>
 <ul>
 <li><a href="https://forestgeo.github.io/fgeo.plot/reference/autoplot.sp_elev"><code>autoplot()</code> species distribution</a></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(<span class="kw">sp</span>(census))</a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(<span class="kw">sp</span>(census))</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; [1] "sp"         "tbl_df"     "tbl"        "data.frame"</span></a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">autoplot</span>(<span class="kw">sp</span>(census))</a></code></pre></div>
@@ -239,9 +241,9 @@
 <li><a href="https://forestgeo.github.io/fgeo.plot/reference/autoplot.fgeo_habitat"><code>autoplot()</code> habitats</a></li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Using `data()` just for clarity</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"habitat"</span>)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"habitat"</span>)</a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(habitat)</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(habitat)</a>
 <a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; [1] "fgeo_habitat" "tbl_df"       "tbl"          "data.frame"</span></a>
 <a class="sourceLine" id="cb9-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb9-7" data-line-number="7"><span class="kw">autoplot</span>(habitat)</a></code></pre></div>
@@ -261,8 +263,8 @@
 <a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;</span></a>
 <a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt; 1 CASARB    94</span></a>
 <a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt; 2 PREMON   252</span></a></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"tree5"</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"tree6"</span>)</a>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"tree5"</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"tree6"</span>)</a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb11-4" data-line-number="4"><span class="kw">as_tibble</span>(</a>
 <a class="sourceLine" id="cb11-5" data-line-number="5">  <span class="kw">mortality_ctfs</span>(tree5, tree6)</a>
@@ -276,9 +278,9 @@
 <a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb11-14" data-line-number="14"><span class="co">#&gt; 1    27     1 0.00834 0.00195 0.0448  4.52 18938. 20590.    101.</span></a></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">tree &lt;-<span class="st"> </span><span class="kw">download_data</span>(<span class="st">"luquillo_tree5_random"</span>)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"habitat"</span>)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"habitat"</span>)</a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(</a>
 <a class="sourceLine" id="cb12-5" data-line-number="5">  <span class="kw">tt_test</span>(tree, habitat)</a>
 <a class="sourceLine" id="cb12-6" data-line-number="6">)</a>
 <a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt; Using `plotdim = c(320, 500)`. To change this value see `?tt_test()`.</span></a>
@@ -319,17 +321,20 @@
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by <a href="https://forestgeo.si.edu/mauro-lepore">Mauro Lepore</a>, <a href="https://forestgeo.si.edu/arellano-gabriel">Gabriel Arellano</a>, Richard  Condit, <a href="https://forestgeo.si.edu/stuart-j-davies">Stuart Davies</a>, Matteo Detto, <a href="https://sites.google.com/site/forestecoclimlab/people">Erika Gonzalez-Akre</a>, Pamela Hall, Kyle Harms, <a href="https://valentineherr.github.io/">Valentine Herrmann</a>, <a href="https://forestgeo.si.edu/david-kenfack">David Kenfack</a>, <a href="https://forestgeo.si.edu/suzanne-lao">Suzanne Lao</a>, <a href="https://forestgeo.si.edu/sean-mcmahon">Sean McMahon</a>, <a href="http://russolab.unl.edu">Sabrina Russo</a>, Kristina Anderson-Teixeira, Graham Zemunik, Daniel Zuleta, <a href="http://www.forestgeo.si.edu/">CTFS-ForestGEO</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
