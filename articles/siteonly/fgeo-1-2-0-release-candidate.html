@@ -166,9 +166,9 @@
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  8  39705  48888 33371 33370   CASS… 1010    184.  194.     451067        5</span></a>
 <a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  9  50184  60798 5830  5830    MATD… 1007    191.  132.     437645        5</span></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt; 10  57380 155867 66962 171649  SLOB… 1414    274.  279.     459427        5</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; # … with 20 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; #   nostems &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; # … with 20 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;, hom &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; #   ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;, nostems &lt;dbl&gt;, status &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; #   date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Other datasets are stored in R’s library. You can access them with <a href="https://forestgeo.github.io/fgeo.x/reference/example_path"><code>example_path()</code></a>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">example_path</span>(<span class="st">"rdata"</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; [1] "/home/travis/R/Library/fgeo.x/extdata/rdata"</span></a>
@@ -190,34 +190,33 @@
 <a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;  8   1144   1410 1012… 101285  SCHM… 920     161.   395.    466889        5</span></a>
 <a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  9   1168   1438 10131 10131   DACE… 413      70.6  252.    440031        5</span></a>
 <a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 10   1380 114352 1015… 149529  CASA… 820     142.   386.    466957        5</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; # … with 990 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; #   hom &lt;dbl&gt;, ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; #   nostems &lt;dbl&gt;, status &lt;chr&gt;, date &lt;dbl&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; # … with 990 more rows, and 9 more variables: dbh &lt;dbl&gt;, pom &lt;chr&gt;, hom &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; #   ExactDate &lt;date&gt;, DFstatus &lt;chr&gt;, codes &lt;chr&gt;, nostems &lt;dbl&gt;, status &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; #   date &lt;dbl&gt;</span></a></code></pre></div>
 <p>Use <a href="https://forestgeo.github.io/fgeo.tool/reference/read_vft"><code>read_vft()</code></a> to read your own ViewFullTable. Compared to <code><a href="https://rdrr.io/r/utils/read.table.html">utils::read.csv()</a></code> it is easier to use and safer.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">(viewfulltable_file &lt;-<span class="st"> </span><span class="kw">example_path</span>(<span class="st">"view/vft_4quad.csv"</span>))</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; [1] "/home/travis/R/Library/fgeo.x/extdata/view/vft_4quad.csv"</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">read_vft</span>(viewfulltable_file)</a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; # A tibble: 500 x 32</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;     DBHID PlotName PlotID Family Genus SpeciesName Mnemonic Subspecies</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;     </span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt;  1 385164 luquillo      1 Rubia… Psyc… brachiata   PSYBRA   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt;  2 385261 luquillo      1 Urtic… Cecr… schreberia… CECSCH   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt;  3 384600 luquillo      1 Rubia… Psyc… brachiata   PSYBRA   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;  4 608789 luquillo      1 Rubia… Psyc… berteroana  PSYBER   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt;  5 388579 luquillo      1 Areca… Pres… acuminata   PREMON   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt;  6 384626 luquillo      1 Arali… Sche… morototoni  SCHMOR   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt;  7 410958 luquillo      1 Rubia… Psyc… brachiata   PSYBRA   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt;  8 385102 luquillo      1 Piper… Piper glabrescens PIPGLA   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt;  9 353163 luquillo      1 Areca… Pres… acuminata   PREMON   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; 10 481018 luquillo      1 Salic… Case… arborea     CASARB   &lt;NA&gt;      </span></a>
-<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt; # … with 490 more rows, and 24 more variables: SpeciesID &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb6-19" data-line-number="19"><span class="co">#&gt; #   SubspeciesID &lt;chr&gt;, QuadratName &lt;chr&gt;, QuadratID &lt;int&gt;, PX &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb6-20" data-line-number="20"><span class="co">#&gt; #   PY &lt;dbl&gt;, QX &lt;dbl&gt;, QY &lt;dbl&gt;, TreeID &lt;int&gt;, Tag &lt;chr&gt;, StemID &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb6-21" data-line-number="21"><span class="co">#&gt; #   StemNumber &lt;int&gt;, StemTag &lt;int&gt;, PrimaryStem &lt;chr&gt;, CensusID &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="co">#&gt; #   PlotCensusNumber &lt;int&gt;, DBH &lt;dbl&gt;, HOM &lt;dbl&gt;, ExactDate &lt;date&gt;,</span></a>
-<a class="sourceLine" id="cb6-23" data-line-number="23"><span class="co">#&gt; #   Date &lt;int&gt;, ListOfTSM &lt;chr&gt;, HighHOM &lt;int&gt;, LargeStem &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb6-24" data-line-number="24"><span class="co">#&gt; #   Status &lt;chr&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;     DBHID PlotName PlotID Family Genus SpeciesName Mnemonic Subspecies SpeciesID</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt;  1 385164 luquillo      1 Rubia… Psyc… brachiata   PSYBRA   &lt;NA&gt;             185</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt;  2 385261 luquillo      1 Urtic… Cecr… schreberia… CECSCH   &lt;NA&gt;              74</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt;  3 384600 luquillo      1 Rubia… Psyc… brachiata   PSYBRA   &lt;NA&gt;             185</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;  4 608789 luquillo      1 Rubia… Psyc… berteroana  PSYBER   &lt;NA&gt;             184</span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt;  5 388579 luquillo      1 Areca… Pres… acuminata   PREMON   &lt;NA&gt;             182</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt;  6 384626 luquillo      1 Arali… Sche… morototoni  SCHMOR   &lt;NA&gt;             196</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt;  7 410958 luquillo      1 Rubia… Psyc… brachiata   PSYBRA   &lt;NA&gt;             185</span></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt;  8 385102 luquillo      1 Piper… Piper glabrescens PIPGLA   &lt;NA&gt;             174</span></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt;  9 353163 luquillo      1 Areca… Pres… acuminata   PREMON   &lt;NA&gt;             182</span></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; 10 481018 luquillo      1 Salic… Case… arborea     CASARB   &lt;NA&gt;              70</span></a>
+<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt; # … with 490 more rows, and 23 more variables: SubspeciesID &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb6-19" data-line-number="19"><span class="co">#&gt; #   QuadratName &lt;chr&gt;, QuadratID &lt;int&gt;, PX &lt;dbl&gt;, PY &lt;dbl&gt;, QX &lt;dbl&gt;, QY &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb6-20" data-line-number="20"><span class="co">#&gt; #   TreeID &lt;int&gt;, Tag &lt;chr&gt;, StemID &lt;int&gt;, StemNumber &lt;int&gt;, StemTag &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb6-21" data-line-number="21"><span class="co">#&gt; #   PrimaryStem &lt;chr&gt;, CensusID &lt;int&gt;, PlotCensusNumber &lt;int&gt;, DBH &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="co">#&gt; #   HOM &lt;dbl&gt;, ExactDate &lt;date&gt;, Date &lt;int&gt;, ListOfTSM &lt;chr&gt;, HighHOM &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb6-23" data-line-number="23"><span class="co">#&gt; #   LargeStem &lt;chr&gt;, Status &lt;chr&gt;</span></a></code></pre></div>
 </div>
 <div id="plot" class="section level3">
 <h3 class="hasAnchor">
